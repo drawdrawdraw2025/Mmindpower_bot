@@ -20,7 +20,7 @@ jobs:
           T: ${{ secrets.TG_TOKEN }}
         run: |
           if [ -z "$T" ]; then
-            echo "No TG_TOKEN secret configured — exiting quietly."
+            echo "No TG_TOKEN secret configured - exiting quietly."
             echo "skip=1" >> $GITHUB_OUTPUT
           else
             echo "skip=0" >> $GITHUB_OUTPUT
@@ -38,9 +38,9 @@ jobs:
       - name: Run bot (handover-aware)
         if: steps.check.outputs.skip == '0'
         env:
-          TG_TOKEN: *** secrets.TG_TOKEN }}
-          GROQ_KEY: *** secrets.GROQ_KEY }}
-          GH_TOKEN: *** github.token }}
+          ONE: ${{ secrets.TG_TOKEN }}
+          TWO: ${{ secrets.GROQ_KEY }}
+          THREE: ${{ github.token }}
           REPO: ${{ github.repository }}
           MY_RUN: ${{ github.run_id }}
         run: |
@@ -48,7 +48,7 @@ jobs:
           python3 - <<'PYEOF'
           import os, json, urllib.request, sys
           repo  = os.environ['REPO']
-          token = os.environ['GH_TOKEN']
+          token = os.environ['THREE']
           my    = int(os.environ['MY_RUN'])
           req = urllib.request.Request(
               f"https://api.github.com/repos/{repo}/actions/runs?per_page=30",
@@ -57,7 +57,7 @@ jobs:
           runs = json.load(urllib.request.urlopen(req))["workflow_runs"]
           active = [r for r in runs
                     if r["name"] == "bot" and r["id"] != my
-                    and r["status"] in ("in_progress",)]
+                    and r["status"] == "in_progress"]
           older = [r for r in active if r["id"] < my]
           if older:
               print(f"Older bot run {older[0]['id']} still active - standing down.")
@@ -67,5 +67,6 @@ jobs:
           code=$?
           if [ "$code" -eq 42 ]; then exit 0; fi
           echo "Starting bot for up to 350 minutes..."
+          export TG_TOKEN="$ONE" GROQ_KEY="$TWO"
           timeout 350m python3 bot.py || true
           echo "Bot session ended; next scheduled run will take over."
