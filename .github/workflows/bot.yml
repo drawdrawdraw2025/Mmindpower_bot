@@ -8,6 +8,9 @@ on:
     branches: [main]
     paths: ['bot.py', '.github/workflows/bot.yml']
 
+permissions:
+  contents: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
