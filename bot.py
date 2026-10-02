@@ -17,7 +17,7 @@ OWNER_CHAT = 7102918717          # Balu (@Mmindpower1)
 DAILY_LIMIT = 90                 # questions per day
 SEND_HOUR_START, SEND_HOUR_END = 0, 24  # 24x7 delivery
 IDLE_NEXT_SECS = 10 * 60         # next question if user doesn't answer
-ANSWERED_NEXT_SECS = 2 * 60      # next question after user answers
+ANSWERED_NEXT_SECS = 5           # next question after user answers (near-instant)
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 WELCOME = (
@@ -351,7 +351,7 @@ def tick_user(chat_id, now):
         return
     if us.get("pending_qid"):
         # User didn't answer in time: move on silently, no auto-reveal.
-        advance(chat_id, when=time.time() + 30)
+        advance(chat_id, when=time.time() + 3)
         return
     send_question(chat_id)
 
@@ -525,10 +525,11 @@ def handle_callback(cb):
     elif kind == "next":
         qid = parts[1] if len(parts) > 1 else ""
         if cur and qid == cur_qid:
-            advance(chat_id, when=time.time() + 2)
+            advance(chat_id, when=0)
         else:
-            us["next_due"] = min(us.get("next_due", 0), time.time() + 2)
+            us["next_due"] = min(us.get("next_due", 0), time.time())
             save_state()
+        quiz_tick()
         ack("Next question coming…")
 
 
@@ -710,13 +711,13 @@ def main():
     last_tick = 0
     while True:
         try:
-            if time.time() - last_tick > 20:
+            if time.time() - last_tick > 2:
                 quiz_tick()
                 last_tick = time.time()
-            params = {"timeout": 25, "allowed_updates": ["message", "callback_query"]}
+            params = {"timeout": 4, "allowed_updates": ["message", "callback_query"]}
             if offset:
                 params["offset"] = offset
-            data = requests.post(f"{TG}/getUpdates", json=params, timeout=40).json()
+            data = requests.post(f"{TG}/getUpdates", json=params, timeout=15).json()
             if not data.get("ok"):
                 desc = str(data.get("description", ""))
                 if "conflict" in desc.lower():
