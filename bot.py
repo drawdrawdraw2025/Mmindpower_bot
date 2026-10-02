@@ -507,6 +507,11 @@ def handle_callback(cb):
         edit_text(chat_id, msg_id, "❌ Reset cancelled — your progress is unchanged.")
         ack()
 
+    elif kind == "go":
+        act = parts[1] if len(parts) > 1 else "start"
+        do_quiz_action(chat_id, act)
+        ack()
+
     elif kind == "next":
         qid = parts[1] if len(parts) > 1 else ""
         if cur and qid == cur_qid:
@@ -527,6 +532,83 @@ def find_by_qid(qid):
         return DATA[L][idx]
     return None
 
+def do_quiz_action(chat_id, action):
+    us = u_state(chat_id)
+    if action == "reset":
+        txt = ("🔄 <b>Quiz Reset</b>\n\nPick any day's quiz to restart from — "
+               "progress moves to that day's first question and its 90 "
+               "questions will be delivered today. 📅")
+        send_text(chat_id, txt, reply_markup=kb_daypicker())
+    elif action == "pause":
+        us["active"] = False
+        save_state()
+        send_text(chat_id, "⏸ Quiz paused. Send /quiz_resume to continue.")
+    elif action == "status":
+        cur = current_q(us)
+        pos = f"Set {us['set']}, next Q {us['index'] + 1}" if cur else "bank complete"
+        send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {us['today_sent']}/{DAILY_LIMIT}\n"
+                           f"Total answered: {us['total_done']}\nActive: {'✅' if us['active'] else '⏸'}")
+    else:
+        us["active"] = True
+        if us.get("pending_qid") is None:
+            us["next_due"] = 0
+        save_state()
+        send_text(chat_id, "▶️ Quiz resumed/started — next question coming right up!")
+        quiz_tick()
+
+HELP_PHRASES = [
+    "how to play", "how to use", "how do i use", "how do i play", "how to start",
+    "how can i play", "how can i use", "how can i start", "how to quiz", "quiz how",
+    "what commands", "which commands", "which command", "what command", "all commands",
+    "command list", "list of commands", "commands list", "show commands", "give commands",
+    "tell me commands", "send commands", "commands batao", "command batao",
+    "how this bot works", "how does this bot work", "how does it work",
+    "what can you do", "what do you do", "what all can you do",
+    "guide me", "show guide", "instructions", "tutorial", "how to operate",
+    "kaise khele", "kaise khelu", "kaise use", "kese use", "kaunse command",
+    "kya command", "commands ke bare", "help me use",
+]
+HELP_TOKENS = ("command", "commands", "कमांड", "कमांड्स")
+
+def wants_help(t):
+    t = t.lower().strip()
+    if t in ("help", "?", "??", "menu", "help!"):
+        return True
+    for p in HELP_PHRASES:
+        if p in t:
+            return True
+    if any(w in t for w in HELP_TOKENS):
+        if any(q in t for q in ("what", "which", "how", "list", "all", "give", "show",
+                                "bata", "batao", "dya", "sanga", "कसे", "काय", "क्या")) or t.endswith("?"):
+            return True
+    if "how" in t and any(w in t for w in ("play", "use", "start", "quiz", "this bot")):
+        return True
+    if any(w in t for w in ("कसे", "कसं")) and any(w in t for w in ("खेळ", "वापर", "सुरू")):
+        return True
+    return False
+
+GUIDE = (
+    "🎯 <b>How to use Mmindpower Bot</b>\n\n"
+    "📚 <b>Daily Quiz</b> — 90 questions per day:\n"
+    "1️⃣ Tap ▶️ <b>Start Quiz</b> below (or /quiz)\n"
+    "2️⃣ A question arrives with 🅰️🅱️🅲🅳 buttons — tap your answer\n"
+    "3️⃣ See ✅/❌ instantly, then 📖 Show Explanation (tap again to 🙈 Hide)\n"
+    "4️⃣ Next question comes automatically (~2 min)\n"
+    "5️⃣ Don't answer within 10 min? Bot moves on silently — buttons still work later!\n\n"
+    "🤖 <b>AI chat</b> — just type any question normally.\n\n"
+    "⌨️ <b>Commands</b>\n"
+    "/quiz — start/resume • /quiz_pause — pause • /quiz_resume — resume\n"
+    "/quiz_status — progress • /quiz_reset — restart any day\n"
+    "/reset — clear AI memory • /help — help"
+)
+
+def kb_guide():
+    return {"inline_keyboard": [
+        [{"text": "▶️ Start Quiz", "callback_data": "go|start"}],
+        [{"text": "📊 My Status", "callback_data": "go|status"},
+         {"text": "🔄 Pick a Day", "callback_data": "go|reset"}],
+        [{"text": "⏸ Pause Quiz", "callback_data": "go|pause"}]]}
+
 def handle(update):
     msg = update.get("message") or {}
     text = (msg.get("text") or "").strip()
@@ -536,7 +618,6 @@ def handle(update):
         return
     token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
     if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
-        us = u_state(chat_id)
         if token0 == "/quiz_pause":
             action = "pause"
         elif token0 == "/quiz_resume":
@@ -555,27 +636,7 @@ def handle(update):
                 action = "status"
             else:
                 action = "start"
-        if action == "reset":
-            txt = ("🔄 <b>Quiz Reset</b>\n\nPick any day's quiz to restart from — "
-                   "progress moves to that day's first question and its 90 "
-                   "questions will be delivered today. 📅")
-            send_text(chat_id, txt, reply_markup=kb_daypicker())
-        elif action == "pause":
-            us["active"] = False
-            save_state()
-            send_text(chat_id, "⏸ Quiz paused. Send /quiz_resume to continue.")
-        elif action == "status":
-            cur = current_q(us)
-            pos = f"Set {us['set']}, next Q {us['index'] + 1}" if cur else "bank complete"
-            send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {us['today_sent']}/{DAILY_LIMIT}\n"
-                               f"Total answered: {us['total_done']}\nActive: {'✅' if us['active'] else '⏸'}")
-        else:
-            us["active"] = True
-            if us.get("pending_qid") is None:
-                us["next_due"] = 0
-            save_state()
-            send_text(chat_id, "▶️ Quiz resumed/started — next question coming right up!")
-            quiz_tick()
+        do_quiz_action(chat_id, action)
         return
     cmd = text.split()[0].split("@")[0].lower() if text.startswith("/") else None
     if cmd == "/start":
@@ -587,6 +648,8 @@ def handle(update):
     elif cmd == "/reset":
         MEM.pop(chat_id, None)
         send_text(chat_id, "🧹 Chat memory cleared. Fresh start!")
+    elif text and wants_help(text):
+        send_text(chat_id, GUIDE, reply_markup=kb_guide())
     elif text:
         tg("sendChatAction", chat_id=chat_id, action="typing")
         send_text(chat_id, groq_reply(chat_id, text))
