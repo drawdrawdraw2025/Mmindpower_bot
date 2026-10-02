@@ -221,7 +221,7 @@ except Exception:
     pass
 
 DEV_RE = re.compile(r"[\u0900-\u097F]")
-MARK_RE = re.compile(r"\(((?:[A-H])|(?:[\u0905-\u0939])|(?:i{1,3}|iv|v)|(?:\d{1,2}))\)\s*")
+MARK_RE = re.compile(r"\(((?:[A-H])|(?:[a-e])|(?:[\u0905-\u0939])|(?:i{1,3}|iv|v)|(?:\d{1,2}))\)\s*")
 ROMAN_RE = re.compile(r"\((i{1,3}|iv|v)\)\s*", re.I)
 NUMPAREN_RE = re.compile(r"\(\d{1,2}\)\s*")
 
