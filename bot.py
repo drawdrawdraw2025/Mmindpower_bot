@@ -69,14 +69,31 @@ def send_text(chat_id, text, reply_markup=None):
              link_preview_options={"is_disabled": True})
     if reply_markup:
         p["reply_markup"] = reply_markup
-    return tg("sendMessage", **p)
+    res = tg("sendMessage", **p)
+    if not res.get("ok"):
+        p = dict(chat_id=chat_id, text=re.sub(r"<[^>]+>", "", text),
+                 link_preview_options={"is_disabled": True})
+        if reply_markup:
+            p["reply_markup"] = reply_markup
+        res = tg("sendMessage", **p)
+    return res
 
 def edit_text(chat_id, msg_id, text, reply_markup=None):
     p = dict(chat_id=chat_id, message_id=msg_id, text=text, parse_mode="HTML",
              link_preview_options={"is_disabled": True})
     if reply_markup:
         p["reply_markup"] = reply_markup
-    return tg("editMessageText", **p)
+    res = tg("editMessageText", **p)
+    if not res.get("ok"):
+        p = dict(chat_id=chat_id, message_id=msg_id, text=re.sub(r"<[^>]+>", "", text),
+                 link_preview_options={"is_disabled": True})
+        if reply_markup:
+            p["reply_markup"] = reply_markup
+        res2 = tg("editMessageText", **p)
+        if res2.get("ok"):
+            return res2
+        return send_text(chat_id, text, reply_markup)
+    return res
 
 # ---------------- AI chat ----------------
 def groq_reply(chat_id, text):
@@ -250,7 +267,7 @@ def parse_pipe_rows(text):
 
 def mono_table(rows):
     cols = max(len(r) for r in rows)
-    rows = [[html.escape(c) for c in r] + [""] * (cols - len(r)) for r in rows]
+    rows = [r + [""] * (cols - len(r)) for r in rows]
     widths = [max(len(r[i]) for r in rows) for i in range(cols)]
     def hline(l, m, rr):
         return l + m.join("─" * (w + 2) for w in widths) + rr
@@ -306,7 +323,7 @@ def _font(sz, bold=False):
 def table_png(rows):
     if not PIL_OK:
         return None
-    rows = [[str(c) for c in r] for r in rows]
+    rows = [[html.unescape(str(c)) for c in r] for r in rows]
     cols = max(len(r) for r in rows)
     rows = [r + [""] * (cols - len(r)) for r in rows]
     f_reg, f_bold = _font(26), _font(26, True)
@@ -445,9 +462,9 @@ def tg_photo(chat_id, png_bytes, caption=None):
         return {}
 
 def q_text_block(set_letter, index, q, us):
-    mr = q.get("q_marathi", "")
-    en = q.get("q_english", "")
-    opts = q.get("options", [])
+    mr = html.escape(q.get("q_marathi", "") or "", quote=False)
+    en = html.escape(q.get("q_english", "") or "", quote=False)
+    opts = [html.escape(str(o or ""), quote=False) for o in q.get("options", [])]
     letters = ["A", "B", "C", "D"]
     opt_lines = "\n".join(f"<b>{letters[i]})</b> {opts[i]}" for i in range(min(4, len(opts))))
     head = (f"📚 <b>Daily Quiz — Set {set_letter}</b>  "
@@ -502,16 +519,28 @@ def fit_body(L, idx, q, us, tail):
         return body
     return q_body(L, idx, q, us, with_english=False, limit=max(500, 4000 - len(tail) - 10))
 
+def _safe_cut(txt, room):
+    if len(txt) <= room:
+        return txt
+    cut = txt[:max(0, room - 1)]
+    tail = cut[-4:]
+    if "&" in tail and ";" not in tail.rsplit("&", 1)[1]:
+        cut = cut[:cut.rfind("&")]
+    return cut + "…"
+
 def exp_block(qid, q):
     ci = q.get("correct_index", 0)
     letters = "ABCD"
-    exp = q.get("explanation_marathi", "")
-    ev = q.get("evidence", "")
+    exp = html.escape(q.get("explanation_marathi", "") or "", quote=False)
+    ev = html.escape(q.get("evidence", "") or "", quote=False)
     b = (f"📖 <b>Explanation — {qid}</b>\n"
          f"✅ Correct answer: <b>{letters[ci]}</b>\n\n{exp}")
+    if len(b) > 3900:
+        b = _safe_cut(b, 3900)
     if ev:
-        b += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
-    return b[:3950]
+        room = max(0, 3900 - len(b) - len("\n\n🔎 <b>Evidence:</b>\n<i></i>") - 2)
+        b += f"\n\n🔎 <b>Evidence:</b>\n<i>{_safe_cut(ev, room)}</i>"
+    return b
 
 def send_question(chat_id):
     us = u_state(chat_id)
