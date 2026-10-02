@@ -67,6 +67,6 @@ jobs:
           code=$?
           if [ "$code" -eq 42 ]; then exit 0; fi
           echo "Starting bot for up to 350 minutes..."
-          export TG_TOKEN="$ONE" GROQ_KEY="$TWO"
+          export TG_TOKEN="$ONE" GROQ_KEY="$TWO" GH_TOKEN="$THREE" REPO="$REPO"
           timeout 350m python3 bot.py || true
           echo "Bot session ended; next scheduled run will take over."
