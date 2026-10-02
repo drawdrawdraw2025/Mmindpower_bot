@@ -47,7 +47,7 @@ SYSTEM_PROMPT = (
 )
 
 MEM = {}          # chat_id -> AI chat history
-QS = None         # quiz state dict
+USERS = {}        # chat_id(str) -> per-user quiz state dict
 DATA = {}         # set letter -> list of questions
 STATE_SHA = None
 
@@ -116,18 +116,29 @@ def default_state():
 def gh_get_state():
     global STATE_SHA
     if not (GH_TOKEN and REPO):
-        return None
+        return {}
     try:
         r = requests.get(f"https://api.github.com/repos/{REPO}/contents/quiz_state.json",
                          headers={"Authorization": f"Bearer {GH_TOKEN}"}, timeout=30)
         if r.status_code == 404:
-            return None
+            return {}
         d = r.json()
         STATE_SHA = d["sha"]
-        return json.loads(base64.b64decode(d["content"]))
+        data = json.loads(base64.b64decode(d["content"]))
+        if isinstance(data, dict) and "users" in data:
+            return {str(k): v for k, v in data["users"].items()}
+        if isinstance(data, dict) and "set" in data:   # legacy flat state
+            return {str(OWNER_CHAT): data}
+        return {}
     except Exception as e:
         print("state load err:", e)
-        return None
+        return {}
+
+def u_state(chat_id):
+    k = str(chat_id)
+    if k not in USERS:
+        USERS[k] = default_state()
+    return USERS[k]
 
 def gh_save_state():
     global STATE_SHA
@@ -135,7 +146,7 @@ def gh_save_state():
         return
     try:
         body = {"message": "quiz state update",
-                "content": base64.b64encode(json.dumps(QS).encode()).decode(),
+                "content": base64.b64encode(json.dumps({"users": USERS}).encode()).decode(),
                 "branch": "main"}
         if STATE_SHA:
             body["sha"] = STATE_SHA
@@ -155,17 +166,17 @@ def save_state():
 def qid_of(set_letter, index):
     return f"{set_letter}{index + 1}"
 
-def current_q():
+def current_q(us):
     if not DATA:
         return None
-    L = QS["set"]
+    L = us["set"]
     while L and L not in DATA:
         L = next_set(L)
     if not L or L not in DATA:
         return None
-    if QS["index"] >= len(DATA[L]):
+    if us["index"] >= len(DATA[L]):
         return None
-    return L, QS["index"], DATA[L][QS["index"]]
+    return L, us["index"], DATA[L][us["index"]]
 
 def next_set(L):
     order = sorted(DATA.keys())
@@ -173,19 +184,19 @@ def next_set(L):
     return order[i + 1] if 0 <= i < len(order) - 1 else None
 
 # ---------------- Quiz messages ----------------
-def q_text_block(set_letter, index, q):
+def q_text_block(set_letter, index, q, us):
     mr = q.get("q_marathi", "")
     en = q.get("q_english", "")
     opts = q.get("options", [])
     letters = ["A", "B", "C", "D"]
     opt_lines = "\n".join(f"<b>{letters[i]})</b> {opts[i]}" for i in range(min(4, len(opts))))
     head = (f"📚 <b>Daily Quiz — Set {set_letter}</b>  "
-            f"(Q {index + 1}/{len(DATA[set_letter])} • today {QS['today_sent']}/{DAILY_LIMIT})\n\n")
+            f"(Q {index + 1}/{len(DATA[set_letter])} • today {us['today_sent']}/{DAILY_LIMIT})\n\n")
     return head, mr, en, opt_lines
 
-def q_body(set_letter, index, q, with_english=True, limit=3950):
+def q_body(set_letter, index, q, us, with_english=True, limit=3950):
     """Full question text (question + options), optionally with English, kept under limit."""
-    head, mr, en, opt_lines = q_text_block(set_letter, index, q)
+    head, mr, en, opt_lines = q_text_block(set_letter, index, q, us)
     body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
     if with_english and en and len(body) + len(en) < limit:
         body += f"\n\n🇬🇧 <i>{en}</i>"
@@ -221,14 +232,14 @@ def get_q(qid):
         return L, idx, DATA[L][idx]
     return None
 
-def fit_body(L, idx, q, tail):
-    body = q_body(L, idx, q)
+def fit_body(L, idx, q, us, tail):
+    body = q_body(L, idx, q, us)
     if len(body) + len(tail) <= 4000:
         return body
-    body = q_body(L, idx, q, with_english=False)
+    body = q_body(L, idx, q, us, with_english=False)
     if len(body) + len(tail) <= 4000:
         return body
-    return q_body(L, idx, q, with_english=False, limit=max(500, 4000 - len(tail) - 10))
+    return q_body(L, idx, q, us, with_english=False, limit=max(500, 4000 - len(tail) - 10))
 
 def exp_block(qid, q):
     ci = q.get("correct_index", 0)
@@ -241,50 +252,52 @@ def exp_block(qid, q):
         b += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
     return b[:3950]
 
-def send_question():
-    cur = current_q()
+def send_question(chat_id):
+    us = u_state(chat_id)
+    cur = current_q(us)
     if not cur:
-        send_text(OWNER_CHAT, "🎉 <b>All available quiz sets are complete!</b> More sets coming soon.")
-        QS["active"] = False
+        send_text(chat_id, "🎉 <b>All available quiz sets are complete!</b> More sets coming soon.")
+        us["active"] = False
         save_state()
         return False
     L, idx, q = cur
     qid = qid_of(L, idx)
-    QS["today_sent"] += 1
-    QS["total_done"] += 1
-    head, mr, en, opt_lines = q_text_block(L, idx, q)
+    us["today_sent"] += 1
+    us["total_done"] += 1
+    head, mr, en, opt_lines = q_text_block(L, idx, q, us)
     body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
     if len(body) + len(en) < 3900:
         body += f"\n\n🇬🇧 <i>{en}</i>"
         en_sent_inside = True
     else:
         en_sent_inside = False
-    res = send_text(OWNER_CHAT, body, reply_markup=kb_answers(qid))
+    res = send_text(chat_id, body, reply_markup=kb_answers(qid))
     msg_id = (res.get("result") or {}).get("message_id")
     if not en_sent_inside and en:
-        send_text(OWNER_CHAT, f"🇬🇧 <i>{en}</i>")
-    QS["pending_qid"] = qid
-    QS["pending_msg"] = msg_id
-    QS["next_due"] = time.time() + IDLE_NEXT_SECS
+        send_text(chat_id, f"🇬🇧 <i>{en}</i>")
+    us["pending_qid"] = qid
+    us["pending_msg"] = msg_id
+    us["next_due"] = time.time() + IDLE_NEXT_SECS
     save_state()
-    print(f"sent {qid} to {OWNER_CHAT}")
+    print(f"sent {qid} to {chat_id}")
     return True
 
-def advance(when=None):
+def advance(chat_id, when=None):
     """Move pointer to next question; cross into next set if needed."""
-    L = QS["set"]
-    if L in DATA and QS["index"] + 1 < len(DATA[L]):
-        QS["index"] += 1
+    us = u_state(chat_id)
+    L = us["set"]
+    if L in DATA and us["index"] + 1 < len(DATA[L]):
+        us["index"] += 1
     else:
         nxt = next_set(L)
         if nxt:
-            QS["set"] = nxt
-            QS["index"] = 0
+            us["set"] = nxt
+            us["index"] = 0
         else:
-            QS["active"] = False
-    QS["next_due"] = when if when else time.time()
-    QS["pending_qid"] = None
-    QS["pending_msg"] = None
+            us["active"] = False
+    us["next_due"] = when if when else time.time()
+    us["pending_qid"] = None
+    us["pending_msg"] = None
     save_state()
 
 def day_plan():
@@ -311,27 +324,36 @@ def kb_daypicker():
     rows.append([{"text": "❌ Cancel", "callback_data": "pickcancel"}])
     return {"inline_keyboard": rows}
 
-def quiz_tick():
-    global QS
-    if not DATA or QS is None or not QS.get("active"):
+def tick_user(chat_id, now):
+    us = USERS[str(chat_id)]
+    if not us.get("active"):
         return
-    now = datetime.datetime.now(IST)
     today = now.strftime("%Y-%m-%d")
-    if today != QS["day"]:
-        QS["day"] = today
-        QS["today_sent"] = 0
+    if today != us["day"]:
+        us["day"] = today
+        us["today_sent"] = 0
         save_state()
-    if QS["today_sent"] >= DAILY_LIMIT:
+    if us["today_sent"] >= DAILY_LIMIT:
         return
     if not (SEND_HOUR_START <= now.hour < SEND_HOUR_END):
         return
-    if time.time() < QS.get("next_due", 0):
+    if time.time() < us.get("next_due", 0):
         return
-    if QS.get("pending_qid"):
+    if us.get("pending_qid"):
         # User didn't answer in time: move on silently, no auto-reveal.
-        advance(when=time.time() + 30)
+        advance(chat_id, when=time.time() + 30)
         return
-    send_question()
+    send_question(chat_id)
+
+def quiz_tick():
+    if not DATA or not USERS:
+        return
+    now = datetime.datetime.now(IST)
+    for k in list(USERS.keys()):
+        try:
+            tick_user(int(k), now)
+        except Exception as e:
+            print("tick err", k, e)
 
 def handle_callback(cb):
     data = cb.get("data", "")
@@ -343,7 +365,8 @@ def handle_callback(cb):
     def ack(text=""):
         tg("answerCallbackQuery", callback_query_id=cb["id"], text=text)
 
-    cur = current_q()
+    us = u_state(chat_id)
+    cur = current_q(us)
     cur_qid = qid_of(cur[0], cur[1]) if cur else None
 
     if kind == "ans":
@@ -359,12 +382,12 @@ def handle_callback(cb):
         verdict = ("✅ <b>Correct!</b>" if chosen == ci else
                    f"❌ You chose <b>{letters[chosen]}</b>. Correct answer: <b>{letters[ci]}</b>")
         tail = f"\n\n{verdict}"
-        body = fit_body(L, idx, q, tail)
+        body = fit_body(L, idx, q, us, tail)
         edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
         ack("Correct!" if chosen == ci else f"Correct answer: {letters[ci]}")
         if qid == cur_qid:
-            advance(when=time.time() + ANSWERED_NEXT_SECS)
-            QS["_answered_qid"] = qid
+            advance(chat_id, when=time.time() + ANSWERED_NEXT_SECS)
+            us["_answered_qid"] = qid
         # old/skipped questions: no state change — buttons keep working
 
     elif kind == "rev":
@@ -376,12 +399,12 @@ def handle_callback(cb):
         L, idx, q = g
         ci = q.get("correct_index", 0)
         tail = f"\n\n🔓 <b>Answer revealed — correct answer: {'ABCD'[ci]}</b>"
-        body = fit_body(L, idx, q, tail)
+        body = fit_body(L, idx, q, us, tail)
         edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
         ack(f"Correct answer: {'ABCD'[ci]}")
         if qid == cur_qid:
-            advance(when=time.time() + ANSWERED_NEXT_SECS)
-            QS["_answered_qid"] = qid
+            advance(chat_id, when=time.time() + ANSWERED_NEXT_SECS)
+            us["_answered_qid"] = qid
 
     elif kind == "exp":
         qid = parts[1]
@@ -393,7 +416,7 @@ def handle_callback(cb):
         block = exp_block(qid, q)
         ans_line = f"\n\n✅ Correct answer: <b>{'ABCD'[q.get('correct_index', 0)]}</b>"
         tail = f"{ans_line}\n\n{block}"
-        body = fit_body(L, idx, q, tail)
+        body = fit_body(L, idx, q, us, tail)
         if len(body) + len(tail) <= 4000:
             # toggle inline: show
             edit_text(chat_id, msg_id, body + tail, reply_markup=kb_hide_inline(qid))
@@ -419,7 +442,7 @@ def handle_callback(cb):
         if g:
             L, idx, q = g
             tail = f"\n\n✅ Correct answer: <b>{'ABCD'[q.get('correct_index', 0)]}</b>"
-            body = fit_body(L, idx, q, tail)
+            body = fit_body(L, idx, q, us, tail)
             edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
         ack("Hidden.")
 
@@ -467,7 +490,7 @@ def handle_callback(cb):
             if LL == L and st == start:
                 day_no = d
                 break
-        QS.update({"set": L, "index": start, "day": today, "today_sent": 0,
+        us.update({"set": L, "index": start, "day": today, "today_sent": 0,
                    "next_due": 0, "pending_qid": None, "pending_msg": None,
                    "active": True})
         save_state()
@@ -484,9 +507,9 @@ def handle_callback(cb):
     elif kind == "next":
         qid = parts[1] if len(parts) > 1 else ""
         if cur and qid == cur_qid:
-            advance(when=time.time() + 2)
+            advance(chat_id, when=time.time() + 2)
         else:
-            QS["next_due"] = min(QS.get("next_due", 0), time.time() + 2)
+            us["next_due"] = min(us.get("next_due", 0), time.time() + 2)
             save_state()
         ack("Next question coming…")
 
@@ -509,9 +532,7 @@ def handle(update):
     if chat_id is None:
         return
     if text.startswith("/quiz"):
-        if chat_id != OWNER_CHAT:
-            send_text(chat_id, "📚 Quiz mode is in private beta — coming soon for everyone!")
-            return
+        us = u_state(chat_id)
         arg = text[5:].strip().lower()
         if arg == "reset":
             txt = ("🔄 <b>Quiz Reset</b>\n\nPick any day's quiz to restart from — "
@@ -519,18 +540,18 @@ def handle(update):
                    "questions will be delivered today. 📅")
             send_text(chat_id, txt, reply_markup=kb_daypicker())
         elif arg == "stop":
-            QS["active"] = False
+            us["active"] = False
             save_state()
             send_text(chat_id, "⏸ Quiz paused. Send /quiz to resume.")
         elif arg == "status":
-            cur = current_q()
-            pos = f"Set {QS['set']}, next Q {QS['index'] + 1}" if cur else "bank complete"
-            send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {QS['today_sent']}/{DAILY_LIMIT}\n"
-                               f"Total answered: {QS['total_done']}\nActive: {'✅' if QS['active'] else '⏸'}")
+            cur = current_q(us)
+            pos = f"Set {us['set']}, next Q {us['index'] + 1}" if cur else "bank complete"
+            send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {us['today_sent']}/{DAILY_LIMIT}\n"
+                               f"Total answered: {us['total_done']}\nActive: {'✅' if us['active'] else '⏸'}")
         else:
-            QS["active"] = True
-            if QS.get("pending_qid") is None:
-                QS["next_due"] = 0
+            us["active"] = True
+            if us.get("pending_qid") is None:
+                us["next_due"] = 0
             save_state()
             send_text(chat_id, "▶️ Quiz resumed/started — next question coming right up!")
             quiz_tick()
@@ -551,12 +572,12 @@ def handle(update):
 
 # ---------------- main ----------------
 def main():
-    global QS
+    global USERS
     me = tg("getMe")
     print("Bot running as", me.get("result", {}).get("username"))
     load_data()
-    QS = gh_get_state() or default_state()
-    print("quiz state:", {k: QS.get(k) for k in ("set", "index", "day", "today_sent", "active")})
+    USERS = gh_get_state() or {}
+    print("quiz users:", len(USERS))
     offset = None
     conflicts = 0
     last_tick = 0
