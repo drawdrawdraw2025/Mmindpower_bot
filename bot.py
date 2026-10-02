@@ -111,13 +111,28 @@ def main():
     me = tg("getMe")
     print("Bot running as", me.get("result", {}).get("username"))
     offset = None
+    conflicts = 0
     while True:
         try:
             params = {"timeout": 50, "allowed_updates": ["message"]}
             if offset:
                 params["offset"] = offset
-            r = requests.post(f"{TG}/getUpdates", json=params, timeout=70).json()
-            for up in r.get("result", []):
+            data = requests.post(f"{TG}/getUpdates", json=params, timeout=70).json()
+            if not data.get("ok"):
+                desc = str(data.get("description", ""))
+                if "conflict" in desc.lower():
+                    conflicts += 1
+                    print("Conflict with another poller", conflicts)
+                    if conflicts >= 3:
+                        print("Another bot instance is active — exiting.")
+                        return
+                    time.sleep(5)
+                else:
+                    print("TG not ok:", desc[:120])
+                    time.sleep(3)
+                continue
+            conflicts = 0
+            for up in data.get("result", []):
                 offset = up["update_id"] + 1
                 try:
                     handle(up)

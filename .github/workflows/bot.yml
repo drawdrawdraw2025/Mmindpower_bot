@@ -1,0 +1,71 @@
+name: bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+  push:
+    branches: [main]
+    paths: ['bot.py', '.github/workflows/bot.yml']
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        id: check
+        env:
+          T: ${{ secrets.TG_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then
+            echo "No TG_TOKEN secret configured — exiting quietly."
+            echo "skip=1" >> $GITHUB_OUTPUT
+          else
+            echo "skip=0" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.skip == '0'
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        if: steps.check.outputs.skip == '0'
+        run: pip install requests
+
+      - name: Run bot (handover-aware)
+        if: steps.check.outputs.skip == '0'
+        env:
+          TG_TOKEN: *** secrets.TG_TOKEN }}
+          GROQ_KEY: *** secrets.GROQ_KEY }}
+          GH_TOKEN: *** github.token }}
+          REPO: ${{ github.repository }}
+          MY_RUN: ${{ github.run_id }}
+        run: |
+          set +e
+          python3 - <<'PYEOF'
+          import os, json, urllib.request, sys
+          repo  = os.environ['REPO']
+          token = os.environ['GH_TOKEN']
+          my    = int(os.environ['MY_RUN'])
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{repo}/actions/runs?per_page=30",
+              headers={"Authorization": f"Bearer {token}",
+                       "Accept": "application/vnd.github+json"})
+          runs = json.load(urllib.request.urlopen(req))["workflow_runs"]
+          active = [r for r in runs
+                    if r["name"] == "bot" and r["id"] != my
+                    and r["status"] in ("in_progress",)]
+          older = [r for r in active if r["id"] < my]
+          if older:
+              print(f"Older bot run {older[0]['id']} still active - standing down.")
+              sys.exit(42)
+          print("No older active run - this run takes over.")
+          PYEOF
+          code=$?
+          if [ "$code" -eq 42 ]; then exit 0; fi
+          echo "Starting bot for up to 350 minutes..."
+          timeout 350m python3 bot.py || true
+          echo "Bot session ended; next scheduled run will take over."
