@@ -43,7 +43,7 @@ HELP = (
     "Or simply send any text and the AI will reply. 💬"
 )
 ABOUT = ("🤖 <b>About Mmindpower Bot</b>\n\nAI assistant + Daily Quiz engine.\n"
-         "Quiz bank: Talathi MPSC 2026 sets. Powered by Groq. ⚡")
+         "Quiz bank: Talathi MPSC 2026 sets.\n\nPowered by <b>Mmindpower</b> 💖")
 SYSTEM_PROMPT = (
     "You are Mmindpower Bot, a helpful, friendly Telegram assistant. "
     "Answer clearly and concisely. Use short paragraphs; plain text only "
