@@ -197,182 +197,176 @@ def kb_answers(qid):
         {"text": "🅰️ A", "callback_data": f"ans|{qid}|0"},
         {"text": "🅱️ B", "callback_data": f"ans|{qid}|1"}], [
         {"text": "🅲 C", "callback_data": f"ans|{qid}|2"},
-        {"text": "🅳 D", "callback_data": f"ans|{qid}|3"}]]}
+        {"text": "🅳 D", "callback_data": f"ans|{qid}|3"}], [
+        {"text": "📖 Reveal answer & explanation", "callback_data": f"rev|{qid}"}]]}
 
-def kb_explain(qid, next_due_far=True):
-    row1 = [{"text": "📖 Show Explanation", "callback_data": f"exp|{qid}"}]
-    row2 = [{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]
-    return {"inline_keyboard": [row1, row2]}
+def kb_show(qid):
+    return {"inline_keyboard": [
+        [{"text": "📖 Show Explanation", "callback_data": f"exp|{qid}"}],
+        [{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]]}
 
-def send_question():
-    cur = current_q()
-    if not cur:
-        send_text(OWNER_CHAT, "🎉 <b>All available quiz sets are complete!</b> More sets coming soon.")
-        QS["active"] = False
-        save_state()
-        return False
-    L, idx, q = cur
-    qid = qid_of(L, idx)
-    QS["today_sent"] += 1
-    QS["total_done"] += 1
-    head, mr, en, opt_lines = q_text_block(L, idx, q)
-    body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
-    if len(body) + len(en) < 3900:
-        body += f"\n\n🇬🇧 <i>{en}</i>"
-        en_sent_inside = True
-    else:
-        en_sent_inside = False
-    res = send_text(OWNER_CHAT, body, reply_markup=kb_answers(qid))
-    msg_id = (res.get("result") or {}).get("message_id")
-    if not en_sent_inside and en:
-        send_text(OWNER_CHAT, f"🇬🇧 <i>{en}</i>")
-    QS["pending_qid"] = qid
-    QS["pending_msg"] = msg_id
-    QS["next_due"] = time.time() + IDLE_NEXT_SECS
-    save_state()
-    print(f"sent {qid} to {OWNER_CHAT}")
-    return True
+def kb_hide_inline(qid):
+    return {"inline_keyboard": [
+        [{"text": "🙈 Hide Explanation", "callback_data": f"hexp|{qid}"}],
+        [{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]]}
 
-def finalize_pending(time_up=False):
-    """Reveal answer on the pending question, keeping the full question visible."""
-    cur = current_q()
-    if not cur or not QS.get("pending_msg"):
-        return
-    L, idx, q = cur
-    qid = qid_of(L, idx)
-    if QS.get("pending_qid") != qid:
-        return
-    ci = q.get("correct_index", 0)
-    letters = ["A", "B", "C", "D"]
-    note = "⏰ <b>Time's up!</b> " if time_up else ""
+def get_q(qid):
+    L = qid[0]
+    try:
+        idx = int(qid[1:]) - 1
+    except Exception:
+        return None
+    if L in DATA and 0 <= idx < len(DATA[L]):
+        return L, idx, DATA[L][idx]
+    return None
+
+def fit_body(L, idx, q, tail):
     body = q_body(L, idx, q)
-    tail = f"\n\n{note}✅ <b>Correct answer: {letters[ci]}</b>\nTap below for the explanation:"
-    if len(body) + len(tail) > 4000:
-        body = q_body(L, idx, q, with_english=False)
-    edit_text(OWNER_CHAT, QS["pending_msg"],
-              body + tail, reply_markup=kb_explain(qid))
-    QS["pending_qid"] = None
-    QS["pending_msg"] = None
+    if len(body) + len(tail) <= 4000:
+        return body
+    body = q_body(L, idx, q, with_english=False)
+    if len(body) + len(tail) <= 4000:
+        return body
+    return q_body(L, idx, q, with_english=False, limit=max(500, 4000 - len(tail) - 10))
 
-def advance(when=None):
-    """Move pointer to next question; cross into next set if needed."""
-    L = QS["set"]
-    if L in DATA and QS["index"] + 1 < len(DATA[L]):
-        QS["index"] += 1
-    else:
-        nxt = next_set(L)
-        if nxt:
-            QS["set"] = nxt
-            QS["index"] = 0
-        else:
-            QS["active"] = False
-    QS["next_due"] = when if when else time.time()
-    QS["pending_qid"] = None
-    QS["pending_msg"] = None
-    save_state()
+def exp_block(qid, q):
+    ci = q.get("correct_index", 0)
+    letters = "ABCD"
+    exp = q.get("explanation_marathi", "")
+    ev = q.get("evidence", "")
+    b = (f"📖 <b>Explanation — {qid}</b>\n"
+         f"✅ Correct answer: <b>{letters[ci]}</b>\n\n{exp}")
+    if ev:
+        b += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
+    return b[:3950]
 
-# ---------------- Quiz scheduler tick ----------------
-def quiz_tick():
-    global QS
-    if not DATA or QS is None or not QS.get("active"):
-        return
-    now = datetime.datetime.now(IST)
-    today = now.strftime("%Y-%m-%d")
-    if today != QS["day"]:
-        QS["day"] = today
-        QS["today_sent"] = 0
-        save_state()
-    if QS["today_sent"] >= DAILY_LIMIT:
-        return
-    if not (SEND_HOUR_START <= now.hour < SEND_HOUR_END):
-        return
-    if time.time() < QS.get("next_due", 0):
-        return
-    if QS.get("pending_qid"):
-        # User didn't answer in time: move on silently, no auto-reveal.
-        advance(when=time.time() + 30)
-        return
-    send_question()
-
-# ---------------- Callbacks & messages ----------------
 def handle_callback(cb):
     data = cb.get("data", "")
+    parts = data.split("|")
+    kind = parts[0] if parts else ""
     chat_id = cb["message"]["chat"]["id"]
     msg_id = cb["message"]["message_id"]
+
+    def ack(text=""):
+        tg("answerCallbackQuery", callback_query_id=cb["id"], text=text)
+
     cur = current_q()
     cur_qid = qid_of(cur[0], cur[1]) if cur else None
-    try:
-        kind, qid, rest = (data.split("|") + ["", ""])[:3]
-    except Exception:
-        return
+
     if kind == "ans":
-        if qid != cur_qid:
-            tg("answerCallbackQuery", callback_query_id=cb["id"],
-               text="This question was already completed.")
+        qid = parts[1]
+        g = get_q(qid)
+        if not g:
+            ack("Question unavailable.")
             return
-        L, idx, q = cur
-        chosen = int(rest)
+        L, idx, q = g
+        chosen = int(parts[2])
         ci = q.get("correct_index", 0)
-        letters = ["A", "B", "C", "D"]
+        letters = "ABCD"
         verdict = ("✅ <b>Correct!</b>" if chosen == ci else
                    f"❌ You chose <b>{letters[chosen]}</b>. Correct answer: <b>{letters[ci]}</b>")
-        # Keep the full question visible, append the verdict below it.
-        body = q_body(L, idx, q)
-        tail = f"\n\n{verdict}\n\nTap below for the explanation:"
-        if len(body) + len(tail) > 4000:
-            body = q_body(L, idx, q, with_english=False)
-        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_explain(qid))
-        tg("answerCallbackQuery", callback_query_id=cb["id"],
-           text="Correct!" if chosen == ci else f"Correct answer: {letters[ci]}")
-        # move pointer to the next question; explanation stays accessible via qid lookup
-        advance(when=time.time() + ANSWERED_NEXT_SECS)
-        QS["_answered_qid"] = qid
+        tail = f"\n\n{verdict}"
+        body = fit_body(L, idx, q, tail)
+        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
+        ack("Correct!" if chosen == ci else f"Correct answer: {letters[ci]}")
+        if qid == cur_qid:
+            advance(when=time.time() + ANSWERED_NEXT_SECS)
+            QS["_answered_qid"] = qid
+        # old/skipped questions: no state change — buttons keep working
+
     elif kind == "rev":
-        if qid != cur_qid:
-            tg("answerCallbackQuery", callback_query_id=cb["id"],
-               text="This question was already completed.")
+        qid = parts[1]
+        g = get_q(qid)
+        if not g:
+            ack("Question unavailable.")
             return
-        L, idx, q = cur
+        L, idx, q = g
         ci = q.get("correct_index", 0)
-        letters = ["A", "B", "C", "D"]
-        body = q_body(L, idx, q)
-        tail = (f"\n\n🔓 <b>Answer revealed — correct answer: {letters[ci]}</b>\n\n"
-                f"Tap below for the full explanation:")
-        if len(body) + len(tail) > 4000:
-            body = q_body(L, idx, q, with_english=False)
-        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_explain(qid))
-        tg("answerCallbackQuery", callback_query_id=cb["id"],
-           text=f"Correct answer: {letters[ci]}")
-        advance(when=time.time() + ANSWERED_NEXT_SECS)
-        QS["_answered_qid"] = qid
+        tail = f"\n\n🔓 <b>Answer revealed — correct answer: {'ABCD'[ci]}</b>"
+        body = fit_body(L, idx, q, tail)
+        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
+        ack(f"Correct answer: {'ABCD'[ci]}")
+        if qid == cur_qid:
+            advance(when=time.time() + ANSWERED_NEXT_SECS)
+            QS["_answered_qid"] = qid
+
     elif kind == "exp":
-        if not cur or qid != cur_qid:
-            q = find_by_qid(qid)
+        qid = parts[1]
+        g = get_q(qid)
+        if not g:
+            ack("Question unavailable.")
+            return
+        L, idx, q = g
+        block = exp_block(qid, q)
+        ans_line = f"\n\n✅ Correct answer: <b>{'ABCD'[q.get('correct_index', 0)]}</b>"
+        tail = f"{ans_line}\n\n{block}"
+        body = fit_body(L, idx, q, tail)
+        if len(body) + len(tail) <= 4000:
+            # toggle inline: show
+            edit_text(chat_id, msg_id, body + tail, reply_markup=kb_hide_inline(qid))
         else:
-            q = cur[2]
-        if q:
-            ci = q.get("correct_index", 0)
-            letters = ["A", "B", "C", "D"]
-            exp = q.get("explanation_marathi", "")
-            ev = q.get("evidence", "")
-            block = (f"📖 <b>Explanation — {qid}</b>\n"
-                     f"✅ Correct answer: <b>{letters[ci]}</b>\n\n{exp}")
-            if ev:
-                block += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
-            if len(block) > 3900:
-                block = block[:3900] + "…"
-            # Send explanation as a NEW message so the question stays visible above.
-            send_text(chat_id, block,
-                      reply_markup={"inline_keyboard": [[{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]]})
-        tg("answerCallbackQuery", callback_query_id=cb["id"])
+            # explanation as separate message with its own hide button
+            exp_kb = {"inline_keyboard": [[{"text": "🙈 Hide Explanation",
+                                            "callback_data": f"hx|{msg_id}|{qid}"}]]}
+            r = send_text(chat_id, block, reply_markup=exp_kb)
+            exp_id = (r.get("result") or {}).get("message_id")
+            if exp_id:
+                q_kb = {"inline_keyboard": [
+                    [{"text": "🙈 Hide Explanation",
+                      "callback_data": f"hxd|{exp_id}|{msg_id}|{qid}"}],
+                    [{"text": "▶️ Next question now",
+                      "callback_data": f"next|{qid}"}]]}
+                tg("editMessageReplyMarkup", chat_id=chat_id, message_id=msg_id,
+                   reply_markup=q_kb)
+        ack()
+
+    elif kind == "hexp":
+        qid = parts[1]
+        g = get_q(qid)
+        if g:
+            L, idx, q = g
+            tail = f"\n\n✅ Correct answer: <b>{'ABCD'[q.get('correct_index', 0)]}</b>"
+            body = fit_body(L, idx, q, tail)
+            edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
+        ack("Hidden.")
+
+    elif kind == "hx":
+        # hide button on the separate explanation message itself
+        try:
+            q_msg_id = int(parts[1])
+        except Exception:
+            q_msg_id = None
+        qid = parts[2] if len(parts) > 2 else ""
+        tg("deleteMessage", chat_id=chat_id, message_id=msg_id)
+        if q_msg_id and qid:
+            tg("editMessageReplyMarkup", chat_id=chat_id, message_id=q_msg_id,
+               reply_markup=kb_show(qid))
+        ack("Hidden.")
+
+    elif kind == "hxd":
+        # hide button on the question message while explanation is separate
+        try:
+            exp_id = int(parts[1])
+            q_msg_id = int(parts[2])
+        except Exception:
+            ack()
+            return
+        qid = parts[3] if len(parts) > 3 else ""
+        tg("deleteMessage", chat_id=chat_id, message_id=exp_id)
+        if q_msg_id and qid:
+            tg("editMessageReplyMarkup", chat_id=chat_id, message_id=q_msg_id,
+               reply_markup=kb_show(qid))
+        ack("Hidden.")
+
     elif kind == "next":
+        qid = parts[1] if len(parts) > 1 else ""
         if cur and qid == cur_qid:
             advance(when=time.time() + 2)
-            tg("answerCallbackQuery", callback_query_id=cb["id"], text="Next question coming…")
         else:
             QS["next_due"] = min(QS.get("next_due", 0), time.time() + 2)
             save_state()
-            tg("answerCallbackQuery", callback_query_id=cb["id"], text="Next question coming…")
+        ack("Next question coming…")
+
 
 def find_by_qid(qid):
     L = qid[0]
