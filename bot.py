@@ -115,7 +115,8 @@ def default_state():
     today = datetime.datetime.now(IST).strftime("%Y-%m-%d")
     return {"set": "A", "index": 0, "day": today, "today_sent": 0,
             "next_due": 0, "pending_qid": None, "pending_msg": None,
-            "active": True, "total_done": 0}
+            "active": True, "total_done": 0,
+            "done": {}, "stats": {}, "first_seen": 0, "last_seen": 0}
 
 def gh_get_state():
     global STATE_SHA
@@ -164,7 +165,13 @@ def gh_save_state():
     except Exception as e:
         print("state save err:", e)
 
-def save_state():
+LAST_STATE_SAVE = {"t": 0.0}
+
+def save_state(force=False):
+    now = time.time()
+    if not force and now - LAST_STATE_SAVE["t"] < 120:
+        return
+    LAST_STATE_SAVE["t"] = now
     gh_save_state()
 
 def qid_of(set_letter, index):
@@ -626,6 +633,164 @@ def quiz_tick():
         except Exception as e:
             print("tick err", k, e)
 
+
+MILESTONES = [10, 25, 50, 100, 250, 500, 1000, 2000, 5000]
+
+def meta():
+    m = USERS.setdefault("0", default_state())
+    m["active"] = False
+    return m
+
+def mark_seen(chat_id):
+    k = str(chat_id)
+    is_new = k not in USERS
+    us = u_state(chat_id)
+    nowts = time.time()
+    if not us.get("first_seen"):
+        us["first_seen"] = nowts
+    us["last_seen"] = nowts
+    if is_new and k != "0":
+        total = len([x for x in USERS if x != "0"])
+        if total in MILESTONES and total > meta().get("ms_signaled", 0):
+            meta()["ms_signaled"] = total
+            send_text(OWNER_CHAT,
+                      f"🎉🎉🎉 <b>MILESTONE: {total} STUDENTS!</b>\n\n"
+                      f"Mmindpower Bot just got its <b>{total}th</b> user! 🚀")
+
+def record_try(chat_id, qid, correct):
+    us = u_state(chat_id)
+    done = us.setdefault("done", {})
+    if qid in done or len(done) >= 900:
+        return
+    done[qid] = 1 if correct else 0
+    today = datetime.datetime.now(IST).strftime("%Y-%m-%d")
+    st = us.setdefault("stats", {})
+    row = st.setdefault(today, [0, 0, 0])
+    if correct:
+        row[1] += 1
+    else:
+        row[2] += 1
+    row[0] += 1
+    if len(st) > 30:
+        for old_d in sorted(st.keys())[:-30]:
+            del st[old_d]
+
+def _day0_ts(ist_now):
+    return ist_now.replace(hour=0, minute=0, second=0, microsecond=0).timestamp()
+
+def report_card(chat_id):
+    us = u_state(chat_id)
+    st = us.get("stats", {}) or {}
+    done = us.get("done", {}) or {}
+    ist = datetime.datetime.now(IST)
+    today = ist.strftime("%Y-%m-%d")
+    tr, ok, bad = st.get(today) or [0, 0, 0]
+    acc_t = f"{round(ok / tr * 100)}%" if tr else "—"
+    NL = "\n"
+    lines = ["🏆 <b>Mmindpower Report Card</b>", "",
+             f"📅 <b>Today ({ist.strftime('%d %b')})</b>",
+             f"📝 Tried {tr} | ✅ {ok} | ❌ {bad} | 🎯 {acc_t}"]
+    past = sorted([d for d in st.keys() if d != today], reverse=True)
+    for d in past[:3]:
+        t2, o2, _b2 = st[d]
+        a2 = f"{round(o2 / t2 * 100)}%" if t2 else "—"
+        dd = datetime.datetime.strptime(d, "%Y-%m-%d").strftime("%d %b")
+        lines.append(f"📅 {dd}: {t2} tried | 🎯 {a2}")
+    lines.append("")
+    streak = 0
+    cur = ist.date() if tr > 0 else ist.date() - datetime.timedelta(days=1)
+    while cur.strftime("%Y-%m-%d") in st and st[cur.strftime("%Y-%m-%d")][0] > 0:
+        streak += 1
+        cur -= datetime.timedelta(days=1)
+    lines.append(f"🔥 Streak: {streak} day{'s' if streak != 1 else ''}")
+    total_q = 90 * len(DATA)
+    tried = len(done)
+    pct = round(tried / total_q * 100) if total_q else 0
+    lines.append(f"🚀 Journey: {tried}/{total_q} questions ({pct}%)")
+    order = sorted(DATA.keys())
+    parts = []
+    for L in order:
+        if L < us["set"]:
+            parts.append(f"Set {L} ✔")
+        elif L == us["set"]:
+            parts.append(f"Set {L} ➤Q{us['index'] + 1}")
+        else:
+            parts.append(f"Set {L} ⬛")
+    lines.append("   " + " • ".join(parts))
+    tr_all = sum(r[0] for r in st.values())
+    ok_all = sum(r[1] for r in st.values())
+    acc_all = f"{round(ok_all / tr_all * 100)}%" if tr_all else "—"
+    lines.append(f"✅ Accuracy overall: {acc_all}")
+    best = None
+    for d, r in st.items():
+        t2, o2, _ = r
+        if t2 >= 3 and (best is None or (o2 / t2) > best[1]):
+            best = (d, o2 / t2)
+    if best:
+        dd = datetime.datetime.strptime(best[0], "%Y-%m-%d").strftime("%d %b")
+        lines.append(f"🏅 Best day: {dd} ({round(best[1] * 100)}%)")
+    rem = max(0, DAILY_LIMIT - us["today_sent"])
+    lines.append(f"⏳ Today remaining: {rem}/{DAILY_LIMIT}")
+    return NL.join(lines)
+
+def audience_report():
+    ids = [k for k in USERS if k != "0"]
+    if not ids:
+        return "📈 No users registered yet."
+    ist = datetime.datetime.now(IST)
+    today = ist.strftime("%Y-%m-%d")
+    day0 = _day0_ts(ist)
+    week0 = (ist - datetime.timedelta(days=7)).timestamp()
+    total = len(ids)
+    new_today = sum(1 for k in ids if (USERS[k].get("first_seen") or 0) >= day0)
+    act_today = sum(1 for k in ids if (USERS[k].get("last_seen") or 0) >= day0)
+    act_week = sum(1 for k in ids if (USERS[k].get("last_seen") or 0) >= week0)
+    quizzers = sum(1 for k in ids if USERS[k].get("done") or USERS[k].get("total_done", 0) > 0)
+    tr = sum((USERS[k].get("stats", {}) or {}).get(today, [0, 0, 0])[0] for k in ids)
+    ok = sum((USERS[k].get("stats", {}) or {}).get(today, [0, 0, 0])[1] for k in ids)
+    acc = f"{round(ok / tr * 100)}%" if tr else "—"
+    fan_k, fan_n = None, 0
+    for k in ids:
+        n = len(USERS[k].get("done", {}) or {})
+        if n > fan_n:
+            fan_k, fan_n = k, n
+    fan = "—"
+    if fan_k:
+        z = str(fan_k)
+        fan = f"{z[:2]}xxx{z[-2:]} ({fan_n} questions)"
+    NL = "\n"
+    return (f"📈 <b>Mmindpower Audience Report</b>{NL}{NL}"
+            f"👥 Total users: <b>{total}</b>{NL}"
+            f"🆕 New today: {new_today}{NL}"
+            f"⚡ Active today: {act_today}{NL}"
+            f"📆 Active last 7 days: {act_week}{NL}{NL}"
+            f"📚 Quiz players: {quizzers}{NL}"
+            f"🤖 AI-chat only: {total - quizzers}{NL}"
+            f"📝 Tried today (all users): {tr} | 🎯 {acc}{NL}{NL}"
+            f"🎖️ Superfan: {fan}")
+
+def maybe_send_digest():
+    ist = datetime.datetime.now(IST)
+    if ist.hour != 23 or ist.minute < 50:
+        return
+    today = ist.strftime("%Y-%m-%d")
+    m = meta()
+    if m.get("digest_day") == today:
+        return
+    m["digest_day"] = today
+    ids = [k for k in USERS if k != "0"]
+    day0 = _day0_ts(ist)
+    new_today = sum(1 for k in ids if (USERS[k].get("first_seen") or 0) >= day0)
+    tr = sum((USERS[k].get("stats", {}) or {}).get(today, [0, 0, 0])[0] for k in ids)
+    ok = sum((USERS[k].get("stats", {}) or {}).get(today, [0, 0, 0])[1] for k in ids)
+    acc = f"{round(ok / tr * 100)}%" if tr else "—"
+    send_text(OWNER_CHAT,
+              f"🌙 <b>Day Report — {ist.strftime('%d %b')}</b>\n\n"
+              f"👥 Users: {len(ids)} (+{new_today} new)\n"
+              f"📝 Questions tried: {tr} | 🎯 {acc}\n"
+              f"📚 Tomorrow: fresh 90 questions ready. 😴")
+    save_state(force=True)
+
 def handle_callback(cb):
     data = cb.get("data", "")
     parts = data.split("|")
@@ -654,6 +819,7 @@ def handle_callback(cb):
                    f"❌ You chose <b>{letters[chosen]}</b>. Correct answer: <b>{letters[ci]}</b>")
         tail = f"\n\n{verdict}"
         body = fit_body(L, idx, q, us, tail)
+        record_try(chat_id, qid, chosen == ci)
         edit_text(chat_id, msg_id, body + tail, reply_markup=kb_show(qid))
         ack("Correct!" if chosen == ci else f"Correct answer: {letters[ci]}")
         if qid == cur_qid:
@@ -816,10 +982,7 @@ def do_quiz_action(chat_id, action):
         save_state()
         send_text(chat_id, "⏸ Quiz paused. Send /quiz_resume to continue.")
     elif action == "status":
-        cur = current_q(us)
-        pos = f"Set {us['set']}, next Q {us['index'] + 1}" if cur else "bank complete"
-        send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {us['today_sent']}/{DAILY_LIMIT}\n"
-                           f"Total answered: {us['total_done']}\nActive: {'✅' if us['active'] else '⏸'}")
+        send_text(chat_id, report_card(chat_id))
     else:
         us["active"] = True
         if us.get("pending_qid") is None:
@@ -907,7 +1070,12 @@ def handle(update):
     chat_id, user = chat.get("id"), msg.get("from") or {}
     if chat_id is None:
         return
+    mark_seen(chat_id)
     token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
+    if token0 == "/audience":
+        if chat_id == OWNER_CHAT:
+            send_text(chat_id, audience_report())
+        return
     if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
         if token0 == "/quiz_pause":
             action = "pause"
@@ -974,6 +1142,7 @@ def main():
         try:
             if time.time() - last_tick > 2:
                 quiz_tick()
+                maybe_send_digest()
                 last_tick = time.time()
             params = {"timeout": 4, "allowed_updates": ["message", "callback_query"]}
             if offset:
