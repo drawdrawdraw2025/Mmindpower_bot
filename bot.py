@@ -179,8 +179,18 @@ def q_text_block(set_letter, index, q):
     letters = ["A", "B", "C", "D"]
     opt_lines = "\n".join(f"<b>{letters[i]})</b> {opts[i]}" for i in range(min(4, len(opts))))
     head = (f"📚 <b>Daily Quiz — Set {set_letter}</b>  "
-            f"(Q {index + 1}/{len(DATA[set_letter])} • today {QS['today_sent'] + 1}/{DAILY_LIMIT})\n\n")
+            f"(Q {index + 1}/{len(DATA[set_letter])} • today {QS['today_sent']}/{DAILY_LIMIT})\n\n")
     return head, mr, en, opt_lines
+
+def q_body(set_letter, index, q, with_english=True, limit=3950):
+    """Full question text (question + options), optionally with English, kept under limit."""
+    head, mr, en, opt_lines = q_text_block(set_letter, index, q)
+    body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
+    if with_english and en and len(body) + len(en) < limit:
+        body += f"\n\n🇬🇧 <i>{en}</i>"
+    if len(body) > limit:
+        body = body[:limit] + "…"
+    return body
 
 def kb_answers(qid):
     return {"inline_keyboard": [[
@@ -203,6 +213,8 @@ def send_question():
         return False
     L, idx, q = cur
     qid = qid_of(L, idx)
+    QS["today_sent"] += 1
+    QS["total_done"] += 1
     head, mr, en, opt_lines = q_text_block(L, idx, q)
     body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
     if len(body) + len(en) < 3900:
@@ -214,8 +226,6 @@ def send_question():
     msg_id = (res.get("result") or {}).get("message_id")
     if not en_sent_inside and en:
         send_text(OWNER_CHAT, f"🇬🇧 <i>{en}</i>")
-    QS["today_sent"] += 1
-    QS["total_done"] += 1
     QS["pending_qid"] = qid
     QS["pending_msg"] = msg_id
     QS["next_due"] = time.time() + IDLE_NEXT_SECS
@@ -224,7 +234,7 @@ def send_question():
     return True
 
 def finalize_pending(time_up=False):
-    """Reveal answer on the pending question (user ignored it)."""
+    """Reveal answer on the pending question, keeping the full question visible."""
     cur = current_q()
     if not cur or not QS.get("pending_msg"):
         return
@@ -234,11 +244,13 @@ def finalize_pending(time_up=False):
         return
     ci = q.get("correct_index", 0)
     letters = ["A", "B", "C", "D"]
-    note = "⏰ <b>Time's up!</b>" if time_up else ""
-    txt = (f"{note}\n✅ <b>Correct answer: {letters[ci]}</b>\n\n"
-           f"Tap below for the explanation, then continue.")
+    note = "⏰ <b>Time's up!</b> " if time_up else ""
+    body = q_body(L, idx, q)
+    tail = f"\n\n{note}✅ <b>Correct answer: {letters[ci]}</b>\nTap below for the explanation:"
+    if len(body) + len(tail) > 4000:
+        body = q_body(L, idx, q, with_english=False)
     edit_text(OWNER_CHAT, QS["pending_msg"],
-              txt, reply_markup=kb_explain(qid))
+              body + tail, reply_markup=kb_explain(qid))
     QS["pending_qid"] = None
     QS["pending_msg"] = None
 
@@ -304,9 +316,12 @@ def handle_callback(cb):
         letters = ["A", "B", "C", "D"]
         verdict = ("✅ <b>Correct!</b>" if chosen == ci else
                    f"❌ You chose <b>{letters[chosen]}</b>. Correct answer: <b>{letters[ci]}</b>")
-        edit_text(chat_id, msg_id,
-                  f"{verdict}\n\nTap below for the explanation:",
-                  reply_markup=kb_explain(qid))
+        # Keep the full question visible, append the verdict below it.
+        body = q_body(L, idx, q)
+        tail = f"\n\n{verdict}\n\nTap below for the explanation:"
+        if len(body) + len(tail) > 4000:
+            body = q_body(L, idx, q, with_english=False)
+        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_explain(qid))
         tg("answerCallbackQuery", callback_query_id=cb["id"],
            text="Correct!" if chosen == ci else f"Correct answer: {letters[ci]}")
         # move pointer to the next question; explanation stays accessible via qid lookup
@@ -318,14 +333,18 @@ def handle_callback(cb):
         else:
             q = cur[2]
         if q:
+            ci = q.get("correct_index", 0)
+            letters = ["A", "B", "C", "D"]
             exp = q.get("explanation_marathi", "")
             ev = q.get("evidence", "")
-            block = f"📖 <b>Explanation:</b>\n{exp}"
+            block = (f"📖 <b>Explanation — {qid}</b>\n"
+                     f"✅ Correct answer: <b>{letters[ci]}</b>\n\n{exp}")
             if ev:
                 block += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
             if len(block) > 3900:
                 block = block[:3900] + "…"
-            edit_text(chat_id, msg_id, block,
+            # Send explanation as a NEW message so the question stays visible above.
+            send_text(chat_id, block,
                       reply_markup={"inline_keyboard": [[{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]]})
         tg("answerCallbackQuery", callback_query_id=cb["id"])
     elif kind == "next":
