@@ -321,13 +321,15 @@ def _font(sz, bold=False):
     return ImageFont.load_default()
 
 def table_png(rows):
+    """Exam-paper style PNG with real word-wrapping inside cells."""
     if not PIL_OK:
         return None
     rows = [[html.unescape(str(c)) for c in r] for r in rows]
     cols = max(len(r) for r in rows)
     rows = [r + [""] * (cols - len(r)) for r in rows]
     f_reg, f_bold = _font(26), _font(26, True)
-    PADX, PADY, LINE_H, MAXW = 18, 14, 34, 460
+    PADX, PADY, LINE_H = 18, 12, 32
+    COL_MIN, COL_MAX = 150, 460
     tmp = ImageDraw.Draw(Image.new("RGB", (8, 8)))
     def tw(t, f):
         try:
@@ -336,24 +338,45 @@ def table_png(rows):
             return f.getsize(t)[0]
     widths = []
     for c in range(cols):
-        w = max(tw(r[c], f_bold if r is rows[0] else f_reg) for r in rows)
-        widths.append(min(w, MAXW) + PADX * 2)
-    row_hs = []
+        natural = max(tw(r[c], f_bold if r is rows[0] else f_reg) for r in rows)
+        longest_word = max((tw(w, f_reg) for r in rows[1:] for w in r[c].split()), default=60)
+        hdr_w = tw(rows[0][c], f_bold)
+        w = min(natural, COL_MAX)
+        w = max(w, hdr_w + 2, longest_word + 12, COL_MIN)
+        widths.append(min(w, COL_MAX) + PADX * 2)
+    def wrap(t, f, wmax):
+        lines, cur = [], ""
+        for wd in t.split(" "):
+            trial = (cur + " " + wd).strip()
+            if not cur or tw(trial, f) <= wmax:
+                cur = trial
+            else:
+                lines.append(cur)
+                cur = wd
+        if cur:
+            lines.append(cur)
+        return lines or [""]
+    wrapped, row_hs = [], []
     for ri, r in enumerate(rows):
-        lines = max(1, max(1 if (tw(r[c], f_bold if ri == 0 else f_reg) <= widths[c] - 2 * PADX) else 2 for c in range(cols)))
-        row_hs.append(LINE_H * lines + PADY * 2)
+        f = f_bold if ri == 0 else f_reg
+        wr = [wrap(c0, f, widths[c] - PADX * 2) for c, c0 in enumerate(r)]
+        wrapped.append(wr)
+        row_hs.append(max(len(x) for x in wr) * LINE_H + PADY * 2)
     W, H = sum(widths) + 3, sum(row_hs) + 3
     img = Image.new("RGB", (W, H), "white")
     d = ImageDraw.Draw(img)
     head_bg, alt_bg, grid_c, txt_c = (31, 59, 115), (240, 244, 255), (205, 213, 235), (25, 32, 56)
     y = 1
-    for ri, r in enumerate(rows):
+    for ri, wr in enumerate(wrapped):
         bg = head_bg if ri == 0 else (alt_bg if ri % 2 == 0 else (255, 255, 255))
         d.rectangle([1, y, W - 2, y + row_hs[ri]], fill=bg)
         x = 1
-        for c in range(cols):
+        for c, lines in enumerate(wr):
             f = f_bold if ri == 0 else f_reg
-            d.text((x + PADX, y + PADY + 3), r[c], font=f, fill="white" if ri == 0 else txt_c)
+            yy = y + PADY
+            for ln in lines:
+                d.text((x + PADX, yy), ln, font=f, fill="white" if ri == 0 else txt_c)
+                yy += LINE_H
             x += widths[c]
         y += row_hs[ri]
     x = 1
