@@ -221,8 +221,9 @@ except Exception:
     pass
 
 DEV_RE = re.compile(r"[\u0900-\u097F]")
-MARK_RE = re.compile(r"\(((?:[A-H])|(?:[\u0905-\u0939])|(?:i{1,3}|iv|v))\)\s*")
+MARK_RE = re.compile(r"\(((?:[A-H])|(?:[\u0905-\u0939])|(?:i{1,3}|iv|v)|(?:\d{1,2}))\)\s*")
 ROMAN_RE = re.compile(r"\((i{1,3}|iv|v)\)\s*", re.I)
+NUMPAREN_RE = re.compile(r"\(\d{1,2}\)\s*")
 
 def has_dev(s):
     return bool(DEV_RE.search(s or ""))
@@ -281,32 +282,48 @@ def mono_table(rows):
     out.append(hline("└", "┴", "┘"))
     return "\n".join(out)
 
-def verticalize_pairs(text):
+def _is_num_marker(mm):
+    return bool(ROMAN_RE.match(mm.group(0)) or NUMPAREN_RE.match(mm.group(0)))
+
+def extract_pairs(text):
+    """(A) x (B) y ... (1)/(i) p (2)/(ii) q -> (intro, listA, listB)."""
     t = (text or "").strip()
     if not t:
         return None
     m = list(MARK_RE.finditer(t))
     if len(m) < 4:
         return None
-    first_rom = None
+    first_num = None
     for k, mm in enumerate(m):
-        if ROMAN_RE.match(mm.group(0)):
-            first_rom = k
+        if _is_num_marker(mm):
+            first_num = k
             break
-    if first_rom is None or first_rom < 2 or len(m) - first_rom < 2:
+    if first_num is None or first_num < 2 or len(m) - first_num < 2:
         return None
     intro = t[:m[0].start()].rstrip(" :-–—")
     listA, listB = [], []
     for k, mm in enumerate(m):
         end = m[k + 1].start() if k + 1 < len(m) else len(t)
         item = t[mm.end():end].strip().rstrip("—–-:;|,").strip()
-        (listB if k >= first_rom else listA).append(f"({mm.group(1)}) {item}")
+        if k == first_num - 1:
+            dpos = item.find("—")
+            col = item.find(" :")
+            cut = min([p for p in (dpos, col) if p != -1], default=-1)
+            if cut != -1:
+                item = item[:cut].strip().rstrip("—–-:;|,").strip()
+        (listB if k >= first_num else listA).append(f"({mm.group(1)}) {item}")
     if len(listA) < 2 or len(listB) < 2:
         return None
+    return intro, listA, listB
+
+def verticalize_pairs(text):
+    ext = extract_pairs(text)
+    if not ext:
+        return None
+    intro, listA, listB = ext
     NL = "\n"
-    body = (intro + NL + NL + "📋 <b>List I / यादी I</b>" + NL + NL.join(listA)
+    return (intro + NL + NL + "📋 <b>List I / यादी I</b>" + NL + NL.join(listA)
             + NL + NL + "📋 <b>List II / यादी II</b>" + NL + NL.join(listB))
-    return body
 
 def _font(sz, bold=False):
     cand = ["/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf",
@@ -411,8 +428,8 @@ def row_cards(rows):
         out.append(f"{first} → " + " • ".join(rest))
     return "\n".join(out)
 
-def verticalize_dots(text):
-    """Dot-style match pairs: A. x, B. y ; 1. p, 2. q -> two vertical lists."""
+def extract_dot_pairs(text):
+    """A. x, B. y ; 1. p, 2. q dot-style pairs -> (intro, listA, listB)."""
     t = (text or "").strip()
     if not any(k in t for k in ("जोड्या", "जोडी", "लावा", "Match")):
         return None
@@ -424,8 +441,7 @@ def verticalize_dots(text):
     if not any(m.group(1).isdigit() for m in marks):
         return None
     first = marks[0]
-    intro = t[:first.start()].rstrip(",").replace("अ गट:", "").replace('"', "").strip()
-    intro = intro.rstrip(":;–—- ")
+    intro = t[:first.start()].rstrip(",").replace("अ गट:", "").replace('"', "").strip().rstrip(":;–—- ")
     listA, listB = [], []
     for i, m in enumerate(marks):
         end = marks[i + 1].start() if i + 1 < len(marks) else len(t)
@@ -433,42 +449,125 @@ def verticalize_dots(text):
         (listB if m.group(1).isdigit() else listA).append(f"{m.group(1)}. {item}")
     if len(listA) < 2 or len(listB) < 2:
         return None
+    return intro, listA, listB
+
+def verticalize_dots(text):
+    ext = extract_dot_pairs(text)
+    if not ext:
+        return None
+    intro, listA, listB = ext
     NL = "\n"
     return (intro + NL + NL + "📋 <b>गट A / List A</b>" + NL + NL.join(listA)
             + NL + NL + "📋 <b>गट B / List B</b>" + NL + NL.join(listB))
 
+DASH_SPLIT = re.compile(r"\s*[—–]\s*|\s+-\s+")
+
+def parse_dash_rows(text):
+    """Dash tables: 'तक्ता : h1 — h2 — h3. (P) a — b — c (Q) d — e — f'."""
+    t = (text or "")
+    ms = list(re.finditer(r"\((?:[A-Z]|[1-9][0-9]?)\)\s*", t))
+    if len(ms) < 2 or not DASH_SPLIT.search(t):
+        return None
+    rows = []
+    for i, m in enumerate(ms):
+        seg = t[m.end(): ms[i + 1].start() if i + 1 < len(ms) else len(t)]
+        if not DASH_SPLIT.search(seg):
+            continue
+        cells = [c.strip(" .;:,") for c in DASH_SPLIT.split(seg) if c.strip(" .;:,")]
+        if i == len(ms) - 1 and cells:
+            tail = cells[-1]
+            pos = 0
+            while True:
+                cut = tail.find(". ", pos)
+                if cut == -1:
+                    break
+                if len(tail[cut + 2:].split()) >= 2:
+                    cells[-1] = tail[:cut]
+                    break
+                pos = cut + 2
+        if len(cells) >= 2:
+            rows.append([m.group(0).strip() + " " + cells[0]] + cells[1:])
+    if len(rows) < 2:
+        return None
+    mlen = max(len(r) for r in rows)
+    rows = [r + [""] * (mlen - len(r)) for r in rows]
+    intro_all = t[:ms[0].start()].strip()
+    header, intro = None, intro_all
+    if ":" in intro_all and DASH_SPLIT.search(intro_all.rsplit(":", 1)[1]):
+        hseg = intro_all.rsplit(":", 1)[1]
+        header = [h.strip(" .;") for h in DASH_SPLIT.split(hseg) if h.strip(" .;")]
+        intro = intro_all.rsplit(":", 1)[0].strip()
+        if len(header) < mlen:
+            header = header + [""] * (mlen - len(header))
+        elif len(header) != mlen:
+            header, intro = None, intro_all
+    if header is None:
+        return None
+    return {"intro": intro, "header": header, "rows": rows}
+
+def dash_cards(d):
+    parts = []
+    intro = (d.get("intro") or "").strip()
+    if intro:
+        parts.append(intro.rstrip(":") + ":")
+    hdr = d.get("header")
+    if hdr:
+        parts.append("📊 " + " → ".join(hdr))
+    for r in d["rows"]:
+        parts.append(r[0] + " → " + " • ".join(r[1:]))
+    return "\n".join(parts)
+
+def _mostly_latin(cells, ratio):
+    cells = list(cells)
+    if not cells:
+        return False
+    latin = sum(1 for c in cells if not has_dev(str(c)))
+    return latin >= max(1, len(cells)) * ratio
+
 def prepare_data(mr, en):
     mr2, en2, png_rows = mr, en, None
+    # ---------- Marathi side: text-native comfort ----------
     rows_mr = parse_pipe_rows(mr)
     if len(rows_mr) >= 2:
         intro = intro_lines(mr)
         cards = row_cards(rows_mr)
-        if cards:
-            mr2 = intro + "\n\n" + cards
-        else:
-            mr2 = intro + "\n\n<pre>\n" + mono_table(rows_mr) + "\n</pre>"
+        mr2 = intro + "\n\n" + (cards or "<pre>\n" + mono_table(rows_mr) + "\n</pre>")
     else:
-        v = verticalize_pairs(mr) or verticalize_dots(mr)
-        if v:
-            mr2 = v
+        d0 = parse_dash_rows(mr)
+        if d0:
+            mr2 = dash_cards(d0)
+        else:
+            v = verticalize_pairs(mr) or verticalize_dots(mr)
+            if v:
+                mr2 = v
+    # ---------- English side: PNG-chart comfort ----------
     rows_en = parse_pipe_rows(en)
-    if len(rows_en) >= 2:
-        cells = [c for r in rows_en for c in r]
-        latin = sum(1 for c in cells if not has_dev(c))
-        if PIL_OK and latin >= max(1, len(cells)) * 0.6:
-            png_rows = rows_en
-            en2 = intro_lines(en) or "📊 table in image above"
-        else:
-            intro = intro_lines(en)
-            cards = row_cards(rows_en)
-            if cards:
-                en2 = intro + "\n\n" + cards
-            else:
-                en2 = intro + "\n\n<pre>\n" + mono_table(rows_en) + "\n</pre>"
+    if len(rows_en) >= 2 and PIL_OK and _mostly_latin([c for r in rows_en for c in r], 0.6):
+        png_rows = rows_en
+        en2 = intro_lines(en) or "📊 table in image"
+    elif len(rows_en) >= 2:
+        intro = intro_lines(en)
+        cards = row_cards(rows_en)
+        en2 = intro + "\n\n" + (cards or "<pre>\n" + mono_table(rows_en) + "\n</pre>")
     else:
-        v = verticalize_pairs(en) or verticalize_dots(en)
-        if v:
-            en2 = v
+        d0 = parse_dash_rows(en)
+        if d0 and PIL_OK and _mostly_latin(d0["header"] + [c for r in d0["rows"] for c in r], 0.6):
+            png_rows = [d0["header"]] + d0["rows"]
+            en2 = (d0.get("intro") or "").strip() or "📊 table in image"
+        else:
+            ext = extract_pairs(en) or extract_dot_pairs(en)
+            if ext and PIL_OK:
+                intro, listA, listB = ext
+                if _mostly_latin(listA + listB, 0.7):
+                    n = max(len(listA), len(listB))
+                    png_rows = [["List A", "List B"]] + [[
+                        listA[i] if i < len(listA) else "",
+                        listB[i] if i < len(listB) else ""] for i in range(n)]
+                    en2 = intro.strip() or "📊 chart in image"
+            if png_rows is None:
+                v = verticalize_pairs(en) or verticalize_dots(en)
+                if v:
+                    en2 = v
     return mr2, en2, png_rows
 
 def tg_photo(chat_id, png_bytes, caption=None):
