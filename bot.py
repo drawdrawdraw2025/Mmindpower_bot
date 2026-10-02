@@ -289,7 +289,7 @@ def quiz_tick():
     if time.time() < QS.get("next_due", 0):
         return
     if QS.get("pending_qid"):
-        finalize_pending(time_up=True)
+        # User didn't answer in time: move on silently, no auto-reveal.
         advance(when=time.time() + 30)
         return
     send_question()
