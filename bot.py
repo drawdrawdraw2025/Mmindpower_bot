@@ -4,6 +4,7 @@ Zero-dependency (requests only), long-polling. Run: python3 bot.py
 Env: TG_TOKEN, GROQ_KEY, GH_TOKEN + REPO (for quiz state persistence on GitHub).
 """
 import os, json, time, base64, datetime, requests
+import re, io, html
 
 TOKEN = os.environ["TG_TOKEN"]
 GROQ_KEY = os.environ["GROQ_KEY"]
@@ -187,6 +188,175 @@ def next_set(L):
     return order[i + 1] if 0 <= i < len(order) - 1 else None
 
 # ---------------- Quiz messages ----------------
+# ---------------- Data-question rendering: Devanagari text + English PNG tables ----------------
+PIL_OK = False
+try:
+    from PIL import Image, ImageDraw, ImageFont
+    PIL_OK = True
+except Exception:
+    pass
+
+DEV_RE = re.compile(r"[\u0900-\u097F]")
+MARK_RE = re.compile(r"\(((?:[A-H])|(?:[\u0905-\u0939])|(?:i{1,3}|iv|v))\)\s*")
+ROMAN_RE = re.compile(r"\((i{1,3}|iv|v)\)\s*", re.I)
+
+def has_dev(s):
+    return bool(DEV_RE.search(s or ""))
+
+def parse_pipe_rows(text):
+    rows = []
+    for line in (text or "").split("\n"):
+        if line.count("|") >= 2:
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if any(cells):
+                rows.append(cells)
+    return rows
+
+def mono_table(rows):
+    cols = max(len(r) for r in rows)
+    rows = [[html.escape(c) for c in r] + [""] * (cols - len(r)) for r in rows]
+    widths = [max(len(r[i]) for r in rows) for i in range(cols)]
+    def hline(l, m, rr):
+        return l + m.join("─" * (w + 2) for w in widths) + rr
+    def rowl(r):
+        return "│ " + " │ ".join(r[i].ljust(widths[i]) for i in range(cols)) + " │"
+    out = [hline("┌", "┬", "┐")]
+    out.append(rowl(rows[0]))
+    out.append(hline("├", "┼", "┤"))
+    for r in rows[1:]:
+        out.append(rowl(r))
+    out.append(hline("└", "┴", "┘"))
+    return "\n".join(out)
+
+def verticalize_pairs(text):
+    t = (text or "").strip()
+    if not t:
+        return None
+    m = list(MARK_RE.finditer(t))
+    if len(m) < 4:
+        return None
+    first_rom = None
+    for k, mm in enumerate(m):
+        if ROMAN_RE.match(mm.group(0)):
+            first_rom = k
+            break
+    if first_rom is None or first_rom < 2 or len(m) - first_rom < 2:
+        return None
+    intro = t[:m[0].start()].rstrip(" :-–—")
+    listA, listB = [], []
+    for k, mm in enumerate(m):
+        end = m[k + 1].start() if k + 1 < len(m) else len(t)
+        item = t[mm.end():end].strip().rstrip("—–-:;|,").strip()
+        (listB if k >= first_rom else listA).append(f"({mm.group(1)}) {item}")
+    if len(listA) < 2 or len(listB) < 2:
+        return None
+    NL = "\n"
+    body = (intro + NL + NL + "📋 <b>List I / यादी I</b>" + NL + NL.join(listA)
+            + NL + NL + "📋 <b>List II / यादी II</b>" + NL + NL.join(listB))
+    return body
+
+def _font(sz, bold=False):
+    cand = ["/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"] if bold else \
+           ["/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"]
+    for p in cand:
+        try:
+            return ImageFont.truetype(p, sz)
+        except Exception:
+            continue
+    return ImageFont.load_default()
+
+def table_png(rows):
+    if not PIL_OK:
+        return None
+    rows = [[str(c) for c in r] for r in rows]
+    cols = max(len(r) for r in rows)
+    rows = [r + [""] * (cols - len(r)) for r in rows]
+    f_reg, f_bold = _font(26), _font(26, True)
+    PADX, PADY, LINE_H, MAXW = 18, 14, 34, 460
+    tmp = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+    def tw(t, f):
+        try:
+            return f.getbbox(t)[2]
+        except Exception:
+            return f.getsize(t)[0]
+    widths = []
+    for c in range(cols):
+        w = max(tw(r[c], f_bold if r is rows[0] else f_reg) for r in rows)
+        widths.append(min(w, MAXW) + PADX * 2)
+    row_hs = []
+    for ri, r in enumerate(rows):
+        lines = max(1, max(1 if (tw(r[c], f_bold if ri == 0 else f_reg) <= widths[c] - 2 * PADX) else 2 for c in range(cols)))
+        row_hs.append(LINE_H * lines + PADY * 2)
+    W, H = sum(widths) + 3, sum(row_hs) + 3
+    img = Image.new("RGB", (W, H), "white")
+    d = ImageDraw.Draw(img)
+    head_bg, alt_bg, grid_c, txt_c = (31, 59, 115), (240, 244, 255), (205, 213, 235), (25, 32, 56)
+    y = 1
+    for ri, r in enumerate(rows):
+        bg = head_bg if ri == 0 else (alt_bg if ri % 2 == 0 else (255, 255, 255))
+        d.rectangle([1, y, W - 2, y + row_hs[ri]], fill=bg)
+        x = 1
+        for c in range(cols):
+            f = f_bold if ri == 0 else f_reg
+            d.text((x + PADX, y + PADY + 3), r[c], font=f, fill="white" if ri == 0 else txt_c)
+            x += widths[c]
+        y += row_hs[ri]
+    x = 1
+    for w in widths[:-1]:
+        x += w
+        d.line([(x, 1), (x, H - 1)], fill=grid_c, width=1)
+    y = 1
+    for hgt in row_hs:
+        y += hgt
+        d.line([(1, y), (W - 1, y)], fill=grid_c, width=1)
+    d.rectangle([0, 0, W - 1, H - 1], outline=head_bg, width=3)
+    bio = io.BytesIO()
+    img.save(bio, "PNG")
+    bio.seek(0)
+    return bio.getvalue()
+
+def prepare_data(mr, en):
+    mr2, en2, png_rows = mr, en, None
+    rows_mr = parse_pipe_rows(mr)
+    if len(rows_mr) >= 2:
+        keep = [l for l in (mr or "").split("\n") if l.count("|") < 2]
+        mr2 = "\n".join(keep).strip() + "\n\n<pre>\n" + mono_table(rows_mr) + "\n</pre>"
+    else:
+        v = verticalize_pairs(mr)
+        if v:
+            mr2 = v
+    rows_en = parse_pipe_rows(en)
+    if len(rows_en) >= 2:
+        cells = [c for r in rows_en for c in r]
+        latin = sum(1 for c in cells if not has_dev(c))
+        if PIL_OK and latin >= max(1, len(cells)) * 0.6:
+            png_rows = rows_en
+            keep = [l for l in (en or "").split("\n") if l.count("|") < 2]
+            en2 = "\n".join(keep).strip() or "📊 table in image above"
+        else:
+            keep = [l for l in (en or "").split("\n") if l.count("|") < 2]
+            en2 = "\n".join(keep).strip() + "\n\n<pre>\n" + mono_table(rows_en) + "\n</pre>"
+    else:
+        v = verticalize_pairs(en)
+        if v:
+            en2 = v
+    return mr2, en2, png_rows
+
+def tg_photo(chat_id, png_bytes, caption=None):
+    data = {"chat_id": chat_id}
+    if caption:
+        data["caption"] = caption
+        data["parse_mode"] = "HTML"
+    try:
+        r = requests.post(f"{TG}/sendPhoto", data=data,
+                          files={"photo": ("table.png", png_bytes, "image/png")}, timeout=60)
+        return r.json()
+    except Exception as e:
+        print("sendPhoto error:", e)
+        return {}
+
 def q_text_block(set_letter, index, q, us):
     mr = q.get("q_marathi", "")
     en = q.get("q_english", "")
@@ -195,11 +365,12 @@ def q_text_block(set_letter, index, q, us):
     opt_lines = "\n".join(f"<b>{letters[i]})</b> {opts[i]}" for i in range(min(4, len(opts))))
     head = (f"📚 <b>Daily Quiz — Set {set_letter}</b>  "
             f"(Q {index + 1}/{len(DATA[set_letter])} • today {us['today_sent']}/{DAILY_LIMIT})\n\n")
-    return head, mr, en, opt_lines
+    mr, en, png_rows = prepare_data(mr, en)
+    return head, mr, en, opt_lines, png_rows
 
 def q_body(set_letter, index, q, us, with_english=True, limit=3950):
     """Full question text (question + options), optionally with English, kept under limit."""
-    head, mr, en, opt_lines = q_text_block(set_letter, index, q, us)
+    head, mr, en, opt_lines, _ = q_text_block(set_letter, index, q, us)
     body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
     if with_english and en and len(body) + len(en) < limit:
         body += f"\n\n🇬🇧 <i>{en}</i>"
@@ -267,13 +438,23 @@ def send_question(chat_id):
     qid = qid_of(L, idx)
     us["today_sent"] += 1
     us["total_done"] += 1
-    head, mr, en, opt_lines = q_text_block(L, idx, q, us)
+    head, mr, en, opt_lines, png_rows = q_text_block(L, idx, q, us)
     body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
     if len(body) + len(en) < 3900:
         body += f"\n\n🇬🇧 <i>{en}</i>"
         en_sent_inside = True
     else:
         en_sent_inside = False
+    if png_rows and PIL_OK:
+        shot = None
+        try:
+            shot = table_png(png_rows)
+        except Exception as e:
+            print("png render error:", e)
+        if shot:
+            tg_photo(chat_id, shot, caption=f"📊 <b>Data table — Q {idx + 1}</b>")
+        else:
+            send_text(chat_id, "📊 <b>Table:</b>\n<pre>" + mono_table(png_rows) + "</pre>")
     res = send_text(chat_id, body, reply_markup=kb_answers(qid))
     msg_id = (res.get("result") or {}).get("message_id")
     if not en_sent_inside and en:
