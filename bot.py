@@ -9,7 +9,7 @@ TOKEN = os.environ["TG_TOKEN"]
 GROQ_KEY = os.environ["GROQ_KEY"]
 TG = f"https://api.telegram.org/bot{TOKEN}"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-MODEL = "llama-3.3-70b-versatile"
+MODEL = "openai/gpt-oss-120b"
 
 WELCOME = (
     "🚀 <b>Welcome to Mmindpower Bot!</b>\n\n"
@@ -63,13 +63,16 @@ def groq_reply(chat_id, text):
         "model": MODEL,
         "messages": [{"role": "system", "content": SYSTEM_PROMPT}] + hist,
         "temperature": 0.7,
-        "max_completion_tokens": 1024,
+        "max_completion_tokens": 2048,
+        "reasoning_effort": "low",
     }
     try:
         r = requests.post(GROQ_URL, json=payload, timeout=90,
                           headers={"Authorization": f"Bearer {GROQ_KEY}"})
         data = r.json()
-        reply = data["choices"][0]["message"]["content"].strip()
+        reply = (data["choices"][0]["message"].get("content") or "").strip()
+        if not reply:
+            raise ValueError("empty content")
     except Exception as e:
         print("Groq error:", e)
         reply = "⚠️ Sorry, the AI service is busy right now. Please try again in a moment."
