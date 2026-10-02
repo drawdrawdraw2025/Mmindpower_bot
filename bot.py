@@ -327,6 +327,24 @@ def handle_callback(cb):
         # move pointer to the next question; explanation stays accessible via qid lookup
         advance(when=time.time() + ANSWERED_NEXT_SECS)
         QS["_answered_qid"] = qid
+    elif kind == "rev":
+        if qid != cur_qid:
+            tg("answerCallbackQuery", callback_query_id=cb["id"],
+               text="This question was already completed.")
+            return
+        L, idx, q = cur
+        ci = q.get("correct_index", 0)
+        letters = ["A", "B", "C", "D"]
+        body = q_body(L, idx, q)
+        tail = (f"\n\n🔓 <b>Answer revealed — correct answer: {letters[ci]}</b>\n\n"
+                f"Tap below for the full explanation:")
+        if len(body) + len(tail) > 4000:
+            body = q_body(L, idx, q, with_english=False)
+        edit_text(chat_id, msg_id, body + tail, reply_markup=kb_explain(qid))
+        tg("answerCallbackQuery", callback_query_id=cb["id"],
+           text=f"Correct answer: {letters[ci]}")
+        advance(when=time.time() + ANSWERED_NEXT_SECS)
+        QS["_answered_qid"] = qid
     elif kind == "exp":
         if not cur or qid != cur_qid:
             q = find_by_qid(qid)
