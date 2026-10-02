@@ -31,6 +31,7 @@ HELP = (
     "❓ <b>Commands</b>\n\n"
     "/quiz — start/resume daily quiz\n"
     "/quiz stop — pause quiz\n"
+    "/quiz reset — restart from any day (day-wise picker)\n"
     "/quiz status — quiz progress\n"
     "/help — this help\n"
     "/about — about this bot\n"
@@ -240,6 +241,98 @@ def exp_block(qid, q):
         b += f"\n\n🔎 <b>Evidence:</b>\n<i>{ev}</i>"
     return b[:3950]
 
+def send_question():
+    cur = current_q()
+    if not cur:
+        send_text(OWNER_CHAT, "🎉 <b>All available quiz sets are complete!</b> More sets coming soon.")
+        QS["active"] = False
+        save_state()
+        return False
+    L, idx, q = cur
+    qid = qid_of(L, idx)
+    QS["today_sent"] += 1
+    QS["total_done"] += 1
+    head, mr, en, opt_lines = q_text_block(L, idx, q)
+    body = f"{head}🇮🇳 {mr}\n\n<b>Options:</b>\n{opt_lines}"
+    if len(body) + len(en) < 3900:
+        body += f"\n\n🇬🇧 <i>{en}</i>"
+        en_sent_inside = True
+    else:
+        en_sent_inside = False
+    res = send_text(OWNER_CHAT, body, reply_markup=kb_answers(qid))
+    msg_id = (res.get("result") or {}).get("message_id")
+    if not en_sent_inside and en:
+        send_text(OWNER_CHAT, f"🇬🇧 <i>{en}</i>")
+    QS["pending_qid"] = qid
+    QS["pending_msg"] = msg_id
+    QS["next_due"] = time.time() + IDLE_NEXT_SECS
+    save_state()
+    print(f"sent {qid} to {OWNER_CHAT}")
+    return True
+
+def advance(when=None):
+    """Move pointer to next question; cross into next set if needed."""
+    L = QS["set"]
+    if L in DATA and QS["index"] + 1 < len(DATA[L]):
+        QS["index"] += 1
+    else:
+        nxt = next_set(L)
+        if nxt:
+            QS["set"] = nxt
+            QS["index"] = 0
+        else:
+            QS["active"] = False
+    QS["next_due"] = when if when else time.time()
+    QS["pending_qid"] = None
+    QS["pending_msg"] = None
+    save_state()
+
+def day_plan():
+    """List of quiz days: (day_no, set_letter, start_idx, end_idx, date_str)."""
+    plan = []
+    day = 1
+    base = datetime.datetime.now(IST).replace(hour=0, minute=0, second=0, microsecond=0)
+    for L in sorted(DATA.keys()):
+        n = len(DATA[L])
+        start = 0
+        while start < n:
+            end = min(start + DAILY_LIMIT, n)
+            d = base + datetime.timedelta(days=day - 1)
+            plan.append((day, L, start, end, d.strftime("%d %b")))
+            day += 1
+            start = end
+    return plan
+
+def kb_daypicker():
+    rows = []
+    for day, L, start, end, ds in day_plan():
+        label = f"📅 Day {day} ({ds}) — Set {L}, Q{start + 1}-{end}"
+        rows.append([{"text": label, "callback_data": f"pickday|{L}|{start}"}])
+    rows.append([{"text": "❌ Cancel", "callback_data": "pickcancel"}])
+    return {"inline_keyboard": rows}
+
+def quiz_tick():
+    global QS
+    if not DATA or QS is None or not QS.get("active"):
+        return
+    now = datetime.datetime.now(IST)
+    today = now.strftime("%Y-%m-%d")
+    if today != QS["day"]:
+        QS["day"] = today
+        QS["today_sent"] = 0
+        save_state()
+    if QS["today_sent"] >= DAILY_LIMIT:
+        return
+    if not (SEND_HOUR_START <= now.hour < SEND_HOUR_END):
+        return
+    if time.time() < QS.get("next_due", 0):
+        return
+    if QS.get("pending_qid"):
+        # User didn't answer in time: move on silently, no auto-reveal.
+        advance(when=time.time() + 30)
+        return
+    send_question()
+
 def handle_callback(cb):
     data = cb.get("data", "")
     parts = data.split("|")
@@ -358,6 +451,36 @@ def handle_callback(cb):
                reply_markup=kb_show(qid))
         ack("Hidden.")
 
+    elif kind == "pickday":
+        L = parts[1]
+        try:
+            start = int(parts[2])
+        except Exception:
+            ack()
+            return
+        if L not in DATA or not (0 <= start < len(DATA[L])):
+            ack("That quiz is not available.")
+            return
+        today = datetime.datetime.now(IST).strftime("%Y-%m-%d")
+        day_no = None
+        for d, LL, st, en, ds in day_plan():
+            if LL == L and st == start:
+                day_no = d
+                break
+        QS.update({"set": L, "index": start, "day": today, "today_sent": 0,
+                   "next_due": 0, "pending_qid": None, "pending_msg": None,
+                   "active": True})
+        save_state()
+        edit_text(chat_id, msg_id,
+                  f"✅ <b>Restarted: Day {day_no} — Set {L}</b> (from Q{start + 1})\n"
+                  f"First question arriving now! 🚀")
+        ack("Reset done!")
+        quiz_tick()
+
+    elif kind == "pickcancel":
+        edit_text(chat_id, msg_id, "❌ Reset cancelled — your progress is unchanged.")
+        ack()
+
     elif kind == "next":
         qid = parts[1] if len(parts) > 1 else ""
         if cur and qid == cur_qid:
@@ -390,7 +513,12 @@ def handle(update):
             send_text(chat_id, "📚 Quiz mode is in private beta — coming soon for everyone!")
             return
         arg = text[5:].strip().lower()
-        if arg == "stop":
+        if arg == "reset":
+            txt = ("🔄 <b>Quiz Reset</b>\n\nPick any day's quiz to restart from — "
+                   "progress moves to that day's first question and its 90 "
+                   "questions will be delivered today. 📅")
+            send_text(chat_id, txt, reply_markup=kb_daypicker())
+        elif arg == "stop":
             QS["active"] = False
             save_state()
             send_text(chat_id, "⏸ Quiz paused. Send /quiz to resume.")
