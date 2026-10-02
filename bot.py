@@ -327,6 +327,13 @@ def kb_daypicker():
     rows.append([{"text": "❌ Cancel", "callback_data": "pickcancel"}])
     return {"inline_keyboard": rows}
 
+def in_window(ist_now):
+    return SEND_HOUR_START <= ist_now.hour < SEND_HOUR_END
+
+def window_notice():
+    return ("🌙 Quiz quiet hours (11:00 PM – 6:00 AM IST) — "
+            "questions resume at 6:00 AM IST.")
+
 def tick_user(chat_id, now):
     us = USERS[str(chat_id)]
     if not us.get("active"):
@@ -497,9 +504,12 @@ def handle_callback(cb):
                    "next_due": 0, "pending_qid": None, "pending_msg": None,
                    "active": True})
         save_state()
+        if in_window(datetime.datetime.now(IST)):
+            tail = "First question arriving now! 🚀"
+        else:
+            tail = window_notice() + "\nYour Day {d} quiz will auto-start at 6:00 AM. ⏰".format(d=day_no)
         edit_text(chat_id, msg_id,
-                  f"✅ <b>Restarted: Day {day_no} — Set {L}</b> (from Q{start + 1})\n"
-                  f"First question arriving now! 🚀")
+                  f"✅ <b>Restarted: Day {day_no} — Set {L}</b> (from Q{start + 1})\n" + tail)
         ack("Reset done!")
         quiz_tick()
 
@@ -553,7 +563,10 @@ def do_quiz_action(chat_id, action):
         if us.get("pending_qid") is None:
             us["next_due"] = 0
         save_state()
-        send_text(chat_id, "▶️ Quiz resumed/started — next question coming right up!")
+        if in_window(datetime.datetime.now(IST)):
+            send_text(chat_id, "▶️ Quiz resumed/started — next question coming right up!")
+        else:
+            send_text(chat_id, "▶️ Quiz is active! " + window_notice())
         quiz_tick()
 
 HELP_PHRASES = [
