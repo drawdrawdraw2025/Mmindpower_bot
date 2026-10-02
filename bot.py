@@ -15,7 +15,7 @@ MODEL = "openai/gpt-oss-120b"
 
 OWNER_CHAT = 7102918717          # Balu (@Mmindpower1)
 DAILY_LIMIT = 90                 # questions per day
-SEND_HOUR_START, SEND_HOUR_END = 6, 23   # IST delivery window
+SEND_HOUR_START, SEND_HOUR_END = 0, 24  # 24x7 delivery
 IDLE_NEXT_SECS = 10 * 60         # next question if user doesn't answer
 ANSWERED_NEXT_SECS = 2 * 60      # next question after user answers
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
