@@ -25,17 +25,20 @@ WELCOME = (
     "✨ <b>What I can do:</b>\n"
     "• 📚 <b>Daily Quiz</b> — 90 Talathi/MPSC questions per day with clickable answers & explanations (/quiz)\n"
     "• 💬 AI chat — send any message for an AI answer\n\n"
-    "Commands: /quiz /quiz stop /quiz status /help"
+    "Commands: /quiz /quiz_pause /quiz_resume /quiz_status /quiz_reset /help"
 )
 HELP = (
     "❓ <b>Commands</b>\n\n"
+    "📚 <b>Quiz</b>\n"
     "/quiz — start/resume daily quiz\n"
-    "/quiz stop — pause quiz\n"
-    "/quiz reset — restart from any day (day-wise picker)\n"
-    "/quiz status — quiz progress\n"
+    "/quiz_pause — pause the quiz\n"
+    "/quiz_resume — resume the quiz\n"
+    "/quiz_status — your progress\n"
+    "/quiz_reset — restart from any day (picker)\n\n"
+    "🤖 <b>Bot</b>\n"
+    "/reset — clear AI chat memory\n"
     "/help — this help\n"
-    "/about — about this bot\n"
-    "/reset — clear AI chat memory\n\n"
+    "/about — about this bot\n\n"
     "Or simply send any text and the AI will reply. 💬"
 )
 ABOUT = ("🤖 <b>About Mmindpower Bot</b>\n\nAI assistant + Daily Quiz engine.\n"
@@ -531,19 +534,37 @@ def handle(update):
     chat_id, user = chat.get("id"), msg.get("from") or {}
     if chat_id is None:
         return
-    if text.startswith("/quiz"):
+    token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
+    if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
         us = u_state(chat_id)
-        arg = text[5:].strip().lower()
-        if arg == "reset":
+        if token0 == "/quiz_pause":
+            action = "pause"
+        elif token0 == "/quiz_resume":
+            action = "start"
+        elif token0 == "/quiz_reset":
+            action = "reset"
+        elif token0 == "/quiz_status":
+            action = "status"
+        else:
+            arg = text[len(token0):].strip().lower()
+            if arg in ("stop", "pause"):
+                action = "pause"
+            elif arg == "reset":
+                action = "reset"
+            elif arg == "status":
+                action = "status"
+            else:
+                action = "start"
+        if action == "reset":
             txt = ("🔄 <b>Quiz Reset</b>\n\nPick any day's quiz to restart from — "
                    "progress moves to that day's first question and its 90 "
                    "questions will be delivered today. 📅")
             send_text(chat_id, txt, reply_markup=kb_daypicker())
-        elif arg == "stop":
+        elif action == "pause":
             us["active"] = False
             save_state()
-            send_text(chat_id, "⏸ Quiz paused. Send /quiz to resume.")
-        elif arg == "status":
+            send_text(chat_id, "⏸ Quiz paused. Send /quiz_resume to continue.")
+        elif action == "status":
             cur = current_q(us)
             pos = f"Set {us['set']}, next Q {us['index'] + 1}" if cur else "bank complete"
             send_text(chat_id, f"📊 <b>Quiz status</b>\nPosition: {pos}\nToday: {us['today_sent']}/{DAILY_LIMIT}\n"
@@ -575,6 +596,17 @@ def main():
     global USERS
     me = tg("getMe")
     print("Bot running as", me.get("result", {}).get("username"))
+    tg("setMyCommands", commands=[
+        {"command": "start", "description": "👋 Welcome & intro"},
+        {"command": "quiz", "description": "📚 Start / resume daily quiz"},
+        {"command": "quiz_pause", "description": "⏸ Pause the quiz"},
+        {"command": "quiz_resume", "description": "▶️ Resume the quiz"},
+        {"command": "quiz_status", "description": "📊 Your quiz progress"},
+        {"command": "quiz_reset", "description": "🔄 Restart from any day"},
+        {"command": "reset", "description": "🧹 Clear AI chat memory"},
+        {"command": "help", "description": "❓ Help"},
+        {"command": "about", "description": "🤖 About this bot"},
+    ])
     load_data()
     USERS = gh_get_state() or {}
     print("quiz users:", len(USERS))
