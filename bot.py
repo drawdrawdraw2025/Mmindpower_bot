@@ -203,6 +203,17 @@ ROMAN_RE = re.compile(r"\((i{1,3}|iv|v)\)\s*", re.I)
 def has_dev(s):
     return bool(DEV_RE.search(s or ""))
 
+def intro_lines(text):
+    keep = []
+    for l in (text or "").split("\n"):
+        if l.count("|") < 2:
+            keep.append(l)
+        else:
+            head = l.split("|", 1)[0].strip()
+            if head:
+                keep.append(head)
+    return "\n".join(keep).strip()
+
 def parse_pipe_rows(text):
     rows = []
     for line in (text or "").split("\n"):
@@ -210,7 +221,25 @@ def parse_pipe_rows(text):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
             if any(cells):
                 rows.append(cells)
-    return rows
+    if len(rows) >= 2:
+        return rows
+    # one-line table: intro | h1 | h2 | | c1 | c2 | | ...
+    for line in (text or "").split("\n"):
+        if line.count("|") >= 4:
+            cells = [c.strip() for c in line.split("|", 1)[1].strip().strip("|").split("|")]
+            rows, cur = [], []
+            for c in cells:
+                if c == "":
+                    if cur:
+                        rows.append(cur)
+                        cur = []
+                else:
+                    cur.append(c)
+            if cur:
+                rows.append(cur)
+            if len(rows) >= 2 and all(len(r) == len(rows[0]) for r in rows):
+                return rows
+    return []
 
 def mono_table(rows):
     cols = max(len(r) for r in rows)
@@ -317,14 +346,62 @@ def table_png(rows):
     bio.seek(0)
     return bio.getvalue()
 
+def row_cards(rows):
+    """Devanagari/short-latin pipe tables -> phone-friendly 'A -> value' row cards."""
+    if len(rows) < 3:
+        return None
+    head, body = rows[0], rows[1:]
+    def marked(c):
+        return bool(re.match(r"^([A-E]|[\u0905-\u0921])[\.\)]\s*", (c or "").strip()))
+    if not all(marked(r[0]) for r in body):
+        return None
+    out = ["📊 " + " → ".join(head)] if len(head) >= 2 and not marked(head[0]) else ["📊"]
+    for r in body:
+        first = r[0].strip()
+        rest = [x.strip() for x in r[1:] if x.strip()]
+        if not rest:
+            continue
+        out.append(f"{first} → " + " • ".join(rest))
+    return "\n".join(out)
+
+def verticalize_dots(text):
+    """Dot-style match pairs: A. x, B. y ; 1. p, 2. q -> two vertical lists."""
+    t = (text or "").strip()
+    if not any(k in t for k in ("जोड्या", "जोडी", "लावा", "Match")):
+        return None
+    lm = list(re.finditer(r"(?:^|[,; ]\s*)([A-E])\.(?!\d)\s*", t))
+    dm = list(re.finditer(r"(?:^|[,; ]\s*)([1-9])\.(?!\d)\s*", t))
+    if len(lm) < 2 or len(dm) < 2:
+        return None
+    marks = [m for _, m in sorted({m.start(): m for m in (lm + dm)}.items())]
+    if not any(m.group(1).isdigit() for m in marks):
+        return None
+    first = marks[0]
+    intro = t[:first.start()].rstrip(",").replace("अ गट:", "").replace('"', "").strip()
+    intro = intro.rstrip(":;–—- ")
+    listA, listB = [], []
+    for i, m in enumerate(marks):
+        end = marks[i + 1].start() if i + 1 < len(marks) else len(t)
+        item = t[m.end():end].strip().rstrip(";").replace("ब गट:", "").strip().rstrip(",;–—- ")
+        (listB if m.group(1).isdigit() else listA).append(f"{m.group(1)}. {item}")
+    if len(listA) < 2 or len(listB) < 2:
+        return None
+    NL = "\n"
+    return (intro + NL + NL + "📋 <b>गट A / List A</b>" + NL + NL.join(listA)
+            + NL + NL + "📋 <b>गट B / List B</b>" + NL + NL.join(listB))
+
 def prepare_data(mr, en):
     mr2, en2, png_rows = mr, en, None
     rows_mr = parse_pipe_rows(mr)
     if len(rows_mr) >= 2:
-        keep = [l for l in (mr or "").split("\n") if l.count("|") < 2]
-        mr2 = "\n".join(keep).strip() + "\n\n<pre>\n" + mono_table(rows_mr) + "\n</pre>"
+        intro = intro_lines(mr)
+        cards = row_cards(rows_mr)
+        if cards:
+            mr2 = intro + "\n\n" + cards
+        else:
+            mr2 = intro + "\n\n<pre>\n" + mono_table(rows_mr) + "\n</pre>"
     else:
-        v = verticalize_pairs(mr)
+        v = verticalize_pairs(mr) or verticalize_dots(mr)
         if v:
             mr2 = v
     rows_en = parse_pipe_rows(en)
@@ -333,13 +410,16 @@ def prepare_data(mr, en):
         latin = sum(1 for c in cells if not has_dev(c))
         if PIL_OK and latin >= max(1, len(cells)) * 0.6:
             png_rows = rows_en
-            keep = [l for l in (en or "").split("\n") if l.count("|") < 2]
-            en2 = "\n".join(keep).strip() or "📊 table in image above"
+            en2 = intro_lines(en) or "📊 table in image above"
         else:
-            keep = [l for l in (en or "").split("\n") if l.count("|") < 2]
-            en2 = "\n".join(keep).strip() + "\n\n<pre>\n" + mono_table(rows_en) + "\n</pre>"
+            intro = intro_lines(en)
+            cards = row_cards(rows_en)
+            if cards:
+                en2 = intro + "\n\n" + cards
+            else:
+                en2 = intro + "\n\n<pre>\n" + mono_table(rows_en) + "\n</pre>"
     else:
-        v = verticalize_pairs(en)
+        v = verticalize_pairs(en) or verticalize_dots(en)
         if v:
             en2 = v
     return mr2, en2, png_rows
