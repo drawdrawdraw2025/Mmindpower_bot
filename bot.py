@@ -570,6 +570,22 @@ HELP_PHRASES = [
 ]
 HELP_TOKENS = ("command", "commands", "कमांड", "कमांड्स")
 
+RESTART_PHRASES = [
+    "restart", "start over", "start again", "begin again", "replay",
+    "from the beginning", "from beginning", "from day 1", "from day one",
+    "from first", "fresh start", "reset quiz", "quiz reset", "reset my quiz",
+    "phir se shuru", "fir se shuru", "dobara shuru", "dobara start",
+    "naye se shuru", "nayi se shuru", "restart karo", "reset karo",
+    "phir se karo", "fir se karo", "dobara karo",
+    "पहिल्यापासून", "पहिल्या पासून", "पुन्हा सुरू करा", "पुन्हा सुरू",
+    "नवीन सुरू", "नव्याने सुरू", "नव्याने सुरु", "पुन्हा करा", "रीस्टार्ट",
+    "परत सुरू", "परत सुरु", "सुरुवातीपासून",
+]
+
+def wants_restart(t):
+    t = t.lower().strip()
+    return any(p in t for p in RESTART_PHRASES)
+
 def wants_help(t):
     t = t.lower().strip()
     if t in ("help", "?", "??", "menu", "help!"):
@@ -648,6 +664,9 @@ def handle(update):
     elif cmd == "/reset":
         MEM.pop(chat_id, None)
         send_text(chat_id, "🧹 Chat memory cleared. Fresh start!")
+    elif text and wants_restart(text):
+        send_text(chat_id, "🔄 <b>Restart quiz</b> — pick the day you want to restart from 👇",
+                  reply_markup=kb_daypicker())
     elif text and wants_help(text):
         send_text(chat_id, GUIDE, reply_markup=kb_guide())
     elif text:
