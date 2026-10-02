@@ -1,1 +1,1 @@
-{"users": {"7102918717": {"set": "A", "index": 15, "day": "2026-10-02", "today_sent": 15, "next_due": 1790958436.8762012, "pending_qid": null, "pending_msg": null, "active": true, "total_done": 29, "_answered_qid": "A6"}}}
+{"users": {"7102918717": {"set": "A", "index": 15, "day": "2026-10-02", "today_sent": 16, "next_due": 1790959059.5698576, "pending_qid": "A16", "pending_msg": 105, "active": true, "total_done": 30, "_answered_qid": "A6"}}}
