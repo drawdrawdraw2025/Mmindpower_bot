@@ -338,8 +338,13 @@ def _font(sz, bold=False):
     return ImageFont.load_default()
 
 def table_png(rows):
-    """Exam-paper style PNG with real word-wrapping inside cells."""
+    """Exam-paper PNG; header row styled navy. If rows[0] is all-blank -> headerless mode (first col = bold navy titles)."""
     if not PIL_OK:
+        return None
+    headerless = bool(rows) and all(not str(c).strip() for c in rows[0])
+    if headerless:
+        rows = rows[1:]
+    if not rows:
         return None
     rows = [[html.unescape(str(c)) for c in r] for r in rows]
     cols = max(len(r) for r in rows)
@@ -347,6 +352,14 @@ def table_png(rows):
     f_reg, f_bold = _font(26), _font(26, True)
     PADX, PADY, LINE_H = 18, 12, 32
     COL_MIN, COL_MAX = 150, 460
+    def cell_font(ri, c):
+        if headerless:
+            return f_bold if c == 0 else f_reg
+        return f_bold if ri == 0 else f_reg
+    def cell_color(ri, c):
+        if headerless:
+            return (31, 59, 115) if c == 0 else (25, 32, 56)
+        return "white" if ri == 0 else (25, 32, 56)
     tmp = ImageDraw.Draw(Image.new("RGB", (8, 8)))
     def tw(t, f):
         try:
@@ -355,11 +368,10 @@ def table_png(rows):
             return f.getsize(t)[0]
     widths = []
     for c in range(cols):
-        natural = max(tw(r[c], f_bold if r is rows[0] else f_reg) for r in rows)
-        longest_word = max((tw(w, f_reg) for r in rows[1:] for w in r[c].split()), default=60)
-        hdr_w = tw(rows[0][c], f_bold)
+        natural = max(tw(r[c], cell_font(ri, c)) for ri, r in enumerate(rows))
+        longest_word = max((tw(w, cell_font(ri, c)) for ri, r in enumerate(rows) for w in r[c].split()), default=60)
         w = min(natural, COL_MAX)
-        w = max(w, hdr_w + 2, longest_word + 12, COL_MIN)
+        w = max(w, longest_word + 12, COL_MIN)
         widths.append(min(w, COL_MAX) + PADX * 2)
     def wrap(t, f, wmax):
         lines, cur = [], ""
@@ -375,24 +387,25 @@ def table_png(rows):
         return lines or [""]
     wrapped, row_hs = [], []
     for ri, r in enumerate(rows):
-        f = f_bold if ri == 0 else f_reg
-        wr = [wrap(c0, f, widths[c] - PADX * 2) for c, c0 in enumerate(r)]
+        wr = [wrap(c0, cell_font(ri, c), widths[c] - PADX * 2) for c, c0 in enumerate(r)]
         wrapped.append(wr)
         row_hs.append(max(len(x) for x in wr) * LINE_H + PADY * 2)
     W, H = sum(widths) + 3, sum(row_hs) + 3
     img = Image.new("RGB", (W, H), "white")
     d = ImageDraw.Draw(img)
-    head_bg, alt_bg, grid_c, txt_c = (31, 59, 115), (240, 244, 255), (205, 213, 235), (25, 32, 56)
+    head_bg, alt_bg, grid_c = (31, 59, 115), (240, 244, 255), (205, 213, 235)
     y = 1
     for ri, wr in enumerate(wrapped):
-        bg = head_bg if ri == 0 else (alt_bg if ri % 2 == 0 else (255, 255, 255))
+        if headerless:
+            bg = alt_bg if ri % 2 == 1 else (255, 255, 255)
+        else:
+            bg = head_bg if ri == 0 else (alt_bg if ri % 2 == 0 else (255, 255, 255))
         d.rectangle([1, y, W - 2, y + row_hs[ri]], fill=bg)
         x = 1
         for c, lines in enumerate(wr):
-            f = f_bold if ri == 0 else f_reg
             yy = y + PADY
             for ln in lines:
-                d.text((x + PADX, yy), ln, font=f, fill="white" if ri == 0 else txt_c)
+                d.text((x + PADX, yy), ln, font=cell_font(ri, c), fill=cell_color(ri, c))
                 yy += LINE_H
             x += widths[c]
         y += row_hs[ri]
@@ -465,7 +478,7 @@ DASH_SPLIT = re.compile(r"\s*[—–]\s*|\s+-\s+")
 def parse_dash_rows(text):
     """Dash tables: 'तक्ता : h1 — h2 — h3. (P) a — b — c (Q) d — e — f'."""
     t = (text or "")
-    ms = list(re.finditer(r"\((?:[A-Z]|[1-9][0-9]?)\)\s*", t))
+    ms = list(re.finditer(r"\((?:[A-Z]|[1-9][0-9]?|[ivx]{1,3})\)\s*", t))
     if len(ms) < 2 or not DASH_SPLIT.search(t):
         return None
     rows = []
@@ -501,8 +514,6 @@ def parse_dash_rows(text):
             header = header + [""] * (mlen - len(header))
         elif len(header) != mlen:
             header, intro = None, intro_all
-    if header is None:
-        return None
     return {"intro": intro, "header": header, "rows": rows}
 
 def dash_cards(d):
@@ -516,6 +527,23 @@ def dash_cards(d):
     for r in d["rows"]:
         parts.append(r[0] + " → " + " • ".join(r[1:]))
     return "\n".join(parts)
+
+def section_cards(rows):
+    """3+ col tables with long cells -> per-row section cards (Devanagari-safe)."""
+    if len(rows) < 3:
+        return None
+    head, body = rows[0], rows[1:]
+    out = ["📊 " + " → ".join(head)] if len(head) >= 2 and str(head[0]).strip() else ["📊"]
+    for r in body:
+        if len(r) < 2 or not str(r[0]).strip():
+            continue
+        out.append("\n▫️ <b>" + str(r[0]).strip() + "</b>")
+        for c, cell in enumerate(r[1:], start=1):
+            if not str(cell).strip():
+                continue
+            lab = head[c] if c < len(head) and str(head[c]).strip() else f"Col {c + 1}"
+            out.append(f"  • {lab}: {cell}")
+    return "\n".join(out)
 
 def _mostly_latin(cells, ratio):
     cells = list(cells)
@@ -531,7 +559,12 @@ def prepare_data(mr, en):
     if len(rows_mr) >= 2:
         intro = intro_lines(mr)
         cards = row_cards(rows_mr)
-        mr2 = intro + "\n\n" + (cards or "<pre>\n" + mono_table(rows_mr) + "\n</pre>")
+        longest = max((len(str(c)) for r in rows_mr[1:] for c in r), default=0)
+        if cards and longest <= 30:
+            mr2 = intro + "\n\n" + cards
+        else:
+            sec = section_cards(rows_mr)
+            mr2 = intro + "\n\n" + (sec or "<pre>\n" + mono_table(rows_mr) + "\n</pre>")
     else:
         d0 = parse_dash_rows(mr)
         if d0:
@@ -551,8 +584,11 @@ def prepare_data(mr, en):
         en2 = intro + "\n\n" + (cards or "<pre>\n" + mono_table(rows_en) + "\n</pre>")
     else:
         d0 = parse_dash_rows(en)
-        if d0 and PIL_OK and _mostly_latin(d0["header"] + [c for r in d0["rows"] for c in r], 0.6):
-            png_rows = [d0["header"]] + d0["rows"]
+        if d0 and PIL_OK and _mostly_latin((d0["header"] or []) + [c for r in d0["rows"] for c in r], 0.6):
+            if d0.get("header"):
+                png_rows = [d0["header"]] + d0["rows"]
+            else:
+                png_rows = [[""] * len(d0["rows"][0])] + d0["rows"]
             en2 = (d0.get("intro") or "").strip() or "📊 table in image"
         else:
             ext = extract_pairs(en) or extract_dot_pairs(en)
