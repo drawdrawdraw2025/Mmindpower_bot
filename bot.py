@@ -38,6 +38,7 @@ HELP = (
     "/quiz_reset — restart from any day (picker)\n\n"
     "🤖 <b>Bot</b>\n"
     "/reset — clear AI chat memory\n"
+    "/donate — ☕ support Mmindpower (optional, ₹5)\n"
     "/help — this help\n"
     "/about — about this bot\n\n"
     "Or simply send any text and the AI will reply. 💬"
@@ -190,6 +191,37 @@ def save_state(force=False):
         return
     LAST_STATE_SAVE["t"] = now
     gh_save_state()
+
+DONATE_UPI = "mmindpower.contact@oksbi"
+
+def donate_qr_png():
+    try:
+        import qrcode
+        uri = f"upi://pay?pa={DONATE_UPI}&pn=Mmindpower&am=5&cu=INR"
+        qr = qrcode.QRCode(box_size=10, border=4)
+        qr.add_data(uri)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color=(16, 42, 86), back_color="white")
+        bio = io.BytesIO()
+        img.save(bio, format="PNG")
+        bio.seek(0)
+        return bio.getvalue()
+    except Exception as e:
+        print("qr error:", e)
+        return None
+
+def send_donate(chat_id):
+    cap = ("☕ <b>Small Support — Mmindpower Bot</b>\n\n"
+           "If today's quiz helped you even a little, support us with <b>₹5</b> 💖\n"
+           "100% optional — Mmindpower stays <b>free forever</b> 🎓\n\n"
+           "📷 Scan with GPay / PhonePe / Paytm / any UPI app\n"
+           f"🆔 <code>{DONATE_UPI}</code> (tap to copy)\n\n"
+           "🙏 धन्यवाद — तुमचा प्रेम आमचं इंधन! 💪")
+    png = donate_qr_png()
+    if png:
+        tg_photo(chat_id, png, caption=cap)
+    else:
+        send_text(chat_id, cap)
 
 def qid_of(set_letter, index):
     return f"{set_letter}{index + 1}"
@@ -705,6 +737,9 @@ def send_question(chat_id):
     cur = current_q(us)
     if not cur:
         send_text(chat_id, "🎉 <b>All available quiz sets are complete!</b> More sets coming soon.")
+        if not us.get("donate_final"):
+            us["donate_final"] = True
+            send_donate(chat_id)
         us["active"] = False
         save_state()
         return False
@@ -799,6 +834,11 @@ def tick_user(chat_id, now):
         us["today_sent"] = 0
         save_state()
     if us["today_sent"] >= DAILY_LIMIT:
+        if us.get("donate_day") != us["day"]:
+            us["donate_day"] = us["day"]
+            send_text(chat_id, "🎉 <b>Today's 90 questions complete!</b> Amazing focus! 🚀")
+            send_donate(chat_id)
+            save_state()
         return
     if not (SEND_HOUR_START <= now.hour < SEND_HOUR_END):
         return
@@ -1263,6 +1303,9 @@ def handle(update):
         if chat_id == OWNER_CHAT:
             send_text(chat_id, audience_report())
         return
+    if token0 == "/donate":
+        send_donate(chat_id)
+        return
     if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
         if token0 == "/quiz_pause":
             action = "pause"
@@ -1316,6 +1359,7 @@ def main():
         {"command": "quiz_status", "description": "📊 Your quiz progress"},
         {"command": "quiz_reset", "description": "🔄 Restart from any day"},
         {"command": "reset", "description": "🧹 Clear AI chat memory"},
+        {"command": "donate", "description": "☕ Support Mmindpower (optional ₹5)"},
         {"command": "help", "description": "❓ Help"},
         {"command": "about", "description": "🤖 About this bot"},
     ])
