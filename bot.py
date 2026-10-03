@@ -16,6 +16,8 @@ MODEL = "openai/gpt-oss-120b"
 
 OWNER_CHAT = 7102918717          # Balu (@Mmindpower1)
 DAILY_LIMIT = 90                 # questions per day
+AI_DAILY_LIMIT = 90
+AI_WARN_AT = 75
 SEND_HOUR_START, SEND_HOUR_END = 0, 24  # 24x7 delivery
 IDLE_NEXT_SECS = 10 * 60         # next question if user doesn't answer
 ANSWERED_NEXT_SECS = 5           # next question after user answers (near-instant)
@@ -1295,6 +1297,28 @@ def kb_guide():
          {"text": "🔄 Pick a Day", "callback_data": "go|reset"}],
         [{"text": "⏸ Pause Quiz", "callback_data": "go|pause"}]]}
 
+def ai_gate(chat_id):
+    """Count + enforce the daily AI-chat quota. True = allowed, slot consumed."""
+    if chat_id == OWNER_CHAT:
+        return True
+    us = USERS.setdefault(str(chat_id), default_state())
+    today = datetime.datetime.now(IST).strftime("%Y-%m-%d")
+    if us.get("ai_day") != today:
+        us["ai_day"] = today
+        us["ai_today"] = 0
+    used = us.get("ai_today", 0)
+    if used >= AI_DAILY_LIMIT:
+        send_text(chat_id, "🧠 <b>AI chat limit reached (90/day)!</b>\n"
+                           "Fresh quota at midnight 🌅 — meanwhile the quiz never stops 📚 /quiz")
+        save_state()
+        return False
+    us["ai_today"] = used + 1
+    if us["ai_today"] == AI_WARN_AT:
+        send_text(chat_id, f"🧠 Heads-up: {AI_DAILY_LIMIT - AI_WARN_AT} AI chats left today "
+                           "(resets at midnight). Quiz is always unlimited 📚")
+    save_state()
+    return True
+
 def handle(update):
     msg = update.get("message") or {}
     text = (msg.get("text") or "").strip()
@@ -1348,6 +1372,8 @@ def handle(update):
     elif text and wants_help(text):
         send_text(chat_id, GUIDE, reply_markup=kb_guide())
     elif text:
+        if not ai_gate(chat_id):
+            return
         tg("sendChatAction", chat_id=chat_id, action="typing")
         send_text(chat_id, groq_reply(chat_id, text))
 

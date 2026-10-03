@@ -36,7 +36,7 @@ jobs:
 
       - name: Install deps
         if: steps.check.outputs.skip == '0'
-        run: pip install requests pillow qrcode
+        run: pip install requests==2.34.2 pillow==12.3.0 qrcode==8.2
 
       - name: Run bot (handover-aware)
         if: steps.check.outputs.skip == '0'
