@@ -24,7 +24,8 @@ ANSWERED_NEXT_SECS = 5           # next question after user answers (near-instan
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 WELCOME = (
-    "🚀 <b>Welcome to Mmindpower Bot!</b>\n\n"
+    "🚀 <b>Welcome to Mmindpower Bot!</b>\n"
+    "📺 <b>Subscribe on YouTube:</b> https://youtube.com/@mmindpower 🔔\n\n"
     "✨ <b>What I can do:</b>\n"
     "• 📚 <b>Daily Quiz</b> — 90 Talathi/MPSC questions per day with clickable answers & explanations (/quiz)\n"
     "• 💬 AI chat — send any message for an AI answer\n\n"
