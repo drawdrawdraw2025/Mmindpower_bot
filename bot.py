@@ -193,13 +193,13 @@ def save_state(force=False):
     gh_save_state()
 
 DONATE_UPI = "mmindpower.contact@oksbi"
+DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 
 def donate_qr_png():
     try:
         import qrcode
-        uri = f"upi://pay?pa={DONATE_UPI}&pn=Mmindpower&am=5&cu=INR"
-        qr = qrcode.QRCode(box_size=10, border=4)
-        qr.add_data(uri)
+        qr = qrcode.QRCode(box_size=12, border=4)
+        qr.add_data(DONATE_URL)
         qr.make(fit=True)
         img = qr.make_image(fill_color=(16, 42, 86), back_color="white")
         bio = io.BytesIO()
@@ -214,14 +214,17 @@ def send_donate(chat_id):
     cap = ("☕ <b>Small Support — Mmindpower Bot</b>\n\n"
            "If today's quiz helped you even a little, support us with <b>₹5</b> 💖\n"
            "100% optional — Mmindpower stays <b>free forever</b> 🎓\n\n"
-           "📷 Scan with GPay / PhonePe / Paytm / any UPI app\n"
+           "👇 <b>One tap to pay</b> — then choose GPay / PhonePe / Paytm / BHIM\n"
+           f"🔗 {DONATE_URL}\n"
+           "📷 or simply scan this QR with your camera\n"
            f"🆔 <code>{DONATE_UPI}</code> (tap to copy)\n\n"
            "🙏 धन्यवाद — तुमचा प्रेम आमचं इंधन! 💪")
+    kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "url": DONATE_URL}]]}
     png = donate_qr_png()
     if png:
-        tg_photo(chat_id, png, caption=cap)
+        tg_photo(chat_id, png, caption=cap, reply_markup=kb)
     else:
-        send_text(chat_id, cap)
+        send_text(chat_id, cap, reply_markup=kb)
 
 def qid_of(set_letter, index):
     return f"{set_letter}{index + 1}"
@@ -638,11 +641,13 @@ def prepare_data(mr, en):
                     en2 = v
     return mr2, en2, png_rows
 
-def tg_photo(chat_id, png_bytes, caption=None):
+def tg_photo(chat_id, png_bytes, caption=None, reply_markup=None):
     data = {"chat_id": chat_id}
     if caption:
         data["caption"] = caption
         data["parse_mode"] = "HTML"
+    if reply_markup:
+        data["reply_markup"] = json.dumps(reply_markup)
     try:
         r = requests.post(f"{TG}/sendPhoto", data=data,
                           files={"photo": ("table.png", png_bytes, "image/png")}, timeout=60)
