@@ -41,6 +41,7 @@ HELP = (
     "🤖 <b>Bot</b>\n"
     "/reset — clear AI chat memory\n"
     "/donate — ☕ support Mmindpower (optional, ₹5)\n"
+    "/app — 📚 practice app (all sets, any time)\n"
     "/help — this help\n"
     "/about — about this bot\n\n"
     "Or simply send any text and the AI will reply. 💬"
@@ -196,6 +197,8 @@ def save_state(force=False):
 
 DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
+APP_URL = "https://drawdrawdraw2025.github.io/app/"
+APP_MENU_DONE = set()
 
 def donate_qr_png():
     try:
@@ -1325,6 +1328,11 @@ def handle(update):
     if chat_id is None:
         return
     mark_seen(chat_id)
+    if chat_id not in APP_MENU_DONE:
+        APP_MENU_DONE.add(chat_id)
+        tg("setChatMenuButton", chat_id=chat_id, menu_button={
+            "type": "web_app", "text": "📚 Practice App",
+            "web_app": {"url": APP_URL}})
     token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
     if token0 == "/audience":
         if chat_id == OWNER_CHAT:
@@ -1332,6 +1340,10 @@ def handle(update):
         return
     if token0 == "/donate":
         send_donate(chat_id)
+        return
+    if token0 == "/app":
+        send_text(chat_id, "📚 <b>Mmindpower Practice App</b> — all sets, any time 👇",
+                  reply_markup={"inline_keyboard": [[{"text": "📚 Open Practice App", "web_app": {"url": APP_URL}}]]})
         return
     if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
         if token0 == "/quiz_pause":
@@ -1389,6 +1401,7 @@ def main():
         {"command": "quiz_reset", "description": "🔄 Restart from any day"},
         {"command": "reset", "description": "🧹 Clear AI chat memory"},
         {"command": "donate", "description": "☕ Support Mmindpower (optional ₹5)"},
+        {"command": "app", "description": "📚 Practice app (all sets)"},
         {"command": "help", "description": "❓ Help"},
         {"command": "about", "description": "🤖 About this bot"},
     ])
