@@ -216,9 +216,7 @@ def send_donate(chat_id):
     cap = ("☕ <b>Small Support — Mmindpower Bot</b>\n\n"
            "If today's quiz helped you even a little, support us with <b>₹5</b> 💖\n"
            "100% optional — Mmindpower stays <b>free forever</b> 🎓\n\n"
-           "👇 <b>One tap to pay</b> — then choose GPay / PhonePe / Paytm / BHIM\n"
-           f"🔗 {DONATE_URL}\n"
-           "📷 or simply scan this QR with your camera\n"
+           "📷 Scan this QR with your camera\n"
            f"🆔 <code>{DONATE_UPI}</code> (tap to copy)\n\n"
            "🙏 धन्यवाद — तुमचा प्रेम आमचं इंधन! 💪")
     kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "url": DONATE_URL}]]}
