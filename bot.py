@@ -219,7 +219,7 @@ def send_donate(chat_id):
            "📷 Scan this QR with your camera\n"
            f"🆔 <code>{DONATE_UPI}</code> (tap to copy)\n\n"
            "🙏 धन्यवाद — तुमचा प्रेम आमचं इंधन! 💪")
-    kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "url": DONATE_URL}]]}
+    kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "web_app": {"url": DONATE_URL}}]]}
     png = donate_qr_png()
     if png:
         tg_photo(chat_id, png, caption=cap, reply_markup=kb)
