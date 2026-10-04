@@ -25,7 +25,7 @@ IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 WELCOME = (
     "🚀 <b>Welcome to Mmindpower Bot!</b>\n"
-    "📺 <b>Subscribe on YouTube:</b> https://youtube.com/@mmindpower 🔔\n\n"
+    "📣 <b>Join our Channel:</b> @mmindpower_1 — daily quiz & answers 🔔\n\n"
     "✨ <b>What I can do:</b>\n"
     "• 📚 <b>Daily Quiz</b> — 90 Talathi/MPSC questions per day with clickable answers & explanations (/quiz)\n"
     "• 💬 AI chat — send any message for an AI answer\n\n"
@@ -200,8 +200,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web4"
-DONATE_URL_V = DONATE_URL + "?v=web4"
+APP_URL_V = APP_URL + "?v=web3"
+DONATE_URL_V = DONATE_URL + "?v=web3"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1496,7 +1496,8 @@ def handle(update):
                 mm = meta()
                 mm["src_" + src_tag] = mm.get("src_" + src_tag, 0) + 1
                 save_state()
-        send_text(chat_id, WELCOME)
+        send_text(chat_id, WELCOME,
+                  reply_markup={"inline_keyboard": [[{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}]]})
     elif cmd == "/help":
         send_text(chat_id, HELP)
     elif cmd == "/about":
