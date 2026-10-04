@@ -200,6 +200,7 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 APP_MENU_DONE = set()
+CHANNEL_ID = "@mmindpower_1"
 
 def donate_qr_png():
     try:
@@ -859,6 +860,74 @@ def tick_user(chat_id, now):
         return
     send_question(chat_id)
 
+def channel_post(html_text):
+    p = {"chat_id": CHANNEL_ID, "text": html_text, "parse_mode": "HTML",
+         "disable_web_page_preview": True}
+    r = tg("sendMessage", **p)
+    if not r.get("ok"):
+        print("channel post failed:", r)
+    return bool(r.get("ok"))
+
+def qotd_post(ist_now):
+    daynum = int(ist_now.strftime("%Y%j"))
+    pool = [(L, i, q) for L in sorted(DATA.keys()) for i, q in enumerate(DATA[L])
+            if len(q.get("q_marathi") or "") < 350 and "|" not in (q.get("q_marathi") or "")]
+    if not pool:
+        return None
+    L, i, q = pool[daynum % len(pool)]
+    esc = lambda t: html.escape(t or "", quote=False)
+    Lset = ["A", "B", "C", "D"]
+    opts = "\n".join(f"{Lset[k]}) {esc(o)}" for k, o in enumerate(q["options"][:4]))
+    ci = q["correct_index"]
+    exp = (q.get("explanation_marathi") or "")[:140]
+    sp = f"{Lset[ci]}) {esc(q['options'][ci])}"
+    if exp:
+        sp += f" — {esc(exp)}"
+    return ("❓ <b>Question of the Day</b> ⭐\n\n"
+            f"{esc(q['q_marathi'])}\n\n"
+            f"{opts}\n\n"
+            f"💡 <tg-spoiler>उत्तर: {sp}</tg-spoiler>\n\n"
+            "उरले 89+ प्रश्न 👉 t.me/Mmindpower_bot/Mmindpower_KBC"
+            f"\n(Set {L} • Q{i + 1})")
+
+def digest_post(ist_now, today):
+    ids = [k for k in USERS if k != "0"]
+    st_day = lambda k: (USERS[k].get("stats", {}) or {}).get(today, [0, 0, 0])
+    tried = sum(st_day(k)[0] for k in ids)
+    ok = sum(st_day(k)[1] for k in ids)
+    active_today = sum(1 for k in ids if st_day(k)[0] > 0)
+    full = sum(1 for k in ids if USERS[k].get("today_sent", 0) >= DAILY_LIMIT)
+    acc = f"{round(ok / tried * 100)}%" if tried else "—"
+    return (f"🌙 <b>आजचा Digest — {ist_now.strftime('%d %b')}</b>\n\n"
+            f"👩‍🎓 सराव करणारे विद्यार्थी: <b>{active_today}</b>\n"
+            f"📝 सोडलेले प्रश्न: <b>{tried}</b>  (🎯 बरोबर: {acc})\n"
+            f"🏆 90/90 पूर्ण करणारे: <b>{full}</b>\n\n"
+            "उद्या सकाळी 6 वाजता fresh quiz! 🌅\n"
+            "📱 t.me/Mmindpower_bot/Mmindpower_KBC  •  🤖 @Mmindpower_bot")
+
+def channel_scheduler(ist_now):
+    today = ist_now.strftime("%Y-%m-%d")
+    m = meta()
+    hh = ist_now.hour
+    if hh == 6 and m.get("ch_kick") != today:
+        m["ch_kick"] = today
+        channel_post("🌅 <b>सुप्रभात! आजचा सराव तयार आहे 📚</b>\n\n"
+                     "आजचे <b>90 प्रश्न</b> fresh — Talathi/MPSC 2026 ✨\n"
+                     "🤖 Daily quiz → @Mmindpower_bot\n"
+                     "📱 KBC practice (lifelines सह!) → t.me/Mmindpower_bot/Mmindpower_KBC\n\n"
+                     "शिका, जिंका! 🚩")
+        save_state(force=True)
+    if hh == 12 and m.get("ch_qotd") != today:
+        m["ch_qotd"] = today
+        post = qotd_post(ist_now)
+        if post:
+            channel_post(post)
+        save_state(force=True)
+    if hh == 21 and m.get("ch_dig") != today:
+        m["ch_dig"] = today
+        channel_post(digest_post(ist_now, today))
+        save_state(force=True)
+
 def quiz_tick():
     if not DATA or not USERS:
         return
@@ -868,6 +937,7 @@ def quiz_tick():
             tick_user(int(k), now)
         except Exception as e:
             print("tick err", k, e)
+    channel_scheduler(now)
 
 
 MILESTONES = [10, 25, 50, 100, 250, 500, 1000, 2000, 5000]
@@ -1345,6 +1415,16 @@ def handle(update):
     if token0 == "/app":
         send_text(chat_id, "📚 <b>Mmindpower Practice App</b> — all sets, any time 👇",
                   reply_markup={"inline_keyboard": [[{"text": "📚 Open Practice App", "web_app": {"url": APP_URL}}]]})
+        return
+    if token0 == "/announce":
+        if chat_id == OWNER_CHAT:
+            body = text[len("/announce"):].strip()
+            if body:
+                ok = channel_post(body)
+                send_text(chat_id, "📣 Channel ला पोस्ट झाले! ✅" if ok else
+                          "⚠️ Failed — bot @mmindpower_1 मध्ये <b>admin</b> आहे का? (Post Messages right लागेल 👮)")
+            else:
+                send_text(chat_id, "वापर: /announce <मेसेज> — HTML tags चालतात (<b>, <tg-spoiler>)")
         return
     if token0 in ("/quiz", "/quiz_pause", "/quiz_resume", "/quiz_reset", "/quiz_status"):
         if token0 == "/quiz_pause":
