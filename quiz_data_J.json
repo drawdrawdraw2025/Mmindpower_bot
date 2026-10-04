@@ -1,0 +1,1442 @@
+[
+ {
+  "section": 3,
+  "subtopic": "84वी-87वी-106वी घटनादुरुस्ती पुनर्रचना",
+  "qtype": "बहु-विधान",
+  "q_marathi": "खालील विधाने विचारात घ्या: I. 84 व्या घटनादुरुस्तीने (2001) मतदारसंघ पुनर्रचना 2026 नंतरच्या पहिल्या जनगणनेपर्यंत गोठवली आहे. II. 87 व्या घटनादुरुस्तीने (2003) 2001 च्या जनगणनेनुसार जागांचे सुसूत्रीकरण केले, पण लोकसभेच्या एकूण जागा बदलल्या नाहीत. III. 106 व्या घटनादुरुस्तीतील (नारी शक्ती वंदन) महिला आरक्षण पुनर्रचनेनंतरच लागू होईल. योग्य पर्याय निवडा:",
+  "q_english": "Consider the statements: I. 84th Amendment (2001) froze delimitation till first census after 2026. II. 87th Amendment (2003) rationalized seats on 2001 census without changing Lok Sabha strength. III. Women's reservation under 106th Amendment applies only after delimitation.",
+  "options": [
+   "फक्त I आणि II",
+   "फक्त II आणि III",
+   "I, II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "84 व्या दुरुस्तीने पुनर्रचना 2026 नंतर गोठवली; 87 व्याने जागा न बदलता 2001 नुसार समायोजन केले; 106 व्या दुरुस्तीतील 33% महिला आरक्षण जनगणना + पुनर्रचनेनंतर लागू होणार आहे.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "ऑपरेशन ब्रह्मा-दोस्त-करुणा-मैत्री",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "'अ' गटातील मदत मोहिमांची 'ब' गटातील घटनांशी जोडी लावा: 'अ': 1. ऑपरेशन ब्रह्मा 2. ऑपरेशन दोस्त 3. ऑपरेशन करुणा 4. ऑपरेशन मैत्री | 'ब': A. नेपाळ भूकंप 2015 B. तुर्की भूकंप 2023 C. म्यानमार भूकंप 2025 D. मोचा चक्रीवादळ 2023",
+  "q_english": "Match relief operations with events: 1. Op Brahma 2. Op Dost 3. Op Karuna 4. Op Maitri | A. Nepal quake 2015 B. Turkiye quake 2023 C. Myanmar quake 2025 D. Cyclone Mocha 2023",
+  "options": [
+   "1-C, 2-B, 3-D, 4-A",
+   "1-D, 2-C, 3-B, 4-A",
+   "1-C, 2-D, 3-B, 4-A",
+   "1-B, 2-C, 3-A, 4-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "ऑपरेशन ब्रह्मा (मार्च 2025, म्यानमार 7.7 भूकंप, 80 NDRF जवान); दोस्त (तुर्की 2023); करुणा (मोचा 2023); मैत्री (नेपाळ 2015). भारताच्या 'फर्स्ट रिस्पॉन्डर' धोरणाची उदाहरणे.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "चॅम्पियन्स ट्रॉफी विजेतेपद क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "भारताच्या चॅम्पियन्स ट्रॉफी विजेतेपदांचा योग्य कालक्रम लावा: 1. दुबईत न्यूझीलंडवर विजय 2. इंग्लंडमध्ये इंग्लंडवर विजय 3. श्रीलंकेत संयुक्त विजेतेपद",
+  "q_english": "Arrange India's Champions Trophy titles chronologically: 1. Win over NZ in Dubai 2. Win over England in England 3. Joint winners in Sri Lanka",
+  "options": [
+   "3-2-1",
+   "1-2-3",
+   "2-3-1",
+   "3-1-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "2002 (श्रीलंका, श्रीलंकेसह संयुक्त), 2013 (इंग्लंड, धोनी), 2025 (दुबई, न्यूझीलंडवर 4 गडी राखून, रोहित शर्मा कर्णधार). 2025 चा अंतिम सामना 9 मार्च रोजी झाला.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "हॉकी आशिया चषक 2025 विश्वचषक पात्रता",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): भारताने 2025 ची पुरुष हॉकी आशिया चषक स्पर्धा जिंकली. कारण (R): या विजयामुळे भारत 2026 च्या हॉकी विश्वचषकासाठी पात्र ठरला.",
+  "q_english": "Assertion (A): India won the Men's Hockey Asia Cup 2025. Reason (R): This victory qualified India for the 2026 Hockey World Cup.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "राजगीर (बिहार) येथे अंतिम सामन्यात भारताने दक्षिण कोरियाला 4-1 ने हरवले; आशिया चषक विजेत्याला थेट विश्वचषक पात्रता मिळते.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "नीरज चोप्रा 90.23 मी दोहा 2025",
+  "qtype": "बहु-विधान",
+  "q_marathi": "नीरज चोप्रा यांच्या 2025 कामगिरीबद्दल खालील विधाने विचारात घ्या: I. मे 2025 मध्ये दोहा डायमंड लीगमध्ये त्यांनी 90.23 मी. भाला फेकून 90 मी. चा टप्पा ओलांडला. II. 90 मी. पेक्षा जास्त फेकणारे ते पहिले भारतीय ठरले. III. त्या स्पर्धेत त्यांनी प्रथम क्रमांक पटकावला.",
+  "q_english": "On Neeraj Chopra's 2025 feat: I. Threw 90.23m at Doha Diamond League May 2025. II. First Indian beyond 90m. III. Won the event.",
+  "options": [
+   "फक्त I आणि II",
+   "फक्त II आणि III",
+   "I, II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "16 मे 2025 रोजी 90.23 मी. फेकून 90 मी. क्लबमध्ये प्रवेश; पण जर्मनीच्या ज्युलियन वेबरने (91.06 मी.) प्रथम क्रमांक पटकावला, नीरज दुसऱ्या क्रमांकावर.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "2025 बुकर-एबेल-प्रित्झकर विजेते",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "2025 च्या पुरस्कारांची जोडी लावा: 1. आंतरराष्ट्रीय बुकर 2. एबेल पुरस्कार 3. प्रित्झकर पुरस्कार | A. लिऊ जियाकुन (चीन) B. बानू मुश्ताक C. मसाकी काशिवारा (जपान)",
+  "q_english": "Match 2025 awards: 1. International Booker 2. Abel Prize 3. Pritzker Prize | A. Liu Jiakun (China) B. Banu Mushtaq C. Masaki Kashiwara (Japan)",
+  "options": [
+   "1-B, 2-C, 3-A",
+   "1-C, 2-A, 3-B",
+   "1-B, 2-A, 3-C",
+   "1-A, 2-B, 3-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बुकर — 'हार्ट लँप' (कन्नड, दीपा भाष्टी अनुवाद, पहिला कथा संग्रह विजेता); एबेल — काशिवारा (बीजगणितीय विश्लेषण); प्रित्झकर — लिऊ जियाकुन (वास्तुकला).",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "72वी मिस वर्ल्ड 2025 हैदराबाद",
+  "qtype": "बहु-विधान",
+  "q_marathi": "72 व्या मिस वर्ल्ड स्पर्धेबद्दल (2025): I. हैदराबादच्या HITEX येथे 31 मे 2025 रोजी अंतिम फेरी झाली. II. थायलंडच्या ओपल सुचाता चुआंगश्री यांनी विजेतेपद पटकावले — थायलंडची पहिली मिस वर्ल्ड. III. भारताच्या नंदिनी गुप्ता टॉप 8 मध्ये पोहोचल्या.",
+  "q_english": "On 72nd Miss World 2025: I. Final at HITEX Hyderabad May 31, 2025. II. Opal Suchata Chuangsri, first Thai winner. III. India's Nandini Gupta reached Top 8.",
+  "options": [
+   "फक्त I आणि II",
+   "फक्त II आणि III",
+   "I, II आणि III",
+   "फक्त II"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "108 स्पर्धकांतून थायलंडच्या ओपल विजयी (पहिली थाई मिस वर्ल्ड); इथियोपियाची हॅसेट डेरेज उपविजेती; नंदिनी गुप्ता टॉप 8 आधीच बाद झाल्या.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "द्रुतगती महामार्ग उद्घाटन क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "भारतातील द्रुतगती महामार्गांच्या उद्घाटनाचा योग्य क्रम लावा: 1. यमुना एक्सप्रेसवे 2. आग्रा-लखनऊ एक्सप्रेसवे 3. पूर्वांचल एक्सप्रेसवे 4. समृद्धी महामार्ग (पूर्ण)",
+  "q_english": "Arrange expressway inaugurations: 1. Yamuna Expressway 2. Agra-Lucknow 3. Purvanchal 4. Samruddhi (full)",
+  "options": [
+   "1-2-3-4",
+   "2-1-4-3",
+   "1-3-2-4",
+   "4-3-2-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "यमुना (2012), आग्रा-लखनऊ (2016), पूर्वांचल (2021), समृद्धी महामार्ग (701 किमी, नागपूर-मुंबई, जून 2025 मध्ये पूर्ण कार्यान्वित).",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "अटल सेतू MTHL सर्वात लांब सागरी पूल",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): अटल सेतू (MTHL) हा भारतातील सर्वात लांब सागरी पूल आहे. कारण (R): तो मुंबईतील शिवडी ते न्हावा शेवा यांना जोडतो.",
+  "q_english": "Assertion (A): Atal Setu (MTHL) is India's longest sea bridge. Reason (R): It connects Sewri to Nhava Sheva.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण नाही",
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "21.8 किमी लांबी (12 जाने 2024 उद्घाटन) हे 'सर्वात लांब' चे कारण; शिवडी-न्हावा शेवा जोडणी हे स्थान स्पष्ट करते, लांबीचे नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "रायसीना डायलॉग 2025 कालचक्र",
+  "qtype": "बहु-विधान",
+  "q_marathi": "रायसीना डायलॉग 2025 बद्दल: I. ही 10 वी आवृत्ती 17-19 मार्च 2025 दरम्यान नवी दिल्लीत झाली. II. मुख्य अतिथी न्यूझीलंडचे पंतप्रधान ख्रिस्टोफर लक्सन होते. III. यंदाची संकल्पना 'कालचक्र' (Kaalachakra) होती.",
+  "q_english": "On Raisina Dialogue 2025: I. 10th edition, Mar 17-19, New Delhi. II. Chief guest NZ PM Christopher Luxon. III. Theme 'Kaalachakra'.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "परराष्ट्र मंत्रालय-ORF आयोजित भारताची प्रमुख भू-राजकीय परिषद; 2025 ची संकल्पना 'कालचक्र — लोक, शांतता, ग्रह' होती.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "एरो इंडिया 2025 येलहंका",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोडी लावा: 1. एरो इंडिया 2025 (स्थळ) 2. रायसीना डायलॉग (आयोजक) 3. एरो इंडिया 2025 (आवृत्ती/तारीख) | A. नवी दिल्ली (ORF) B. येलहंका, बेंगळुरू C. 15 वी आवृत्ती, फेब्रु 10-14",
+  "q_english": "Match: 1. Aero India 2025 (venue) 2. Raisina Dialogue (organizer) 3. Aero India (edition/dates) | A. New Delhi (ORF) B. Yelahanka, Bengaluru C. 15th edition, Feb 10-14",
+  "options": [
+   "1-B, 2-A, 3-C",
+   "1-C, 2-B, 3-A",
+   "1-A, 2-B, 3-C",
+   "1-B, 2-C, 3-A"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "एरो इंडिया 2025 (15 वी आवृत्ती, 10-14 फेब्रु, येलहंका हवाई तळ); रायसीना डायलॉग नवी दिल्लीत ORF सह-आयोजन.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "76वा प्रजासत्ताक दिन प्रमुख अतिथी",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "76 व्या प्रजासत्ताक दिनाचे (2025) प्रमुख अतिथी कोण होते?",
+  "q_english": "Who was the chief guest at the 76th Republic Day (2025)?",
+  "options": [
+   "इमॅन्युएल मॅक्रॉन",
+   "प्रबोवो सुबियांतो",
+   "मोहम्मद बिन सलमान",
+   "जो बायडन"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "इंडोनेशियाचे राष्ट्रपती प्रबोवो सुबियांतो 26 जाने 2025 रोजी प्रमुख अतिथी होते; इंडोनेशियाची तुकडीही संचलनात सहभागी झाली होती.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "COP29 बाकू NCQG 300 अब्ज",
+  "qtype": "बहु-विधान",
+  "q_marathi": "COP29 (बाकू, 2024) बद्दल: I. नोव्हेंबर 2024 मध्ये अझरबैजानच्या बाकू येथे झाली. II. नवीन सामूहिक परिमाणित उद्दिष्ट (NCQG) म्हणून 2035 पर्यंत वर्षाला 300 अब्ज डॉलर ठरले. III. विकसनशील देशांनी 1.3 ट्रिलियन डॉलरची मागणी केली होती.",
+  "q_english": "On COP29 Baku: I. Nov 2024, Baku. II. NCQG $300B/year by 2035. III. Developing nations demanded $1.3T.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त III"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "'वित्त COP' म्हणून ओळखली जाणारी परिषद; $300 अब्जचे उद्दिष्ट मान्य झाले पण विकसनशील देश असमाधानी (1.3 ट्रिलियनची मागणी).",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "2025 एबेल-प्रित्झकर-बुकर भाषा",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "2025 चे पुरस्कार विजेते: 1. एबेल पुरस्कार 2. प्रित्झकर पुरस्कार 3. आंतरराष्ट्रीय बुकर (भाषा) | A. कन्नड B. जपान (गणितज्ञ) C. चीन (वास्तुविशारद)",
+  "q_english": "2025 laureates: 1. Abel 2. Pritzker 3. Intl Booker (language) | A. Kannada B. Japan (mathematician) C. China (architect)",
+  "options": [
+   "1-B, 2-C, 3-A",
+   "1-C, 2-B, 3-A",
+   "1-A, 2-C, 3-B",
+   "1-B, 2-A, 3-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "एबेल — मसाकी काशिवारा (जपान, डी-मॉड्यूल सिद्धांत); प्रित्झकर — लिऊ जियाकुन (चीन); बुकर — कन्नड 'हार्ट लँप'.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "2025 घटना क्रम एरो इंडिया ते मिस वर्ल्ड",
+  "qtype": "कालक्रम",
+  "q_marathi": "2025 मधील घटनांचा योग्य क्रम लावा: 1. एरो इंडिया 2. ऑपरेशन ब्रह्मा 3. आंतरराष्ट्रीय बुकर घोषणा 4. मिस वर्ल्ड अंतिम फेरी",
+  "q_english": "Order 2025 events: 1. Aero India 2. Operation Brahma 3. Intl Booker announcement 4. Miss World final",
+  "options": [
+   "1-2-3-4",
+   "2-1-4-3",
+   "1-3-2-4",
+   "4-3-2-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "एरो इंडिया (10-14 फेब्रु), ऑपरेशन ब्रह्मा (29 मार्च), बुकर घोषणा (20 मे), मिस वर्ल्ड (31 मे).",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "तालीकोट लढाई 1565 रामराया",
+  "qtype": "बहु-विधान",
+  "q_marathi": "तालीकोटच्या लढाईबद्दल (1565): I. कृष्णा नदीकाठी राक्षसी-तंगडी येथे झाली. II. विजयनगरच्या रामरायाचा दख्खनच्या चार सुलतानांच्या आघाडीने पराभव केला. III. या पराभवानंतर विजयनगर साम्राज्याचे पतन सुरू झाले.",
+  "q_english": "On Battle of Talikota (1565): I. At Rakshasi-Tangadi near Krishna river. II. Rama Raya defeated by Deccan Sultanates' alliance. III. Led to Vijayanagara's decline.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त III"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "23 जाने 1565; बिजापूर, अहमदनगर, गोलकोंडा, बिदर यांच्या आघाडीने रामरायाचा वध; हम्पीची लूट — 'भारतीय इतिहासातील निर्णायक लढायांपैकी एक'.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "चंदावर-समूगढ-साराईघाट-प्रतापगड वर्षे",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "लढाया आणि वर्षे: 1. चंदावर 2. समूगढ 3. साराईघाट 4. प्रतापगड | A. 1659 B. 1194 C. 1671 D. 1658",
+  "q_english": "Battles and years: 1. Chandawar 2. Samugarh 3. Saraighat 4. Pratapgad",
+  "options": [
+   "1-B, 2-D, 3-C, 4-A",
+   "1-D, 2-B, 3-A, 4-C",
+   "1-B, 2-C, 3-D, 4-A",
+   "1-A, 2-D, 3-C, 4-B"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "चंदावर (1194, घोरी-जयचंद), समूगढ (1658, औरंगजेब-दारा), साराईघाट (1671, लचित बरफुकन-मुघल), प्रतापगड (1659, शिवाजी-अफझलखान).",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "शिवकालीन घटना क्रम पावनखिंड ते सुरत",
+  "qtype": "कालक्रम",
+  "q_marathi": "शिवकालीन घटनांचा योग्य क्रम लावा: 1. लाल महालात शाहिस्तेखानावर हल्ला 2. सुरतची पहिली लूट 3. पावनखिंड 4. उंबरखिंड",
+  "q_english": "Order Shivaji-era events: 1. Shaista Khan attack at Lal Mahal 2. First Surat sack 3. Pavan Khind 4. Umberkhind",
+  "options": [
+   "3-4-1-2",
+   "1-3-2-4",
+   "3-1-4-2",
+   "1-2-3-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पावनखिंड (जुलै 1660, बाजीप्रभूंचे बलिदान) → उंबरखिंड (फेब्रु 1661, कर्तलबखानाचा पराभव) → लाल महाल (एप्रिल 1663) → सुरत (जाने 1664) — गनिमी काव्याची साखळी.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "साराईघाट 1671 लचित बरफुकन",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): 1671 च्या साराईघाट लढाईत अहोमांनी मुघलांचा पराभव केला. कारण (R): लचित बरफुकन यांनी ब्रह्मपुत्रेवर नाविक युद्धतंत्र वापरले.",
+  "q_english": "Assertion (A): Ahoms defeated Mughals at Saraighat 1671. Reason (R): Lachit Borphukan used naval tactics on Brahmaputra.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "रामसिंगाच्या नेतृत्वाखालील मुघल सैन्याचा लचित बरफुकन यांनी गनिमी नाविक डावाने पराभव केला; आसामच्या स्वाभिमानाचे प्रतीक.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "अफझलखान वध वाघनखे",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "प्रतापगडच्या लढाईत (1659) अफझलखानाचा वध कोणत्या शस्त्राने झाला?",
+  "q_english": "With which weapon was Afzal Khan killed at Pratapgad (1659)?",
+  "options": [
+   "तलवार",
+   "वाघनखे",
+   "भाला",
+   "कट्यार"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "10 नोव्हेंबर 1659 रोजी भेटीदरम्यान शिवाजी महाराजांनी वाघनखे आणि बिचवा वापरून अफझलखानाचा वध केला — दख्खनच्या राजकारणाला कलाटणी.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "सिंहगड 1670 तानाजी गड आला सिंह गेला",
+  "qtype": "बहु-विधान",
+  "q_marathi": "सिंहगडच्या लढाईबद्दल (1670): I. तानाजी मालुसरे यांच्या नेतृत्वाखाली मराठ्यांनी किल्ला जिंकला. II. मुघल किल्लेदार उदयभान राठोड मारला गेला. III. या विजयानंतर शिवाजी महाराज म्हणाले — 'गड आला, पण सिंह गेला'.",
+  "q_english": "On Sinhagad (1670): I. Tanaji led Marathas to victory. II. Mughal commander Udaybhan killed. III. Shivaji said 'Gad ala pan Sinha gela'.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "4 फेब्रु 1670 रोजी रात्रीच्या चढाईत तानाजींना वीरमरण; 'सिंहगड' नाव याच घटनेवरून — आधीचा कोंढाणा किल्ला.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "बाजीप्रभू-तानाजी-मुरारबाजी-प्रतापराव",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "शिवकालीन व्यक्ती आणि घटना: 1. बाजीप्रभू देशपांडे 2. तानाजी मालुसरे 3. मुरारबाजी 4. प्रतापराव गुजर | A. पुरंदरचा लढा B. पावनखिंड C. सिंहगड D. नेसरीची लढाई",
+  "q_english": "Personalities and events: 1. Bajiprabhu 2. Tanaji 3. Murarbaji 4. Prataprao | A. Purandar B. Pavan Khind C. Sinhagad D. Nesari",
+  "options": [
+   "1-B, 2-C, 3-A, 4-D",
+   "1-C, 2-B, 3-D, 4-A",
+   "1-B, 2-A, 3-C, 4-D",
+   "1-D, 2-C, 3-A, 4-B"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बाजीप्रभू (पावनखिंड 1660), तानाजी (सिंहगड 1670), मुरारबाजी (पुरंदर 1665, दिलेरखानाविरुद्ध वीरमरण), प्रतापराव (नेसरी 1674).",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "मुघल उत्तराधिकार युद्ध 1657-58 क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "मुघल उत्तराधिकार युद्धाचा (1657-58) क्रम लावा: 1. धर्मटची लढाई 2. सामूगढची लढाई 3. शाहजहानची आजारपण 4. औरंगजेबचा राज्याभिषेक (दिल्ली)",
+  "q_english": "Order Mughal War of Succession: 1. Dharmat 2. Samugarh 3. Shah Jahan's illness 4. Aurangzeb's coronation",
+  "options": [
+   "3-1-2-4",
+   "1-2-3-4",
+   "3-2-1-4",
+   "4-3-2-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "शाहजहान आजारी (1657) → धर्मट (एप्रिल 1658) → सामूगढ (मे 1658, दाराचा पराभव) → औरंगजेबचा दिल्लीत राज्याभिषेक (जुलै 1658).",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "राणा कुंभ संगीत शिरोमणी कीर्तिस्तंभ",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): राणा कुंभ (मेवाड) यांना 'संगीत शिरोमणी' म्हटले जाते. कारण (R): त्यांनी 'संगीत राज' हा ग्रंथ लिहिला आणि कीर्तिस्तंभ उभारला.",
+  "q_english": "Assertion (A): Rana Kumbha is called 'Sangeet Shiromani'. Reason (R): He wrote 'Sangeet Raj' and built Kirtistambha.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "राणा कुंभ (1433-68) विद्वान राजा; चित्तोडचा 9 मजली कीर्तिस्तंभ (1448) मालवा विजयाच्या स्मरणार्थ; 32 किल्ले बांधले.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "पृथ्वीराज चौहान तराईन I II",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "पृथ्वीराज चौहान III यांच्या बाबतीत कोणते बरोबर? (तराईन लढाया)",
+  "q_english": "Which is correct about Prithviraj Chauhan III? (Tarain battles)",
+  "options": [
+   "तराईन I (विजय), तराईन II (पराभव)",
+   "चंदावर, तालीकोट",
+   "खानवा, पानीपत",
+   "हल्दीघाटी, सामूगढ"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1191 मध्ये घोरीचा पराभव, 1192 मध्ये पराभव — दिल्ली सल्तनतच्या स्थापनेची नांदी.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "पहिले माधवराव पेशवे पुनरुत्थान राक्षसभुवन",
+  "qtype": "बहु-विधान",
+  "q_marathi": "पहिल्या माधवराव पेशव्यांबद्दल (1761-72): I. पानीपतच्या पराभवानंतर मराठी सत्तेचे पुनरुत्थान त्यांनी घडवले. II. राक्षसभुवनच्या लढाईत (1763) निजामाचा पराभव केला. III. त्यांच्या काळात बारभाई कारस्थान घडले.",
+  "q_english": "On Madhavrao I: I. Revived Maratha power after Panipat. II. Defeated Nizam at Rakshasbhuvan (1763). III. Barbhai conspiracy happened in his time.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "'थोरले माधवराव' — पुनरुत्थानाचे शिल्पकार; बारभाई कारस्थान त्यांच्या मृत्यूनंतर (1772+) नारायणराव खुनानंतर घडले, त्यांच्या काळात नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "फ्रेंच वसाहती विलीनीकरण चंदरनगर पुदुच्चेरी",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "फ्रेंच वसाहतींचे भारतात विलीनीकरण: 1. पुदुच्चेरी (डी फॅक्टो) 2. चंदरनगर | A. 1954 (डी फॅक्टो) B. 1950 (जनमत) — तसेच पुदुच्चेरीचे डी ज्यूरे विलीनीकरण कोणत्या वर्षी?",
+  "q_english": "French settlements' merger: 1. Puducherry (de facto) 2. Chandernagore | A. 1954 (de facto) B. 1950 (referendum) — and Puducherry's de jure merger year?",
+  "options": [
+   "1-A, 2-B; डी ज्यूरे 1962",
+   "1-B, 2-A; डी ज्यूरे 1954",
+   "1-A, 2-B; डी ज्यूरे 1956",
+   "1-B, 2-A; डी ज्यूरे 1962"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "चंदरनगर जनमताने (1949/1950); पुदुच्चेरी डी फॅक्टो 1 नोव्हें 1954, डी ज्यूरे 1962 च्या कराराने; 1963 मध्ये केंद्रशासित प्रदेश.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "वॅवेल-कॅबिनेट-माउंटबॅटन-स्वातंत्र्य कायदा",
+  "qtype": "कालक्रम",
+  "q_marathi": "स्वातंत्र्यपूर्व घटनांचा क्रम लावा: 1. भारतीय स्वातंत्र्य कायदा 2. माउंटबॅटन योजना 3. कॅबिनेट मिशन 4. वॅवेल योजना",
+  "q_english": "Order: 1. Indian Independence Act 2. Mountbatten Plan 3. Cabinet Mission 4. Wavell Plan",
+  "options": [
+   "4-3-2-1",
+   "3-4-1-2",
+   "4-2-3-1",
+   "1-2-3-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "वॅवेल (1945), कॅबिनेट मिशन (1946), माउंटबॅटन योजना (3 जून 1947), स्वातंत्र्य कायदा (18 जुलै 1947, अंमल 15 ऑगस्ट).",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "लाल महाल हल्ला 1663 शाहिस्तेखान",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): 1663 मध्ये शिवाजी महाराजांनी लाल महालात शाहिस्तेखानावर हल्ला केला. कारण (R): शाहिस्तेखानाने पुणे ताब्यात घेऊन लाल महालात तळ ठोकला होता.",
+  "q_english": "Assertion (A): Shivaji attacked Shaista Khan at Lal Mahal in 1663. Reason (R): Shaista Khan had occupied Pune and camped at Lal Mahal.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "5 एप्रिल 1663 च्या रात्री छापा; खानाची तीन बोटे तुटली, मुलगा मारला गेला — मुघलांची दहशत संपली.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "उंबरखिंड 1661 कर्तलबखान",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "उंबरखिंडच्या लढाईत (1661) मराठ्यांनी कोणाचा पराभव केला?",
+  "q_english": "Whom did the Marathas defeat at Umberkhind (1661)?",
+  "options": [
+   "शाहिस्तेखान",
+   "कर्तलबखान",
+   "दिलेरखान",
+   "जयसिंग"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "फेब्रु 1661 मध्ये उंबरखिंडीत कर्तलबखानाच्या सैन्याचा पूर्ण पराभव — गनिमी काव्याचा उत्कृष्ट नमुना; खानाला जीवदान देऊन सोडले.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "श्योक-नुब्रा नदीप्रणाली सियाचेन",
+  "qtype": "बहु-विधान",
+  "q_marathi": "श्योक-नुब्रा नदीप्रणालीबद्दल: I. श्योक ही सिंधूची उपनदी असून लडाखमधून वाहते. II. नुब्रा श्योकला मिळते; नुब्रा खोऱ्यात सियाचेन हिमनदी आहे. III. श्योक नदीचा उगम रिमो हिमनदीत होतो.",
+  "q_english": "On Shyok-Nubra system: I. Shyok is Indus tributary in Ladakh. II. Nubra joins Shyok; Siachen glacier in Nubra valley. III. Shyok originates in Rimo glacier.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; श्योक 'मृत्यूची नदी' म्हणून ओळखली जाते; दौलत बेग ओल्डी जवळून वाहते — सामरिक महत्त्व.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "घाघरा-वैगई-हुगली-ब्राह्मणी",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "नद्या आणि वैशिष्ट्ये: 1. घाघरा 2. वैगई 3. हुगली 4. ब्राह्मणी | A. ओडिशाची दुसरी मोठी नदी B. भागीरथीची वितरिका C. गंगेची डाव्या तीराची उपनदी D. तमिळनाडूची दक्षिणवाहिनी",
+  "q_english": "Rivers and features: 1. Ghaghara 2. Vaigai 3. Hooghly 4. Brahmani | A. Odisha's second largest river B. Bhagirathi's distributary C. Ganga's left-bank tributary D. Tamil Nadu's south-flowing river",
+  "options": [
+   "1-C, 2-D, 3-B, 4-A",
+   "1-D, 2-C, 3-A, 4-B",
+   "1-C, 2-A, 3-B, 4-D",
+   "1-B, 2-D, 3-C, 4-A"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "घाघरा (गंगेची सर्वात लांब उपनदी, डावी), वैगई (मदुरई), हुगली (गंगेची पश्चिम बंगालमधील वितरिका), ब्राह्मणी (ओडिशा).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "धबधबे उंची क्रम कुंचिकल",
+  "qtype": "कालक्रम",
+  "q_marathi": "धबधब्यांच्या उंचीनुसार चढता क्रम लावा: 1. कुंचिकल 2. नोहकलिकाई 3. जोग 4. अथिरापल्ली",
+  "q_english": "Arrange waterfalls by increasing height: 1. Kunchikal 2. Nohkalikai 3. Jog 4. Athirapally",
+  "options": [
+   "4-3-2-1",
+   "1-2-3-4",
+   "4-2-3-1",
+   "3-4-1-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अथिरापल्ली (~80 मी.), जोग (253 मी.), नोहकलिकाई (340 मी.), कुंचिकल (455 मी., भारतातील सर्वात उंच).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "पुलिकत सरोवर श्रीहरिकोटा",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): पुलिकत सरोवर हे भारतातील दुसऱ्या क्रमांकाचे खाऱ्या पाण्याचे सरोवर आहे. कारण (R): ते आंध्र प्रदेश-तामिळनाडू सीमेवर श्रीहरिकोटा बेटाने समुद्रापासून वेगळे झाले आहे.",
+  "q_english": "Assertion (A): Pulicat Lake is India's second largest brackish lagoon. Reason (R): It is separated from sea by Sriharikota island on AP-TN border.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही तथ्ये बरोबर; पण 'दुसऱ्या क्रमांकाचे' असण्याचे कारण श्रीहरिकोटा नाही — चिल्का (पहिले) नंतरचे क्षेत्रफळ हे कारण. श्रीहरिकोटावर सतीश धवन अंतराळ केंद्र आहे.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "नागार्जुन सागर धरण कृष्णा",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "नागार्जुन सागर धरण कोणत्या नदीवर आहे?",
+  "q_english": "On which river is Nagarjuna Sagar Dam?",
+  "options": [
+   "गोदावरी",
+   "कृष्णा",
+   "कावेरी",
+   "तुंगभद्रा"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तेलंगणा-आंध्र प्रदेश सीमेवर; जगातील सर्वात मोठ्या दगडी धरणांपैकी एक (1967); श्रीशैलम त्याच्या वरच्या बाजूस आहे.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "रोहतांग-झोजी ला-बनिहाल खिंडी",
+  "qtype": "बहु-विधान",
+  "q_marathi": "हिमालयीन खिंडींबद्दल: I. रोहतांग खिंड हिमाचल प्रदेशात पीर पंजालमध्ये आहे. II. झोजी ला लडाखला काश्मीरशी जोडते. III. बनिहाल खिंड जम्मू-श्रीनगर महामार्गावर आहे.",
+  "q_english": "On Himalayan passes: I. Rohtang in Pir Panjal, HP. II. Zoji La connects Ladakh-Kashmir. III. Banihal on Jammu-Srinagar highway.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त III"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; रोहतांगजवळ अटल बोगदा (2020); झोजी ला बोगदा निर्माणाधीन; बनिहालजवळ जवाहर बोगदा.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "नामदफा-दाम्पा-नोकरेक-सिमलीपाल",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "संरक्षित क्षेत्रे आणि राज्ये: 1. नामदफा 2. दाम्पा 3. नोकरेक 4. सिमलीपाल | A. मिझोराम B. ओडिशा C. अरुणाचल प्रदेश D. मेघालय",
+  "q_english": "Protected areas and states: 1. Namdapha 2. Dampa 3. Nokrek 4. Simlipal | A. Mizoram B. Odisha C. Arunachal Pradesh D. Meghalaya",
+  "options": [
+   "1-C, 2-A, 3-D, 4-B",
+   "1-A, 2-C, 3-B, 4-D",
+   "1-C, 2-D, 3-A, 4-B",
+   "1-B, 2-A, 3-D, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "नामदफा (अरुणाचल, व्याघ्र प्रकल्प), दाम्पा (मिझोराम), नोकरेक (मेघालय, जीवावरण राखीव), सिमलीपाल (ओडिशा, जीवावरण राखीव + व्याघ्र प्रकल्प).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "अब्दुल कलाम बेट-श्रीहरिकोटा-पंबन क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "बेटांशी संबंधित घटनांचा क्रम लावा: 1. अब्दुल कलाम बेटाचे नामकरण 2. श्रीहरिकोटातून पहिला प्रक्षेपण 3. पंबन पुलाचे उद्घाटन (जुना)",
+  "q_english": "Order island events: 1. Abdul Kalam Island naming 2. First Sriharikota launch 3. Old Pamban Bridge opening",
+  "options": [
+   "3-2-1",
+   "2-3-1",
+   "3-1-2",
+   "1-2-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पंबन पूल (1914), श्रीहरिकोटा पहिला प्रक्षेपण (1971, RH-75), व्हीलर बेटाचे अब्दुल कलाम बेट नामकरण (2015).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "दीनदयाल बंदर कांडला मालवाहतूक",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): दीनदयाल बंदर (कांडला) हे भारतातील सर्वात जास्त मालवाहतूक करणारे प्रमुख बंदर आहे. कारण (R): ते कच्छच्या आखातात नैसर्गिक खोल पाण्याचे बंदर आहे.",
+  "q_english": "Assertion (A): Deendayal Port (Kandla) handles the highest cargo among major ports. Reason (R): It is a natural deep-water port in Gulf of Kachchh.",
+  "options": [
+   "A बरोबर, R चूक",
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A चूक, R बरोबर",
+   "दोन्ही चूक"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कांडला सलग सर्वाधिक मालवाहतूक करते (2024-25 मध्ये ~150 दशलक्ष टन); पण ते कृत्रिमरित्या खोल केलेले भरतीचे बंदर आहे, नैसर्गिक खोल पाण्याचे नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "झरिया कोळसा खाणी कोकिंग कोळसा",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "झरिया कोळसा खाणी कशासाठी प्रसिद्ध आहेत?",
+  "q_english": "Jharia coal mines are famous for?",
+  "options": [
+   "लिग्नाइट",
+   "कोकिंग कोळसा",
+   "अँथ्रासाइट",
+   "पीट"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "झारखंडमधील झरिया भारतातील एकमेव प्रमुख कोकिंग कोळसा स्रोत (पोलाद उद्योगासाठी); दशकांपासून भूमिगत आगीसाठीही कुप्रसिद्ध.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "ITCZ जेट प्रवाह मान्सून",
+  "qtype": "बहु-विधान",
+  "q_marathi": "ITCZ आणि जेट प्रवाहांबद्दल: I. ITCZ हा विषुववृत्ताजवळील कमी दाबाचा पट्टा असून ऋतूनुसार सरकतो. II. उपोष्ण जेट प्रवाह मान्सूनच्या आगमन-परतीशी संबंधित आहे. III. ITCZ चे उत्तरेकडे सरकणे हे नैऋत्य मान्सूनचे लक्षण आहे.",
+  "q_english": "On ITCZ and jet streams: I. ITCZ is low-pressure belt near equator, shifts seasonally. II. Subtropical jet linked to monsoon onset/retreat. III. Northward ITCZ shift marks SW monsoon.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; जेट प्रवाहाचे हिमालयाच्या दक्षिणेकडून उत्तरेकडे सरकणे = मान्सून आगमनाचा संकेत.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "पीट-वन-क्षारयुक्त-लॅटेराइट मृदा",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "मृदा आणि वैशिष्ट्ये: 1. पीट/दलदली मृदा 2. वन मृदा 3. क्षारयुक्त मृदा 4. लॅटेराइट | A. केरळ-ओडिशा किनारी B. हिमालयीन उतार C. पंजाब-हरियाणा D. पश्चिमी घाट माथा",
+  "q_english": "Soils: 1. Peaty 2. Forest 3. Saline (Usara) 4. Laterite | A. Kerala-Odisha coast B. Himalayan slopes C. Punjab-Haryana D. Western Ghats crest",
+  "options": [
+   "1-A, 2-B, 3-C, 4-D",
+   "1-B, 2-A, 3-D, 4-C",
+   "1-A, 2-C, 3-B, 4-D",
+   "1-D, 2-B, 3-C, 4-A"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पीट (केरळच्या कुट्टनाडसारखी), वन मृदा (हिमालय), उसरा (कालव्यांमुळे), लॅटेराइट (जांभा, काजू-कॉफीसाठी).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "पूर्व किनारी नद्या उत्तर-दक्षिण क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "पूर्व किनारी नद्यांचा उत्तर-दक्षिण क्रम लावा (मुखाजवळ): 1. हुगली 2. ब्राह्मणी 3. महानदी 4. गोदावरी",
+  "q_english": "North-south order of east-coast river mouths: 1. Hooghly 2. Brahmani 3. Mahanadi 4. Godavari",
+  "options": [
+   "1-3-2-4",
+   "1-2-3-4",
+   "4-3-2-1",
+   "2-1-3-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "हुगली (प. बंगाल), महानदी (ओडिशा), ब्राह्मणी-बैतरणी (ओडिशा, महानदीच्या दक्षिणेस), गोदावरी (आंध्र) — नकाशा-आधारित प्रश्न.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "तामिळनाडू पूर्ववाहिनी नद्या उतार",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): तामिळनाडूच्या नद्या (वैगई, थामिरबरानी) पूर्ववाहिनी आहेत. कारण (R): तमिळनाडूचा उतार पूर्वेकडे (बंगालच्या उपसागराकडे) आहे.",
+  "q_english": "Assertion (A): Tamil Nadu rivers (Vaigai, Thamirabarani) are east-flowing. Reason (R): Tamil Nadu slopes eastward toward Bay of Bengal.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पश्चिमी घाटात उगम पावून पूर्वेकडे वाहणाऱ्या नद्या; थामिरबरानी ही बारमाही नदी आहे.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "मुंद्रा बंदराजवळ कांडला",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "खालीलपैकी कोणते बंदर 'मुंद्रा' या खाजगी बंदराच्या सर्वात जवळ आहे?",
+  "q_english": "Which port is closest to the private port of Mundra?",
+  "options": [
+   "कांडला",
+   "कोची",
+   "विशाखापट्टणम",
+   "पारादीप"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दोन्ही कच्छच्या आखातात (गुजरात); मुंद्रा (अदानी) भारतातील सर्वात मोठे खाजगी बंदर, कांडला सर्वात मोठे प्रमुख बंदर.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 370 रद्द C.O. 272",
+  "qtype": "बहु-विधान",
+  "q_marathi": "कलम 370 रद्दबद्दल (ऑगस्ट 2019): I. राष्ट्रपती आदेश C.O. 272 ने कलम 370 चे खंड 1 वगळता सर्व निष्प्रभ केले. II. जम्मू-काश्मीर पुनर्रचना कायद्याने दोन केंद्रशासित प्रदेश निर्माण झाले. III. लडाखला विधानमंडळासह केंद्रशासित प्रदेशाचा दर्जा मिळाला.",
+  "q_english": "On Article 370 abrogation: I. Presidential Order C.O. 272. II. J&K Reorganisation Act created two UTs. III. Ladakh got UT with legislature.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "5-6 ऑगस्ट 2019; जम्मू-काश्मीर (विधानमंडळासह) आणि लडाख (विधानमंडळाशिवाय) — लडाखला विधानमंडळ नाही, त्यामुळे III चूक.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 31-323A-338-213",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "कलमे आणि विषय: 1. कलम 31 2. कलम 323A 3. कलम 338 4. कलम 213 | A. राष्ट्रीय अनुसूचित जाती आयोग B. राज्यपालांचा अध्यादेश C. प्रशासकीय न्यायाधिकरणे D. संपत्तीचा हक्क (रद्द)",
+  "q_english": "Articles: 1. Art 31 2. Art 323A 3. Art 338 4. Art 213 | A. NCSC B. Governor's ordinance C. Administrative tribunals D. Right to property (repealed)",
+  "options": [
+   "1-D, 2-C, 3-A, 4-B",
+   "1-C, 2-D, 3-B, 4-A",
+   "1-D, 2-A, 3-C, 4-B",
+   "1-B, 2-C, 3-A, 4-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कलम 31 (44 व्या दुरुस्तीने 1978 मध्ये मूलभूत हक्कांतून काढून 300A मध्ये), 323A (केंद्रीय प्रशासकीय न्यायाधिकरण), 338 (NCSC), 213 (राज्यपाल अध्यादेश).",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "SC-ST आरक्षण मुदतवाढ दुरुस्त्या",
+  "qtype": "कालक्रम",
+  "q_marathi": "अनुसूचित जाती/जमाती आरक्षणाच्या वैधतेचा क्रम लावा (मुदतवाढ): 1. 8 वी दुरुस्ती 2. 23 वी दुरुस्ती 3. 62 वी दुरुस्ती 4. 104 वी दुरुस्ती",
+  "q_english": "Order extensions of SC/ST reservation (Art 334): 1. 8th 2. 23rd 3. 62nd 4. 104th Amendment",
+  "options": [
+   "1-2-3-4",
+   "4-3-2-1",
+   "1-3-2-4",
+   "2-1-4-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1960 (8 वी), 1970 (23 वी), 1990 (62 वी), 2020 (104 वी — आता 2030 पर्यंत); 104 व्याने अँग्लो-इंडियन आरक्षण संपवले.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "91वी दुरुस्ती मंत्री संख्या 15 टक्के",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): 91 व्या घटनादुरुस्तीने मंत्रिपरिषदेची संख्या मर्यादित केली. कारण (R): कलम 164(1A) नुसार मंत्री संख्या विधानसभेच्या 15% पेक्षा जास्त नसावी.",
+  "q_english": "Assertion (A): 91st Amendment limited CoM size. Reason (R): Art 164(1A) caps ministers at 15% of assembly.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "2003 ची 91 वी दुरुस्ती; किमान 12 मंत्री; पक्षांतरबंदीही कडक (10 व्या अनुसूचीतील सूट रद्द).",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 167 मुख्यमंत्री कर्तव्य",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "कलम 167 नुसार मुख्यमंत्र्यांचे राज्यपालांप्रती कोणते कर्तव्य आहे?",
+  "q_english": "Under Article 167, what is the CM's duty to the Governor?",
+  "options": [
+   "मंत्रिपरिषदेच्या निर्णयांची माहिती देणे",
+   "अर्थसंकल्प मांडणे",
+   "अध्यादेश काढणे",
+   "न्यायाधीशांची नियुक्ती"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कलम 167 — प्रशासन व विधिविधेयकांबाबत माहिती देणे; राज्यपालांनी मागितलेली माहिती पुरवणे.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 178-179-181 अध्यक्ष",
+  "qtype": "बहु-विधान",
+  "q_marathi": "राज्य विधिमंडळाच्या अध्यक्षांबद्दल: I. कलम 178 नुसार विधानसभा अध्यक्ष/उपाध्यक्ष निवडते. II. कलम 179 नुसार अध्यक्षांना 14 दिवसांची नोटीस देऊन दूर करता येते. III. कलम 181 नुसार हटवणुकीच्या ठरावावेळी अध्यक्ष अध्यक्षस्थानी राहू शकत नाहीत.",
+  "q_english": "On presiding officers: I. Art 178 election. II. Art 179 removal with 14 days notice. III. Art 181 Speaker can't preside during removal resolution.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II आणि III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; कलम 93-94 (लोकसभा) शी समांतर तरतुदी; हटवणुकीसाठी साधे बहुमत पुरेसे.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "SC-ST-SEBC यादी कलम 341-342-342A",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "याद्या आणि कलमे: 1. SC यादी 2. ST यादी 3. SEBC यादी 4. NCSC | A. कलम 342 B. कलम 338 C. कलम 341 D. कलम 342A",
+  "q_english": "Lists: 1. SC list 2. ST list 3. SEBC list 4. NCSC | A. Art 342 B. Art 338 C. Art 341 D. Art 342A",
+  "options": [
+   "1-C, 2-A, 3-D, 4-B",
+   "1-A, 2-C, 3-B, 4-D",
+   "1-C, 2-D, 3-A, 4-B",
+   "1-D, 2-A, 3-C, 4-B"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "341 (SC, राष्ट्रपती अधिसूचना), 342 (ST), 342A (SEBC, 102 वी दुरुस्ती), 338 (NCSC); 338A (NCST) वेगळे.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 355-365-356 तार्किक क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "तरतुदींचा तार्किक क्रम लावा: 1. कलम 355 (संरक्षण कर्तव्य) 2. कलम 365 (आदेश पाळण्यात अपयश) 3. कलम 356 (राष्ट्रपती राजवट)",
+  "q_english": "Logical order: 1. Art 355 2. Art 365 3. Art 356",
+  "options": [
+   "1-2-3",
+   "3-2-1",
+   "2-1-3",
+   "1-3-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "355 (केंद्राचे कर्तव्य) → 365 (राज्याने आदेश न पाळल्यास 356 लावता येते) → 356 (राष्ट्रपती राजवट); बोम्मई निकालाने (1994) 356 वर न्यायिक पुनर्विलोकन.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 194 विशेषाधिकार हाऊस ऑफ कॉमन्स",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): कलम 194 राज्य विधिमंडळाला संसदेइतकेच विशेषाधिकार देते. कारण (R): कलम 105 संसदेचे तर कलम 194 राज्य विधिमंडळाचे विशेषाधिकार सांगते.",
+  "q_english": "Assertion (A): Art 194 gives state legislatures privileges equal to Parliament's. Reason (R): Art 105 covers Parliament, Art 194 state legislatures.",
+  "options": [
+   "A चूक, R बरोबर",
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "दोन्ही चूक",
+   "A बरोबर, R चूक"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कलम 194(3) नुसार राज्य विधिमंडळाचे विशेषाधिकार 'कायद्याने ठरवले जाईपर्यंत' हाऊस ऑफ कॉमन्सएवढे — संसदेइतके आपोआप नाहीत.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 199 धन विधेयक व्याख्या",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "राज्यात धन विधेयकाची व्याख्या कोणत्या कलमात आहे?",
+  "q_english": "Which article defines Money Bill in states?",
+  "options": [
+   "कलम 198",
+   "कलम 199",
+   "कलम 200",
+   "कलम 207"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "कलम 199 (व्याख्या), 198 (विशेष प्रक्रिया — विधानपरिषद 14 दिवसांत परत करेल); 110 (लोकसभा) शी समांतर.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 213 अध्यादेश 6 आठवडे",
+  "qtype": "बहु-विधान",
+  "q_marathi": "राज्यपालांच्या अध्यादेशाबद्दल (कलम 213): I. विधिमंडळाचे अधिवेशन नसताना राज्यपाल अध्यादेश काढू शकतात. II. अध्यादेशाला 6 आठवड्यांत विधिमंडळाची मान्यता लागते. III. राज्यपाल मंत्रिपरिषदेच्या सल्ल्याशिवाय अध्यादेश काढू शकतात.",
+  "q_english": "On Governor's ordinance (Art 213): I. During recess. II. Needs approval within 6 weeks. III. Without CoM advice.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "213(1) — समाधान मंत्रिपरिषदेच्या सल्ल्यानेच; 6 आठवडे/6 महिने नियम; DC वाधवा निकाल (2017) — पुन:प्रख्यापन हा घटनात्मक फसवणूक.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 239AA-240-241-239AB",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "केंद्रशासित प्रदेश: 1. कलम 239AA 2. कलम 240 3. कलम 241 4. कलम 239AB | A. दिल्ली B. राष्ट्रपतींचे नियमन C. उच्च न्यायालय D. घटनात्मक यंत्रणा अपयश",
+  "q_english": "UTs: 1. Art 239AA 2. Art 240 3. Art 241 4. Art 239AB | A. Delhi B. President's regulations C. High Court D. Constitutional breakdown",
+  "options": [
+   "1-A, 2-B, 3-C, 4-D",
+   "1-D, 2-C, 3-B, 4-A",
+   "1-A, 2-C, 3-B, 4-D",
+   "1-B, 2-A, 3-D, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "239AA (दिल्ली NCT, 69 वी दुरुस्ती), 240 (राष्ट्रपती नियम), 241 (UT उच्च न्यायालय), 239AB (यंत्रणा अपयश).",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "विधिमंडळ प्रक्रिया क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "विधिमंडळ प्रक्रियेचा क्रम लावा: 1. विधेयक मांडणे 2. समिती विचार 3. तिसरे वाचन 4. राज्यपालांची संमती",
+  "q_english": "Order legislative process: 1. Introduction 2. Committee 3. Third reading 4. Governor's assent",
+  "options": [
+   "1-2-3-4",
+   "2-1-3-4",
+   "1-3-2-4",
+   "4-1-2-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पहिले वाचन (मांडणी) → समिती/दुसरे वाचन → तिसरे वाचन (मंजुरी) → कलम 200 नुसार संमती/राखीव/परत.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 174 6 महिने अधिवेशन",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): कलम 174 नुसार दोन अधिवेशनांत 6 महिन्यांपेक्षा जास्त अंतर नसावे. कारण (R): हे लोकशाही उत्तरदायित्व सुनिश्चित करते.",
+  "q_english": "Assertion (A): Art 174 mandates max 6-month gap between sessions. Reason (R): It ensures democratic accountability.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कलम 174(1); कलम 85 (संसद) शी समांतर; अर्थसंकल्पीय/पावसाळी/हिवाळी अशी तीन अधिवेशने परंपरेने.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 323A 323B न्यायाधिकरणे",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "न्यायाधिकरणांबद्दल खालीलपैकी कोणते बरोबर?",
+  "q_english": "Which is correct about tribunals?",
+  "options": [
+   "कलम 323A — प्रशासकीय न्यायाधिकरणे; कलम 323B — इतर न्यायाधिकरणे",
+   "दोन्ही एकच आहेत",
+   "कलम 323A — निवडणूक न्यायाधिकरणे",
+   "कलम 323B — फक्त कर न्यायाधिकरणे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "42 व्या दुरुस्तीने (1976); CAT (1985) 323A खाली; 323B खाली कर, कामगार, ग्राहक इ. न्यायाधिकरणे.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "1 रुपया नोट वित्त मंत्रालय",
+  "qtype": "बहु-विधान",
+  "q_marathi": "1 रुपयाच्या नोटेबद्दल: I. ती RBI नव्हे तर वित्त मंत्रालय जारी करते. II. तिच्यावर RBI गव्हर्नर नव्हे तर वित्त सचिवांची सही असते. III. RBI कायदा कलम 22 नुसार ती 'चलन' आहे.",
+  "q_english": "On Re 1 note: I. Issued by Finance Ministry, not RBI. II. Signed by Finance Secretary. III. Under RBI Act Sec 22.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त II",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1 रुपयाची नोट/नाणे भारत सरकार जारी करते (RBI कायदा कलम 22 मधून वगळले); त्यामुळे वित्त सचिवांची सही; 'I promise to pay' वाक्य नसते.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "नोटाबंदी-GST-राष्ट्रीयीकरण-LPG वर्षे",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "आर्थिक घटना: 1. नोटाबंदी 2. GST लागू 3. बँक राष्ट्रीयीकरण (पहिला टप्पा) 4. LPG सुधारणा | A. 1969 B. 1991 C. 2016 D. 2017",
+  "q_english": "Events: 1. Demonetisation 2. GST launch 3. Bank nationalisation 4. LPG reforms | A. 1969 B. 1991 C. 2016 D. 2017",
+  "options": [
+   "1-C, 2-D, 3-A, 4-B",
+   "1-D, 2-C, 3-B, 4-A",
+   "1-C, 2-A, 3-D, 4-B",
+   "1-B, 2-D, 3-A, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "नोटाबंदी (8 नोव्हें 2016, 500/1000), GST (1 जुलै 2017), 14 बँका (1969), LPG (1991, मनमोहन सिंग).",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "RBI सोने धोरण 1991-2009-2024",
+  "qtype": "कालक्रम",
+  "q_marathi": "RBI च्या सोने धोरणाचा क्रम लावा: 1. 1991 मध्ये सोने गहाण 2. 2009 मध्ये IMF कडून 200 टन खरेदी 3. 2024 मध्ये 100 टन स्वदेश परत",
+  "q_english": "Order RBI gold moves: 1. 1991 pledge 2. 2009 IMF purchase 3. 2024 repatriation",
+  "options": [
+   "1-2-3",
+   "3-2-1",
+   "2-1-3",
+   "1-3-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1991 संकटात बँक ऑफ इंग्लंडकडे गहाण; 2009 मध्ये IMF कडून खरेदी; मे-ऑक्टो 2024 मध्ये 100+ टन स्वदेशात परत — 'आर्थिक स्वाभिमान'.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "SRVA रुपया वोस्ट्रो 2022",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): SRVA (विशेष रुपया वोस्ट्रो खाते) यंत्रणा 2022 मध्ये सुरू झाली. कारण (R): रशिया-युक्रेन युद्धानंतर डॉलरवर अवलंबित्व कमी करून रुपयात व्यापार वाढवणे हा उद्देश होता.",
+  "q_english": "Assertion (A): SRVA mechanism started in 2022. Reason (R): To boost rupee trade and cut dollar dependence after Russia-Ukraine war.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "जुलै 2022 मध्ये RBI ने परवानगी दिली; रशियासह अनेक देशांशी रुपयात व्यापार — डॉलरायझेशनला पर्याय.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "काळा पैसा कायदा 2015 परदेशी मालमत्ता",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "काळा पैसा कायदा (2015) कशाशी संबंधित आहे?",
+  "q_english": "Black Money Act (2015) relates to?",
+  "options": [
+   "देशांतर्गत बेहिशेबी मालमत्ता",
+   "परदेशातील बेहिशेबी उत्पन्न व मालमत्ता",
+   "बेनामी व्यवहार",
+   "हवाला"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "'Black Money (Undisclosed Foreign Income and Assets) Act 2015'; बेनामीसाठी स्वतंत्र 2016 चा कायदा.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "115BAC नवी-जुनी करप्रणाली 12 लाख",
+  "qtype": "बहु-विधान",
+  "q_marathi": "नवीन विरुद्ध जुनी करप्रणाली (115BAC): I. 2025 च्या अर्थसंकल्पानुसार नव्या प्रणालीत 12 लाखांपर्यंत उत्पन्न करमुक्त (रिबेट). II. जुनी प्रणाली वजावटींसह (80C इ.) अजूनही उपलब्ध आहे. III. 2023 पासून नवी प्रणाली 'डीफॉल्ट' आहे.",
+  "q_english": "New vs old tax regime: I. 2025 Budget: nil tax till ₹12L under new regime (rebate). II. Old regime with deductions continues. III. New regime default since 2023.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; कलम 87A रिबेटमुळे 12 लाखांपर्यंत शून्य कर; पगारदारांना 75,000 मानक वजावट.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "STT-CTT-इक्वलायझेशन-एंजल टॅक्स",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "कर आणि स्वरूप: 1. STT 2. CTT 3. इक्वलायझेशन लेव्ही 4. एंजल टॅक्स | A. डिजिटल जाहिराती B. शेअर व्यवहार C. कमोडिटी व्यवहार D. स्टार्टअप गुंतवणूक (2024 मध्ये रद्द)",
+  "q_english": "Taxes: 1. STT 2. CTT 3. Equalisation Levy 4. Angel Tax | A. Digital ads B. Share transactions C. Commodity transactions D. Startup investment (abolished 2024)",
+  "options": [
+   "1-B, 2-C, 3-A, 4-D",
+   "1-C, 2-B, 3-D, 4-A",
+   "1-B, 2-A, 3-C, 4-D",
+   "1-D, 2-C, 3-A, 4-B"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "STT (शेअर), CTT (कमोडिटी), इक्वलायझेशन लेव्ही (परदेशी डिजिटल कंपन्या), एंजल टॅक्स (2024 अर्थसंकल्पात रद्द).",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "GST भरपाई क्रम 2017-2026",
+  "qtype": "कालक्रम",
+  "q_marathi": "GST भरपाई यंत्रणेचा क्रम लावा: 1. GST लागू 2. भरपाई उपकर सुरू 3. भरपाई कालावधी संपला (जून 2022) 4. उपकर मुदतवाढ (मार्च 2026)",
+  "q_english": "Order GST compensation: 1. GST launch 2. Cess start 3. Period ended Jun 2022 4. Extension to Mar 2026",
+  "options": [
+   "1-2-3-4",
+   "2-1-4-3",
+   "1-3-2-4",
+   "4-3-2-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "2017 पासून 14% वाढीची हमी; कर्ज परतफेडीसाठी उपकर 2026 पर्यंत वाढवला.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "MSME व्याख्या 2020 गुंतवणूक उलाढाल",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): 2020 मध्ये MSME ची व्याख्या गुंतवणूक + उलाढाल या दोन्हींवर आधारित केली. कारण (R): यामुळे अधिक उद्योगांना MSME लाभ मिळावेत हा उद्देश होता.",
+  "q_english": "Assertion (A): 2020 MSME definition uses investment + turnover. Reason (R): To extend benefits to more enterprises.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सूक्ष्म: 1 कोटी गुंतवणूक/5 कोटी उलाढाल; लघु: 10/50; मध्यम: 50/250 — 'आत्मनिर्भर' पॅकेजचा भाग.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "NMP 6 लाख कोटी",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "राष्ट्रीय मुद्रीकरण पाइपलाइन (NMP) चे उद्दिष्ट किती आहे?",
+  "q_english": "NMP target?",
+  "options": [
+   "6 लाख कोटी रुपये",
+   "1 लाख कोटी रुपये",
+   "10 लाख कोटी रुपये",
+   "50 हजार कोटी रुपये"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "2021-25 साठी; रस्ते, रेल्वे, वीज, खाणी यांच्या 'ब्राउनफील्ड' मालमत्तांचे मुद्रीकरण — मालकी विक्री नाही, भाडेपट्टा.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "WTO MC13 अबू धाबी PSH",
+  "qtype": "बहु-विधान",
+  "q_marathi": "WTO च्या 13 व्या मंत्रिस्तरीय परिषदेबद्दल (अबू धाबी, 2024): I. फेब्रु-मार्च 2024 मध्ये झाली. II. भारताने सार्वजनिक धान्यसाठ्याचा (PSH) कायमस्वरूपी तोडगा मागितला. III. मत्स्यपालन अनुदान करार पूर्णपणे अंमलात आला.",
+  "q_english": "On WTO MC13 Abu Dhabi: I. Feb-Mar 2024. II. India sought permanent solution on PSH. III. Fisheries subsidies deal fully implemented.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त III",
+   "फक्त I"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "26 फेब्रु-2 मार्च 2024; PSH वर 'शांतता कलम' कायम; मत्स्यपालनावर अपूर्ण सहमती.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "AIIB-NDB-ADB-IMF मुख्यालय",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "आंतरराष्ट्रीय संस्था आणि मुख्यालय: 1. AIIB 2. NDB 3. ADB 4. IMF | A. वॉशिंग्टन B. मनिला C. बीजिंग D. शांघाय",
+  "q_english": "Institutions and HQ: 1. AIIB 2. NDB 3. ADB 4. IMF | A. Washington B. Manila C. Beijing D. Shanghai",
+  "options": [
+   "1-C, 2-D, 3-B, 4-A",
+   "1-D, 2-C, 3-A, 4-B",
+   "1-C, 2-B, 3-D, 4-A",
+   "1-A, 2-D, 3-B, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "AIIB (बीजिंग, 2016), NDB (शांघाय, ब्रिक्स बँक), ADB (मनिला), IMF (वॉशिंग्टन); भारत तिन्हींचा संस्थापक सदस्य.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "स्मिथ-कीन्स-शुंपीटर-सेन क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "आर्थिक विचारवंतांचा क्रम लावा (कालानुक्रमे): 1. अ‍ॅडम स्मिथ 2. कीन्स 3. शुंपीटर 4. अमर्त्य सेन",
+  "q_english": "Order economists chronologically: 1. Adam Smith 2. Keynes 3. Schumpeter 4. Amartya Sen",
+  "options": [
+   "1-2-3-4",
+   "1-3-2-4",
+   "4-3-2-1",
+   "2-1-4-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "स्मिथ (1776, Wealth of Nations) → कीन्स (1936, General Theory) → शुंपीटर (1942, सर्जनशील विध्वंस) → सेन (1998 नोबेल, क्षमता दृष्टिकोन).",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "गिफेन वस्तू उत्पन्न परिणाम",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): गिफेन वस्तूंची मागणी किंमत वाढल्यास वाढते. कारण (R): उत्पन्न परिणाम प्रतिस्थापन परिणामापेक्षा प्रबळ असतो.",
+  "q_english": "Assertion (A): Giffen goods' demand rises with price. Reason (R): Income effect dominates substitution effect.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "निकृष्ट पण आवश्यक वस्तू (उदा. बटाटा); व्हेब्लेन वस्तू (प्रतिष्ठा) वेगळ्या — दोन्ही 'मागणीचा नियम' मोडतात.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "सार्वजनिक वस्तू अनपवर्जनीयता",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "'सार्वजनिक वस्तू' (public goods) ची वैशिष्ट्ये कोणती?",
+  "q_english": "Features of public goods?",
+  "options": [
+   "अपवर्जनीयता + प्रतिस्पर्धात्मकता",
+   "अनपवर्जनीयता + अप्रतिस्पर्धात्मकता",
+   "अपवर्जनीयता + अप्रतिस्पर्धात्मकता",
+   "अनपवर्जनीयता + प्रतिस्पर्धात्मकता"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "रस्त्यावरील दिवे, संरक्षण — वापरापासून रोखता येत नाही, एकाचा वापर दुसऱ्याला अडवत नाही; 'मोफत सवारी' (free rider) समस्या.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "थ्रोम्बोसाइट्स मेगाकॅरिओसाइट्स",
+  "qtype": "बहु-विधान",
+  "q_marathi": "रक्तपेशींबद्दल: I. थ्रोम्बोसाइट्स (बिंबाणू) रक्त गोठवण्यास मदत करतात. II. त्यांचे आयुष्य सुमारे 8-10 दिवस असते. III. ते अस्थिमज्जेतील मेगाकॅरिओसाइट्सपासून तयार होतात.",
+  "q_english": "On platelets: I. Help clotting. II. Lifespan 8-10 days. III. From megakaryocytes in bone marrow.",
+  "options": [
+   "फक्त I आणि III",
+   "I, II आणि III",
+   "फक्त I",
+   "फक्त II आणि III"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; कमी बिंबाणू = थ्रोम्बोसाइटोपेनिया (डेंग्यूत धोकादायक).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "शलाका-शंकू-अंधबिंदू-पिवळा डाग",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "डोळ्याचे भाग आणि कार्य: 1. शलाका (rods) 2. शंकू (cones) 3. अंधबिंदू (blind spot) 4. पिवळा डाग | A. रंगदृष्टी B. मंद प्रकाश दृष्टी C. तीक्ष्ण दृष्टी D. दृष्टिचेतापेशी नाहीत",
+  "q_english": "Eye parts: 1. Rods 2. Cones 3. Blind spot 4. Macula | A. Colour vision B. Dim light vision C. Sharp vision D. No photoreceptors",
+  "options": [
+   "1-B, 2-A, 3-D, 4-C",
+   "1-A, 2-B, 3-C, 4-D",
+   "1-B, 2-D, 3-A, 4-C",
+   "1-D, 2-A, 3-B, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "शलाका (मंद प्रकाश), शंकू (रंग), अंधबिंदू (ऑप्टिक नर्व्ह जाण्याची जागा), पिवळा डाग/फोव्हिया (तीक्ष्ण दृष्टी).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "दंत विकास क्रम दुधाचे दात",
+  "qtype": "कालक्रम",
+  "q_marathi": "मानवी दंत विकासाचा क्रम लावा: 1. दुधाचे दात पूर्ण 2. कायमचे दात येणे सुरू 3. अक्कलदाढा 4. दुधाचे दात पडणे सुरू",
+  "q_english": "Order dental development: 1. Milk teeth complete 2. Permanent begin 3. Wisdom teeth 4. Milk teeth fall",
+  "options": [
+   "1-4-2-3",
+   "1-2-4-3",
+   "4-1-2-3",
+   "1-2-3-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "20 दुधाचे दात (~3 वर्षे) → 6 व्या वर्षी पडणे + कायमचे येणे → 32 कायमचे (2123/2123 सूत्र) → अक्कलदाढा (17-25 वर्षे).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "मध्यपटल श्वासोच्छ्वास बॉयल नियम",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): श्वासोच्छ्वासात (inhalation) मध्यपटल (diaphragm) खाली सरकते. कारण (R): छातीची पोकळी वाढून हवेचा दाब कमी होतो आणि हवा आत शिरते.",
+  "q_english": "Assertion (A): Diaphragm moves down during inhalation. Reason (R): Chest cavity expands, pressure drops, air rushes in.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बॉयलच्या नियमानुसार (P∝1/V); उच्छ्वासात उलट — मध्यपटल वर, बरगड्यांचे स्नायू शिथिल.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "सामान्य रक्तदाब 120/80",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "सामान्य रक्तदाब किती मानला जातो?",
+  "q_english": "Normal blood pressure?",
+  "options": [
+   "120/80 mmHg",
+   "140/90 mmHg",
+   "100/70 mmHg",
+   "160/100 mmHg"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सिस्टॉलिक 120 / डायस्टॉलिक 80; स्फिग्मोमॅनोमीटरने मोजतात; 140/90 पेक्षा जास्त = उच्च रक्तदाब.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "सेरेब्रम-सेरेबेलम-मेडुला",
+  "qtype": "बहु-विधान",
+  "q_marathi": "मेंदूच्या भागांबद्दल: I. सेरेब्रम विचार, स्मरणशक्ती नियंत्रित करते. II. सेरेबेलम समतोल व स्नायू समन्वय साधते. III. मेडुला ऑब्लाँगाटा श्वासोच्छ्वास, हृदयगती नियंत्रित करते.",
+  "q_english": "On brain parts: I. Cerebrum - thought/memory. II. Cerebellum - balance. III. Medulla - breathing/heartbeat.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; सेरेब्रम सर्वात मोठा भाग (दोन गोलार्ध); हायपोथालमस तापमान-भूक नियंत्रित करतो.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "इन्सुलिन-लस-रक्तगट-पेनिसिलिन शोध",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "शोध आणि शास्त्रज्ञ: 1. इन्सुलिन 2. लसीकरण 3. रक्तगट 4. पेनिसिलिन | A. फ्लेमिंग B. लँडस्टायनर C. बँटिंग-बेस्ट D. जेनर",
+  "q_english": "Discoveries: 1. Insulin 2. Vaccination 3. Blood groups 4. Penicillin | A. Fleming B. Landsteiner C. Banting-Best D. Jenner",
+  "options": [
+   "1-C, 2-D, 3-B, 4-A",
+   "1-D, 2-C, 3-A, 4-B",
+   "1-C, 2-B, 3-D, 4-A",
+   "1-A, 2-D, 3-B, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "इन्सुलिन (1921, बँटिंग-बेस्ट, नोबेल 1923), लस (जेनर 1796, देवी), रक्तगट (लँडस्टायनर 1901), पेनिसिलिन (फ्लेमिंग 1928).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "पेशी सिद्धांत श्लायडन-श्वान-व्हर्चो",
+  "qtype": "कालक्रम",
+  "q_marathi": "पेशी सिद्धांताचा विकासक्रम लावा: 1. श्लायडन (वनस्पती) 2. श्वान (प्राणी) 3. व्हर्चो ('सर्व पेशी पेशींपासून')",
+  "q_english": "Order cell theory: 1. Schleiden 2. Schwann 3. Virchow",
+  "options": [
+   "1-2-3",
+   "3-2-1",
+   "2-1-3",
+   "1-3-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "श्लायडन (1838), श्वान (1839), व्हर्चो (1855, 'Omnis cellula e cellula') — पेशी जीवशास्त्राचा पाया.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "T-B पेशी लिम्फोसाइट्स",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): लसीका (T) आणि B पेशी या दोन्ही लिम्फोसाइट्स आहेत. कारण (R): T पेशी पेशी-मध्यस्थ तर B पेशी प्रतिपिंड-मध्यस्थ प्रतिकारशक्ती देतात.",
+  "q_english": "Assertion (A): T and B cells are both lymphocytes. Reason (R): T gives cell-mediated, B gives antibody-mediated immunity.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही तथ्ये बरोबर; पण R हे A चे 'स्पष्टीकरण' नाही — दोन्ही लिम्फोसाइट असण्याचे कारण अस्थिमज्जेतून उत्पत्ती हे आहे.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "ABO बहु-अ‍ॅलील वारसा",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "रक्तगटाच्या वारशाबद्दल कोणते विधान बरोबर?",
+  "q_english": "Correct statement on blood group inheritance?",
+  "options": [
+   "ABO हे बहु-अ‍ॅलीलचे उदाहरण आहे",
+   "O गट प्रभावी आहे",
+   "AB मध्ये अ‍ॅग्लुटिनिन नसते हे चूक",
+   "वरील सर्व"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "IA, IB, i असे तीन अ‍ॅलील (बहु-अ‍ॅलील); AB मध्ये अ‍ॅग्लुटिनोजेन A+B पण अ‍ॅग्लुटिनिन नाहीत — 'सार्वत्रिक ग्राही'.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "झायलेम-फ्लोएम वाहक ऊतक",
+  "qtype": "बहु-विधान",
+  "q_marathi": "वाहक ऊतकांबद्दल (xylem-phloem): I. झायलेम पाणी व खनिजे वर वाहून नेते. II. फ्लोएम अन्नद्रव्ये दोन्ही दिशांनी वाहून नेते. III. झायलेमच्या वाहिन्या मृत पेशींच्या असतात.",
+  "q_english": "On vascular tissue: I. Xylem carries water up. II. Phloem transports food both ways. III. Xylem vessels are dead cells.",
+  "options": [
+   "फक्त I आणि II",
+   "I, II आणि III",
+   "फक्त III",
+   "फक्त I"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही बरोबर; झायलेम (एकदिश, मृत वाहिन्या), फ्लोएम (द्विदिश, जिवंत चाळणी नलिका) — वलयीकरण प्रयोगाने सिद्ध.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "EIA-CRZ-NGT-CAMPA",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "पर्यावरणीय संकल्पना: 1. EIA 2. CRZ 3. NGT 4. CAMPA | A. किनारी नियमन B. हरित न्यायाधिकरण C. पर्यावरण प्रभाव मूल्यांकन D. वन भरपाई निधी",
+  "q_english": "Environmental concepts: 1. EIA 2. CRZ 3. NGT 4. CAMPA | A. Coastal regulation B. Green tribunal C. Environment impact assessment D. Forest compensation fund",
+  "options": [
+   "1-C, 2-A, 3-B, 4-D",
+   "1-A, 2-C, 3-D, 4-B",
+   "1-C, 2-D, 3-A, 4-B",
+   "1-D, 2-A, 3-B, 4-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "EIA (1986/2006 अधिसूचना), CRZ (1991/2019), NGT (2010 कायदा), CAMPA (2016 कायदा, वन वळवण भरपाई).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "अ‍ॅव्होगाड्रो-मोल-अणुभार क्रम",
+  "qtype": "कालक्रम",
+  "q_marathi": "रसायनशास्त्रातील संकल्पनांचा क्रम लावा: 1. अ‍ॅव्होगाड्रो संख्या 2. मोल संकल्पना 3. अणुभार प्रमाण",
+  "q_english": "Order: 1. Avogadro number 2. Mole concept 3. Atomic weight scale",
+  "options": [
+   "3-1-2",
+   "1-2-3",
+   "3-2-1",
+   "2-3-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "डाल्टन (अणुभार, 1808) → अ‍ॅव्होगाड्रो (6.022×10²³, 1811) → मोल (Ostwald, नंतर SI एकक 1971).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "क्रोमॅटोग्राफी आकर्षण क्षमता",
+  "qtype": "विधान-कारण",
+  "q_marathi": "विधान (A): क्रोमॅटोग्राफीत घटकांचे वेगळेपण होते. कारण (R): स्थिर व चल प्रावस्थांशी त्यांची आकर्षण क्षमता भिन्न असते.",
+  "q_english": "Assertion (A): Chromatography separates components. Reason (R): They differ in affinity for stationary/mobile phases.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "स्वेट (1906, वनस्पती रंगद्रव्ये); कागद, वायू, द्रव क्रोमॅटोग्राफी — औषध शुद्धता तपासणीत महत्त्वाची.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "प्रक्षेप्य गती आडवा वेग स्थिर",
+  "qtype": "साधा प्रश्न",
+  "q_marathi": "प्रक्षेप्य गतीत (projectile motion) कोणता घटक स्थिर राहतो? (हवेचा रोध दुर्लक्षित)",
+  "q_english": "In projectile motion, which component remains constant? (neglect air resistance)",
+  "options": [
+   "उभ्या दिशेचा वेग",
+   "आडव्या दिशेचा वेग",
+   "एकूण वेग",
+   "गतिज ऊर्जा"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "हवेचा रोध नसल्यास आडवा वेग स्थिर (त्वरण शून्य); उभा वेग g मुळे बदलतो; 45° कोनात सर्वाधिक क्षैतिज परास.",
+  "evidence": ""
+ }
+]

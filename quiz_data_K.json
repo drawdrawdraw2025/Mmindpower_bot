@@ -1,0 +1,1442 @@
+[
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने पहा: (I) ऑपरेशन सिंदूर अंतर्गत 7 मे 2025 रोजी पहाटे 1:05 ते 1:30 दरम्यान पाकिस्तान व पाकव्याप्त काश्मीरमधील 9 दहशतवादी तळांवर भारतीय लष्कर, नौदल व हवाई दलाने समन्वित सटीक क्षेपणास्त्र हल्ले केले. (II) हे ऑपरेशन 7 ते 10 मे 2025 या चार दिवस चालले व 10 मे रोजी युद्धबंदीने समाप्त झाले. (III) ऑपरेशन सिंदूर हे पुलवामा दहशतवादी हल्ल्याचा बदला म्हणून राबवण्यात आले. योग्य गट निवडा:",
+  "q_english": "Examine: (I) Under Operation Sindoor, early hours of 7 May 2025 between 1:05-1:30 AM, Indian forces conducted coordinated precision strikes on 9 terror camps in Pakistan and PoK. (II) The operation lasted 7-10 May 2025, ending with ceasefire on 10 May. (III) It was retaliation for the Pulwama attack. Choose correct group:",
+  "options": [
+   "I, II आणि III सर्व सत्य",
+   "फक्त I आणि II सत्य",
+   "फक्त II आणि III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I सत्य – 9 तळांवर तिन्ही दलांचे सटीक हल्ले. II सत्य – 7 ते 10 मे संघर्ष व 10 मे युद्धबंदी. III असत्य – हे पहलगाम (22 एप्रिल 2025) हल्ल्याचा बदला होते.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा – (a) सिंधू जल करार स्वाक्षरी वर्ष, (b) करार abeyance ठेवणारी समिती, (c) पाकिस्तानला स्थगिती अधिसूचना तारीख, (d) स्थगिती उठवण्याची अट. (1) 1960, (2) CCS, (3) 24 एप्रिल 2025, (4) पाकिस्तानने दहशतवाद पाठिंबा थांबवेपर्यंत.",
+  "q_english": "Match – (a) IWT signing year, (b) Committee holding treaty in abeyance, (c) Notification date to Pakistan, (d) Condition for revoking. (1) 1960, (2) CCS, (3) 24 April 2025, (4) Until Pakistan stops terror support.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-1,b-3,c-2,d-4",
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-2,c-4,d-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "करार 1960 (a-1), निर्णय CCS ने (b-2), अधिसूचना 24 एप्रिल (c-3), अट दहशतवाद पाठिंबा थांबवणे (d-4).",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "पहलगाम हल्ला घटनाक्रम: (a) 22 एप्रिल 2025 बैसरण मैदान गोळीबार – 26 मृत, (b) धार्मिक ओळख विचारून लक्ष्य केल्याचे वृत्त, (c) TRF ने जबाबदारी स्वीकारली, (d) मृत यादी – 25 पर्यटक + 1 स्थानिक. योग्य क्रम:",
+  "q_english": "Pahalgam attack sequence: (a) 22 Apr 2025 Baisaran firing – 26 dead, (b) reports of religion-based targeting, (c) TRF claimed responsibility, (d) victim list – 25 tourists + 1 local. Correct order:",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "c-a-d-b",
+   "a-b-d-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "आधी गोळीबार (a), नंतर धार्मिक पैलू (b), मग TRF दावा (c), शेवटी अधिकृत यादी (d).",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "प्रतिपादन (A): सी.पी. राधाकृष्णन 452 मते मिळवून 15 वे उपराष्ट्रपती झाले; न्या. सुदर्शन रेड्डी यांना 300 मते. कारण (R): एकूण 767 मते, 752 वैध, 15 अवैध; बहुमत 386.",
+  "q_english": "Assertion (A): C.P. Radhakrishnan won as 15th VP with 452 votes; Justice Reddy got 300. Reason (R): 767 votes polled, 752 valid, 15 invalid; majority 386.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A सत्य, R सत्य पण 452 आकडा NDA संख्याबळाचा परिणाम आहे, मतदान-गणिताचे स्पष्टीकरण नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: भाजप 48/70 जागा – 27 वर्षांनंतर दिल्लीत सत्ता; रेखा गुप्ता 68,200 मते – 29,595 मताधिक्य; दिल्लीच्या 4थ्या महिला CM; शपथ 20 फेब्रु 2025. सुसंगत निष्कर्ष:",
+  "q_english": "Table: BJP 48/70 – power after 27 years; Rekha Gupta 68,200 votes – 29,595 margin; 4th woman CM Delhi; oath 20 Feb 2025. Consistent conclusion:",
+  "options": [
+   "विजय एका मतदारसंघापुरता",
+   "48/70 स्पष्ट बहुमत – संघटनात्मक पुनरुज्जीवन + निर्णायक वैयक्तिक विजय",
+   "बहुमत नसताना CM",
+   "विजय अपघाती"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "48 जागा पूर्ण बहुमत, 27 वर्षांनंतर पुनरागमन संघटनात्मक, मोठा फरक वैयक्तिक जनादेश दर्शवतो.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: बिहार निवडणूक 2025 पूर्वी 1.25 कोटी महिलांना ₹10,000 थेट लाभ; NDA एकजुटीने लढले. तार्किक परिणाम:",
+  "q_english": "Cause: Before Bihar 2025 polls, 1.25 cr women got Rs 10,000 direct benefit; NDA fought united. Logical effect:",
+  "options": [
+   "NDA 202/243 जागा; भाजप 89-91 सर्वात मोठा, जद(यू) 83-85",
+   "महागठबंधन 200 जागा",
+   "महिला मतदान घटले, NDA हरले",
+   "NDA ला 122 बहुमत नाही"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "थेट लाभ + एकजूट = महिला मतलाट; NDA 200 पार गेले.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) बिरेन सिंह राजीनामा 9 फेब्रु 2025 नंतर 13 फेब्रुला कलम 356 अंतर्गत मणिपूर राष्ट्रपती राजवट. (II) 60 सदस्यीय विधानसभा बरखास्त. (III) लोकसभेने 3 एप्रिल, राज्यसभेने 4 एप्रिल 2025 रोजी मान्यता; 13 ऑगस्टपासून 6 महिने मुदतवाढ.",
+  "q_english": "(I) After Biren Singh resigned 9 Feb 2025, President's Rule in Manipur on 13 Feb under Art 356. (II) 60-member Assembly dissolved. (III) LS approved 3 Apr, RS 4 Apr 2025; extended 6 months from 13 Aug.",
+  "options": [
+   "I,II,III सर्व सत्य",
+   "फक्त I,III सत्य",
+   "फक्त II सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, III सत्य. II असत्य – विधानसभा बरखास्त नाही, निलंबित (suspended animation) ठेवली.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) उत्तराखंड UCC लागू तारीख, (b) UCC विधेयक संमत तारीख, (c) पोर्टल उद्घाटन करणारे CM, (d) UCC मधून वगळलेला गट. (1) 27 जाने 2025, (2) 7 फेब्रु 2024, (3) पुष्कर धामी, (4) ST.",
+  "q_english": "(a) UCC effective date Uttarakhand, (b) Bill passed date, (c) CM inaugurating portal, (d) Exempted group. (1) 27 Jan 2025, (2) 7 Feb 2024, (3) Pushkar Dhami, (4) ST.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-2,c-4,d-3",
+   "a-3,b-2,c-1,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "UCC 27 जाने 2025 लागू, विधेयक 7 फेब्रु 2024 संमत, धामींनी पोर्टल सुरू केले, ST वगळले.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "क्रीडा प्रशासन विधेयक 2025: (a) 23 जुलै 2025 मांडवियांनी लोकसभेत मांडले, (b) 11 ऑगस्ट लोकसभेत संमत, (c) 12 ऑगस्ट राज्यसभेत संमत, (d) 18 ऑगस्ट राष्ट्रपती स्वाक्षरी.",
+  "q_english": "Sports Governance Bill 2025: (a) 23 Jul introduced in LS, (b) 11 Aug passed LS, (c) 12 Aug passed RS, (d) 18 Aug President assent.",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "b-a-c-d",
+   "a-b-d-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "मांडणे → लोकसभा → राज्यसभा → राष्ट्रपती स्वाक्षरी हाच संसदीय क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): 29 जाने 2025 सकाळी 6:23 श्रीहरिकोटाहून GSLV-F15 ने NVS-02 कक्षेत ठेवले; 100 वा प्रक्षेपण. (R): 17 वी GSLV मोहीम, 8 वे स्वदेशी क्रायो उड्डाण; NVS-02 2250-kg नेव्हिगेशन उपग्रह.",
+  "q_english": "(A): On 29 Jan 2025, GSLV-F15 placed NVS-02 in orbit; 100th Sriharikota launch. (R): 17th GSLV mission, 8th indigenous cryo flight; NVS-02 2250-kg nav satellite.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही सत्य पण R मधील तांत्रिक तपशील 100 व्या क्रमांकाचे कारण स्पष्ट करत नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: न्या. बी.आर. गवई – 52 वे CJI; शपथ 14 मे 2025; कार्यकाळ 23 नोव्हें 2025 पर्यंत; SC मधील दुसरे, पहिले बौद्ध CJI. विसंगत विधान:",
+  "q_english": "Table: Justice B.R. Gavai – 52nd CJI; oath 14 May 2025; tenure till 23 Nov 2025; 2nd SC, 1st Buddhist CJI. Inconsistent statement:",
+  "options": [
+   "कलम 124(2) अंतर्गत नियुक्ती",
+   "51 वे CJI, दोन वर्ष कार्यकाळ",
+   "जय भीम अभिवादन",
+   "दुसरे SC, पहिले बौद्ध CJI"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "52 वे CJI, फक्त 6 महिने कार्यकाळ; 51 वा क्रम व दोन वर्षे तक्त्याविरुद्ध.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: 17 फेब्रु 2025 निवड समितीने ज्ञानेश कुमार (केरळ केडर 1988) यांची CEC नियुक्ती – नवीन कायदा 2023 कलम 4 अंतर्गत पहिली; 19 फेब्रुला 26 वे CEC पदभार. परिणाम:",
+  "q_english": "Cause: On 17 Feb 2025 selection committee appointed Gyanesh Kumar as CEC – first under 2023 Act Sec 4; took charge as 26th CEC on 19 Feb. Effect:",
+  "options": [
+   "कार्यकाळ 26 जाने 2029 पर्यंत; विवेक जोशी EC",
+   "जुन्या कॉलेजियमने नियुक्ती",
+   "राजीव कुमार 2029 पर्यंत राहिले",
+   "निवडणूक आयोग बरखास्त"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "नवीन कायद्यांतर्गत कार्यकाळ 26 जाने 2029 पर्यंत निश्चित; विवेक जोशी EC झाले.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) 6 वी बिम्स्टेक परिषद 4 एप्रिल 2025 बँकॉक – 'Prosperous, Resilient and Open BIMSTEC'. (II) बँकॉक व्हिजन 2030, सागरी वाहतूक करार, EPG अहवाल स्वीकार. (III) स्थापना जून 1997; 5 वी परिषद 2022 ढाका येथे.",
+  "q_english": "(I) 6th BIMSTEC Summit 4 Apr 2025 Bangkok – theme PRO-BIMSTEC. (II) Adopted Vision 2030, Maritime Transport Agreement, EPG report. (III) Estd June 1997; 5th summit 2022 in Dhaka.",
+  "options": [
+   "I,II,III सर्व सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – 5 वी परिषद कोलंबो (श्रीलंका) 2022 मध्ये, ढाका नव्हे.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) उड्डाण व मार्ग, (b) विमान प्रकार, (c) अपघात तारीख-वेळ, (d) स्थळ. (1) AI-171 अहमदाबाद-गॅटविक, (2) Boeing 787-8 VT-ANB पहिला घातक अपघात, (3) 12 जून 2025 13:39 – 32 सेकंदांत कोसळले, (4) मेघानीनगर – BJ वैद्यकीय वसतिगृह – 241+19 मृत.",
+  "q_english": "(a) Flight & route, (b) Aircraft type, (c) Crash date-time, (d) Site. (1) AI-171 Ahmedabad-Gatwick, (2) Boeing 787-8 VT-ANB first fatal, (3) 12 Jun 2025 13:39 – crashed in 32 sec, (4) Meghaninagar – BJ Medical hostel – 241+19 dead.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-3,c-2,d-4",
+   "a-1,b-2,c-4,d-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सर्व जोड्या अचूक जुळतात; इतर पर्यायांत प्रकार-वेळेची अदलाबदल.",
+  "evidence": ""
+ },
+ {
+  "section": 3,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "RCB पहिले IPL विजेतेपद: (a) 3 जून 2025 अंतिम – पंजाबने नाणेफेक जिंकून क्षेत्ररक्षण, (b) RCB 190/9, (c) पंजाब 184/7, (d) RCB 6 धावांनी विजयी – 18 वर्षांनंतर रजत पाटीदार नेतृत्वाखाली.",
+  "q_english": "RCB maiden IPL title: (a) 3 Jun 2025 final – Punjab won toss, fielded, (b) RCB 190/9, (c) Punjab 184/7, (d) RCB won by 6 runs – maiden title under Rajat Patidar.",
+  "options": [
+   "a-b-c-d",
+   "b-a-c-d",
+   "a-c-b-d",
+   "a-b-d-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "नाणेफेक → प्रथम डाव 190/9 → प्रतिस्पर्धी 184/7 → 6 धावांनी विजय हाच सामना-क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) अलाउद्दीन बहमन शाहने 1347 मध्ये दिल्ली सल्तनतविरुद्ध बंड करून गुलबर्गा राजधानीसह बहमनी राज्य स्थापन केले. (II) महमूद गवानने 4 तरफांचे 8 तरफांत विभाजन केले, तरफदारांचे वेतन निश्चित केले, बिदर येथे 3000 हस्तलिखितांचे मदरसा स्थापन केले. (III) 1481 मध्ये गवानला फाशीनंतर बहमनी अधिक केंद्रीकृत व शक्तिशाली झाली.",
+  "q_english": "(I) Alauddin Bahman Shah founded Bahmani kingdom in 1347 revolting against Delhi Sultanate, capital Gulbarga. (II) Mahmud Gawan divided 4 tarafs into 8, fixed salaries, founded madrasa with 3000 manuscripts at Bidar. (III) After Gawan's 1481 execution, Bahmani became more centralized.",
+  "options": [
+   "I,II,III सर्व सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त III सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – फाशीनंतर गटबाजी वाढून विघटन, 5 दख्खन सल्तनती उदयास.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) किताब-ए-नौरस, (b) जगद्गुरू बादशहा, (c) इब्राहिम रौझा, (d) दखनी उर्दू. (1) इब्राहिम आदिल शाह II ची समाधी, (2) नऊ रस सिद्धांत, (3) धार्मिक सहिष्णुतेमुळे पदवी, (4) बीजापूर साहित्य माध्यम.",
+  "q_english": "(a) Kitab-i-Nauras, (b) Jagadguru Badshah, (c) Ibrahim Rauza, (d) Dakhni Urdu. (1) Tomb of Ibrahim Adil Shah II, (2) Nine Rasas theory, (3) Title for tolerance, (4) Bijapur literary medium.",
+  "options": [
+   "a-2,b-3,c-1,d-4",
+   "a-1,b-2,c-4,d-3",
+   "a-3,b-1,c-2,d-4",
+   "a-2,b-1,c-3,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "इब्राहिम II ने दखनीत किताब-ए-नौरस लिहिले, जगद्गुरू कहलवले, समाधी इब्राहिम रौझा, दखनीला राजाश्रय.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "चांद बीबी: (a) अली आदिल शाह I शी विवाह, (b) डिसें 1595 अकबराविरुद्ध अहमदनगर बचाव, (c) 1596 बरार देऊन तह, (d) 1599 स्वतःच्या सैनिकांकडून हत्या.",
+  "q_english": "Chand Bibi: (a) Marriage to Ali Adil Shah I, (b) Dec 1595 defence of Ahmednagar vs Akbar, (c) 1596 treaty ceding Berar, (d) 1599 murdered by own troops.",
+  "options": [
+   "b-c-a-d",
+   "a-b-c-d",
+   "a-c-b-d",
+   "c-b-d-a"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "आधी विवाह, मग 1595 बचाव, नंतर तह, 1599 हत्या हाच क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): मुहम्मद कुली कुतुब शाहने 1591 मध्ये हैदराबाद वसवून चारमिनार बांधले. (R): गोलकोंडा गर्दी, पाणीटंचाई, मुसा नदीकाठी व्यापार विस्तारासाठी नवीन राजधानी आवश्यक.",
+  "q_english": "(A): Muhammad Quli Qutb Shah founded Hyderabad in 1591, built Charminar. (R): Golconda overcrowding, water scarcity, trade expansion needed new capital on Musi.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1591 हैदराबाद स्थापना सत्य; लोकसंख्या-पाणी-व्यापार ही मान्य कारणे, R हेच A चे स्पष्टीकरण.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: चिन किलिच खान – औरंगजेब 1690-91; निजाम-उल-मुल्क – फर्रुखसियर 1713; शकरखेडा 11 ऑक्टो 1724 मुबारिज पराभव; आसफ जाह – मुहम्मद शाह 1725. निष्कर्ष:",
+  "q_english": "Table: Chin Qilich Khan – Aurangzeb 1690-91; Nizam-ul-Mulk – Farrukhsiyar 1713; Shakar Kheda 11 Oct 1724; Asaf Jah – Muhammad Shah 1725. Conclusion:",
+  "options": [
+   "पदव्यांमुळे निष्ठावंत सुभेदार राहिले",
+   "1724 शकरखेडा विजयाने स्वतंत्र हैदराबाद; पदव्या नाममात्र वैधता",
+   "1725 नंतरच राज्य स्थापन",
+   "दख्खन दिल्ली नियंत्रणाखाली"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1724 मध्ये स्वतंत्र सत्ता; पदव्या मुघल प्रतिष्ठा होत्या, सार्वभौमत्व नव्हे.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: दंतिदुर्गाने कीर्तिवर्मन II ला हरवून मान्यखेटमध्ये राष्ट्रकूट सत्ता; कृष्ण I ने वेरूळ कैलास मंदिर; अमोघवर्ष I ने कविराजमार्ग, सुलेमानने श्रेष्ठ राजांत गणले. परिणाम:",
+  "q_english": "Cause: Dantidurga founded Rashtrakuta power at Manyakheta; Krishna I carved Kailasa Ellora; Amoghavarsha wrote Kavirajamarga, praised by Sulaiman. Effect:",
+  "options": [
+   "केवळ लष्करी सत्ता, सांस्कृतिक शून्य",
+   "दख्खन उत्तर-दक्षिण स्पर्धा व साहित्य-कला समन्वय केंद्र",
+   "राजधानी दिल्लीला हलवली",
+   "अमोघवर्षामुळे तात्काळ पतन"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "लष्करी विस्तार + कैलास मंदिर + कन्नड साहित्य = दख्खनचे अखिल भारतीय महत्त्व.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) विंध्यशक्ती 3ऱ्या शतकातील वाकाटक संस्थापक. (II) रुद्रसेन II चा विवाह चंद्रगुप्त II कन्या प्रभावतीगुप्ताशी; तिने रीजेंट म्हणून राज्य केले. (III) हरिषेण काळात अजिंठा उत्कर्ष कारण वाकाटकांनी बौद्ध धर्म स्वीकारला.",
+  "q_english": "(I) Vindhyashakti founded Vakatakas in 3rd century. (II) Rudrasena II married Prabhavatigupta; she ruled as regent. (III) Ajanta flourished under Harishena because Vakatakas converted to Buddhism.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य – अभिलेखसिद्ध. III असत्य – ब्राह्मण राहूनही बौद्ध लेण्यांना आश्रय; धर्मांतर नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) रामचंद्र, (b) शंकरदेव, (c) हरपालदेव, (d) भिल्लम V. (1) 1294 अलाउद्दीन छापा-खंडणी, (2) 1313 काफूरकडून वध, (3) 1318 बंडानंतर वध-सत्तांत, (4) देवगिरी राजधानी पाया.",
+  "q_english": "(a) Ramachandra, (b) Shankaradeva, (c) Harapaladeva, (d) Bhillama V. (1) 1294 Alauddin raid-tribute, (2) 1313 killed by Kafur, (3) 1318 revolt-end, (4) Founded Devagiri capital.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-4,b-3,c-2,d-1",
+   "a-1,b-3,c-2,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "रामचंद्र 1294 शरणागती, शंकरदेव 1313 वध, हरपालदेव 1318 अंत, भिल्लम V संस्थापक.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "होयसाळ: (a) विष्णुवर्धन चोळ विजय, बेलूर चन्नकेशव 1116, (b) राजधानी बेलूरहून हलेबिडू, (c) वीर बल्लाळ II स्वतंत्रता 1187-93, (d) वीर बल्लाळ III मृत्यू 1346 अंत.",
+  "q_english": "Hoysala: (a) Vishnuvardhana Chola victory, Belur 1116, (b) Capital Belur to Halebidu, (c) Veera Ballala II independence 1187-93, (d) End 1346.",
+  "options": [
+   "c-a-b-d",
+   "a-c-b-d",
+   "a-b-c-d",
+   "b-d-a-c"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "विष्णुवर्धन → राजधानी बदल → बल्लाळ II स्वतंत्रता → 1346 अंत हाच क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): रुद्रमा देवीने रुद्रदेव महाराजा नावाने 1262-1289 काकतीय राज्य केले. (R): 1289-93 मार्को पोलोने प्रशासनाची प्रशंसा केली.",
+  "q_english": "(A): Rudrama Devi ruled Kakatiya 1262-1289 as Rudradeva Maharaja. (R): Marco Polo (1289-93) praised her administration.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही सत्य पण पोलोची प्रशंसा नामधारणेचे कारण नाही; पितृसत्ताक उत्तराधिकार हे कारण.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: पानिपत 1526 बाबर-इब्राहिम लोदी; खानवा 1527 बाबर-राणा सांगा; चंदेरी 1528 बाबर-मेदिनी राय; घागरा 1529 बाबर-अफगाण-बंगाल. निष्कर्ष:",
+  "q_english": "Table: Panipat 1526; Khanwa 1527; Chanderi 1528; Ghaghra 1529. Conclusion:",
+  "options": [
+   "चारही एकाच वर्षी",
+   "तोफखाना-तुलुग्माने टप्प्याटप्प्याने विस्तार: दिल्ली → राजपूत → पूर्व",
+   "खानवाने पाया, पानिपत निरर्थक",
+   "घागरा आधी, पानिपत नंतर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1526-29 क्रम: दिल्ली सत्ता → राजपूत आव्हान → पूर्व स्थिरता; तोफखाना समान धागा.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: हुमायूनचा चौसा 1539, कन्नौज 1540 मध्ये शेरशाहकडून पराभव; 1533 दीनपनाह वसवले. परिणाम:",
+  "q_english": "Cause: Humayun defeated by Sher Shah at Chausa 1539, Kannauj 1540; founded Din Panah 1533. Effect:",
+  "options": [
+   "तात्काळ दिल्ली जिंकली",
+   "पर्शियात आश्रय, 1555-56 सफवी मदतीने पुनरागमन",
+   "दीनपनाहमुळे शेरशाह पराभव",
+   "मुघल सत्ता कायमची संपली"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1540-55 निर्वासन, इराण आश्रय, मदतीने परत येऊन दुसरे राज्य.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) थॉमस रो सप्टें 1615 सुरतला जेम्स I चा दूत, 1615-19 दरबारात. (II) नूर जहान बादशहा बेगम; तिच्या-स्वतःच्या नावाने नाणी; प्रचंड प्रभाव. (III) हॉकिन्स (1608-11) ला रोइतकेच फर्मान यश.",
+  "q_english": "(I) Thomas Roe arrived Surat Sept 1615 as James I envoy, stayed 1615-19. (II) Nur Jahan Badshah Begum; coins in her name; huge influence. (III) Hawkins (1608-11) got farman success like Roe.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – हॉकिन्सला यश नाही; सवलती रोच्या मुत्सद्देगिरीनंतर.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) विजापूर विलय 1686, (b) गोलकोंडा विलय 1687, (c) संभाजी हत्या 1689, (d) औरंगजेब दख्खन आगमन 1681-82. (1) सिकंदर आदिल शाह पराभव, (2) अबुल हसन पराभव, (3) मराठा गनिमी युद्ध चालू, (4) युती तोडण्याचा अयशस्वी प्रयत्न.",
+  "q_english": "(a) Bijapur annex 1686, (b) Golconda 1687, (c) Sambhaji execution 1689, (d) Aurangzeb Deccan arrival 1681-82. (1) Sikandar Adil Shah defeat, (2) Abul Hasan defeat, (3) Maratha guerrilla continued, (4) Failed alliance-breaking.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-4,b-3,c-2,d-1",
+   "a-1,b-3,c-2,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1686 आदिलशाही अंत, 1687 कुतुबशाही अंत, 1689 नंतरही प्रतिकार चालू.",
+  "evidence": ""
+ },
+ {
+  "section": 4,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कर्नाटक युद्धे: (a) पहिले 1746-48 मद्रास वेढा, (b) दुसरे 1749-54 डुप्ले परतबोलावणी 1754, (c) वांदिवॉश 22 जाने 1760 कूट vs लाली, (d) पॅरिस तह 1763.",
+  "q_english": "Carnatic Wars: (a) First 1746-48 Madras siege, (b) Second 1749-54 Dupleix recalled 1754, (c) Wandiwash 22 Jan 1760, (d) Paris Treaty 1763.",
+  "options": [
+   "a-c-b-d",
+   "b-a-d-c",
+   "a-b-c-d",
+   "c-b-a-d"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "डुप्ले धोरण → परतबोलावणी → वांदिवॉश निर्णायक पराभव → 1763 तह.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) वर्धा नदी सातपुडा बैतूल मुलताईजवळ खैरवानीतून उगम; महाराष्ट्रापूर्वी मध्य प्रदेशात 32 किमी. (II) 528 किमी नंतर वर्धा-वैनगंगा संगमातून प्राणहिता; गोदावरीची अप्रत्यक्ष उपनदी. (III) कर, वेना, जाम, एराई डाव्या तर मडू, बेंबळा, पैनगंगा उजव्या उपनद्या; अप्पर वर्धा पूर्णपणे वर्धा जिल्ह्यात.",
+  "q_english": "(I) Wardha originates at Khairwani near Multai, Betul, Satpura; 32 km in MP before Maharashtra. (II) After 528 km joins Wainganga forming Pranhita; indirect Godavari tributary. (III) Left: Kar, Wena, Jam, Erai; Right: Madu, Bembla, Penganga; Upper Wardha entirely in Wardha district.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त III सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – अप्पर वर्धा मोर्शी (अमरावती-वर्धा सीमेवर), पूर्ण वर्धा जिल्ह्यात नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) वशिष्ठी उगम, (b) चिपळूण, (c) दाभोळ, (d) जलमार्ग दर्जा. (1) भरती-क्षेत्र बनणारे शहर, (2) अरबी समुद्र खाडी-बंदर, (3) पश्चिम घाट तिवरा खिंड, (4) NW-28.",
+  "q_english": "(a) Vashishti origin, (b) Chiplun, (c) Dabhol, (d) Waterway status. (1) Town where tidal, (2) Creek-port on Arabian Sea, (3) Western Ghats Tivra pass, (4) NW-28.",
+  "options": [
+   "a-3,b-1,c-2,d-4",
+   "a-3,b-2,c-1,d-4",
+   "a-1,b-3,c-2,d-4",
+   "a-3,b-1,c-4,d-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "उगम पश्चिम घाट, चिपळूण येथे भरती-प्रभावित, दाभोळला समुद्र, NW-28 दर्जा.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "सावित्री नदी: (a) महाबळेश्वर सावित्री पॉइंट उगम, (b) पोलादपूरपर्यंत घाटमाथा प्रवाह, (c) महाड मैदानी प्रवाह, काळ-गांधारी संगम, (d) बाणकोट खाडी-हरेहरेश्वर समुद्र संगम.",
+  "q_english": "Savitri river: (a) Origin Savitri Point Mahabaleshwar, (b) Ghat flow till Poladpur, (c) Plain flow near Mahad, Kal-Gandhari confluence, (d) Via Bankot creek to Arabian Sea.",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "b-a-c-d",
+   "a-b-d-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "उगम → घाटमाथा → महाड मैदान → बाणकोट खाडी हाच उतारक्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): मिठी बारमाही गोड्या पाण्याची नदी नसून मुंबईची वादळी पाणी वाहिनी; अतिक्रमण 2005 पुराला कारणीभूत. (R): उगम SGNP विहार तलाव सांडपाणी; 2 किमीवर पवई पाणी; 18 किमी वाहून माहिम खाडी; पाणलोट 7265 हेक्टर.",
+  "q_english": "(A): Mithi is Mumbai's stormwater drain, not perennial river; encroachment caused 2005 floods. (R): Originates from Vihar Lake overflow in SGNP; Powai water joins; 18 km to Mahim Creek; catchment 7265 ha.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अल्प लांबी, तलाव सांडपाण्यावर अवलंबित्व, लहान पाणलोट = हंगामी नाला; R हेच A चे कारण.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता – उजनी: भीमा नदी; संमिश्र प्रकार; उजनी गाव माढा सोलापूर; साठवण 110-117 TMC, लांबी 2534 मी; सिंचन + 12 MW. निष्कर्ष:",
+  "q_english": "Table – Ujani: Bhima river; composite type; Ujani village Madha Solapur; storage 110-117 TMC; irrigation + 12 MW. Conclusion:",
+  "options": [
+   "भीमा खोऱ्यातील सर्वात मोठे; पुणे-सातारा पाणलोटावर सोलापूर जीवनरेखा",
+   "कृष्णेवर थेट; मुंबईला पाणी",
+   "2909 MCM; आशियातील सर्वात लांब माती धरण",
+   "मुळा नदीवर टाटाचे खाजगी धरण"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तक्त्यानुसार A बोध; B मध्ये नदी-उद्देश चूक, C जायकवाडीचे आकडे, D मुळशीचे वर्णन.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: पैठण येथे गोदावरीवर 41.3 मी उंच, 10 किमी लांब माती धरण; 2909 MCM नाथसागर. परिणाम-संच:",
+  "q_english": "Cause: At Paithan on Godavari, 41.3m high, 10km long earthen dam; 2909 MCM Nath Sagar. Effects:",
+  "options": [
+   "मराठवाडा पाणी, 12 MW, पक्षी अभयारण्य; गाळ, 2006 पूर",
+   "कोकण अतिवृष्टी, दाभोळ विकास",
+   "सोलापूर दुष्काळ अंत, मुळशी सत्याग्रह अंत",
+   "ताम्हिणी रुंदीकरण"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "मोठ्या धरणाचे लाभ (पाणी, वीज, जैवविविधता) व तोटे (गाळ, पूर) दोन्ही; जायकवाडी 1976 उद्घाटन.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) मुळशी धरण मुळा नदीवर 1921-26 टाटा पॉवर; 1927 पासून भिरा जलविद्युत (5x18 MW), वीज मुंबईला. (II) विस्थापनाविरोधात मुळशी सत्याग्रह – भारतातील पहिले धरणविरोधी आंदोलन. (III) मुळशी भीमा नदीवर, उजनीच्या वर सिंचनासाठी पाणी सोडते.",
+  "q_english": "(I) Mulshi Dam on Mula 1921-26 by Tata Power; since 1927 Bhira hydro (5x18 MW), power to Mumbai. (II) Mulshi Satyagraha – India's first anti-dam movement. (III) Mulshi on Bhima, releases irrigation water upstream of Ujani.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – मुळशी मुळेवर (मुळा-मुठा→भीमा), उद्देश वीज निर्मिती.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) ताम्हिणी घाट जोडतो, (b) महामार्ग, (c) वैशिष्ट्य, (d) लगतचे जलाशय. (1) मुळशी-माणगाव, (2) NH-753F, (3) धबधबे, जंगल, देवकुंड, (4) मुळशी बॅकवॉटर.",
+  "q_english": "(a) Tamhini connects, (b) Highway, (c) Feature, (d) Adjacent reservoir. (1) Mulshi-Mangaon, (2) NH-753F, (3) Waterfalls, forest, Devkund, (4) Mulshi backwaters.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-1,b-3,c-2,d-4",
+   "a-4,b-2,c-3,d-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "ताम्हिणी मुळशी-माणगाव, NH-753F वर; ओळख धबधबे-जंगल; रस्ता मुळशी धरण ओलांडतो.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "पुणे→कोकण वरंधा मार्गे: (a) भोर, (b) निरादेवघर बॅकवॉटर व वळणे, (c) वरंधा घाटमाथा 800 मी, 10 किमी, (d) महाड.",
+  "q_english": "Pune→Konkan via Varandha: (a) Bhor, (b) Niradevghar backwaters & turns, (c) Varandha top 800m, 10km, (d) Mahad.",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "d-c-b-a",
+   "b-a-c-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "भोर → निरादेवघर बॅकवॉटर → घाटमाथा → महाड मैदान हाच चढ-उतार क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): SGNP बोरीवली महानगरातील जगातील मोठ्या उद्यानांपैकी; मुंबई पाणीपुरवठ्यासाठी निर्णायक. (R): 2400 वर्षे जुनी कान्हेरी लेणी; तुळशी-विहार तलावे; 1950 कृष्णगिरी, 1976 बोरीवली विस्तार.",
+  "q_english": "(A): SGNP Borivali among world's large urban parks; crucial for Mumbai water. (R): 2400-yr Kanheri caves; Tulsi-Vihar lakes; 1950 Krishnagiri, 1976 Borivali expansion.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तुळशी-विहार पाणलोट इतिहास A मधील महत्त्व स्पष्ट करतो; R हेच कारण.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता – चांदोली: 317.67 चौ किमी; सांगली-सातारा-कोल्हापूर-रत्नागिरी संगम; 1985 अभयारण्य, 2004 उद्यान; सह्याद्री व्याघ्र 2010 + युनेस्को 2012. निष्कर्ष:",
+  "q_english": "Table – Chandoli: 317.67 sq km; 4-district junction; sanctuary 1985, NP 2004; Sahyadri Tiger 2010 + UNESCO 2012. Inference:",
+  "options": [
+   "कोयना+चांदोली=सह्याद्री व्याघ्र; युनेस्को व आंतरजिल्हा व्यवस्थापन आवश्यक",
+   "सर्वात लहान व्याघ्र, 2014 घोषित",
+   "तुळशी-विहार तलावे, मुंबईला पाणी",
+   "वैनगंगा खोरे, ताडोबाशी जोडले"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तक्त्यानुसार A; B बोरचे, C SGNP चे, D उमरेडचे वर्णन.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: बोर 138.12 चौ किमी कोअर – भारतातील सर्वात लहान व्याघ्र प्रकल्प, जुलै 2014 घोषित; पेंच-ताडोबा मध्ये, बोर नदी पाणलोट. परिणाम:",
+  "q_english": "Cause: Bor 138.12 sq km core – India's smallest tiger reserve, declared Jul 2014; between Pench-Tadoba, Bor river basin. Effect:",
+  "options": [
+   "महत्त्वाचा कॉरिडॉर; पाणलोट संवेदनशील, विशेष व्यवस्थापन आवश्यक",
+   "युनेस्को, कान्हेरी विकास",
+   "बंगाल उपसागर मान्सून तीव्र",
+   "उजनी साठवण वाढ"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "लहान आकार ≠ कमी महत्त्व; Pench-Tadoba जनुकीय जोडणी; मानवी दबाव जास्त.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) उमरेड-पवनी-करांडला नागपूर 58 किमी; उमरेड, कुही, भिवापूर, पवनी तालुके. (II) 29 जून 2012 अभयारण्य; वैनगंगा कॉरिडॉरने ताडोबाशी जोडले; प्रजनन वाघ, गवे. (III) महाराष्ट्रातील एकमेव युनेस्को स्थळ; कान्हेरी लेणी येथे.",
+  "q_english": "(I) Umred-Pauni-Karhandla 58 km from Nagpur. (II) Sanctuary 29 Jun 2012; connected to Tadoba via Wainganga corridor; breeding tigers, gaurs. (III) Maharashtra's only UNESCO site; Kanheri caves here.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त III सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I, II सत्य. III असत्य – कान्हेरी SGNP मध्ये; युनेस्को पश्चिम घाटाला.",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) ला निना प्रक्रिया, (b) एल निनो परिणाम, (c) ला निना परिणाम भारत, (d) तिहेरी ला निना 2020-22. (1) थंड SST, बळकट व्यापार वारे, (2) उबदार SST, कमकुवत मान्सून, (3) सामान्य/अधिक पाऊस, खरीपला फायदा, (4) सलग 3 वर्षे दुर्मिळ.",
+  "q_english": "(a) La Nina process, (b) El Nino effect, (c) La Nina effect India, (d) Triple La Nina 2020-22. (1) Cooler SST, stronger trades, (2) Warmer SST, weak monsoon, (3) Normal/above rain, Kharif benefits, (4) Rare 3-year event.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-2,c-4,d-3",
+   "a-3,b-2,c-1,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "ला निना=थंड SST (a-1), एल निनो=उबदार SST (b-2), भारतात चांगला पाऊस (c-3), 2020-22 तिहेरी (d-4).",
+  "evidence": ""
+ },
+ {
+  "section": 5,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "नैऋत्य मान्सून आगमन: (a) 25 मे अंदमान-निकोबार, (b) 1 जून केरळ अरबी शाखा, (c) जून पहिला आठवडा बंगाल शाखा ईशान्य, (d) जुलैपर्यंत दोन्ही शाखा उत्तर भारत संगम.",
+  "q_english": "SW monsoon onset: (a) 25 May Andaman-Nicobar, (b) 1 Jun Kerala Arabian branch, (c) Early Jun Bay branch NE, (d) By July both merge North India.",
+  "options": [
+   "a-b-c-d",
+   "b-a-c-d",
+   "a-c-b-d",
+   "c-a-b-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "द्वीपसमूह → केरळ → ईशान्य → वायव्य मिलन; अरबी शाखा तिप्पट प्रबळ (65% आर्द्रता).",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) 25 व्या दुरुस्तीने (1971) कलम 31C – 39(b)-(c) कायद्यांना 14, 19, 31 आव्हानापासून संरक्षण. (II) केशवानंद (1973) मध्ये 31C चे दोन्ही भाग वैध ठरले. (III) 42 व्या दुरुस्तीने सर्व DPSP पर्यंत विस्तार; मिनर्व्हा मिल्स (1980) ने पुन्हा 39(b)-(c) पुरते मर्यादित.",
+  "q_english": "(I) 25th Amendment inserted Art 31C protecting 39(b)-(c) laws from Arts 14,19,31. (II) Kesavananda upheld both parts. (III) 42nd extended to all DPSPs; Minerva Mills restored to 39(b)-(c) only.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,III सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "II असत्य – घोषणात्मक भाग (न्यायिक पुनर्विलोकन वर्जित) मूलभूत संरचनेविरुद्ध रद्द झाला.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) कलम 38(1), (b) कलम 38(2), (c) 44 वी दुरुस्ती, (d) कल्याणकारी राज्य. (1) विषमता कमी करणे, (2) न्यायप्रेरित समाजव्यवस्था, (3) 38(2) समाविष्ट करणारी दुरुस्ती, (4) भाग 4 चे व्यापक उद्दिष्ट.",
+  "q_english": "(a) Art 38(1), (b) Art 38(2), (c) 44th Amendment, (d) Welfare state. (1) Reduce inequalities, (2) Justice-informed social order, (3) Amendment inserting 38(2), (4) Macro-objective of Part IV.",
+  "options": [
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-4,c-1,d-3",
+   "a-4,b-1,c-2,d-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "38(1) सर्वसाधारण विधान, 38(2) 44 व्या दुरुस्तीचे वितरणात्मक न्याय सूत्र.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "(a) 42 व्या दुरुस्तीने 39A (1976), (b) हुसेनारा खातून – मोफत कायदेशीर मदत कलम 21 शी (1979), (c) विधी सेवा प्राधिकरण कायदा (1987), (d) NALSA कार्यान्वित (1995).",
+  "q_english": "(a) Art 39A by 42nd Amendment (1976), (b) Hussainara Khatoon linking legal aid to Art 21 (1979), (c) Legal Services Authorities Act (1987), (d) NALSA operational (1995).",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "b-a-c-d",
+   "c-a-b-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "घटनात्मक पाया → न्यायालयीन बंधन → यंत्रणा कायदा → अंमलबजावणी.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): 97 व्या दुरुस्तीचे कलम 43B 2021 राजेंद्र शाह निकालानंतरही टिकून. (R): न्यायालयाने फक्त राज्य सहकारी संस्थांचा भाग IXB रद्द केला; 19(1)(c) व 43B ला आव्हान नव्हते.",
+  "q_english": "(A): Art 43B survives after 2021 Rajendra Shah judgment. (R): Court struck only Part IXB for state cooperatives; 19(1)(c) & 43B unchallenged.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बहु-राज्य संस्थांपुरता IXB वाचला; तांत्रिक कारणामुळेच 43B व 19(1)(c) वाचले.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: (1) सशस्त्र दले – संसद हक्कांवर निर्बंध करू शकते, (2) पोलीस दल कायदा 1966 – कलम 33 अन्वये, (3) राज्यांनाही कलम 33 अधिकार, (4) कलम 33 कायदा आव्हानमुक्त. निष्कर्ष:",
+  "q_english": "Table: (1) Armed forces – Parliament may restrict FRs, (2) Police Forces Act 1966 under Art 33, (3) States also have Art 33 power, (4) Art 33 law immune from challenge. Conclusion:",
+  "options": [
+   "फक्त 1,2,4 सत्य; 3 असत्य",
+   "सर्व सत्य",
+   "फक्त 1,3 सत्य",
+   "फक्त 2,4 सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कलम 33 अधिकार केवळ \"संसदे\"ला; राज्यांना नाही, म्हणून 3 असत्य.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: कलम 35(a) – 16(3), 32(3), 33, 34 व भाग 3 अपराध शिक्षा यावर कायदे केवळ संसदेला. परिणाम:",
+  "q_english": "Cause: Art 35(a) – laws on 16(3), 32(3), 33, 34 and Part III offence punishments only by Parliament. Effect:",
+  "options": [
+   "अस्पृश्यता शिक्षेसाठी केवळ राज्य कायदा टिकणार नाही; संसद कायदा आवश्यक",
+   "राज्य सशस्त्र दल हक्कांवर कायदा करू शकते",
+   "राज्ये इतर न्यायालयांना रिट अधिकार देऊ शकतात",
+   "कलम 35 मुळे अमर्याद दुरुस्ती अधिकार"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "देशभर एकवाक्यतेसाठी भाग 3 अपराध शिक्षा संसदच; राज्य एकटे अधिकारातीत.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) कलम 60 – प्रत्येक राष्ट्रपती व कार्यकारी व्यक्तीने CJI/ज्येष्ठतम न्यायाधीशांसमक्ष शपथ घ्यावी. (II) शपथेत संविधान जतन-संरक्षण-प्रतिरक्षण व जनसेवा संकल्प. (III) कलम 60 केवळ निवडून आलेल्या राष्ट्रपतींना.",
+  "q_english": "(I) Art 60 – every President/person acting as President must take oath before CJI/senior-most judge. (II) Oath includes preserve, protect, defend Constitution and devote to people's welfare. (III) Art 60 applies only to elected President.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "III असत्य – मजकूर \"Every President and every person acting as President\" स्पष्ट.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) समन्स, (b) प्रोरोगेशन, (c) विसर्जन, (d) सहा महिने नियम. (1) राष्ट्रपती सत्रावसान, (2) केवळ लोकसभा विसर्जन, (3) दोन अधिवेशनांत 6 महिन्यांपेक्षा जास्त अंतर नको, (4) राष्ट्रपती बैठक बोलावणे.",
+  "q_english": "(a) Summoning, (b) Prorogation, (c) Dissolution, (d) Six-month rule. (1) President prorogues, (2) Only LS dissolved, (3) Gap not exceeding six months, (4) President summons.",
+  "options": [
+   "a-4,b-1,c-2,d-3",
+   "a-3,b-1,c-2,d-4",
+   "a-4,b-2,c-1,d-3",
+   "a-1,b-4,c-2,d-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "85(1) समन्स + 6 महिने; 85(2) प्रोरोगेशन + विसर्जन; तहकूब अध्यक्ष करतात.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "93-94 चक्र: (a) अध्यक्ष-उपाध्यक्ष निवड, (b) 14 दिवस लेखी नोटीस, (c) ठराव विचारात असताना संबंधितांनी अध्यक्षस्थान न भूषवणे (96), (d) तत्कालीन सर्व सदस्य बहुमताने ठराव.",
+  "q_english": "Arts 93-94 cycle: (a) Election of Speaker/Dy Speaker, (b) 14 days notice, (c) Not presiding during resolution (Art 96), (d) Resolution by majority of all then members.",
+  "options": [
+   "a-b-c-d",
+   "b-a-c-d",
+   "a-c-b-d",
+   "c-a-b-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "निवड → 14 दिवस नोटीस → निःपक्षपातीपणासाठी न बसणे → विशेष बहुमताने हटवणूक.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): सर्व प्रश्न उपस्थित-मतदान बहुमताने; अध्यक्ष प्रथम मतदान नाही, मतसाम्याला निर्णायक मत. (R): गणपूर्ती एक-दशांश; रिक्तता असूनही कार्य वैध.",
+  "q_english": "(A): All questions by majority of present and voting; presiding officer no first vote, casting vote on equality. (R): Quorum one-tenth; House may act despite vacancies.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A=100(1), R=100(2)-(4) दोन्ही अचूक पण स्वतंत्र तरतुदी; स्पष्टीकरण संबंध नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: लाभाचे पद 102(1)(a); विकृतचित्त/नादार 102(1)(b)/(c); नागरिकत्व 102(1)(d) + RPA 8; पक्षांतर 102(2). निर्णय प्राधिकरण निष्कर्ष:",
+  "q_english": "Table: Office of profit 102(1)(a); unsound mind/insolvent; citizenship 102(1)(d) + RPA 8; defection 102(2). Deciding authority:",
+  "options": [
+   "1-3 राष्ट्रपती+ECI (103); 4 पीठासीन अधिकारी",
+   "सर्व राष्ट्रपती",
+   "सर्व पीठासीन अधिकारी",
+   "1 सर्वोच्च न्यायालय, 4 राष्ट्रपती"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "102(1)+RPA चा निर्णय 103 नुसार राष्ट्रपती ECI सल्ल्याने; पक्षांतराचा पीठासीन अधिकारी.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: लोकसभेने पारित धन विधेयक राज्यसभेने 14 दिवसांत परत केले नाही. परिणाम:",
+  "q_english": "Cause: Money Bill passed by LS not returned by RS within 14 days. Effect:",
+  "options": [
+   "लोकसभा स्वरूपात दोन्ही सभागृहांनी पारित मानले; 108 संयुक्त बैठक नाही",
+   "विधेयक व्यपगत",
+   "पूर्वशिफारशीअभावी अवैध",
+   "राज्यसभा 30 दिवसांत दुरुस्ती"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "109(5) नुसार मूळ स्वरूपात पारित मानले; 109(1) ने 108 वर्जित; राज्यसभा फक्त शिफारस.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) कलम 120(1) – संसद कामकाज हिंदी/इंग्रजीत. (II) अध्यक्ष मातृभाषेत बोलण्याची परवानगी देऊ शकतात. (III) 15 वर्षांनंतर \"किंवा इंग्रजीत\" वगळणे – 1963 कायद्याने कायम.",
+  "q_english": "(I) Art 120(1) – Parliament business in Hindi/English. (II) Presiding officer may permit mother tongue. (III) After 15 years \"or in English\" to be omitted – continued by 1963 Act.",
+  "options": [
+   "फक्त I सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "I,II,III सर्व सत्य"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "120(1) मुख्य नियम, परंतुक मातृभाषा सवलत, 120(2) सूर्यास्त-अट – तिन्ही अचूक.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) प्रलंबित स्थिती, (b) अर्जदार, (c) समाधान अट, (d) सर्वोच्च न्यायालय अधिकार. (1) समान कायदेविषयक प्रश्न + सर्वसाधारण महत्त्व, (2) खटला स्वतःकडे मागवून निकाल, (3) स्वतःहून/महान्यायवादी/पक्षकार, (4) SC+HC किंवा 2+ HC प्रलंबित.",
+  "q_english": "(a) Pendency, (b) Applicant, (c) Satisfaction, (d) SC power. (1) Same law questions + general importance, (2) Withdraw and dispose, (3) Suo motu/AG/party, (4) Pending before SC+HC or 2+ HCs.",
+  "options": [
+   "a-4,b-3,c-1,d-2",
+   "a-1,b-4,c-3,d-2",
+   "a-4,b-1,c-3,d-2",
+   "a-2,b-3,c-1,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "139A(1) चार टप्पे: प्रलंबित जोडी → अर्ज → महत्त्वाची खात्री → मागवून निकाल.",
+  "evidence": ""
+ },
+ {
+  "section": 6,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कलम 144 साखळी: (a) 27 मे 1949 मसुदा कलम 120 स्वीकार, (b) 26 जाने 1950 कलम 144 लागू, (c) 141 अन्वये घोषित कायदा बंधनकारक, (d) 144 अन्वये अंमलबजावणी सहाय्य.",
+  "q_english": "Art 144 chain: (a) 27 May 1949 draft Art 120 adopted, (b) 26 Jan 1950 Art 144 in force, (c) Law declared under 141 binding, (d) Aid under 144 for enforcement.",
+  "options": [
+   "a-b-c-d",
+   "b-a-c-d",
+   "a-c-b-d",
+   "c-a-b-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "प्रथम घटनात्मक बंधन, मग 141 घोषित कायदा, शेवटी 144 अंमलबजावणी हमी.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) हरित क्रांती 1966-67 मेक्सिकन HYV गहू आयातीसह; स्वामीनाथन यांनी अनुकूलनात भूमिका. (II) जागतिक जनक नॉर्मन बोरलॉग; भारतीय क्रांती पंजाब-हरियाणा-पश्चिम उ.प्र. गव्हावर केंद्रित. (III) IR-8 तांदूळ IRRI फिलिपिन्समधून.",
+  "q_english": "(I) Green Revolution 1966-67 with Mexican HYV wheat imports; Swaminathan key role. (II) Global father Borlaug; India focused on wheat in Punjab-Haryana-W UP. (III) IR-8 rice from IRRI Philippines.",
+  "options": [
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I,III सत्य",
+   "I,II,III तिन्ही सत्य"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "तिन्ही तथ्ये अधिकृत स्रोतांशी जुळतात; स्वामीनाथन भारतीय जनक, बोरलॉग जागतिक.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) पिवळी क्रांती जनक, (b) तेलबिया अभियान, (c) लक्ष्यित तेलबिया, (d) पिट्रोडा ओळख. (1) 1986 तंत्रज्ञान अभियान, (2) नऊ तेलबिया, (3) सॅम पिट्रोडा, (4) दूरसंचार जनक.",
+  "q_english": "(a) Yellow Revolution father, (b) Oilseeds mission, (c) Targeted oilseeds, (d) Pitroda identity. (1) 1986 Tech Mission, (2) Nine oilseeds, (3) Sam Pitroda, (4) Telecom father.",
+  "options": [
+   "a-3,b-1,c-2,d-4",
+   "a-3,b-2,c-1,d-4",
+   "a-4,b-1,c-2,d-3",
+   "a-3,b-1,c-4,d-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पिवळी क्रांती 1986-87 खाद्यतेल स्वयंपूर्णता; जनक पिट्रोडा (दूरसंचार जनकही); नऊ तेलबिया लक्ष्य.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "(a) सुवर्ण क्रांती प्रारंभ 1991, (b) समाप्ती 2003, (c) NHM 2005-06, (d) MIDH विलीनीकरण 2014-15.",
+  "q_english": "(a) Golden Revolution start 1991, (b) End 2003, (c) NHM 2005-06, (d) MIDH merger 2014-15.",
+  "options": [
+   "a-c-b-d",
+   "a-b-c-d",
+   "c-a-b-d",
+   "a-b-d-c"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "सुवर्ण क्रांती 1991-2003 फलोत्पादन-मध; नंतर NHM; 2014-15 MIDH मध्ये समावेश.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): गुलाबी क्रांती कांदा, औषधे, कोळंबीशी संबंधित; जनक दुर्गेश पटेल. (R): त्यांच्या तंत्रज्ञानाने कांदा उत्पादकता व प्रक्रिया वाढली.",
+  "q_english": "(A): Pink Revolution – onion, pharma, prawns; father Durgesh Patel. (R): His tech raised onion productivity and processing.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कांदा उत्पादनवाढ व प्रक्रिया तंत्रज्ञान हेच सार; R हेच A चे थेट स्पष्टीकरण.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: (1) हिरवी-अन्नधान्य-स्वामीनाथन, (2) पिवळी-तेलबिया-पिट्रोडा, (3) सुवर्ण-फलोत्पादन-तुटेज, (4) गुलाबी-दूध-कुरियन. चुकीची नोंद:",
+  "q_english": "Table: (1) Green-foodgrains-Swaminathan, (2) Yellow-oilseeds-Pitroda, (3) Golden-horticulture-Tutaj, (4) Pink-milk-Kurien. Wrong entry:",
+  "options": [
+   "फक्त 4 चुकीची",
+   "फक्त 3 चुकीची",
+   "2 व 4 चुकीची",
+   "सर्व बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दूध ही श्वेत क्रांती (कुरियन); गुलाबी कांदा/औषधे/कोळंबी. फक्त 4 चुकीची.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: APMC मंड्या विखुरलेल्या, स्पर्धा मर्यादित, किंमत-शोध अपारदर्शक. परिणाम:",
+  "q_english": "Cause: APMC mandis fragmented, limited competition, opaque price discovery. Effect:",
+  "options": [
+   "e-NAM (14 एप्रिल 2016, SFAC) डिजिटल एकत्रीकरण – पॅन-इंडिया ई-लिलाव",
+   "e-NAM नवीन मंड्या, APMC रद्द",
+   "केवळ स्थानिक व्यापाऱ्यांना विक्री बंधन",
+   "e-NAM MSP ची जागा घेते"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "e-NAM नवीन मंडी नसून विद्यमानांचे आभासी जाळे; स्पर्धात्मक ई-बोली व व्यापक बाजार.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) मृदा आरोग्य पत्रिका 19 फेब्रु 2015 सुरतगड; नंतर RKVY विलीनीकरण. (II) 12 मापदंड – pH, EC, OC, N, P, K, S, Zn, B, Fe, Mn, Cu. (III) दर 3 वर्षांनी पत्रिका.",
+  "q_english": "(I) Soil Health Card launched 19 Feb 2015 Suratgarh; later merged with RKVY. (II) 12 parameters. (III) Issued every 3 years.",
+  "options": [
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I,III सत्य",
+   "I,II,III तिन्ही सत्य"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "तारीख-ठिकाण, 12 मापदंड, 3 वर्ष कालावधी – तिन्ही अधिकृत मार्गदर्शकांशी जुळतात.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "PMKSY: (a) AIBP, (b) हर खेत को पानी, (c) पर ड्रॉप मोर क्रॉप, (d) पाणलोट विकास. (1) जलशक्ती-प्रलंबित प्रकल्प, (2) सूक्ष्म सिंचन, (3) CAD&WM, SMI, RRR, भूजल, (4) भूमि संसाधन-पाणलोट.",
+  "q_english": "PMKSY: (a) AIBP, (b) Har Khet Ko Pani, (c) Per Drop More Crop, (d) Watershed. (1) Jal Shakti-pending projects, (2) Micro-irrigation, (3) CAD&WM/SMI/RRR/groundwater, (4) Land Resources-watershed.",
+  "options": [
+   "a-1,b-3,c-2,d-4",
+   "a-3,b-1,c-2,d-4",
+   "a-1,b-2,c-3,d-4",
+   "a-1,b-3,c-4,d-2"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "PMKSY छत्र योजना; AIBP+HKKP जलशक्ती, पर ड्रॉप सूक्ष्म सिंचन, पाणलोट भूमि संसाधन.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "PKVY: (a) 50 शेतकरी 20 हेक्टर समूह, (b) 3 वर्षे PGS सेंद्रिय, (c) ₹50,000/हे/3वर्षे सहाय्य, (d) ब्रँडिंग-विपणन.",
+  "q_english": "PKVY: (a) 50 farmers 20-ha cluster, (b) 3-yr PGS organic, (c) Rs 50,000/ha/3yr support, (d) Branding-marketing.",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "c-a-b-d",
+   "a-d-c-b"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "समूह → सहाय्य/प्रशिक्षण → 3 वर्षे PGS → विपणन हाच क्रम.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): NFSM ऑक्टो 2007 केंद्र पुरस्कृत; लक्ष्य तांदूळ 10, गहू 8, डाळी 2 दशलक्ष टन. (R): 29 मे 2007 NDC 53 व्या बैठकीत ठराव.",
+  "q_english": "(A): NFSM Oct 2007 CSS; targets rice 10, wheat 8, pulses 2 mt. (R): 29 May 2007 NDC 53rd meeting resolution.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "NDC ठरावामुळेच ऑक्टो 2007 अधिसूचना; 10-8-2 लक्ष्य त्याच ठरावात.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता – PMMSY: शुभारंभ 10 सप्टें 2020; ₹20,050 कोटी; 2020-21 ते 2024-25; नील क्रांती उद्दिष्ट. निष्कर्ष:",
+  "q_english": "Table – PMMSY: launch 10 Sep 2020; Rs 20,050 cr; 2020-21 to 2024-25; Blue Revolution goal. Conclusion:",
+  "options": [
+   "मत्स्यक्षेत्रातील विक्रमी गुंतवणूक; 5 वर्षे सर्व राज्ये/UT",
+   "केवळ सागरी राज्ये, 2 वर्षे",
+   "₹10,000 कोटी, 2030 पर्यंत",
+   "फक्त निर्यात उद्दिष्ट"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "विक्रमी गुंतवणूक, 5 वर्षे, सर्व राज्ये व्याप्ती – अधिकृत चौकट.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: Silk Samagra-2 (2021-22 ते 2025-26) ₹4,679.85 कोटी; तुती+वन्य रेशीम+उत्तर-कोश मूल्यसाखळी. अपेक्षित परिणाम:",
+  "q_english": "Cause: Silk Samagra-2 (2021-22 to 2025-26) Rs 4,679.85 cr; mulberry+wild silk+post-cocoon chain. Expected effect:",
+  "options": [
+   "गुणवत्ता-उत्पादन वाढ, तंत्रज्ञान हस्तांतरण, ग्रामीण रोजगार",
+   "तुती बंद, आयात अवलंबित्व",
+   "संशोधन थांबणे",
+   "महिला सहभाग घट"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "एकात्मिक योजनेने संपूर्ण मूल्यसाखळी बळकट; 55-60% महिला सहभाग अपेक्षित.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) MIDH 2014-15 केंद्र पुरस्कृत; समग्र फलोत्पादन विकास. (II) NHM, HMNEH, NHB, CDB, CIH विलीनीकरण; सर्व राज्ये/UT. (III) NHM 60:40, HMNEH 90:10 निधी.",
+  "q_english": "(I) MIDH from 2014-15 CSS for horticulture. (II) Subsumed NHM, HMNEH, NHB, CDB, CIH; all States/UTs. (III) Funding 60:40 NHM, 90:10 HMNEH.",
+  "options": [
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I,III सत्य",
+   "I,II,III तिन्ही सत्य"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "सुरुवात, उपयोजना यादी, निधी प्रमाण – तिन्ही अधिकृत मार्गदर्शकांशी जुळतात.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) पुनर्रचित बांबू अभियान शुभारंभ, (b) CCEA मान्यता, (c) उद्दिष्ट, (d) मंत्रालय. (1) 2018-19, (2) 26 एप्रिल 2018, (3) वनेतर जमीन लागवड + मूल्यसाखळी, (4) कृषी मंत्रालय.",
+  "q_english": "(a) Restructured Bamboo Mission launch, (b) CCEA approval, (c) Objective, (d) Ministry. (1) 2018-19, (2) 26 Apr 2018, (3) Non-forest land + value chain, (4) Agri Ministry.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-3,d-4",
+   "a-1,b-2,c-4,d-3",
+   "a-1,b-3,c-2,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "26 एप्रिल 2018 CCEA मान्यता; 2018-19 NMSA अंतर्गत केंद्र पुरस्कृत; कृषी मंत्रालय अंमलबजावणी.",
+  "evidence": ""
+ },
+ {
+  "section": 7,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता – अल्पबचत: PPF 7.1%, NSC 7.7%, KVP 7.5% (115 महिने), सुकन्या 7.1%. चुकीची नोंद:",
+  "q_english": "Table – Small savings: PPF 7.1%, NSC 7.7%, KVP 7.5% (115 months), SSY 7.1%. Wrong entry:",
+  "options": [
+   "फक्त 1; PPF 8.2% हवा",
+   "फक्त 4; सुकन्या 8.2% हवी",
+   "फक्त 2; NSC 7.1% हवा",
+   "फक्त 3; KVP 60 महिने"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "सुकन्या दर 8.2% असल्याने नोंद 4 चुकीची; PPF 7.1%, NSC 7.7%, KVP 7.5% बरोबर.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) स्टोक्स नियम F=6πηrv कमी रेनॉल्ड्स स्तरित प्रवाहातच वैध. (II) vt=2r²(ρ-σ)g/9η – त्रिज्या दुप्पट→vt चौपट; η दुप्पट→vt निम्मे. (III) तापमान वाढल्यास द्रव श्यानता घटते, वायूंची वाढते.",
+  "q_english": "(I) Stokes law valid only for low Reynolds laminar flow. (II) vt formula – radius doubled→vt 4x; viscosity doubled→vt half. (III) Temperature rise: liquid viscosity falls, gas viscosity rises.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तिन्ही विधाने भौतिकशास्त्रानुसार सत्य; द्रव-वायू तापमान संबंध विरुद्ध.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) वहन, (b) नैसर्गिक अभिसरण, (c) प्रणोदित अभिसरण, (d) प्रारण. (1) फुरियर नियम, (2) घनता फरक, न्यूटन शीतलन, (3) पंखा/पंप, (4) स्टीफन-बोल्ट्झमन, निर्वातात शक्य.",
+  "q_english": "(a) Conduction, (b) Natural convection, (c) Forced convection, (d) Radiation. (1) Fourier law, (2) Density difference, Newton cooling, (3) Fan/pump, (4) Stefan-Boltzmann, vacuum possible.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-1,b-3,c-2,d-4",
+   "a-4,b-2,c-3,d-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "वहन-फुरियर, नैसर्गिक-घनता, प्रणोदित-बाह्य साधन, प्रारण-चतुर्थ घात व माध्यमाविना.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "-10°C बर्फ → 110°C वाफ: (a) 100°C बाष्पीभवन गुप्त उष्णता 2260 J/g, (b) 0°C वितळणे गुप्त उष्णता 334 J/g, (c) 0→100°C संवेदनशील तापन, (d) -10→0°C संवेदनशील तापन.",
+  "q_english": "-10°C ice → 110°C steam: (a) 100°C vaporisation latent heat 2260 J/g, (b) 0°C fusion 334 J/g, (c) 0→100°C sensible heating, (d) -10→0°C sensible heating.",
+  "options": [
+   "d-b-c-a",
+   "d-c-b-a",
+   "b-d-c-a",
+   "d-b-a-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बर्फ तापन → वितळणे → पाणी तापन → बाष्पीभवन; गुप्त टप्प्यात तापमान स्थिर.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): यंग दुहेरी चिर – समान रुंदी-तीव्रता फ्रिंज; एकल चिर – मध्यवर्ती दुप्पट रुंद, बाजूचे मंद. (R): व्यतिकरण दोन सुसंगत स्रोत अध्यारोपण; विवर्तन एकाच तरंगाग्राच्या दुय्यम तरंगिका.",
+  "q_english": "(A): Young double-slit – equal fringes; single-slit – central double-wide, dimmer sides. (R): Interference from two coherent sources; diffraction from same wavefront wavelets.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दोन स्रोत = समान फ्रिंज; एक छिद्र = असमान विवर्तन; R हेच भौतिक कारण.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: (1) AC ट्रान्सफॉर्मर लाभ, (2) AC स्किन इफेक्ट, (3) DC एकसमान वितरण, बॅटरी योग्य, (4) HVDC 600 किमीपलीकडे कार्यक्षम. निष्कर्ष:",
+  "q_english": "Table: (1) AC transformer advantage, (2) AC skin effect, (3) DC uniform distribution, battery suitable, (4) HVDC efficient beyond 600 km. Conclusion:",
+  "options": [
+   "AC लाभ असूनही अति-लांब अंतरावर HVDC कार्यक्षम",
+   "DC स्किन इफेक्ट जास्त",
+   "ट्रान्सफॉर्मर DC वर कार्य करतो",
+   "बॅटरीसाठी AC योग्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "स्किन इफेक्ट व रिअॅक्टिव्ह हानीमुळे 600 किमीपलीकडे HVDC चे नुकसान कमी.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: 4.4 ग्रॅम प्रोपेन (44 ग्रॅम/मोल) + 16 ग्रॅम O2 (32 ग्रॅम/मोल); C3H8+5O2→3CO2+4H2O. परिणाम:",
+  "q_english": "Cause: 4.4g propane (44 g/mol) + 16g O2 (32 g/mol); reaction given. Effect:",
+  "options": [
+   "O2 मर्यादित, 9 ग्रॅम H2O",
+   "दोन्ही पूर्ण संपून 13.2 ग्रॅम CO2 + 7.2 ग्रॅम H2O",
+   "प्रोपेन मर्यादित, 6.6 ग्रॅम CO2",
+   "22 ग्रॅम CO2, O2 अतिरिक्त"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "0.1 मोल प्रोपेनला 0.5 मोल (16 ग्रॅम) O2 नेमके; 0.3 मोल CO2 (13.2 ग्रॅम), 0.4 मोल H2O (7.2 ग्रॅम).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) धुण्याचा सोडा Na2CO3·10H2O – काच, साबण, कठीणता निवारण. (II) बेकिंग सोडा NaHCO3 – CO2 मुक्त, बेकिंग पावडर, अग्निशामक. (III) POP CaSO4·½H2O – 373K जिप्सम तापवून; पाण्यात कडक.",
+  "q_english": "(I) Washing soda Na2CO3·10H2O – glass, soap, hardness removal. (II) Baking soda NaHCO3 – liberates CO2, baking powder, extinguisher. (III) POP CaSO4·½H2O – from gypsum at 373K; hardens with water.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तिन्ही सूत्रे, निर्मिती व उपयोग परस्पर सुसंगत; सर्व सत्य.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) सेल्युलोज, (b) नायलॉन-66, (c) बेकेलाइट, (d) नैसर्गिक रबर. (1) नैसर्गिक, ग्लुकोज, जैवविघटनशील, (2) पॉलिअमाइड, थर्मोप्लास्टिक तंतू, (3) थर्मोसेटिंग, फिनॉल+फॉर्मल्डिहाइड, (4) इलास्टोमर, आयसोप्रीन, वल्कनीकरण.",
+  "q_english": "(a) Cellulose, (b) Nylon-66, (c) Bakelite, (d) Natural rubber. (1) Natural, glucose, biodegradable, (2) Polyamide, thermoplastic fibre, (3) Thermosetting, phenol+formaldehyde, (4) Elastomer, isoprene, vulcanisation.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-1,b-3,c-2,d-4",
+   "a-4,b-2,c-3,d-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सेल्युलोज-रबर नैसर्गिक; नायलॉन थर्मोप्लास्टिक पुनर्वितळते; बेकेलाइट थर्मोसेटिंग एकदाच कडक.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "उत्प्रेरक अभिक्रिया: (a) सक्रियण ऊर्जा प्राप्त, (b) संक्रमण अवस्था, (c) उत्प्रेरक कमी Ea मार्ग, (d) उत्पाद निर्मिती.",
+  "q_english": "Catalysed reaction: (a) Activation energy acquired, (b) Transition state, (c) Catalyst lower-Ea path, (d) Products formed.",
+  "options": [
+   "c-a-b-d",
+   "a-c-b-d",
+   "c-b-a-d",
+   "a-b-c-d"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "उत्प्रेरक प्रथम कमी Ea मार्ग (c) → कमी ऊर्जा (a) → संक्रमण (b) → उत्पाद (d).",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "विधान-कारण",
+  "q_marathi": "(A): नत्र खते (युरिया 46% N) वाढ वाढवतात; अतिरिक्त नायट्रेट प्रदूषण व आम्लता. (R): स्फुरद मुळे-फुलांसाठी, पालाश रोगप्रतिकार-जलनियमन; NPK बिघडल्यास केवळ नत्राने उत्पादन नाही.",
+  "q_english": "(A): Nitrogenous fertilizers boost growth; excess causes nitrate pollution and acidity. (R): P for roots-flowers, K for disease resistance-water regulation; N alone unsustainable.",
+  "options": [
+   "दोन्ही सत्य, R योग्य स्पष्टीकरण",
+   "दोन्ही सत्य, R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही सत्य पण R नायट्रेट प्रदूषण यंत्रणा स्पष्ट करत नाही; संतुलित व्यवस्थापनाची गरज सांगते.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "तक्ता-आधारित",
+  "q_marathi": "तक्ता: शीर्षस्थ विभाजी-प्राथमिक वाढ; पार्श्व विभाजी-दुय्यम वाढ; मृदूतक-साठवण; दृढोतक-कडक आधार. केवळ दृढोतक नष्ट झाल्यास परिणाम:",
+  "q_english": "Table: Apical meristem-primary growth; lateral-secondary; parenchyma-storage; sclerenchyma-rigid support. If only sclerenchyma destroyed:",
+  "options": [
+   "कडक आधार घटतो; वाढ-साठवण चालू",
+   "विभाजन थांबते",
+   "साठवण बंद, प्रकाशसंश्लेषण थांबते",
+   "जाडी वाढ थांबते"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दृढोतक फक्त आधार; गेल्यास कोमेजते पण विभाजी-मृदूतक कार्य चालू.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: प्रकार I न्यूमोसाइट्स 95% पृष्ठभाग – पातळ प्रसरण अडथळा; प्रकार II सर्फॅक्टंट – पृष्ठभाग ताण कमी. परिणाम:",
+  "q_english": "Cause: Type I pneumocytes 95% surface – thin diffusion barrier; Type II surfactant reduces tension. Effect:",
+  "options": [
+   "वेगाने प्रसरण, वायुकोश न कोसळणे; अभावी नवजात RDS",
+   "भित्तिका जाड, विनिमय मंद",
+   "प्रकार I सर्फॅक्टंट स्रवतात",
+   "वायुकोशात सिलिया श्लेष्मा ढकलतात"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पातळ अडथळा = कार्यक्षम प्रसरण; सर्फॅक्टंट लहान वायुकोश कोसळू देत नाही.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "बहु-विधान",
+  "q_marathi": "(I) सांगाडा स्नायू ऐच्छिक, रेखांकित, बहुकेंद्री, कंडरा जोडणी. (II) मृदु अनैच्छिक, अरेखांकित, एककेंद्री, तर्कुरूप. (III) हृदय अनैच्छिक, रेखांकित, शाखीय, इंटरकॅलेटेड डिस्क; न थकणारे.",
+  "q_english": "(I) Skeletal voluntary, striated, multinucleated, tendon-attached. (II) Smooth involuntary, non-striated, uninucleated, spindle. (III) Cardiac involuntary, striated, branched, intercalated discs; fatigue-resistant.",
+  "options": [
+   "I,II,III सत्य",
+   "फक्त I,II सत्य",
+   "फक्त II,III सत्य",
+   "फक्त I,III सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "तिन्ही निकषांवर अचूक; हृदय रेखांकित असूनही अनैच्छिक हा विशेष फरक.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "(a) प्रकाशसंश्लेषण, (b) श्वसन, (c) विघटन, (d) ज्वलन. (1) CO2 शोषून स्थिरीकरण, O2 मुक्त, (2) ग्लुकोज ऑक्सिडीकरण, CO2 परत, ATP, (3) मृतद्रव्य विघटन, CO2/मिथेन, (4) जीवाश्म इंधन ज्वलन, साठा कार्बन मुक्त.",
+  "q_english": "(a) Photosynthesis, (b) Respiration, (c) Decomposition, (d) Combustion. (1) CO2 uptake, fixation, O2 released, (2) Glucose oxidation, CO2 returned, ATP, (3) Dead matter breakdown, CO2/methane, (4) Fossil fuel burning.",
+  "options": [
+   "a-1,b-2,c-3,d-4",
+   "a-2,b-1,c-4,d-3",
+   "a-1,b-3,c-2,d-4",
+   "a-3,b-2,c-1,d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "प्रकाशसंश्लेषण कार्बन आत; श्वसन-विघटन-ज्वलन कार्बन बाहेर; ज्वलन वेगाने, विघटन सावकाश.",
+  "evidence": ""
+ },
+ {
+  "section": 8,
+  "subtopic": "",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "बायोम तापमान उतरता क्रम: (a) वाळवंट उष्ण कोरडे, (b) गवताळ समशीतोष्ण, (c) तैगा शंकुधारी थंड, (d) टुंड्रा परमाफ्रॉस्ट सर्वात थंड.",
+  "q_english": "Biomes by decreasing temperature: (a) Desert hot dry, (b) Grassland temperate, (c) Taiga coniferous cold, (d) Tundra permafrost coldest.",
+  "options": [
+   "a-b-c-d",
+   "b-a-c-d",
+   "a-c-b-d",
+   "d-c-b-a"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "वाळवंट → गवताळ → तैगा → टुंड्रा; परमाफ्रॉस्टमुळे खोल मुळे नाहीत.",
+  "evidence": ""
+ }
+]
