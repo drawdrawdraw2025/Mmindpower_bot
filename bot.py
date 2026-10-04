@@ -25,7 +25,8 @@ IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 WELCOME = (
     "🚀 <b>Welcome to Mmindpower Bot!</b>\n"
-    "📣 <b>Join our Channel:</b> @mmindpower_1 — daily quiz & answers 🔔\n\n"
+    "📣 <b>Join our Channel:</b> @mmindpower_1 — daily quiz & answers 🔔\n"
+    "📺 <b>Subscribe on YouTube:</b> youtube.com/@mmindpower 🔔\n\n"
     "✨ <b>What I can do:</b>\n"
     "• 📚 <b>Daily Quiz</b> — 90 Talathi/MPSC questions per day with clickable answers & explanations (/quiz)\n"
     "• 💬 AI chat — send any message for an AI answer\n\n"
@@ -863,9 +864,15 @@ def tick_user(chat_id, now):
         return
     send_question(chat_id)
 
+KB_CHANNEL = {"inline_keyboard": [
+    [{"text": "🎯 Play Mini App", "url": "https://t.me/Mmindpower_bot/Mmindpower_KBC"},
+     {"text": "🤖 Open Bot", "url": "https://t.me/Mmindpower_bot"}],
+    [{"text": "📺 Subscribe YouTube", "url": "https://youtube.com/@mmindpower"}]]}
+
 def channel_post(html_text):
     p = {"chat_id": CHANNEL_ID, "text": html_text, "parse_mode": "HTML",
-         "disable_web_page_preview": True}
+         "disable_web_page_preview": True,
+         "reply_markup": KB_CHANNEL}
     r = tg("sendMessage", **p)
     if not r.get("ok"):
         print("channel post failed:", r)
@@ -892,6 +899,7 @@ def qotd_post(ist_now):
             f"💡 <tg-spoiler>उत्तर: {sp}</tg-spoiler>\n\n"
             "उरले 89+ प्रश्न 👉 t.me/Mmindpower_bot/Mmindpower_KBC"
             "\n🤖 AI doubts/quiz → t.me/Mmindpower_bot?start=qotd"
+            "\n📺 Videos → youtube.com/@mmindpower"
             f"\n(Set {L} • Q{i + 1})")
 
 def digest_post(ist_now, today):
@@ -1497,7 +1505,10 @@ def handle(update):
                 mm["src_" + src_tag] = mm.get("src_" + src_tag, 0) + 1
                 save_state()
         send_text(chat_id, WELCOME,
-                  reply_markup={"inline_keyboard": [[{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}]]})
+                  reply_markup={"inline_keyboard": [
+                      [{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}],
+                      [{"text": "🎯 Open Mini App", "web_app": {"url": APP_URL_V}},
+                       {"text": "📺 YouTube", "url": "https://youtube.com/@mmindpower"}]]})
     elif cmd == "/help":
         send_text(chat_id, HELP)
     elif cmd == "/about":
