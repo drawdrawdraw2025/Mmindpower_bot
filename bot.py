@@ -199,6 +199,9 @@ def save_state(force=False):
 DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
+# Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
+APP_URL_V = APP_URL + "?v=web3"
+DONATE_URL_V = DONATE_URL + "?v=web3"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -224,7 +227,7 @@ def send_donate(chat_id):
            "📷 Scan this QR with your camera\n"
            f"🆔 <code>{DONATE_UPI}</code> (tap to copy)\n\n"
            "🙏 धन्यवाद — तुमचं प्रेम आमचं इंधन! 💪")
-    kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "web_app": {"url": DONATE_URL}}]]}
+    kb = {"inline_keyboard": [[{"text": "💸 Tap to Support ₹5 (UPI)", "web_app": {"url": DONATE_URL_V}}]]}
     png = donate_qr_png()
     if png:
         tg_photo(chat_id, png, caption=cap, reply_markup=kb)
@@ -1438,7 +1441,7 @@ def handle(update):
         APP_MENU_DONE.add(chat_id)
         tg("setChatMenuButton", chat_id=chat_id, menu_button={
             "type": "web_app", "text": "📚 Practice App",
-            "web_app": {"url": APP_URL}})
+            "web_app": {"url": APP_URL_V}})
     token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
     if token0 == "/audience":
         if chat_id == OWNER_CHAT:
@@ -1449,7 +1452,7 @@ def handle(update):
         return
     if token0 == "/app":
         send_text(chat_id, "📚 <b>Mmindpower Practice App</b> — all sets, any time 👇",
-                  reply_markup={"inline_keyboard": [[{"text": "📚 Open Practice App", "web_app": {"url": APP_URL}}]]})
+                  reply_markup={"inline_keyboard": [[{"text": "📚 Open Practice App", "web_app": {"url": APP_URL_V}}]]})
         return
     if token0 == "/announce":
         if chat_id == OWNER_CHAT:
