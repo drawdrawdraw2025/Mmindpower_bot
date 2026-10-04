@@ -1,0 +1,1442 @@
+[
+ {
+  "section": "3",
+  "subtopic": "NIDHI Seed Support व Inclusive TIDE 2.0",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "NIDHI संदर्भात खालील विधाने विचारात घ्या :\nI. NIDHI (National Initiative for Developing and Harnessing Innovations) हा विज्ञान व तंत्रज्ञान विभागा (DST) अंतर्गत 2016 मध्ये सुरू झालेला अम्ब्रेला उपक्रम आहे.\nII. NIDHI-Seed Support System अंतर्गत उष्मायन केंद्रामार्फत (Incubator) पात्र स्टार्टअपला 100 लाख रुपयांपर्यंत बीज-निधी सहाय्य दिले जाते.\nIII. NIDHI-Inclusive TIDE 2.0 हा घटक उद्योजकतेला Tier-2/Tier-3 शहरांपर्यंत नेण्यावर भर देतो आणि त्याचा विस्तार 2024-25 मध्ये अधोरेखित झाला.\nयोग्य पर्याय निवडा :",
+  "q_english": "Consider the following statements regarding NIDHI:\nI. NIDHI is an umbrella programme launched in 2016 under the Department of Science and Technology (DST).\nII. Under NIDHI-Seed Support System, eligible startups receive seed support up to Rs 100 lakh through incubators.\nIII. NIDHI-Inclusive TIDE 2.0 focuses on taking entrepreneurship to Tier-2/Tier-3 cities and its expansion was highlighted in 2024-25.\nChoose the correct option:",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "I बरोबर आहे कारण NIDHI DST ने 2016 मध्ये सुरू केला. II बरोबर आहे कारण Seed Support ची कमाल मर्यादा 1 कोटी (100 लाख) आहे, हा आकडा अनेकदा 50 लाखांशी गोंधळवतो. III बरोबर आहे कारण Inclusive TIDE चा उद्देश दुर्लक्षित क्षेत्रे/शहरे आहेत. त्यामुळे पर्याय C बरोबर; इतर पर्याय एक विधान चुकीने वगळतात.",
+  "evidence": "DST NIDHI Operational Guidelines 2016, updated compendium 2024"
+ },
+ {
+  "section": "3",
+  "subtopic": "Digital India BHASHINI भाषा AI",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा :\nअ) Bhasha Daan  ब) Anuvaad  क) BHASHINI प्लेटफॉर्म  ड) Jugalbandi\n1) क्राउडसोर्सिंगने भारतीय भाषांतील डेटा संकलन  2) दस्तऐवजांचे AI भाषांतर साधन  3) National Language Translation Mission चे अंमलबजावणी व्यासपीठ  4) बहुभाषिक AI सहाय्यक (Microsoft-एकत्रित)",
+  "q_english": "Match the pairs:\nA) Bhasha Daan  B) Anuvaad  C) BHASHINI Platform  D) Jugalbandi\n1) Crowdsourced Indian-language data collection  2) AI document translation tool  3) Implementation platform of National Language Translation Mission  4) Multilingual AI assistant (with Microsoft)",
+  "options": [
+   "अ-2, ब-1, क-3, ड-4",
+   "अ-1, ब-2, क-3, ड-4",
+   "अ-1, ब-3, क-2, ड-4",
+   "अ-4, ब-2, क-1, ड-3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "अ-1 (Bhasha Daan हे क्राउडसोर्सिंग), ब-2 (Anuvaad हे भाषांतर साधन), क-3 (BHASHINI हेच NLTM चे व्यासपीठ, 2022 मध्ये MeitY अंतर्गत), ड-4 (Jugalbandi हे बहुभाषिक चॅटबॉट) हेच बरोबर संयोजन आहे. इतर पर्याय Anuvaad व Bhasha Daan ची अदलाबदल करून गोंधळ निर्माण करतात.",
+  "evidence": "MeitY Digital India BHASHINI brochure 2022-2024"
+ },
+ {
+  "section": "3",
+  "subtopic": "ONDC नेटवर्क विस्तार 2024",
+  "qtype": "kalkram lava",
+  "q_marathi": "ONDC संदर्भातील घटनांचा योग्य कालक्रम लावा :\n1) कलम 8 कंपनी म्हणून ONDC ची नोंदणी (DPIIT पुढाकार)\n2) बेंगळुरूमध्ये Beta पायलट सुरू\n3) Alpha पायलट सुरू\n4) ONDC द्वारे मासिक कोट्यवधी व्यवहारांचा टप्पा व MSME ऑनबोर्डिंग विस्तार (2024-25)",
+  "q_english": "Arrange ONDC events in correct chronological order:\n1) Registration of ONDC as Section 8 company (DPIIT initiative)\n2) Beta pilot launch in Bengaluru\n3) Alpha pilot launch\n4) Monthly multi-crore transactions milestone and MSME onboarding expansion (2024-25)",
+  "options": [
+   "1-2-3-4",
+   "3-1-2-4",
+   "1-3-2-4",
+   "2-1-3-4"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य क्रम 1 (डिसेंबर 2021 नोंदणी) → 3 (एप्रिल 2022 Alpha) → 2 (सप्टेंबर 2022 Beta, बेंगळुरू) → 4 (2024-25 विस्तार) असा आहे. Alpha हा Beta च्या आधी येतो हा बारकावा लक्षात न घेतल्यास क्रम चुकतो.",
+  "evidence": "DPIIT ONDC launch timeline 2021-2022; ONDC annual update 2024-25"
+ },
+ {
+  "section": "3",
+  "subtopic": "PM Gati Shakti University वडोदरा",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): गति शक्ती विश्वविद्यालयाला (Gati Shakti Vishwavidyalaya) 2022 च्या केंद्रीय कायद्याने केंद्रीय विद्यापीठाचा दर्जा मिळाला.\nकारण (R): हे रेल्वे मंत्रालयाद्वारे प्रायोजित विद्यापीठ असून पूर्वीचे National Rail and Transportation Institute (NRTI) त्यात समाविष्ट झाले.",
+  "q_english": "Assertion (A): Gati Shakti Vishwavidyalaya got Central University status through a Central Act of 2022.\nReason (R): It is sponsored by the Ministry of Railways and the earlier National Rail and Transportation Institute (NRTI) was subsumed into it.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A बरोबर आहे कारण The Gati Shakti Vishwavidyalaya Act, 2022 ने NRTI चे रूपांतर करून केंद्रीय विद्यापीठ केले. R देखील बरोबर आहे आणि A चे कारण स्पष्ट करते कारण रेल्वे मंत्रालयाचे प्रायोजन व NRTI विलीनीकरण हाच कायद्याचा गाभा आहे.",
+  "evidence": "The Gati Shakti Vishwavidyalaya Act, 2022; Ministry of Railways notification 2022"
+ },
+ {
+  "section": "3",
+  "subtopic": "G20 नवी दिल्ली घोषणा 2023",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (C): सप्टेंबर 2023 मध्ये नवी दिल्ली G20 शिखरात African Union ला कायमस्वरूपी सदस्यत्व देण्यात आले आणि Global Biofuel Alliance ची सुरुवात झाली.\nपरिणाम (E): G20 हा आता G21 झाला असून जैवइंधन सहकार्यासाठी बहुपक्षीय व्यासपीठ निर्माण झाले.\nयोग्य संबंध ओळखा :",
+  "q_english": "Cause (C): At the September 2023 New Delhi G20 Summit, the African Union was granted permanent membership and the Global Biofuel Alliance was launched.\nEffect (E): G20 effectively became G21 and a multilateral platform for biofuel cooperation was created.\nIdentify the correct relation:",
+  "options": [
+   "C चूक, E बरोबर",
+   "C बरोबर, E चूक",
+   "C आणि E दोन्ही बरोबर आणि E हा C चा तार्किक परिणाम आहे",
+   "C आणि E दोन्ही बरोबर पण परस्परसंबंध नाही"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "C बरोबर आहे कारण 9 सप्टेंबर 2023 च्या घोषणेत AU समावेश व Biofuel Alliance दोन्ही घडले. E हा त्याचा थेट परिणाम आहे. पहिला पर्याय तथ्य चुकवतो, दुसरा परिणाम नाकारतो.",
+  "evidence": "G20 New Delhi Leaders' Declaration, 9 Sept 2023"
+ },
+ {
+  "section": "3",
+  "subtopic": "Chandrayaan-3 Pragyan पेलोड",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "Chandrayaan-3 च्या Pragyan रोव्हरवरील दोन पेलोड विचारात घ्या : संकल्पना X = APXS (Alpha Particle X-ray Spectrometer), संकल्पना Y = LIBS (Laser Induced Breakdown Spectroscope).\nखालीलपैकी योग्य एकत्रित आकलन कोणते?",
+  "q_english": "Consider two payloads on Chandrayaan-3's Pragyan rover: Concept X = APXS, Concept Y = LIBS.\nWhich combined understanding is correct?",
+  "options": [
+   "X व Y दोन्ही लँडरवर होते; रोव्हरवर नव्हते",
+   "X हा मूलद्रव्य संघटनासाठी अल्फा कण वापरतो, Y हा लेझर प्लाझ्माद्वारे मूलद्रव्य ओळखतो; दोन्हींनी दक्षिण ध्रुवाजवळ सल्फरची उपस्थिती निश्चित केली",
+   "X फक्त वातावरण मोजतो, Y फक्त तापमान मोजतो",
+   "X व Y हे ऑर्बिटरचे पेलोड आहेत"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "APXS व LIBS दोन्ही Pragyan रोव्हरवर होते, लँडर/ऑर्बिटरवर नव्हे. APXS अल्फा कण-क्ष-किरण वापरतो, LIBS लेझर-निर्मित प्लाझ्मा वापरतो; दोन्हींनी ऑगस्ट 2023 मध्ये सल्फरसह मूलद्रव्ये शोधली. इतर पर्याय स्थान किंवा कार्य चुकवतात.",
+  "evidence": "ISRO Chandrayaan-3 mission payload details, Aug 2023"
+ },
+ {
+  "section": "3",
+  "subtopic": "Aditya-L1 हॅलो कक्षा व पेलोड",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता : Aditya-L1 पेलोड - कार्य\n1) VELC - कोरोनाचा अभ्यास\n2) SUIT - प्रकाशगोल (Photosphere) व वर्णगोलाचे UV निरीक्षण\n3) ASPEX - सौर वायूतील आयनांचे मापन\n4) PAPA - सौर वायूतील इलेक्ट्रॉन व आयन\nवरीलपैकी कोणते योग्य जुळले आहे?",
+  "q_english": "Table: Aditya-L1 payload - function\n1) VELC - corona study\n2) SUIT - UV observation of photosphere and chromosphere\n3) ASPEX - measurement of ions in solar wind\n4) PAPA - electrons and ions in solar wind\nWhich are correctly matched?",
+  "options": [
+   "फक्त 1 आणि 2",
+   "1, 2, 3 आणि 4 सर्व",
+   "फक्त 1, 3 आणि 4",
+   "फक्त 2 आणि 3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "चारही जोड्या ISRO ने दिलेल्या व्याख्येनुसार बरोबर आहेत. VELC कोरोनाग्राफ, SUIT UV टेलिस्कोप, ASPEX व PAPA सौर वायू विश्लेषक आहेत. 6 जानेवारी 2024 रोजी L1 हॅलो कक्षेत प्रवेश हा संदर्भ लक्षात घ्या.",
+  "evidence": "ISRO Aditya-L1 payload booklet 2023; L1 insertion 6 Jan 2024"
+ },
+ {
+  "section": "3",
+  "subtopic": "जात जनगणना 2025 निर्णय",
+  "qtype": "nakasha aadharit",
+  "q_marathi": "नकाशा-आधारित प्रश्न : 2025 मध्ये जात जनगणनेचा निर्णय झाला. जनगणना 2027 च्या नियोजित आराखड्यानुसार खालीलपैकी कोणते विधान नकाशा-प्रशासनिक दृष्ट्या अचूक आहे?",
+  "q_english": "Map-based question: Caste census decision was taken in 2025. Which statement is administratively accurate as per Census 2027 plan?",
+  "options": [
+   "जनगणना केवळ एकाच टप्प्यात होईल व त्यात जात समाविष्ट नसेल",
+   "30 एप्रिल 2025 रोजी मंत्रिमंडळ समितीने (CCPA) जात गणना जनगणनेत समाविष्ट करण्यास मान्यता दिली; जनगणना 2027 दोन टप्प्यांत व डिजिटल पद्धतीने होणार",
+   "जात जनगणना स्वतंत्रपणे राज्य सरकारे घेतील, केंद्राचा संबंध नाही",
+   "2025 मध्येच प्रत्यक्ष जनगणना पूर्ण झाली"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "30 एप्रिल 2025 रोजी CCPA ने जातीय गणना समाविष्ट करण्याचा निर्णय घेतला हे अधिकृत आहे. जनगणना 2027 दोन टप्प्यांत (House listing व Population enumeration) व डिजिटल पद्धतीने होणार आहे. इतर पर्याय टप्पे/वर्ष चुकवतात.",
+  "evidence": "PIB Cabinet Committee on Political Affairs decision, 30 April 2025"
+ },
+ {
+  "section": "3",
+  "subtopic": "Gaganyaan TV-D1 चाचणी 2023",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "Gaganyaan TV-D1 संदर्भात विधाने :\nI. TV-D1 हे 21 ऑक्टोबर 2023 रोजी श्रीहरिकोटा येथून प्रक्षेपित केलेले Test Vehicle Abort Mission होते.\nII. यात Crew Escape System (CES) ची चाचणी घेऊन क्रू मॉड्यूल सुरक्षितपणे बंगालच्या उपसागरात उतरवले.\nIII. TV-D1 साठी सुधारित VIKAS इंजिन वापरलेले एकल-टप्पी द्रव-इंधन रॉकेट वापरले.",
+  "q_english": "Statements on Gaganyaan TV-D1:\nI. TV-D1 was a Test Vehicle Abort Mission launched on 21 Oct 2023 from Sriharikota.\nII. It tested the Crew Escape System and safely recovered the crew module in the Bay of Bengal.\nIII. TV-D1 used a single-stage liquid-fuel rocket with a modified VIKAS engine.",
+  "options": [
+   "फक्त I बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त II आणि III बरोबर",
+   "फक्त I आणि II बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही विधाने ISRO नोंदीनुसार बरोबर आहेत. तारीख (21 ऑक्टोबर 2023), CES प्रात्यक्षिक व VIKAS-आधारित टेस्ट व्हेईकल हे बारकावे आहेत. फक्त I किंवा I-II मानणारे पर्याय अपूर्ण आहेत.",
+  "evidence": "ISRO TV-D1 mission report, 21 Oct 2023"
+ },
+ {
+  "section": "3",
+  "subtopic": "One Nation One Subscription 2024",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा (ONOS 2024) :\nअ) नोडल संस्था  ब) तरतूद  क) लाभार्थी  ड) प्रकाशक\n1) INFLIBNET  2) 2025-27 साठी 6000 कोटी रुपये  3) 6300+ शासकीय उच्च शिक्षण/संशोधन संस्था  4) सुमारे 30 आंतरराष्ट्रीय प्रकाशक",
+  "q_english": "Match (ONOS 2024):\nA) Nodal agency  B) Outlay  C) Beneficiaries  D) Publishers\n1) INFLIBNET  2) Rs 6000 crore for 2025-27  3) 6300+ govt HEIs/research institutions  4) ~30 international publishers",
+  "options": [
+   "अ-1, ब-3, क-2, ड-4",
+   "अ-2, ब-1, क-4, ड-3",
+   "अ-1, ब-2, क-3, ड-4",
+   "अ-4, ब-2, क-1, ड-3"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "ONOS ला नोव्हेंबर 2024 मध्ये मान्यता मिळाली; INFLIBNET नोडल, 6000 कोटी तरतूद, 6300+ संस्था, 30 प्रकाशक हे अधिकृत आकडे आहेत. तरतूद-संस्था अदलाबदल करणारे पर्याय चुकीचे आहेत.",
+  "evidence": "Cabinet approval PIB, 25 Nov 2024 - ONOS"
+ },
+ {
+  "section": "3",
+  "subtopic": "PM Vidyalaxmi Yojana 2024",
+  "qtype": "kalkram lava",
+  "q_marathi": "PM Vidyalaxmi योजनेचा तार्किक क्रम लावा :\n1) केंद्रीय मंत्रिमंडळाची मान्यता (नोव्हेंबर 2024)\n2) गुणवत्ताधारक विद्यार्थ्यांना तारण-मुक्त शैक्षणिक कर्ज\n3) 7.5 लाखांपर्यंत कर्जावर 75% पत हमी\n4) 8 लाखांपर्यंत कौटुंबिक उत्पन्न असलेल्यांना 10 लाखांपर्यंत कर्जावर व्याज अनुदान",
+  "q_english": "Arrange PM Vidyalaxmi logical sequence:\n1) Cabinet approval (Nov 2024)\n2) Collateral-free loans to meritorious students\n3) 75% credit guarantee on loans up to Rs 7.5 lakh\n4) Interest subvention on loans up to Rs 10 lakh for family income up to Rs 8 lakh",
+  "options": [
+   "1-2-3-4",
+   "2-1-4-3",
+   "1-3-2-4",
+   "4-3-2-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य क्रम मान्यता → कर्ज उपलब्धता → पत हमीची अट → व्याज अनुदानाची अट असा आहे. आकडे (7.5 लाख/75% व 10 लाख/8 लाख) यांची अदलाबदल हीच खरी कठीणता आहे.",
+  "evidence": "PIB PM-Vidyalaxmi approval, 6 Nov 2024"
+ },
+ {
+  "section": "3",
+  "subtopic": "PM Internship Scheme 2024",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): PM Internship Scheme चे पायलट 3 ऑक्टोबर 2024 रोजी सुरू झाले, ज्याचे लक्ष्य 5 वर्षांत 1 कोटी इंटर्नशिप आहे.\nकारण (R): ही योजना अर्थसंकल्प 2024-25 मध्ये घोषित झाली असून Top-500 कंपन्यांतील इंटर्नना दरमहा 5000 रुपये व एकरकमी 6000 रुपये सहाय्य देते; वयोमर्यादा 21-24 वर्षे आहे.",
+  "q_english": "Assertion (A): PM Internship Scheme pilot launched on 3 Oct 2024 targeting 1 crore internships in 5 years.\nReason (R): Announced in Budget 2024-25, it gives Rs 5000/month plus Rs 6000 one-time to interns in top-500 companies; age 21-24.",
+  "options": [
+   "A चूक, R बरोबर",
+   "A बरोबर, R चूक",
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे योग्य स्पष्टीकरण नाही"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "A मधील तारीख व 1 कोटी लक्ष्य बरोबर आहे. R मधील अर्थसंकल्पीय उगम, रक्कम (5000+6000) व वयोमर्यादा (21-24) देखील बरोबर असून योजनेचे स्वरूप स्पष्ट करते, म्हणून R हे A चे योग्य स्पष्टीकरण आहे.",
+  "evidence": "MCA PM Internship Scheme pilot guidelines, 3 Oct 2024; Budget 2024-25"
+ },
+ {
+  "section": "3",
+  "subtopic": "Unified Pension Scheme 2024",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (C): ऑगस्ट 2024 मध्ये Unified Pension Scheme (UPS) ला मान्यता मिळाली; 25 वर्षे सेवेनंतर सरासरी मूलभूत वेतनाच्या 50% पेन्शनची हमी.\nपरिणाम (E): 1 एप्रिल 2025 पासून NPS अंतर्गत कर्मचाऱ्यांना UPS पर्याय उपलब्ध झाला व कुटुंब पेन्शन 60% निश्चित झाले.",
+  "q_english": "Cause (C): UPS approved in Aug 2024; assured 50% of average basic pay after 25 years service.\nEffect (E): From 1 Apr 2025, NPS employees got UPS option and family pension fixed at 60%.",
+  "options": [
+   "C आणि E दोन्ही चूक",
+   "C बरोबर, E चूक",
+   "C आणि E दोन्ही बरोबर आणि E हा C चा तार्किक परिणाम आहे",
+   "C आणि E दोन्ही बरोबर पण संबंध नाही"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "C मधील 50%/25 वर्षे हा UPS चा गाभा आहे. E मधील अंमलबजावणी तारीख (1 एप्रिल 2025) व 60% कुटुंब पेन्शन बरोबर आहे. त्यामुळे E हा C चा परिणाम आहे; E नाकारणारा पर्याय चुकीचा.",
+  "evidence": "Cabinet decision PIB, 24 Aug 2024 - UPS; PFRDA notification 2025"
+ },
+ {
+  "section": "3",
+  "subtopic": "NPS Vatsalya 2024",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "दोन संकल्पना : X = NPS Vatsalya (2024), Y = सामान्य NPS.\nयोग्य एकत्रित विधान ओळखा :",
+  "q_english": "Two concepts: X = NPS Vatsalya (2024), Y = regular NPS.\nIdentify the correct combined statement:",
+  "options": [
+   "X फक्त 18 वर्षांवरीलांसाठी, Y अल्पवयीनांसाठी",
+   "X हा अल्पवयीन मुलांसाठी 18 सप्टेंबर 2024 रोजी सुरू केलेला पेन्शन उपक्रम असून किमान 1000 रुपये वार्षिक योगदान आहे; वय 18 पूर्ण झाल्यावर ते नियमित NPS खात्यात रूपांतरित होते",
+   "X मध्ये सरकारी सह-योगदान 50% आहे",
+   "X व Y दोन्ही PFRDA बाहेर चालतात"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "NPS Vatsalya अल्पवयीनांसाठी आहे (18 वर्षांखालील), 1000 रुपये किमान वार्षिक योगदान व 18 नंतर नियमित NPS मध्ये स्थलांतर हे बारकावे आहेत. पहिला पर्याय वयोमर्यादा उलट करतो, इतर PFRDA व योगदान चुकवतात.",
+  "evidence": "PFRDA NPS Vatsalya launch, 18 Sept 2024"
+ },
+ {
+  "section": "3",
+  "subtopic": "Vigyan Dhara 2024 DST",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता : Vigyan Dhara घटक\n1) INSPIRE - संशोधक आकर्षण\n2) WISE - महिलांसाठी विज्ञान\n3) SHRI - क्षमता बांधणी\nवरील तक्त्यातील Vigyan Dhara (2024) बद्दल काय बरोबर?",
+  "q_english": "Table: Vigyan Dhara components\n1) INSPIRE - attracting researchers\n2) WISE - science for women\n3) SHRI - capacity building\nWhat is correct about Vigyan Dhara (2024)?",
+  "options": [
+   "Vigyan Dhara मध्ये वरील तिन्हींसह अनेक DST योजना विलीन; तरतूद 2025-26 ते 2030-31 साठी 10,200 कोटी रुपये; DST नोडल",
+   "Vigyan Dhara ही आरोग्य मंत्रालयाची योजना आहे",
+   "तरतूद फक्त 100 कोटी रुपये आहे",
+   "यात INSPIRE समाविष्ट नाही"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सप्टेंबर 2024 मध्ये मान्यता मिळालेली Vigyan Dhara ही DST ची अम्ब्रेला योजना असून INSPIRE, WISE यांसारख्या योजना विलीन करते; 10,200 कोटींची तरतूद हा निर्णायक आकडा आहे. मंत्रालय/तरतूद चुकवणारे पर्याय चुकीचे.",
+  "evidence": "Cabinet approval PIB, Sept 2024 - Vigyan Dhara, DST"
+ },
+ {
+  "section": "4",
+  "subtopic": "Paika उठाव 1817 - बक्षी जगबंधू व खुर्दा कारणे",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "पायक उठाव 1817 संदर्भात खालील विधाने विचारात घ्या:\n(I) पायक हे खुर्दाच्या गजपती राजांचे वंशपरंपरागत पायदळ सैनिक होते; लष्करी सेवेच्या मोबदल्यात त्यांना निश्कर (भाडेमुक्त) जागिरी मिळत असत.\n(II) 1804 मध्ये खुर्दा ताब्यात घेतल्यानंतर ब्रिटिशांनी पायकांच्या जागिरी जप्त केल्या, कौडीऐवजी चांदीच्या रुपयात महसूल वसुली सुरू केली आणि मीठावरील मक्तेदारी लादली.\n(III) उठावाचे तात्कालिक कारण म्हणजे मार्च 1817 मध्ये पायकांनी बानपूर ठाण्यावर हल्ला करून पुरीच्या जगन्नाथ मंदिराचा ताबा घेणे आणि मुकुंददेव-II यांना 1825 पर्यंत स्वतंत्र राजा म्हणून टिकवणे हे होय.\nयोग्य पर्याय निवडा:",
+  "q_english": "Consider statements on Paika Rebellion 1817: (I) Paikas were hereditary foot-soldiers of Khurda Gajapati kings holding rent-free nishkar jagirs for military service. (II) After annexing Khurda in 1804, British resumed paika jagirs, demanded revenue in silver rupees instead of cowries and imposed salt monopoly. (III) The immediate trigger was Paika attack on Banapur thana in March 1817, capture of Jagannath temple and sustaining Mukunda Deva-II as independent king till 1825. Choose correct option:",
+  "options": [
+   "I, II आणि III तिन्ही बरोबर",
+   "फक्त I आणि II बरोबर; III चूक",
+   "फक्त II आणि III बरोबर; I चूक",
+   "फक्त I आणि III बरोबर; II चूक"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I व II बरोबर आहेत - पायक व्यवस्था व 1804 नंतरचे आर्थिक बदल हे मान्य कारणे आहेत. III चूक आहे कारण पायकांनी बानपूरवर हल्ला व खुर्दाचा ताबा घेतला हे खरे असले तरी ब्रिटिशांनी 1818 पर्यंत बंड मोडले; 1825 पर्यंत स्वतंत्र राज्य टिकले नाही व जगबंधू 1829 मध्ये निर्वासित अवस्थेत मरण पावले. त्यामुळे I+II हाच योग्य संच आहे.",
+  "evidence": "Toynbee's Sketch of Orissa (1873); B.C. Ray, Orissa under the British (1960)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Kuka-Namdari 1872 - राम सिंह व मलेरकोटला हल्ला",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा:\n(A) राम सिंह कूका  (B) भैणी साहिब  (C) मलेरकोटला हल्ला जाने. 1872  (D) उपायुक्त एल. कोवान\n(1) नामधारींचे धार्मिक मुख्यालय, रात्र जागरण व हवन परंपरा  (2) 49 कुकांना तोफेच्या तोंडी देण्याचा आदेश  (3) गोहत्येविरोधातून मुस्लिम संस्थानावर हल्ला  (4) 1857 मध्ये नामधारी पंथाची स्थापना, ब्रिटिश वस्त्र-शिक्षण बहिष्कार\nयोग्य जोडी संच निवडा:",
+  "q_english": "Match: (A) Ram Singh Kuka (B) Bhaini Sahib (C) Malerkotla attack Jan 1872 (D) Deputy Commissioner L. Cowan; (1) Namdhari religious HQ, night congregations (2) ordered 49 Kukas blown from guns (3) attack on Muslim state over cow slaughter (4) founded Namdhari sect in 1857, boycott of British goods. Choose correct set:",
+  "options": [
+   "A-4, B-1, C-3, D-2",
+   "A-1, B-4, C-2, D-3",
+   "A-4, B-3, C-1, D-2",
+   "A-2, B-1, C-4, D-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य जोड्या A-4 (राम सिंहांनी 1857 मध्ये नामधारी स्थापना), B-1 (भैणी साहिब मुख्यालय), C-3 (मलेरकोटल्यावर गोहत्येमुळे हल्ला), D-2 (कोवानने 17-18 जाने. 1872 रोजी तोफेच्या तोंडी दिले) आहेत. इतर पर्यायांत मुख्यालय व हल्ल्याचे कारण अदलाबदल केले आहे, जे ऐतिहासिकदृष्ट्या चूक आहे.",
+  "evidence": "Ganda Singh, History of the Kuka Movement (1972); Punjab Government Records 1872"
+ },
+ {
+  "section": "4",
+  "subtopic": "Phadke Ramoshi-Koli-Dhangar उठाव 1879 द्वितीय टप्पा",
+  "qtype": "kalkram lava",
+  "q_marathi": "वासुदेव बळवंत फडके यांच्या 1879 च्या उठावातील घटनांचा योग्य कालक्रम लावा:\n(A) पुण्यात नोकरी सोडून रामोशी, कोळी, धनगर तरुणांची पहिली टोळी संघटित करणे\n(B) खेड-भोर परिसरात सावकार व सरकारी खजिन्यावर दरोडे (धामणगाव लूट)\n(C) ब्रिटिश सरकारकडून फडकेंवर 4000 रुपयांचे बक्षीस जाहीर\n(D) पंढरपूरजवळ देवर नाडगी मंदिरात मेजर डॅनियल यांच्याकडून अटक\nयोग्य क्रम निवडा:",
+  "q_english": "Arrange chronologically events of Vasudev Balwant Phadke's 1879 uprising: (A) resigning job in Pune and organising first Ramoshi-Koli-Dhangar band (B) dacoities on moneylenders and govt treasuries in Khed-Bhor (Dhamangaon loot) (C) British announcing Rs.4000 reward on Phadke (D) arrest at Devar Nadgi temple near Pandharpur by Major Daniel. Choose correct order:",
+  "options": [
+   "A-C-B-D",
+   "B-A-C-D",
+   "C-A-B-D",
+   "A-B-C-D"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "योग्य क्रम A (जाने-फेब्रु 1879 संघटना) → B (फेब्रु-एप्रिल दरोडे) → C (मे 1879 बक्षीस) → D (20 जुलै 1879 अटक) असा आहे. C आधी ठेवल्यास कारण-परिणाम उलटतो कारण बक्षीस हे दरोड्यांनंतर जाहीर झाले; B आधी ठेवल्यास संघटनाविना दरोडे अशक्य ठरतात.",
+  "evidence": "V.V. Phadke biography - Comrade K.M. Shinde (1947); Bombay Police Abstracts 1879"
+ },
+ {
+  "section": "4",
+  "subtopic": "Deccan Riots 1875 - आयोग व शेतकरी मदत कायदा तरतुदी",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): दख्खन दंगलींचे (मे 1875, सुपे-पुणे) मूळ कारण जमीन महसूल दरवाढ नसून अमेरिकन यादवी युद्धोत्तर कापूस तेजीनंतरची मंदी, सावकारांची फसवी कर्जखाती आणि दिवाणी न्यायालयांचा सावकारधार्जिणा पक्षपात हे होते, असा निष्कर्ष दख्खन दंगल आयोगाने (1876) काढला.\nकारण (R): दख्खन शेतकरी मदत कायदा (1879) ने कर्जमाफी जाहीर करून सावकारांना दिवाणी न्यायालयांत अधिक सुलभ वसुलीचे अधिकार दिले.\nयोग्य पर्याय निवडा:",
+  "q_english": "Assertion (A): Deccan Riots Commission (1876) concluded the root cause of Deccan Riots (May 1875, Supa-Pune) was not land revenue hike but post-American Civil War cotton crash, sahukars' fraudulent accounts and pro-sahukar bias of civil courts. Reason (R): Deccan Agriculturists' Relief Act (1879) announced loan waiver and gave sahukars easier recovery powers in civil courts. Choose correct:",
+  "options": [
+   "A आणि R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "A सत्य आहे - आयोगाने महसूल नव्हे तर सावकारी शोषण व न्यायालयीन पक्षपात हे कारण ठरवले. R असत्य आहे कारण 1879 च्या कायद्याने कर्जमाफी नव्हे तर व्याजमर्यादा, कर्जसमेट (conciliation), दिवाळखोरीपासून संरक्षण व शेतकऱ्यांना न्यायालयीन संरक्षण दिले; सावकारांचे अधिकार वाढवले नाहीत.",
+  "evidence": "Report of Deccan Riots Commission (1876); Deccan Agriculturists' Relief Act text (1879)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Champaran 1917 - तिनकठिया व राजकुमार शुक्ला भूमिका",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (K): राजकुमार शुक्ला यांनी 1916 च्या लखनौ काँग्रेस अधिवेशनात गांधींना चंपारणला येण्याची विनंती केली, कारण चंपारणात युरोपियन नील उत्पादक 'तिनकठिया' पद्धतीने (20 पैकी 3 कट्ठा जमिनीवर सक्तीने नील) व शरहबेशी (वाढीव लगान) वसुलीने शेतकऱ्यांचे शोषण करत होते.\nपरिणाम (P): गांधींच्या चौकशीनंतर ब्रिटिशांनी चंपारण चौकशी समिती (1917) नेमली व चंपारण शेतकी कायदा (1918) द्वारे तिनकठिया रद्द करून शरहबेशीत 25% कपात केली.\nकारण-परिणाम संबंधाबाबत योग्य पर्याय निवडा:",
+  "q_english": "Cause (K): Rajkumar Shukla invited Gandhi at 1916 Lucknow Congress to Champaran because European indigo planters exploited peasants via tinkathia (3/20 katha compulsory indigo) and sharahbeshi (enhanced rent). Effect (P): After Gandhi's inquiry British appointed Champaran Inquiry Committee (1917) and Champaran Agrarian Act (1918) abolished tinkathia and cut sharahbeshi by 25%. Choose correct cause-effect relation:",
+  "options": [
+   "K सत्य, P सत्य; K मुळे P घडला नाही (P स्वतंत्र प्रशासकीय निर्णय)",
+   "K सत्य, P सत्य; K मुळे P घडला",
+   "K सत्य, P असत्य (कायदा 1919 चा व कपात 50% होती)",
+   "K असत्य (शुक्ला 1915 मध्ये भेटले), P सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "K व P दोन्ही सत्य व K मुळेच P घडला - शुक्लांच्या आग्रहामुळेच गांधी एप्रिल 1917 मध्ये मोतिहारीत आले, नंतर समिती व 1918 चा कायदा झाला. P मध्ये वर्ष व 25% कपात अचूक आहे; 1919/50% हा पर्याय चुकीची आकडेवारी देतो. लखनौ 1916 ही तारीखही अचूक आहे.",
+  "evidence": "Gandhi - Champaran Satyagraha Report (1917); Champaran Agrarian Act (1918)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Kheda 1918 - पीक नापिकी व वल्लभभाई नेतृत्व",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "दोन संकल्पना विचारात घ्या:\nसंकल्पना (I): खेडा सत्याग्रह (1918) मध्ये 1917-18 च्या खरीप नापिकीनंतरही सरकारने महसूल माफी नाकारल्याने वल्लभभाई पटेल, इंदुलाल याज्ञिक यांनी 'महसूल न भरण्याची' प्रतिज्ञा संघटित केली; गांधींनी येथे वल्लभभाईंना प्रथमच प्रमुख सेनापती म्हणून घडवले.\nसंकल्पना (II): खेड्यातील तडजोडीअंती सरकारने श्रीमंत शेतकऱ्यांची वसुली स्थगित केली व गरिबांना माफी दिली; ही तडजोड चंपारण (1918 कायदा) प्रमाणे कायद्यात रूपांतरित झाली नाही, तर प्रशासकीय आदेशाने झाली.\nयोग्य पर्याय निवडा:",
+  "q_english": "Two concepts: (I) In Kheda Satyagraha (1918) after kharif failure 1917-18, Vallabhbhai Patel and Indulal Yagnik organised no-revenue pledge; Gandhi groomed Vallabhbhai here as chief lieutenant. (II) Settlement suspended recovery for rich and remitted for poor; unlike Champaran it came via executive order, not legislation. Choose correct:",
+  "options": [
+   "I सत्य, II सत्य",
+   "I सत्य, II असत्य (तडजोड कायद्याने झाली)",
+   "I असत्य (नेतृत्व विठ्ठलभाईंचे होते), II सत्य",
+   "I असत्य, II असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दोन्ही संकल्पना सत्य आहेत. I मध्ये नापिकी, न-महसूल प्रतिज्ञा व वल्लभभाईंचे उदय अचूक आहे (विठ्ठलभाई नव्हे). II मध्ये तडजोडीचे स्वरूप अचूक आहे - खेड्यात कायदा झाला नाही, तर महसूल स्थगितीचा प्रशासकीय आदेश निघाला, जो चंपारण कायद्याहून वेगळा आहे.",
+  "evidence": "Mahadev Desai - Day-to-day with Gandhi Vol.3 (1920); Bombay Revenue Proceedings 1918"
+ },
+ {
+  "section": "4",
+  "subtopic": "Bardoli 1928 - 22% करवाढ व सरदार पदवी",
+  "qtype": "takta aadharit",
+  "q_marathi": "खालील तक्ता पाहा:\n| वर्ष | घटना | तपशील |\n| 1927 | जयकर चौकशी | 22% महसूल वाढ शिफारस |\n| फेब्रु 1928 | बार्डोली ठराव | वल्लभभाईंना नेतृत्वाची विनंती |\n| जून-ऑग 1928 | सत्याग्रह | जब्त जमिनींचा लिलाव बहिष्कार, पारशी-वाणी पंचायत |\n| ऑग 1928 | मॅक्सवेल-ब्रूमफिल्ड चौकशी | वाढ 6.03% पर्यंत कमी |\nतक्त्याआधारे अचूक अनुमान निवडा:",
+  "q_english": "See table: 1927 Jayakar inquiry recommended 22% hike; Feb 1928 Bardoli resolution inviting Vallabhbhai; Jun-Aug 1928 satyagraha boycotting auctions; Aug 1928 Maxwell-Broomfield inquiry cut hike to 6.03%. Choose accurate inference:",
+  "options": [
+   "जयकर शिफारस 30% ची होती व ती पूर्णपणे रद्द झाली",
+   "'सरदार' पदवी ब्रिटिश सरकारने वल्लभभाईंना दिली",
+   "22% वाढ ही पुनर्मूल्यांकनातून (resettlement) आली; सत्याग्रहानंतर ती 6.03% वर आणली गेली",
+   "बार्डोली सत्याग्रहात गांधींनी प्रत्यक्ष नेतृत्व केले"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तक्त्यानुसार 22% वाढ पुनर्मूल्यांकनातून (Jayakar) आली होती व Maxwell-Broomfield ने ती 6.03% केली हे सत्य आहे. 'सरदार' पदवी बार्डोलीच्या महिलांनी (कस्तुरबा नव्हे तर स्थानिक) दिली, ब्रिटिशांनी नव्हे; गांधींनी आशीर्वाद दिला पण नेतृत्व वल्लभभाईंचे होते. 30%/पूर्ण रद्द हे चुकीचे आकडे आहेत.",
+  "evidence": "Maxwell-Broomfield Report (1928); Mahadev Desai - Story of Bardoli (1929)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Dandi 1930 - मीठ कायदा 1882 व धरासणा-वडाळा",
+  "qtype": "nakasha aadharit",
+  "q_marathi": "दांडी यात्रेच्या (12 मार्च - 6 एप्रिल 1930) नकाशाचे वर्णन विचारात घ्या: साबरमती → असलाली → नडियाद → आनंद → बोरसाड → सूरत जिल्ह्यातून दांडी (सुमारे 240 मैल/385 किमी, 24 दिवस). 6 एप्रिल रोजी गांधींनी समुद्राच्या पाण्यापासून मीठ तयार करून 1882 चा मीठ कायदा मोडला. त्यानंतरच्या घटनांबाबत कोणते विधान नकाशा व क्रमाशी सुसंगत आहे?",
+  "q_english": "Consider Dandi March map (12 Mar-6 Apr 1930): Sabarmati→Aslali→Nadiad→Anand→Borsad→Dandi (~240 miles/385 km, 24 days). On 6 Apr Gandhi made salt violating Salt Act 1882. Which statement on subsequent events is consistent with map and sequence?",
+  "options": [
+   "धरासणा मिठागारावरील छापा दांडीच्या आधी झाला व त्याचे नेतृत्व सरोजिनी नायडूंनी केले",
+   "वडाळा (मुंबई) मिठागारावरील सत्याग्रह दांडी यात्रेच्या मार्गावर होता",
+   "मीठ कायदा 1882 नव्हे तर 1878 चा फॉरेस्ट कायदा मोडण्यात आला",
+   "दांडी नंतर मे 1930 मध्ये धरासणा (गुजरात) येथे अब्बास तय्यबजी व नंतर सरोजिनी नायडू यांच्या नेतृत्वाखाली अहिंसक छापा झाला; वडाळा येथे स्वतंत्र मुंबई सत्याग्रह झाला"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "योग्य विधान तिसरे आहे - दांडी (6 एप्रिल) नंतर मे 1930 मध्ये धरासणा छापा (पहिले अब्बास तय्यबजी, अटकेनंतर सरोजिनी नायडू) झाला, तर वडाळा हा मुंबईतील स्वतंत्र सत्याग्रह होता, दांडी मार्गावर नव्हे. पहिले विधान क्रम चुकवते (धरासणा नंतर), दुसरे भूगोल चुकवते, चौथे कायद्याचे वर्ष चुकवते.",
+  "evidence": "Congress Report on Civil Disobedience (1930); Salt Act 1882 text"
+ },
+ {
+  "section": "4",
+  "subtopic": "Quit India 1942 - चार समांतर सरकारे कालक्रम",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "छोडो भारत (1942) काळातील समांतर सरकारांबाबत विधाने:\n(I) बलिया (यूपी) - चित्तू पांडे यांच्या नेतृत्वाखाली ऑगस्ट 1942 मध्ये स्थापन, सुमारे एक आठवडा टिकले.\n(II) तामलुक जातीय सरकार (बंगाल) - सतीशचंद्र सामंत यांच्या नेतृत्वाखाली डिसेंबर 1942 मध्ये स्थापन, सप्टेंबर 1944 पर्यंत कार्यरत, न्याय व मदत कार्य केले.\n(III) सातारा प्रति सरकार - नाना पाटील यांच्या नेतृत्वाखाली 1943 च्या मध्यात स्थापन, तुफान सेना व न्यायदान मंडळे चालवली; हे तिन्हींपैकी सर्वाधिक काळ टिकले.\nयोग्य पर्याय निवडा:",
+  "q_english": "On parallel governments in Quit India (1942): (I) Ballia (UP) under Chittu Pandey, Aug 1942, lasted about a week. (II) Tamluk Jatiya Sarkar (Bengal) under Satish Chandra Samanta, Dec 1942 to Sep 1944, did relief and justice work. (III) Satara Prati Sarkar under Nana Patil, mid-1943, ran Toofan Sena and Nyayadan Mandals; longest surviving. Choose correct:",
+  "options": [
+   "I, II, III तिन्ही असत्य",
+   "I, II आणि III तिन्ही सत्य",
+   "फक्त I आणि II सत्य; III असत्य",
+   "फक्त II आणि III सत्य; I असत्य (बलिया बिहारमध्ये होते)"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तिन्ही विधाने सत्य आहेत. बलिया यूपीमध्ये (बिहार नव्हे) चित्तू पांडे यांच्या नेतृत्वाखाली अल्पकाळ, तामलुक डिसेंबर 1942-सप्टेंबर 1944, सातारा 1943 पासून सर्वाधिक काळ टिकले हे अचूक आहे. चौथा पर्याय बलियाचे स्थान चुकवतो.",
+  "evidence": "A.C. Bhuyan - Quit India Movement (1975); Maharashtra State Gazetteer: Satara (1963)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Cabinet Mission 1946 - गट A-B-C व 16 जून योजना",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा (कॅबिनेट मिशन 1946):\n(A) गट-A  (B) गट-B  (C) गट-C  (D) 16 जून 1946 ची योजना\n(1) बंगाल, आसाम  (2) पंजाब, वायव्य सरहद्द, सिंध  (3) मद्रास, मुंबई, यूपी, बिहार, मध्य प्रांत, ओरिसा  (4) हिंदू-मुस्लिम समान प्रतिनिधित्वावर आधारित अंतरिम सरकारचा प्रस्ताव\nयोग्य संच निवडा:",
+  "q_english": "Match (Cabinet Mission 1946): (A) Group-A (B) Group-B (C) Group-C (D) 16 June 1946 plan; (1) Bengal, Assam (2) Punjab, NWFP, Sindh (3) Madras, Bombay, UP, Bihar, CP, Orissa (4) interim govt proposal on Hindu-Muslim parity. Choose correct:",
+  "options": [
+   "A-3, B-2, C-1, D-4",
+   "A-3, B-1, C-2, D-4",
+   "A-2, B-3, C-1, D-4",
+   "A-1, B-2, C-3, D-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य जोड्या A-3 (गट-A हिंदू बहुल 6 प्रांत), B-2 (गट-B पश्चिम मुस्लिम बहुल), C-1 (गट-C बंगाल-आसाम), D-4 (16 जूनला समसमान अंतरिम सरकार) आहेत. पहिल्या पर्यायात B व C अदलाबदल आहेत, जे गट रचनेविरुद्ध आहे.",
+  "evidence": "Cabinet Mission Statement 16 May 1946; V.P. Menon - Transfer of Power (1957)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Harappa-Mohenjodaro नगररचना तुलनात्मक",
+  "qtype": "kalkram lava",
+  "q_marathi": "सिंधू संस्कृतीच्या शोधाचा योग्य कालक्रम लावा:\n(A) चार्ल्स मॅसन यांचा हरप्पा अवशेषांचा प्रथम उल्लेख\n(B) दयाराम साहनी यांचे हरप्पा येथे पद्धतशीर उत्खनन\n(C) आर.डी. बॅनर्जी यांचा मोहेंजोदारो शोध\n(D) जॉन मार्शल यांची 'सिंधू संस्कृती' म्हणून औपचारिक घोषणा\nयोग्य क्रम निवडा:",
+  "q_english": "Arrange chronologically discovery of Indus Civilization: (A) Charles Masson's first mention of Harappa ruins (B) Daya Ram Sahni's systematic excavation at Harappa (C) R.D. Banerji's discovery of Mohenjo-daro (D) John Marshall's formal announcement as 'Indus Civilization'. Choose correct order:",
+  "options": [
+   "B-C-A-D",
+   "A-C-B-D",
+   "A-B-C-D",
+   "C-A-B-D"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य क्रम A (1826 मॅसन उल्लेख) → B (1921 साहनी उत्खनन) → C (1922 बॅनर्जी शोध) → D (1924 मार्शल घोषणा, Illustrated London News) आहे. C आधी ठेवल्यास हरप्पा उत्खननाआधी मोहेंजोदारोचा शोध लागल्याचा क्रमभंग होतो.",
+  "evidence": "J. Marshall - Mohenjo-daro and the Indus Civilization Vol.I (1931); ASI Reports 1921-24"
+ },
+ {
+  "section": "4",
+  "subtopic": "Ashoka Major Rock Edicts 2,12,13 आशय",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): अशोकाच्या 13 व्या प्रमुख शिलालेखात कलिंग युद्धाची (261 BCE) पश्चात्तापपूर्वक कबुली असून अंतियोकस (Antiochos) सह पाच यवन राजांचा उल्लेख आहे.\nकारण (R): 12 व्या प्रमुख शिलालेखात धम्म-महामात्तांच्या नियुक्तीची तरतूद आहे.\nयोग्य पर्याय निवडा:",
+  "q_english": "Assertion (A): Ashoka's Major Rock Edict 13 expresses remorse for Kalinga war (261 BCE) and mentions five Yavana kings including Antiochos. Reason (R): Major Rock Edict 12 provides for appointment of Dhamma-mahamatras. Choose correct:",
+  "options": [
+   "A आणि R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण आहे",
+   "A असत्य, R सत्य",
+   "A आणि R दोन्ही असत्य",
+   "A सत्य, R असत्य"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "A सत्य आहे - 13 व्या शिलालेखात कलिंगचे वर्णन व 5 यवन राजे (अंतियोकस, तुरमाय, अंतिकिन, मग, अलिकसुंदर) आहेत. R असत्य आहे कारण धम्म-महामात्तांची नियुक्ती 5 व्या शिलालेखात आहे; 12 वा शिलालेख धार्मिक सहिष्णुता (सर्व पंथांचा आदर) सांगतो. त्यामुळे स्पष्टीकरणाचा संबंधही नाही.",
+  "evidence": "D.C. Sircar - Ashokan Studies (1979); Girnar Rock Edict readings"
+ },
+ {
+  "section": "4",
+  "subtopic": "Chola प्रशासन - मंडलम-वलनाडु-उर व्यवस्था",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (K): चोल प्रशासनात साम्राज्य → मंडलम → वलनाडु → नाडु → उर/सभा/नगरम अशी श्रेणीबद्ध रचना होती; उर (सर्वसाधारण ग्रामसभा), सभा (ब्रह्मदेय/अग्रहार ग्रामसभा) व नगरम (व्यापारी संघटना) यांना करआकारणी व न्यायाचे स्वायत्त अधिकार होते.\nपरिणाम (P): या विकेंद्रीकृत स्वायत्ततेमुळे चोल केंद्राला महसूल व लष्करी नियंत्रण ठेवण्यासाठी 'पुरवु-वरि-तिनैकलम' (महसूल खाते) व वेळोवेळी अधिकारी पाठवून लेखापरीक्षा (audit) करावी लागे.\nयोग्य पर्याय निवडा:",
+  "q_english": "Cause (K): Chola administration had hierarchy Empire→Mandalam→Valanadu→Nadu→Ur/Sabha/Nagaram; Ur (general village assembly), Sabha (brahmadeya), Nagaram (merchant guild) had autonomous tax and judicial powers. Effect (P): This decentralised autonomy forced Chola centre to maintain 'Puravu-vari-tinaikalam' (revenue dept) and periodic audits by officials. Choose correct:",
+  "options": [
+   "K सत्य, P सत्य; K मुळे P आवश्यक ठरले",
+   "K असत्य (मंडलम ही सर्वांत लहान एकक होती), P सत्य",
+   "K सत्य, P असत्य (चोलांत केंद्राचा महसूल हस्तक्षेप नसे)",
+   "K सत्य, P सत्य; पण K मुळे P घडला नाही"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "K व P दोन्ही सत्य असून K मुळेच P आवश्यक ठरले - स्वायत्त सभा/उर यांच्यावर अंकुशासाठी चोलांनी महसूल खाते व ऑडिट यंत्रणा ठेवली होती, याचे पुरावे तंजावूर शिलालेखांत मिळतात. मंडलम सर्वांत मोठे प्रांतिक एकक होते, लहान नव्हे; त्यामुळे पहिला पर्याय चूक.",
+  "evidence": "K.A. Nilakanta Sastri - The Cholas (1955); Thanjavur Inscriptions"
+ },
+ {
+  "section": "4",
+  "subtopic": "Bhakti Kabir-Nanak निर्गुण परंपरा शिकवण",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "दोन संकल्पना:\n(I) कबीर (बीजक, साखी): निर्गुण भक्ती, जात-पंथ-वर्ण नाकारून 'राम-रहीम एक' सांगितले; मूर्तिपूजा व बाह्याचारांना विरोध.\n(II) गुरू नानक (जपजी साहिब): निर्गुण-सगुण समन्वय, 'इक ओंकार', लंगर-पंगत व संगतद्वारे समता; बाबरच्या आक्रमणाचे (1521) साक्षीदार होऊन 'बाबरवाणी' रचली.\nयोग्य पर्याय निवडा:",
+  "q_english": "Two concepts: (I) Kabir (Bijak, Sakhi): nirgun bhakti, rejected caste-sect, 'Ram-Rahim one'; opposed idol worship and ritualism. (II) Guru Nanak (Japji Sahib): nirgun-sagun synthesis, 'Ik Onkar', equality via langar-pangat and sangat; witness of Babur's invasion (1521) composing 'Baburvani'. Choose correct:",
+  "options": [
+   "I सत्य, II असत्य (बाबरवाणी कबीरांची आहे)",
+   "I सत्य, II सत्य",
+   "I असत्य (कबीर सगुण भक्त होते), II सत्य",
+   "I सत्य, II सत्य; पण दोघेही सिख धर्माचे संस्थापक होते"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "दोन्ही संकल्पना सत्य आहेत - कबीर निर्गुण संत होते (सगुण नव्हे) व नानकांनी इक ओंकार, लंगर व बाबरवाणी (1521) दिली हे अचूक आहे. चौथा पर्याय चूक कारण शीख धर्माचे संस्थापक नानक आहेत, कबीर नव्हे; बाबरवाणी नानकांचीच आहे.",
+  "evidence": "Charlotte Vaudeville - Kabir Vol.I (1974); J.S. Grewal - The Sikhs of the Punjab (1990)"
+ },
+ {
+  "section": "4",
+  "subtopic": "Uttaramerur शिलालेख 919-920 - चोल variyam पात्रता",
+  "qtype": "takta aadharit",
+  "q_marathi": "उत्तरमेरूर शिलालेख (परांतक-I, 919 व 920 CE) मधील 'कुडवोलै' (चिठ्ठी टाकून) निवडीच्या पात्रता-तक्त्याआधारे:\n| अट | तपशील |\n| वय | 35-70 वर्षे |\n| मालमत्ता/कर | करपात्र जमीन व स्वतःच्या घरात राहणारा |\n| ज्ञान | मंत्र-ब्राह्मण जाणणारा / व्याकरण-न्याय शिकलेला |\n| अपात्रता | गेल्या 3 वर्षांत कोणत्याही variyam चे सदस्यत्व, नातेवाईक सदस्य असणे, व्यभिचार/चोरी/मद्यपान दोष |\nतक्त्यानुसार कोणते विधान अचूक आहे?",
+  "q_english": "Based on Uttaramerur inscription (Parantaka-I, 919 & 920 CE) kudavolai eligibility table: Age 35-70; Taxable land and own house; Knowledge of mantra-brahmana/grammar-nyaya; Disqualifications: membership of any variyam in last 3 years, close relative as member, moral offences. Which statement is accurate?",
+  "options": [
+   "वय 25-60 असलेला, भाड्याच्या घरात राहणारा विद्वान पात्र ठरतो",
+   "गेल्या वर्षी variyam सदस्य असलेला, 40 वर्षीय करदाता पात्र ठरतो",
+   "35-70 वयोगटातील, करपात्र जमीन व स्वतःचे घर असलेला, परंतु चुलत भाऊ सध्या variyam सदस्य असलेला व्यक्ती अपात्र ठरतो",
+   "अक्षरज्ञान नसलेला परंतु मोठा जमीनदार पात्र ठरतो"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तिसरा पर्याय अचूक आहे - वय, मालमत्ता, ज्ञान या अटी पूर्ण असूनही जवळच्या नातेवाईकाचे सदस्यत्व ही अपात्रता ठरते. पहिला पर्याय वय व घराची अट चुकवतो, दुसरा 3 वर्षांच्या मज्जावाचे उल्लंघन करतो, चौथा ज्ञानाच्या अटीकडे दुर्लक्ष करतो.",
+  "evidence": "Uttaramerur Inscription ed. K.V. Subrahmanya Aiyer, Epigraphia Indica Vol.XIX (1928)"
+ },
+ {
+  "section": "5",
+  "subtopic": "Bhimashankar Shekru sanctuary 1985",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "खालील विधाने विचारात घ्या: (I) भीमाशंकर वन्यजीव अभयारण्य 1985 मध्ये अधिसूचित झाले असून त्याचे क्षेत्र सुमारे 131.78 चौ.किमी आहे व ते पुणे जिल्ह्यातील आंबेगाव व खेड तालुक्यांत पसरले आहे. (II) हे अभयारण्य महाराष्ट्राचा राज्यप्राणी शेकरू (Ratufa indica) याच्या संवर्धनासाठी प्रसिद्ध आहे आणि परिसरात भीमाशंकर ज्योतिर्लिंग मंदिर आहे. (III) हे अभयारण्य 2010 मध्ये अधिसूचित सह्याद्री व्याघ्र प्रकल्पाचा गाभा (core) भाग आहे. योग्य पर्याय निवडा.",
+  "q_english": "Consider statements: (I) Bhimashankar WLS notified in 1985, area ~131.78 sq km, spread in Ambegaon and Khed talukas of Pune district. (II) It is famous for conservation of Indian giant squirrel Ratufa indica (state animal of Maharashtra) and houses Bhimashankar Jyotirlinga temple. (III) It forms the core of Sahyadri Tiger Reserve notified in 2010. Choose correct option.",
+  "options": [
+   "फक्त II आणि III बरोबर, I चूक",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि II बरोबर, III चूक",
+   "फक्त I बरोबर, II आणि III चूक"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "विधाने I व II वन विभागाच्या नोंदीनुसार सत्य आहेत (1985 अधिसूचना, 131.78 चौ.किमी, शेकरू व ज्योतिर्लिंग). विधान III चूक आहे कारण सह्याद्री व्याघ्र प्रकल्पाचा गाभा कोयना (423.55 चौ.किमी) व चांदोली (317.67 चौ.किमी) आहेत, भीमाशंकर त्याचा भाग नाही. त्यामुळे I+II असलेला पर्यायच बरोबर, इतर बाद होतात.",
+  "evidence": "Maharashtra Forest Department Protected Areas Handbook 2023; MoEFCC Sahyadri Tiger Reserve notification 5 Jan 2010"
+ },
+ {
+  "section": "5",
+  "subtopic": "Karnala bird sanctuary 1968",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा: (A) कर्नाळा पक्षी अभयारण्य अधिसूचना वर्ष, (B) क्षेत्रफळ, (C) जिल्हा, (D) ठळक ओळख यांच्या (1) 1968, (2) 12.11 चौ.किमी, (3) रायगड, (4) कर्नाळा किल्ला व मध्य आशियाई स्थलांतर मार्गावरील पक्षी वैविध्य यांशी योग्य जोड्या ओळखा.",
+  "q_english": "Match: (A) Karnala Bird Sanctuary notification year, (B) area, (C) district, (D) key identity with (1) 1968, (2) 12.11 sq km, (3) Raigad, (4) Karnala Fort and bird diversity on Central Asian Flyway.",
+  "options": [
+   "A-1, B-2, C-3, D-4",
+   "A-1, B-3, C-2, D-4",
+   "A-2, B-1, C-3, D-4",
+   "A-1, B-2, C-4, D-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कर्नाळा 1968 मध्ये अधिसूचित, 12.11 चौ.किमी, रायगड जिल्ह्यात, कर्नाळा किल्ल्याभोवती व स्थलांतरित पक्ष्यांसाठी प्रसिद्ध आहे. B-C अदलाबदल किंवा वर्ष-क्षेत्र अदलाबदल केलेले पर्याय त्यामुळे चूक ठरतात; फक्त A-1,B-2,C-3,D-4 हा क्रम पूर्ण सत्य आहे.",
+  "evidence": "Maharashtra Forest Department Wildlife 2023; Bombay Natural History Society - Karnala site datasheet 2019"
+ },
+ {
+  "section": "5",
+  "subtopic": "Phansad coastal forest 1986",
+  "qtype": "kalkram lava",
+  "q_marathi": "खालील संरक्षित क्षेत्रांचा स्थापना वर्षानुसार चढता कालक्रम लावा: (A) कर्नाळा पक्षी अभयारण्य, (B) नागझिरा वन्यजीव अभयारण्य, (C) भीमाशंकर वन्यजीव अभयारण्य, (D) फणसाड वन्यजीव अभयारण्य.",
+  "q_english": "Arrange in ascending chronological order of establishment: (A) Karnala Bird Sanctuary, (B) Nagzira WLS, (C) Bhimashankar WLS, (D) Phansad WLS.",
+  "options": [
+   "A-B-D-C",
+   "A-B-C-D",
+   "B-A-C-D",
+   "A-C-B-D"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य वर्षे: कर्नाळा 1968, नागझिरा 1970, भीमाशंकर 1985, फणसाड 1986. त्यामुळे A-B-C-D हाच चढता क्रम. D-C अदलाबदल किंवा A-B अदलाबदल असलेले पर्याय वर्षांच्या अचूक क्रमाविरुद्ध जातात.",
+  "evidence": "Maharashtra Forest Department - Sanctuary notification years compilation 2022"
+ },
+ {
+  "section": "5",
+  "subtopic": "Radhanagari gaur habitat",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): राधानगरी वन्यजीव अभयारण्य भारतीय गवा (Bos gaurus) च्या संवर्धनासाठी महाराष्ट्रातील सर्वात महत्त्वाचा अधिवास मानले जाते. कारण (R): हे अभयारण्य 1958 मध्ये दाजीपूर म्हणून अधिसूचित झाले, क्षेत्र सुमारे 351.16 चौ.किमी असून पश्चिम घाटातील उष्णकटिबंधीय सदाहरित व निम-सदाहरित वनांचे प्रतिनिधित्व करते.",
+  "q_english": "Assertion (A): Radhanagari WLS is considered the most important habitat for Indian gaur (Bos gaurus) in Maharashtra. Reason (R): It was notified in 1958 as Dajipur, area ~351.16 sq km, representing tropical evergreen and semi-evergreen forests of Western Ghats.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, परंतु R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A व R दोन्ही सत्य आहेत आणि R मधील 1958 अधिसूचना, 351.16 चौ.किमी व सदाहरित वनप्रकार हेच गव्याला अनुकूल अधिवास का आहे हे स्पष्ट करते. त्यामुळे योग्य स्पष्टीकरण असलेला पहिलाच पर्याय बरोबर; इतर पर्याय संबंध तोडतात.",
+  "evidence": "Maharashtra Forest Department 2023; Wildlife Institute of India - Gaur habitat report 2021"
+ },
+ {
+  "section": "5",
+  "subtopic": "Koyna Sahyadri core 1985",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (C): कोयना वन्यजीव अभयारण्य 1985 मध्ये अधिसूचित झाले असून 2010 मध्ये ते सह्याद्री व्याघ्र प्रकल्पात समाविष्ट झाले; हे अभयारण्य कोयना धरणाच्या पाणलोटातील घनदाट सदाहरित पश्चिम घाटी वनांत आहे. परिणाम (E): या अभयारण्यात वाघ, बिबट्या, गवा यांसह स्थानिक जैवविविधतेचे संवर्धन प्रोजेक्ट टायगर निधी व कडक संरक्षणातून शक्य झाले. योग्य कारण-परिणाम संबंध ओळखा.",
+  "q_english": "Cause (C): Koyna WLS notified 1985 and included in Sahyadri TR in 2010; located in dense evergreen Western Ghats forests of Koyna catchment. Effect (E): Conservation of tiger, leopard, gaur and endemic biodiversity became possible via Project Tiger funding and stricter protection.",
+  "options": [
+   "C सत्य, E सत्य परंतु C हे E चे कारण नाही",
+   "C असत्य, E सत्य",
+   "C सत्य, E असत्य",
+   "C सत्य, E सत्य आणि C हे E चे योग्य कारण आहे"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "C व E दोन्ही सत्य असून 2010 मधील व्याघ्र प्रकल्प समावेशामुळेच निधी व कडक संरक्षण मिळाले, म्हणून C हेच E चे कारण आहे. कारण नसल्याचे सांगणारा किंवा एक विधान असत्य ठरवणारा पर्याय तथ्याविरुद्ध आहे.",
+  "evidence": "NTCA Project Tiger status report 2022; MoEFCC Sahyadri TR notification 2010"
+ },
+ {
+  "section": "5",
+  "subtopic": "Chandoli NP Sahyadri TR",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "दोन संकल्पना एकत्र विचारात घ्या: (X) चांदोली राष्ट्रीय उद्यान (2004 मध्ये अधिसूचित, ~317.67 चौ.किमी) आणि (Y) कोयना वन्यजीव अभयारण्य (1985, ~423.55 चौ.किमी). दोन्ही 2010 मध्ये अधिसूचित सह्याद्री व्याघ्र प्रकल्पाचा भाग असून हा महाराष्ट्रातील चौथा व्याघ्र प्रकल्प आहे व सातारा-सांगली-कोल्हापूर-रत्नागिरी जिल्ह्यांत पसरला आहे. योग्य निष्कर्ष कोणता?",
+  "q_english": "Consider together: (X) Chandoli National Park (notified 2004, ~317.67 sq km) and (Y) Koyna WLS (1985, ~423.55 sq km). Both form Sahyadri Tiger Reserve notified 2010, the 4th TR of Maharashtra spread in Satara-Sangli-Kolhapur-Ratnagiri. Which conclusion is correct?",
+  "options": [
+   "X आणि Y दोन्ही सह्याद्री व्याघ्र प्रकल्पाचा गाभा असून राष्ट्रीय उद्यान दर्जामुळे X मध्ये संरक्षण अधिक कडक आहे",
+   "X हा ताडोबा व्याघ्र प्रकल्पाचा भाग असून Y हा मेळघाट व्याघ्र प्रकल्पाचा भाग आहे",
+   "X आणि Y दोन्ही नवेगाव-नागझिरा व्याघ्र प्रकल्पाचा भाग आहेत",
+   "X हे पक्षी अभयारण्य असून Y हे सागरी राष्ट्रीय उद्यान आहे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "X व Y दोन्ही सह्याद्री व्याघ्र प्रकल्पाचाच गाभा आहेत हे NTCA नोंदीत स्पष्ट आहे; राष्ट्रीय उद्यान दर्जामुळे चांदोलीत नियम कडक असतात. इतर पर्यायांत ताडोबा, नवेगाव-नागझिरा किंवा पक्षी/सागरी असा चुकीचा संबंध जोडला आहे.",
+  "evidence": "NTCA Tiger Reserve map 2023; Maharashtra Forest Department 2023"
+ },
+ {
+  "section": "5",
+  "subtopic": "Gautala-Autramghat Deccan trap",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता पहा: | अभयारण्य | अधिसूचना वर्ष | क्षेत्र (चौ.किमी) | प्रमुख जिल्हे | | गौताळा-औट्रमघाट | 1986 | 260.61 | छ. संभाजीनगर/जळगाव | | फणसाड | 1986 | 69.79 | रायगड | | कर्नाळा | 1968 | 12.11 | रायगड | यावरून कोणते अनुमान तर्कसंगत आहे?",
+  "q_english": "See table: Gautala-Autramghat 1986 260.61 Chh. Sambhajinagar/Jalgaon; Phansad 1986 69.79 Raigad; Karnala 1968 12.11 Raigad. Which inference is logical?",
+  "options": [
+   "गौताळा-औट्रमघाट हे सागरी अभयारण्य असून त्यात प्रवाळ खडक आहेत",
+   "फणसाडचे क्षेत्र गौताळा-औट्रमघाटपेक्षा मोठे आहे",
+   "गौताळा-औट्रमघाट हे दख्खन ट्रॅपवरील पानझडी वनांचे व सातमाळा-अजिंठा रांगेचे प्रतिनिधित्व करते, तर फणसाड-कर्नाळा कोकणातील आहेत",
+   "कर्नाळा हे 1986 मध्ये अधिसूचित झाले"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तक्त्यातील जिल्हे व क्षेत्र पाहता गौताळा दख्खन पठारावरील (सातमाळा-अजिंठा) पानझडी वनांत आहे, तर फणसाड-कर्नाळा रायगडमधील कोकण वनांत आहेत हे स्पष्ट होते. इतर पर्याय क्षेत्रफळाची तुलना किंवा वर्ष चुकवतात.",
+  "evidence": "Maharashtra Forest Department Protected Area list 2023; Gazetteer of Aurangabad 2020"
+ },
+ {
+  "section": "5",
+  "subtopic": "Nagzira Navegaon TR corridor",
+  "qtype": "nakasha aadharit",
+  "q_marathi": "महाराष्ट्राच्या नकाशात नागझिरा वन्यजीव अभयारण्य (1970, ~152.81 चौ.किमी) कोठे दर्शवाल? टीप: ते डिसेंबर 2013 मध्ये अधिसूचित नवेगाव-नागझिरा व्याघ्र प्रकल्पाचा (~653.67 चौ.किमी) भाग आहे.",
+  "q_english": "On Maharashtra map where will you mark Nagzira WLS (1970, ~152.81 sq km)? Note: it is part of Navegaon-Nagzira Tiger Reserve (notified Dec 2013, ~653.67 sq km).",
+  "options": [
+   "कोकणातील रायगड जिल्ह्यात, अरबी समुद्रकिनारी",
+   "विदर्भातील गोंदिया-भंडारा जिल्ह्यांत, वैनगंगा खोऱ्यात, नवेगावच्या पूर्वेस",
+   "मराठवाड्यातील छ. संभाजीनगर जिल्ह्यात, गोदावरीच्या दक्षिणेस",
+   "पश्चिम महाराष्ट्रातील सातारा जिल्ह्यात, कोयना धरणाजवळ"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "नागझिरा गोंदिया-भंडारा जिल्ह्यात वैनगंगा खोऱ्यात असून नवेगावच्या पूर्वेस आहे; हाच नवेगाव-नागझिरा कॉरिडॉर आहे. इतर पर्याय कोकण, मराठवाडा किंवा सातारा दर्शवून दिशाभूल करतात.",
+  "evidence": "NTCA Tiger Reserve notification Dec 2013; Survey of India Maharashtra map 2022"
+ },
+ {
+  "section": "5",
+  "subtopic": "Tadoba-Andhari oldest NP",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "विधाने पहा: (I) ताडोबा राष्ट्रीय उद्यान 1955 मध्ये स्थापन झाले - महाराष्ट्रातील सर्वात जुने राष्ट्रीय उद्यान (116.55 चौ.किमी). (II) अंधारी वन्यजीव अभयारण्य 1986 मध्ये अधिसूचित (508.85 चौ.किमी); दोन्ही मिळून 1994-95 मध्ये ताडोबा-अंधारी व्याघ्र प्रकल्प झाला. (III) व्याघ्र प्रकल्पाचे एकूण क्षेत्र ~1727.59 चौ.किमी (गाभा ~625.40 चौ.किमी), ताडोबा तलाव गाभ्यात, जिल्हा चंद्रपूर. योग्य पर्याय निवडा.",
+  "q_english": "Statements: (I) Tadoba NP established 1955 - oldest NP of Maharashtra (116.55 sq km). (II) Andhari WLS notified 1986 (508.85 sq km); together became Tadoba-Andhari TR in 1994-95. (III) TR total ~1727.59 sq km (core ~625.40 sq km), Tadoba lake in core, district Chandrapur. Choose correct.",
+  "options": [
+   "फक्त I बरोबर",
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त II आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तिन्ही विधाने NTCA व वन विभागाच्या आकडेवारीशी जुळतात - 1955 जुने उद्यान, 1986 अंधारी, 1994-95 व्याघ्र प्रकल्प, क्षेत्र व तलावही सत्य. त्यामुळे सर्व बरोबर असलेलाच पर्याय योग्य; अर्धवट पर्याय अपूर्ण आहेत.",
+  "evidence": "NTCA Annual Report 2022-23; Maharashtra Forest Department 2023"
+ },
+ {
+  "section": "5",
+  "subtopic": "Melghat Project Tiger 1973",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा: (A) मेळघाट व्याघ्र प्रकल्प अधिसूचना, (B) समाविष्ट राष्ट्रीय उद्यान, (C) जिल्हा, (D) वैशिष्ट्य यांच्या (1) 1973-74, (2) गुगामल राष्ट्रीय उद्यान (~361.28 चौ.किमी), (3) अमरावती, (4) प्रोजेक्ट टायगरअंतर्गत पहिल्या 9 पैकी एक - महाराष्ट्रातील पहिला व्याघ्र प्रकल्प यांशी जोड्या लावा.",
+  "q_english": "Match: (A) Melghat TR notification, (B) included National Park, (C) district, (D) feature with (1) 1973-74, (2) Gugamal NP (~361.28 sq km), (3) Amravati, (4) among first 9 under Project Tiger - first TR of Maharashtra.",
+  "options": [
+   "A-1, B-3, C-2, D-4",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-3, D-4",
+   "A-1, B-2, C-4, D-3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "मेळघाट 1973-74 मध्ये पहिल्या 9 व्याघ्र प्रकल्पांपैकी एक, अमरावती जिल्ह्यात, गुगामल राष्ट्रीय उद्यान त्यात समाविष्ट आहे. B-C अदलाबदल किंवा वर्ष अदलाबदल केलेले पर्याय चूक ठरतात.",
+  "evidence": "Project Tiger 50 years report NTCA 2023; Maharashtra Forest Dept 2023"
+ },
+ {
+  "section": "5",
+  "subtopic": "Pench Maharashtra Totladoh",
+  "qtype": "kalkram lava",
+  "q_marathi": "कालक्रम लावा (स्थापना/अधिसूचना वर्षानुसार चढता): (A) ताडोबा राष्ट्रीय उद्यान, (B) पेंच राष्ट्रीय उद्यान (महाराष्ट्र, ~257.26 चौ.किमी), (C) सह्याद्री व्याघ्र प्रकल्प, (D) नवेगाव-नागझिरा व्याघ्र प्रकल्प.",
+  "q_english": "Arrange ascending by notification year: (A) Tadoba NP, (B) Pench NP (Maharashtra, ~257.26 sq km), (C) Sahyadri TR, (D) Navegaon-Nagzira TR.",
+  "options": [
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-B-D-C",
+   "A-B-C-D"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "योग्य वर्षे: ताडोबा 1955, पेंच (महाराष्ट्र) 1975, सह्याद्री 2010, नवेगाव-नागझिरा डिसेंबर 2013. त्यामुळे A-B-C-D हाच क्रम बरोबर; C-D अदलाबदल किंवा A-B अदलाबदल चूक आहे.",
+  "evidence": "NTCA Tiger Reserve list 2024; Maharashtra Forest Department 2023"
+ },
+ {
+  "section": "5",
+  "subtopic": "Godavari Dakshin Ganga basin",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): गोदावरी नदीस दक्षिण गंगा म्हणतात; तिची लांबी 1465 किमी असून उगम त्र्यंबकेश्वर (नाशिक) येथे होतो. कारण (R): महाराष्ट्रात तिची लांबी सुमारे 668 किमी असून पैठण येथील जयकवाडी धरण तिच्यावर आहे व ते मराठवाड्याची जीवनवाहिनी मानले जाते.",
+  "q_english": "Assertion (A): Godavari is called Dakshin Ganga; length 1465 km, origin Trimbakeshwar (Nashik). Reason (R): In Maharashtra its length is ~668 km and Jayakwadi dam at Paithan on it is lifeline of Marathwada.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, परंतु R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A व R दोन्ही तथ्यतः सत्य आहेत, परंतु दक्षिण गंगा हे नाव लांबी-सांस्कृतिक महत्त्वामुळे आहे, जयकवाडी धरणामुळे नाही. त्यामुळे R हे A चे स्पष्टीकरण ठरत नाही; स्पष्टीकरण आहे असे म्हणणारा पर्याय चूक.",
+  "evidence": "India-WRIS Godavari basin report 2022; Maharashtra Water Resources Dept 2023"
+ },
+ {
+  "section": "5",
+  "subtopic": "Krishna-Bhima confluence system",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (C): कृष्णा नदीचा उगम महाबळेश्वर (सातारा) येथे होतो, भीमेचा उगम भीमाशंकर (पुणे) येथे होतो; कृष्णा लांबी 1400 किमी (महाराष्ट्रात 282 किमी), भीमा लांबी 861 किमी आहे. परिणाम (E): कराड येथे कृष्णा-कोयना प्रितिसंगम होतो, नर्सोबावाडी येथे पंचगंगा-कृष्णा संगम होतो, तर भीमा-कृष्णा संगम कर्नाटकातील रायचूरजवळ (कडलूर) होतो. योग्य संबंध ओळखा.",
+  "q_english": "Cause (C): Krishna originates at Mahabaleshwar (Satara), Bhima at Bhimashankar (Pune); Krishna 1400 km (282 km in Maharashtra), Bhima 861 km. Effect (E): Krishna-Koyna Pritisangam at Karad, Panchganga-Krishna at Narsobawadi, Bhima-Krishna near Raichur (Kadlur) Karnataka.",
+  "options": [
+   "C सत्य, E सत्य आणि C हे E चे योग्य कारण आहे",
+   "C सत्य, E सत्य परंतु C हे E चे कारण नाही",
+   "C असत्य, E सत्य",
+   "C सत्य, E असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "उगम व लांबी सत्य असून नदीप्रवाहाच्या दिशेमुळेच हे संगम ठरतात, म्हणून C हेच E चे भौगोलिक कारण आहे. E मधील संगमस्थळेही जलसंपदा खात्याच्या नोंदीनुसार सत्य आहेत; त्यामुळे इतर पर्याय बाद.",
+  "evidence": "India-WRIS Krishna basin report 2022; Maharashtra Gazetteer 2021"
+ },
+ {
+  "section": "5",
+  "subtopic": "Tapi-Purna west-flowing system",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "दोन संकल्पना एकत्र: (X) तापी नदी (उगम मुलताई, बैतूल-मध्य प्रदेश, लांबी 724 किमी, महाराष्ट्रात ~208 किमी, पश्चिमवाहिनी भ्रंशघाटी नदी) आणि (Y) पूर्णा नदी (तापीची प्रमुख उपनदी, उगम पोखरणी-बुलढाणा, लांबी ~373 किमी, विदर्भातील खारपाण पट्टा). यांबाबत योग्य निष्कर्ष कोणता?",
+  "q_english": "Two concepts together: (X) Tapi (origin Multai, Betul-MP, 724 km, ~208 km in Maharashtra, west-flowing rift valley river) and (Y) Purna (major tributary, origin Pokharni-Buldhana, ~373 km, saline tract of Vidarbha). Which conclusion is correct?",
+  "options": [
+   "X व Y दोन्ही पूर्ववाहिनी असून बंगालच्या उपसागरास मिळतात",
+   "X ही भ्रंशघाटीतून पश्चिमेस वाहून खंबातच्या आखातास मिळते, Y तिला दक्षिणेकडून मिळून अंतर्गत खारपाण पट्टा तयार करते",
+   "X ही गोदावरीची उपनदी असून Y ही कृष्णेची उपनदी आहे",
+   "X चा उगम त्र्यंबकेश्वर असून Y चा उगम महाबळेश्वर आहे"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "तापी पश्चिमवाहिनी भ्रंशघाटी नदी असून खंबातच्या आखातास मिळते हे आणि पूर्णा तिची दक्षिणेकडील उपनदी असून खारपाण पट्टा तयार करते हे सत्य आहे. पूर्ववाहिनी किंवा गोदावरी/कृष्णा उपनदी म्हणणारे पर्याय नदीप्रणालीच चुकवतात.",
+  "evidence": "India-WRIS Tapi basin report 2022; GSDA Maharashtra saline tract report 2021"
+ },
+ {
+  "section": "5",
+  "subtopic": "Dighi-Dabhol Konkan ports",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता पहा: | बंदर | जिल्हा | वैशिष्ट्य | | दिघी | रायगड | राजपुरी खाडी मुखावरील लघु (minor) खाजगी बंदर (Dighi Port Ltd) | | दाभोळ | रत्नागिरी | दाभोळ LNG टर्मिनल व 1992 मधील एन्रॉन दाभोळ ऊर्जा प्रकल्पासाठी प्रसिद्ध लघु बंदर | यावरून योग्य निष्कर्ष कोणता?",
+  "q_english": "See table: Dighi Raigad minor private port at Rajpuri creek mouth (Dighi Port Ltd); Dabhol Ratnagiri minor port famous for Dabhol LNG terminal and 1992 Enron Dabhol power project. Which conclusion is correct?",
+  "options": [
+   "दिघी व दाभोळ दोन्ही महाराष्ट्रातील प्रमुख (major) बंदरे असून केंद्र सरकार चालवते",
+   "दिघी हे रत्नागिरीत असून दाभोळ हे रायगडमध्ये आहे",
+   "दिघी हे रायगडमधील खाजगी लघु बंदर असून दाभोळ हे रत्नागिरीमधील LNG व ऊर्जा प्रकल्पाशी संबंधित लघु बंदर आहे",
+   "दाभोळ हे 1955 मधील ताडोबा प्रकल्पाचा भाग आहे"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तक्त्यानुसार दिघी रायगडमधील खाजगी लघु बंदर आणि दाभोळ रत्नागिरीमधील LNG/ऊर्जा प्रकल्पाशी संबंधित लघु बंदर आहे हे सत्य आहे. दोन्हींना प्रमुख बंदर म्हणणे किंवा जिल्हे अदलाबदल करणे चूक ठरते.",
+  "evidence": "Maharashtra Maritime Board port list 2024; MoPSW Sagarmala report 2023"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 14 युक्तियुक्त वर्गीकरण दुहेरी कसोटी",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "कलम 14 मधील 'कायद्यासमोर समानता' या तत्त्वाच्या संदर्भात 'युक्तियुक्त वर्गीकरणा'बाबत खालील विधाने विचारात घ्या : I. 'स्टेट ऑफ वेस्ट बंगाल विरुद्ध अन्वर अली सरकार (1952)' या खटल्यात युक्तियुक्त वर्गीकरणाची दुहेरी कसोटी मांडली गेली. II. या कसोटीनुसार वर्गीकरणाचा आधार 'सुबोध भेद' (intelligible differentia) असावा आणि त्या भेदाचा कायद्याच्या उद्देशाशी तर्कसंगत संबंध (rational nexus) असावा. III. कलम 14 हे 'वर्गविधाना'स (class legislation) प्रतिबंधित करते, परंतु वरील कसोटी पूर्ण करणाऱ्या युक्तियुक्त वर्गीकरणास परवानगी देते.",
+  "q_english": "Consider the following statements regarding 'reasonable classification' under Article 14's guarantee of 'equality before law': I. The twin test of reasonable classification was laid down in State of West Bengal v. Anwar Ali Sarkar (1952). II. The test requires an 'intelligible differentia' as the basis of classification and a 'rational nexus' between that differentia and the object of the law. III. Article 14 prohibits 'class legislation' but permits reasonable classification satisfying the above test.",
+  "options": [
+   "फक्त I बरोबर",
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III बरोबर",
+   "फक्त II आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तिन्ही विधाने बरोबर आहेत : अन्वर अली (1952) मध्ये दुहेरी कसोटी मांडली गेली; सुबोध भेद अधिक तर्कसंगत संबंध हे दोन घटक आवश्यक आहेत; आणि कलम 14 वर्गविधानास मनाई करते पण युक्तियुक्त वर्गीकरणास मान्यता देते. त्यामुळे 'फक्त I आणि II' किंवा 'फक्त II आणि III' असे अपूर्ण पर्याय बाद होतात.",
+  "evidence": "भारतीय संविधान, कलम 14; State of West Bengal v. Anwar Ali Sarkar (1952)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 15(4) 16(4) आरक्षण इंद्रा साहनी 1992",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या जुळवा : A. कलम 15(4) B. कलम 16(4) C. इंद्रा साहनी विरुद्ध भारत सरकार D. कलम 16(4A) : i. पहिली घटना दुरुस्ती (1951), चंपकम दोराईराजन खटल्याची पार्श्वभूमी ii. सार्वजनिक नोकऱ्यांमधील मागासवर्गीयांसाठी आरक्षणाची तरतूद iii. आरक्षणाची 50% मर्यादा व क्रीमी लेअर वगळण्याचा नियम iv. 77वी घटना दुरुस्ती (1995), पदोन्नतीतील आरक्षण",
+  "q_english": "Match the following: A. Article 15(4) B. Article 16(4) C. Indra Sawhney v. Union of India D. Article 16(4A): i. First Amendment (1951), backdrop of the Champakam Dorairajan case ii. Provision for reservation in public employment for backward classes iii. 50% ceiling on reservation and creamy layer exclusion iv. 77th Amendment (1995), reservation in promotions",
+  "options": [
+   "A-i, B-ii, C-iv, D-iii",
+   "A-ii, B-i, C-iii, D-iv",
+   "A-i, B-iii, C-ii, D-iv",
+   "A-i, B-ii, C-iii, D-iv"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "योग्य जोड्या : 15(4) ही 1951 च्या पहिल्या दुरुस्तीने (चंपकम दोराईराजन, 1951 च्या पार्श्वभूमीवर) आली; 16(4) हे नोकऱ्यांतील आरक्षण; इंद्रा साहनी (1992, नऊ न्यायाधीश, 6:3) मध्ये 50% मर्यादा व क्रीमी लेअरचा नियम; 16(4A) ही 77व्या दुरुस्तीने (1995) पदोन्नतीसाठी आली. इतर पर्यायांत C-D किंवा A-B ची अदलाबदल चुकीची आहे.",
+  "evidence": "भारतीय संविधान, कलम 15(4), 16(4), 16(4A); Indra Sawhney v. Union of India (1992); 77वी घटना दुरुस्ती (1995)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 19(1)(a) श्रेया सिंघल 2015 कलम 66A",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A) : 'श्रेया सिंघल विरुद्ध भारत सरकार (2015)' या खटल्यात सर्वोच्च न्यायालयाने माहिती तंत्रज्ञान कायदा, 2000 चे कलम 66A असंवैधानिक ठरवून रद्द केले. कारण (R) : कलम 66A हे अस्पष्ट व अतिव्यापक असल्यामुळे त्याचा कलम 19(1)(a) मधील अभिव्यक्ती स्वातंत्र्यावर 'थंडकारी परिणाम' (chilling effect) होतो, असे न्यायालयाने नमूद केले.",
+  "q_english": "Assertion (A): In Shreya Singhal v. Union of India (2015), the Supreme Court struck down Section 66A of the IT Act, 2000 as unconstitutional. Reason (R): The Court held that Section 66A, being vague and overbroad, has a 'chilling effect' on the freedom of speech under Article 19(1)(a).",
+  "options": [
+   "A आणि R दोन्ही बरोबर असून R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर असून R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर आहे परंतु R चूक आहे",
+   "A चूक आहे परंतु R बरोबर आहे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A आणि R दोन्ही बरोबर असून R हेच A चे खरे कारण आहे : 66A मधील 'आक्षेपार्ह', 'त्रासदायक' यांसारख्या अस्पष्ट संज्ञा कलम 19(2) च्या वाजवी निर्बंधांच्या कसोटीवर टिकल्या नाहीत. महत्त्वाचे म्हणजे न्यायालयाने कलम 69A (ब्लॉकिंग) व कलम 79 (मध्यस्थ संरक्षण) संरक्षणांसह कायम ठेवले, त्यामुळे 'संपूर्ण कायदा रद्द झाला' असे म्हणणारे पर्याय चूक ठरतात.",
+  "evidence": "Shreya Singhal v. Union of India (2015); माहिती तंत्रज्ञान कायदा, 2000, कलम 66A, 69A, 79"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 21 मेनका गांधी न्याय्य कार्यपद्धती",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण : 'मेनका गांधी विरुद्ध भारत सरकार (1978)' या खटल्यात सर्वोच्च न्यायालयाने म्हटले की कलम 21 मधील 'कायद्याने प्रस्थापित कार्यपद्धती' (procedure established by law) ही न्याय्य, रास्त आणि वाजवी असली पाहिजे — ती स्वेच्छाचारी असता कामा नये. परिणाम : ?",
+  "q_english": "Cause: In Maneka Gandhi v. Union of India (1978), the Supreme Court held that the 'procedure established by law' under Article 21 must be fair, just and reasonable — not arbitrary. Effect: ?",
+  "options": [
+   "परिणाम : कलम 21 चा अर्थ केवळ शारीरिक स्वातंत्र्यापुरताच मर्यादित राहिला",
+   "परिणाम : 'ए.के. गोपालन (1950)' मधील कलम 21 चा संकुचित अर्थ कायम राहिला",
+   "परिणाम : 'ए.के. गोपालन (1950)' मधील संकुचित अर्थ नाकारला जाऊन कलम 21 ला व्यापक, हक्काधारित अर्थ प्राप्त झाला",
+   "परिणाम : कलम 21 हे आणीबाणीच्या काळातही निलंबित करता येणार नाही, असा नियम प्रस्थापित झाला"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "मेनका गांधी (1978, पारपत्र जप्ती प्रकरण) मध्ये ए.के. गोपालनचा (1950) शब्दशः संकुचित अर्थ नाकारून 'योग्य प्रक्रिया' वाचली गेली आणि कलम 14, 19, 21 यांचा 'सुवर्ण त्रिकोण' जोडला गेला. चौथा पर्याय 44व्या दुरुस्तीशी (1978, कलम 359) संबंधित आहे, या खटल्याच्या तत्त्वाशी नाही.",
+  "evidence": "Maneka Gandhi v. Union of India (1978); A.K. Gopalan v. State of Madras (1950)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 32 विरुद्ध 226 अधिकारक्षेत्र तक्ता",
+  "qtype": "takta aadharit",
+  "q_marathi": "कलम 32 विरुद्ध कलम 226 या तुलनात्मक तक्त्यातील कोणती ओळ पूर्णपणे बरोबर आहे?",
+  "q_english": "Which row of the comparative table on Article 32 vs Article 226 is fully correct?",
+  "options": [
+   "कलम 32 — उच्च न्यायालय — केवळ मूलभूत हक्कांची अंमलबजावणी — स्वतः मूलभूत हक्क",
+   "कलम 32 — सर्वोच्च न्यायालय — केवळ मूलभूत हक्कांची अंमलबजावणी — स्वतः मूलभूत हक्क; कलम 226 — उच्च न्यायालय — मूलभूत हक्क + इतर कायदेशीर हक्क — विवेकाधीन अधिकार",
+   "कलम 32 — सर्वोच्च न्यायालय — कोणताही कायदेशीर हक्क — विवेकाधीन अधिकार",
+   "कलम 226 — सर्वोच्च न्यायालय — केवळ मूलभूत हक्क — स्वतः मूलभूत हक्क"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "कलम 32 हे सर्वोच्च न्यायालयाकडे केवळ मूलभूत हक्कांसाठी असून ते स्वतःच मूलभूत हक्क आहे (डॉ. आंबेडकर — 'हृदय आणि आत्मा'); तर कलम 226 हा उच्च न्यायालयाचा व्यापक व विवेकाधीन अधिकार आहे. पहिल्या पर्यायात न्यायालय चूक, तिसऱ्यात कलम 32 ची व्याप्ती चूक, चौथ्यात कलम व न्यायालय दोन्ही चूक आहेत.",
+  "evidence": "भारतीय संविधान, कलम 32, 226; घटना समिती चर्चा (1948)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 50 न्यायपालिका कार्यकारी विभाजन",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "कलम 50 (न्यायपालिका व कार्यकारी यांचे विभाजन) आणि कलम 44 (समान नागरी संहिता) या दोन मार्गदर्शक तत्त्वांबाबत खालील विधाने पाहा : I. कलम 50 हे मूलभूत हक्कांच्या यादीतील हक्क आहे. II. कलम 50 ची अंमलबजावणी फौजदारी प्रक्रिया संहिता, 1973 द्वारे न्यायिक दंडाधिकारी व कार्यकारी दंडाधिकारी वेगळे करून करण्यात आली. III. कलम 44 हे कलम 50 प्रमाणेच न्यायव्यवस्थेच्या रचनेशी संबंधित आहे.",
+  "q_english": "Consider the statements on two Directive Principles — Article 50 (separation of judiciary from executive) and Article 44 (uniform civil code): I. Article 50 is a Fundamental Right. II. Article 50 was implemented by the CrPC, 1973, separating judicial and executive magistrates. III. Article 44, like Article 50, concerns the structure of the judiciary.",
+  "options": [
+   "फक्त I बरोबर",
+   "II आणि III बरोबर",
+   "I, II आणि III बरोबर",
+   "फक्त II बरोबर"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "फक्त II बरोबर आहे : कलम 50 हे भाग 4 मधील मार्गदर्शक तत्त्व आहे, मूलभूत हक्क नाही; आणि फौजदारी प्रक्रिया संहिता, 1973 ने न्यायिक-कार्यकारी दंडाधिकारी वेगळे करून त्याची खरी अंमलबजावणी केली. कलम 44 हे वैयक्तिक कायद्यांशी संबंधित आहे, न्यायव्यवस्थेच्या रचनेशी नाही.",
+  "evidence": "भारतीय संविधान, कलम 44, 50; फौजदारी प्रक्रिया संहिता, 1973"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 72 राष्ट्रपती क्षमा अधिकार",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "कलम 72 (राष्ट्रपतींचा क्षमा अधिकार) याबाबत खालील विधाने विचारात घ्या : I. कलम 72 मध्ये क्षमा (pardon), स्थगन (reprieve), विश्रांती (respite), परिहार (remission) व लघुकरण (commutation) यांचा समावेश होतो. II. कलम 72 केवळ केंद्रीय कायद्यांखालील शिक्षांना लागू होते; लष्करी न्यायालयाने (court martial) दिलेल्या शिक्षांना ते लागू होत नाही. III. 'एपुरु सुधाकर (2006)' मध्ये सर्वोच्च न्यायालयाने म्हटले की क्षमा अधिकाराचा वापर मर्यादित कारणांवर न्यायालयीन पुनर्विलोकनास पात्र आहे.",
+  "q_english": "Consider the statements on Article 72 (President's pardoning power): I. Article 72 covers pardon, reprieve, respite, remission and commutation. II. Article 72 applies only to sentences under Union laws and not to court-martial sentences. III. In Epuru Sudhakar (2006), the Supreme Court held the pardoning power open to judicial review on limited grounds.",
+  "options": [
+   "I, II आणि III बरोबर",
+   "फक्त I बरोबर",
+   "फक्त I आणि III बरोबर",
+   "फक्त II आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "I आणि III बरोबर आहेत : कलम 72 मध्ये पाचही प्रकार समाविष्ट आहेत; मारू राम (1980), केहर सिंह (1989) व एपुरु सुधाकर (2006) यांनी मर्यादित न्यायालयीन पुनर्विलोकन मान्य केले. II चूक आहे — कलम 72 लष्करी न्यायालयांच्या शिक्षांना व मृत्युदंडाला स्पष्टपणे लागू होते, जे कलम 161 खालील राज्यपालांच्या अधिकारांपेक्षा व्यापक आहे.",
+  "evidence": "भारतीय संविधान, कलम 72, 161; Epuru Sudhakar v. Govt. of A.P. (2006)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 74 75 मंत्रीपरिषद जोड्या",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या जुळवा : A. कलम 74 B. 44वी घटना दुरुस्ती (1978) C. कलम 75 D. 91वी घटना दुरुस्ती (2003) : i. राष्ट्रपतींना सहाय्य व सल्ला देणारी मंत्रीपरिषद; 42व्या दुरुस्तीने सल्ला बंधनकारक ii. राष्ट्रपतींना मंत्रीपरिषदेचा सल्ला एकदा पुनर्विचारासाठी परत पाठवता येतो iii. पंतप्रधानांची नियुक्ती राष्ट्रपतींकडून; मंत्रीपरिषद सामूहिकपणे लोकसभेला जबाबदार iv. मंत्रीपरिषदेची सदस्यसंख्या लोकसभेच्या एकूण संख्येच्या 15% पेक्षा जास्त नसावी",
+  "q_english": "Match: A. Article 74 B. 44th Amendment (1978) C. Article 75 D. 91st Amendment (2003): i. Council of Ministers to aid and advise the President; 42nd Amendment made the advice binding ii. President may return CoM advice once for reconsideration iii. PM appointed by the President; CoM collectively responsible to the Lok Sabha iv. CoM strength not to exceed 15% of the Lok Sabha",
+  "options": [
+   "A-i, B-ii, C-iii, D-iv",
+   "A-i, B-iii, C-ii, D-iv",
+   "A-ii, B-i, C-iii, D-iv",
+   "A-i, B-ii, C-iv, D-iii"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य संयोजन A-i, B-ii, C-iii, D-iv : 42वीने (1976) सल्ला बंधनकारक केला, 44वीने (1978) एकदा परत पाठवण्याची मुभा दिली, कलम 75 मध्ये नियुक्ती व सामूहिक जबाबदारी, तर 91वीने (2003) 15% मर्यादा घातली. इतर पर्यायांत B-C किंवा C-D ची अदलाबदल चुकीची आहे.",
+  "evidence": "भारतीय संविधान, कलम 74, 75; 42वी (1976), 44वी (1978), 91वी (2003) घटना दुरुस्त्या"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 78 पंतप्रधान कर्तव्ये",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A) : कलम 78 नुसार पंतप्रधानांनी मंत्रीपरिषदेचे सर्व निर्णय, प्रशासनासंबंधी राष्ट्रपतींनी मागितलेली माहिती राष्ट्रपतींना देणे आणि राष्ट्रपतींनी इच्छा व्यक्त केल्यास एखादा विषय मंत्रीपरिषदेच्या विचारार्थ ठेवणे, ही कर्तव्ये आहेत. कारण (R) : भारताच्या संसदीय व्यवस्थेत राष्ट्रपती हे नाममात्र कार्यकारी प्रमुख असून वास्तविक कार्यकारी सत्ता पंतप्रधानांच्या नेतृत्वाखालील मंत्रीपरिषदेकडे असते.",
+  "q_english": "Assertion (A): Under Article 78, the PM must communicate all CoM decisions to the President, furnish information on administration as required, and submit for the CoM's consideration any matter the President wishes. Reason (R): In India's parliamentary system, the President is the nominal executive head while real executive power vests in the CoM led by the PM.",
+  "options": [
+   "A आणि R दोन्ही बरोबर असून R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर असून R हे A चे योग्य स्पष्टीकरण नाही",
+   "A बरोबर आहे परंतु R चूक आहे",
+   "A चूक आहे परंतु R बरोबर आहे"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A बरोबर आहे — कलम 78 मधील हीच तीन कर्तव्ये आहेत. R देखील सत्य आहे (संसदीय व्यवस्थेचे स्वरूप), परंतु ती कलम 78 च्या विशिष्ट माहिती-संवाद कर्तव्यांचे स्पष्टीकरण नाही; म्हणून दुसरा पर्याय योग्य. R चूक म्हणणारे पर्याय बाद होतात कारण संसदीय व्यवस्थेचे विधान सत्य आहे.",
+  "evidence": "भारतीय संविधान, कलम 74, 75, 78"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 110 धनविधेयक आधार 2018",
+  "qtype": "takta aadharit",
+  "q_marathi": "कलम 110 (धनविधेयक) व 'आधार' निर्णयाबाबत खालील विधाने पाहा : I. कलम 110(1)(a) ते (g) मध्ये कर, कर्ज, भारताचा संचित निधी/आकस्मिक निधी, विनियोजन इत्यादी विषयांवरील विधेयकांची व्याख्या आहे. II. धनविधेयक प्रथम राज्यसभेत मांडता येते आणि त्याबाबतचा लोकसभाध्यक्षांचा निर्णय केवळ सल्लागार स्वरूपाचा असतो. III. 'न्यायमूर्ती के.एस. पुट्टस्वामी विरुद्ध भारत सरकार (2018)' मध्ये 4:1 बहुमताने आधार कायदा धनविधेयक म्हणून वैध ठरवला गेला; न्या. डी.वाय. चंद्रचूड यांनी असहमती दर्शवली.",
+  "q_english": "On Article 110 (money bill) and the Aadhaar verdict: I. Article 110(1)(a)–(g) defines bills dealing with taxation, borrowing, the Consolidated/Contingency Funds of India, appropriation, etc. II. A money bill may be introduced first in the Rajya Sabha and the Speaker's decision on it is merely advisory. III. In Justice K.S. Puttaswamy v. Union of India (2018), a 4:1 majority upheld the Aadhaar Act as a valid money bill; Justice D.Y. Chandrachud dissented.",
+  "options": [
+   "I, II आणि III बरोबर",
+   "फक्त I बरोबर",
+   "फक्त II आणि III बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "I आणि III बरोबर आहेत; II पूर्णपणे चूक — धनविधेयक केवळ लोकसभेतच मांडता येते (कलम 109) आणि अध्यक्षांचा निर्णय अंतिम असतो (कलम 110(3)); 'रोजर मॅथ्यू (2019)' ने हा प्रश्न मोठ्या खंडपीठाकडे पाठवला आहे. त्यामुळे II समाविष्ट असलेले पर्याय बाद होतात.",
+  "evidence": "भारतीय संविधान, कलम 109, 110; Justice K.S. Puttaswamy v. Union of India (2018); Rojer Mathew v. South Indian Bank (2019)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 112 अर्थसंकल्प प्रक्रिया क्रम",
+  "qtype": "kalkram lava",
+  "q_marathi": "कलम 112 (वार्षिक वित्तीय विवरण/अर्थसंकल्प) च्या प्रक्रियेतील योग्य कालक्रम निवडा : A. अर्थमंत्र्यांचे अर्थसंकल्पीय भाषण (अलीकडच्या प्रथेनुसार 1 फेब्रुवारी) B. अनुदान मागण्यांवर चर्चा व मतदान C. विनियोजन विधेयकाची (Appropriation Bill) मंजुरी D. वित्त विधेयकाची (Finance Bill) मंजुरी",
+  "q_english": "Choose the correct chronological order of the budget process under Article 112: A. Budget speech by the Finance Minister (1 February per recent practice) B. Discussion and voting on demands for grants C. Passage of the Appropriation Bill D. Passage of the Finance Bill",
+  "options": [
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-B-C-D",
+   "A-B-D-C"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य क्रम A-B-C-D : भाषणानंतर अनुदान मागण्यांवर चर्चा व मतदान होते ('भारित' खर्चावर केवळ चर्चा, मतदान नाही); मग विनियोजन विधेयक (संचित निधीतून रक्कम काढण्याचा अधिकार) आणि शेवटी वित्त विधेयक (कर प्रस्ताव) मंजूर होते. विनियोजनाआधी वित्त विधेयक सांगणारे पर्याय चुकीचे आहेत.",
+  "evidence": "भारतीय संविधान, कलम 112, 113, 114; अर्थसंकल्पीय प्रक्रिया (1 फेब्रुवारी प्रथा, 2017 पासून)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 155 156 राज्यपाल नियुक्ती कार्यकाळ",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "कलम 155 व 156 (राज्यपाल) यांबाबत खालील विधाने विचारात घ्या : I. कलम 155 नुसार राज्यपालांची नियुक्ती राष्ट्रपती करतात. II. कलम 156 नुसार राज्यपाल राष्ट्रपतींची मर्जी असेपर्यंत पद धारण करतात आणि त्यांचा सामान्य कार्यकाळ पाच वर्षांचा असतो. III. राज्यपालपदी नियुक्तीसाठी किमान वय 30 वर्षे असून संसदेच्या कोणत्याही सभागृहाचे सदस्य असणे आवश्यक आहे.",
+  "q_english": "On Articles 155 and 156 (Governor): I. Under Article 155, the Governor is appointed by the President. II. Under Article 156, the Governor holds office during the President's pleasure, with a normal term of five years. III. Appointment as Governor requires a minimum age of 30 years and membership of either House of Parliament.",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III बरोबर",
+   "फक्त II आणि III बरोबर",
+   "फक्त I बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "I व II बरोबर आहेत; III पूर्णपणे चूक — कलम 157 नुसार किमान वय 35 वर्षे असून कलम 158 नुसार राज्यपाल संसद/विधिमंडळाचे सदस्य असता कामा नये (असल्यास ते पद रिक्त मानले जाते). त्यामुळे III समाविष्ट असलेले पर्याय बाद होतात.",
+  "evidence": "भारतीय संविधान, कलम 155, 156, 157, 158"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 164 मुख्यमंत्री नियुक्ती जबाबदारी",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण : कलम 164 नुसार मुख्यमंत्र्यांची नियुक्ती राज्यपाल करतात, इतर मंत्र्यांची नियुक्ती मुख्यमंत्र्यांच्या सल्ल्यानुसार राज्यपाल करतात आणि मंत्री राज्यपालांची मर्जी असेपर्यंत पद धारण करतात. परिणाम : ?",
+  "q_english": "Cause: Under Article 164, the Governor appoints the Chief Minister, appoints other ministers on the CM's advice, and ministers hold office during the Governor's pleasure. Effect: ?",
+  "options": [
+   "परिणाम : मंत्रीपरिषद सामूहिकपणे राज्यपालांना जबाबदार असते",
+   "परिणाम : मंत्र्यांची एकूण संख्या विधानसभेच्या सदस्यसंख्येच्या 20% पेक्षा जास्त असू शकत नाही",
+   "परिणाम : सभागृहाचे सदस्य नसलेला मंत्री सहा महिन्यांनंतरही पदावर राहू शकतो",
+   "परिणाम : मंत्रीपरिषद सामूहिकपणे विधानसभेला जबाबदार असते आणि 91व्या दुरुस्तीनुसार मंत्र्यांची संख्या सभागृहाच्या 15% पेक्षा जास्त नसते"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "कलम 164(2) नुसार सामूहिक जबाबदारी विधानसभेला आहे, राज्यपालांना नाही; 91वी दुरुस्ती (2003) नुसार मर्यादा 15% आहे, 20% नाही; आणि कलम 164(4) नुसार सदस्य नसलेल्या मंत्र्याने सहा महिन्यांत सदस्यत्व न मिळवल्यास पद सोडावे लागते. त्यामुळे पहिले तीन पर्याय चूक ठरतात.",
+  "evidence": "भारतीय संविधान, कलम 164; 91वी घटना दुरुस्ती (2003)"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 200 राज्यपाल संमती पर्याय",
+  "qtype": "jodya lava",
+  "q_marathi": "कलम 200 (राज्यपालांची संमती) — जोड्या जुळवा : A. संमती देणे B. रोखून ठेवणे (withhold assent) C. पुनर्विचारासाठी परत पाठवणे D. राष्ट्रपतींच्या विचारासाठी राखून ठेवणे : i. विधेयक कायद्यात रूपांतरित होते ii. विधेयक संमत होत नाही/कायदा बनत नाही iii. धनविधेयकाव्यतिरिक्त; सभागृहाने (सुधारणांसह वा विना) पुन्हा संमत केल्यास संमती देणे बंधनकारक iv. त्यानंतर राष्ट्रपती कलम 201 नुसार निर्णय घेतात",
+  "q_english": "Article 200 (Governor's assent) — match: A. Giving assent B. Withholding assent C. Returning for reconsideration D. Reserving for the President: i. Bill becomes law ii. Bill fails to become law iii. Except money bills; assent mandatory if the House passes it again (with or without amendments) iv. The President then decides under Article 201",
+  "options": [
+   "A-ii, B-i, C-iii, D-iv",
+   "A-i, B-ii, C-iii, D-iv",
+   "A-i, B-iii, C-ii, D-iv",
+   "A-i, B-ii, C-iv, D-iii"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य संयोजन A-i, B-ii, C-iii, D-iv : परत पाठवलेले (धनविधेयक नसलेले) विधेयक पुन्हा संमत झाल्यास राज्यपालांना संमती द्यावीच लागते; राखून ठेवलेल्या विधेयकावर कलम 201 नुसार राष्ट्रपती निर्णय घेतात. इतर पर्यायांत A-B किंवा C-D ची अदलाबदल चुकीची आहे.",
+  "evidence": "भारतीय संविधान, कलम 200, 201"
+ },
+ {
+  "section": "6",
+  "subtopic": "कलम 312 अखिल भारतीय सेवा ठराव",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "कलम 312 (अखिल भारतीय सेवा) आणि कलम 249 (राज्यसभेचे विशेष अधिकार) या दोन संकल्पनांबाबत विधाने पाहा : I. कलम 312 नुसार राज्यसभा उपस्थित व मतदान करणाऱ्या सदस्यांच्या दोन-तृतीयांश बहुमताने ठराव करून नवीन अखिल भारतीय सेवा निर्माण करण्याची शिफारस करू शकते. II. भारतीय वन सेवा (1966) ही कलम 312 च्या प्रक्रियेतून निर्माण झालेली अखिल भारतीय सेवा आहे. III. कलम 312 खालील ठराव लोकसभेत मांडावा लागतो.",
+  "q_english": "On Article 312 (All India Services) and Article 249: I. Under Article 312, the Rajya Sabha may by a resolution passed by two-thirds of members present and voting recommend creating a new All India Service. II. The Indian Forest Service (1966) is an All India Service created through the Article 312 process. III. A resolution under Article 312 must be moved in the Lok Sabha.",
+  "options": [
+   "फक्त I बरोबर",
+   "फक्त II आणि III बरोबर",
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "I व II बरोबर आहेत : दोन-तृतीयांश (उपस्थित व मतदान करणारे) हाच कलम 312 चा विशेष बहुमत निकष आहे आणि भारतीय वन सेवा 1966 मध्ये याच मार्गाने निर्माण झाली (IAS/IPS पूर्वीपासून अस्तित्वात). III चूक — ठराव राज्यसभेतच मांडला जातो, लोकसभेत नाही.",
+  "evidence": "भारतीय संविधान, कलम 249, 312; भारतीय वन सेवा स्थापना (1966)"
+ },
+ {
+  "section": "7",
+  "subtopic": "MPC रचना: 6 सदस्य, कलम 45ZB व निर्णायक मत",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "RBI च्या चलनविषयक धोरण समिती (MPC) बाबत खालील विधाने विचारात घ्या — I. समितीत एकूण 6 सदस्य असतात: RBI गव्हर्नर (अध्यक्ष), चलनविषयक धोरणाचे प्रभारी उपगव्हर्नर, मध्यवर्ती मंडळाने नामनिर्देशित केलेला एक RBI अधिकारी आणि केंद्र सरकारने नियुक्त केलेले 3 बाह्य सदस्य. II. प्रत्येक सदस्यास एक मत असते; मते समान झाल्यास RBI गव्हर्नरला निर्णायक (casting) मताचा अधिकार असतो. III. बाह्य सदस्यांचा कार्यकाळ 4 वर्षे असतो आणि ते पुनर्नियुक्तीस पात्र असतात. वरीलपैकी कोणती विधाने बरोबर आहेत?",
+  "q_english": "Consider the following statements about the RBI's Monetary Policy Committee (MPC) — I. The Committee has 6 members: the RBI Governor (Chairperson), the Deputy Governor in charge of monetary policy, one RBI officer nominated by the Central Board, and 3 external members appointed by the Central Government. II. Each member has one vote; in case of a tie, the RBI Governor has a casting vote. III. External members hold office for 4 years and are eligible for re-appointment. Which of the statements given above is/are correct?",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "विधान III चूक आहे: बाह्य सदस्य 4 वर्षे पदावर असतात, परंतु पुनर्नियुक्तीस ते अपात्र असतात. विधाने I व II ही RBI कायदा 1934 च्या कलम 45ZB नुसार बरोबर आहेत (गणपूर्ती 4 सदस्यांची, वर्षातून किमान 4 बैठका). त्यामुळे 'फक्त II आणि III' व 'सर्व बरोबर' हे पर्याय बाद होतात.",
+  "evidence": "RBI Act, 1934 — Section 45ZB (inserted by Finance Act, 2016); MPC constitution notification, 2016"
+ },
+ {
+  "section": "7",
+  "subtopic": "CRR-SLR-धोरण दर: कायदेशीर स्रोत जोड्या",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा — सूची-I: (A) CRR, (B) SLR, (C) रेपो दर, (D) बँक दर; सूची-II: (1) RBI कायदा 1934, कलम 42(1) — अनुसूचित वाणिज्य बँकांची RBI कडील रोख राखीवता, (2) बँकिंग विनियमन कायदा 1949, कलम 24 — NDTL च्या निर्धारित टक्केवारीइतकी द्रवरूप मालमत्ता, (3) LAF चा मुख्य धोरण दर — तारणयुक्त अल्पमुदती कर्ज दर, (4) MSF दराशी संलग्न दीर्घकालीन पुनर्वित्त दर. अचूक जोडी-समूह निवडा:",
+  "q_english": "Match the pairs — List-I: (A) CRR, (B) SLR, (C) Repo rate, (D) Bank Rate; List-II: (1) RBI Act 1934, Section 42(1) — cash reserves of scheduled commercial banks with RBI, (2) Banking Regulation Act 1949, Section 24 — liquid assets as prescribed percent of NDTL, (3) Key policy rate of LAF — collateralised short-term lending rate, (4) Long-term refinance rate linked to the MSF rate. Choose the correct set:",
+  "options": [
+   "A-2, B-1, C-3, D-4",
+   "A-1, B-2, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-4, D-3"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "CRR चा स्रोत RBI कायदा कलम 42(1) तर SLR चा बँकिंग विनियमन कायदा कलम 24 आहे — ही अदलाबदल केलेले पर्याय चूक ठरतात. रेपो दर हाच LAF चा धोरण दर असून बँक दर हा MSF दराशी जोडलेला असतो; त्यामुळे फक्त 'A-1, B-2, C-3, D-4' हा समूह पूर्ण बरोबर आहे.",
+  "evidence": "RBI Act, 1934 Sec 42(1); Banking Regulation Act, 1949 Sec 24; RBI Monetary Policy framework"
+ },
+ {
+  "section": "7",
+  "subtopic": "LAF मार्गिका: SDF तळ व MSF छत",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "प्रतिपादन (A): LAF मार्गिकेत (corridor) SDF दर हा तळ (floor) आणि MSF दर हा छत (ceiling) असतो; रेपो दर या दोहोंच्या मध्ये स्थित असतो. कारण (R): SDF ही तारणरहित (uncollateralised) रात्रभर तरलता शोषण सुविधा आहे, तर MSF ही दंडात्मक दराने मिळणारी तारणयुक्त रात्रभर कर्ज सुविधा आहे. योग्य पर्याय निवडा:",
+  "q_english": "Assertion (A): In the LAF corridor, the SDF rate forms the floor and the MSF rate the ceiling, with the repo rate positioned between them. Reason (R): SDF is an uncollateralised overnight liquidity absorption facility, while MSF is a collateralised overnight borrowing facility available at a penal rate. Choose the correct option:",
+  "options": [
+   "A सत्य, R असत्य",
+   "A आणि R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य; परंतु R हे A चे योग्य स्पष्टीकरण नाही",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A व R दोन्ही सत्य आहेत: SDF (एप्रिल 2022) ही तरलता शोषून घेणारी तळ-दर सुविधा आणि MSF (मे 2011) ही दंडात्मक छत-दर सुविधा असल्यामुळेच मार्गिका तयार होते. R हे A मधील तळ-छत रचनेचे थेट तांत्रिक कारण सांगते, म्हणून तिसरा पर्याय बाद होतो.",
+  "evidence": "RBI — MSF introduced May 2011; Standing Deposit Facility introduced April 2022; RBI Annual Report 2022-23"
+ },
+ {
+  "section": "7",
+  "subtopic": "GDP आधार वर्ष 2011-12: नवीन मालिका वैशिष्ट्ये",
+  "qtype": "takta aadharit",
+  "q_marathi": "GDP मालिकांचा तक्ता पहा — (अ) आधार वर्ष 2004-05 : जुन्या मालिकेतील आधार; (ब) आधार वर्ष 2011-12 : जानेवारी 2015 पासून CSO ची नवीन मालिका — MCA-21 कंपनी डेटाबेस व मूलभूत किमतींवर GVA संकल्पना; (क) आधार वर्ष 2022-23 : सध्याचे अधिकृत आधार वर्ष. विधाने — I. (अ) व (ब) या दोन्ही नोंदी अचूक आहेत. II. (क) ही नोंद अचूक आहे. योग्य पर्याय निवडा:",
+  "q_english": "Observe the table on GDP series — (a) Base year 2004-05: base of the old series; (b) Base year 2011-12: CSO's new series from January 2015 — MCA-21 corporate database and GVA at basic prices concept; (c) Base year 2022-23: the current official base year. Statements — I. Both entries (a) and (b) are accurate. II. Entry (c) is accurate. Choose the correct option:",
+  "options": [
+   "विधान I चूक, विधान II बरोबर",
+   "दोन्ही विधाने बरोबर",
+   "दोन्ही विधाने चूक",
+   "विधान I बरोबर, विधान II चूक"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "2011-12 आधार मालिका जानेवारी 2015 मध्ये CSO ने सुरू केली; यात MCA-21 डेटाबेस व मूलभूत किमतींवरील GVA ही दोन ठळक वैशिष्ट्ये आली, म्हणून I बरोबर. 2022-23 आधार अद्याप प्रस्तावित टप्प्यात असून अधिकृत नाही, त्यामुळे II चूक ठरते.",
+  "evidence": "CSO, National Accounts Statistics — new series with base year 2011-12, January 2015"
+ },
+ {
+  "section": "7",
+  "subtopic": "GVA विरुद्ध GDP: कर-अनुदान समायोजन सूत्र",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "GVA (मूलभूत किमती) व GDP (बाजार किमती) या दोन्ही संकल्पना एकत्र विचारात घेऊन त्यांतील अचूक गणितीय संबंध ओळखा:",
+  "q_english": "Considering both concepts together — GVA (at basic prices) and GDP (at market prices) — identify the correct mathematical relationship between them:",
+  "options": [
+   "GDP (बाजार किमती) = GVA (मूलभूत किमती) − उत्पादन कर + उत्पादन अनुदान",
+   "GDP (बाजार किमती) = GVA (मूलभूत किमती) + उत्पादन कर − उत्पादन अनुदान",
+   "GDP (बाजार किमती) = GVA (मूलभूत किमती) + उत्पादन अनुदान − उत्पादन कर",
+   "GDP (बाजार किमती) = GVA (साधन खर्च) − घसारा + निव्वळ परकीय साधन उत्पन्न"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बाजार किमती = मूलभूत किमती + उत्पादन कर − उत्पादन अनुदान, त्यामुळे GVA कडून GDP कडे जाताना कर मिळवून अनुदान वजा करावे लागते. चिन्हे उलटवणारे पर्याय व साधन-खर्च/घसारा मिसळणारा पर्याय (तो NNP शी संबंधित) बाद होतात.",
+  "evidence": "CSO National Accounts methodology — base 2011-12 series (2015); System of National Accounts 2008"
+ },
+ {
+  "section": "7",
+  "subtopic": "फिलिप्स वक्र: महागाई-बेरोजगारी अदलाबदल",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "फिलिप्स वक्राबाबत खालील विधाने विचारात घ्या — I. A.W. फिलिप्स यांनी 1958 मध्ये 'Economica' या नियतकालिकात ब्रिटनमधील (1861–1957) मजुरी-महागाई व बेरोजगारी यांतील व्यस्त संबंध मांडला. II. अल्पकालीन फिलिप्स वक्र खाली उतरता (downward sloping) असतो; फ्रीडमन–फेल्प्स यांच्या मते दीर्घकाळात तो नैसर्गिक बेरोजगारी दरावर उभा (vertical) असतो. III. 1970 च्या दशकातील स्टॅगफ्लेशनने (एकाच वेळी उच्च महागाई व उच्च बेरोजगारी) साध्या अदलाबदलीच्या सिद्धतेस खंडित केले. कोणती विधाने बरोबर आहेत?",
+  "q_english": "Consider the following statements about the Phillips curve — I. A.W. Phillips (1958, in 'Economica') documented an inverse relationship between money-wage inflation and unemployment in Britain (1861–1957). II. The short-run Phillips curve is downward sloping; in the long run it is vertical at the natural rate of unemployment (Friedman–Phelps). III. The stagflation of the 1970s (high inflation with high unemployment simultaneously) broke the simple trade-off proposition. Which statements are correct?",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तिन्ही विधाने तथ्यात्मकदृष्ट्या बरोबर आहेत: 1958 चा मूळ अभ्यास, 1968 ची फ्रीडमन–फेल्प्स यांची नैसर्गिक दर टीका आणि 1970 च्या दशकातील स्टॅगफ्लेशनचा अनुभव. कोणतेही विधान अंशतः चूक नसल्याने अपूर्ण पर्याय बाद होतात.",
+  "evidence": "A.W. Phillips, Economica, 1958; Friedman–Phelps natural rate hypothesis, 1968"
+ },
+ {
+  "section": "7",
+  "subtopic": "लॉरेन्झ वक्र व गिनी गुणांक: विषमता मापन",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (K): अर्थव्यवस्थेतील लॉरेन्झ वक्र 45° च्या पूर्ण समता रेषेपासून दूर सरकतो. परिणाम (P): गिनी गुणांक 0 कडून 1 कडे वाढतो, म्हणजे उत्पन्न/संपत्ती विषमता वाढल्याचे दर्शवते. योग्य पर्याय निवडा:",
+  "q_english": "Cause (K): The Lorenz curve of an economy shifts away from the 45° line of perfect equality. Effect (P): The Gini coefficient rises from 0 towards 1, indicating increased income/wealth inequality. Choose the correct option:",
+  "options": [
+   "K व P दोन्ही सत्य; P हा K चा योग्य परिणाम आहे",
+   "K व P दोन्ही सत्य; परंतु P हा K चा योग्य परिणाम नाही",
+   "K सत्य, P असत्य",
+   "K असत्य, P सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "लॉरेन्झ वक्र समता रेषेपासून जितका दूर, तितकी विषमता जास्त; गिनी गुणांक हे याच दोन रेषांमधील क्षेत्रफळाचे गुणोत्तर आहे (0 = पूर्ण समता, 1 = पूर्ण विषमता). त्यामुळे K घडल्यास P हा त्याचा थेट तार्किक परिणाम ठरतो.",
+  "evidence": "Max O. Lorenz (1905); Corrado Gini coefficient (1912)"
+ },
+ {
+  "section": "7",
+  "subtopic": "प्रसिद्ध वक्र-नियम व अर्थशास्त्रज्ञ जोड्या",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा — (A) लॅफर वक्र, (B) फिलिप्स वक्र, (C) लॉरेन्झ वक्र, (D) एंजेल नियम; (1) अर्न्स्ट एंजेल — 1857, कौटुंबिक अंदाजपत्रकांतील अन्नखर्चाच्या प्रमाणाचा अभ्यास, (2) मॅक्स लॉरेन्झ — 1905, उत्पन्न वितरणाची संचयी वक्ररेषा, (3) A.W. फिलिप्स — 1958, मजुरी-महागाई व बेरोजगारी संबंध, (4) आर्थर लॅफर — 1974, करदर व करमहसूल संबंध. अचूक जोडी-समूह निवडा:",
+  "q_english": "Match the pairs — (A) Laffer curve, (B) Phillips curve, (C) Lorenz curve, (D) Engel's law; (1) Ernst Engel — 1857, study of food's share in household budgets, (2) Max Lorenz — 1905, cumulative curve of income distribution, (3) A.W. Phillips — 1958, wage-inflation vs unemployment relation, (4) Arthur Laffer — 1974, tax-rate vs tax-revenue relation. Choose the correct set:",
+  "options": [
+   "A-4, B-2, C-3, D-1",
+   "A-3, B-4, C-2, D-1",
+   "A-4, B-3, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "प्रत्येक अर्थशास्त्रज्ञ त्याच्या प्रसिद्ध वर्ष व कार्याशीच जोडला जातो: लॅफर-1974 करमहसूल, फिलिप्स-1958 बेरोजगारी, लॉरेन्झ-1905 वितरण वक्र, एंजेल-1857 अंदाजपत्रक. एकही अदलाबदल केलेला पर्याय पूर्ण बरोबर ठरत नाही.",
+  "evidence": "Laffer (1974); Phillips, Economica (1958); Lorenz (1905); Engel (1857)"
+ },
+ {
+  "section": "7",
+  "subtopic": "एंजेल नियम: उत्पन्न व अन्नखर्च प्रमाण",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "प्रतिपादन (A): कुटुंबाचे उत्पन्न वाढताना अन्नावरील खर्चाचे एकूण उपभोग खर्चातील प्रमाण घटते (एंजेल नियम). कारण (R): अन्नधान्याची उत्पन्न लवचिकता (income elasticity of demand) एककापेक्षा कमी असते, म्हणजे अन्न ही आवश्यक (necessity) वस्तू आहे. योग्य पर्याय निवडा:",
+  "q_english": "Assertion (A): As household income rises, the proportion of total consumption expenditure spent on food falls (Engel's law). Reason (R): The income elasticity of demand for food is less than unity, i.e., food is a necessity good. Choose the correct option:",
+  "options": [
+   "A सत्य, R असत्य",
+   "A आणि R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण आहे",
+   "A असत्य, R सत्य",
+   "A आणि R दोन्ही सत्य; परंतु R हे A चे योग्य स्पष्टीकरण नाही"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A हे एंजेल यांच्या 1857 च्या नियमाचे यथार्थ विधान असून R मधील एककापेक्षा कमी लवचिकता हीच त्यामागील कार्यकारण मीमांसा आहे — उत्पन्न वाढल्यास अन्नखर्च उत्पन्नापेक्षा कमी प्रमाणात वाढतो. त्यामुळे R हे A चे योग्य स्पष्टीकरण ठरते; स्पष्टीकरण नाकारणारा पर्याय बाद होतो.",
+  "evidence": "Ernst Engel, 1857 — Saxon household budget studies"
+ },
+ {
+  "section": "7",
+  "subtopic": "CACP-MSP: 23 पिकांची वर्गवारी व C2+50% सूत्र",
+  "qtype": "takta aadharit",
+  "q_marathi": "MSP चा तक्ता पहा — (अ) खरीप पिके: 14 (भात, ज्वारी, बाजरी, मका, रागी, तूर, मूग, उडीद, भुईमूग, सोयाबीन, सूर्यफूल, तीळ, कारळे, कापूस); (ब) रब्बी पिके: 6 (गहू, जव, हरभरा, मसूर, मोहरी/राई, करडई); (क) व्यावसायिक: 2 (खोबरे, ताग) अधिक उसासाठी FRP — एकूण 23; (ड) खर्च संकल्पना: A2, A2+FL, C2; स्वामिनाथन आयोगाची शिफारस: C2 खर्चावर 50% अधिक भाव. तक्त्यावर आधारित अचूक विधान निवडा:",
+  "q_english": "Observe the MSP table — (a) Kharif crops: 14 (paddy, jowar, bajra, maize, ragi, tur, moong, urad, groundnut, soybean, sunflower, sesamum, nigerseed, cotton); (b) Rabi crops: 6 (wheat, barley, gram, masur, rapeseed-mustard, safflower); (c) Commercial: 2 (copra, jute) plus FRP for sugarcane — total 23; (d) Cost concepts: A2, A2+FL, C2; Swaminathan Commission recommendation: 50% over C2 cost. Choose the correct statement based on the table:",
+  "options": [
+   "खरीप 14, रब्बी 8, एकूण 23; हमीभाव A2+50% सूत्रावर ठरतो",
+   "खरीप 16, रब्बी 6, एकूण 23; हमीभाव C2+FL सूत्रावर ठरतो",
+   "खरीप 14, रब्बी 6, एकूण 23; स्वामिनाथन शिफारस C2+50%",
+   "खरीप 14, रब्बी 6, एकूण 22; FRP वगळून मोजणी"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "CACP शिफारशीवर 14 खरीप + 6 रब्बी + 2 व्यावसायिक + उसाचा FRP अशी एकूण 23 ची मोजणी होते; स्वामिनाथन आयोगाने (2006) C2 खर्चाच्या 50% अधिक भावाची शिफारस केली होती. रब्बी 8/खरीप 16 सांगणारे व FRP वगळणारे पर्याय तक्त्याशी विसंगत आहेत.",
+  "evidence": "CACP (estd. 1965); National Commission on Farmers — Swaminathan Report, 2006"
+ },
+ {
+  "section": "7",
+  "subtopic": "NFSA 2013: कक्ष व धान्य हक्क",
+  "qtype": "nakasha aadharit",
+  "q_marathi": "भारताच्या नकाशात NFSA 2013 अंतर्गत राज्यनिहाय लाभार्थी कक्ष दर्शवला आहे. नकाशा व कायद्याच्या आधारे विधाने तपासा — I. ग्रामीण लोकसंख्येच्या 75% व शहरी लोकसंख्येच्या 50% पर्यंत कक्ष (एकूण सुमारे 81.35 कोटी व्यक्ती). II. प्राधान्य कुटुंबांना दरडोई दरमहा 5 kg धान्य — तांदूळ ₹3, गहू ₹2, भरडधान्य ₹1 प्रति kg (PMGKAY विलीनीकरणानंतर आता मोफत). III. अंत्योदय अन्न योजनेतील (AAY) कुटुंबांना दरडोई दरमहा 35 kg धान्य मिळते. कोणती विधाने बरोबर आहेत?",
+  "q_english": "The map of India shows state-wise beneficiary coverage under NFSA 2013. Examine the statements against the map and the Act — I. Coverage up to 75% of the rural and 50% of the urban population (about 81.35 crore persons in all). II. Priority households get 5 kg of foodgrain per person per month — rice ₹3, wheat ₹2, coarse grains ₹1 per kg (now free after PMGKAY merger). III. AAY households get 35 kg of foodgrain per person per month. Which statements are correct?",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "विधान III चूक आहे: AAY कुटुंबांना दरमहा प्रति कुटुंब 35 kg धान्य मिळते, दरडोई नव्हे — हा बारकावा पर्याय बाद करतो. I (75%/50% कक्ष) व II (5 kg दरडोई हक्क; जानेवारी 2024 पासून PMGKAY अंतर्गत 5 वर्षे मोफत) ही दोन्ही NFSA तरतुदींनुसार बरोबर आहेत.",
+  "evidence": "National Food Security Act, 2013 (September 2013); PMGKAY merger — free foodgrain decision, December 2023"
+ },
+ {
+  "section": "7",
+  "subtopic": "MGNREGA कालक्रम: 2005 कायदा ते नामकरण",
+  "qtype": "kalkram lava",
+  "q_marathi": "MGNREGA च्या इतिहासातील घटनांचा योग्य कालक्रम लावा — (a) NREGA कायदा संमत (सप्टेंबर 2005), (b) 2 फेब्रुवारी 2006 — 200 जिल्ह्यांत अंमलबजावणी (आंध्र प्रदेशातील अनंतपूर येथून शुभारंभ), (c) 1 एप्रिल 2008 — संपूर्ण ग्रामीण भारतात विस्तार, (d) 2 ऑक्टोबर 2009 — 'महात्मा गांधी' नामकरण. योग्य क्रम निवडा:",
+  "q_english": "Arrange the MGNREGA milestones in correct chronological order — (a) NREGA Act passed (September 2005), (b) 2 February 2006 — implementation in 200 districts (launched from Anantapur, Andhra Pradesh), (c) 1 April 2008 — extension to all rural India, (d) 2 October 2009 — rechristened with 'Mahatma Gandhi' prefix. Choose the correct sequence:",
+  "options": [
+   "a-c-b-d",
+   "b-a-c-d",
+   "a-b-d-c",
+   "a-b-c-d"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "कायदा (2005) → 200 जिल्ह्यांत शुभारंभ (2006) → देशव्यापी विस्तार (2008) → नामकरण (2009) हा तार्किक व ऐतिहासिक क्रम आहे. शुभारंभाआधी विस्तार किंवा कायद्याआधी शुभारंभ दाखवणारे पर्याय कालक्रमाविरुद्ध असल्याने बाद होतात.",
+  "evidence": "NREG Act, 2005 (assent September 2005); MoRD — launch 2 February 2006; renamed 2 October 2009"
+ },
+ {
+  "section": "7",
+  "subtopic": "PMJDY व JAM त्रयी: समावेशन रचना",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "PMJDY व JAM त्रयी या दोन संकल्पना एकत्र विचारात घ्या — I. PMJDY 28 ऑगस्ट 2014 रोजी सुरू झाली; झिरो बॅलन्स बँक खाते हे तिचे मुख्य वैशिष्ट्य आहे. II. 28 ऑगस्ट 2018 नंतर उघडलेल्या PMJDY खात्यांतील RuPay कार्डावर ₹2 लाखांचा अपघात विमा व ₹10,000 पर्यंतची ओव्हरड्राफ्ट सुविधा आहे. III. JAM त्रयी म्हणजे Jan Dhan–Aadhaar–Mobile, जी थेट लाभ हस्तांतरणाचा (DBT) पाया आहे. कोणती विधाने बरोबर आहेत?",
+  "q_english": "Consider the two concepts PMJDY and the JAM trinity together — I. PMJDY was launched on 28 August 2014; the zero-balance bank account is its key feature. II. PMJDY accounts opened after 28 August 2018 carry ₹2 lakh accident insurance on the RuPay card and an overdraft facility up to ₹10,000. III. The JAM trinity is Jan Dhan–Aadhaar–Mobile, the foundation of Direct Benefit Transfer (DBT). Which statements are correct?",
+  "options": [
+   "फक्त I आणि III बरोबर",
+   "फक्त II बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त I आणि II बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "तिन्ही विधाने बरोबर आहेत: PMJDY ची तारीख व झिरो बॅलन्स, 2018 नंतरच्या खात्यांवरील वाढीव ₹2 लाख विमा व ₹10,000 ओव्हरड्राफ्ट, आणि JAM चा DBT शी संबंध. कोणतेही विधान तथ्यात्मकदृष्ट्या चूक नसल्याने अपूर्ण पर्याय बाद होतात.",
+  "evidence": "PMJDY launched 28 August 2014; DFS — RuPay cover ₹2 lakh for accounts opened after 28.08.2018; Economic Survey — JAM trinity for DBT"
+ },
+ {
+  "section": "7",
+  "subtopic": "Atal Pension Yojana: वयोमर्यादा व पेन्शन स्लॅब",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण (K): अटल पेन्शन योजनेत (APY) प्रवेश वय 18–40 वर्षे असून 60 व्या वर्षापर्यंत किमान 20 वर्षे योगदान आवश्यक आहे; योगदान रक्कम प्रवेशवय व निवडलेल्या पेन्शन स्लॅबनुसार ठरते. परिणाम (P): 60 व्या वर्षानंतर लाभार्थ्यास निवडीनुसार दरमहा ₹1,000 ते ₹5,000 हमी पेन्शन मिळते; योजना PFRDA प्रशासित करते. योग्य पर्याय निवडा:",
+  "q_english": "Cause (K): In the Atal Pension Yojana (APY), entry age is 18–40 years with a minimum 20 years of contribution until age 60; the contribution amount depends on entry age and the chosen pension slab. Effect (P): After age 60 the subscriber receives a guaranteed monthly pension of ₹1,000 to ₹5,000 as chosen; the scheme is administered by PFRDA. Choose the correct option:",
+  "options": [
+   "K सत्य, P असत्य",
+   "K व P दोन्ही सत्य; P हा K चा तार्किक परिणाम आहे",
+   "K असत्य, P सत्य",
+   "K व P दोन्ही सत्य; परंतु P हा K चा परिणाम नाही"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "K व P दोन्ही APY च्या अधिकृत रचनेनुसार सत्य आहेत: 18–40 प्रवेश, किमान 20 वर्षे योगदान आणि त्यानंतर ₹1,000–₹5,000 स्लॅबनिहाय हमी पेन्शन. योगदान हाच हमी पेन्शनचा आधार असल्याने P हा K चा थेट परिणाम ठरतो.",
+  "evidence": "APY launched 9 May 2015 (with PMJJBY, PMSBY); PFRDA — pension slabs ₹1,000–₹5,000; replaced Swavalamban scheme"
+ },
+ {
+  "section": "7",
+  "subtopic": "Stand Up India: SC/ST-महिला ग्रीनफील्ड कर्ज",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "Stand Up India योजनेबाबत खालील विधाने तपासा — I. ही योजना 5 एप्रिल 2016 रोजी सुरू झाली असून SC/ST व महिला उद्योजकांसाठी आहे. II. प्रत्येक बँक शाखेने किमान एका SC/ST व एका महिला कर्जदारास ग्रीनफील्ड (उत्पादन/सेवा/व्यापार) उद्योगासाठी ₹10 लाख ते ₹1 कोटी बँक कर्ज द्यावे, अशी अपेक्षा आहे. III. हे कर्ज फक्त शेती व स्वयंसहायता गटांसाठी असून MUDRA च्या 'शिशु' श्रेणीशी समतुल्य आहे. कोणती विधाने बरोबर आहेत?",
+  "q_english": "Examine the statements about the Stand Up India scheme — I. Launched on 5 April 2016, it targets SC/ST and women entrepreneurs. II. Each bank branch is expected to extend a bank loan of ₹10 lakh to ₹1 crore to at least one SC/ST and one woman borrower for a greenfield (manufacturing/services/trading) enterprise. III. The loan is only for agriculture and self-help groups and is equivalent to MUDRA's 'Shishu' category. Which statements are correct?",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त II आणि III बरोबर",
+   "फक्त I आणि III बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "विधान III चूक आहे: Stand Up India ही ग्रीनफील्ड उद्योगांसाठी (शेतीपुरती मर्यादित नाही) असून MUDRA पासून स्वतंत्र योजना आहे — 'शिशु' (₹50,000 पर्यंत) ही वेगळी MUDRA श्रेणी आहे. I (5 एप्रिल 2016, लक्ष्य गट) व II (प्रति शाखा निकष, ₹10 लाख–₹1 कोटी) ही DFS मार्गदर्शक सूचनांनुसार बरोबर आहेत.",
+  "evidence": "Stand Up India launched 5 April 2016; DFS guidelines — loans ₹10 lakh to ₹1 crore for greenfield enterprises"
+ },
+ {
+  "section": "8",
+  "subtopic": "न्यूटन तिसरा नियम - प्रतिक्षिप्त संवेग",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "खालील विधाने विचारात घ्या: I. क्रिया-प्रतिक्रिया बले नेहमी भिन्न वस्तूंवर कार्य करतात, त्यामुळे त्या एकमेकांना निष्प्रभ करत नाहीत. II. रॉकेट प्रणोदन हे संवेग अक्षय्यतेच्या तत्त्वावर आधारित आहे; इंधन वायू प्रचंड वेगाने मागे टाकल्याने रॉकेटला पुढे प्रणोद मिळतो. III. बंदूक-गोळी निकायात बंदुकीचा प्रतिक्षिप्त वेग गोळीच्या वस्तुमानाच्या व्यस्तप्रमाणात तर बंदुकीच्या वस्तुमानाच्या समप्रमाणात असतो.",
+  "q_english": "Consider statements: I. Action-reaction forces always act on different bodies, so they do not cancel each other. II. Rocket propulsion is based on conservation of momentum; ejecting fuel gases backward at high speed propels the rocket forward. III. In gun-bullet system, recoil velocity of gun is inversely proportional to bullet mass and directly proportional to gun mass.",
+  "options": [
+   "फक्त I बरोबर",
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II आणि III सर्व बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "I सत्य – भिन्न वस्तूंवरील बले निष्प्रभ होत नाहीत (उदा. पुस्तक-टेबल). II सत्य – रॉकेट निर्वातातही कार्य करते, बाह्य हवेची गरज नाही. III असत्य – सूत्र M·V = m·v नुसार V = mv/M, म्हणजे V हा m शी समप्रमाणात व M शी व्यस्तप्रमाणात; विधान नेमके उलटे दिले आहे.",
+  "evidence": "NCERT Class 11 Physics Ch.5 Laws of Motion (2024); Newton Principia 1687"
+ },
+ {
+  "section": "8",
+  "subtopic": "घर्षण - सीमांत व गतिज गुणांक",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा: A. स्थैतिक (सीमांत) घर्षण  B. गतिज घर्षण  C. घूर्णन घर्षण  D. वंगण (Lubrication)  1. सापेक्ष गती सुरू होण्यापूर्वीची कमाल मर्यादा, μs·N; संपर्क क्षेत्रफळावर अवलंबून नाही  2. एकदा गती सुरू झाल्यावर कार्यरत, सामान्यतः सीमांतपेक्षा कमी; μk·N  3. बॉल-बेअरिंगमध्ये घसरणीऐवजी घूर्णनामुळे घर्षणात प्रचंड घट  4. दोन पृष्ठभागांत स्नेहकाचा पातळ थर तयार होऊन धातू-धातू संपर्क टाळणे",
+  "q_english": "Match: A. Static (limiting) friction  B. Kinetic friction  C. Rolling friction  D. Lubrication  1. Maximum before relative motion, μs·N, independent of contact area  2. Acts once motion starts, usually less than limiting; μk·N  3. Ball-bearings drastically reduce friction by rolling instead of sliding  4. Thin lubricant film preventing metal-metal contact",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-1, B-3, C-2, D-4",
+   "A-4, B-2, C-1, D-3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A-1 सीमांत घर्षण हे कमाल स्थैतिक मूल्य, B-2 गतिज नेहमी सीमांतपेक्षा कमी, C-3 बॉल-बेअरिंग घूर्णन घर्षण, D-4 वंगणाचा सीमा-थर सिद्धांत. पर्याय 3 मध्ये B-C अदलाबदल करून संभ्रम निर्माण केला आहे, म्हणून सूक्ष्म वाचन आवश्यक.",
+  "evidence": "NCERT Class 11 Physics Ch.5 (2024); Amontons-Coulomb friction laws 1699/1785"
+ },
+ {
+  "section": "8",
+  "subtopic": "कार्य-ऊर्जा प्रमेय - जलविद्युत रूपांतरण",
+  "qtype": "kalkram lava",
+  "q_marathi": "जलविद्युत केंद्रातील ऊर्जा रूपांतरणाचा योग्य कालक्रम लावा: A. जलाशयातील पाण्याची स्थितिज ऊर्जा  B. पेनस्टॉकमधील वेगवान पाण्याची गतिज ऊर्जा  C. टर्बाइनच्या फिरण्याची यांत्रिक ऊर्जा  D. जनित्रातून मिळणारी विद्युत ऊर्जा",
+  "q_english": "Arrange the correct chronological sequence of energy conversion in a hydroelectric plant: A. Potential energy of reservoir water  B. Kinetic energy of fast water in penstock  C. Mechanical energy of turbine rotation  D. Electrical energy from generator",
+  "options": [
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-B-C-D",
+   "C-A-B-D"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "आधी उंचीवरील स्थितिज ऊर्जा (A), नंतर पेनस्टॉकमध्ये गतिज ऊर्जा (B), मग टर्बाइनची यांत्रिक ऊर्जा (C), शेवटी जनित्रात विद्युत ऊर्जा (D). कार्य-ऊर्जा प्रमेयानुसार निव्वळ कार्य = गतिज ऊर्जेतील बदल, हाच क्रम कोयना प्रकल्पात दिसतो.",
+  "evidence": "NCERT Class 11 Physics Ch.6 Work, Energy and Power (2024); Koyna Hydroelectric Project handbook"
+ },
+ {
+  "section": "8",
+  "subtopic": "शक्ती - अश्वशक्ती व कार्यक्षमता",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): 1 अश्वशक्ती (Horsepower) म्हणजे 746 वॅट होय. कारण (R): शक्ती म्हणजे कार्य करण्याचा दर (P = W/t) असून जेम्स वॅट यांनी वाफ इंजिनची क्षमता घोड्याच्या सातत्यपूर्ण कार्याशी तुलना करून हे एकक परिभाषित केले.",
+  "q_english": "Assertion (A): 1 Horsepower equals 746 watt. Reason (R): Power is the rate of doing work (P=W/t) and James Watt defined the unit by comparing steam engine capacity with sustained work of a horse.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, परंतु R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A सत्य – 1 HP (ब्रिटिश) = 550 फूट-पाऊंड/सेकंद = 745.7 W ≈ 746 W. R सत्य – वॅट यांनी 1782-83 मध्ये घोडा चाकावरून कोळसा ओढण्याच्या प्रयोगावरून एकक ठरवले; त्यामुळेच हे विशिष्ट मूल्य आले, म्हणून R हे A चे ऐतिहासिक स्पष्टीकरण ठरते.",
+  "evidence": "NIST: 1 hp = 745.7 W; James Watt definition 1783"
+ },
+ {
+  "section": "8",
+  "subtopic": "गुरुत्वाकर्षण - उंची-खोलीनुसार g",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण: पृथ्वीच्या पृष्ठभागापासून उंची वाढविल्यास गुरुत्वीय त्वरण (g) चे मूल्य घटते. परिणाम: पृथ्वीपृष्ठापासून ~35,786 किमी उंचीवरील भूस्थिर उपग्रहावर गुरुत्वाकर्षण पूर्णपणे शून्य असते.",
+  "q_english": "Cause: Gravitational acceleration (g) decreases with height above Earth's surface. Effect: At geostationary orbit (~35,786 km) gravity becomes completely zero.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य; परिणाम हे कारणाचे योग्य स्पष्टीकरण आहे",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "कारण व परिणाम दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "कारण सत्य – g' = g·(R/(R+h))² नुसार h वाढता g घटते. परिणाम असत्य – त्या उंचीवरही g ≈ 0.22 m/s² असते; उपग्रह सतत पृथ्वीकडे पडत असतो पण कक्षीय वेगामुळे भारहीनता भासते, गुरुत्व शून्य होत नाही.",
+  "evidence": "NCERT Class 11 Gravitation (2024); ISRO orbital mechanics note 2023"
+ },
+ {
+  "section": "8",
+  "subtopic": "पलायन वेग - पृथ्वी व चंद्र",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "पलायन वेग (ve) व कक्षीय वेग (vo) या दोन संकल्पनांबाबत कोणते विधान बरोबर? अ. पृथ्वीसाठी ve = 11.2 km/s, पृष्ठलगत vo = 7.9 km/s; ve = √2 × vo. ब. चंद्रावर ve ≈ 2.38 km/s इतका कमी असल्याने वायू रेणूंचा औष्णिक वेग त्याला मागे टाकतो, म्हणून चंद्राला लक्षणीय वातावरण नाही.",
+  "q_english": "Which statement about escape (ve) and orbital (vo) velocities is correct? a. For Earth ve=11.2 km/s, near-surface vo=7.9 km/s; ve=√2·vo. b. Moon's ve≈2.38 km/s is so low that gas molecules' thermal speed exceeds it, hence Moon has no significant atmosphere.",
+  "options": [
+   "फक्त अ बरोबर",
+   "फक्त ब बरोबर",
+   "अ आणि ब दोन्ही चूक",
+   "अ आणि ब दोन्ही बरोबर"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "अ सत्य – ve = √(2GM/R), vo = √(GM/R) म्हणून गुणोत्तर √2; आकडेवारी अचूक. ब सत्य – चंद्राचा कमी वस्तुमान-त्रिज्या गुणोत्तरामुळे वायू टिकत नाही; हेच वातावरणहीनतेचे गुरुत्वीय स्पष्टीकरण आहे. दोन्ही एकत्रितपणे संकल्पना स्पष्ट करतात.",
+  "evidence": "NCERT Class 11 Gravitation (2024); NASA Moon Fact Sheet 2023 (ve 2.38 km/s)"
+ },
+ {
+  "section": "8",
+  "subtopic": "सरल आवर्त गती - लंबक कालावधी",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता – साध्या लंबकाची लांबी (l) व कालावधी (T): (i) 0.25 m – 1.0 s, (ii) 1.00 m – 2.0 s, (iii) 4.00 m – 4.0 s (g=9.8 m/s²). निष्कर्ष: अ. T = 2π√(l/g) नुसार T ∝ √l. ब. लांबी 4 पट केल्यास कालावधी 2 पट होतो. क. वस्तुमान दुप्पट केल्यास कालावधी दुप्पट होतो.",
+  "q_english": "Table – simple pendulum length (l) vs period (T): (i) 0.25m–1.0s, (ii)1.00m–2.0s, (iii)4.00m–4.0s (g=9.8). Inferences: a. T=2π√(l/g) so T∝√l. b. 4× length →2× period. c. 2× mass →2× period.",
+  "options": [
+   "फक्त अ बरोबर",
+   "फक्त ब बरोबर",
+   "फक्त अ आणि ब बरोबर",
+   "अ, ब आणि क सर्व बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "अ व ब सत्य – तक्ता √l नातेसंबंध दाखवतो (0.25→1, 1→2, 4→4). क असत्य – साध्या लंबकाचा कालावधी वस्तुमानावर अवलंबून नसतो, फक्त लांबी व g वर; हे परीक्षेत वारंवार चुकवणारे सूत्र आहे.",
+  "evidence": "NCERT Class 11 Oscillations Ch.14 (2024); Galileo pendulum experiments 1602"
+ },
+ {
+  "section": "8",
+  "subtopic": "डॉप्लर परिणाम - ध्वनी व रेडशिफ्ट",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "विधाने विचारात घ्या: I. ध्वनी स्रोत निरीक्षकाकडे येताना आभासी वारंवारता वाढते, दूर जाताना घटते. II. दूरस्थ आकाशगंगांच्या प्रकाशात दिसणारा रेडशिफ्ट (तरंगलांबी वाढ) हा विश्वाच्या प्रसरणाचा पुरावा आहे. III. डॉप्लर परिणामासाठी नेहमी माध्यमाची (हवेची) आवश्यकता असते.",
+  "q_english": "Consider: I. Apparent frequency of sound rises when source approaches observer, falls when receding. II. Redshift in distant galaxies' light evidences expanding universe. III. Doppler effect always requires a medium.",
+  "options": [
+   "फक्त I आणि II बरोबर",
+   "फक्त II आणि III बरोबर",
+   "I, II, III सर्व बरोबर",
+   "फक्त I बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "I सत्य – ध्वनी डॉप्लरचे मूलभूत निरीक्षण (रुग्णवाहिका सायरन). II सत्य – हबल (1929) यांनी रेडशिफ्ट-अंतर नाते दाखवले. III असत्य – प्रकाश (विद्युतचुंबकीय तरंग) निर्वातातही डॉप्लर दाखवतो; माध्यम केवळ ध्वनीसाठी आवश्यक.",
+  "evidence": "NCERT Class 11 Waves (2024); Doppler 1842; Hubble 1929 redshift law"
+ },
+ {
+  "section": "8",
+  "subtopic": "परावर्तन-अपवर्तन - स्नेल नियम",
+  "qtype": "jodya lava",
+  "q_marathi": "जोड्या लावा: A. परावर्तनाचा नियम  B. स्नेलचा अपवर्तन नियम  C. वक्रीभवनांक (n)  D. पार्श्व विस्थापन  1. ∠i = ∠r  2. n1 sin i = n2 sin r  3. c/v (निर्वातातील प्रकाशवेग / माध्यमातील वेग)  4. समांतर काच स्लॅबमधून निर्गमन किरणाचे समांतर सरकणे",
+  "q_english": "Match: A. Law of reflection  B. Snell's law of refraction  C. Refractive index (n)  D. Lateral shift  1. ∠i=∠r  2. n1 sin i = n2 sin r  3. c/v  4. Parallel shift of emergent ray through glass slab",
+  "options": [
+   "A-1, B-3, C-2, D-4",
+   "A-2, B-1, C-3, D-4",
+   "A-1, B-2, C-4, D-3",
+   "A-1, B-2, C-3, D-4"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "A-1 परावर्तनात आपाती=परावर्तित कोन, B-2 स्नेल सूत्र, C-3 n=c/v व्याख्या, D-4 स्लॅबमुळे समांतर सरकणे. पर्याय 1 व 3 मध्ये B-C अदलाबदल करून अत्यंत जवळचे पर्याय तयार केले आहेत.",
+  "evidence": "NCERT Class 12 Ray Optics Ch.9 (2024); Snellius 1621"
+ },
+ {
+  "section": "8",
+  "subtopic": "पूर्ण आंतरिक परावर्तन - फायबर व हिरा",
+  "qtype": "kalkram lava",
+  "q_marathi": "मृगजळ (Mirage) निर्मितीतील प्रकाशकिरणाचा योग्य क्रम लावा: A. घन (थंड) ते विरल (गरम) हवेत अपवर्तन  B. आपाती कोन क्रांतिक कोनापेक्षा मोठा होणे  C. पूर्ण आंतरिक परावर्तन घडणे  D. जमिनीवर पाण्याचा आभासी भास होणे",
+  "q_english": "Arrange correct sequence of light ray in mirage formation: A. Refraction from denser (cool) to rarer (hot) air  B. Incidence exceeding critical angle  C. Total internal reflection occurring  D. Virtual water illusion on ground",
+  "options": [
+   "B-A-C-D",
+   "A-B-C-D",
+   "A-C-B-D",
+   "C-A-B-D"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "आधी घन→विरल अपवर्तनाने किरण लंबापासून दूर जातो (A), कोन वाढून क्रांतिक कोन ओलांडतो (B), मग पूर्ण आंतरिक परावर्तन (C) होऊन डोळ्याला पाण्याचा आभास (D). हिरा (n=2.42, क्रांतिक ~24°) व ऑप्टिकल फायबर याच तत्त्वावर कार्य करतात.",
+  "evidence": "NCERT Class 12 Ray Optics (2024); Tyndall 1870; Kao 1966 fibre optics"
+ },
+ {
+  "section": "8",
+  "subtopic": "मानवी डोळा - दृष्टिदोष सुधारणा",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): निकटदृष्टिता (Myopia) मध्ये दूरची वस्तू अस्पष्ट दिसते कारण प्रतिमा दृष्टिपटलाच्या (Retina) समोर तयार होते. कारण (R): निकटदृष्टितेच्या सुधारणेसाठी अंतर्गोल (Concave) भिंगाचा चष्मा वापरतात.",
+  "q_english": "Assertion (A): In myopia distant objects appear blurred because image forms in front of retina. Reason (R): Myopia is corrected using concave lens spectacles.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, परंतु R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A सत्य – नेत्रगोल लांबल्याने/अभिसारी शक्ती वाढल्याने नाभीय अंतर घटते. R सत्य – अंतर्गोल भिंग किरण अपसारी करून प्रतिमा मागे रेटिनावर नेते. परंतु R हे A मधील 'का समोर तयार होते' याचे कारण स्पष्ट करत नाही, तर उपाय सांगते; म्हणून स्पष्टीकरण योग्य नाही.",
+  "evidence": "NCERT Class 12 Human Eye (2024); Helmholtz Physiological Optics 1867"
+ },
+ {
+  "section": "8",
+  "subtopic": "विद्युत घट - डॅनियल व लॅक्लांशे",
+  "qtype": "karan-parinam",
+  "q_marathi": "कारण: विद्युत-रासायनिक श्रेणीत झिंकची ऑक्सिडीकरण क्षमता तांब्यापेक्षा जास्त असते (E° Zn²⁺/Zn = -0.76 V, Cu²⁺/Cu = +0.34 V). परिणाम: डॅनियल सेलमध्ये झिंक इलेक्ट्रोड ॲनोड (ऋण) बनतो व तांबे कॅथोड (धन) बनते, सुमारे 1.10 V विद्युतवाहक बल मिळते.",
+  "q_english": "Cause: Zn has higher oxidation potential than Cu (E° -0.76V vs +0.34V). Effect: In Daniell cell Zn becomes anode (negative) and Cu cathode (positive), giving ~1.10V EMF.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य; परिणाम हे कारणाचे योग्य स्पष्टीकरण आहे",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "कारण व परिणाम दोन्ही असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कारण सत्य – मानक विभव मूल्ये अचूक. परिणाम सत्य – अधिक क्रियाशील धातू ॲनोडवर ऑक्सिडीकरण पावते (Zn→Zn²⁺+2e⁻), Ecell = 0.34-(-0.76)=1.10 V. कारणामुळेच परिणाम घडतो, म्हणून योग्य स्पष्टीकरण.",
+  "evidence": "NCERT Class 12 Electrochemistry Ch.3 (2024); Daniell 1836; Leclanché 1866"
+ },
+ {
+  "section": "8",
+  "subtopic": "ओहम नियम - अओमीय वर्तन",
+  "qtype": "don sankalpana ekatra",
+  "q_marathi": "ओहम नियम व तापमान परिणाम या दोन संकल्पना एकत्र विचारात घ्या: अ. धात्विक वाहकात तापमान वाढल्यास रोध वाढतो (धन तापमान गुणांक) कारण अणूंच्या कंपने वाढून इलेक्ट्रॉन विखुरण वाढते. ब. डायोड, ट्रान्झिस्टर यांसारखे अओमीय घटक V-I आलेखात सरळ रेषा देत नाहीत, त्यामुळे V=IR सरळ लागू होत नाही.",
+  "q_english": "Consider together: a. In metallic conductors resistance rises with temperature (+temp coefficient) due to increased lattice-vibration scattering. b. Non-ohmic devices like diodes/transistors give non-linear V-I, so V=IR is not directly applicable.",
+  "options": [
+   "फक्त अ बरोबर",
+   "फक्त ब बरोबर",
+   "अ आणि ब दोन्ही बरोबर",
+   "अ आणि ब दोन्ही चूक"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "अ सत्य – तांब्यासाठी α≈0.0039/°C; उष्णता वाढता प्रतिरोधकता वाढते. ब सत्य – अर्धवाहक डायोडमध्ये घातांकी V-I, फिलामेंट बल्बमध्ये वक्रता; ओहम नियम फक्त स्थिर तापमानाच्या ओमीय वाहकांसाठी वैध.",
+  "evidence": "NCERT Class 12 Current Electricity Ch.3 (2024); Ohm 1827 Annalen der Physik"
+ },
+ {
+  "section": "8",
+  "subtopic": "चुंबकीय क्षेत्र - फ्लेमिंग नियम",
+  "qtype": "takta aadharit",
+  "q_marathi": "तक्ता – बोट व प्राचल: (i) अंगठा – चालकावरील बल/गतीची दिशा, (ii) तर्जनी – चुंबकीय क्षेत्राची दिशा, (iii) मध्यमा – विद्युत प्रवाहाची दिशा. निष्कर्ष: अ. फ्लेमिंगचा डाव्या हाताचा नियम – विद्युत मोटर (विद्युत→यांत्रिक). ब. फ्लेमिंगचा उजव्या हाताचा नियम – विद्युत जनित्र (यांत्रिक→विद्युत).",
+  "q_english": "Table – finger vs parameter: (i)thumb–force/motion, (ii)forefinger–magnetic field, (iii)middle finger–current. Conclusions: a. Fleming's left-hand rule – electric motor (electrical→mechanical). b. Fleming's right-hand rule – electric generator (mechanical→electrical).",
+  "options": [
+   "फक्त अ बरोबर",
+   "फक्त ब बरोबर",
+   "अ चूक, ब चूक",
+   "अ आणि ब दोन्ही बरोबर"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "तिन्ही बोटे परस्पर लंब धरल्यास डावा हात मोटरमधील बलाची दिशा देतो, उजवा हात जनित्रातील प्रेरित प्रवाहाची दिशा देतो (फ्लेमिंग 1890). तक्त्यातील बोट-प्राचल जोड्या दोन्ही नियमांना समान लागू होतात, म्हणून दोन्ही निष्कर्ष बरोबर.",
+  "evidence": "NCERT Class 12 Magnetism Ch.4 (2024); Fleming 1890; Faraday induction 1831"
+ },
+ {
+  "section": "8",
+  "subtopic": "आम्ल-आम्लारी pH - रक्त बफर",
+  "qtype": "bahu-vidhan",
+  "q_marathi": "विधाने विचारात घ्या: I. मानवी रक्ताचा pH 7.35–7.45 या अरुंद पट्ट्यात H2CO3/HCO3⁻ बफर निकायाने राखला जातो. II. pH स्केल 1909 मध्ये Sørensen यांनी मांडली; एका एककाचा फरक म्हणजे H⁺ संहतीत 10 पट फरक. III. आम्ल पर्जन्याचा pH 5.6 पेक्षा कमी असतो कारण विरघळलेल्या CO2 पलीकडे SO2/NOx पासून सल्फ्युरिक/नायट्रिक आम्ल तयार होते.",
+  "q_english": "Consider: I. Human blood pH 7.35–7.45 maintained by H2CO3/HCO3- buffer. II. pH scale proposed by Sørensen 1909; 1 unit =10× H+ change. III. Acid rain pH<5.6 due to H2SO4/HNO3 from SO2/NOx beyond dissolved CO2.",
+  "options": [
+   "फक्त I बरोबर",
+   "फक्त I आणि II बरोबर",
+   "I, II आणि III सर्व बरोबर",
+   "फक्त III बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "I सत्य – Henderson-Hasselbalch बफर; थोडाही विचलन जीवघेणा. II सत्य – pH = -log[H⁺] व्याख्या Sørensen 1909. III सत्य – नैसर्गिक पावसाचा pH 5.6 (CO2), त्याखाली आम्ल पर्जन्य; पर्यायांत एक-एक विधान वगळून सूक्ष्म भेद केला आहे.",
+  "evidence": "NCERT Class 11 Equilibrium Ch.7 (2024); Sørensen 1909; WHO blood pH 7.35-7.45"
+ }
+]
