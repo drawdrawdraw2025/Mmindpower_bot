@@ -888,6 +888,7 @@ def qotd_post(ist_now):
             f"{opts}\n\n"
             f"💡 <tg-spoiler>उत्तर: {sp}</tg-spoiler>\n\n"
             "उरले 89+ प्रश्न 👉 t.me/Mmindpower_bot/Mmindpower_KBC"
+            "\n🤖 AI doubts/quiz → t.me/Mmindpower_bot?start=qotd"
             f"\n(Set {L} • Q{i + 1})")
 
 def digest_post(ist_now, today):
@@ -913,7 +914,7 @@ def channel_scheduler(ist_now):
         m["ch_kick"] = today
         channel_post("🌅 <b>सुप्रभात! आजचा सराव तयार आहे 📚</b>\n\n"
                      "आजचे <b>90 प्रश्न</b> fresh — Talathi/MPSC 2026 ✨\n"
-                     "🤖 Daily quiz → @Mmindpower_bot\n"
+                     "🤖 Daily quiz → t.me/Mmindpower_bot?start=ch_kick\n"
                      "📱 KBC practice (lifelines सह!) → t.me/Mmindpower_bot/Mmindpower_KBC\n\n"
                      "शिका, जिंका! 🚩")
         save_state(force=True)
@@ -1064,6 +1065,8 @@ def audience_report():
     if fan_k:
         z = str(fan_k)
         fan = f"{z[:2]}xxx{z[-2:]} ({fan_n} questions)"
+    mm = meta()
+    srcs = ", ".join(f"{k[4:]}:{v}" for k, v in sorted(mm.items()) if k.startswith("src_")) or "—"
     NL = "\n"
     return (f"📈 <b>Mmindpower Audience Report</b>{NL}{NL}"
             f"👥 Total users: <b>{total}</b>{NL}"
@@ -1073,7 +1076,8 @@ def audience_report():
             f"📚 Quiz players: {quizzers}{NL}"
             f"🤖 AI-chat only: {total - quizzers}{NL}"
             f"📝 Tried today (all users): {tr} | 🎯 {acc}{NL}{NL}"
-            f"🎖️ Superfan: {fan}")
+            f"🎖️ Superfan: {fan}{NL}{NL}"
+            f"📣 Sources: {srcs}")
 
 def maybe_send_digest():
     ist = datetime.datetime.now(IST)
@@ -1110,6 +1114,15 @@ def handle_callback(cb):
     us = u_state(chat_id)
     cur = current_q(us)
     cur_qid = qid_of(cur[0], cur[1]) if cur else None
+
+    if kind == "memrecheck":
+        if is_member(chat_id, force=True):
+            ack("🎉 +30 AI chats unlocked!")
+            send_text(chat_id, "🎖️ <b>Channel member confirmed!</b> +30 AI chats every day — आजपासूनच! 💬")
+        else:
+            ack("अजून member दिसत नाही 🙈")
+            send_text(chat_id, "🔍 अजून membership दिसत नाही — पहिले @mmindpower_1 join करा, मग पुन्हा re-check दाबा 🙂")
+        return
 
     if kind == "ans":
         qid = parts[1]
@@ -1369,6 +1382,18 @@ def kb_guide():
          {"text": "🔄 Pick a Day", "callback_data": "go|reset"}],
         [{"text": "⏸ Pause Quiz", "callback_data": "go|pause"}]]}
 
+MEMBER_BONUS = 30
+
+def is_member(chat_id, force=False):
+    us = USERS.setdefault(str(chat_id), default_state())
+    today = datetime.datetime.now(IST).strftime("%Y-%m-%d")
+    if force or us.get("mem_day") != today:
+        r = tg("getChatMember", chat_id=CHANNEL_ID, user_id=chat_id)
+        st = ((r.get("result") or {}).get("status")) if r.get("ok") else None
+        us["mem_ok"] = st in ("member", "administrator", "creator")
+        us["mem_day"] = today
+    return bool(us.get("mem_ok"))
+
 def ai_gate(chat_id):
     """Count + enforce the daily AI-chat quota. True = allowed, slot consumed."""
     if chat_id == OWNER_CHAT:
@@ -1379,14 +1404,24 @@ def ai_gate(chat_id):
         us["ai_day"] = today
         us["ai_today"] = 0
     used = us.get("ai_today", 0)
-    if used >= AI_DAILY_LIMIT:
-        send_text(chat_id, "🧠 <b>AI chat limit reached (90/day)!</b>\n"
-                           "Fresh quota at midnight 🌅 — meanwhile the quiz never stops 📚 /quiz")
+    member = is_member(chat_id)
+    limit = AI_DAILY_LIMIT + (MEMBER_BONUS if member else 0)
+    if used >= limit:
+        cap = (f"🧠 <b>AI chat limit reached ({limit}/day)!</b>\n"
+               "Fresh quota at midnight 🌅 — meanwhile the quiz never stops 📚 /quiz")
+        kb = None
+        if not member:
+            cap += ("\n\n📢 <b>PS:</b> @mmindpower_1 channel members get <b>+30 AI chats/day</b>!")
+            kb = {"inline_keyboard": [
+                [{"text": "📢 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}],
+                [{"text": "✅ Joined — re-check", "callback_data": "memrecheck"}]]}
+        send_text(chat_id, cap, reply_markup=kb)
         save_state()
         return False
     us["ai_today"] = used + 1
-    if us["ai_today"] == AI_WARN_AT:
-        send_text(chat_id, f"🧠 Heads-up: {AI_DAILY_LIMIT - AI_WARN_AT} AI chats left today "
+    warn_at = limit - 15
+    if us["ai_today"] == warn_at:
+        send_text(chat_id, "🧠 Heads-up: 15 AI chats left today "
                            "(resets at midnight). Quiz is always unlimited 📚")
     save_state()
     return True
@@ -1449,6 +1484,15 @@ def handle(update):
         return
     cmd = text.split()[0].split("@")[0].lower() if text.startswith("/") else None
     if cmd == "/start":
+        parts = text.split()
+        if len(parts) > 1:
+            src_tag = parts[1].strip().lower()[:24]
+            us = USERS.setdefault(str(chat_id), default_state())
+            if src_tag and not us.get("src"):
+                us["src"] = src_tag
+                mm = meta()
+                mm["src_" + src_tag] = mm.get("src_" + src_tag, 0) + 1
+                save_state()
         send_text(chat_id, WELCOME)
     elif cmd == "/help":
         send_text(chat_id, HELP)
