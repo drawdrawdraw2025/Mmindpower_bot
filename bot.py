@@ -201,8 +201,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web15"
-DONATE_URL_V = DONATE_URL + "?v=web15"
+APP_URL_V = APP_URL + "?v=web16"
+DONATE_URL_V = DONATE_URL + "?v=web16"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1477,6 +1477,21 @@ def handle(update):
                 pass
             r = tg("unpinChatMessage", chat_id=CHANNEL_ID, message_id=mid)
             send_text(chat_id, "📍 Unpinned #%d ✅" % mid if r.get("ok") else ("⚠️ " + (r.get("description") or "failed")))
+        return
+    if token0 == "/qrpost":
+        if chat_id == OWNER_CHAT:
+            base = "https://drawdrawdraw2025.github.io/app/assets/"
+            posts = [
+                {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nGPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\nकिंवा थेट वेब: https://drawdrawdraw2025.github.io/pay/"},
+                {"photo": base+"qr_youtube.png", "caption": "📺 <b>YouTube @mmindpower — Subscribe QR 📸</b>\nQR स्कॅन करा → YouTube ॲप थेट 'Subscribe?' विचारेल!\nकिंवा थेट: https://www.youtube.com/@mmindpower"}]
+            ids = []
+            for p in posts:
+                r = tg("sendPhoto", chat_id=CHANNEL_ID, photo=p["photo"], caption=p["caption"], parse_mode="HTML")
+                if r.get("ok"): ids.append(r["result"].get("message_id"))
+            if len(ids) == 2:
+                send_text(chat_id, "✅ QR posts live on @mmindpower_1 — 💛UPI #%d · 📺YT #%d\nहे दोन IDs मला सांगा — buttons तिकडं wire करतो 🔗" % (ids[0], ids[1]))
+            else:
+                send_text(chat_id, "⚠️ जाऊन आलाय — पुन्हा /qrpost द्या किंवा channel Post right तपासा 👮")
         return
     if token0 == "/donate":
         send_donate(chat_id)
