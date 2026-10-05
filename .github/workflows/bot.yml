@@ -3,7 +3,7 @@ name: bot
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'  # halved queue pressure (mini-app-continuity hygiene); <=10-min handover still snappy
   push:
     branches: [main]
     paths: ['bot.py', '.github/workflows/bot.yml']
