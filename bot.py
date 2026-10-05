@@ -203,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web24"
-DONATE_URL_V = DONATE_URL + "?v=web24"
+APP_URL_V = APP_URL + "?v=web25"
+DONATE_URL_V = DONATE_URL + "?v=web25"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1508,6 +1508,26 @@ def handle(update):
                 pass
             r = tg("unpinChatMessage", chat_id=CHANNEL_ID, message_id=mid)
             send_text(chat_id, "📍 Unpinned #%d ✅" % mid if r.get("ok") else ("⚠️ " + (r.get("description") or "failed")))
+        return
+    if token0 == "/upirepost":
+        if chat_id == OWNER_CHAT:
+            base = "https://drawdrawdraw2025.github.io/app/assets/"
+            cap = ("💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\n"
+                   "PhonePe ॲपने QR स्कॅन करा ☺️ — किंवा कोणतेही UPI ॲप!\n"
+                   "ट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n"
+                   "₹5 ही फक्त सुरुवात 💛 रक्कम ॲपमध्ये एडिट करता येते — आवडलं तर आणखी एक <b>0</b> जोडा 🤗\n"
+                   '🌐 <a href="' + DONATE_URL + '">वेब पेज — येथे टॅप करा 💛</a>')
+            r = tg("sendPhoto", chat_id=CHANNEL_ID, photo=base+"qr_upi.png", caption=cap, parse_mode="HTML")
+            m1 = (r.get("result") or {}).get("message_id")
+            if m1:
+                ids = FLAGS.get("qr_relay_ids") or [None, None]
+                ids[0] = m1
+                FLAGS["qr_relay_ids"] = ids
+                save_state(force=True)
+                tg("pinChatMessage", chat_id=CHANNEL_ID, message_id=m1, disable_notification=True)
+                send_text(chat_id, "💛 UPI QR re-posted → #%d 📌 pinned · 📺 YT remains #%s ✅" % (m1, ids[1]))
+            else:
+                send_text(chat_id, "⚠️ Re-post failed — channel 'Post photos' right तपासा 👮")
         return
     if token0 == "/qrpost":
         if chat_id == OWNER_CHAT:
