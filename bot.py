@@ -223,6 +223,46 @@ def donate_qr_png():
         print("qr error:", e)
         return None
 
+
+WALL_UPI = "upi://pay?pa=mmindpower.contact@oksbi&pn=BALU%20DASHRATH%20GARJE&am=5&cu=INR&tn=Mmindpower%20Support"
+
+def support_wall_png():
+    """Mints the Support Wall poster at runtime — zero GitHub assets."""
+    try:
+        import qrcode
+        from PIL import Image, ImageDraw, ImageFont
+        W = H = 1200
+        img = Image.new("RGB", (W, H), (10, 18, 36))
+        d = ImageDraw.Draw(img)
+        fp = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+        def fb(sz):
+            try: return ImageFont.truetype(fp, sz, layout_engine=ImageFont.Layout.RAQM)
+            except Exception: return ImageFont.truetype(fp, sz)
+        def ctext(y, txt, size, color):
+            f = fb(size); w = d.textlength(txt, font=f)
+            d.text(((W - w) / 2, y), txt, font=f, fill=color)
+        # gold frame
+        d.rounded_rectangle([26, 26, W-27, H-27], radius=42, outline=(232, 169, 28), width=6)
+        ctext(72,  "SUPPORT  MMINDPOWER", 66, (255, 214, 90))
+        ctext(168, "Scan with Paytm / any UPI app", 40, (205, 218, 244))
+        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=10, border=2)
+        qr.add_data(WALL_UPI); qr.make(fit=True)
+        qimg = qr.make_image(fill_color=(10, 18, 36), back_color="white").convert("RGB")
+        qs = 640; qimg = qimg.resize((qs, qs))
+        card = Image.new("RGB", (qs+64, qs+64), "white")
+        mask = Image.new("L", (qs+64, qs+64), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, qs+63, qs+63], 36, fill=255)
+        img.paste(card, ((W-qs-64)//2, 246), mask)
+        img.paste(qimg, ((W-qs)//2, 278))
+        ctext(966,  "Rs 5 pre-filled -> edit freely", 40, (255, 214, 90))
+        ctext(1024, "Loved it? add one more 0 :)", 40, (205, 218, 244))
+        ctext(1102, "ID: mmindpower.contact@oksbi", 32, (150, 165, 195))
+        bio = io.BytesIO(); img.save(bio, format="PNG"); bio.seek(0)
+        return bio.getvalue()
+    except Exception as e:
+        print("wall error:", e)
+        return None
+
 def send_donate(chat_id):
     cap = ("☕ <b>Small Support — Mmindpower Bot</b>\n\n"
            "If today's quiz helped you even a little, support us with <b>₹5</b> 💖\n"
@@ -1548,6 +1588,47 @@ def handle(update):
             else:
                 send_text(chat_id, "⚠️ जाऊन आलाय — पुन्हा /qrpost द्या किंवा channel Post right तपासा 👮")
         return
+    if token0 == "/supportwall":
+        if chat_id == OWNER_CHAT:
+            force = len(text.split()) > 1 and text.split()[1].lower() == "force"
+            if FLAGS.get("support_wall_id") and not force:
+                send_text(chat_id, "ℹ️ Support Wall आधीच posted — #%d ✅ (नवीन design साठी: /supportwall force)" % FLAGS["support_wall_id"])
+                return
+            png = support_wall_png()
+            cap = ("🧱 <b>Support Wall — Mmindpower 💛</b>\n\n"
+                   "📸 कॅमेरा किंवा <b>Paytm / कोणतेही UPI ॲप</b>ने QR स्कॅन करा!\n"
+                   "₹5 भरलेली आहे — आवडलं तर आणखी एक <b>0</b> जोडा 😄 रक्कम तुमच्या हातात ✏️\n"
+                   "🆔 <code>mmindpower.contact@oksbi</code> (tap to copy)\n"
+                   "📱 PhonePe साठी: Mini App मधलं निळं बटण 💙")
+            if not png:
+                send_text(chat_id, "⚠️ Poster mint झाला नाही — पुन्हा प्रयत्न 🛠️")
+                return
+            r = tg_photo(CHANNEL_ID, png, caption=cap)
+            m1 = (r.get("result") or {}).get("message_id")
+            if m1:
+                FLAGS["support_wall_id"] = m1
+                save_state(force=True)
+                tg("pinChatMessage", chat_id=CHANNEL_ID, message_id=m1, disable_notification=True)
+                send_text(chat_id, "🧱 Support Wall live → #%d 📌 pinned ✅" % m1)
+            else:
+                send_text(chat_id, "⚠️ Post failed — channel rights तपासा 👮")
+        return
+    if token0 == "/support":
+        png = support_wall_png()
+        wall = FLAGS.get("support_wall_id")
+        cap = ("🧱 <b>Support Wall 💛</b>\n\n"
+               "📸 कॅमेरा / <b>Paytm / कोणतेही UPI ॲप</b>ने QR स्कॅन करा!\n"
+               "₹5 भरलेली आहे — आवडलं तर आणखी एक <b>0</b> जोडा 😄 रक्कम तुमच्या हातात ✏️\n"
+               "🆔 <code>mmindpower.contact@oksbi</code> (tap to copy)\n"
+               "📱 PhonePe? Mini App मधलं निळं बटण 💙")
+        kb = None
+        if wall:
+            kb = {"inline_keyboard": [[{"text": "📣 Share Support Wall", "url": "https://t.me/share/url?url=https://t.me/mmindpower_1/%d" % wall}]]}
+        if png:
+            tg_photo(chat_id, png, caption=cap, reply_markup=kb)
+        else:
+            send_text(chat_id, cap, reply_markup=kb)
+        return
     if token0 == "/donate":
         send_donate(chat_id)
         return
@@ -1634,6 +1715,7 @@ def main():
         {"command": "quiz_reset", "description": "🔄 Restart from any day"},
         {"command": "reset", "description": "🧹 Clear AI chat memory"},
         {"command": "donate", "description": "☕ Support Mmindpower (optional ₹5)"},
+        {"command": "support", "description": "🧱 Support Wall — QR scan (Paytm/any UPI)"},
         {"command": "app", "description": "📚 Practice app (all sets)"},
         {"command": "help", "description": "❓ Help"},
         {"command": "about", "description": "🤖 About this bot"},
