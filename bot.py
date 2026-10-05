@@ -203,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web29"
-DONATE_URL_V = DONATE_URL + "?v=web29"
+APP_URL_V = APP_URL + "?v=web30"
+DONATE_URL_V = DONATE_URL + "?v=web30"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1609,7 +1609,10 @@ def handle(update):
             if not png:
                 send_text(chat_id, "⚠️ Poster mint झाला नाही — पुन्हा प्रयत्न 🛠️")
                 return
-            r = tg_photo(CHANNEL_ID, png, caption=cap)
+            kb = {"inline_keyboard": [[
+                      {"text": "💸 Support via PhonePe", "url": "https://t.me/Mmindpower_bot/Mmindpower_KBC"},
+                      {"text": "📺 Subscribe YouTube", "url": "https://youtube.com/@mmindpower"}]]}
+            r = tg_photo(CHANNEL_ID, png, caption=cap, reply_markup=kb)
             m1 = (r.get("result") or {}).get("message_id")
             if m1:
                 FLAGS["support_wall_id"] = m1
