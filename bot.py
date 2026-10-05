@@ -201,8 +201,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web11"
-DONATE_URL_V = DONATE_URL + "?v=web11"
+APP_URL_V = APP_URL + "?v=web12"
+DONATE_URL_V = DONATE_URL + "?v=web12"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
