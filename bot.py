@@ -60,6 +60,7 @@ MEM = {}          # chat_id -> AI chat history
 USERS = {}        # chat_id(str) -> per-user quiz state dict
 DATA = {}         # set letter -> list of questions
 STATE_SHA = None
+FLAGS = {}        # persisted misc flags (qr_relay_ids, …)
 
 # ---------------- Telegram helpers ----------------
 def tg(method, **params):
@@ -154,6 +155,7 @@ def gh_get_state():
         STATE_SHA = d["sha"]
         data = json.loads(base64.b64decode(d["content"]))
         if isinstance(data, dict) and "users" in data:
+            FLAGS.update(data.get("flags") or {})
             return {str(k): v for k, v in data["users"].items()}
         if isinstance(data, dict) and "set" in data:   # legacy flat state
             return {str(OWNER_CHAT): data}
@@ -174,7 +176,7 @@ def gh_save_state():
         return
     try:
         body = {"message": "quiz state update",
-                "content": base64.b64encode(json.dumps({"users": USERS}).encode()).decode(),
+                "content": base64.b64encode(json.dumps({"users": USERS, "flags": FLAGS}).encode()).decode(),
                 "branch": "main"}
         if STATE_SHA:
             body["sha"] = STATE_SHA
@@ -201,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web16"
-DONATE_URL_V = DONATE_URL + "?v=web16"
+APP_URL_V = APP_URL + "?v=web17"
+DONATE_URL_V = DONATE_URL + "?v=web17"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -234,6 +236,34 @@ def send_donate(chat_id):
         tg_photo(chat_id, png, caption=cap, reply_markup=kb)
     else:
         send_text(chat_id, cap, reply_markup=kb)
+
+# ---------------- QR relay (auto-post QR posts once, ever) ----------------
+def qr_relay_autopost():
+    try:
+        if FLAGS.get("qr_relay_ids"):
+            return
+        base = APP_URL + "assets/"
+        c1 = ("💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\n"
+              "GPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\n"
+              "ट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n"
+              "किंवा थेट वेब: " + DONATE_URL)
+        c2 = ("📺 <b>YouTube @mmindpower — Subscribe QR 📸</b>\n"
+              "QR स्कॅन करा → YouTube ॲप थेट 'Subscribe?' विचारेल!\n"
+              "किंवा थेट: https://www.youtube.com/@mmindpower")
+        r1 = tg("sendPhoto", chat_id=CHANNEL_ID, photo=base+"qr_upi.png", caption=c1, parse_mode="HTML")
+        r2 = tg("sendPhoto", chat_id=CHANNEL_ID, photo=base+"qr_youtube.png", caption=c2, parse_mode="HTML")
+        m1 = (r1.get("result") or {}).get("message_id")
+        m2 = (r2.get("result") or {}).get("message_id")
+        if m1 and m2:
+            FLAGS["qr_relay_ids"] = [m1, m2]
+            save_state(force=True)
+            tg("pinChatMessage", chat_id=CHANNEL_ID, message_id=m1, disable_notification=True)
+            send_text(OWNER_CHAT, "🤖 <b>QR relay auto-posted!</b>\n💛 UPI QR → #%d (pinned 📌)\n📺 YouTube QR → #%d" % (m1, m2))
+            print("qr relay posted:", m1, m2)
+        else:
+            print("qr relay failed:", str(r1)[:160], "|", str(r2)[:160])
+    except Exception as e:
+        print("qr_relay_autopost err:", e)
 
 def qid_of(set_letter, index):
     return f"{set_letter}{index + 1}"
@@ -1480,6 +1510,10 @@ def handle(update):
         return
     if token0 == "/qrpost":
         if chat_id == OWNER_CHAT:
+            if FLAGS.get("qr_relay_ids"):
+                m1, m2 = FLAGS["qr_relay_ids"]
+                send_text(chat_id, "ℹ️ QR posts आधीच चॅनेलवर आहेत — 💛UPI #%d · 📺YT #%d ✅" % (m1, m2))
+                return
             base = "https://drawdrawdraw2025.github.io/app/assets/"
             posts = [
                 {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nGPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\nकिंवा थेट वेब: https://drawdrawdraw2025.github.io/pay/"},
@@ -1586,6 +1620,10 @@ def main():
     load_data()
     USERS = gh_get_state() or {}
     print("quiz users:", len(USERS))
+    try:
+        qr_relay_autopost()
+    except Exception as e:
+        print("qr relay boot err:", e)
     offset = None
     conflicts = 0
     last_tick = 0
