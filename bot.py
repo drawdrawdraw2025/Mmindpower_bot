@@ -201,8 +201,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web12"
-DONATE_URL_V = DONATE_URL + "?v=web12"
+APP_URL_V = APP_URL + "?v=web13"
+DONATE_URL_V = DONATE_URL + "?v=web13"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1454,6 +1454,29 @@ def handle(update):
     if token0 == "/audience":
         if chat_id == OWNER_CHAT:
             send_text(chat_id, audience_report())
+        return
+    if token0 == "/pinpromo":
+        if chat_id == OWNER_CHAT:
+            mid = 16
+            try:
+                mid = int(text.split()[1])
+            except Exception:
+                pass
+            r = tg("pinChatMessage", chat_id=CHANNEL_ID, message_id=mid, disable_notification=False)
+            if r.get("ok"):
+                send_text(chat_id, "📌 <b>Pinned!</b> Message #%d on @mmindpower_1 ✅ (announce banner = free visibility 🎁)" % mid)
+            else:
+                send_text(chat_id, "⚠️ Pin failed: %s — bot needs \"Pin Messages\" right on the channel 👮" % (r.get("description") or "unknown"))
+        return
+    if token0 == "/unpinpromo":
+        if chat_id == OWNER_CHAT:
+            mid = 16
+            try:
+                mid = int(text.split()[1])
+            except Exception:
+                pass
+            r = tg("unpinChatMessage", chat_id=CHANNEL_ID, message_id=mid)
+            send_text(chat_id, "📍 Unpinned #%d ✅" % mid if r.get("ok") else ("⚠️ " + (r.get("description") or "failed")))
         return
     if token0 == "/donate":
         send_donate(chat_id)
