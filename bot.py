@@ -203,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web26"
-DONATE_URL_V = DONATE_URL + "?v=web26"
+APP_URL_V = APP_URL + "?v=web27"
+DONATE_URL_V = DONATE_URL + "?v=web27"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1588,6 +1588,12 @@ def handle(update):
             else:
                 send_text(chat_id, "⚠️ जाऊन आलाय — पुन्हा /qrpost द्या किंवा channel Post right तपासा 👮")
         return
+    if token0 == "/rebootnow":
+        if chat_id == OWNER_CHAT:
+            send_text(chat_id, "🔄 Rebooting — पुडच्या tick (≤10 मिनिट) नवीन code लोड होईल 👋")
+            save_state(force=True)
+            raise SystemExit(0)
+        return
     if token0 == "/supportwall":
         if chat_id == OWNER_CHAT:
             force = len(text.split()) > 1 and text.split()[1].lower() == "force"
@@ -1683,6 +1689,19 @@ def handle(update):
                       [{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}],
                       [{"text": "🎯 Open Mini App", "web_app": {"url": APP_URL_V}},
                        {"text": "📺 YouTube", "url": "https://youtube.com/@mmindpower"}]]})
+        us = USERS.setdefault(str(chat_id), default_state())
+        if not us.get("wall_sent"):
+            png = support_wall_png()
+            capw = ("🧱 <b>Support Wall — तुमच्या सोयीसाठी 💛</b>\n"
+                    "₹5 भरलेली, एडिट करता येते ✏️ — <b>Paytm / GPay / BHIM</b> ने स्कॅन करा 📸\n"
+                    "🆔 <code>mmindpower.contact@oksbi</code> (tap to copy)\n"
+                    "100% ऐच्छिक — Mmindpower नीट free 🎓")
+            if png:
+                tg_photo(chat_id, png, caption=capw)
+            else:
+                send_text(chat_id, capw)
+            us["wall_sent"] = 1
+            save_state()
     elif cmd == "/help":
         send_text(chat_id, HELP)
     elif cmd == "/about":
