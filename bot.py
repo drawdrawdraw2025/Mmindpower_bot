@@ -203,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web17"
-DONATE_URL_V = DONATE_URL + "?v=web17"
+APP_URL_V = APP_URL + "?v=web18"
+DONATE_URL_V = DONATE_URL + "?v=web18"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -246,6 +246,7 @@ def qr_relay_autopost():
         c1 = ("💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\n"
               "GPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\n"
               "ट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n"
+              "₹5 ही फक्त सुरुवात 💛 रक्कम ॲपमध्ये एडिट करता येते — आवडलं तर आणखी एक <b>0</b> जोडा 🤗\n"
               "किंवा थेट वेब: " + DONATE_URL)
         c2 = ("📺 <b>YouTube @mmindpower — Subscribe QR 📸</b>\n"
               "QR स्कॅन करा → YouTube ॲप थेट 'Subscribe?' विचारेल!\n"
@@ -1516,7 +1517,7 @@ def handle(update):
                 return
             base = "https://drawdrawdraw2025.github.io/app/assets/"
             posts = [
-                {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nGPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\nकिंवा थेट वेब: https://drawdrawdraw2025.github.io/pay/"},
+                {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nGPay / PhonePe / Paytm — कोणत्याही UPI ॲपने, तुमची निवड!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n₹5 ही फक्त सुरुवात 💛 रक्कम ॲपमध्ये एडिट करता येते — आवडलं तर आणखी एक <b>0</b> जोडा 🤗\nकिंवा थेट वेब: https://drawdrawdraw2025.github.io/pay/"},
                 {"photo": base+"qr_youtube.png", "caption": "📺 <b>YouTube @mmindpower — Subscribe QR 📸</b>\nQR स्कॅन करा → YouTube ॲप थेट 'Subscribe?' विचारेल!\nकिंवा थेट: https://www.youtube.com/@mmindpower"}]
             ids = []
             for p in posts:
