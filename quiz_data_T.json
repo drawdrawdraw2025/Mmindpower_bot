@@ -1,0 +1,1442 @@
+[
+ {
+  "section": 3,
+  "subtopic": "BRICS 2026 भारताचे अध्यक्षपद",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (a) भारताच्या अध्यक्षपदाची थीम (b) 18वी शिखर परिषद (c) अध्यक्षपदाची सुरुवात (d) थीमची प्रेरणा — (1) 'Building for Resilience, Innovation, Cooperation and Sustainability' (2) भारत मंडपम, नवी दिल्ली, 12-13 सप्टेंबर 2026 (3) 1 जानेवारी 2026 (4) रिओ शिखर 2025 मधील पंतप्रधानांचा humanity-first दृष्टिकोन. योग्य संच निवडा:",
+  "q_english": "Match: (a) Theme of India's chairship (b) 18th Summit (c) Chairship assumption (d) Theme inspiration — (1) 'Building for Resilience, Innovation, Cooperation and Sustainability' (2) Bharat Mandapam, New Delhi, 12-13 Sept 2026 (3) 1 January 2026 (4) PM's humanity-first approach at Rio Summit 2025. Choose correct set:",
+  "options": [
+   "a-1, b-2, c-3, d-4",
+   "a-1, b-3, c-2, d-4",
+   "a-4, b-2, c-3, d-1",
+   "a-1, b-2, c-4, d-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: थीम-1, शिखर-भारत मंडपम 12-13 Sep 2026, प्रारंभ-1 Jan 2026, प्रेरणा-रिओ 2025. B मध्ये स्थळ/तारीख अदलाबदल, C मध्ये थीम/प्रेरणा अदलाबदल, D मध्ये प्रारंभ/प्रेरणा अदलाबदल म्हणून चूक.",
+  "evidence": "brics2026.gov.in / PIB – 18th BRICS Summit, Bharat Mandapam 12-13 Sept 2026; theme 'Building for Resilience, Innovation, Cooperation and Sustainability'; chairship from 1 Jan 2026"
+ },
+ {
+  "section": 3,
+  "subtopic": "COP31 2026 ऑस्ट्रेलिया तयारी",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "COP31 2026 तयारीतील घटनांचा योग्य कालक्रम लावा: (1) COP30 मध्ये करार – Türkiye यजमान, ऑस्ट्रेलिया Negotiation President (2) ऑस्ट्रेलिया-Türkiye संयुक्त COP31 अध्यक्षीय पत्र (3) फिजी येथे Pre-COP बैठक आयोजनाची घोषणा (4) अंताल्या (Türkiye) येथे नोव्हेंबर 2026 मध्ये COP31. योग्य क्रम निवडा:",
+  "q_english": "Arrange COP31 2026 preparatory events chronologically: (1) Deal at COP30 – Türkiye host, Australia as Negotiation President (2) Australia-Türkiye joint COP31 presidency letter (3) Announcement of Pre-COP meeting in Fiji (4) COP31 at Antalya (Türkiye) in Nov 2026. Choose correct order:",
+  "options": [
+   "1-2-3-4",
+   "2-1-3-4",
+   "1-3-2-4",
+   "1-2-4-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य क्रम 1-2-3-4: COP30 करारानंतर संयुक्त पत्र, मग फिजी Pre-COP घोषणा, शेवटी अंताल्या शिखर. B मध्ये पत्र कराराआधी अशक्य; C मध्ये घोषणा पत्राआधी; D मध्ये शिखर तयारी बैठकीआधी.",
+  "evidence": "DCCEEW/UNFCCC – COP30 agreement: Türkiye hosts COP31 at Antalya Nov 2026, Australia President of Negotiations; joint presidency letter; Fiji to host Pre-COP"
+ },
+ {
+  "section": 3,
+  "subtopic": "FIFA विश्वचषक 2026 तयारी",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण (C): 2026 मध्ये 48 संघांमुळे 12 गट (प्रत्येकी 4) करून अव्वल 2 + 8 सर्वोत्तम तृतीय संघ Round of 32 मध्ये घेतले. परिणाम (E): एकूण सामने 104 होतील, अंतिम फेरीसाठी 8 सामने खेळावे लागतील. C-E संबंध ओळखा.",
+  "q_english": "Cause (C): With 48 teams in 2026, 12 groups of 4 send top 2 + 8 best third-placed teams to Round of 32. Effect (E): Total matches become 104 and finalists play 8 matches. Identify the C-E relation.",
+  "options": [
+   "C व E दोन्ही सत्य, E हा C चा तार्किक परिणाम आहे",
+   "C व E दोन्ही सत्य, पण E हा C चा परिणाम नाही",
+   "C सत्य, E असत्य (80 सामने, 7 सामने)",
+   "C असत्य (10 गट), E सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "C सत्य: 12×4 गट, Round of 32 नवीन. E सत्य: 104 सामने, विजेत्यास 8 सामने (आधी 7). E हा गणिती परिणाम आहे. पर्याय 3 मधील 80 सामने ही जुनी 16×3 ची चर्चा; पर्याय 4 मधील 10 गट चुकीचे.",
+  "evidence": "FIFA World Cup 2026 Official Format Guide; Al Jazeera Explainer – 11 June–19 July 2026, 48 teams, 104 matches"
+ },
+ {
+  "section": 3,
+  "subtopic": "PM सूर्यघर योजना 2026 प्रगती",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "PM सूर्यघर (फेब्रु.2024 शुभारंभ) संदर्भात (A) मार्च 2025 पर्यंत 10 लाख आस्थापना अपेक्षा, (B) 6 मार्च 2026 पर्यंत 31.12 लाख कुटुंबांना लाभ, (C) जुलै 2026 मध्ये मासिक उच्चांकी आस्थापना व 14.8 GW क्षमता, (D) मार्च 2027 पर्यंत 1 कोटी उद्दिष्ट — योग्य कालक्रम कोणता?",
+  "q_english": "PM Surya Ghar (launched Feb 2024): (A) 10 lakh installations expected by Mar 2025, (B) 31.12 lakh households benefited by 6 Mar 2026, (C) highest monthly installations in July 2026 with 14.8 GW capacity, (D) 1 crore target by Mar 2027 — what is the correct chronology?",
+  "options": [
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-B-C-D",
+   "A-B-D-C"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "बरोबर क्रम: शुभारंभ (फेब्रु.2024)→10 लाख अपेक्षा (मार्च 2025)→31.12 लाख (6 मार्च 2026)→जुलै 2026 उच्चांक→1 कोटी (मार्च 2027). चूक पर्यायांत मधल्या घटना अदलाबदल केल्या किंवा 2027 चे उद्दिष्ट मध्येच आणले आहे.",
+  "evidence": "PIB 04 AUG 2026 – 14.8 GW, July 2026 highest monthly installations; MoS Shripad Naik 06 Mar 2026 – 31,12,850 households; MNRE target 1 crore households by Mar 2027, launched Feb 2024"
+ },
+ {
+  "section": 3,
+  "subtopic": "UPI आंतरराष्ट्रीय विस्तार 2026",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: (1) जाने.2026 मध्ये UPI 8 देशांत स्वीकृत-भूतान, सिंगापूर, कतार, मॉरिशस, नेपाळ, UAE, श्रीलंका, फ्रान्स. (2) जून 2026 मध्ये कंबोडिया (KHQR) 9वा देश; 30 जुलै 2026 PIB नुसार 11 देशांत लाइव्ह. (3) विस्तार NIPL मार्फत; मालदीव 'Favara' सोबत क्रॉस-बॉर्डर लिंकेज. किती विधाने बरोबर?",
+  "q_english": "Statements: (1) In Jan 2026 UPI accepted in 8 countries-Bhutan, Singapore, Qatar, Mauritius, Nepal, UAE, Sri Lanka, France. (2) Cambodia (KHQR) as 9th in June 2026; live in 11 countries per PIB 30 July 2026. (3) Expansion via NIPL; cross-border linkage with Maldives 'Favara'. How many statements are correct?",
+  "options": [
+   "फक्त 1 आणि 2 बरोबर",
+   "फक्त 2 आणि 3 बरोबर",
+   "1, 2 आणि 3 तिन्ही बरोबर",
+   "फक्त 1 बरोबर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "बरोबर: तिन्ही विधाने PIB/DFS शी सुसंगत. चूक: फक्त 1,2 मानणे म्हणजे Favara/NIPL दुर्लक्ष, फक्त 2,3 मानणे म्हणजे 8 देशांची यादी नाकारणे, फक्त 1 मानणे म्हणजे कंबोडिया/11 देश दुर्लक्ष.",
+  "evidence": "DFS Secretary M Nagaraju Jan 2026 – 8 countries; Business Today June 2026 – Cambodia 9th via KHQR; PIB Factsheet 30 July 2026 – UPI live in 11 countries incl Maldives Favara; NIPL mandate"
+ },
+ {
+  "section": 3,
+  "subtopic": "आशियाई क्रीडा 2026 नागोया पूर्वतयारी",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "आशियाई क्रीडा 2026 बाबत दोन संकल्पना जोडा: संकल्पना-1 – शुभंकर 'Honohon' (jap. 'honoho'=ज्वाला) व बोधवाक्य 'Imagine One Asia'; संकल्पना-2 – 20वी आवृत्ती, ऐची-नागोया (जपान), 19 सप्टेंबर–4 ऑक्टोबर 2026. कोणते विधान दोन्ही संकल्पना अचूकपणे जोडते?",
+  "q_english": "Link two concepts on Asian Games 2026: Concept-1 – mascot 'Honohon' (Jap. 'honoho'=flame) and slogan 'Imagine One Asia'; Concept-2 – 20th edition, Aichi-Nagoya (Japan), 19 Sept–4 Oct 2026. Which statement correctly links both concepts?",
+  "options": [
+   "Honohon (14 जुलै 2024 नामकरण, honoho=ज्वाला) + 'Imagine One Asia' ही 20व्या आवृत्तीची (19 Sep–4 Oct 2026, ऐची-नागोया) अधिकृत ओळख आहे",
+   "Honohon + 'Heart to Heart' ही 20व्या आवृत्तीची (ऐची-नागोया) अधिकृत ओळख आहे",
+   "Honohon + 'Imagine One Asia' ही 19व्या आवृत्तीची (हांगझोऊ) अधिकृत ओळख आहे",
+   "Honohon (honoho=पाणी) + 'Imagine One Asia' ही 20वी आवृत्ती (10 Sep–4 Oct) ची ओळख आहे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A योग्य: Honohon नामकरण 14 जुलै 2024, अर्थ ज्वाला; बोधवाक्य Imagine One Asia; 20वी आवृत्ती 19 Sep–4 Oct 2026. B मध्ये हांगझोऊचे बोधवाक्य, C मध्ये आवृत्ती/शहर, D मध्ये अर्थ व तारीख चूक.",
+  "evidence": "OCA – 20th Asian Games Aichi-Nagoya 19 Sept–4 Oct 2026; mascot Honohon named 14 July 2024 (honoho=flame); slogan 'Imagine One Asia'"
+ },
+ {
+  "section": 3,
+  "subtopic": "ऑस्कर 2026 भारतीय चित्रपट",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): 98व्या ऑस्कर (2026) मध्ये कोणत्याही भारतीय चित्रपटाला अंतिम नामांकन मिळाले नाही. कारण (R): भारताची अधिकृत एन्ट्री 'Homebound' (नीरज घायवान) Best International Feature च्या अंतिम यादीत पोहोचली नाही; भारतीय वंशाच्या गीता गांधबीरला दोन डॉक्युमेंटरी नामांकने मिळाली. योग्य पर्याय निवडा:",
+  "q_english": "Assertion (A): No Indian film received a final nomination at the 98th Oscars (2026). Reason (R): India's official entry 'Homebound' (Neeraj Ghaywan) failed to reach the final Best International Feature list; Indian-origin Geeta Gandbhir earned two documentary nominations. Choose correct option:",
+  "options": [
+   "A व R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A व R दोन्ही सत्य: Homebound अंतिम यादीत नाही म्हणून भारतीय चित्रपट शून्य; गांधबीरची नामांकने भारतीय चित्रपट नव्हे. R मुळे A स्पष्ट होतो. B/C/D मध्ये स्पष्टीकरण नाकारणे वा Homebound/गांधबीरबाबत गैरसमज.",
+  "evidence": "98th Academy Awards 2026 – India's official entry 'Homebound' (Neeraj Ghaywan) missed final Best International Feature nomination; Geeta Gandbhir double nomination (The Perfect Neighbor, The Devil Is Busy)"
+ },
+ {
+  "section": 3,
+  "subtopic": "भारत-EU FTA अंतिम टप्पा 2026",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (अ) निष्कर्ष घोषणा – (i) 27 जाने 2026, 16वी शिखर परिषद (ब) औपचारिक स्वाक्षरी – (ii) 2026 अखेर (कायदेशीर छाननी, 24 भाषांतरे नंतर) (क) EU सवलत – (iii) भारतीय निर्यातीच्या 99.5% वर शून्य शुल्क (ड) भारत सवलत – (iv) EU निर्यातीच्या 96.6% वर कपात. अचूक मेळ कोणता?",
+  "q_english": "Match: (a) Conclusion announcement – (i) 27 Jan 2026, 16th Summit (b) Formal signing – (ii) by end-2026 (after legal vetting, 24 translations) (c) EU concession – (iii) zero duty on 99.5% of Indian exports (d) India concession – (iv) cuts on 96.6% of EU exports. Correct match?",
+  "options": [
+   "अ-i, ब-ii, क-iii, ड-iv",
+   "अ-ii, ब-i, क-iii, ड-iv",
+   "अ-i, ब-ii, क-iv, ड-iii",
+   "अ-i, ब-iii, क-ii, ड-iv"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अ-i सत्य: 27 जाने 2026 रोजी मोदी-फॉन डेर लेयेन घोषणा; ब-ii सत्य: स्वाक्षरी 2026 अखेर. क-iii/ड-iv अदलाबदल ही सामान्य चूक (21 जाने ही वाटाघाटी पूर्ण तारीख, घोषणा नव्हे). त्यामुळे 2-4 चूक.",
+  "evidence": "PIB 27 Jan 2026 (16th India-EU Summit); European Commission – 99.5%/96.6% tariff offers, signing by end-2026"
+ },
+ {
+  "section": 3,
+  "subtopic": "भारत-अमेरिका व्यापार करार 2026 स्थिती",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: (i) 7 फेब्रु 2026 रोजी अंतरिम करार आराखड्यावर सहमती (ii) BTA वाटाघाटी 13 फेब्रु 2025 पासून सुरू (iii) डिजिटल व्यापार अध्याय अंतरिम करारात समाविष्ट (iv) $500 अब्ज द्विपक्षीय व्यापार लक्ष्य. अचूक पर्याय निवडा.",
+  "q_english": "Statements: (i) Framework for Interim Agreement agreed on 7 Feb 2026 (ii) BTA talks launched 13 Feb 2025 (iii) Digital trade chapter included in interim pact (iv) $500 bn bilateral trade target. Choose the correct option.",
+  "options": [
+   "i, ii, iv बरोबर; iii चूक",
+   "i, ii, iii बरोबर; iv चूक",
+   "ii, iii, iv बरोबर; i चूक",
+   "सर्व बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "(iii) चूक: डिजिटल व्यापार अंतरिममध्ये नाही, BTA मध्ये घेणार (16 फेब्रु 2026 अधिकारी). i, ii, iv सत्य: PIB 7 फेब्रु 2026, BTA लाँच 13 फेब्रु 2025, $500 अब्ज लक्ष्य. त्यामुळे iii असलेले पर्याय चूक.",
+  "evidence": "PIB 7 Feb 2026 (Interim Framework); Commerce Ministry – BTA launched 13 Feb 2025; Business Standard 24 Apr 2026 ($500 bn target)"
+ },
+ {
+  "section": 3,
+  "subtopic": "मान्सून 2026 IMD दीर्घकालीन अंदाज",
+  "qtype": "बहु-विधान",
+  "q_marathi": "IMD च्या 2026 नैऋत्य मान्सून दीर्घकालीन अंदाजाबाबत विधाने पहा: (1) प्रथम टप्पा 13 एप्रिल 2026 रोजी 92% LPA (±5%) – 'below normal' अंदाज. (2) द्वितीय टप्प्यात 90% LPA (±4%) पर्यंत घटवले, El Niño विकसित होण्याच्या अंदाजाशी सुसंगत. (3) LPA आधार 1971-2020 कालावधीचे 87 सेमी. (4) IMD वर्गीकरणानुसार 90% म्हणजे 'deficient' श्रेणी. योग्य पर्याय निवडा:",
+  "q_english": "Consider statements on IMD's 2026 southwest monsoon long-range forecast: (1) First stage on 13 April 2026: 92% of LPA (±5%) – 'below normal'. (2) Second stage revised to 90% of LPA (±4%), linked to developing El Niño. (3) LPA base is 87 cm for 1971-2020. (4) Per IMD classification, 90% falls in 'deficient' category. Choose correct option:",
+  "options": [
+   "1, 2, 3 बरोबर; 4 चूक",
+   "1, 2, 4 बरोबर; 3 चूक",
+   "1, 3, 4 बरोबर; 2 चूक",
+   "2, 3, 4 बरोबर; 1 चूक"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1-3 सत्य: PIB नुसार प्रथम 92% (±5%), द्वितीय 90% (±4%) व El Niño अंदाज; LPA 1971-2020=87 सेमी. 4 चूक: 90% ही 'below normal' (90-95%) ची खालची सीमा, 'deficient' <90%. त्यामुळे B/C/D चुकीचे.",
+  "evidence": "IMD First Stage LRF 13 April 2026 (92% LPA ±5%) व Second Stage (90% LPA ±4%), PIB release; LPA 1971-2020 = 87 cm"
+ },
+ {
+  "section": 3,
+  "subtopic": "राष्ट्रकुल क्रीडा 2026 ग्लासगो",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता पहा (ग्लासगो 2026): (अ) यजमान – ग्लासगो, 2014 नंतर दुसऱ्यांदा (ब) क्रीडा – 10 प्रकार (क) सक्तीचे – अ‍ॅथलेटिक्स, जलतरण (ड) कालावधी – 28 जुलै ते 8 ऑगस्ट 2026. 4 स्थळे/8-मैल कॉरिडॉर या कपात मॉडेलशी सुसंगत अचूक जुळणी कोणती?",
+  "q_english": "Consider the table on Glasgow 2026: (a) Host – Glasgow, second time after 2014 (b) Sports – 10 types (c) Compulsory – Athletics, Swimming (d) Dates – 28 July to 8 Aug 2026. Which matching is consistent with the scaled-down model (4 venues/8-mile corridor)?",
+  "options": [
+   "अ, ब, क बरोबर; ड चूक",
+   "अ, ब, ड बरोबर; क चूक",
+   "ब, क, ड बरोबर; अ चूक",
+   "सर्व बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "ड चूक: 28 जुलै-8 ऑगस्ट ही बर्मिंगहॅम 2022 ची तारीख; ग्लासगो 2026 ही 23 जुलै-2 ऑगस्ट, 23वी आवृत्ती. ब/क बरोबर: 10 क्रीडा, अ‍ॅथलेटिक्स-जलतरण सक्तीचे; रग्बी सेव्हन्स वगळले. त्यामुळे ड असलेले पर्याय 2-4 चूक.",
+  "evidence": "CGF Glasgow 2026 Official Programme; Olympics.com – 23 July–2 Aug 2026, 23rd edition, 10 sports"
+ },
+ {
+  "section": 3,
+  "subtopic": "राष्ट्रीय हरित हायड्रोजन मिशन 2026",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "राष्ट्रीय हरित हायड्रोजन मिशनचे (तरतूद ₹19,744 कोटी; उद्दिष्ट 2030 पर्यंत 5 MMT प्रतिवर्ष) फेब्रु.2026 पर्यंत केवळ 8,000 टन प्रतिवर्ष क्षमता कार्यान्वित झाली, तर 4,12,000 TPA उत्पादन व 3 GW इलेक्ट्रोलायझर क्षमता 'अवॉर्ड' झाली आहे. या दोन संकल्पना एकत्र केल्यास कोणता निष्कर्ष निघतो?",
+  "q_english": "NGHM (outlay Rs 19,744 cr; target 5 MMT/yr by 2030) has only 8,000 TPA commissioned till Feb 2026, but 4,12,000 TPA production and 3 GW electrolyser capacity awarded. Combining both facts, which analytical conclusion follows?",
+  "options": [
+   "मिशन उत्पादन टप्प्यात नसून क्षमता-निर्मिती/अवॉर्ड टप्प्यात आहे; 2030 उद्दिष्टासाठी सुमारे 625 पट वाढ आवश्यक आहे.",
+   "8,000 TPA म्हणजे 2030 च्या 5 MMT उद्दिष्टाची सुमारे 80% पूर्तता झाली आहे.",
+   "₹19,744 कोटी तरतूद फेब्रु.2026 पर्यंत पूर्ण खर्च झाली असून उद्दिष्ट 2026 पर्यंत 5 MMT आहे.",
+   "4,12,000 TPA अवॉर्ड म्हणजे प्रत्यक्ष उत्पादन सुरू झाले असून 2030 उद्दिष्ट आधीच ओलांडले आहे."
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: 5 MMT=50 लाख टन; 8,000 टन म्हणजे 0.16% च, म्हणून 625 पट वाढ हवी; अवॉर्ड≠कार्यान्वित. चूक: 80% वाला पर्याय एकक गोंधळ, 2026 उद्दिष्ट वाला वर्ष व निधी खर्च चूक, अवॉर्ड=उत्पादन वाला संकल्पना गोंधळ.",
+  "evidence": "PIB 03 FEB 2026 (NGHM); Rajya Sabha reply MoS Shripad Naik Feb 2026 – 8,000 TPA commissioned till Feb 2026, 5 MMT/yr by 2030; outlay Rs 19,744 cr, 4,12,000 TPA awarded, 3 GW electrolyser"
+ },
+ {
+  "section": 3,
+  "subtopic": "लखपती दीदी योजना 2026 उद्दिष्ट",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: (1) मूळ उद्दिष्ट-2 कोटी, (2) हंगामी अर्थसंकल्प 2024-सुधारित 3 कोटी, (3) जुलै 2026-3.46 कोटी दीदींना सक्षम (DAY-NRLM), (4) PM आराखडा-6 कोटी. व्याख्या: वार्षिक ₹1 लाख शाश्वत उत्पन्न. तक्त्यावरून कोणता निष्कर्ष योग्य?",
+  "q_english": "Table: (1) original target-2 cr, (2) Interim Budget 2024-revised 3 cr, (3) July 2026-3.46 cr enabled (DAY-NRLM), (4) PM roadmap-6 cr. Definition: Rs 1 lakh sustainable annual income. Which conclusion from the table is correct?",
+  "options": [
+   "लखपती दीदी म्हणजे मासिक ₹1 लाख उत्पन्न असलेली महिला, म्हणून 3.46 कोटी आकडा अतिशयोक्ती आहे.",
+   "2 कोटी→3 कोटी वाढीनंतरही जुलै 2026 मध्ये 3.46 कोटी पूर्तता, त्यामुळे सुधारित उद्दिष्ट ओलांडले; 6 कोटी हे पुढील उद्दिष्ट आहे.",
+   "3.46 कोटी हे MUDRA कर्जाद्वारे साध्य झाले, DAY-NRLM चा संबंध नाही.",
+   "3.46 कोटी हे 6 कोटी उद्दिष्ट गाठता न आल्याने अपयश दर्शवते कारण मूळ उद्दिष्ट 2 कोटीच होते."
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बरोबर: 2→3 कोटी वाढीनंतरही जुलै 2026 मध्ये 3.46 कोटी पूर्तता म्हणजे सुधारित उद्दिष्ट ओलांडले; 6 कोटी पुढील टप्पा. चूक: मासिक नव्हे वार्षिक ₹1 लाख, MUDRA नव्हे DAY-NRLM, 3.46 कोटी हे यश नव्हे अपयश हा विपर्यास.",
+  "evidence": "MoRD July 2026 – 3.46 cr Lakhpati Didis under DAY-NRLM; FM Nirmala Sitharaman Interim Budget Feb 2024 – target raised 2 cr to 3 cr; definition Rs 1 lakh per annum per household; PM roadmap 6 cr"
+ },
+ {
+  "section": 3,
+  "subtopic": "सेमीकंडक्टर मिशन 2026 प्रगती",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "प्रतिपादन (A): अर्थसंकल्प 2026-27 मध्ये ISM 2.0 घोषित; भर उपकरणे-सामग्री उत्पादन व फुल-स्टॅक भारतीय IP वर. कारण (R): डिसें 2025 पर्यंत 6 राज्यांत ₹1.60 लाख कोटींचे 10 प्रकल्प मंजूर झाल्याने पुरवठा साखळी बळकटीस पुढील टप्पा आवश्यक होता.",
+  "q_english": "Assertion (A): Budget 2026-27 announced ISM 2.0 focusing on equipment-materials manufacturing and full-stack Indian IP. Reason (R): By Dec 2025, 10 projects worth Rs 1.60 lakh crore across 6 states were approved, necessitating the next phase for supply-chain strengthening.",
+  "options": [
+   "A व R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A व R दोन्ही सत्य, पण R हे A चे स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A सत्य: 1 फेब्रु 2026 अर्थसंकल्पात ISM 2.0 (₹40,000 कोटी तरतूद). R सत्य: PIB नुसार 10 प्रकल्प, ₹1.60 लाख कोटी. R मध्ये गतीचा तर्क A ला स्पष्ट करतो. R असत्य मानणारे पर्याय 3-4 चूक; स्पष्टीकरण नाकारणारा 2 चूक.",
+  "evidence": "PIB Budget 2026-27 (ISM 2.0, 1 Feb 2026); PIB Dec 2025 status – 10 projects, Rs 1.60 lakh crore, 6 states"
+ },
+ {
+  "section": 3,
+  "subtopic": "स्वच्छ भारत मिशन 2.0 टप्पा 2026",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): SBM (ग्रामीण) टप्पा-II 2020-21 ते 2026-27 मध्ये ODF शाश्वतता व घन-द्रव कचरा व्यवस्थापनाद्वारे गावांचे ODF Plus (Model) मध्ये रूपांतर हे उद्दिष्ट आहे. कारण (R): 1 जाने.2026 रोजी 83% हून अधिक गावे ODF Plus (Model) घोषित; 5.27 लाख गावांत घनकचरा व 5.41 लाख गावांत द्रवकचरा व्यवस्था.",
+  "q_english": "Assertion (A): SBM-Gramin Phase-II (2020-21 to 2026-27) aims at ODF sustainability and converting villages to ODF Plus (Model) via solid-liquid waste management. Reason (R): On 1 Jan 2026 over 83% villages declared ODF Plus (Model); 5.27 lakh villages with solid and 5.41 lakh with liquid waste arrangements.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे योग्य स्पष्टीकरण आहे.",
+   "A आणि R दोन्ही बरोबर, परंतु R हे A चे योग्य स्पष्टीकरण नाही.",
+   "A बरोबर, R चूक.",
+   "A चूक, R बरोबर."
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: A व R दोन्ही सत्य; R मधील 83% ODF Plus व SWM/LWM आकडेवारी A च्या उद्दिष्टाची परिणती दर्शवते. चूक: स्पष्टीकरण नाकारणे चुकीचे, एक विधान चूक ठरवणे तथ्याविरुद्ध; टप्पा 2020-25 नव्हे 2026-27.",
+  "evidence": "PIB 12 FEB 2026 – SBM(G) Phase II 2020-21 to 2026-27, ODF to ODF Plus (Model); PIB 01 JAN 2026 – 83% villages ODF Plus (Model), 5.27 lakh SWM, 5.41 lakh LWM"
+ },
+ {
+  "section": 4,
+  "subtopic": "आंबेडकर गोलमेज परिषदा भूमिका",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "दोन संकल्पना पहा: X: पहिल्या गोलमेज परिषदेत (1930) आंबेडकरांनी अस्पृश्यांना वेगळा अल्पसंख्याक दर्जा देऊन प्रौढ मताधिकारावर आधारित स्वतंत्र मतदारसंघ मागितला. Y: दुसऱ्या परिषदेतील (1931) गांधी-आंबेडकर मतभेदानंतर आंबेडकरांनी तिसऱ्या गोलमेज परिषदेवर (1932) बहिष्कार टाकला. योग्य पर्याय निवडा:",
+  "q_english": "Consider two concepts: X: At First RTC (1930) Ambedkar demanded separate minority status for Depressed Classes and separate electorate with adult franchise. Y: After Gandhi-Ambedkar clash at Second RTC (1931), Ambedkar boycotted Third RTC (1932). Choose correct option:",
+  "options": [
+   "X सत्य (स्वतंत्र मतदारसंघ), Y सत्य (तिसऱ्या परिषदेवर बहिष्कार)",
+   "X सत्य (स्वतंत्र मतदारसंघ), Y असत्य (तिन्ही परिषदांना उपस्थित)",
+   "X असत्य (राखीव जागांसह संयुक्त मतदारसंघ), Y सत्य (तिसऱ्या परिषदेवर बहिष्कार)",
+   "X असत्य (राखीव जागांसह संयुक्त मतदारसंघ), Y असत्य (फक्त पहिल्या परिषदेला उपस्थित)"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "X सत्य आहे; 1930 मध्ये अल्पसंख्याक दर्जा, स्वतंत्र मतदारसंघ व प्रौढ मताधिकार हीच मूळ मागणी होती.\nY असत्य कारण आंबेडकर तिन्ही परिषदांना उपस्थित होते; संयुक्त मतदारसंघ ही पुना करारातील तडजोड होती, त्यामुळे 0, 2, 3 बाद.",
+  "evidence": "RTC Proceedings 1930-32; Dr. Ambedkar Writings Vol-2; Communal Award 1932"
+ },
+ {
+  "section": 4,
+  "subtopic": "कुंवर सिंह आरा 1857 बिहार",
+  "qtype": "बहु-विधान",
+  "q_marathi": "कुंवर सिंह (1857, बिहार) बाबत विधाने पहा: A) जुलै 1857 मध्ये आरा येथे कॅप्टन डनबारचा पराभव करून आरा ताब्यात घेतले. B) ऑगस्ट 1857 मध्ये कॅप्टन आयरने आरा पुन्हा जिंकल्यानंतर त्यांनी लखनौकडे कूच केले. C) मार्च 1858 मध्ये त्यांनी आझमगड ताब्यात घेतले. D) एप्रिल 1858 मध्ये जगदीशपूरच्या लढाईतील पराभवानंतर त्यांना फाशी देण्यात आली. योग्य गट निवडा:",
+  "q_english": "Consider statements on Kunwar Singh (1857, Bihar): A) In July 1857 he defeated Captain Dunbar at Arrah and captured Arrah. B) After Captain Eyre retook Arrah in Aug 1857 he marched towards Lucknow. C) In March 1858 he captured Azamgarh. D) After defeat at Jagdispur in April 1858 he was hanged. Choose correct group:",
+  "options": [
+   "फक्त A, B, C",
+   "फक्त A, B, D",
+   "फक्त A, C, D",
+   "फक्त B, C, D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A, B, C सत्य आहेत; डनबारवरील विजय, आयरनंतर लखनौकडे प्रयाण व आझमगड विजय नोंदीत आहे.\nD चूक कारण 26 एप्रिल 1858 रोजी जखमांमुळे मृत्यू झाला, फाशी नाही; त्यामुळे D असलेले पर्याय बाद होतात.",
+  "evidence": "Bihar District Gazetteer Bhojpur; Eyre-Dunbar dispatches 1857; मृत्यू 26 एप्रिल 1858"
+ },
+ {
+  "section": 4,
+  "subtopic": "चालुक्य ऐहोळे प्रशस्ती रविकीर्ती",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (a) रविकीर्ती (b) प्रशस्तीची भाषा-लिपी (c) शक संवत् 556 (d) 'सकलोत्तरापथनाथ' — (1) पुलकेशी II चा आश्रित कवी (2) संस्कृत भाषा, कन्नड लिपी (3) इ.स. 634-35 (4) हर्षवर्धन",
+  "q_english": "Match the pairs: (a) Ravikirti (b) Language-script of the prashasti (c) Saka Samvat 556 (d) 'Sakalottarapathanatha' — (1) court poet of Pulakeshin II (2) Sanskrit language, Kannada script (3) CE 634-35 (4) Harshavardhana",
+  "options": [
+   "a-1, b-2, c-3, d-4",
+   "a-1, b-2, c-4, d-3",
+   "a-2, b-1, c-3, d-4",
+   "a-1, b-3, c-2, d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अचूक: रविकीर्ती पुलकेशी II चा कवी, प्रशस्ती संस्कृत-कन्नड लिपीत, शक 556=634-35, सकलोत्तरापथनाथ=हर्षवर्धन.\nचूक: B मध्ये c-d अदलाबदल; C मध्ये a-b अदलाबदल; D मध्ये b-c अदलाबदल (भाषा≠वर्ष).",
+  "evidence": "Aihole Meguti inscription, Saka 556 = 634-35 CE; Epigraphia Indica Vol.6"
+ },
+ {
+  "section": 4,
+  "subtopic": "टिळक मंडाले तुरुंगवास",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (i) शिक्षा वर्ष (ii) IPC कलम (iii) तुरुंग स्थान (iv) तुरुंगात लिहिलेला ग्रंथ. योग्य जोडी-संच निवडा.",
+  "q_english": "Match: (i) year of sentence (ii) IPC section (iii) prison location (iv) book written in prison. Choose correct set.",
+  "options": [
+   "(i)-1908, (ii)-124A, (iii)-मंडाले, (iv)-गीतारहस्य",
+   "(i)-1897, (ii)-124A, (iii)-मंडाले, (iv)-गीतारहस्य",
+   "(i)-1908, (ii)-121, (iii)-येरवडा, (iv)-ओरायन",
+   "(i)-1908, (ii)-124A, (iii)-अंदमान, (iv)-आर्क्टिक होम इन वेदाज"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: 1908 केसरी खटला, 124A राजद्रोह, मंडाले (ब्रह्मदेश), गीतारहस्य.\nचूक: 1 मध्ये 1897 (पहिला खटला) गल्लत, 2 मध्ये 121/येरवडा/ओरायन, 3 मध्ये अंदमान/आर्क्टिक होम चूक.",
+  "evidence": "Bombay High Court Tilak Trial Records 1908; IPC 124A; Sedition Committee Report 1918"
+ },
+ {
+  "section": 4,
+  "subtopic": "तोरणा किल्ला 1646 पहिला विजय",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "1646 तोरणा विजय: आदिलशाहीची स्थिती (C) आणि त्यातून मिळालेल्या साधनांचा विनियोग (E) यांची अचूक कारण-परिणाम जोडी ओळखा.",
+  "q_english": "Torna victory 1646: Identify the historically accurate cause (C) - effect (E) chain linking Adilshahi condition and use of resources gained.",
+  "options": [
+   "C: आदिलशाही कर्नाटक मोहिमेत गुंतली, सुलतान आजारी; नियंत्रण सैल / E: तोरणा धनातून राजगड उभारणी, स्वतंत्र महसूल पाया",
+   "C: 1636 मुघल-आदिलशाही तहानंतर स्थैर्य होते / E: तोरणा धनातून पुरंदरची तटबंदी बळकट केली",
+   "C: 1645 मध्ये शहाजी सुटकेनंतर उत्साह / E: कोंढाणा जिंकून राजधानी तेथे हलवली",
+   "C: 1647 मध्ये जावळी मोऱ्यांचा पराभव / E: तोरणा धन प्रतापगड बांधकामास वापरले"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: 1646 मध्ये आदिलशाहीचे दुर्लक्ष हेच संधी-कारण; सभासद बखरीनुसार धन राजगडास वापरले.\nचूक: 1 मध्ये परिणाम चूक (पुरंदर), 2 मध्ये वर्ष/किल्ला चूक (1645/कोंढाणा), 3 मध्ये वर्ष/किल्ला चूक (1647/प्रतापगड 1656).",
+  "evidence": "Sabhasad Bakhar; Grant Duff History of Mahrattas Vol.I (1826); Maharashtra State Gazetteer Pune District"
+ },
+ {
+  "section": 4,
+  "subtopic": "नानासाहेब पेशवे पानिपतपूर्व तयारी",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "नानासाहेब पेशव्यांच्या पानिपतपूर्व तयारी संदर्भात योग्य कारण-परिणाम जोडी ओळखा:",
+  "q_english": "Regarding Nanasahib Peshwa's pre-Panipat preparations, identify the correct cause-effect pair:",
+  "options": [
+   "कारण: भाऊच्या तांड्यात हजारो यात्रेकरू-कुटुंबीय; परिणाम: पुरवठा ताण, गतिशीलता घटून वेढा",
+   "कारण: दिल्ली महसूल वसुलीचे आदेश; परिणाम: जाट-शिखांनी पूर्ण सैन्यसहाय्य दिले",
+   "कारण: इब्राहिम गारदीचा तोफखाना; परिणाम: मराठा तोफा अब्दालीच्या जंबुरकांपेक्षा गतिमान ठरल्या",
+   "कारण: दत्ताजी शिंदेंना सर्वाधिकार; परिणाम: होळकर-शिंदे समन्वय पूर्ण साधला"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: बिगर-लढाऊ तांड्यामुळे अन्नटंचाई व वेढा — समकालीन बखरींचा निष्कर्ष.\nचूक: B-जाट/शिख तटस्थ राहिले; C-अब्दालीचे उंट-तोफखाने अधिक गतिमान; D-दत्ताजी 1760 मध्ये बरारीघाटावर मृत, समन्वय झाला नाही.",
+  "evidence": "Third Battle of Panipat, 14 Jan 1761; Panipat Bakhar on Bhau's non-combatant encumbrance"
+ },
+ {
+  "section": 4,
+  "subtopic": "नौदल उठाव 1946 मुंबई",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "नौदल उठाव 1946 चा कालक्रम लावा: A) एचएमआयएस तलवारवरील खलाशांचा संप (18 फेब्रुवारी) B) केंद्रीय नौदल संप समितीची स्थापना (19 फेब्रुवारी) C) मुंबईत कामगार संप व जनआंदोलन (20 फेब्रुवारी) D) सरदार पटेलांच्या आवाहनानंतर आत्मसमर्पण (23 फेब्रुवारी). योग्य क्रम निवडा:",
+  "q_english": "Arrange Naval Uprising 1946 chronology: A) HMIS Talwar ratings strike (18 Feb) B) Central Naval Strike Committee formed (19 Feb) C) Bombay workers strike and upsurge (20 Feb) D) Surrender after Sardar Patel's appeal (23 Feb). Choose correct sequence:",
+  "options": [
+   "A-B-C-D",
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-B-D-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A-B-C-D बरोबर; 18 ला तलवार संप, 19 ला समिती व मागण्या, 20 ला कामगार सहभाग, 23 ला समर्पण.\nपर्याय 1 मध्ये B-C अदलाबदल, पर्याय 2 मध्ये B आधी A अशक्य, पर्याय 3 मध्ये D मध्ये C नंतर अशक्य.",
+  "evidence": "Naval Mutiny Enquiry Report 1946; HMIS Talwar log Feb 1946; Patel-Jinnah appeal 22-23 Feb 1946"
+ },
+ {
+  "section": 4,
+  "subtopic": "बहामनी महमूद गवान मदरसा बिदर",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): गवानचा बिदर मदरसा हा त्याच्या केंद्रीकरणवादी सुधारणांचा सांस्कृतिक विस्तार होता. कारण (R): मदरशातून घडणारा फारसी-शिक्षित नोकरवर्ग दख्खनी सरदारांच्या वंशपरंपरागत सत्तेला शह देत होता.",
+  "q_english": "Assertion (A): Gawan's Bidar madrasa was a cultural extension of his centralising reforms. Reason (R): Its Persian-educated bureaucracy challenged the hereditary power of Deccani nobles.",
+  "options": [
+   "A व R दोन्ही सत्य, R हे A चे अचूक स्पष्टीकरण आहे",
+   "A व R दोन्ही सत्य, पण R हे A चे अचूक स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: गवानने 8 तरफ, दख्खनी अंकुश; मदरसा (1472) अफाकी नोकरशाही घडवत होता — R मुळे A स्पष्ट होते.\nचूक: B स्पष्टीकरण नाकारते; C-D मध्ये एक सत्य एक असत्य मानणे चुकीचे.",
+  "evidence": "Madrasa-i Mahmud Gawan, Bidar, 1472 CE; Bahmani taraf reforms under Muhammad Shah III"
+ },
+ {
+  "section": 4,
+  "subtopic": "यादव देवगिरी किल्ला बांधकाम",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): यादवांनी कल्याणी चालुक्यांच्या ऱ्हासानंतर दख्खन व्यापारी मार्गांवर नियंत्रणासाठी 12व्या शतकाच्या उत्तरार्धात देवगिरीस राजधानी करून गिरिदुर्ग उभारला. कारण (R): भिल्लम पंचमने सु.1187 मध्ये देवगिरीचा पाया घालून तटबंदी केली, ज्याने गुजरात-माळवा-दख्खन त्रिकोण स्थिरावला. योग्य संबंध ओळखा.",
+  "q_english": "Assertion (A): After the decline of Kalyani Chalukyas, Yadavas made Devagiri their capital in late 12th century and built the hill fort to control Deccan trade routes. Reason (R): Bhillama V founded Devagiri c.1187 and fortified it, stabilising the Gujarat-Malwa-Deccan triangle. Choose correct relation.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे अचूक स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे अचूक स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: भिल्लम पंचम (सु.1187) ने चालुक्योत्तर पोकळीत देवगिरी राजधानी केली; R हेच A चे कारण स्पष्ट करते.\nचूक: B स्पष्टीकरण नाकारते; C/D एक विधान चूक ठरवतात, पण गॅझेटियरनुसार दोन्ही सत्य आहेत.",
+  "evidence": "Maharashtra State Gazetteer, Aurangabad District (1977); ASI Daulatabad Fort note; Bhillama V c.1173-1192"
+ },
+ {
+  "section": 4,
+  "subtopic": "यादव हेमाद्री चतुर्वर्गचिंतामणी",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने पहा: (1) चतुर्वर्गचिंतामणी संस्कृत ग्रंथ आहे (2) हेमाद्री महादेव-रामचंद्र यादवांचा महामात्य होता (3) धर्मखंडात व्रत-दानखंड समाविष्ट आहेत (4) हेमाद्रीने मोडी लिपी शोधली — योग्य पर्याय निवडा",
+  "q_english": "Consider statements: (1) Chaturvarga Chintamani is a Sanskrit work (2) Hemadri was mahamatya of Yadava kings Mahadeva-Ramachandra (3) Dharmakhanda includes Vrata-Dana khandas (4) Hemadri invented Modi script — choose correct option",
+  "options": [
+   "फक्त 1, 2 बरोबर",
+   "1, 2, 3 बरोबर; 4 चूक",
+   "1, 2, 4 बरोबर; 3 चूक",
+   "सर्व बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बरोबर: 1-3 सत्य (संस्कृत, महामात्य, व्रत-दानखंड); 4 असत्य — मोडीचे श्रेय लोकसमज, पुरावा नाही.\nचूक: A अपूर्ण; C मध्ये 3 वगळणे व 4 स्वीकारणे चुकीचे; D मध्ये 4 चा समावेश चुकीचा.",
+  "evidence": "Hemadri, Chaturvarga-Chintamani (13th c.), 4 khandas: Dharma-Artha-Kama-Moksha; Seuna Yadava minister c.1259-1274"
+ },
+ {
+  "section": 4,
+  "subtopic": "राष्ट्रकूट अमोघवर्ष मान्यखेट",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कालक्रम लावा: (1) अमोघवर्ष I चा राज्यारोहण (2) मान्यखेट राजधानीची स्थापना (3) कविराजमार्गाची रचना (4) जिनसेन प्रभावाने जैनमताकडे झुकाव",
+  "q_english": "Arrange chronologically: (1) Accession of Amoghavarsha I (2) Establishment of Manyakheta as capital (3) Composition of Kavirajamarga (4) Inclination to Jainism under Jinasena's influence",
+  "options": [
+   "1-2-3-4",
+   "1-3-2-4",
+   "2-1-3-4",
+   "1-2-4-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: 814 राज्यारोहण → मान्यखेट स्थापना → सुमारे 850 कविराजमार्ग → उत्तरकाळात जैन प्रभाव.\nचूक: B मध्ये साहित्यकृती राजधानीपूर्वी अशक्य; C मध्ये राजधानी राज्यारोहणपूर्वी (दंतिदुर्गाशी गल्लत); D मध्ये जैन झुकाव कविराजमार्गापूर्वी.",
+  "evidence": "Amoghavarsha I reign 814-878 CE; Kavirajamarga c.850 CE"
+ },
+ {
+  "section": 4,
+  "subtopic": "वसई मोहीम 1739 चिमाजी अप्पा",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "संकल्पना X: चिमाजी अप्पाने 1739 मध्ये पोर्तुगीज उत्तर प्रांतातील (Northern Province) तटबंदी शृंखला भेदून वसई जिंकले. संकल्पना Y: विजयाचे निर्णायक कारण गोवा-मुंबई सागरी कोंडी नव्हे, तर जमिनीवरील तोफखाना व खंदक-वेढा तंत्र होते. योग्य समन्वय ओळखा.",
+  "q_english": "Concept X: Chimaji Appa breached the Portuguese Northern Province fort chain and captured Vasai in 1739. Concept Y: Decisive factor was not Goa-Mumbai sea blockade but land artillery and trench-siege technique. Identify correct synthesis.",
+  "options": [
+   "X सत्य, Y सत्य; मे 1739 वसई पतनाने उत्तर प्रांत संपला, जमिनीवरील वेढा निर्णायक ठरला",
+   "X सत्य, Y असत्य; पराभव केवळ ब्रिटिश नौदल मदत न मिळाल्याने झाला",
+   "X असत्य (वसई 1737 मध्येच पडले), Y सत्य",
+   "X सत्य, Y सत्य; पण श्रेय बाजीरावाच्या दिल्ली मोहिमेला जाते"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: वसई 23 मे 1739 रोजी पडले; पेशवा दफ्तरानुसार खंदक-तोफखाना निर्णायक.\nचूक: 1 ब्रिटिश नौदल गैरसमज, 2 वर्ष चूक (1737), 3 कर्तृत्व गल्लत (बाजीराव नव्हे चिमाजी).",
+  "evidence": "Peshwa Daftar - Vasai Mohim Kaifiyat; Grant Duff Vol.II (1826); Portuguese Surrender of Bassein 23 May 1739"
+ },
+ {
+  "section": 4,
+  "subtopic": "शाहू वेदोक्त प्रकरण",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा (वेदोक्त प्रकरण 1900-1902): A) राजोपाध्ये B) शाहू महाराज C) भास्करराव जाधव D) दीर्घकालीन परिणाम — 1) वेदोक्त मंत्र नाकारून पुराणोक्त आग्रह 2) क्षत्रिय जगद्गुरु पीठाची स्थापना 3) वेदोक्त समर्थनार्थ जाहीर प्रचार 4) बहुजन पुरोहित प्रशिक्षणास चालना. योग्य कोड निवडा:",
+  "q_english": "Match pairs (Vedokta controversy 1900-1902): A) Rajopadhye B) Shahu Maharaj C) Bhaskarrao Jadhav D) Long-term outcome — 1) Denied Vedokta, insisted on Puranokta 2) Established Kshatra Jagadguru Peeth 3) Public campaign for Vedokta 4) Boost to Bahujan priest training. Choose correct code:",
+  "options": [
+   "A-1, B-2, C-3, D-4",
+   "A-1, B-4, C-3, D-2",
+   "A-3, B-2, C-1, D-4",
+   "A-1, B-2, C-4, D-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A-1, B-2, C-3, D-4 बरोबर; राजोपाध्येंचा नकार, शाहूंचे क्षत्रिय जगद्गुरु पीठ, जाधवांचा प्रचार व पुरोहित प्रशिक्षण हा क्रम आहे.\nपर्याय 1 मध्ये B-D अदलाबदल, पर्याय 2 मध्ये A-C अदलाबदल, पर्याय 3 मध्ये C-D अदलाबदल चुकीची आहे.",
+  "evidence": "Kolhapur State Records 1900-1902; Rajarshi Shahu Charitra; क्षत्रिय जगद्गुरु पीठ स्थापना 1902"
+ },
+ {
+  "section": 4,
+  "subtopic": "सातवाहन प्रतिष्ठान पैठण राजधानी",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता पहा: 1) सिमुक - प्रतिष्ठान - पुराणांत संस्थापक 2) गौतमीपुत्र सातकर्णी - प्रतिष्ठान - नाशिक प्रशस्ती उल्लेख 3) वाशिष्ठीपुत्र पुलुमावी - प्रतिष्ठान - टॉलेमीच्या ग्रंथात बैठणा उल्लेख 4) यज्ञश्री सातकर्णी - धरणीकोट - मत्स्यपुराणात राजधानी. तक्त्याबाबत योग्य विधान निवडा:",
+  "q_english": "See table: 1) Simuka - Pratishthan - founder in Puranas 2) Gautamiputra Satakarni - Pratishthan - Nashik prashasti 3) Vasishthiputra Pulumavi - Pratishthan - Ptolemy mentions as Baithana 4) Yajna Sri Satakarni - Dharanikota - capital in Matsya Purana. Choose correct statement:",
+  "options": [
+   "चारही पंक्ती बरोबर",
+   "फक्त 1, 2, 3 बरोबर",
+   "फक्त 2, 3, 4 बरोबर",
+   "फक्त 1, 2, 4 बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1, 2, 3 बरोबर; प्रतिष्ठान-पैठण राजधानी पुराण, नाशिक प्रशस्ती व टॉलेमीच्या बैठणा उल्लेखाने सिद्ध होते.\nपंक्ती 4 चूक कारण यज्ञश्रीची राजधानीही प्रतिष्ठानच होती, धरणीकोट हे पूर्वेकडील केंद्र होते; 4 असलेले पर्याय बाद.",
+  "evidence": "Nashik Cave Inscription of Gautami Balashri; Ptolemy Geography c.150 CE Baithana; Matsya Purana"
+ },
+ {
+  "section": 4,
+  "subtopic": "सूरत लूट 1664 शिवाजी",
+  "qtype": "बहु-विधान",
+  "q_marathi": "सुरत लूट 1664 बद्दल विधाने: a) 6-10 जाने.1664 लूट शायिस्तेखान (1663) नंतर मुघल व्यापारी केंद्रावर आघात होती. b) इंग्रज-डच वखारी पूर्ण लुटल्या नाहीत; ऑक्सेंडनने तह/संरक्षण केले. c) उद्देश केवळ धार्मिक होता. d) नंतर औरंगजेबाने मिर्झाराजा जयसिंगला दख्खनेत पाठवले (पुरंदर 1665). योग्य संच निवडा.",
+  "q_english": "Statements on Surat sack 1664: a) 6-10 Jan 1664 raid struck Mughal trade centre after Shaistakhan (1663). b) English-Dutch factories were not fully looted; Oxenden negotiated/defended. c) Motive was purely religious. d) Aurangzeb then sent Mirza Raja Jai Singh to Deccan (Purandar 1665). Choose correct set.",
+  "options": [
+   "a, b, d बरोबर; c चूक",
+   "a, b, c बरोबर; d चूक",
+   "a, d बरोबर; b चूक (युरोपियन वखारी पूर्ण लुटल्या)",
+   "b, c, d बरोबर; a चूक (1670 ची दुसरी लूट हीच पहिली)"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: a,b,d सत्य; c चूक कारण उद्देश आर्थिक-लष्करी होता, धार्मिक नव्हे.\nचूक: 1 मध्ये c सत्य मानले, 2 मध्ये b नाकारले (युरोपियन लूट गैरसमज), 3 मध्ये 1664/1670 गल्लत केली.",
+  "evidence": "English Factory Records Surat 1664; J.N. Sarkar - Shivaji and His Times (1920); Grant Duff Vol.I"
+ },
+ {
+  "section": 5,
+  "subtopic": "कृष्णा वारणा उपनदी",
+  "qtype": "नकाशा आधारित",
+  "q_marathi": "नकाशाचे निरीक्षण करा: कृष्णा नदीच्या प्रवाहात कराडपासून दक्षिण-आग्नेय दिशेने जाताना तिच्या उपनद्यांचे संगम कोणत्या उत्तर-दक्षिण क्रमाने येतात?",
+  "q_english": "Observe the map: While moving downstream along Krishna River from Karad towards south-southeast, in which north-to-south order do its tributary confluences occur?",
+  "options": [
+   "कोयना – वारणा – पंचगंगा",
+   "वारणा – कोयना – पंचगंगा",
+   "कोयना – पंचगंगा – वारणा",
+   "पंचगंगा – वारणा – कोयना"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कोयना कराड येथे, वारणा हरीपूर (सांगली) येथे, पंचगंगा नरसोबावाडी येथे मिळते; म्हणून उत्तर-दक्षिण क्रम कोयना→वारणा→पंचगंगा. इतर पर्याय संगमांची अदलाबदल करतात, जे नकाशाविरुद्ध आहे.",
+  "evidence": "Maharashtra WRD Sub-basin booklet / IWAI Krishna feasibility report: Koyna meets Krishna at Karad, Warna at Haripur (Sangli), Panchganga at Narsobawadi"
+ },
+ {
+  "section": 5,
+  "subtopic": "कोकण अलिबाग-मुरुड किनारा भूरूप",
+  "qtype": "नकाशा आधारित",
+  "q_marathi": "SOI नकाशावर अलिबाग (18°38' उ.) ते मुरुड (18°19' उ.) पट्टा पहा: कुलाबा किल्ला भरतीला बेट होतो, ओहोटीला वाळूच्या अरुंद पट्ट्याने मुख्य भूमीला जोडला जातो; राजापुरी खाडीच्या मुखात एका किनाऱ्यापासून वाढलेला निमुळता वाळूअडसर दिसतो. ही दोन भूरूपे अनुक्रमे कोणती?",
+  "q_english": "On the SOI map Alibag (18°38'N) to Murud (18°19'N): Kolaba Fort is an island at high tide and joins the mainland by a narrow sand strip at low tide; at Rajapuri creek mouth a tapering sand barrier grows from one shore. Identify the two landforms in order.",
+  "options": [
+   "टोंबोलो आणि स्पिट",
+   "स्पिट आणि टोंबोलो",
+   "टोंबोलो आणि बॅरियर बेट",
+   "स्पिट आणि बॅरियर बेट"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "कुलाबा बेटाला वाळूपट्टीने भूमीशी जोडते = टोंबोलो; खाडीमुखात एका बाजूने वाढणारा अडसर = स्पिट.\nबॅरियर बेट किनाऱ्याला समांतर असते (पर्याय 3,4 चूक); पर्याय 2 मध्ये क्रम उलटा आहे.",
+  "evidence": "Maharashtra State Gazetteer – Raigad District (1983); GSI – Coastal Geomorphology of Konkan"
+ },
+ {
+  "section": 5,
+  "subtopic": "गडचिरोली लोहखनिज",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "सूरजागड (गडचिरोली) लोहखाणीच्या विकासातील घटनांचा योग्य कालक्रम लावा: a. 348.09 हे. वर 20 वर्षांसाठी खाण भाडेपट्टा मंजूर, b. माओवादी अडथळ्यांनंतर प्रत्यक्ष खाणकाम सुरू, c. भाडेपट्ट्यास 2057 पर्यंत मुदतवाढ, d. खाणीस पर्यावरण मंजुरी (EC).",
+  "q_english": "Arrange chronology of Surjagarh (Gadchiroli) iron ore mine development: a. Mining lease granted for 348.09 ha for 20 years, b. Actual mining operations commenced after Maoist hurdles, c. Lease extended till 2057, d. Environmental Clearance (EC) to mine.",
+  "options": [
+   "a-b-c-d",
+   "a-c-b-d",
+   "b-a-c-d",
+   "a-b-d-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य क्रम: 2007 भाडेपट्टा → 2016 खाणकाम सुरू → 2017 मध्ये 2057 पर्यंत मुदतवाढ → 2023 EC. पर्याय 2 मध्ये मुदतवाढ आधी दाखवणे, 3-4 मध्ये EC/वाढीचा क्रम चुकवणे ही जवळच्या वर्षांची सामान्य चूक आहे.",
+  "evidence": "Sansad.in / Indian Express: Lease granted 13.04.2007 (20 yrs, 348.09 ha), operations commenced 2016, extended 02.05.2017 till 02.05.2057, EC vide letter 24.02.2023"
+ },
+ {
+  "section": 5,
+  "subtopic": "गोदावरी मांजरा उपनदी",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्त्यात मांजरा नदीसाठी (उगम – संगम – प्रारंभिक वाहिनी दिशा) नोंदी दिल्या आहेत. उगम/संगम/दिशा या तिन्ही निकषांवर पूर्णतः सत्य पंक्ती ओळखा.",
+  "q_english": "Table gives entries for Manjra river (origin – confluence – initial flow direction). Identify the fully correct row on all three criteria.",
+  "options": [
+   "उगम: बीड (बालाघाट) – संगम: कांदाकुर्ती (निझामाबाद) – दिशा: आग्नेय",
+   "उगम: लातूर (बालाघाट) – संगम: कांदाकुर्ती (निझामाबाद) – दिशा: आग्नेय",
+   "उगम: बीड (बालाघाट) – संगम: विष्णुपुरी (नांदेड) – दिशा: आग्नेय",
+   "उगम: बीड (बालाघाट) – संगम: कांदाकुर्ती (निझामाबाद) – दिशा: नैऋत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "मांजरा उगम बीड-बालाघाट (पाटोद्याजवळ), संगम कांदाकुर्ती-निझामाबाद, दिशा आग्नेय सत्य.\nपर्याय 2 मध्ये उगम चूक (लातूर प्रवाहमार्ग), 3 मध्ये संगम चूक, 4 मध्ये दिशा चूक.",
+  "evidence": "Central Water Commission – Godavari Basin Report (2015); Maharashtra State Gazetteer – Beed District"
+ },
+ {
+  "section": 5,
+  "subtopic": "गोसीखुर्द सिंचन प्रकल्प",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: गोसीखुर्द–स्थान पौनी (भंडारा)/नदी वैनगंगा; माती धरण 10452 मी/काँक्रीट धरण 904 मी; उचल योजना–टेकेपार, अंभोरा, मोखाबर्डी, नेरला; लिंक कालवा–उजव्या तटातून नळगंगाकडे. या आधारे कोणता निष्कर्ष योग्य?",
+  "q_english": "Table: Gosikhurd–Pauni (Bhandara)/River Wainganga; earth dam 10452 m/concrete 904 m; lift schemes–Tekepar, Ambhora, Mokhabardi, Nerla; link canal–from right flank to Nalganga. Which inference is correct?",
+  "options": [
+   "धरण वर्धा उपखोऱ्यात असून लाभक्षेत्र मराठवाड्याला आहे",
+   "सर्व नोंदी सुसंगत; VIDC मार्फत भंडारा-नागपूर-चंद्रपूरला ~1.96 लाख हे. सिंचन",
+   "उचल योजनांपैकी अंभोरा ही निम्न वर्धा प्रकल्पाची आहे",
+   "माती धरणाची उंची 28.37 मी व काँक्रीटची 22.5 मी आहे"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "ब बरोबर: सर्व नोंदी IndiaWRIS/NWDAशी जुळतात; VIDC मार्फत भंडारा-नागपूर-चंद्रपूरला लाभ. अ चूक: नदी वैनगंगा (गोदावरी खोरे), वर्धा नव्हे. क चूक: चारही उचल योजना गोसीखुर्दच्याच. ड चूक: माती 22.5 मी, काँक्रीट 28.37 मी–अदलाबदल केली आहे.",
+  "evidence": "IndiaWRIS JI00481 (earth dam 10452.10m/22.50m, concrete 903.90m/28.37m, Pauni-Bhandara, 4 LIS); NWDA DPR Wainganga-Gosikhurd-Nalganga link (right flank, FSL 243m); CAG 1983 approval 2,50,800 ha"
+ },
+ {
+  "section": 5,
+  "subtopic": "छ. संभाजीनगर खाम नदी",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: (1) खाम–गोदावरीची उपनदी, उगम जटवाडा टेकड्या/हर्सूल परिसर (2) लांबी ~65 किमी, नाथसागराजवळ नाडीकठच्या गावी मिळते (3) River Cities Alliance अंतर्गत Urban River Management Plan असलेली पहिली हंगामी नदी; पुनरुज्जीवन मोहीम 2021. योग्य पर्याय?",
+  "q_english": "Statements: (1) Kham–Godavari tributary, origin Jatwada hills/Harsul (2) Length ~65 km, meets NathSagar near Nadikathche Gaon (3) First seasonal river with Urban River Management Plan under River Cities Alliance; revival mission 2021. Correct option?",
+  "options": [
+   "फक्त 1 व 2 बरोबर, 3 मधील मोहीम 2016 ची आहे",
+   "1, 2, 3 सर्व बरोबर",
+   "फक्त 2 बरोबर; उगम गौताळा टेकड्या, लांबी 135 किमी आहे",
+   "फक्त 3 बरोबर; खाम ही पूर्णा-तापीची उपनदी आहे"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "ब बरोबर: तिन्ही विधाने URMP अहवालाशी जुळतात (उगम, 60-65 किमी लांबी, 2021 मोहीम). अ चूक: 2016 वर्ष चूक. क चूक: गौताळा/135 किमी ही गोदावरीची संदर्भ-लांबी. ड चूक: खाम गोदावरीचीच उपनदी.",
+  "evidence": "NMCG Final Aurangabad URMP 7 July 2023 (Kham tributary of Godavari, Jatwada hills, 65 km to NathSagar); MPCB 65-km revitalisation note; Indianetzone (first seasonal river with URMP)"
+ },
+ {
+  "section": 5,
+  "subtopic": "तापी पूर्णा उपनदी",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): पूर्णा ही तापीची प्रमुख उपनदी असून तिचा संगम जळगाव जिल्ह्यातील चांगदेव येथे होतो. कारण (R): तापी खोऱ्यातील पूर्णा नदीचा उगम मध्य प्रदेशातील बैतूल जिल्ह्यातील सातपुड्यात होऊन ती विदर्भातून वाहते.",
+  "q_english": "Assertion (A): Purna is a major tributary of Tapi and joins it at Changdev in Jalgaon district. Reason (R): The Purna of Tapi basin originates in Satpura hills of Betul district, Madhya Pradesh and flows through Vidarbha.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A सत्य: पूर्णा-तापी संगम चांगदेव (मुक्ताईनगर, जळगाव) येथे. R सत्य: उगम बैतूल-सातपुडा, विदर्भातून वाहते (गोदावरीच्या पूर्णेपासून वेगळी). पण उगमस्थान संगमस्थानाचे कारण स्पष्ट करत नाही; म्हणून योग्य स्पष्टीकरण नाही.",
+  "evidence": "NWDA Hydrology report / Purna River study: Purna principal affluent of Tapi, rises in Betul (Gawilgarh hills), confluence with Tapi at Changdev, Muktainagar taluka, Jalgaon"
+ },
+ {
+  "section": 5,
+  "subtopic": "दख्खन पठार अजिंठा डोंगररांग",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने पहा: 1) अजिंठा रांग बेसाल्ट थरांच्या सौम्य उतारामुळे क्वेस्टा भूरूप दाखवते. 2) ही तापी-पूर्णा व गोदावरी खोऱ्यातील जलद्विभाजक आहे. 3) ही विंध्य पर्वताची विस्तारित संरचना आहे. 4) अजिंठा लेणी बेसाल्टमधील आडव्या सांधसंचात कोरल्या आहेत. योग्य पर्याय कोणता?",
+  "q_english": "Statements: 1) Ajintha range shows cuesta form due to gentle dip of basalt layers. 2) It is the Tapi-Purna and Godavari basin water-divide. 3) It is an extended structure of Vindhya range. 4) Ajanta caves are cut in horizontal joints of basalt. Choose correct option.",
+  "options": [
+   "फक्त 1, 2 व 3 बरोबर",
+   "फक्त 1, 2 व 4 बरोबर",
+   "फक्त 2, 3 व 4 बरोबर",
+   "सर्व 1, 2, 3, 4 बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1 क्वेस्टा, 2 जलद्विभाजक, 4 बेसाल्ट लेणी सत्य; 3 असत्य – अजिंठा डेक्कन ट्रॅपचा भाग, विंध्य नव्हे.\nम्हणून 3 समाविष्ट असलेले पर्याय 1, 3, 4 चूक.",
+  "evidence": "GSI – Geology of Deccan Traps; Archaeological Survey of India – Ajanta Caves Report"
+ },
+ {
+  "section": 5,
+  "subtopic": "नवेगाव-नागझिरा व्याघ्र",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (स्तंभ-I व्याघ्र प्रकल्प) a. नवेगाव-नागझिरा, b. ताडोबा-अंधारी, c. बोर, d. सह्याद्री — (स्तंभ-II क्षेत्र) 1. गोंदिया-भंडारा, 2. चंद्रपूर, 3. वर्धा, 4. सातारा-सांगली-कोल्हापूर-रत्नागिरी. योग्य संकेत निवडा.",
+  "q_english": "Match pairs: (Column-I Tiger Reserve) a. Navegaon-Nagzira, b. Tadoba-Andhari, c. Bor, d. Sahyadri — (Column-II Area) 1. Gondia-Bhandara, 2. Chandrapur, 3. Wardha, 4. Satara-Sangli-Kolhapur-Ratnagiri. Choose the correct code.",
+  "options": [
+   "a-1, b-2, c-3, d-4",
+   "a-2, b-1, c-3, d-4",
+   "a-1, b-2, c-4, d-3",
+   "a-1, b-3, c-2, d-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "नवेगाव-नागझिरा (2013, 5वे) गोंदिया-भंडारा, ताडोबा चंद्रपूर, बोर वर्धा, सह्याद्री चार जिल्ह्यांत विस्तारले. पर्याय 2 मध्ये गोंदिया-चंद्रपूर अदलाबदल, 3-4 मध्ये बोर/ताडोबा अदलाबदल ही सामान्य चूक आहे.",
+  "evidence": "NTCA notification 7 Sept 2013; Vajiram/GK Today: NNTR 5th tiger reserve of Maharashtra, 46th of India, spans Gondia-Bhandara (653.67 sq km)"
+ },
+ {
+  "section": 5,
+  "subtopic": "नागपूर कन्हान-पेंच नदी प्रणाली",
+  "qtype": "नकाशा आधारित",
+  "q_marathi": "नकाशा-क्रम: पेंच (छिंदवाडा उगम) → कन्हानला मिळते → कन्हान (कोलार+नागसह) → वैनगंगाला अंभोरा येथे मिळते. या क्रमाने कोणता निष्कर्ष अचूक?",
+  "q_english": "Map sequence: Pench (Chhindwara origin) → joins Kanhan → Kanhan (with Kolar+Nag) → joins Wainganga at Ambhora. Which conclusion is correct?",
+  "options": [
+   "पेंच ही वैनगंगेची थेट उपनदी, कन्हान तिची उपनदी आहे",
+   "पेंच ही कन्हानची उपनदी; कन्हान ही वैनगंगेची उजव्या तटावरील उपनदी; संगम अंभोरा",
+   "कन्हान ही पेंचची उपनदी; दोन्ही वर्धेला मिळतात",
+   "पेंच-कन्हान दोन्ही गोदावरीच्या डाव्या तटावरील उपनद्या आहेत"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "ब बरोबर: पेंच→कन्हान→वैनगंगा (उजवा तट), संगम अंभोरा–Gazetteer/NWDA नुसार. अ चूक: क्रम उलटा आहे. क चूक: कन्हान पेंचची नाही व वर्धेला मिळत नाही. ड चूक: तट दिशा चूक.",
+  "evidence": "Nagpur District Gazetteer; NWDA Hydrology Ch.5 (Pench tributary of Kanhan, 200km MP+56km Nagpur); Census Handbook Nagpur (Kanhan chief tributary of Wainganga, joins at Ambhora)"
+ },
+ {
+  "section": 5,
+  "subtopic": "नाशिक दारणा धरण",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "संकल्पना 1: दारणा धरण–इगतपुरी (नाशिक), दारणा नदीवर गुरुत्वीय धरण, 28 मी/1634 मी, बांधकाम 1907-16. संकल्पना 2: दारणा–गोदावरीची उजव्या तटावरील उपनदी, संगम दारणासंगवी, उपनद्या वाकी, औंधा, वालदेवी. एकत्रित निष्कर्ष?",
+  "q_english": "Concept 1: Darna Dam–Igatpuri (Nashik), gravity dam on Darna, 28m/1634m, built 1907-16. Concept 2: Darna–right-bank tributary of Godavari, confluence Darnasangvi, tributaries Vaki, Aaundha, Waldevi. Combined conclusion?",
+  "options": [
+   "धरण मातीचे असून दारणा गोदावरीची डाव्या तटावरील उपनदी आहे",
+   "धरण गुरुत्वीय असून दारणा उजव्या तटावरील उपनदी; जिवंत साठा 219.82 दशलक्ष घ.मी",
+   "धरण 1976 मध्ये बांधले असून संगम नांदूरमधमेश्वर येथे होतो",
+   "धरण लांबी 904 मी असून उपनद्या कन्हान-पेंच आहेत"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "ब बरोबर: गुरुत्वीय धरण (1907-16) व उजव्या तटाची उपनदी दोन्ही जुळतात. अ चूक: मातीचे धरण हे दारणावरील गोदावरी धरण आहे; तट चूक. क चूक: 1976 चूक, संगम दारणासंगवी. ड चूक: 904 मी/कन्हान-पेंच गोसीखुर्द संदर्भातील.",
+  "evidence": "MWRRA Godavari Study Group Report (Darna right-bank tributary, live storage 219.82 Mcum, 1907-1916); IndiaWRIS/Wikipedia (gravity dam 28m/1634m, gross 0.22687 km3)"
+ },
+ {
+  "section": 5,
+  "subtopic": "भीमा नीरा उपनदी वीर धरण",
+  "qtype": "बहु-विधान",
+  "q_marathi": "भीमा-नीरा खोऱ्याबाबत खालील विधाने विचारात घ्या: 1. नीरा ही भीमा नदीची उपनदी असून वीर धरण नीरा नदीवर आहे. 2. नीरा नदी थेट कृष्णा नदीला मिळते. 3. नीरा नदीचा उगम महाबळेश्वरजवळ होतो. योग्य पर्याय निवडा.",
+  "q_english": "Consider statements about Bhima-Nira basin: 1. Nira is a tributary of Bhima and Veer Dam is on Nira River. 2. Nira River joins Krishna River directly. 3. Nira River originates near Mahabaleshwar. Choose the correct option.",
+  "options": [
+   "फक्त 1 बरोबर",
+   "1 आणि 2 बरोबर",
+   "1 आणि 3 बरोबर",
+   "2 आणि 3 बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "विधान 1 सत्य: नीरा भीमाला नीरा-नरसिंहपूर येथे मिळते, वीर धरण नीरेवर (पुणे-सातारा सीमेवर) आहे. विधान 2 चूक: नीरा→भीमा→कृष्णा असा क्रम आहे, थेट नाही. विधान 3 चूक: उगम भोर (पुणे) येथे सह्याद्रीत होतो, महाबळेश्वर हा कृष्णा/कोयनाचा उगम आहे.",
+  "evidence": "India-WRIS / Maharashtra WRD: Nira tributary of Bhima, confluence at Nira-Narsingpur; Veer Dam on Nira (Pune-Satara border); origin Bhor, Pune – District Survey Report Satara 2025-26"
+ },
+ {
+  "section": 5,
+  "subtopic": "महाराष्ट्र पर्जन्यछाया विभाग",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): पुणे, अ.नगर, सोलापूर, सातारा, सांगलीचा पूर्व भाग पर्जन्यछायेत येतो (~70 सेमी पर्जन्य). कारण (R): नैऋत्य मान्सूनचे आर्द्र वारे सह्याद्रीवर (250-400 सेमी) अडून पूर्वेस उतरताना कोरडे होतात.",
+  "q_english": "Assertion (A): Eastern Pune, Ahilyanagar, Solapur, Satara, Sangli lie in rainshadow (~70 cm rain). Reason (R): SW monsoon moist winds shed moisture on Sahyadri (250-400 cm) and descend dry eastward.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य–खरे कारण ईशान्य मान्सूनची अनुपस्थिती",
+   "A असत्य, R सत्य–पर्जन्यछाया फक्त विदर्भ-मराठवाड्यात मर्यादित"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अ बरोबर: दोन्ही सत्य व R हे पर्वतीय (orographic) कारण स्पष्ट करते. ब चूक: R योग्य स्पष्टीकरणच आहे. क चूक: ईशान्य मान्सून कारण नाही. ड चूक: पर्जन्यछाया मुख्यतः मध्य-महाराष्ट्रात (पुणे-अ.नगर-सोलापूर) आहे.",
+  "evidence": "Maharashtra SDMA State Overview (rain-shadow: Marathwada-Vidarbha, Madhya Maharashtra); IMD Pune Bulletin; Singh 1971 (Nasik 834mm, Junnar/Wai/Karad ~710mm leeward)"
+ },
+ {
+  "section": 5,
+  "subtopic": "सह्याद्री महाबळेश्वर पठार उगम",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: अ) महाबळेश्वर पठार पृष्ठभाग, ब) जांभा (लॅटेराइट) आच्छादन, क) कृष्णा उगमबिंदू, ड) महाडकडील सावित्री दरी; 1) बेसाल्ट समतलीकरणातून संरचनात्मक समप्राय भूमी, 2) उष्ण-आर्द्र अपक्षयातून लॅटेरायटीकरण, 3) सह्याद्री जलद्विभाजक – पूर्व/पश्चिम वाहिनी विभाजन, 4) प्रतिगामी क्षरणाची V-आकार दरी. योग्य मेळ कोणता?",
+  "q_english": "Match: A) Mahabaleshwar plateau surface, B) Laterite cover, C) Krishna origin point, D) Savitri gorge near Mahad; 1) structural peneplain from basalt planation, 2) lateritization by hot-humid weathering, 3) Sahyadri water-divide, 4) V-shaped valley by headward erosion. Correct match?",
+  "options": [
+   "अ-1, ब-2, क-3, ड-4",
+   "अ-2, ब-1, क-3, ड-4",
+   "अ-1, ब-2, क-4, ड-3",
+   "अ-3, ब-2, क-1, ड-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अ-1 समप्राय भूमी, ब-2 लॅटेरायटीकरण, क-3 जलद्विभाजक, ड-4 प्रतिगामी क्षरण सत्य.\nपर्याय 2 मध्ये अ-ब अदलाबदल (कारण-परिणाम उलटा); 3 मध्ये क-ड अदलाबदल; 4 मध्ये अ चा संबंध चूक.",
+  "evidence": "GSI Memoir on Deccan Traps Vol.135; Maharashtra State Gazetteer – Satara District"
+ },
+ {
+  "section": 5,
+  "subtopic": "सातपुडा ताप्ती उगम बैतूल",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): ताप्तीचा उगम बैतूल जिल्ह्यातील मुलताईजवळ सातपुड्यात होतो. कारण (R): सातपुडा ही भ्रंशोत्थ (horst) रांग असून तिच्या दक्षिणेकडील भ्रंशरेषेतून ताप्ती पश्चिमवाहिनी बनते. योग्य निष्कर्ष कोणता?",
+  "q_english": "Assertion (A): Tapi originates near Multai in Betul district in Satpura. Reason (R): Satpura is a horst range and Tapi flows west through the fault line to its south. Choose correct inference.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A (मुलताई-बैतूल उगम) व R (भ्रंशोत्थ + दक्षिण भ्रंशातून पश्चिम प्रवाह) दोन्ही सत्य.\nपण R पश्चिम वाहिनीचे कारण सांगते, विशिष्ट उगमबिंदूचे नाही; म्हणून योग्य स्पष्टीकरण नाही.",
+  "evidence": "Central Water Commission – Tapi Basin Report (2014); GSI – Tectonic Map of Satpura Horst"
+ },
+ {
+  "section": 6,
+  "subtopic": "उपराष्ट्रपती 63-71 तरतुदी",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "उपराष्ट्रपतींबाबत (P) निवडणूक मंडळ व (Q) पदच्युती प्रक्रिया एकत्र विचार करा. योग्य संयुक्त विधान निवडा.",
+  "q_english": "Consider together for Vice-President: (P) electoral college and (Q) removal process. Choose the correct combined statement.",
+  "options": [
+   "P: दोन्ही सभागृहांचे सर्व सदस्य (नामनिर्देशितांसह) प्रमाणशीर पद्धतीने; Q: 14 दिवस नोटीस, राज्यसभेचे प्रभावी बहुमत + लोकसभेची सहमती (कलम 61 महाभियोग नाही)",
+   "P: संसद + राज्य विधानसभांचे निर्वाचित सदस्य; Q: 14 दिवस नोटीस, राज्यसभेचे प्रभावी बहुमत + लोकसभेची सहमती",
+   "P: दोन्ही सभागृहांचे सर्व सदस्य; Q: दोन्ही सभागृहांच्या दोन-तृतीयांश बहुमताने महाभियोग",
+   "P: फक्त राज्यसभेचे निर्वाचित सदस्य; Q: 30 दिवस नोटीस, लोकसभेच्या साध्या बहुमताने दूर करणे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: कलम 66 — दोन्ही सभागृहांचे सर्व सदस्य; कलम 67 — 14 दिवस नोटीस + प्रभावी बहुमत + लोकसभेची सहमती. इतर पर्याय राष्ट्रपती मंडळाशी (B), कलम 61 महाभियोगाशी (C), चुकीची नोटीस/मंडळाशी (D) गल्लत करतात.",
+  "evidence": "कलम 63, 64, 66, 67, 71"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 14 समानता वाजवी वर्गीकरण",
+  "qtype": "बहु-विधान",
+  "q_marathi": "कलम 14 संदर्भात विधाने पहा: (A) कलम 14 कोणत्याही वर्गीकरणास मनाई करते. (B) वाजवी वर्गीकरणासाठी बोधगम्य भेद व कायद्याच्या उद्देशाशी तर्कसंगत संबंध आवश्यक — Anwar Ali (1952) कसोटी. (C) कलम 14 केवळ कार्यपालक कृतींना लागू होते, कायद्यांना नाही. योग्य पर्याय निवडा.",
+  "q_english": "Consider statements on Article 14: (A) Article 14 prohibits all classification. (B) Reasonable classification needs intelligible differentia plus rational nexus with law's object — Anwar Ali (1952) test. (C) Article 14 applies only to executive action, not legislation. Choose correct option.",
+  "options": [
+   "फक्त B बरोबर",
+   "A आणि B बरोबर",
+   "B आणि C बरोबर",
+   "A, B आणि C बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "B बरोबर: Anwar Ali कसोटी + Royappa (1974) मनमानी विरोध हाच नियम. A चूक: वाजवी वर्गीकरणास परवानगी आहे. C चूक: Dalmia (1958) नुसार कायदेमंडळ कायद्यांनाही कलम 14 लागू.",
+  "evidence": "कलम 14; State of West Bengal v. Anwar Ali (1952); E.P. Royappa v. State of TN (1974)"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 17-18 अस्पृश्यता किताब रद्द",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (A) कलम 17 — (B) कलम 18(1) — (C) कलम 18(3) — (D) कलम 18(4) यांच्या योग्य आशयाशी: (i) राज्याकडून किताब प्रदानास मनाई (लष्करी/शैक्षणिक वगळून) (ii) अस्पृश्यता निर्मूलन व फौजदारी गुन्हा (iii) पदावर असताना राष्ट्रपतींच्या संमतीशिवाय परकीय भेटवस्तू स्वीकारास मनाई (iv) पदावर असलेल्या परदेशी नागरिकास राष्ट्रपतींच्या संमतीशिवाय परकीय किताब स्वीकारास मनाई.",
+  "q_english": "Match: (A) Art 17 — (B) Art 18(1) — (C) Art 18(3) — (D) Art 18(4) with: (i) State barred from conferring titles except military/academic (ii) Abolition of untouchability, punishable offence (iii) Person holding office barred from accepting foreign present without President's consent (iv) Foreigner holding office barred from accepting foreign title without President's consent.",
+  "options": [
+   "A-ii, B-i, C-iv, D-iii",
+   "A-ii, B-i, C-iii, D-iv",
+   "A-i, B-ii, C-iv, D-iii",
+   "A-ii, B-iv, C-i, D-iii"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: A-ii (1955 नागरी हक्क संरक्षण कायदा), B-i, C-iv, D-iii. पर्याय 2 मध्ये C-D अदलाबदल ही नेहमीची चूक; पर्याय 3 मध्ये 17-18(1) अदलाबदल; पर्याय 4 मध्ये B-C अदलाबदल.",
+  "evidence": "कलम 17, 18(1)-(4); Protection of Civil Rights Act, 1955"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 19 भाषण स्वातंत्र्य निर्बंध",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने पहा: (A) पहिल्या दुरुस्तीने (1951) 19(2) मध्ये 'सार्वजनिक सुव्यवस्था' व 'परकीय राज्यांशी मैत्रीपूर्ण संबंध' जोडले. (B) 16व्या दुरुस्तीने (1963) 19(2) मध्ये 'सार्वभौमत्व व एकात्मता' जोडले. (C) 'अपराधास चिथावणी' हे मूळ संविधानातील 19(2) कारण होते. योग्य पर्याय निवडा.",
+  "q_english": "Statements: (A) 1st Amendment (1951) added 'public order' and 'friendly relations with foreign States' to Art 19(2). (B) 16th Amendment (1963) added 'sovereignty and integrity' to 19(2). (C) 'Incitement to an offence' was an original 19(2) ground. Choose correct option.",
+  "options": [
+   "A, B, C सर्व बरोबर",
+   "फक्त A आणि B बरोबर",
+   "फक्त B आणि C बरोबर",
+   "फक्त A आणि C बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बरोबर: A,B सत्य – 1951 मध्ये सुव्यवस्था/मैत्री संबंध, 1963 मध्ये सार्वभौमत्व-एकात्मता आले. चूक: C असत्य – 'अपराधास चिथावणी' मूळ नव्हे तर 1951 मध्येच आले; C असलेले पर्याय चूक.",
+  "evidence": "कलम 19(2); 1ली घटनादुरुस्ती 1951, 16वी घटनादुरुस्ती 1963"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 20 गुन्हेगारी शिक्षा संरक्षण",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "'अ' वर खातेनिहाय चौकशीत दंड झाला, नंतर त्याच तथ्यांवर फौजदारी खटल्यात शिक्षा झाली. तसेच गुन्ह्याच्या वेळी शिक्षा 2 वर्षे होती, निकालात 2024 च्या कायद्याने 5 वर्षे लावली. कलम 20(1) व 20(2) बद्दल योग्य निष्कर्ष कोणता?",
+  "q_english": "A faced departmental fine, then criminal prosecution on same facts. Punishment at time of offence was 2 years, but 5 years under 2024 law applied at judgment. What is correct conclusion on Art 20(1) and 20(2)?",
+  "options": [
+   "20(1) चे उल्लंघन झाले, 20(2) चे नाही कारण खातेनिहाय कारवाई 'prosecution' नव्हे",
+   "20(1) व 20(2) दोन्हींचे उल्लंघन झाले",
+   "20(1) चे उल्लंघन नाही, 20(2) चे उल्लंघन झाले",
+   "दोन्हीपैकी कोणत्याचेच उल्लंघन झाले नाही"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: वाढीव शिक्षा = 20(1) भंग; खातेनिहाय दंड ही 'prosecuted and punished' नव्हे म्हणून 20(2) भंग नाही. चूक: इतर पर्यायांत दुहेरी भंग मानला, 20(1) नाकारला किंवा दोन्ही नाकारले.",
+  "evidence": "कलम 20(1), 20(2); Maqbool Hussain v Bombay (1953), Thomas Dana v Punjab (1959)"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 32 घटनात्मक उपाय हक्क",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): जनहित याचिकेत स्थानाधिकार शिथिल झाला असला तरी कलम 32 साठी मूलभूत हक्कांचे उल्लंघन ही पूर्वअट कायम आहे. कारण (R): कलम 32(3) संसदेला कोणत्याही इतर न्यायालयास स्थानिक मर्यादेत रिट अधिकार देण्याची मुभा देते. योग्य पर्याय निवडा.",
+  "q_english": "Assertion (A): Even though locus standi was relaxed in PIL, violation of a Fundamental Right remains a precondition for Article 32. Reason (R): Article 32(3) allows Parliament to empower any other court to issue writs within local limits. Choose correct option.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A सत्य: 32 साठी मूलभूत हक्क आवश्यक, 226 व्यापक आहे. R सत्य: 32(3) चा मजकूर बरोबर. पण R हे A चे स्पष्टीकरण नाही; मर्यादा 32(1)(2) मधून येते. म्हणून इतर पर्याय चूक.",
+  "evidence": "कलम 32(1)(2)(3), 226; S.P. Gupta v. Union of India (1981)"
+ },
+ {
+  "section": 6,
+  "subtopic": "कलम 36-51 मार्गदर्शक तत्त्वे वर्गीकरण",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "मार्गदर्शक तत्त्वांतील समावेशांचा योग्य कालक्रम लावा: (A) कलम 43B — सहकारी संस्था (B) कलम 39A — मोफत कायदेशीर सहाय्य (C) कलम 38(2) — विषमता कमी करणे (D) कलम 45 सुधारित — 6 वर्षांखालील संगोपन. योग्य क्रम निवडा.",
+  "q_english": "Arrange DPSP insertions in chronological order: (A) Art 43B — cooperative societies (B) Art 39A — free legal aid (C) Art 38(2) — minimise inequalities (D) Revised Art 45 — care below 6 years. Choose correct sequence.",
+  "options": [
+   "B-C-D-A",
+   "B-D-C-A",
+   "C-B-D-A",
+   "B-C-A-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य क्रम: B (42वी-1976), C (44वी-1978), D (86वी-2002), A (97वी-2011). इतर पर्यायांत जवळची वर्षे/दुरुस्त्या अदलाबदल केल्या आहेत, म्हणून चूक.",
+  "evidence": "42वी (1976), 44वी (1978), 86वी (2002), 97वी (2011) घटनादुरुस्त्या"
+ },
+ {
+  "section": 6,
+  "subtopic": "धन विधेयक 109-117 प्रक्रिया",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण (R): कलम 109 नुसार धन विधेयक राज्यसभेत मांडता येत नाही; केवळ लोकसभेतच मांडता येते. परिणाम (A): कलम 110(3) नुसार विधेयक धन विधेयक आहे की नाही यावर लोकसभाध्यक्षांचा निर्णय अंतिम असतो. योग्य संबंध ओळखा.",
+  "q_english": "Cause (R): Under Art 109 Money Bill cannot be introduced in Rajya Sabha; only in Lok Sabha. Effect (A): Under Art 110(3) Speaker's decision on whether a Bill is Money Bill is final. Identify correct relation.",
+  "options": [
+   "R बरोबर, A बरोबर; A हे R चे कारण आहे",
+   "R बरोबर, A चूक; अध्यक्षांचा निर्णय अंतिम नसतो",
+   "R चूक, A बरोबर; धन विधेयक राज्यसभेतही मांडता येते",
+   "R बरोबर, A बरोबर; पण A हे R चा परिणाम/स्पष्टीकरण नाही"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "R (109) व A (110(3)) दोन्ही बरोबर, पण A हा R चा परिणाम नाही; दोन स्वतंत्र तरतुदी. पर्याय 0 मध्ये कार्यकारण जोड चुकीचा, 1 व 2 मध्ये एक विधान चूक मानले आहे.",
+  "evidence": "कलम 109(1), 110(3)"
+ },
+ {
+  "section": 6,
+  "subtopic": "पंचायतराज 243-243O",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "योग्य कालक्रम लावा: (A) बलवंतराय मेहता समिती अहवाल, (B) अशोक मेहता समितीची द्विस्तरीय शिफारस, (C) एल.एम. सिंघवी समितीची घटनात्मक दर्जा शिफारस, (D) 73वी घटनादुरुस्ती अंमलात. पर्यायांतून अचूक क्रम निवडा.",
+  "q_english": "Arrange chronologically: (A) Balwantrai Mehta Committee report, (B) Ashok Mehta Committee two-tier recommendation, (C) L.M. Singhvi Committee constitutional status recommendation, (D) 73rd Amendment enforcement. Choose correct order.",
+  "options": [
+   "A → C → B → D",
+   "B → A → C → D",
+   "A → B → C → D",
+   "A → B → D → C"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "बरोबर: 1957→1978→1986→1993 (अंमल 24 एप्रिल 1993). चूक: एका पर्यायात सिंघवी (1986) अशोक मेहतांआधी, एकात अशोक मेहता बलवंतरायआधी, एकात दुरुस्ती सिंघवी शिफारशीआधी दाखवली.",
+  "evidence": "कलम 243-243O; बलवंतराय मेहता 1957, अशोक मेहता 1978, एल.एम. सिंघवी 1986, 73वी दुरुस्ती 1992 (अंमल 24-4-1993)"
+ },
+ {
+  "section": 6,
+  "subtopic": "पंतप्रधान मंत्रिमंडळ 74-78",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (अ) कलम 74(1) परंतुक – (1) पुनर्विचारासाठी परत पाठवणे, (ब) कलम 75(3) – (2) लोकसभेप्रती सामूहिक जबाबदारी, (क) कलम 77(3) – (3) कार्यवाटपाचे नियम, (ड) कलम 78(क) – (4) प्रशासनाची माहिती देणे. योग्य जोडी ओळखा.",
+  "q_english": "Match the pairs: (A) Art 74(1) proviso – (1) return for reconsideration, (B) Art 75(3) – (2) collective responsibility to Lok Sabha, (C) Art 77(3) – (3) rules for allocation of business, (D) Art 78(c) – (4) furnishing information on administration. Identify correct match.",
+  "options": [
+   "अ-1, ब-2, क-3, ड-4",
+   "अ-1, ब-2, क-4, ड-3",
+   "अ-2, ब-1, क-3, ड-4",
+   "अ-1, ब-3, क-2, ड-4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "अ-1 (44वी दुरुस्ती), ब-2, क-3 (राष्ट्रपतींकडून नियम), ड-4 बरोबर. पर्याय 1 मध्ये 77/78 अदलाबदल, पर्याय 2 मध्ये 74/75 अदलाबदल, पर्याय 3 मध्ये 75(3)/77(3) गोंधळ यामुळे चूक.",
+  "evidence": "कलम 74(1) परंतुक-44वी घटनादुरुस्ती 1978; कलम 75(3), 77(3), 78"
+ },
+ {
+  "section": 6,
+  "subtopic": "महान्यायवादी कलम 76",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "कलम 76 वरील तक्ता: (अ) नेमणूक-राष्ट्रपतींकडून, (ब) पात्रता-सर्वोच्च न्यायालयाच्या न्यायाधीशाइतकी, (क) कार्यकाळ-6 वर्षे निश्चित, (ड) अधिकार-संसदेत भाग घेण्याचा पण मतदान नाही. तक्त्यातील चुकीची नोंद कोणती?",
+  "q_english": "Consider table on Art 76: (a) Appointment-by President, (b) Qualification-as SC judge, (c) Term-fixed 6 years, (d) Right-to participate in Parliament without voting. Which entry is wrongly recorded?",
+  "options": [
+   "फक्त (ड) चुकीची – महान्यायवाद्याला मतदानाचा अधिकार असतो",
+   "फक्त (ब) चुकीची – उच्च न्यायालयाच्या न्यायाधीशाची पात्रता पुरेशी",
+   "फक्त (क) चुकीची – कार्यकाळ घटनेत निश्चित नाही; राष्ट्रपतींची मर्जीपर्यंत",
+   "फक्त (अ) चुकीची – पंतप्रधान सल्ल्याने नेमणूक होते, राष्ट्रपतींकडून नाही"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "कलम 76(4) नुसार मानधन/कार्यकाळ राष्ट्रपतींच्या मर्जीवर; 6 वर्षे निश्चित नाही म्हणून (क) चूक. (अ),(ब),(ड) बरोबर; इतर पर्यायांत पात्रता/मतदान/नेमणूक याबाबत गैरसमज आहेत.",
+  "evidence": "कलम 76(1), 76(4)"
+ },
+ {
+  "section": 6,
+  "subtopic": "मूलभूत रचना केशवानंद सिद्धांत",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: (P) गोलकनाथ (1967)-संसद मूलभूत हक्क संकुचित करू शकत नाही; (Q) केशवानंद (1973)-मूलभूत रचना सिद्धांत; (R) मिनर्व्हा मिल्स (1980)-42व्या दुरुस्तीतील कलम 4,55 रद्द, सुसंवाद सिद्धांत; (S) आय.आर. कोएल्हो (2007)-24.4.1973 नंतर 9व्या अनुसूचीतील कायदे मूलभूत रचनेवर तपासणीय. योग्य पर्याय निवडा.",
+  "q_english": "Table: (P) Golaknath (1967)-Parliament cannot abridge FRs; (Q) Kesavananda (1973)-basic structure doctrine; (R) Minerva Mills (1980)-struck down Arts 4,55 of 42nd Amdt, harmony doctrine; (S) I.R. Coelho (2007)-9th Schedule laws after 24.4.1973 testable on basic structure. Choose correct option.",
+  "options": [
+   "P,Q,R बरोबर; S चे वर्ष चूक – कोएल्हो 2007 नव्हे तर 1981",
+   "P,Q,R,S सर्व जोड्या बरोबर",
+   "Q,R,S बरोबर; P चूक – गोलकनाथात मूलभूत रचना मांडली",
+   "P,R,S बरोबर; Q चूक – केशवानंदात मूलभूत रचना मांडली नाही"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बरोबर: चारही जोड्या सत्य आहेत. चूक: एका पर्यायात कोएल्हो-वामनराव (1981) गोंधळ, एकात गोलकनाथात मूलभूत रचना असल्याचा समज, एकात केशवानंदाचा सिद्धांतच नाकारला.",
+  "evidence": "गोलकनाथ (1967), केशवानंद भारती (1973), मिनर्व्हा मिल्स (1980), I.R. Coelho (2007)"
+ },
+ {
+  "section": 6,
+  "subtopic": "राज्य विधिमंडळ 168-212",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "प्रतिपादन (A): कलम 200 अन्वये राज्यपाल विधेयक राष्ट्रपतींच्या विचारार्थ राखून ठेवू शकतात. कारण (R): कलम 201 अन्वये राष्ट्रपतींकडे राखून ठेवलेले विधेयक राज्य विधिमंडळाने फेरपारित केल्यास राष्ट्रपती संमती देण्यास बांधील असतात.",
+  "q_english": "Assertion (A): Under Art 200 Governor may reserve a Bill for President's consideration. Reason (R): Under Art 201 if reserved Bill is repassed by State Legislature, President is bound to give assent.",
+  "options": [
+   "A चूक, R बरोबर",
+   "A बरोबर, R बरोबर; R हे A चे योग्य स्पष्टीकरण",
+   "A बरोबर, R चूक",
+   "A बरोबर, R बरोबर; पण R हे A चे योग्य स्पष्टीकरण नाही"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "A बरोबर (कलम 200). R चूक – कलम 201 मध्ये राष्ट्रपतींवर बंधन नाही (कलम 200 च्या परंतुकापेक्षा वेगळे). त्यामुळे 1 व 3 मध्ये R बरोबर मानणे, 0 मध्ये A चूक मानणे चुकीचे.",
+  "evidence": "कलम 200, 201; तुलना-कलम 111"
+ },
+ {
+  "section": 6,
+  "subtopic": "वित्त आयोग कलम 280",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (P) 280(1) - (i) राष्ट्रपतींकडून आयोग स्थापना; (Q) 280(2) - (ii) सदस्य पात्रता संसद ठरवते; (R) 280(3)(a) - (iii) कर महसूल वाटप शिफारस; (S) 280(3)(b) - (iv) 275 अन्वये सहाय्यक अनुदान तत्त्वे. योग्य संच निवडा.",
+  "q_english": "Match: (P) 280(1)-(i) President constitutes Commission; (Q) 280(2)-(ii) Parliament fixes member qualifications; (R) 280(3)(a)-(iii) tax revenue distribution; (S) 280(3)(b)-(iv) grants-in-aid principles under Art 275. Choose correct set.",
+  "options": [
+   "P-i, Q-iii, R-ii, S-iv",
+   "P-ii, Q-i, R-iii, S-iv",
+   "P-i, Q-ii, R-iv, S-iii",
+   "P-i, Q-ii, R-iii, S-iv"
+  ],
+  "correct_index": 3,
+  "explanation_marathi": "बरोबर: 280(1) स्थापना, 280(2) पात्रता-संसद, 280(3)(a) करवाटप, 280(3)(b) 275 अनुदान. चूक: इतर पर्यायांत Q-R अदलाबदल, P-Q अदलाबदल किंवा (a)-(b) अदलाबदल आहे.",
+  "evidence": "कलम 280(1),(2),(3)(a),(b); वित्त आयोग (विविध तरतुदी) अधिनियम 1951"
+ },
+ {
+  "section": 6,
+  "subtopic": "संसद 79-88 रचना कार्य",
+  "qtype": "बहु-विधान",
+  "q_marathi": "संसद (79-88) वरील विधाने: (अ) कलम 79-संसदेत राष्ट्रपती+राज्यसभा+लोकसभा, (ब) कलम 80(3)-12 सदस्य कला, साहित्य, विज्ञान इ.क्षेत्रांतून नामनिर्देशित, (क) आणीबाणी नसताना कलम 83(2) अन्वये लोकसभा 6 वर्षे वाढवता येते, (ड) कलम 88 अन्वये महान्यायवादीला मतदानाचा अधिकार. योग्य पर्याय ओळखा.",
+  "q_english": "Statements on Parliament (79-88): (A) Art 79-Parliament comprises President+Rajya Sabha+Lok Sabha, (B) Art 80(3)-12 members nominated for art, literature, science etc., (C) Under Art 83(2) Lok Sabha can be extended to 6 years without Emergency, (D) Under Art 88 AG has voting right. Choose correct option.",
+  "options": [
+   "अ, ब, क बरोबर; ड चूक",
+   "अ, ब बरोबर; क, ड चूक",
+   "अ, ब, ड बरोबर; क चूक",
+   "ब, क बरोबर; अ, ड चूक"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "अ, ब बरोबर. क चूक – मुदत 5 वर्षे; आणीबाणीतच 1 वर्ष वाढ. ड चूक – कलम 88 नुसार भाग घेता येतो, मतदान नाही. त्यामुळे इतर पर्यायांतील क/ड बरोबर मानणे चुकीचे.",
+  "evidence": "कलम 79, 80(3), 83(2), 88"
+ },
+ {
+  "section": 7,
+  "subtopic": "CPI vs WPI चलनवाढ फरक",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: (1) CPI आधारवर्ष 2012, WPI आधारवर्ष 2011-12 (2) अन्न-भारांश CPIत (~46%) WPIपेक्षा (~24%) जास्त (3) CPIत सेवांचा समावेश, WPIत नाही (4) WPIत इंधन-भारांश अन्नधान्यापेक्षा जास्त. योग्य पर्याय निवडा.",
+  "q_english": "Statements: (1) CPI base 2012, WPI base 2011-12 (2) Food weight in CPI (~46%) > WPI (~24%) (3) CPI includes services, WPI does not (4) In WPI, fuel weight exceeds food weight. Choose correct option.",
+  "options": [
+   "1,2,3 बरोबर; 4 चूक",
+   "1,2,4 बरोबर; 3 चूक",
+   "2,3,4 बरोबर; 1 चूक",
+   "1,3,4 बरोबर; 2 चूक"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: 1-3 तथ्यात्मक; WPIत अन्न (~24.4%) > इंधन (~13.1%) म्हणून 4 चूक.\nचूक: B,C,D मध्ये 4 बरोबर धरले किंवा 1/2/3 चूक धरले, जे NSO/OEA मॅन्युअलनुसार अयोग्य.",
+  "evidence": "NSO CPI Manual base 2012; Office of Economic Adviser WPI Manual base 2011-12"
+ },
+ {
+  "section": 7,
+  "subtopic": "LIC IPO नंतर स्थिती",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): मे 2022 च्या LIC IPO नंतर केंद्र सरकारचा हिस्सा 96.5% राहिला व LIC चे शेअर्स BSE/NSE वर सूचीबद्ध झाले. कारण (R): SEBI (ICDR) सवलतीनुसार रु.1 लाख कोटींवरील इश्यूसाठी 5% ऐवजी 3.5% सार्वजनिक विक्रीला परवानगी होती.",
+  "q_english": "Assertion (A): After May 2022 LIC IPO, Govt holding remained 96.5% and LIC got listed on BSE/NSE. Reason (R): Under SEBI (ICDR) relaxation, issuers above Rs 1 lakh crore could offer 3.5% public float instead of 5%.",
+  "options": [
+   "A व R दोन्ही सत्य, R हे A चे अचूक स्पष्टीकरण आहे",
+   "A व R दोन्ही सत्य, परंतु R हे A चे अचूक स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A सत्य: 22.13 कोटी शेअर्स (3.5%) विकले, 96.5% शिल्लक, लिस्टिंग झाले. R सत्य व योग्य स्पष्टीकरण: सवलतीमुळेच 3.5% विक्री शक्य झाली. इतर पर्याय चूक: A/R असत्य ठरवता येत नाही व स्पष्टीकरण-संबंध नाकारता येत नाही.",
+  "evidence": "SEBI (ICDR) Regulations 2018; LIC RHP 2022, DIPAM"
+ },
+ {
+  "section": 7,
+  "subtopic": "MSP 2026-27 खरीप पिके",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने विचारात घ्या (MSP खरीप 2026-27 संदर्भात): 1. तूर, मूग, भुईमूग यांच्या MSP मधील परिपूर्ण वाढ धान-ज्वारीपेक्षा जास्त ठेवणे हे तेलबिया-कडधान्य आयात अवलंबित्व कमी करण्याच्या धोरणाशी सुसंगत आहे. 2. CACP MSP ठरवताना A2+FL सह मागणी-पुरवठा, आंतरराष्ट्रीय किमती व हवामान जोखीम विचारात घेते. 3. MSP प्रमाणे FRP बाबतही राज्यांना बोनस जाहीर करता येत नाही. कोणते योग्य?",
+  "q_english": "Consider statements (re: MSP Kharif 2026-27): 1. Higher absolute MSP hikes for tur, moong, groundnut than paddy-jowar aligns with reducing import dependence on oilseeds-pulses. 2. CACP considers demand-supply, international prices and climate risk along with A2+FL while fixing MSP. 3. Like FRP, states cannot announce bonus over MSP. Which is/are correct?",
+  "options": [
+   "फक्त 1 बरोबर; 2 व 3 चूक",
+   "1 व 2 बरोबर; 3 चूक",
+   "1 व 3 बरोबर; 2 चूक",
+   "2 व 3 बरोबर; 1 चूक"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "1 व 2 बरोबर: डायव्हर्सिफिकेशनसाठी पौष्टिक-तेलबियाला जास्त वाढ; CACP व्यापक घटक पाहते. 3 चूक: MSP वर राज्य बोनस देता येतो (उदा. MP/छत्तीसगड), FRP वर देता येत नाही. त्यामुळे 0,2,3 पर्याय चूक.",
+  "evidence": "CACP Price Policy for Kharif Crops 2026-27; CCEA approval note"
+ },
+ {
+  "section": 7,
+  "subtopic": "PLFS 2025 बेरोजगारी अहवाल",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "PLFS वार्षिक 2024-25 (15+ वय) नुसार जोड्या लावा: (A) LFPR (B) WPR (C) बेरोजगारी दर (D) शहरी महिला बेरोजगारी — (i) 3.2% (ii) 60.8% (iii) 7.8% (iv) 58.6%. योग्य जोडी निवडा.",
+  "q_english": "Match per PLFS Annual 2024-25 (age 15+): (A) LFPR (B) WPR (C) Unemployment Rate (D) Urban female UR — (i) 3.2% (ii) 60.8% (iii) 7.8% (iv) 58.6%. Choose correct match.",
+  "options": [
+   "A-ii, B-iv, C-i, D-iii",
+   "A-iv, B-ii, C-i, D-iii",
+   "A-ii, B-iv, C-iii, D-i",
+   "A-ii, B-i, C-iv, D-iii"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: LFPR 60.8%, WPR 58.6%, UR 3.2%, शहरी महिला UR 7.8%.\nचूक: B मध्ये LFPR<WPR अशक्य; C मध्ये UR व शहरी महिला UR अदलाबदल; D मध्ये WPR=UR चूक.",
+  "evidence": "PLFS Annual Report 2024-25, NSO (July 2024-June 2025)"
+ },
+ {
+  "section": 7,
+  "subtopic": "अन्नधान्य चलनवाढ 2026",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "2026 Q1 मध्ये CPI-अन्नधान्य ~7% राहिली, पण WPI-अन्न सौम्य वाढला. कोणती कारण-परिणाम साखळी सर्वात तार्किक आहे?",
+  "q_english": "In Q1 2026, CPI-food stayed ~7%, but WPI-food rose mildly. Which cause-effect chain is most logical?",
+  "options": [
+   "अवकाळी पाऊस/उष्णतेची लाट → नाशवंत आवक घट → CPI (जास्त अन्न-भारांश+किरकोळ) तीव्र; WPIत विलंबित पास-थ्रूने नरम",
+   "MSP वाढ → शेतकऱ्याला जास्त भाव → किरकोळ किमती घटतात म्हणून CPI वाढला",
+   "बफर स्टॉक मुक्त → घाऊक पुरवठा वाढ → CPI-अन्नधान्य वाढते",
+   "आयात शुल्क कपात → देशांतर्गत तूट वाढ → WPI-अन्न CPI-पेक्षा जास्त वाढतो"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: हवामान धक्का नाशवंतांवर, CPIचा अन्न-भारांश व किरकोळ स्वरूपामुळे तीव्रता.\nचूक: B मध्ये MSP-किरकोळ संबंध उलटा; C मध्ये पुरवठा वाढून किंमत वाढ चूक; D मध्ये शुल्क कपातीने तूट वाढत नाही.",
+  "evidence": "MoSPI CPI Bulletin Jan-Mar 2026; CFPI methodology 2012 series"
+ },
+ {
+  "section": 7,
+  "subtopic": "एक राष्ट्र एक रेशनकार्ड PDS प्रगती",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा (ONORC/PDS): A.अन्नवितरण पोर्टल B.IM-PDS C.मेरा रेशन ॲप D.ePoS आधार प्रमाणीकरण : 1.राष्ट्रीय PDS व्यवहार डेटा रिपॉझिटरी 2.ONORC अंमलबजावणीसाठी केंद्रीय घटक 3.स्थलांतरितांना जवळचे दुकान व हक्कदर्शन 4.बायोमेट्रिक डुप्लिकेशन रोखून पोर्टेबिलिटी. योग्य संच कोणता?",
+  "q_english": "Match (ONORC/PDS): A.Annavitran Portal B.IM-PDS C.Mera Ration App D.ePoS Aadhaar auth : 1.National PDS transaction data repository 2.Central component for ONORC implementation 3.Nearby shop & entitlement search for migrants 4.Biometric de-duplication enabling portability. Which set is correct?",
+  "options": [
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-3, D-4",
+   "A-1, B-3, C-2, D-4",
+   "A-1, B-2, C-4, D-3"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A-1, B-2, C-3, D-4 हेच बरोबर: अन्नवितरण=डेटा भांडार, IM-PDS=ONORC निधी घटक. पर्याय 1 मध्ये A-B अदलाबदल, पर्याय 2 मध्ये B-C अदलाबदल, पर्याय 3 मध्ये C-D अदलाबदल ही सामान्य गल्लत आहे.",
+  "evidence": "DFPD Annual Report 2025-26; NFSA 2013 Sec 12; IM-PDS Scheme guidelines"
+ },
+ {
+  "section": 7,
+  "subtopic": "कामगार संहिता 2026 अंमलबजावणी",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): 21 नोव्हें. 2025 च्या अधिसूचनेने चारही कामगार संहिता अंमलात आल्या. कारण (R): चारही संहितांत 'वेतन' व्याख्या एकसमान करून सामाजिक सुरक्षा विस्तारली. योग्य पर्याय निवडा.",
+  "q_english": "Assertion (A): Four labour codes came into force via notification of 21 Nov 2025. Reason (R): 'Wages' definition was harmonised across codes, expanding social security. Choose correct option.",
+  "options": [
+   "A आणि R दोन्ही बरोबर, R हे A चे बरोबर स्पष्टीकरण आहे",
+   "A आणि R दोन्ही बरोबर, पण R हे A चे स्पष्टीकरण नाही",
+   "A बरोबर, R चूक",
+   "A चूक, R बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "बरोबर: A (अधिसूचना तथ्य) व R (वेतन-व्याख्या तथ्य) दोन्ही सत्य, पण R मुळे अधिसूचना तारीख ठरलेली नाही.\nचूक: पर्याय 0 स्पष्टीकरण मानतो; 2/3 मध्ये एक विधान चूक ठरवले आहे.",
+  "evidence": "Gazette Notification 21 Nov 2025; Code on Wages 2019, IR Code 2020, SS Code 2020, OSH Code 2020"
+ },
+ {
+  "section": 7,
+  "subtopic": "डिजिटल रुपया CBDC टप्पा",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "दोन संकल्पना: X=किरकोळ e₹ (e₹-R), Y=घाऊक e₹ (e₹-W). विधाने: 1.e₹-R हे RBI चे प्रत्यक्ष दायित्व आहे; UPI शिल्लक ही व्यावसायिक बँकेची दायित्वे आहेत. 2.e₹-W चा प्रायोगिक वापर G-sec सेटलमेंटमधील सेटलमेंट रिस्क कमी करण्यासाठी, तर e₹-R चा वापर रोखीला पर्याय व प्रोग्रामेबिलिटीसाठी (DBT) होतो. योग्य?",
+  "q_english": "Two concepts: X=Retail e₹ (e₹-R), Y=Wholesale e₹ (e₹-W). Statements: 1. e₹-R is direct RBI liability; UPI balances are commercial bank liabilities. 2. e₹-W pilot targets settlement risk in G-sec settlement, while e₹-R targets cash alternative and programmability (DBT). Which is correct?",
+  "options": [
+   "1 व 2 दोन्ही बरोबर",
+   "फक्त 1 बरोबर; 2 चूक",
+   "फक्त 2 बरोबर; 1 चूक",
+   "1 व 2 दोन्ही चूक"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "दोन्ही बरोबर: e₹ हे केंद्रीय बँक पैसा, UPI हा बँक ठेव हस्तांतरण; W=घाऊक सेटलमेंट, R=किरकोळ+प्रोग्रामेबिलिटी. एकच बरोबर/दोन्ही चूक हे CBDC=UPI व W-R उद्देश अदलाबदलीच्या गल्लती आहेत.",
+  "evidence": "RBI Concept Note on CBDC 2022; RBI Annual Report 2025-26"
+ },
+ {
+  "section": 7,
+  "subtopic": "दरडोई उत्पन्न राज्य तुलना 2026",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता (2025-26 AE, चालू किमती, ₹ लाख): गोवा-5.8, कर्नाटक-3.6, महाराष्ट्र-3.1, UP-1.1, बिहार-0.7. महाराष्ट्राचा GSDP कर्नाटकपेक्षा जास्त असूनही दरडोई उत्पन्न कमी आहे. याचे तार्किक विश्लेषण कोणते?",
+  "q_english": "Table (2025-26 AE, current prices, ₹ lakh): Goa-5.8, Karnataka-3.6, Maharashtra-3.1, UP-1.1, Bihar-0.7. Maharashtra's GSDP exceeds Karnataka's, yet its per capita income is lower. What is the logical analysis?",
+  "options": [
+   "GSDP जास्त असूनही लोकसंख्या-भाजक मोठा असल्याने दरडोई (GSDP/लोकसंख्या) घटते",
+   "GSDP जास्त म्हणजे दरडोई आपोआप जास्त; तफावत 2011-12 आधारवर्षामुळे आहे",
+   "दरडोई PPP वर काढल्याने महाराष्ट्र मागे; चालू किमतीत तो पुढे असता",
+   "कर्नाटकचा वृद्धिदर कमी असल्याने त्याचे दरडोई उत्पन्न पातळीने जास्त दिसते"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर: दरडोई=GSDP/लोकसंख्या; महाराष्ट्राचा भाजक मोठा म्हणून दरडोई कमी.\nचूक: B मध्ये GSDP मोठा=दरडोई मोठा हे चूक; C मध्ये तक्ता चालू किमतीत आहे PPP नाही; D मध्ये वृद्धिदर पातळी ठरवत नाही.",
+  "evidence": "MoSPI State-wise SDP 2025-26 AE; Economic Survey 2025-26"
+ },
+ {
+  "section": 7,
+  "subtopic": "नवीन करप्रणाली 2026 प्रत्यक्ष कर",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता (प्रत्यक्ष कर, AY 2026-27): | बाब | जुनी प्रणाली | नवीन प्रणाली | 1.पगारदार प्रमाणित वजावट | ₹50,000 | ₹75,000 | 2.कलम 87A सूट मर्यादा | ₹5L उत्पन्न | ₹12L उत्पन्न* | 3.HRA सूट | अनुज्ञेय | अनुज्ञेय | (*मार्जिनल रिलीफसह). तक्त्याबाबत योग्य निष्कर्ष कोणता?",
+  "q_english": "Table (Direct Tax, AY 2026-27): | Item | Old regime | New regime | 1.Salaried standard deduction | Rs.50,000 | Rs.75,000 | 2 Sec 87A rebate limit | Rs.5L income | Rs.12L income* | 3.HRA exemption | Eligible | Eligible | (*with marginal relief). Correct conclusion about the table?",
+  "options": [
+   "तीन्ही ओळी बरोबर",
+   "फक्त ओळी 1 व 2 बरोबर; ओळ 3 चूक",
+   "फक्त ओळी 1 व 3 बरोबर; ओळ 2 चूक",
+   "फक्त ओळ 2 व 3 बरोबर; ओळ 1 चूक"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "ओळ 3 चूक: HRA सूट फक्त जुन्या प्रणालीत, नव्यात नाही. ओळ 1 व 2 बरोबर (Budget 2025 बदल). त्यामुळे तीन्ही बरोबर, किंवा 2/1 चूक सांगणारे पर्याय हे वजावट-87A गल्लतीतून येतात.",
+  "evidence": "Finance Act 2025; CBDT New Tax Regime FAQs AY 2026-27"
+ },
+ {
+  "section": 7,
+  "subtopic": "नाबार्ड कार्ये",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: (a) RIDF - (i) ग्रामीण पायाभूत सुविधांसाठी राज्य सरकारांना कर्ज, (b) SHG-Bank Linkage - (ii) बचत गटांना बँक पतजोडणी, (c) AMIF - (iii) कृषी पणन पायाभूत सुविधा आधुनिकीकरण, (d) LT-RCF - (iv) सहकारी बँकांमार्फत दीर्घकालीन कृषी पत.",
+  "q_english": "Match: (a) RIDF - (i) loans to states for rural infra, (b) SHG-Bank Linkage - (ii) bank linkage of SHGs, (c) AMIF - (iii) agri-marketing infra modernisation, (d) LT-RCF - (iv) long-term agri credit via cooperatives.",
+  "options": [
+   "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+   "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+   "(a)-(iv), (b)-(ii), (c)-(iii), (d)-(i)",
+   "(a)-(i), (b)-(iii), (c)-(ii), (d)-(iv)"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "सर्व जोड्या बरोबर: RIDF-पायाभूत कर्ज, SHG-पतजोडणी, AMIF-मंडी सुविधा, LT-RCF-दीर्घ पत. पर्याय 1 चूक: AMIF/LT-RCF अदलाबदल. पर्याय 2,3 चूक: RIDF व SHG च्या जोड्या चुकवल्या.",
+  "evidence": "NABARD Act 1981; NABARD Annual Report 2025-26"
+ },
+ {
+  "section": 7,
+  "subtopic": "निर्यात 2026 उद्दिष्ट",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने पहा: (a) FTP 2023 नुसार 2030 पर्यंत $2 ट्रिलियन निर्यात उद्दिष्ट (वस्तू+$1 ट्रि. सेवा+$1 ट्रि.). (b) आर्थिक सर्वेक्षण 2025-26 ने 2026 साठी वस्तू निर्यातीचे $500 अब्ज बंधनकारक उद्दिष्ट ठेवले. (c) Districts as Export Hubs व e-BRC प्रणाली FTP 2023 मध्ये समाविष्ट आहे.",
+  "q_english": "Consider: (a) FTP 2023 targets $2 trillion exports by 2030 ($1T merchandise + $1T services). (b) Economic Survey 2025-26 fixed $500 bn merchandise target for 2026. (c) Districts as Export Hubs and e-BRC are part of FTP 2023.",
+  "options": [
+   "केवळ (a) आणि (b) बरोबर",
+   "केवळ (a) आणि (c) बरोबर",
+   "(a), (b) आणि (c) सर्व बरोबर",
+   "केवळ (b) आणि (c) बरोबर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "(a),(c) सत्य: FTP 2023 उद्दिष्ट व तरतुदी बरोबर. (b) असत्य: सर्वेक्षणात अंदाज असतो, बंधनकारक $500 अब्ज लक्ष्य नाही. त्यामुळे (b) असलेले पर्याय 0,2,3 चूक.",
+  "evidence": "Foreign Trade Policy 2023 (DGFT); Economic Survey 2025-26"
+ },
+ {
+  "section": 7,
+  "subtopic": "परकीय चलन साठा 2026",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण (C): 2025-26 मध्ये रुपयाची घसरण रोखण्यासाठी RBI ने मोठ्या प्रमाणात डॉलर विक्री केली. परिणाम (E): 2026 च्या सुरुवातीला FCA घटूनही सोन्याच्या पुनर्मूल्यांकनामुळे एकूण परकीय चलन साठा स्थिर राहिला.",
+  "q_english": "Cause (C): In 2025-26 RBI sold dollars heavily to curb rupee depreciation. Effect (E): In early 2026 FCA fell yet total forex reserves stayed stable due to gold revaluation.",
+  "options": [
+   "C सत्य, E सत्य आणि C हेच E चे पूर्ण स्पष्टीकरण आहे",
+   "C सत्य, E सत्य, परंतु स्थिरीकरणाचे मुख्य कारण सोने पुनर्मूल्यांकन आहे, केवळ C नव्हे",
+   "C असत्य, E सत्य",
+   "C सत्य, E असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "C सत्य: डॉलर विक्रीने FCA घटतो. E सत्य: सोन्याच्या भाववाढीने एकूण साठा सावरला. पर्याय 0 चूक: C एकटे पूर्ण स्पष्टीकरण नाही. पर्याय 2,3 चूक: C/E असत्य ठरवता येत नाहीत.",
+  "evidence": "RBI Bulletin 2026; RBI Weekly Statistical Supplement on Forex Reserves"
+ },
+ {
+  "section": 7,
+  "subtopic": "बँक विलीनीकरण परिणाम",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): PNB + ओरिएंटल बँक ऑफ कॉमर्स + युनायटेड बँक (2020) विलीनीकरणानंतर एकत्रित व्यवसाय वाढला तरी पूर्व भारतातील MSME पत-केंद्रितता अल्पकाळात कमी झाली नाही. कारण (R): विलीनीकरण फक्त मालकी व ताळेबंद एकत्र करते; कर्जदारांच्या भौगोलिक मागणी रचनेत तात्काळ बदल घडवत नाही. योग्य?",
+  "q_english": "Assertion (A): After PNB + OBC + United Bank (2020) merger, combined business rose but eastern-India MSME credit concentration did not fall in the short run. Reason (R): Merger only consolidates ownership and balance sheets; it does not instantly alter geographic composition of borrower demand. Correct?",
+  "options": [
+   "A व R दोन्ही सत्य; R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य; पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य; R असत्य",
+   "A असत्य; R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A व R सत्य व R हेच स्पष्टीकरण: ताळेबंद एकत्रीकरणाने भूगोल बदलत नाही. दुसरा पर्याय स्पष्टीकरण नाकारतो, तिसरा/चौथा एक बाजू चूक ठरवतो—ही स्केल-इकॉनॉमीमुळे CRAR/केंद्रितता आपोआप सुधारते या गल्लती आहेत.",
+  "evidence": "RBI Report on Trend and Progress of Banking in India 2023-24; Narasimham Committee-II 1998"
+ },
+ {
+  "section": 7,
+  "subtopic": "स्टार्टअप इंडिया 2026 आढावा",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कालक्रम लावा: (a) स्टार्टअप इंडिया शुभारंभ, (b) Fund of Funds for Startups (FFS) स्थापना, (c) Startup India Seed Fund Scheme शुभारंभ, (d) MAARG मार्गदर्शन पोर्टल शुभारंभ.",
+  "q_english": "Arrange chronologically: (a) Startup India launch, (b) Fund of Funds for Startups set-up, (c) Startup India Seed Fund Scheme launch, (d) MAARG mentorship portal launch.",
+  "options": [
+   "(a) - (b) - (c) - (d)",
+   "(a) - (c) - (b) - (d)",
+   "(b) - (a) - (c) - (d)",
+   "(a) - (b) - (d) - (c)"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "बरोबर क्रम: (a) जाने.2016, (b) 2016 (SIDBI मार्फत), (c) 2021, (d) 2023. पर्याय 1,2 चूक: FFS आधी, SISFS नंतर. पर्याय 3 चूक: MAARG 2023 चा, SISFS आधीचा.",
+  "evidence": "DPIIT Startup India Action Plan 2016; SISFS Guidelines 2021; MAARG Portal 2023"
+ },
+ {
+  "section": 8,
+  "subtopic": "ABO रक्तगट प्रणाली",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण (C): बॉम्बे फिनोटाइप (hh, FUT1 उत्परिवर्तन) मध्ये H प्रतिजन तयार होत नाही व anti-H प्रतिपिंडे तयार होतात. परिणाम (E): अशा व्यक्तीस O गटाचे (H प्रतिजनयुक्त) रक्त दिल्यास तीव्र हेमोलिटिक अ‍ॅग्लुटिनेशन होते. सहसंबंध ओळखा.",
+  "q_english": "Cause (C): Bombay phenotype (hh, FUT1 mutation) lacks H antigen and develops anti-H antibodies. Effect (E): Transfusing O-group (H-antigen bearing) blood causes severe hemolytic agglutination. Identify correlation.",
+  "options": [
+   "C सत्य, E सत्य, C हे E चे योग्य कारण आहे",
+   "C सत्य, E सत्य, C हे E चे योग्य कारण नाही",
+   "C सत्य, E असत्य",
+   "C असत्य, E सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "C व E दोन्ही सत्य व C हेच E चे कारण; O पेशींवर H असते, anti-H हल्ला करते. O सार्वत्रिक दाता समजून E असत्य मानणे ही चूक.",
+  "evidence": "Bhende et al. Lancet 1952 Bombay phenotype; ICMR Blood Group Bulletin"
+ },
+ {
+  "section": 8,
+  "subtopic": "DNA दुहेरी हेलिक्स रचना",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा — स्तंभ-I (शोध/नियम) व स्तंभ-II (योगदान): A. चार्गाफ नियम — I. [A]=[T], [G]=[C]; B. फ्रँकलिन फोटो-51 — II. DNA ची X-ray विवर्तन हेलिकल प्रतिमा; C. विल्किन्स — III. फ्रँकलिन डेटाचे स्वतंत्र X-ray विश्लेषण व मॉडेल सहाय्य; D. वॉटसन-क्रिक — IV. 1953 दुहेरी हेलिक्स मॉडेल. योग्य मेळ निवडा.",
+  "q_english": "Match Column-I (discovery/rule) with Column-II (contribution): A. Chargaff rule — I. [A]=[T],[G]=[C]; B. Franklin Photo-51 — II. X-ray diffraction helical image of DNA; C. Wilkins — III. Independent X-ray analysis of Franklin data aiding model; D. Watson-Crick — IV. 1953 double helix model. Choose correct match.",
+  "options": [
+   "A-I, B-II, C-III, D-IV",
+   "A-I, B-III, C-II, D-IV",
+   "A-I, B-II, C-IV, D-III",
+   "A-II, B-I, C-III, D-IV"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य मेळ A-I, B-II, C-III, D-IV आहे. फोटो-51 फ्रँकलिनची आहे, विल्किन्सची नाही; त्यामुळे B-III/C-II अदलाबदल चूक, D नेहमी IV.",
+  "evidence": "Watson & Crick Nature 1953; Nobel Prize 1962 Physiology/Medicine"
+ },
+ {
+  "section": 8,
+  "subtopic": "RNA प्रकार mRNA tRNA rRNA",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता पहा: P: 5' m7G कॅप + 3' पॉली-A शेपूट, कोडॉन क्रम; Q: क्लोव्हरलीफ (2D)/L-आकार (3D), 3' CCA + अँटीकोडॉन; R: 28S, 18S, 5.8S, 5S; पेप्टिडील ट्रान्सफरेझ (रिबोझाइम). mRNA, tRNA, rRNA शी योग्य मेळ कोणता?",
+  "q_english": "Observe table: P: 5' m7G cap + 3' poly-A tail, codon sequence; Q: cloverleaf (2D)/L-shape (3D), 3' CCA + anticodon; R: 28S,18S,5.8S,5S; peptidyl transferase (ribozyme). Which correctly matches mRNA, tRNA, rRNA?",
+  "options": [
+   "mRNA-P, tRNA-Q, rRNA-R",
+   "mRNA-P, tRNA-R, rRNA-Q",
+   "mRNA-Q, tRNA-P, rRNA-R",
+   "mRNA-R, tRNA-Q, rRNA-P"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "P=mRNA (कॅप-पॉलीA), Q=tRNA (अँटीकोडॉन-CCA), R=rRNA (रिबोझाइम) हाच योग्य मेळ. Q-R अदलाबदल करणारे पर्याय चूक; mRNA ला क्लोव्हरलीफ नसते.",
+  "evidence": "NCERT Class 12 Biology Ch.5 (2024); Cech & Altman Nobel 1989 ribozyme"
+ },
+ {
+  "section": 8,
+  "subtopic": "अंकुरण टप्पे वनस्पती",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा — अ गट (टप्पा): i) इम्बिबिशन, ii) गिबरेलिन-मध्यस्थ सक्रियता, iii) मूलांकुर बाहेर येणे, iv) प्रांकुराची वाढ. ब गट (घटना): a) पाण्याचे निष्क्रिय शोषण व बीज फुगणे, b) α-अमायलेजने स्टार्चचे शर्करेत रूपांतर, c) सुप्तावस्था भंग व भ्रूणवाढ, d) ऋण-गुरुत्वानुवर्ती वाढ.",
+  "q_english": "Match — Group A (stage): i) Imbibition, ii) Gibberellin-mediated activation, iii) Radicle emergence, iv) Plumule growth. Group B (event): a) Passive water uptake and seed swelling, b) Starch to sugar by α-amylase, c) Dormancy break and embryo growth, d) Negatively geotropic growth.",
+  "options": [
+   "i-a, ii-b, iii-c, iv-d",
+   "i-a, ii-c, iii-b, iv-d",
+   "i-c, ii-b, iii-a, iv-d",
+   "i-a, ii-b, iii-d, iv-c"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: इम्बिबिशन=भौतिक जलशोषण; GA→α-अमायलेज→साठा गतिशील; मूलांकुर=सुप्तावस्था भंग; प्रांकुर=ऋण-गुरुत्वानुवर्ती.\nइतर चूक: B/C मध्ये b/c अदलाबदल; D मध्ये c/d अदलाबदल — टप्पा-घटना संबंध चुकवतात.",
+  "evidence": "Bewley & Black Seeds: Physiology of Development and Germination (1994); ICAR Plant Physiology Report"
+ },
+ {
+  "section": 8,
+  "subtopic": "अक्षय ऊर्जा स्रोत तुलना",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: 1) सौर PV व पवन आंतरायिक, तर भरती ऊर्जा अत्यंत पूर्वानुमेय आहे. 2) भूऔष्णिक स्टोरेजशिवाय बेसलोड देऊ शकते, सौर-पवन देऊ शकत नाहीत. 3) भारतात सौरचा क्षमता गुणांक पवनपेक्षा नेहमीच जास्त असतो. 4) जैववस्तुमान ज्वलन कार्बन-तटस्थ मानले तरी CO2 उत्सर्जित करते. योग्य गट निवडा.",
+  "q_english": "Statements: 1) Solar PV and wind are intermittent, while tidal energy is highly predictable. 2) Geothermal can provide baseload without storage, unlike solar-wind. 3) In India, solar capacity factor is always higher than wind. 4) Biomass combustion, though called carbon-neutral, emits CO2. Choose correct group.",
+  "options": [
+   "फक्त 1, 2 आणि 4",
+   "फक्त 1 आणि 3",
+   "1, 2, 3 आणि 4",
+   "फक्त 2 आणि 4"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "1,2,4 सत्य: भरती चक्रीय-पूर्वानुमेय, भूऔष्णिक बेसलोड, जैववस्तुमानात CO2 उत्सर्जन होते. 3 असत्य: स्थळानुसार पवनचा CF सौरपेक्षा जास्त असू शकतो. त्यामुळे 3 समाविष्ट असलेले पर्याय चूक; 1 वगळणारा पर्यायही चूक.",
+  "evidence": "MNRE Annual Report 2023-24; IPCC AR6 WG3; Capacity Factor data"
+ },
+ {
+  "section": 8,
+  "subtopic": "डॉप्लर परिणाम ध्वनी",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "ध्वनी वेग V मानून निरीक्षित वारंवारतेचा चढता क्रम लावा: A – स्रोत स्थिर, निरीक्षक V/4 ने स्रोताकडे; B – निरीक्षक स्थिर, स्रोत V/4 ने निरीक्षकाकडे; C – निरीक्षक स्थिर, स्रोत V/4 ने दूर; D – दोघेही V/8 ने एकमेकांकडे. योग्य क्रम निवडा.",
+  "q_english": "Take sound speed as V. Arrange in increasing order of observed frequency: A – source fixed, observer approaches at V/4; B – observer fixed, source approaches at V/4; C – observer fixed, source recedes at V/4; D – both approach each other at V/8. Choose correct order.",
+  "options": [
+   "C < A < D < B",
+   "C < A < B < D",
+   "C < D < A < B",
+   "A < C < D < B"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "f'=f(V±Vo)/(V∓Vs) ने C=0.80f, A=1.25f, D≈1.29f, B≈1.33f मिळते, म्हणून C<A<D<B. स्रोत-निरीक्षक गती सममित मानणे ही चूक; त्यामुळे B/D अदलाबदल असलेले पर्याय चूक, A<C मानणारा पर्यायही चूक.",
+  "evidence": "Doppler Effect formula, NCERT Class 11 Physics Ch.15; C. Doppler 1842"
+ },
+ {
+  "section": 8,
+  "subtopic": "न्यूटन तिसरा नियम उदाहरणे",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "न्यूटनचा तिसरा नियम आणि स्थैतिक घर्षण या दोन्ही संकल्पना एकत्रितपणे जेथे आवश्यक आहेत, ते अचूक उदाहरण कोणते?",
+  "q_english": "In which example are both Newton's third law and static friction jointly essential for explanation?",
+  "options": [
+   "जमिनीवर चालताना पाय मागे ढकलणे",
+   "बंदुकीतून गोळी सुटताना प्रतिक्षेप",
+   "अवकाशात रॉकेटचे प्रणोदन",
+   "चुंबकाने लोखंड आकर्षित करणे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "चालण्यात पाय मागे ढकलतो (क्रिया), जमीन पुढे ढकलते (प्रतिक्रिया) पण स्थैतिक घर्षणाशिवाय ही प्रतिक्रिया मिळत नाही. इतर पर्यायांत तिसरा नियम आहे पण घर्षणाची भूमिका निर्णायक नाही, म्हणून चूक.",
+  "evidence": "Newton's Laws of Motion, NCERT Class 11 Ch.5; MPSC PYQ 2020"
+ },
+ {
+  "section": 8,
+  "subtopic": "न्यूरॉन रचना मज्जासंस्था",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): मायलिनयुक्त अक्षतंतूमध्ये आवेगवहन अमायलिनयुक्त तंतूपेक्षा कितीतरी वेगाने होते. कारण (R): रॅन्व्हिअर पर्वांवर व्होल्टेज-गेटेड Na+/K+ वाहिन्या केंद्रित असल्याने विध्रुवीकरण फक्त पर्वांवर घडते व आवेग उडी मारत पुढे जातो (लवणीय वहन).",
+  "q_english": "Assertion (A): Impulse conduction in a myelinated axon is much faster than in a non-myelinated fibre. Reason (R): Voltage-gated Na+/K+ channels are concentrated at the nodes of Ranvier, so depolarisation occurs only at nodes and the impulse jumps forward (saltatory conduction).",
+  "options": [
+   "अ आणि र दोन्ही सत्य आहेत आणि र हे अ चे अचूक स्पष्टीकरण आहे",
+   "अ आणि र दोन्ही सत्य आहेत परंतु र हे अ चे अचूक स्पष्टीकरण नाही",
+   "अ सत्य आहे परंतु र असत्य आहे",
+   "अ असत्य आहे परंतु र सत्य आहे"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: पर्वांवरच पुनरुत्पादक विध्रुवीकरण झाल्याने लवणीय वहन होते, वेग ~120 m/s पर्यंत वाढतो.\nइतर चूक: B स्पष्टीकरण नाकारते; C मध्ये सत्य असलेली R चुकवली; D मध्ये सत्य असलेली A चुकवली.",
+  "evidence": "Guyton Textbook of Medical Physiology 13th ed. Ch.5; NCERT Class 11 Biology Ch.17 (2023)"
+ },
+ {
+  "section": 8,
+  "subtopic": "बाष्पोत्सर्जन वनस्पती",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने: 1) सापेक्ष आर्द्रता वाढल्यास पान-बाह्य जलवाष्प प्रवणता घटून बाष्पोत्सर्जन घटते. 2) वाऱ्याचा वेग वाढल्यास सीमा-थर जाड होऊन बाष्पोत्सर्जन वाढते. 3) ABA मुळे रक्षक पेशीतून K+ बाहेर जाऊन स्फीती घटते, रंध्र बंद होऊन बाष्पोत्सर्जन घटते. कोणती बरोबर?",
+  "q_english": "Statements: 1) Higher relative humidity reduces leaf-air vapour gradient, lowering transpiration. 2) Higher wind speed thickens the boundary layer, increasing transpiration. 3) ABA causes K+ efflux from guard cells, loss of turgor, stomatal closure, lowering transpiration. Which are correct?",
+  "options": [
+   "फक्त 1 व 3 बरोबर",
+   "1, 2 व 3 सर्व बरोबर",
+   "फक्त 1 बरोबर",
+   "फक्त 2 व 3 बरोबर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: 1 व 3 बरोबर; 2 चूक — वारा सीमा-थर पातळ करतो (जाड नाही), तरी बाष्पोत्सर्जन वाढते.\nइतर चूक: B जाड-थर चूक स्वीकारते; C 3 नाकारते; D 1 नाकारून चूक 2 स्वीकारते.",
+  "evidence": "Taiz & Zeiger Plant Physiology 6th ed. Ch.4; NCERT Class 11 Biology Ch.11"
+ },
+ {
+  "section": 8,
+  "subtopic": "मानवी हृदय दुहेरी परिसंचरण",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "प्रतिपादन (A): प्रौढ मानवी हृदयात दुहेरी परिसंचरणामुळे ऑक्सिजनयुक्त व विरहित रक्त पूर्णपणे विभक्त राहते. कारण (R): डाव्या निलयाची भिंत उजव्या निलयापेक्षा सुमारे तिप्पट जाड असून सिस्टीमिक दाब फुफ्फुसीय दाबापेक्षा जास्त असतो. योग्य पर्याय निवडा.",
+  "q_english": "Assertion (A): Adult human heart shows double circulation keeping oxygenated and deoxygenated blood completely separate. Reason (R): Left ventricular wall is ~3x thicker than right as systemic pressure exceeds pulmonary pressure. Choose correct option.",
+  "options": [
+   "A व R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A व R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A व R दोन्ही सत्य पण R हे A चे स्पष्टीकरण नाही; विभाजनाचे कारण पडदा (septum), जाडीचे कारण दाब-फरक. 'स्पष्टीकरण आहे' मानणे चूक.",
+  "evidence": "Guyton Textbook of Medical Physiology 13th ed.; NCERT Class 11 Ch.18 (2024)"
+ },
+ {
+  "section": 8,
+  "subtopic": "लस कार्यपद्धत प्रतिक्षा",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "संकल्पना 1: mRNA लस कार्यपद्धती, संकल्पना 2: दुय्यम प्रतिक्षा प्रतिसाद. या दोहोंना जोडणारे अचूक विधान कोणते?",
+  "q_english": "Concept 1: mRNA vaccine mechanism, Concept 2: secondary immune response. Which statement correctly links both concepts?",
+  "options": [
+   "mRNA यजमान पेशीत स्पाइक प्रतिजन तयार करवते (सक्रिय प्रतिक्षा); दुय्यम प्रतिसादात स्मृती B/T पेशींमुळे IgG जलद व अधिक तयार होते",
+   "mRNA थेट निष्क्रिय स्पाइक प्रथिन टोचते; दुय्यम प्रतिसादात IgM प्रथम व सर्वाधिक वाढते",
+   "mRNA निष्क्रिय प्रतिक्षा देते; दुय्यम प्रतिसाद प्राथमिकइतकाच संथ असतो",
+   "mRNA यजमान DNA मध्ये कायम समाविष्ट होते; दुय्यम प्रतिसादात IgE मुख्य असते"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: mRNA सक्रिय प्रतिक्षा निर्माण करते; स्मृती पेशींमुळे दुय्यम प्रतिसाद जलद, तीव्र, IgG-प्रधान असतो.\nइतर चूक: B प्रथिन-उपघटक लसीशी गोंधळ व IgM चूक; C निष्क्रिय/संथ चूक; D DNA समावेश व IgE चूक.",
+  "evidence": "WHO Vaccine Immunology Basics (2022); Janeway's Immunobiology 10th ed. Ch.10"
+ },
+ {
+  "section": 8,
+  "subtopic": "विद्युतचुंबकीय प्रेरण",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्त्यातील स्थिती पाहा: A – दंड चुंबक तांब्याच्या कुंडलात आत-बाहेर हलवला; B – कुंडल स्थिर चुंबकीय क्षेत्रात फिरवले; C – प्राथमिक स्थिर कुंडलात स्थिर DC प्रवाह, शेजारी दुय्यम स्थिर कुंडल. फॅराडे नियमानुसार कोणत्या स्थितीत प्रेरित वि.चा.ब. निर्माण होईल?",
+  "q_english": "Consider the table: A – bar magnet moved in/out of a copper coil; B – coil rotated in a steady magnetic field; C – steady DC in a fixed primary coil, secondary fixed nearby. In which cases is an EMF induced per Faraday's law?",
+  "options": [
+   "फक्त A आणि B",
+   "फक्त B आणि C",
+   "A, B आणि C",
+   "फक्त A आणि C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "A मध्ये सापेक्ष गतीने व B मध्ये फिरण्याने चुंबकीय फ्लक्स बदलतो (dΦ/dt≠0) म्हणून EMF; C मध्ये स्थिर DC मुळे बदल शून्य, EMF नाही. त्यामुळे B+C, A+B+C, A+C हे पर्याय C मधील चुकीच्या समजुतीमुळे चूक.",
+  "evidence": "Faraday's Law of Induction, NCERT Class 12 Physics Ch.6; MPSC Rajyaseva 2019"
+ },
+ {
+  "section": 8,
+  "subtopic": "विशिष्ट उष्मा धारकता",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "विधान (A): समान वस्तुमानाला समान उष्णता दिल्यास तांब्याचा तुकडा ॲल्युमिनियमपेक्षा अधिक तापतो. कारण (R): तांब्याची विशिष्ट उष्मा धारकता (~385 J/kgK) ॲल्युमिनियमपेक्षा (~900 J/kgK) कमी आहे. योग्य पर्याय निवडा.",
+  "q_english": "Assertion (A): For equal mass and equal heat supplied, a copper piece shows greater temperature rise than aluminium. Reason (R): Specific heat of copper (~385 J/kgK) is less than aluminium (~900 J/kgK). Choose correct option.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे अचूक स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे अचूक स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "Q=mcΔT मुळे ΔT=Q/mc, c कमी तर ΔT जास्त, म्हणून A सत्य व R त्याचे स्पष्टीकरण. दुसरा पर्याय स्पष्टीकरण नाकारतो म्हणून चूक; तिसरा-चौथा तथ्यात्मकदृष्ट्या चूक.",
+  "evidence": "Q=mcΔT, NCERT Class 11 Physics Ch.11; Specific heat table"
+ },
+ {
+  "section": 8,
+  "subtopic": "सॅपोनिफिकेशन साबण निर्मिती",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता — सॅपोनिफिकेशन मूल्य (SV) = 1 ग्रॅम तेलासाठी लागणारे KOH (मिग्रॅ): तेल P=196, Q=242, R=170. समान 100 ग्रॅम तेलापासून सोडियम साबण बनवल्यास NaOH मागणी व साबण गुणधर्माबाबत अचूक निष्कर्ष कोणता?",
+  "q_english": "Table — saponification value (SV) = mg KOH per 1 g oil: Oil P=196, Q=242, R=170. For 100 g of each oil made into sodium soap, which conclusion on NaOH requirement and soap property is correct?",
+  "options": [
+   "Q साठी सर्वाधिक NaOH लागेल; Q चा साबण अधिक विरघळणारा व मऊ असेल",
+   "R साठी सर्वाधिक NaOH लागेल; R चा साबण सर्वात कठीण असेल",
+   "P साठी सर्वाधिक NaOH लागेल; Q चा साबण सर्वात कठीण असेल",
+   "तिघांसाठी समान NaOH लागेल; SV चा साबणाशी संबंध नाही"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: उच्च SV=कमी आण्विक वस्तुमान (लहान शृंखला); प्रति ग्रॅम अधिक मोल, अधिक NaOH; लहान शृंखला साबण अधिक विरघळणारा.\nइतर चूक: B/C SV-अर्थ उलटा लावतात; D SV दुर्लक्षित करते.",
+  "evidence": "AOCS Official Method Cd 3-25 (2023); NCERT Class 12 Chemistry Ch.16"
+ },
+ {
+  "section": 8,
+  "subtopic": "हरितलवक प्रकाशसंश्लेषण",
+  "qtype": "बहु-विधान",
+  "q_marathi": "विधाने विचारात घ्या: (A) हरितलवकात पाण्याचे प्रकाश-विभाजन थायलॅकॉइड पटलाच्या स्ट्रोमा पृष्ठभागावर होते. (B) चक्रीय फोटोफॉस्फोरिलेशनमध्ये फक्त PS-I कार्यरत राहून ATP तयार होते, NADPH तयार होत नाही. (C) C4 वनस्पतींत CO2 प्रथम मेसोफिल पेशीद्रव्यात PEP द्वारे OAA मध्ये स्थिर होते. योग्य पर्याय निवडा.",
+  "q_english": "Consider statements: (A) Photolysis of water occurs on the stromal side of thylakoid membrane. (B) Cyclic photophosphorylation involves only PS-I producing ATP, no NADPH. (C) In C4 plants CO2 is first fixed into OAA via PEP in mesophyll cytosol. Choose correct option.",
+  "options": [
+   "फक्त A आणि B सत्य",
+   "फक्त B आणि C सत्य",
+   "फक्त A आणि C सत्य",
+   "A, B आणि C सर्व सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "A असत्य: OEC थायलॅकॉइड ल्युमेन बाजूस असते, स्ट्रोमा बाजूस नाही. B व C सत्य असल्याने B+C योग्य; A समाविष्ट असलेले पर्याय चुकतात.",
+  "evidence": "NCERT Class 11 Biology Ch.13 (2024); Taiz & Zeiger Plant Physiology 6th ed."
+ }
+]

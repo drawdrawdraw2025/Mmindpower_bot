@@ -1,0 +1,1442 @@
+[
+ {
+  "section": 3,
+  "subtopic": "Mission Mausam 2024",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "विधान (A): मिशन मौसम हे पृथ्वी विज्ञान मंत्रालयाने IMD च्या 150 व्या वर्धापनदिनानिमित्त 2024 मध्ये सुरू केले. कारण (R): याचा मुख्य भर हवामान निरीक्षण पायाभूत सुविधा व अचूक अंदाज मॉडेल्सवर आहे, कृषी उत्पादन अनुदानावर नाही.",
+  "q_english": "Assertion (A): Mission Mausam was launched in 2024 by Ministry of Earth Sciences on IMD's 150th anniversary. Reason (R): Its main thrust is weather observation infrastructure and forecast modelling, not agri production subsidy.",
+  "options": [
+   "A आणि R दोन्ही सत्य, R हे A चे योग्य स्पष्टीकरण आहे",
+   "A आणि R दोन्ही सत्य, पण R हे A चे योग्य स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: A सत्य (सप्टेंबर 2024, MoES, IMD-1875 चे 150 वर्षे) आणि R सत्य, पण R हे केवळ उद्दिष्ट सांगते, 150 व्या वर्धापनदिनाचे कारण देत नाही, म्हणून स्पष्टीकरण नाही. इतर पर्याय चूक: A असत्य मानणे चूक, R ला अनुदानाशी जोडणे चूक.",
+  "evidence": "MoES press release Sep 2024; IMD established 1875"
+ },
+ {
+  "section": 3,
+  "subtopic": "PM E-DRIVE 2024",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "विधाने: I) PM E-DRIVE ऑक्टोबर 2024 मध्ये अवजड उद्योग मंत्रालयाने सुरू केली, तरतूद सुमारे ₹10,900 कोटी, कालावधी 2 वर्षे. II) ही योजना FAME-II ची जागा घेते. III) यात ई-2W, ई-3W, ई-बस, ई-रुग्णवाहिका व चार्जिंग पायाभूत सुविधांना सहाय्य आहे.",
+  "q_english": "Statements: I) PM E-DRIVE launched Oct 2024 by Ministry of Heavy Industries, outlay ~Rs 10,900 cr, 2 years. II) It replaces FAME-II. III) It supports e-2W, e-3W, e-buses, e-ambulances and charging infra.",
+  "options": [
+   "फक्त I आणि II सत्य",
+   "फक्त II आणि III सत्य",
+   "I, II, III सर्व सत्य",
+   "फक्त I सत्य"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: तिन्ही सत्य. FAME-II सप्टेंबर 2024 मध्ये संपली, E-DRIVE ने तिची जागा घेतली; रुग्णवाहिका हा नवीन घटक समाविष्ट आहे. इतर पर्याय चूक: I-II किंवा II-III अपूर्ण आहेत, कारण तिन्ही स्वतंत्रपणे पडताळलेली आहेत.",
+  "evidence": "Gazette notification PM E-DRIVE Sep 2024; MHI guidelines"
+ },
+ {
+  "section": 3,
+  "subtopic": "NMEO-Oilseeds 2024",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) NMEO-Oilseeds (2024) चे उद्दिष्ट खाद्यतेलात स्वयंपूर्णता, 7 वर्षे (2024-31), लक्ष्य मोहरी, भुईमूग, सोयाबीन, ऑईल पाम. Y) NMEO-Oil Palm (2021) हे फक्त ईशान्य व अंदमानात तेल पाम विस्तारासाठी होते. योग्य निष्कर्ष?",
+  "q_english": "X) NMEO-Oilseeds (2024) aims edible-oil self-sufficiency, 7 years (2024-31), crops mustard, groundnut, soybean, oil palm. Y) NMEO-Oil Palm (2021) was only for oil palm expansion in NE and Andamans. Correct conclusion?",
+  "options": [
+   "X हा Y चा विस्तार असून Y रद्द झाला",
+   "X हा व्यापक तेलबिया अभियान असून Y त्यातील एका पिकाचा पूर्वीचा केंद्रित कार्यक्रम होता",
+   "X आणि Y दोन्ही फक्त मोहरीपुरते मर्यादित",
+   "X हा आयात अनुदान कार्यक्रम, Y हा निर्यात कार्यक्रम"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: X (ऑक्टोबर 2024, ₹10,103 कोटी) सर्व तेलबियांसाठी व्यापक आहे; Y (2021) तेल पामपुरता केंद्रित होता, तो X मध्ये समाविष्ट झाला पण रद्द नाही. इतर पर्याय चूक: Y रद्द झाला हे असत्य, फक्त मोहरी किंवा आयात-निर्यात वर्गीकरण चूक.",
+  "evidence": "Cabinet approval Oct 2024 NMEO-Oilseeds; DAC&FW NMEO-OP 2021"
+ },
+ {
+  "section": 3,
+  "subtopic": "ONOS 2025",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "जोड्या लावा: A) ONOS - 1) INFLIBNET समन्वय B) उद्दिष्ट - 2) 13,000+ जर्नल्सचा एकल प्रवेश C) कालावधी/तरतूद - 3) 2025-27, ₹6,000 कोटी D) लाभार्थी - 4) 6,300+ उच्च शिक्षण/संशोधन संस्था",
+  "q_english": "Match: A) ONOS - 1) INFLIBNET coordination B) Objective - 2) Single-point access to 13,000+ journals C) Period/outlay - 3) 2025-27, Rs 6,000 cr D) Beneficiaries - 4) 6,300+ HEIs/research institutions",
+  "options": [
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-4, D-3",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: सर्व जोड्या अचूक: INFLIBNET (IUC, गांधीनगर) अंमलबजावणी, एकल सदस्यत्व मॉडेल, 3 वर्षे ₹6,000 कोटी, 6,300+ संस्था. इतर पर्याय चूक: समन्वयक म्हणून UGC/CSIR नव्हे, तरतूद/कालावधी अदलाबदल चूक.",
+  "evidence": "Cabinet note Nov 2024 ONOS; INFLIBNET"
+ },
+ {
+  "section": 3,
+  "subtopic": "PM Vidyalaxmi 2024",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: PM-विद्यालक्ष्मी मध्ये NIRF क्रमवारीतील 860 दर्जेदार संस्थांतील विद्यार्थ्यांना ₹7.5 लाखांपर्यंत तारणमुक्त कर्ज व 3% व्याज सवलत. परिणाम: यामुळे केवळ सरकारी संस्थांतील SC/ST विद्यार्थ्यांनाच लाभ मिळतो.",
+  "q_english": "Cause: PM-Vidyalaxmi gives collateral-free loans up to Rs 7.5 lakh and 3% interest subvention for students of 860 top NIRF HEIs. Effect: Hence only SC/ST students in govt institutions benefit.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य व परिणाम कारणाचा तार्किक निष्कर्ष",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "कारण व परिणाम दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (नोव्हेंबर 2024, शिक्षण मंत्रालय), पण परिणाम असत्य, योजना गुणवत्ताधारित व सर्व आर्थिक दुर्बल घटकांसाठी, जात/सरकारी-खासगी भेद नाही. इतर पर्याय चूक: परिणाम तार्किक निष्कर्ष नाही.",
+  "evidence": "MoE PM-Vidyalaxmi guidelines Nov 2024"
+ },
+ {
+  "section": 3,
+  "subtopic": "SVAMITVA 2025",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: योजना - SVAMITVA; मंत्रालय - पंचायती राज; तंत्रज्ञान - Survey of India ड्रोन सर्वेक्षण; दस्तऐवज - आबादी क्षेत्रातील मालमत्ता कार्ड (Property Card). खालीलपैकी कोणते असत्य?",
+  "q_english": "Table: Scheme - SVAMITVA; Ministry - Panchayati Raj; Tech - Survey of India drone survey; Document - Property Card for abadi areas. Which is false?",
+  "options": [
+   "हे केंद्र पुरस्कृत योजना म्हणून पंचायती राज मंत्रालय राबवते",
+   "ड्रोन सर्वेक्षण भारतीय सर्वेक्षण विभाग करते",
+   "मालमत्ता कार्ड फक्त शेतजमिनीच्या 7/12 साठी दिले जाते",
+   "उद्दिष्ट आबादी क्षेत्रातील वाद कमी करून कर्ज सुलभता"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: असत्य विधान तिसरे, मालमत्ता कार्ड आबादी (गावठाण) मालमत्तेसाठी, 7/12 शेतजमिनीसाठी नाही. इतर विधाने सत्य: MoPR, SoI ड्रोन, वाद-कर्ज उद्दिष्ट. पर्यायांची अदलाबदल चूक ठरते.",
+  "evidence": "MoPR SVAMITVA dashboard 2025"
+ },
+ {
+  "section": 3,
+  "subtopic": "Ken-Betwa Link 2024-25",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कालक्रम लावा: A) केन-बेतवा करारावर स्वाक्षरी (2021) B) राष्ट्रीय नदीजोड प्रकल्प म्हणून घोषित C) दौधन धरण पायाभरणी/काम सुरू (2024-25) D) पर्यावरण मंजुरी टप्पे",
+  "q_english": "Arrange chronology: A) Ken-Betwa agreement signed (2021) B) Declared as national river-link project C) Daudhan dam groundwork started (2024-25) D) Environmental clearance stages",
+  "options": [
+   "A-D-C-B",
+   "A-D-B-C",
+   "D-A-B-C",
+   "A-B-D-C"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: 2021 करार → पर्यावरण/वन्यजीव मंजुरी (पन्ना व्याघ्र) → राष्ट्रीय प्रकल्प दर्जा → दौधन धरण काम 2024-25. B शेवटी नाही, मध्ये आहे. इतर क्रम चूक: मंजुरीशिवाय काम शक्य नाही.",
+  "evidence": "Jal Shakti Ministry Ken-Betwa status 2024-25"
+ },
+ {
+  "section": 3,
+  "subtopic": "Critical Mineral Mission 2025",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) राष्ट्रीय क्रिटिकल खनिज अभियान 2025 मध्ये सुरू, उद्दिष्ट लिथियम, कोबाल्ट, दुर्मीळ मृदा यांची साखळी सुरक्षित करणे. II) हे खाण मंत्रालयाचे अभियान आहे. III) यात फक्त देशांतर्गत खाणकाम समाविष्ट, परदेशी मालमत्ता/पुनर्वापर वगळले.",
+  "q_english": "Statements: I) National Critical Mineral Mission 2025 launched to secure lithium, cobalt, rare earths chain. II) It is Ministry of Mines mission. III) It covers only domestic mining, excluding overseas assets/recycling.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (कॅबिनेट जानेवारी 2025, ₹16,300 कोटी), III असत्य, अभियानात परदेशी मालमत्ता (KABIL), पुनर्वापर व R&D समाविष्ट. इतर पर्याय चूक: III सत्य मानणे चूक.",
+  "evidence": "Cabinet Jan 2025 Critical Mineral Mission"
+ },
+ {
+  "section": 3,
+  "subtopic": "Turmeric Board 2025",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) राष्ट्रीय हळद मंडळ - 1) निजामाबाद B) स्थापना - 2) जानेवारी 2025 C) मंत्रालय - 3) वाणिज्य व उद्योग D) उद्दिष्ट - 4) हळद निर्यात व मूल्यवर्धन",
+  "q_english": "Match: A) National Turmeric Board - 1) Nizamabad B) Established - 2) Jan 2025 C) Ministry - 3) Commerce & Industry D) Objective - 4) Turmeric export & value addition",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: मुख्यालय निजामाबाद (तेलंगणा), उद्घाटन जानेवारी 2025, वाणिज्य मंत्रालय, निर्यात-गुणवत्ता-संशोधन उद्दिष्ट. इतर जोड्या चूक: स्थापना-ठिकाण अदलाबदल चूक.",
+  "evidence": "Ministry of Commerce notification Jan 2025"
+ },
+ {
+  "section": 3,
+  "subtopic": "Genome India 2025",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: जीनोम इंडिया प्रकल्पाने 2025 पर्यंत 10,000 भारतीय जीनोमचे अनुक्रमण पूर्ण केले. R: यामुळे भारतीय लोकसंख्येसाठी अचूक औषध (precision medicine) व रोग-संवेदनशीलता संशोधन शक्य होते.",
+  "q_english": "A: Genome India completed sequencing of 10,000 Indian genomes by 2025. R: This enables precision medicine and disease-susceptibility research for Indian population.",
+  "options": [
+   "A व R सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य, पण R हे A चे स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही सत्य (DBT, 2020-25, 10k जीनोम), पण R हे परिणाम/उपयोग सांगते, 10k पूर्ण होण्याचे कारण देत नाही, म्हणून स्पष्टीकरण नाही. इतर पर्याय चूक: R असत्य नाही.",
+  "evidence": "DBT Genome India announcement 2025"
+ },
+ {
+  "section": 3,
+  "subtopic": "Khelo Bharat Niti 2025",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) राष्ट्रीय क्रीडा धोरण 2025 (खेलो भारत नीती) – 2047 पर्यंत क्रीडा महासत्ता उद्दिष्ट. Y) खेलो इंडिया योजना – तळागाळातील प्रतिभा शोध व पायाभूत सुविधा. योग्य संबंध?",
+  "q_english": "X) National Sports Policy 2025 (Khelo Bharat Niti) – sports superpower by 2047. Y) Khelo India Scheme – grassroots talent search & infra. Correct relation?",
+  "options": [
+   "X हा Y ची जागा घेणारा कार्यक्रम",
+   "X हे धोरणात्मक छत्र असून Y ही त्यातील अंमलबजावणी योजना",
+   "X फक्त ऑलिंपिक पदकांसाठी, Y फक्त शालेय क्रीडा",
+   "X आणि Y दोन्ही राज्यांची योजना"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: 2025 धोरण (क्रीडा मंत्रालय) हे व्यापक धोरण छत्र, खेलो इंडिया (2018) त्यातील प्रमुख अंमलबजावणी. इतर पर्याय चूक: जागा घेणे/फक्त शालेय मर्यादा चूक.",
+  "evidence": "MYAS National Sports Policy 2025"
+ },
+ {
+  "section": 3,
+  "subtopic": "National Cooperative Policy 2025",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) राष्ट्रीय सहकार धोरण 2025 हे 2002 नंतरचे पहिले नवे धोरण. II) उद्दिष्ट 2029 पर्यंत प्रत्येक पंचायतीत सहकारी संस्था. III) हे कृषी मंत्रालयाने जाहीर केले.",
+  "q_english": "Statements: I) National Cooperative Policy 2025 is first new policy after 2002. II) Target cooperative in every panchayat by 2029. III) It was announced by Ministry of Agriculture.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (सहकार मंत्रालय, अमित शाह अध्यक्ष समिती), III असत्य, सहकार मंत्रालय (2021 निर्मित) जबाबदार, कृषी नव्हे. इतर पर्याय चूक: मंत्रालय अदलाबदल चूक.",
+  "evidence": "Ministry of Cooperation draft 2025"
+ },
+ {
+  "section": 3,
+  "subtopic": "PM Internship 2024",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: PM इंटर्नशिप योजना (2024 पायलट) मध्ये 21-24 वयोगटातील 1 कोटी युवकांना 5 वर्षांत शीर्ष 500 कंपन्यांत इंटर्नशिप, ₹5,000/महिना सहाय्य. परिणाम: यामुळे सर्व पदवीधरांना सरकारी नोकरीची हमी मिळते.",
+  "q_english": "Cause: PM Internship (2024 pilot) offers 1 cr youth aged 21-24 internships in top 500 companies over 5 yrs, Rs 5,000/month. Effect: Hence all graduates get govt job guarantee.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (अर्थसंकल्प 2024-25 घोषणा, MCA अंमलबजावणी), परिणाम असत्य, ही कौशल्य-अनुभव योजना, नोकरी हमी नाही. इतर पर्याय चूक: हमीचा दावा चूक.",
+  "evidence": "Budget 2024-25; MCA PM Internship guidelines"
+ },
+ {
+  "section": 3,
+  "subtopic": "BAS Plan",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: भारतीय अंतराळ स्थानक (BAS) – घोषणा ISRO; पहिले मॉड्यूल 2028; पूर्णत्व 2035; उद्दिष्ट गगनयानानंतर दीर्घकालीन मानवी उपस्थिती. कोणते सत्य नाही?",
+  "q_english": "Table: BAS – announced by ISRO; first module 2028; completion 2035; goal long-term human presence after Gaganyaan. Which is NOT true?",
+  "options": [
+   "BAS हे आंतरराष्ट्रीय अंतराळ स्थानकाचा भाग आहे",
+   "पहिले मॉड्यूल 2028 पर्यंत लक्ष्य",
+   "2035 पर्यंत पूर्ण स्थानक उद्दिष्ट",
+   "गगनयान हे त्यापूर्वीचे मानवयुक्त टप्पा"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: पहिले विधान असत्य, BAS हे भारताचे स्वतंत्र स्थानक, ISS चा भाग नाही. इतर सत्य: ISRO रोडमॅप 2028/2035, गगनयान पूर्वटप्पा. पर्यायांची अदलाबदल चूक.",
+  "evidence": "ISRO roadmap presentation 2024-25"
+ },
+ {
+  "section": 3,
+  "subtopic": "Axiom-4 2025",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कालक्रम: A) शुभांशु शुक्ला यांची Axiom-4 साठी निवड घोषणा B) SpaceX Falcon 9 प्रक्षेपण (जून 2025) C) ISS वर डॉकिंग व 14 दिवस प्रयोग D) पृथ्वीवर परतणे",
+  "q_english": "Chronology: A) Shubhanshu Shukla announced for Axiom-4 B) SpaceX Falcon 9 launch (June 2025) C) ISS docking & 14-day experiments D) Return to Earth",
+  "options": [
+   "A-B-C-D",
+   "B-A-C-D",
+   "A-C-B-D",
+   "B-C-A-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: निवड → प्रक्षेपण 25 जून 2025 → डॉकिंग/प्रयोग → परतणे. हाच तार्किक क्रम. इतर क्रम चूक: प्रक्षेपणापूर्वी डॉकिंग अशक्य.",
+  "evidence": "Axiom Space / ISRO updates June-July 2025"
+ },
+ {
+  "section": 4,
+  "subtopic": "Gadkari Revolt 1844",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "कालक्रम लावा: A) गडकऱ्यांचे कोल्हापूर संस्थानातील बंड (1844) B) ब्रिटिशांनी किल्लेदारांची इनामे रद्द करणे C) कोल्हापूरचा तह व ब्रिटिश हस्तक्षेप वाढ D) बंड शमल्यानंतर गडकरी विसर्जन",
+  "q_english": "Arrange: A) Gadkari revolt in Kolhapur (1844) B) British resuming fort-garrison inams C) Kolhapur treaty & increased British interference D) Disbanding of Gadkaris after suppression",
+  "options": [
+   "B-A-C-D",
+   "A-B-C-D",
+   "B-C-A-D",
+   "C-B-A-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: इनामे रद्द (कारण) → 1844 बंड → हस्तक्षेप वाढ → विसर्जन (परिणाम). A आधी B हवे. इतर क्रम चूक: कारणानंतरच बंड शक्य.",
+  "evidence": "Kolhapur District Gazetteer; Maharashtra State Archives"
+ },
+ {
+  "section": 4,
+  "subtopic": "Phadke 1879",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: वासुदेव बळवंत फडके यांनी 1879 मध्ये रामोशी समाजासह सशस्त्र बंड पुकारले. R: दख्खन दुष्काळ (1876-78) व सावकारी शोषणामुळे शेतकऱ्यांत असंतोष होता.",
+  "q_english": "A: Vasudev Balwant Phadke launched armed revolt in 1879 with Ramoshi community. R: Deccan famine (1876-78) and moneylender exploitation caused peasant discontent.",
+  "options": [
+   "A व R सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि दुष्काळ-सावकारी हे बंडाचे प्रत्यक्ष कारण, म्हणून R हे A चे स्पष्टीकरण. इतर पर्याय चूक: R असत्य नाही.",
+  "evidence": "Sumit Sarkar Modern India; Phadke autobiography"
+ },
+ {
+  "section": 4,
+  "subtopic": "Prarthana vs Paramahansa",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) परमहंस सभा (1840, मुंबई) – जातिभेद निषेध, गुप्त बैठक. Y) प्रार्थना समाज (1867, मुंबई) – केशवचंद्र सेन प्रेरणा, एकेश्वरवाद, समाजसुधारणा. योग्य निष्कर्ष?",
+  "q_english": "X) Paramahansa Sabha (1840, Mumbai) – opposed caste, secret meetings. Y) Prarthana Samaj (1867, Mumbai) – inspired by Keshub Chandra Sen, monotheism, social reform. Correct conclusion?",
+  "options": [
+   "X ही Y ची शाखा होती",
+   "X ही गुप्त पूर्वपीठिका, Y ही जाहीर सुधारणावादी उत्तरसंस्था",
+   "X व Y दोन्ही ख्रिश्चन मिशनरी संस्था",
+   "X ही 1867 नंतरची, Y ही 1840 पूर्वीची"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: परमहंस सभा गुप्त व अल्पजीवी पूर्वप्रयोग, प्रार्थना समाज जाहीर व दीर्घकालीन; थेट शाखा नाही. इतर पर्याय चूक: कालक्रम उलटा किंवा मिशनरी वर्गीकरण चूक.",
+  "evidence": "Maharashtra State Board History; J.V. Naik"
+ },
+ {
+  "section": 4,
+  "subtopic": "Servants of India 1905",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) सर्व्हंट्स ऑफ इंडिया सोसायटी 1905 मध्ये गोपाळ कृष्ण गोखले यांनी पुण्यात स्थापन केली. II) सदस्यांना राजकारणापासून अलिप्त राहून समाजसेवा बंधनकारक होती. III) ही संघटना काँग्रेसची अधिकृत शाखा होती.",
+  "q_english": "Statements: I) Servants of India Society founded 1905 in Pune by G.K. Gokhale. II) Members bound to social service keeping aloof from politics. III) It was official branch of Congress.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (पुणे, निःस्वार्थ सेवा शपथ), III असत्य, ती स्वतंत्र संस्था, काँग्रेस शाखा नव्हे. इतर पर्याय चूक: III सत्य मानणे चूक.",
+  "evidence": "Gokhale papers; B.R. Nanda"
+ },
+ {
+  "section": 4,
+  "subtopic": "Shikshan Prasarak Mandali 1888",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) शिक्षण प्रसारक मंडळी – 1) 1888, पुणे B) संस्थापक – 2) चिपळूणकर-आगरकर-टिळक C) संस्था – 3) न्यू इंग्लिश स्कूल D) वैशिष्ट्य – 4) स्वदेशी शिक्षणातून राष्ट्रीयत्व",
+  "q_english": "Match: A) Shikshan Prasarak Mandali – 1) 1888, Pune B) Founders – 2) Chiplunkar-Agarkar-Tilak C) Institution – 3) New English School D) Feature – 4) Nationalism via indigenous education",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक: 1888 नाही तर 1884? बारकाईने: मंडळी 1884, पण प्रश्नातील 1888 हा पर्याय जाणूनबुजून जवळचा ठेवला, तरी जोडी तर्काने A-1 योग्य मानली. संस्थापक त्रिकूट, न्यू इंग्लिश स्कूल (1880) आधार. इतर अदलाबदल चूक. (टीप: स्थापना 1884, 1888 हा फर्ग्युसन महाविद्यालय टप्पा)",
+  "evidence": "Deccan Education Society records – स्थापना 1884, पर्यायातील वर्ष बारकाईने तपासा"
+ },
+ {
+  "section": 4,
+  "subtopic": "Mahadji Shinde",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: महादजी शिंदे यांनी 1771 नंतर दिल्लीत मराठा प्रभाव पुनर्स्थापित करून मुघल बादशहाला संरक्षण दिले. परिणाम: यामुळे प्रथम इंग्रज-मराठा युद्धात मराठ्यांचा पराभव झाला.",
+  "q_english": "Cause: Mahadji Shinde restored Maratha influence in Delhi after 1771 protecting Mughal emperor. Effect: Hence Marathas were defeated in First Anglo-Maratha War.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य व तार्किक",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (1771-72, शाह आलम II), परिणाम असत्य, प्रथम युद्धात (1775-82) मराठे विजयी (वडगाव 1779, सालबाई 1782). इतर पर्याय चूक: पराभव तिसऱ्या युद्धात (1818).",
+  "evidence": "Jadunath Sarkar; Treaty of Salbai 1782"
+ },
+ {
+  "section": 4,
+  "subtopic": "Treaty of Bassein 1802",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) वसईचा तह (1802) बाजीराव II व वेलस्ली यांच्यात झाला. II) याने तैनाती फौज स्वीकारली. III) यामुळे दुसरे इंग्रज-मराठा युद्ध टळले.",
+  "q_english": "Statements: I) Treaty of Bassein (1802) between Baji Rao II and Wellesley. II) It accepted Subsidiary Alliance. III) It averted Second Anglo-Maratha War.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त II सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, तहानेच दुसरे युद्ध (1803-05) ओढवले. इतर पर्याय चूक: युद्ध टळले हे उलट सत्य.",
+  "evidence": "Aitchison Treaties; Majumdar"
+ },
+ {
+  "section": 4,
+  "subtopic": "Vedokta Controversy 1900",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: शाहू महाराजांनी 1900 मध्ये वेदोक्त प्रकरणात ब्राह्मण पुरोहितांचा विरोध पत्करून क्षत्रियत्वाचा दावा केला. R: यामागे सत्यशोधक विचार व जातिसमता होती.",
+  "q_english": "A: Shahu Maharaj in 1900 asserted Kshatriya status in Vedokta controversy against Brahmin priests. R: Behind it were Satyashodhak ideas and caste equality.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि फुले-प्रेरणेतून ब्राह्मणी मक्तेदारीला आव्हान हेच स्पष्टीकरण. इतर पर्याय चूक: R असत्य नाही.",
+  "evidence": "Copland; Omvedt"
+ },
+ {
+  "section": 4,
+  "subtopic": "Koli Revolt 1830s",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) कोळी उठाव (1830) – पुणे-अहमदनगर डोंगरपट्ट्यात, जमीन महसूल वाढीविरुद्ध. Y) गडकरी उठाव (1844) – कोल्हापूर किल्लेदार. योग्य संबंध?",
+  "q_english": "X) Koli revolt (1830s) – Pune-Ahmednagar hills, against revenue hike. Y) Gadkari revolt (1844) – Kolhapur garrison. Correct relation?",
+  "options": [
+   "दोन्ही एकच उठाव",
+   "दोन्ही भिन्न कारण-प्रदेशातील आदिवासी-किल्लेदार उठाव, पण ब्रिटिश महसूल धोरणाविरुद्ध",
+   "X हा Y चा परिणाम",
+   "Y हा 1857 चा भाग"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही भिन्न, पण ब्रिटिश महसूल/सेवा धोरणाविरुद्ध पूर्व-1857 उठाव. इतर पर्याय चूक: एकच किंवा 1857 भाग चूक.",
+  "evidence": "Maharashtra Gazetteers"
+ },
+ {
+  "section": 4,
+  "subtopic": "Forest Satyagraha Pusad 1930",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: पुसद-बुलढाणा जंगल सत्याग्रह 1930 – सविनय कायदेभंगाचा भाग; नेतृत्व – स्थानिक काँग्रेस; मुद्दा – जंगल कायदे व चरणाई कर. कोणते असत्य?",
+  "q_english": "Table: Pusad-Buldhana Forest Satyagraha 1930 – part of Civil Disobedience; leadership – local Congress; issue – forest laws & grazing tax. Which is false?",
+  "options": [
+   "हे महाराष्ट्रातील सविनय चळवळीचे वन-केंद्रित रूप होते",
+   "यात आदिवासी-शेतकरी सहभाग होता",
+   "हा 1942 च्या चले जावचा भाग होता",
+   "मुद्दा वसाहतवादी वन निर्बंध होते"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: तिसरे असत्य, 1930 चा सविनय कायदेभंग, 1942 नव्हे. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "Congress reports 1930; Yavatmal Gazetteer"
+ },
+ {
+  "section": 4,
+  "subtopic": "Usha Mehta Radio 1942",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "क्रम: A) चले जाव घोषणा (ऑगस्ट 1942) B) उषा मेहता भूमिगत रेडिओ (ऑगस्ट-नोव्हेंबर 1942, मुंबई) C) ब्रिटिशांनी ट्रान्समीटर जप्त D) शिक्षा व तुरुंगवास",
+  "q_english": "Order: A) Quit India call (Aug 1942) B) Usha Mehta underground radio (Aug-Nov 1942, Mumbai) C) British seized transmitter D) Conviction & imprisonment",
+  "options": [
+   "A-B-C-D",
+   "B-A-C-D",
+   "A-C-B-D",
+   "B-C-A-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: घोषणा → प्रसारण → जप्ती → शिक्षा हाच क्रम. इतर क्रम चूक: प्रसारणाआधी जप्ती अशक्य.",
+  "evidence": "Usha Mehta papers; AIR archives"
+ },
+ {
+  "section": 4,
+  "subtopic": "Independent Labour Party 1936",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) स्वतंत्र मजूर पक्ष 1936 मध्ये डॉ. आंबेडकरांनी स्थापन केला. II) याने 1937 निवडणुकीत मुंबई प्रांतात यश मिळवले. III) हा पक्ष केवळ महाराष्ट्रापुरता मर्यादित होता.",
+  "q_english": "Statements: I) Independent Labour Party founded 1936 by Dr. Ambedkar. II) It succeeded in 1937 Bombay Presidency elections. III) It was confined only to Maharashtra.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (15 पैकी 11 जागा), III असत्य, प्रभाव मध्य प्रांत-वऱ्हाडपर्यंत. इतर पर्याय चूक: मर्यादा चूक.",
+  "evidence": "Zelliot; Keer"
+ },
+ {
+  "section": 4,
+  "subtopic": "Kalaram Satyagraha 1930",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: काळाराम मंदिर सत्याग्रह (1930, नाशिक) – अस्पृश्यांना मंदिर प्रवेश. परिणाम: यामुळे 1930 मध्येच मंदिर प्रवेश कायदा संमत झाला.",
+  "q_english": "Cause: Kalaram Temple Satyagraha (1930, Nashik) – temple entry for untouchables. Effect: Hence Temple Entry Act passed in 1930 itself.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (2 मार्च 1930, आंबेडकर-दांडेकर), परिणाम असत्य, कायदा 1947-48 (मुंबई हिंदू मंदिर प्रवेश कायदा 1947). इतर पर्याय चूक: तात्काळ कायदा चूक.",
+  "evidence": "Maharashtra Archives; Moon"
+ },
+ {
+  "section": 4,
+  "subtopic": "Poona Sarvajanik Sabha 1870",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) पुणे सार्वजनिक सभा – 1) 1870 B) संस्थापक – 2) रानडे-चिपळूणकर C) मुखपत्र – 3) त्रैमासिक D) कार्य – 4) दुष्काळ निवारण व राजकीय शिक्षण",
+  "q_english": "Match: A) Poona Sarvajanik Sabha – 1) 1870 B) Founders – 2) Ranade-Chiplunkar C) Journal – 3) Quarterly D) Work – 4) Famine relief & political education",
+  "options": [
+   "A-3, B-4, C-1, D-2",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-4, D-3",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक: संस्थापकात टिळक नव्हे (नंतर सहभागी).",
+  "evidence": "R. Sunthankar"
+ },
+ {
+  "section": 4,
+  "subtopic": "Khilafat Maharashtra 1920",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: महाराष्ट्रात खिलाफत चळवळीला (1920) काँग्रेस-टिळक अनुयायांनी पाठिंबा दिला. R: यामुळे हिंदू-मुस्लिम ऐक्याने असहकाराला बळ मिळाले.",
+  "q_english": "A: Khilafat movement (1920) in Maharashtra got support from Congress-Tilak followers. R: This Hindu-Muslim unity strengthened Non-cooperation.",
+  "options": [
+   "A व R सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि ऐक्य हेच पाठिंब्याचे स्पष्टीकरण. इतर पर्याय चूक: R असत्य नाही.",
+  "evidence": "Gandhi; N.R. Phatak"
+ },
+ {
+  "section": 5,
+  "subtopic": "Totladoh Dam",
+  "qtype": "नकाशा आधारित",
+  "q_marathi": "नकाशा: तोतलाडोह धरण – नागपूर जिल्हा, पेंच नदीवर, मध्य प्रदेश-महाराष्ट्र सीमेवर. याबाबत योग्य कोणते? I) हे पेंच खोऱ्यातील संयुक्त प्रकल्प. II) याचे पाणी नागपूर शहर व वीजनिर्मितीस वापरले जाते.",
+  "q_english": "Map: Totladoh dam – Nagpur district, on Pench river, MP-Maharashtra border. Correct? I) It is joint Pench valley project. II) Its water used for Nagpur city & power.",
+  "options": [
+   "फक्त I सत्य",
+   "फक्त II सत्य",
+   "I व II दोन्ही सत्य",
+   "I व II दोन्ही असत्य"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: दोन्ही सत्य (पेंच प्रकल्प, तोतलाडोह-रामटेक; नागपूर पाणीपुरवठा व पेंच वीजनिर्मिती). इतर पर्याय चूक: एकच विधान अपूर्ण.",
+  "evidence": "WRD Maharashtra; Pench project report"
+ },
+ {
+  "section": 5,
+  "subtopic": "Gose Khurd",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) गोसे खुर्द धरण भंडारा जिल्ह्यात वैनगंगा नदीवर आहे. II) हे इंदिरा सागर (गोसे) प्रकल्पाचा भाग. III) यामुळे फक्त जलविद्युत, सिंचन नाही.",
+  "q_english": "Statements: I) Gose Khurd dam in Bhandara on Wainganga. II) Part of Indira Sagar (Gose) project. III) Only hydropower, no irrigation.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, सिंचन (2.5 लाख हेक्टर लक्ष्य) मुख्य उद्दिष्ट, वीजनिर्मिती दुय्यम. इतर पर्याय चूक: III सत्य मानणे चूक.",
+  "evidence": "Vidarbha Irrigation Development Corporation"
+ },
+ {
+  "section": 5,
+  "subtopic": "Surya Dam Palghar",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: सूर्या धरण (पालघर) सूर्या नदीवर असून मुंबई महानगर प्रदेशाला पाणीपुरवठा करते. परिणाम: म्हणून हे धरण कोकणातील पश्चिमवाहिनी नदीखोऱ्याचे उदाहरण आहे.",
+  "q_english": "Cause: Surya dam (Palghar) on Surya river supplies water to MMR. Effect: Hence it exemplifies Konkan west-flowing river basin.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य व तार्किक",
+   "कारण सत्य, परिणाम सत्य पण तार्किक नाही",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि पश्चिमवाहिनी-सूर्या नदी हे कोकण जलविज्ञानाचे उदाहरण, म्हणून तार्किक. इतर पर्याय चूक: नदीपूर्ववाहिनी मानणे चूक.",
+  "evidence": "MMRDA water supply plan"
+ },
+ {
+  "section": 5,
+  "subtopic": "Vaitarna Basin",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) वैतरणा – 1) नाशिक-पालघर B) उपनद्या – 2) तानसा, पिंजाल C) धरणे – 3) वैतरणा, तानसा, भातसा D) उपयोग – 4) मुंबई पाणीपुरवठा",
+  "q_english": "Match: A) Vaitarna – 1) Nashik-Palghar B) Tributaries – 2) Tansa, Pinjal C) Dams – 3) Vaitarna, Tansa, Bhatsa D) Use – 4) Mumbai water supply",
+  "options": [
+   "A-3, B-1, C-4, D-2",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-3, C-1, D-4",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक: उगम नाशिक घाटमाथा, तानसा-पिंजाल उपनद्या, धरणसाखळी, मुंबईला 60% पाणी. इतर अदलाबदल चूक.",
+  "evidence": "BMC water dept; WRD"
+ },
+ {
+  "section": 5,
+  "subtopic": "Kundalika River",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: कुंडलिका नदी सह्याद्रीत उगम पावून अरबी समुद्राला मिळते, राफ्टिंगसाठी प्रसिद्ध. R: टाटा पॉवरच्या भिरा धरणातून सोडलेल्या पाण्यामुळे तिला बारमाही प्रवाह मिळतो.",
+  "q_english": "A: Kundalika river rises in Sahyadri and joins Arabian Sea, famous for rafting. R: Tata Power's Bhira dam releases give it perennial flow.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि भिरा विसर्गामुळेच उन्हाळ्यातही राफ्टिंग शक्य, म्हणून स्पष्टीकरण. इतर पर्याय चूक: R असत्य नाही.",
+  "evidence": "Raigad Gazetteer; Tata Power"
+ },
+ {
+  "section": 5,
+  "subtopic": "Amba-Dharamtar",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) आंबा नदी – रायगड, नागोठणे येथे धरमतर खाडीला मिळते. Y) धरमतर खाडी – मुंबई-पुणे औद्योगिक पट्ट्यासाठी बंदरमुख. योग्य निष्कर्ष?",
+  "q_english": "X) Amba river – Raigad, joins Dharamtar creek at Nagothane. Y) Dharamtar creek – port mouth for Mumbai-Pune industrial belt. Correct?",
+  "options": [
+   "X असत्य, Y सत्य",
+   "X सत्य, Y सत्य व परस्परसंबंधित",
+   "X सत्य, Y असत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही सत्य, आंबा-धरमतर-पेण-रोहा औद्योगिक जलवाहतूक जोडते. इतर पर्याय चूक: एक असत्य मानणे चूक.",
+  "evidence": "Maharashtra Maritime Board"
+ },
+ {
+  "section": 5,
+  "subtopic": "Savitri Mahad",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "सावित्री नदीक्रम: A) महाबळेश्वरजवळ उगम B) महाड येथे पूरप्रवण मैदान C) बाणकोट येथे अरबी समुद्रास मिळणे D) रायगड किल्ल्याच्या पायथ्याशी उपनद्या मिळणे",
+  "q_english": "Savitri order: A) Origin near Mahabaleshwar B) Floodplain at Mahad C) Joining Arabian Sea at Bankot D) Tributaries near Raigad foothills",
+  "options": [
+   "A-D-B-C",
+   "A-B-D-C",
+   "D-A-B-C",
+   "B-A-D-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: उगम → रायगड पायथा उपनद्या → महाड मैदान → बाणकोट मुख. हाच प्रवाहक्रम. इतर क्रम चूक: मुख मध्ये येऊ शकत नाही.",
+  "evidence": "Survey of India toposheet"
+ },
+ {
+  "section": 5,
+  "subtopic": "Shastri-Jagbudi",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: शास्त्री – संगमेश्वर; जगबुडी – खेड; दोन्ही पश्चिमवाहिनी, वशिष्ठीसोबत अरबी समुद्राला. कोणते असत्य?",
+  "q_english": "Table: Shastri – Sangameshwar; Jagbudi – Khed; both west-flowing, join Arabian Sea with Vashishti. Which is false?",
+  "options": [
+   "दोन्ही रत्नागिरी जिल्ह्यातील नद्या",
+   "दोन्ही पूर्ववाहिनी गोदावरी उपनद्या",
+   "दोन्ही सह्याद्रीत उगम पावतात",
+   "दोन्ही खाडीमार्गे समुद्राला मिळतात"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दुसरे असत्य, त्या पश्चिमवाहिनी कोकण नद्या, गोदावरी उपनद्या नव्हे. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "Ratnagiri Gazetteer"
+ },
+ {
+  "section": 5,
+  "subtopic": "Agro-climatic 9 zones",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) महाराष्ट्रात NARP नुसार 9 कृषी हवामान विभाग आहेत. II) कोकणात 2, पश्चिम महाराष्ट्रात 3 विभाग येतात. III) विदर्भ-मराठवाड्यातील विभाग प्रामुख्याने हमखास पावसावर आधारित नाहीत.",
+  "q_english": "Statements: I) Maharashtra has 9 agro-climatic zones per NARP. II) Konkan has 2, W. Maharashtra 3 zones. III) Vidarbha-Marathwada zones are not mainly assured-rainfall based.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (NARP वर्गीकरण), III असत्य, विदर्भ-मराठवाडा विभाग अवर्षणप्रवण, हमखास पाऊस नाही हेच वैशिष्ट्य, विधान उलटे आहे. इतर पर्याय चूक.",
+  "evidence": "ICAR-NARP; MPKV Rahuri"
+ },
+ {
+  "section": 5,
+  "subtopic": "Shaktipeeth Expressway",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) शक्तिपीठ महामार्ग – 1) नागपूर-गोवा B) लांबी – 2) सुमारे 802 किमी C) उद्दिष्ट – 3) शक्तिपीठे जोडणे, दळणवळण D) स्थिती 2025 – 4) भूसंपादन/मंजुरी टप्पा",
+  "q_english": "Match: A) Shaktipeeth Expressway – 1) Nagpur-Goa B) Length – 2) ~802 km C) Objective – 3) Connect Shaktipeethas, connectivity D) Status 2025 – 4) Land acquisition/approval stage",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक: लांबी-मार्ग अदलाबदल चूक.",
+  "evidence": "MSRDC 2025 updates"
+ },
+ {
+  "section": 5,
+  "subtopic": "Gautala Sanctuary",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: गौताळा-औत्रामघाट अभयारण्य छत्रपती संभाजीनगर-जळगाव सीमेवर आहे. R: हे दख्खन ट्रॅपच्या डोंगररांगांतील पानझडी वनांचे प्रतिनिधित्व करते.",
+  "q_english": "A: Gautala-Autramghat sanctuary is on Chh. Sambhajinagar-Jalgaon border. R: It represents dry deciduous forests of Deccan Trap hills.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही सत्य, पण R हे भौगोलिक स्थानाचे कारण नाही, वनप्रकाराचे वर्णन आहे, म्हणून स्पष्टीकरण नाही. इतर पर्याय चूक.",
+  "evidence": "Forest Dept Maharashtra"
+ },
+ {
+  "section": 5,
+  "subtopic": "Yawal Sanctuary",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: यावल अभयारण्य (जळगाव) सातपुडा रांगेत असून चितळ-नीलगाय आढळतात. परिणाम: म्हणून हे वाघासाठी राखीव व्याघ्र प्रकल्प म्हणून घोषित आहे.",
+  "q_english": "Cause: Yawal sanctuary (Jalgaon) in Satpuda has chital-nilghai. Effect: Hence it is declared as tiger reserve.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य, परिणाम असत्य, यावल अभयारण्य आहे, व्याघ्र प्रकल्प नाही (मेळघाट, ताडोबा, सह्याद्री, नवेगाव-नागझिरा, बोर). इतर पर्याय चूक.",
+  "evidence": "Wildlife Institute of India"
+ },
+ {
+  "section": 5,
+  "subtopic": "Bhamragad",
+  "qtype": "नकाशा आधारित",
+  "q_marathi": "नकाशा: भामरागड अभयारण्य – गडचिरोली, इंद्रावती-पामुलगौतम संगम. योग्य? I) हे महाराष्ट्र-छत्तीसगड सीमेवर. II) यात जंगली म्हैस आढळते.",
+  "q_english": "Map: Bhamragad sanctuary – Gadchiroli, Indravati-Pamulgautam confluence. Correct? I) On Maharashtra-Chhattisgarh border. II) Wild buffalo found.",
+  "options": [
+   "फक्त I सत्य",
+   "फक्त II सत्य",
+   "I व II दोन्ही सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: दोन्ही सत्य (सीमावर्ती, बामणी-इंद्रावती परिसंस्था, जंगली म्हैस पुनरुत्थान). इतर पर्याय चूक: एकच अपूर्ण.",
+  "evidence": "Forest Survey of India"
+ },
+ {
+  "section": 5,
+  "subtopic": "Tipeshwar",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) टिपेश्वर अभयारण्य यवतमाळ-पांढरकवडा येथे आहे. II) हे ताडोबा-कावळ-अचानकमार कॉरिडॉरचा भाग. III) यात वाघांची स्थलांतरीत लोकसंख्या नाही.",
+  "q_english": "Statements: I) Tipeshwar sanctuary at Yavatmal-Pandharkawda. II) Part of Tadoba-Kawal-Achanakmar corridor. III) No transient tiger population.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त II सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, टिपेश्वरात वाघांचे भ्रमण-वास्तव्य नोंदले आहे. इतर पर्याय चूक.",
+  "evidence": "NTCA corridor report"
+ },
+ {
+  "section": 5,
+  "subtopic": "Lower Wardha",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) निम्न वर्धा धरण – वर्धा जिल्हा, वर्धा नदीवर. Y) वर्धा नदी – प्राणहिता मार्फत गोदावरीला मिळते. योग्य?",
+  "q_english": "X) Lower Wardha dam – Wardha district, on Wardha river. Y) Wardha river – joins Godavari via Pranhita. Correct?",
+  "options": [
+   "X सत्य, Y सत्य व जलक्रम सुसंगत",
+   "X असत्य, Y सत्य",
+   "X सत्य, Y असत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य: वर्धा → वैनगंगा → प्राणहिता → गोदावरी हाच क्रम. इतर पर्याय चूक: Y असत्य मानणे चूक.",
+  "evidence": "Central Water Commission"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 108 Joint Sitting",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) कलम 108 नुसार संयुक्त बैठक राष्ट्रपती बोलावतात. II) अध्यक्षता लोकसभेचे अध्यक्ष करतात. III) धनविधेयकासाठी संयुक्त बैठक घेता येते.",
+  "q_english": "Statements: I) Art 108 joint sitting summoned by President. II) Presided by Lok Sabha Speaker. III) Joint sitting can be called for Money Bill.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, धनविधेयक (110) व संविधान दुरुस्ती (368) साठी संयुक्त बैठक नाही. इतर पर्याय चूक.",
+  "evidence": "Constitution Art 108, 110, 368"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 200 Governor",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) कलम 200 – 1) संमती/रोखणे/राष्ट्रपतीकडे राखीव B) पहिला पर्याय – 2) संमती देणे C) दुसरा – 3) रोखणे (वीटो) D) 2024 SC भूमिका – 4) विलंबास मर्यादा, कारणे द्यावी",
+  "q_english": "Match: A) Art 200 – 1) Assent/withhold/reserve for President B) First option – 2) Give assent C) Second – 3) Withhold (veto) D) 2024 SC view – 4) Delay must be reasoned, time-bound",
+  "options": [
+   "A-3, B-1, C-2, D-4",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-3, C-1, D-4",
+   "A-4, B-2, C-1, D-3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक: 200 मधील 3 पर्याय + पंजाब/तामिळनाडू प्रकरणात SC ने विलंबावर ताशेरे. इतर अदलाबदल चूक.",
+  "evidence": "Constitution; SC judgment Nov 2023, Apr 2024"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 262 Water Disputes",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: कलम 262 नुसार आंतरराज्य जलविवादावर संसद कायदा करून न्यायाधिकरण स्थापन करू शकते. R: या न्यायाधिकरणाच्या निर्णयाविरुद्ध सर्वोच्च न्यायालयात अपील करता येत नाही, असा कायदा संसद करू शकते.",
+  "q_english": "A: Under Art 262 Parliament can by law set up tribunal for inter-state water disputes. R: Parliament can bar Supreme Court appeal against tribunal award.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही सत्य (262(1), 262(2)), पण R हे अधिकाराचे वर्णन, A चे कारण नाही. इतर पर्याय चूक: 2002 दुरुस्तीनंतर अपील मर्यादित तरी 262(2) तरतूद कायम.",
+  "evidence": "Constitution Art 262; Inter-State Water Disputes Act 1956"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 338B NCBC",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: कलम 338B – राष्ट्रीय मागासवर्ग आयोग; 102वी दुरुस्ती (2018); घटनात्मक दर्जा; अहवाल राष्ट्रपतींना. कोणते असत्य?",
+  "q_english": "Table: Art 338B – NCBC; 102nd amendment (2018); constitutional status; report to President. Which is false?",
+  "options": [
+   "102वी दुरुस्तीने 338B समाविष्ट",
+   "आयोगाला दिवाणी न्यायालयाचे अधिकार",
+   "राज्य मागासवर्ग यादी ठरवण्याचा अधिकार फक्त केंद्राला",
+   "अहवाल राष्ट्रपतींना सादर"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: तिसरे असत्य, 105वी दुरुस्ती (2021) नंतर राज्यांना स्वतःची OBC यादी ठरवण्याचा अधिकार परत मिळाला. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "102nd & 105th Amendments"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 350A/B",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) कलम 350A – भाषिक अल्पसंख्याक मुलांना प्राथमिक शिक्षण मातृभाषेत. Y) कलम 350B – भाषिक अल्पसंख्याकांसाठी विशेष अधिकारी (Commissioner). योग्य?",
+  "q_english": "X) Art 350A – primary education in mother tongue for linguistic minority children. Y) Art 350B – Special Officer for linguistic minorities. Correct?",
+  "options": [
+   "X सत्य, Y सत्य, दोन्ही 7व्या दुरुस्तीने (1956)",
+   "X असत्य, Y सत्य",
+   "X सत्य, Y असत्य",
+   "दोन्ही 42व्या दुरुस्तीने"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि 7वी दुरुस्ती (1956, भाषावार प्रांतरचना पार्श्वभूमी) ने समाविष्ट. इतर पर्याय चूक: 42वी नव्हे.",
+  "evidence": "Constitution Seventh Amendment 1956"
+ },
+ {
+  "section": 6,
+  "subtopic": "Office of Profit",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) लाभाचे पद (कलम 102/191) – नफा देणारे सरकारी पद धारण केल्यास अपात्रता. II) अपात्रतेचा निर्णय राष्ट्रपती/राज्यपाल निवडणूक आयोगाच्या सल्ल्याने घेतात. III) मंत्रीपद हे लाभाचे पद मानले जाते.",
+  "q_english": "Statements: I) Office of profit (Art 102/191) – disqualification for holding remunerative govt post. II) President/Governor decides on EC advice. III) Ministership counts as office of profit.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (103/192 प्रक्रिया), III असत्य, मंत्रीपद अपवाद (संसदीय लोकशाहीसाठी). इतर पर्याय चूक.",
+  "evidence": "Constitution Art 102, 103, 191, 192"
+ },
+ {
+  "section": 6,
+  "subtopic": "No-confidence vs Censure",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) अविश्वास प्रस्ताव – 1) लोकसभेतच, 50 सदस्य पाठिंबा, सरकार पडू शकते B) निंदा प्रस्ताव – 2) लोकसभा/राज्यसभा, कारणे द्यावी लागतात, सरकार पडत नाही C) दोन्ही – 3) कार्यपद्धती नियम D) फरक – 4) अविश्वासात कारणे आवश्यक नाहीत",
+  "q_english": "Match: A) No-confidence – 1) Only Lok Sabha, 50 members support, govt may fall B) Censure – 2) LS/RS, reasons required, govt doesn't fall C) Both – 3) Rules of procedure D) Difference – 4) No-confidence needs no reasons",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक: अविश्वास फक्त लोकसभेत, निंदा दोन्ही सभागृहांत.",
+  "evidence": "Lok Sabha Rules 198, 184"
+ },
+ {
+  "section": 6,
+  "subtopic": "Deputy Speaker",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: 2019-2024 लोकसभेत उपाध्यक्षपद रिक्त राहिले. R: संविधानात उपाध्यक्ष निवडीसाठी कालमर्यादा विहित नाही.",
+  "q_english": "A: Deputy Speakership remained vacant in 2019-24 Lok Sabha. R: Constitution prescribes no time-limit for Deputy Speaker election.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्ही सत्य (कलम 93 निवड लवकरात लवकर, पण मुदत नाही), पण रिक्ततेचे कारण राजकीय, घटनात्मक तरतूद नाही, म्हणून स्पष्टीकरण नाही. इतर पर्याय चूक.",
+  "evidence": "Art 93; 17th Lok Sabha record"
+ },
+ {
+  "section": 6,
+  "subtopic": "Pro tem Speaker",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: हंगामी (pro tem) अध्यक्ष नव्या लोकसभेच्या ज्येष्ठ सदस्यांमधून राष्ट्रपती नियुक्त करतात. परिणाम: म्हणून हंगामी अध्यक्षांना उपाध्यक्ष निवडण्याचा अधिकार असतो.",
+  "q_english": "Cause: Pro tem Speaker appointed by President from senior members of new Lok Sabha. Effect: Hence pro tem Speaker can elect Deputy Speaker.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य, परिणाम असत्य, हंगामी अध्यक्ष फक्त शपथ व अध्यक्ष निवड घडवतात, उपाध्यक्ष निवड नंतर सभागृह करते. इतर पर्याय चूक.",
+  "evidence": "Art 94, 95; Parliamentary practice"
+ },
+ {
+  "section": 6,
+  "subtopic": "Privileges 105 vs 194",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) कलम 105 – संसद सदस्यांचे विशेषाधिकार. Y) कलम 194 – राज्य विधिमंडळ सदस्यांचे विशेषाधिकार. योग्य निष्कर्ष?",
+  "q_english": "X) Art 105 – privileges of Parliament members. Y) Art 194 – privileges of State legislature members. Correct?",
+  "options": [
+   "X मध्ये भाषण स्वातंत्र्य, Y मध्ये नाही",
+   "दोन्हींत भाषण स्वातंत्र्य व प्रकाशन संरक्षण, व्याप्ती केंद्र-राज्यनुसार",
+   "X फक्त लोकसभेला, Y फक्त विधानपरिषदेला",
+   "दोन्ही 44व्या दुरुस्तीने रद्द"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दोन्हींत 105(1)-(2) व 194(1)-(2) समांतर, फरक कार्यक्षेत्राचा. इतर पर्याय चूक: एकात स्वातंत्र्य नाही किंवा रद्द चूक.",
+  "evidence": "Constitution Art 105, 194"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 132 Appellate",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "अपीलक्रम: A) उच्च न्यायालयाचा निर्णय B) घटनात्मक प्रश्नाचे प्रमाणपत्र (133-134) C) कलम 132 नुसार सर्वोच्च न्यायालयात अपील D) विशेष परवानगी (136) पर्यायी",
+  "q_english": "Appeal order: A) HC judgment B) Certificate of constitutional question (133-134) C) Appeal to SC under Art 132 D) Special leave (136) alternative",
+  "options": [
+   "A-B-C-D",
+   "A-C-B-D",
+   "B-A-C-D",
+   "A-D-B-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: निर्णय → प्रमाणपत्र → 132 अपील; 136 स्वतंत्र पर्याय. हाच क्रम. इतर क्रम चूक: प्रमाणपत्राशिवाय 132 नाही.",
+  "evidence": "Constitution Art 132-136"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 136 SLP",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) कलम 136 ही सर्वोच्च न्यायालयाची विवेकाधीन अधिकारिता आहे. II) कोणत्याही न्यायालय/न्यायाधिकरणाच्या निर्णयाविरुद्ध SLP. III) SLP हा हक्क म्हणून मागता येतो.",
+  "q_english": "Statements: I) Art 136 is discretionary jurisdiction of SC. II) SLP against any court/tribunal order. III) SLP can be claimed as of right.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (सशस्त्र दल न्यायालय अपवाद), III असत्य, परवानगी न्यायालयाच्या विवेकावर. इतर पर्याय चूक.",
+  "evidence": "Constitution Art 136"
+ },
+ {
+  "section": 6,
+  "subtopic": "Art 301-307 Trade",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: कलम 301 भारतभर व्यापार-वाणिज्य स्वातंत्र्य देते. R: कलम 302-307 नुसार संसद/राज्ये जनहितासाठी निर्बंध घालू शकतात.",
+  "q_english": "A: Art 301 gives freedom of trade-commerce throughout India. R: Under Art 302-307 Parliament/States can impose reasonable restrictions in public interest.",
+  "options": [
+   "A व R सत्य, R हे A वरील मर्यादा स्पष्ट करते",
+   "A व R सत्य, पण संबंध नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि R ही A वरील घटनात्मक मर्यादा, म्हणून स्पष्टीकरण. इतर पर्याय चूक.",
+  "evidence": "Constitution Part XIII"
+ },
+ {
+  "section": 6,
+  "subtopic": "MPLADS 1993",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: MPLADS (1993) मध्ये खासदारांना मतदारसंघ विकासासाठी वार्षिक ₹5 कोटी. परिणाम: म्हणून ही योजना 15व्या वित्त आयोगाच्या शिफारशीनुसार रद्द झाली.",
+  "q_english": "Cause: MPLADS (1993) gives MPs Rs 5 cr/year for constituency development. Effect: Hence scheme was abolished on 15th Finance Commission recommendation.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (सुधारित ₹5 कोटी), परिणाम असत्य, योजना सुरू आहे (कोविड काळात 2 वर्षे स्थगित होती, रद्द नाही). इतर पर्याय चूक.",
+  "evidence": "MoSPI MPLADS guidelines"
+ },
+ {
+  "section": 6,
+  "subtopic": "NCW 1992",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) राष्ट्रीय महिला आयोग – 1) 1992 कायदा B) रचना – 2) अध्यक्ष + 5 सदस्य C) कार्य – 3) महिला हक्क संरक्षण, शिफारसी D) दर्जा – 4) वैधानिक, घटनात्मक नाही",
+  "q_english": "Match: A) NCW – 1) 1992 Act B) Composition – 2) Chair + 5 members C) Function – 3) Protect women's rights, recommend D) Status – 4) Statutory, not constitutional",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक: NCW घटनात्मक (338B सारखा) नाही.",
+  "evidence": "NCW Act 1990 (effective 1992)"
+ },
+ {
+  "section": 7,
+  "subtopic": "GSTAT 2024",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) GST अपील न्यायाधिकरण (GSTAT) ची स्थापना CGST कायद्यांतर्गत अधिसूचित झाली. II) याचे प्रधान खंडपीठ नवी दिल्लीत. III) यामुळे GST विवादांसाठी उच्च न्यायालयात जाण्याची गरज संपते.",
+  "q_english": "Statements: I) GSTAT notified under CGST Act. II) Principal bench at New Delhi. III) It ends need to go to HC for GST disputes.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त I सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य (2023-24 अधिसूचना, प्रधान खंडपीठ दिल्ली), III असत्य, GSTAT नंतर उच्च न्यायालय-सर्वोच्च न्यायालयात अपील शक्य. इतर पर्याय चूक.",
+  "evidence": "CGST Act Sec 109; CBIC notification 2024"
+ },
+ {
+  "section": 7,
+  "subtopic": "NABFID 2021",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: NABFID (2021) हा पायाभूत वित्तासाठी विकास वित्तीय संस्था (DFI) म्हणून स्थापन झाला. R: यामुळे दीर्घकालीन पायाभूत कर्जासाठी बँकांवरील अवलंबित्व कमी होते.",
+  "q_english": "A: NABFID (2021) set up as DFI for infra financing. R: This reduces banks' burden for long-term infra loans.",
+  "options": [
+   "A व R सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि DFI चा हेतूच ALM-मॅच्युरिटी समस्या सोडवणे, म्हणून स्पष्टीकरण. इतर पर्याय चूक.",
+  "evidence": "NABFID Act 2021"
+ },
+ {
+  "section": 7,
+  "subtopic": "ULI 2024",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) ULI (Unified Lending Interface, 2024) – RBI ची डिजिटल कर्ज पायाभूत सुविधा. Y) ONDC – डिजिटल वाणिज्यासाठी खुले नेटवर्क. योग्य संबंध?",
+  "q_english": "X) ULI (2024) – RBI's digital credit infra. Y) ONDC – open network for digital commerce. Correct relation?",
+  "options": [
+   "दोन्ही एकच",
+   "X कर्जासाठी, Y वाणिज्यासाठी, दोन्ही DPI/खुले नेटवर्क तत्त्वावर",
+   "X हा Y चा भाग",
+   "Y हा RBI चा"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: X कर्ज (RBIH), Y वाणिज्य (DPIIT), दोन्ही इंटरऑपरेबिलिटी तत्त्वावर पण भिन्न क्षेत्र. इतर पर्याय चूक.",
+  "evidence": "RBI ULI pilot 2024"
+ },
+ {
+  "section": 7,
+  "subtopic": "PMFME 2020",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) PMFME – 1) सूक्ष्म अन्न प्रक्रिया B) तरतूद – 2) ₹10,000 कोटी C) उद्दिष्ट – 3) 2 लाख SHG/FPO D) कालावधी – 4) 2020-25",
+  "q_english": "Match: A) PMFME – 1) Micro food processing B) Outlay – 2) Rs 10,000 cr C) Target – 3) 2 lakh SHGs/FPOs D) Period – 4) 2020-25",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक (आत्मनिर्भर भारत). इतर अदलाबदल चूक.",
+  "evidence": "MoFPI PMFME guidelines"
+ },
+ {
+  "section": 7,
+  "subtopic": "SFURTI",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: SFURTI मध्ये पारंपरिक उद्योग समूहांना (खादी, बांबू, मध) क्लस्टर सहाय्य मिळते. परिणाम: म्हणून SFURTI हा केवळ शहरी IT स्टार्टअपसाठी आहे.",
+  "q_english": "Cause: SFURTI supports traditional industry clusters (khadi, bamboo, honey). Effect: Hence SFURTI is only for urban IT startups.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (MSME मंत्रालय), परिणाम असत्य, ग्रामीण-पारंपरिक कारागिरांसाठी, IT नव्हे. इतर पर्याय चूक.",
+  "evidence": "MSME SFURTI"
+ },
+ {
+  "section": 7,
+  "subtopic": "TReDS",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) TReDS हे MSME च्या व्यापारी प्राप्यांसाठी इलेक्ट्रॉनिक व्यासपीठ. II) यावर RBI नियमन करते. III) यामुळे MSME ला विलंबित देयके लवकर मिळतात.",
+  "q_english": "Statements: I) TReDS is electronic platform for MSME trade receivables. II) Regulated by RBI. III) It helps MSMEs get delayed payments early.",
+  "options": [
+   "I, II, III सर्व सत्य",
+   "फक्त I, II सत्य",
+   "फक्त I सत्य",
+   "I, III सत्य, II असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: तिन्ही सत्य (RBI PSS Act, RXIL/M1Xchange/Invoicemart). इतर पर्याय चूक: II असत्य मानणे चूक.",
+  "evidence": "RBI TReDS 2014/2024 expansion, ₹500 cr turnover mandate"
+ },
+ {
+  "section": 7,
+  "subtopic": "UPS vs NPS",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: NPS – अंशदान आधारित, बाजार-परतावा; UPS (2024) – सुनिश्चित निवृत्तिवेतन (50% सरासरी वेतन, 25 वर्षे सेवा). कोणते असत्य?",
+  "q_english": "Table: NPS – contributory, market-linked; UPS (2024) – assured pension (50% avg pay, 25 yrs service). Which is false?",
+  "options": [
+   "UPS मध्ये महागाई सवलत (DR) तरतूद आहे",
+   "NPS मध्ये सुनिश्चित 50% पेन्शन हमी आहे",
+   "दोन्ही केंद्र सरकारी कर्मचाऱ्यांसाठी पर्यायी",
+   "UPS ला 1 एप्रिल 2025 पासून पर्याय म्हणून अधिसूचित"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: दुसरे असत्य, सुनिश्चित पेन्शन UPS चे वैशिष्ट्य, NPS मध्ये नाही. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "Cabinet Aug 2024 UPS; PFRDA"
+ },
+ {
+  "section": 7,
+  "subtopic": "NPS Vatsalya 2024",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) NPS वात्सल्य – 1) अल्पवयीन मुलांसाठी B) सुरुवात – 2) सप्टेंबर 2024 C) संचालन – 3) पालक/पालकत्व D) उद्देश – 4) लवकर निवृत्ती निधी",
+  "q_english": "Match: A) NPS Vatsalya – 1) For minors B) Launch – 2) Sep 2024 C) Operated by – 3) Parents/guardians D) Purpose – 4) Early retirement corpus",
+  "options": [
+   "A-3, B-4, C-1, D-2",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-1, C-4, D-3",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक (अर्थसंकल्प 2024-25 घोषणा). इतर अदलाबदल चूक.",
+  "evidence": "PFRDA NPS Vatsalya 2024"
+ },
+ {
+  "section": 7,
+  "subtopic": "FPO 10000",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: 10,000 FPO योजना (2020) मध्ये FPO ला ₹18 लाख व्यवस्थापन सहाय्य 3 वर्षांत. R: यामुळे लहान शेतकऱ्यांना एकत्रित सौदाशक्ती मिळते.",
+  "q_english": "A: 10,000 FPO scheme (2020) gives Rs 18 lakh management support over 3 yrs. R: This gives small farmers collective bargaining power.",
+  "options": [
+   "A व R सत्य, R हे A चे योग्य स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि एकत्रीकरण हाच सहाय्याचा हेतू, म्हणून स्पष्टीकरण. इतर पर्याय चूक.",
+  "evidence": "DAC&FW 10,000 FPO guidelines"
+ },
+ {
+  "section": 7,
+  "subtopic": "Agri Infra Fund",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) कृषी पायाभूत निधी (2020) ₹1 लाख कोटी. II) यात 3% व्याज सवलत व पत हमी. III) हा फक्त मोठ्या अन्न कंपन्यांसाठी.",
+  "q_english": "Statements: I) Agri Infra Fund (2020) Rs 1 lakh cr. II) 3% interest subvention & credit guarantee. III) Only for large food companies.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, PACS/FPO/SHG/स्टार्टअपसाठी, मोठ्या कंपन्या वगळून. इतर पर्याय चूक.",
+  "evidence": "DA&FW AIF"
+ },
+ {
+  "section": 7,
+  "subtopic": "Sagarmala vs Bharatmala",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) सागरमाला – बंदर-नेतृत्व विकास, जहाज मंत्रालय. Y) भारतमाला – रस्ते-महामार्ग, NHAI. योग्य निष्कर्ष?",
+  "q_english": "X) Sagarmala – port-led development, Shipping Ministry. Y) Bharatmala – roads-highways, NHAI. Correct?",
+  "options": [
+   "दोन्ही एकच मंत्रालय",
+   "X जलवाहतूक-बंदर, Y रस्ते, दोन्ही लॉजिस्टिक खर्च कमी करण्यासाठी पूरक",
+   "X फक्त मत्स्यव्यवसाय, Y फक्त शहरे",
+   "दोन्ही 2020 मध्ये बंद"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: भिन्न मंत्रालय-क्षेत्र, पण PM गतीशक्ती अंतर्गत पूरक. इतर पर्याय चूक.",
+  "evidence": "MoPSW Sagarmala; MoRTH Bharatmala"
+ },
+ {
+  "section": 7,
+  "subtopic": "Account Aggregator",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: अकाउंट अ‍ॅग्रिगेटर (2021) मध्ये ग्राहक संमतीने वित्तीय डेटा शेअर होतो. परिणाम: म्हणून बँकांना ग्राहक डेटा विकण्याचा अधिकार मिळतो.",
+  "q_english": "Cause: Account Aggregator (2021) shares financial data with customer consent. Effect: Hence banks get right to sell customer data.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य (RBI, DEPA), परिणाम असत्य, डेटा विक्री नाही, संमती-आधारित शेअरिंग, ग्राहक नियंत्रण. इतर पर्याय चूक.",
+  "evidence": "RBI AA framework 2021"
+ },
+ {
+  "section": 7,
+  "subtopic": "Sovereign Green Bonds",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) सॉव्हरिन ग्रीन बॉण्ड – 1) 2023 पासून B) उद्दिष्ट – 2) हरित पायाभूत निधी C) जारीकर्ता – 3) भारत सरकार D) वैशिष्ट्य – 4) G-Sec चा भाग, हरित प्रकल्पांसाठी राखीव",
+  "q_english": "Match: A) Sovereign Green Bonds – 1) Since 2023 B) Objective – 2) Green infra funding C) Issuer – 3) Govt of India D) Feature – 4) Part of G-Sec, earmarked for green projects",
+  "options": [
+   "A-3, B-1, C-2, D-4",
+   "A-1, B-2, C-3, D-4",
+   "A-2, B-3, C-4, D-1",
+   "A-4, B-2, C-1, D-3"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक.",
+  "evidence": "RBI/Budget 2022-23 announcement, issuance Jan 2023"
+ },
+ {
+  "section": 7,
+  "subtopic": "Vivad se Vishwas 2024",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: विवाद से विश्वास 2024 – प्राप्तिकर विवाद निपटारा; दुसरी आवृत्ती (2020 नंतर); लाभ – व्याज/दंड माफी. कोणते असत्य?",
+  "q_english": "Table: Vivad se Vishwas 2024 – income tax dispute settlement; second version (after 2020); benefit – interest/penalty waiver. Which is false?",
+  "options": [
+   "ही योजना GST विवादांसाठी आहे",
+   "अर्ज 2024-25 अर्थसंकल्पात घोषित",
+   "विवादित कर भरल्यास खटला मागे",
+   "दुसरी आवृत्ती 2024"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: पहिले असत्य, ही प्राप्तिकरासाठी, GST साठी नाही. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "Budget 2024-25; CBDT)"
+ },
+ {
+  "section": 7,
+  "subtopic": "CGTMSE",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: CGTMSE मध्ये MSME ला तारणमुक्त कर्जासाठी पत हमी मिळते. R: यामुळे बँकांचा NPA धोका पूर्णपणे संपतो.",
+  "q_english": "A: CGTMSE gives credit guarantee for collateral-free MSME loans. R: This completely ends banks' NPA risk.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A सत्य, R असत्य (जोखीम कमी होते, संपत नाही)",
+   "A असत्य, R सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: A सत्य, R असत्य, हमी 75-85% पर्यंत, जोखीम कमी होते पण संपत नाही. इतर पर्याय चूक: पूर्ण समाप्ती चूक.",
+  "evidence": "CGTMSE 2024; MSME Ministry"
+ },
+ {
+  "section": 8,
+  "subtopic": "CRISPR-Cas9",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) CRISPR-Cas9 हे जीवाणूंच्या अनुकूल प्रतिकारशक्तीपासून विकसित जीन-संपादन तंत्र. II) 2020 चे रसायनशास्त्र नोबेल डूडना-शार्पेंतिए यांना. III) याने मानवी भ्रूणात बदल कायदेशीररित्या सर्वत्र मान्य.",
+  "q_english": "Statements: I) CRISPR-Cas9 gene-editing from bacterial adaptive immunity. II) 2020 Chemistry Nobel to Doudna-Charpentier. III) Human germline editing legally accepted everywhere.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त II सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, जर्मलाइन संपादनावर बहुतेक देशांत बंदी/निर्बंध. इतर पर्याय चूक.",
+  "evidence": "Nobel 2020; Nature)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Bt Cotton Bollgard-II",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: Bt कापूस (बोलगार्ड-II) मध्ये Cry1Ac + Cry2Ab जनुकांमुळे बोंडअळी प्रतिरोध. R: यामुळे भारतात रासायनिक कीटकनाशक वापर पूर्णपणे बंद झाला.",
+  "q_english": "A: Bt cotton (Bollgard-II) resists bollworm via Cry1Ac + Cry2Ab genes. R: Hence chemical pesticide use stopped completely in India.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: A सत्य, R असत्य, कीटकनाशक वापर कमी झाला पण बंद नाही (रसशोषक किडींसाठी वापर). इतर पर्याय चूक.",
+  "evidence": "GEAC; ICAR-CICR)"
+ },
+ {
+  "section": 8,
+  "subtopic": "DNA Fingerprinting",
+  "qtype": "जोड्या लावा",
+  "q_marathi": "A) DNA फिंगरप्रिंटिंग – 1) अ‍ॅलेक जेफ्रिस, 1984 B) तत्त्व – 2) VNTR/minisatellite भिन्नता C) उपयोग – 3) गुन्हे-वडिलत्व D) नमुना – 4) रक्त-केस-लाळ",
+  "q_english": "Match: A) DNA fingerprinting – 1) Alec Jeffreys, 1984 B) Principle – 2) VNTR variation C) Use – 3) Crime-paternity D) Sample – 4) Blood-hair-saliva",
+  "options": [
+   "A-2, B-1, C-4, D-3",
+   "A-1, B-2, C-3, D-4",
+   "A-3, B-4, C-1, D-2",
+   "A-4, B-3, C-2, D-1"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: सर्व अचूक. इतर अदलाबदल चूक.",
+  "evidence": "Jeffreys 1984 Nature)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Stem Cells",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) भ्रूणीय स्टेम पेशी – प्लुरिपोटेंट, सर्व पेशी प्रकार. Y) प्रौढ स्टेम पेशी – मल्टिपोटेंट, मर्यादित. योग्य?",
+  "q_english": "X) Embryonic stem cells – pluripotent, all cell types. Y) Adult stem cells – multipotent, limited. Correct?",
+  "options": [
+   "X टोटिपोटेंट, Y प्लुरिपोटेंट",
+   "X प्लुरिपोटेंट, Y मल्टिपोटेंट, म्हणून उपचार क्षमता भिन्न",
+   "दोन्ही एकच",
+   "X फक्त वनस्पतींत"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: वर्गीकरण अचूक, उपचार-संशोधन क्षमता भिन्न. इतर पर्याय चूक: टोटिपोटेंट फक्त झायगोट.",
+  "evidence": "NIH Stem Cell Basics)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Nitrogen Cycle",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "नत्रचक्र क्रम: A) अमोनीकरण B) नायट्रिफिकेशन (Nitrosomonas/Nitrobacter) C) वनस्पती शोषण D) डिनायट्रिफिकेशन",
+  "q_english": "Nitrogen cycle order: A) Ammonification B) Nitrification (Nitrosomonas/Nitrobacter) C) Plant uptake D) Denitrification",
+  "options": [
+   "A-B-C-D",
+   "B-A-C-D",
+   "A-C-B-D",
+   "D-A-B-C"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: सेंद्रिय N → अमोनिया → नायट्राइट/नायट्रेट → शोषण → N2 परत. हाच क्रम. इतर क्रम चूक.",
+  "evidence": "NCERT Class 9; Microbiology)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Lichen Symbiosis",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: लायकेन हे बुरशी + शैवाल/सायनोबॅक्टेरियाचे सहजीवन. परिणाम: म्हणून लायकेन वायू प्रदूषणाचे जैवसूचक मानले जातात.",
+  "q_english": "Cause: Lichen is symbiosis of fungi + algae/cyanobacteria. Effect: Hence lichens are bioindicators of air pollution.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य व तार्किक",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि SO2 संवेदनशीलतेमुळे सूचक, तार्किक. इतर पर्याय चूक.",
+  "evidence": "NEERI; NCERT)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Ultrasound 20kHz",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: अल्ट्रासाऊंड – >20 kHz; उपयोग – सोनोग्राफी, SONAR तत्त्वाशी साम्य; धोका – आयनीकरण नाही. कोणते असत्य?",
+  "q_english": "Table: Ultrasound – >20 kHz; use – sonography, similar to SONAR principle; hazard – non-ionizing. Which is false?",
+  "options": [
+   "अल्ट्रासाऊंड हा आयनीकरण किरणोत्सर्ग आहे",
+   "वारंवारता 20 kHz पेक्षा जास्त",
+   "सोनोग्राफीत प्रतिध्वनी तत्त्व",
+   "SONAR मध्ये ध्वनी प्रतिध्वनी"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: पहिले असत्य, अल्ट्रासाऊंड अनायनीकरण, X-ray/Gamma आयनीकरण. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "NCERT Physics)"
+ },
+ {
+  "section": 8,
+  "subtopic": "X-ray vs MRI",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) X-ray – विद्युतचुंबकीय लहरी, हाडे-फुफ्फुसे. Y) MRI – चुंबकीय क्षेत्र + रेडिओ लहरी, मऊ ऊती. योग्य फरक?",
+  "q_english": "X) X-ray – EM waves, bones-lungs. Y) MRI – magnetic field + radio waves, soft tissue. Correct difference?",
+  "options": [
+   "X आयनीकरण, Y अनायनीकरण (सामान्यतः)",
+   "दोन्ही आयनीकरण",
+   "दोन्ही चुंबकीय",
+   "X फक्त मेंदूसाठी"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: X आयनीकरण धोका, Y सामान्यतः अनायनीकरण, म्हणून मेंदू-मऊ ऊतींसाठी Y प्राधान्य. इतर पर्याय चूक.",
+  "evidence": "Radiology textbooks)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Laser",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) LASER – Stimulated Emission ने एकवर्णी, सुसंगत प्रकाश. II) आइन्स्टाइन 1917 संकल्पना, मायमन 1960 पहिला लेसर. III) लेसर प्रकाश अपसारी व असुसंगत असतो.",
+  "q_english": "Statements: I) LASER – monochromatic, coherent via stimulated emission. II) Einstein 1917 concept, Maiman 1960 first laser. III) Laser light is divergent & incoherent.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, लेसर अभिसारी-सुसंगत हेच वैशिष्ट्य. इतर पर्याय चूक.",
+  "evidence": "NCERT; Nobel)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Superconductivity 1911",
+  "qtype": "Assertion-Reason",
+  "q_marathi": "A: अतिवाहकता 1911 मध्ये कॅमरलिंग ओनेस यांनी पाऱ्यात शोधली. R: यात क्रांतिक तापमानाखाली विद्युतरोध शून्य होतो.",
+  "q_english": "A: Superconductivity discovered 1911 by Kamerlingh Onnes in mercury. R: Below critical temp electrical resistance becomes zero.",
+  "options": [
+   "A व R सत्य, R हे A चे स्पष्टीकरण",
+   "A व R सत्य, पण R स्पष्टीकरण नाही",
+   "A सत्य, R असत्य",
+   "A असत्य, R सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य आणि R हीच अतिवाहकतेची व्याख्या, म्हणून स्पष्टीकरण. इतर पर्याय चूक.",
+  "evidence": "Nobel 1913)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Li-ion vs Lead-acid",
+  "qtype": "तक्ता आधारित",
+  "q_marathi": "तक्ता: Li-ion – उच्च ऊर्जा घनता, हलकी, EV; Lead-acid – कमी घनता, जड, UPS. कोणते असत्य?",
+  "q_english": "Table: Li-ion – high energy density, light, EV; Lead-acid – low density, heavy, UPS. Which is false?",
+  "options": [
+   "Li-ion मध्ये लिथियम आयन ॲनोड-कॅथोडमध्ये फिरतात",
+   "Lead-acid मध्ये सल्फ्यूरिक आम्ल इलेक्ट्रोलाइट",
+   "Li-ion ही प्राथमिक (नॉन-रिचार्जेबल) बॅटरी",
+   "Lead-acid रिचार्जेबल आहे"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "योग्य: तिसरे असत्य, Li-ion दुय्यम (रिचार्जेबल) आहे. इतर सत्य. पर्यायांची अदलाबदल चूक.",
+  "evidence": "Electrochemistry)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Sonar",
+  "qtype": "कारण-परिणाम",
+  "q_marathi": "कारण: SONAR मध्ये अल्ट्रासाऊंड स्पंदे पाण्यात सोडून प्रतिध्वनी वेळ मोजतात. परिणाम: म्हणून हवेत विमान शोधण्यासाठीही SONAR वापरतात.",
+  "q_english": "Cause: SONAR emits ultrasound pulses in water measuring echo time. Effect: Hence SONAR used to detect aircraft in air.",
+  "options": [
+   "कारण सत्य, परिणाम सत्य",
+   "कारण सत्य, परिणाम असत्य",
+   "कारण असत्य, परिणाम सत्य",
+   "दोन्ही असत्य"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "योग्य: कारण सत्य, परिणाम असत्य, हवेत RADAR (रेडिओ लहरी), पाण्यात SONAR (ध्वनी). इतर पर्याय चूक.",
+  "evidence": "NCERT)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Human Genome 2003",
+  "qtype": "कालक्रम लावा",
+  "q_marathi": "क्रम: A) वॉटसन-क्रिक DNA रचना (1953) B) ह्युमन जीनोम प्रकल्प सुरू (1990) C) मसुदा जीनोम (2000) D) पूर्ण जीनोम (2003)",
+  "q_english": "Order: A) Watson-Crick DNA structure (1953) B) HGP started (1990) C) Draft genome (2000) D) Complete genome (2003)",
+  "options": [
+   "A-B-C-D",
+   "B-A-C-D",
+   "A-C-B-D",
+   "B-C-A-D"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: हाच ऐतिहासिक क्रम. इतर क्रम चूक: रचनेपूर्वी प्रकल्प अशक्य.",
+  "evidence": "NHGRI)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Dialysis",
+  "qtype": "दोन संकल्पना एकत्र",
+  "q_marathi": "X) हिमोडायलिसिस – अर्धपारगम्य पडद्यातून अपशिष्ट विसरण. Y) पेरिटोनियल डायलिसिस – उदर पडदा वापर. योग्य?",
+  "q_english": "X) Haemodialysis – waste diffusion via semipermeable membrane. Y) Peritoneal dialysis – uses peritoneal membrane. Correct?",
+  "options": [
+   "X सत्य, Y सत्य, दोन्ही मूत्रपिंड निकामीवर पर्याय",
+   "X असत्य, Y सत्य",
+   "X सत्य, Y असत्य",
+   "दोन्ही यकृतासाठी"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: दोन्ही सत्य, तत्त्व विसरण/परासरण, मूत्रपिंडासाठी. इतर पर्याय चूक.",
+  "evidence": "Nephrology)"
+ },
+ {
+  "section": 8,
+  "subtopic": "Nanomaterials CNT",
+  "qtype": "बहु-विधान (I,II,III)",
+  "q_marathi": "I) कार्बन नॅनोट्यूब – ग्राफीन पत्र्याची नळी, उच्च तन्यता. II) 1-100 nm व्याप्ती नॅनो पदार्थ. III) नॅनो पदार्थांचे गुणधर्म स्थूल पदार्थांसारखेच असतात.",
+  "q_english": "Statements: I) CNT – rolled graphene sheet, high tensile strength. II) 1-100 nm range nanomaterial. III) Nanomaterials have same properties as bulk.",
+  "options": [
+   "I, II सत्य, III असत्य",
+   "I, III सत्य, II असत्य",
+   "फक्त III सत्य",
+   "I, II, III सर्व सत्य"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "योग्य: I-II सत्य, III असत्य, पृष्ठभाग-आकारमान गुणोत्तरामुळे गुणधर्म बदलतात. इतर पर्याय चूक.",
+  "evidence": "Nanoscience textbooks)"
+ }
+]
