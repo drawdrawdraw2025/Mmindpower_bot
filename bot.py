@@ -203,8 +203,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web30"
-DONATE_URL_V = DONATE_URL + "?v=web30"
+APP_URL_V = APP_URL + "?v=web31"
+DONATE_URL_V = DONATE_URL + "?v=web31"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1590,6 +1590,10 @@ def handle(update):
         return
     if token0 == "/rebootnow":
         if chat_id == OWNER_CHAT:
+            mdate = ((up.get("message") or {}).get("date")) or 0
+            if time.time() - mdate > 120:
+                send_text(chat_id, "⏳ जुनी reboot आज्ञा — दुर्लक्ष (fresh रीस्टार्ट हवा असल्यास आत्ताच /rebootnow)")
+                return
             send_text(chat_id, "🔄 Rebooting — पुडच्या tick (≤10 मिनिट) नवीन code लोड होईल 👋")
             save_state(force=True)
             raise SystemExit(0)
@@ -1749,9 +1753,22 @@ def main():
         qr_relay_autopost()
     except Exception as e:
         print("qr relay boot err:", e)
-    offset = None
+    try:
+        wi = tg("getWebhookInfo")
+        wurl = (wi.get("result") or {}).get("url") or ""
+        cleared = ""
+        if wurl:
+            r = tg("deleteWebhook")
+            cleared = " 🪝 webhook CLEARED: " + wurl[:50]
+            print("webhook cleared:", r.get("ok"), wurl[:60])
+        send_text(OWNER_CHAT, "🧠 Brain web31 online 🔒 polling-mode · webhook: %s%s" % (
+            ("cleared (" + wurl[:40] + ")") if wurl else "none ✓", cleared if not wurl else ""))
+    except Exception as e:
+        print("boot notify err:", e)
+    offset = FLAGS.get("off")
     conflicts = 0
     last_tick = 0
+    off_alerted = 0
     while True:
         try:
             if time.time() - last_tick > 2:
@@ -1766,11 +1783,15 @@ def main():
                 desc = str(data.get("description", ""))
                 if "conflict" in desc.lower():
                     conflicts += 1
-                    print("Conflict with another poller", conflicts)
-                    if conflicts >= 3:
-                        print("Another bot instance is active — exiting.")
-                        return
-                    time.sleep(5)
+                    if conflicts == 1 or conflicts % 20 == 0:
+                        print("Conflict with another poller", conflicts)
+                    if conflicts == 20 and not off_alerted:
+                        off_alerted = 1
+                        try:
+                            send_text(OWNER_CHAT, "⚔️ Updates अजूनही दुसऱ्या poller कडून — जुना host (Render?) suspend करा 🛑")
+                        except Exception:
+                            pass
+                    time.sleep(min(6 + conflicts, 45))
                 else:
                     print("TG not ok:", desc[:120])
                     time.sleep(3)
@@ -1785,6 +1806,9 @@ def main():
                         handle(up)
                 except Exception as e:
                     print("handle error:", e)
+            if offset and FLAGS.get("off") != offset:
+                FLAGS["off"] = offset
+                save_state()
         except Exception as e:
             print("poll error:", e)
             time.sleep(3)
