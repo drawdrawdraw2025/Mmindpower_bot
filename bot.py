@@ -22,6 +22,8 @@ SEND_HOUR_START, SEND_HOUR_END = 0, 24  # 24x7 delivery
 IDLE_NEXT_SECS = 10 * 60         # next question if user doesn't answer
 ANSWERED_NEXT_SECS = 5           # next question after user answers (near-instant)
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+SESS_T0 = time.time()      # ⏱️ heartbeat: coronation moment of this brain
+SESS_MAX_SEC = 330 * 60    # abdicate ~20 min before the 350m shell-timeout beheads us
 
 WELCOME = (
     "🚀 <b>Welcome to Mmindpower Bot!</b>\n"
@@ -203,8 +205,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web31"
-DONATE_URL_V = DONATE_URL + "?v=web31"
+APP_URL_V = APP_URL + "?v=web32"
+DONATE_URL_V = DONATE_URL + "?v=web32"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1770,6 +1772,10 @@ def main():
     last_tick = 0
     off_alerted = 0
     while True:
+        if time.time() - SESS_T0 >= SESS_MAX_SEC:
+            print("🕯 clean abdication — deadline near; saving state & yielding the throne", flush=True)
+            save_state()
+            return
         try:
             if time.time() - last_tick > 2:
                 quiz_tick()
