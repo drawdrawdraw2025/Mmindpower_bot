@@ -130,11 +130,17 @@ def groq_reply(chat_id, text):
     return reply
 
 # ---------------- Quiz data & state ----------------
+def set_order():
+    """Smart set sequence: A..Z then AA..ZZ then AAA... (length-then-alpha)."""
+    return sorted(DATA.keys(), key=lambda k: (len(k), k))
+
 def load_data():
-    for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
-        p = f"quiz_data_{letter}.json"
-        if os.path.exists(p):
-            DATA[letter] = json.load(open(p, encoding="utf-8"))
+    """Drop-in forever: any quiz_data_*.json present in the repo self-loads (no code edits to add sets)."""
+    import glob
+    for p in sorted(glob.glob("quiz_data_*.json"), key=lambda p: (len(p), p)):
+        sid = p[len("quiz_data_"):-len(".json")]
+        if sid:
+            DATA[sid] = json.load(open(p, encoding="utf-8"))
     print("Quiz data loaded:", {k: len(v) for k, v in DATA.items()})
 
 def default_state():
@@ -205,8 +211,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web32"
-DONATE_URL_V = DONATE_URL + "?v=web32"
+APP_URL_V = APP_URL + "?v=web33"
+DONATE_URL_V = DONATE_URL + "?v=web33"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -324,7 +330,7 @@ def current_q(us):
     return L, us["index"], DATA[L][us["index"]]
 
 def next_set(L):
-    order = sorted(DATA.keys())
+    order = set_order()
     i = order.index(L) if L in order else -1
     return order[i + 1] if 0 <= i < len(order) - 1 else None
 
@@ -885,7 +891,7 @@ def day_plan():
     plan = []
     day = 1
     base = datetime.datetime.now(IST).replace(hour=0, minute=0, second=0, microsecond=0)
-    for L in sorted(DATA.keys()):
+    for L in set_order():
         n = len(DATA[L])
         start = 0
         while start < n:
@@ -953,7 +959,7 @@ def channel_post(html_text):
 
 def qotd_post(ist_now):
     daynum = int(ist_now.strftime("%Y%j"))
-    pool = [(L, i, q) for L in sorted(DATA.keys()) for i, q in enumerate(DATA[L])
+    pool = [(L, i, q) for L in set_order() for i, q in enumerate(DATA[L])
             if len(q.get("q_marathi") or "") < 350 and "|" not in (q.get("q_marathi") or "")]
     if not pool:
         return None
@@ -1098,7 +1104,7 @@ def report_card(chat_id):
     tried = len(done)
     pct = round(tried / total_q * 100) if total_q else 0
     lines.append(f"🚀 Journey: {tried}/{total_q} questions ({pct}%)")
-    order = sorted(DATA.keys())
+    order = set_order()
     parts = []
     for L in order:
         if L < us["set"]:
