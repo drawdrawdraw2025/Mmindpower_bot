@@ -225,8 +225,8 @@ DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web35"
-DONATE_URL_V = DONATE_URL + "?v=web35"
+APP_URL_V = APP_URL + "?v=web36"
+DONATE_URL_V = DONATE_URL + "?v=web36"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -797,13 +797,16 @@ def kb_hide_inline(qid):
         [{"text": "🙈 Hide Explanation", "callback_data": f"hexp|{qid}"}],
         [{"text": "▶️ Next question now", "callback_data": f"next|{qid}"}]]}
 
+def parse_qid(qid):
+    """qid = <A..Z+><digits> — canonical parser (multi-letter sets like AA57)."""
+    m = re.match(r'^([A-Z]+)(\d+)$', qid or '')
+    if not m:
+        return None, None
+    return m.group(1), int(m.group(2)) - 1
+
 def get_q(qid):
-    L = qid[0]
-    try:
-        idx = int(qid[1:]) - 1
-    except Exception:
-        return None
-    if L in DATA and 0 <= idx < len(DATA[L]):
+    L, idx = parse_qid(qid)
+    if L and idx is not None and L in DATA and 0 <= idx < len(DATA[L]):
         return L, idx, DATA[L][idx]
     return None
 
@@ -1384,10 +1387,8 @@ def handle_callback(cb):
 
 
 def find_by_qid(qid):
-    L = qid[0]
-    try:
-        idx = int(qid[1:]) - 1
-    except Exception:
+    L, idx = parse_qid(qid)
+    if not (L and idx is not None):
         return None
     if L in DATA and 0 <= idx < len(DATA[L]):
         return DATA[L][idx]
