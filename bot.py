@@ -10,6 +10,7 @@ TOKEN = os.environ["TG_TOKEN"]
 GROQ_KEY = os.environ["GROQ_KEY"]
 GH_TOKEN = os.environ.get("GH_TOKEN", "")
 REPO = os.environ.get("REPO", "")
+MY_RUN_ID = int(os.environ.get("MMR_RUN", "0") or 0)
 TG = f"https://api.telegram.org/bot{TOKEN}"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MODEL = "openai/gpt-oss-120b"
@@ -207,12 +208,25 @@ def save_state(force=False):
     LAST_STATE_SAVE["t"] = now
     gh_save_state()
 
+def summon_successor():
+    # ⛓️ Self-chaining coronation: dispatch a successor run NOW (cron-jitter independent).
+    # Residual backup: */5 cron + gate-waiter remains if dispatch is refused.
+    if not (GH_TOKEN and REPO):
+        return
+    H = {"Authorization": f"Bearer {GH_TOKEN}", "Accept": "application/vnd.github+json"}
+    try:
+        r = requests.post(f"https://api.github.com/repos/{REPO}/actions/workflows/bot.yml/dispatches",
+                          headers=H, json={"ref": "main"}, timeout=30)
+        print("⛓️ successor dispatch:", r.status_code, flush=True)
+    except Exception as e:
+        print("summon err (cron belt remains):", e, flush=True)
+
 DONATE_UPI = "mmindpower.contact@oksbi"
 DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
 APP_URL = "https://drawdrawdraw2025.github.io/app/"
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
-APP_URL_V = APP_URL + "?v=web34"
-DONATE_URL_V = DONATE_URL + "?v=web34"
+APP_URL_V = APP_URL + "?v=web35"
+DONATE_URL_V = DONATE_URL + "?v=web35"
 APP_MENU_DONE = set()
 CHANNEL_ID = "@mmindpower_1"
 
@@ -1779,8 +1793,9 @@ def main():
     off_alerted = 0
     while True:
         if time.time() - SESS_T0 >= SESS_MAX_SEC:
-            print("🕯 clean abdication — deadline near; saving state & yielding the throne", flush=True)
+            print("🕯️ clean abdication — deadline near; saving state, summoning the successor & yielding the throne", flush=True)
             save_state()
+            summon_successor()
             return
         try:
             if time.time() - last_tick > 2:

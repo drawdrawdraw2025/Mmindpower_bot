@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # so an abdicating brain can summon its successor (workflow_dispatch)
 
 jobs:
   run:
@@ -33,6 +34,14 @@ jobs:
         if: steps.check.outputs.skip == '0'
         with:
           python-version: '3.11'
+
+      - name: Cache pip deps (warm boots ~seconds faster)
+        if: steps.check.outputs.skip == '0'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-bot-v1
+          restore-keys: ${{ runner.os }}-pip-bot
 
       - name: Install deps
         if: steps.check.outputs.skip == '0'
@@ -63,6 +72,29 @@ jobs:
                     and r["status"] == "in_progress"]
           older = [r for r in active if r["id"] < my]
           if older:
+              o = older[0]
+              from datetime import datetime, timezone
+              started = datetime.fromisoformat(o["run_started_at"].replace("Z", "+00:00"))
+              age_min = (datetime.now(timezone.utc) - started).total_seconds() / 60
+              if age_min >= 318:
+                  print(f"Older run {o['id']} nearing expiry (age {age_min:.0f}m) - waiting at the coronation gate...")
+                  import time as _t
+                  t0 = _t.time()
+                  while _t.time() - t0 < 720:
+                      _t.sleep(20)
+                      try:
+                          r2 = json.load(urllib.request.urlopen(req))["workflow_runs"]
+                          if not any(x["id"] == o["id"] and x["status"] == "in_progress" for x in r2):
+                              print("Crown freed - this run takes over.")
+                              older = []
+                              break
+                          print(f"  gate: older run still reigning ({int(_t.time()-t0)}s elapsed)")
+                      except Exception as e:
+                          print("gate poll err:", e)
+                  else:
+                      print("Gate wait capped - standing down.")
+                      sys.exit(42)
+          if older:
               print(f"Older bot run {older[0]['id']} still active - standing down.")
               sys.exit(42)
           print("No older active run - this run takes over.")
@@ -70,6 +102,6 @@ jobs:
           code=$?
           if [ "$code" -eq 42 ]; then exit 0; fi
           echo "Starting bot for up to 350 minutes..."
-          export TG_TOKEN="$ONE" GROQ_KEY="$TWO" GH_TOKEN="$THREE" REPO="$REPO"
+          export TG_TOKEN="$ONE" GROQ_KEY="$TWO" GH_TOKEN="$THREE" REPO="$REPO" MMR_RUN="$MY_RUN"
           timeout 350m python3 bot.py || true
           echo "Bot session ended; next scheduled run will take over."
