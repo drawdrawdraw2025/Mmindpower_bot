@@ -20,23 +20,31 @@ KINDS = ("concept", "compare", "steps", "def")
 def make_chat(gk):
     import requests
 
-    def chat(user, temp=0.45, mx=1400):
-        for mdl in MODELS:
-            try:
-                r = requests.post("https://api.groq.com/openai/v1/chat/completions",
-                                  headers={"Authorization": "Bearer " + gk},
-                                  json={"model": mdl, "temperature": temp, "max_tokens": mx,
-                                        "messages": [{"role": "system", "content": SYS},
-                                                     {"role": "user", "content": user}]},
-                                  timeout=120)
-                txt = r.json()["choices"][0]["message"]["content"].strip()
-                if not txt:
-                    say("groq [{}] empty content — next model".format(mdl))
-                    continue
-                say("groq ok via {} ({} ch)".format(mdl, len(txt)))
-                return txt
-            except Exception as e:
-                say("groq [{}] fail: {}".format(mdl, str(e)[:80]))
+    def chat(user, temp=0.45, mx=2000, retries=2):
+        for attempt in range(retries):
+            for mdl in MODELS:
+                try:
+                    payload = {"model": mdl, "temperature": temp, "max_tokens": mx,
+                               "messages": [{"role": "system", "content": SYS},
+                                            {"role": "user", "content": user}]}
+                    if "gpt-oss" in mdl:
+                        payload["reasoning_effort"] = "low"     # stop reasoning eating the token budget
+                        payload["max_completion_tokens"] = mx
+                    r = requests.post("https://api.groq.com/openai/v1/chat/completions",
+                                      headers={"Authorization": "Bearer " + gk},
+                                      json=payload, timeout=120)
+                    js = r.json()
+                    txt = js["choices"][0]["message"]["content"].strip()
+                    if not txt:
+                        say("groq [{}] empty content (try {})".format(mdl, attempt))
+                        continue
+                    say("groq ok via {} ({} ch)".format(mdl, len(txt)))
+                    return txt
+                except Exception as e:
+                    try:
+                        say("groq [{}] fail: {}".format(mdl, str(r.json())[:120]))
+                    except Exception:
+                        say("groq [{}] fail: {}".format(mdl, str(e)[:80]))
         return None
     return chat
 
@@ -81,7 +89,7 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect=""):
     chat = make_chat(gk)
 
     dia = DIA_A if dialect == "kolhapuri" else ""
-    A = chat(PROMPT_A_TPL.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=1200)
+    A = chat(PROMPT_A_TPL.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=2200)
     if not A:
         say("stageA empty")
         return None
