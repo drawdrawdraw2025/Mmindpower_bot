@@ -328,10 +328,30 @@ def groq_script(topic, ground, nsec):
             raw = m2.group(0)
             try:
                 sc = json.loads(raw)
-            except Exception:
+            except Exception as e1:
+                try:
+                    ctx = raw[max(0, e1.pos - 120): e1.pos + 120]
+                    os.makedirs(OUT, exist_ok=True)
+                    open(os.path.join(OUT, "groq_raw.txt"), "w").write("ERR " + str(e1) + "\n\n...AROUND...\n" + ctx + "\n\n...FULL...\n" + txt)
+                    say("groq json err @" + str(e1.pos) + " ctx: " + ctx[:110].replace("\n", "\\n"))
+                except Exception:
+                    pass
                 healed = re.sub(r",\s*([}\]])", r"\1", raw)           # strip trailing commas
                 healed = healed.replace("’", "'").replace("“", '"').replace("”", '"')
-                sc = json.loads(healed)
+                healed = healed.replace(":true", ": true").replace(":false", ": false").replace(": null", ": null")
+                try:
+                    sc = json.loads(healed)
+                except Exception as e2:
+                    # last resort: walk char errors, drop offending comma
+                    for _ in range(8):
+                        try:
+                            sc = json.loads(healed); break
+                        except Exception as e3:
+                            p = e3.pos
+                            if healed[max(0,p-1):p] == ",":
+                                healed = healed[:p-1] + " " + healed[p:]
+                            else:
+                                raise
             assert len(sc.get("chapters", [])) >= 3
             say(f"groq script OK — {len(sc['chapters'])} chapters")
             return sc
