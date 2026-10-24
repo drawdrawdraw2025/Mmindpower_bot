@@ -204,13 +204,28 @@ def still_with_audio(img_path, aud_path, seg_path, zoom=True):
          "-c:v", "libx264", "-tune", "stillimage",
          "-c:a", "aac", "-b:a", "128k", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
 
+def synth_ticks(path, dur=4.6, sr=44100, freq=940):
+    """Pure-Python tick track: 180ms beep once per second — zero ffmpeg-expression risk."""
+    import wave, struct, math
+    N = int(dur * sr); frames = bytearray()
+    for i in range(N):
+        t = i / sr
+        env = 1.0 if (t % 1.0) > 0.82 else 0.0
+        v = int(14000 * env * math.sin(2 * math.pi * freq * t))
+        frames += struct.pack('<h', v)
+    wv = wave.open(path, 'wb'); wv.setparams((1, 2, sr, N, 'NONE', 'not compressed'))
+    wv.writeframes(bytes(frames)); wv.close()
+
 def tick_seg(img_path, seg_path, dur=4.6):
+    tick_wav = seg_path.replace('.mp4', '_ticks.wav')
+    synth_ticks(tick_wav, dur)
     filt = (f"[0:v]scale={W}:{H}[v];"
             f"[1:a]aresample=48000,volume=0.9[a]")
-    run(["ffmpeg", "-y", "-loop", "1", "-i", img_path,
-         "-f", "lavfi", "-i", f"aevalsrc=sin(2*PI*940*t)*gt(mod(t,1),0.82):s=48000:d={dur}",
+    say(f"  seg {os.path.basename(seg_path)} dur={dur:.1f}s (ticks)")
+    run(["ffmpeg", "-y", "-loop", "1", "-t", str(dur), "-i", img_path, "-i", tick_wav,
          "-filter_complex", filt, "-map", "[v]", "-map", "[a]", "-t", str(dur),
          "-c:v", "libx264", "-tune", "stillimage", "-c:a", "aac", "-b:a", "128k", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
+    os.remove(tick_wav)
 
 def pad_seg(img_path, aud_path, seg_path):  # voice + faint ambient bed (intro/outro)
     dur = dur_of(aud_path) + 0.6
