@@ -45,9 +45,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install factory deps (ffmpeg is preinstalled on runner)
+      - name: Install factory deps (ffmpeg via apt — not always preinstalled)
         if: steps.check.outputs.skip == '0'
-        run: pip install pillow==12.3.0 edge-tts==7.2.0 requests==2.34.2
+        run: |
+          sudo apt-get update -y >/dev/null
+          sudo apt-get install -y ffmpeg >/dev/null
+          pip install pillow==12.3.0 edge-tts==7.2.0 requests==2.34.2
 
       - name: Verify ffmpeg + bundled font
         if: steps.check.outputs.skip == '0'
@@ -59,11 +62,18 @@ jobs:
         if: steps.check.outputs.skip == '0'
         env:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
+        env:
+          IN_TOPIC: ${{ github.event.inputs.topic }}
+          IN_N: ${{ github.event.inputs.n_questions }}
+          IN_VOICE: ${{ github.event.inputs.voice }}
+          IN_SET: ${{ github.event.inputs.set_letter }}
+          IN_PREVIEW: ${{ github.event.inputs.preview }}
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
-          ARGS="--topic ${{ github.event.inputs.topic }} --n ${{ github.event.inputs.n_questions }} --voice ${{ github.event.inputs.voice }}"
-          if [ -n "${{ github.event.inputs.set_letter }}" ]; then ARGS="$ARGS --set ${{ github.event.inputs.set_letter }}"; fi
-          if [ "${{ github.event.inputs.preview }}" = "true" ]; then ARGS="$ARGS --preview"; fi
-          python3 tools/video_gen.py $ARGS
+          ARGS=(--topic "$IN_TOPIC" --n "$IN_N" --voice "$IN_VOICE")
+          if [ -n "$IN_SET" ]; then ARGS+=(--set "$IN_SET"); fi
+          if [ "$IN_PREVIEW" = "true" ]; then ARGS+=(--preview); fi
+          python3 tools/video_gen.py "${ARGS[@]}"
 
       - name: Upload video artifacts
         if: steps.check.outputs.skip == '0'
