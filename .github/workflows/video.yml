@@ -50,7 +50,7 @@ jobs:
         run: |
           sudo apt-get update -y >/dev/null
           sudo apt-get install -y ffmpeg >/dev/null
-          pip install pillow==12.3.0 edge-tts==7.2.0 requests==2.34.2
+          pip install pillow==12.3.0 edge-tts gtts requests==2.34.2
 
       - name: Verify ffmpeg + bundled font
         if: steps.check.outputs.skip == '0'
@@ -60,7 +60,7 @@ jobs:
 
       - name: Render video
         if: steps.check.outputs.skip == '0'
-        timeout-minutes: 12    # preview ~4min; full 10-question ≈ ~10min; beyond => something wedged, fail fast
+        timeout-minutes: 16    # preview ~4-6min; full ~5min video ≈ ~14min; bounded encodes make hangs impossible
         env:
           IN_TOPIC: ${{ github.event.inputs.topic }}
           IN_N: ${{ github.event.inputs.n_questions }}

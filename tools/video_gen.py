@@ -22,6 +22,14 @@ def run(cmd, **kw):
     say("ffmpeg: " + " ".join(cmd[:6]) + " …")
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, **kw)
 
+def dur_of(path, default=2.0):
+    try:
+        o = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                            "-of", "csv=p=0", path], capture_output=True, text=True, timeout=30)
+        return float(o.stdout.strip())
+    except Exception:
+        return default
+
 
 # ------------------ PIL card engine ------------------
 def bg(vignette=True):
@@ -146,31 +154,55 @@ def thumbnail(topic):
 
 # ------------------ TTS voice ------------------
 async def tts_all(tasks, voice):
-    import edge_tts
+    try:
+        import edge_tts
+        edge_ok = True
+    except Exception:
+        edge_ok = False
     for text, path in tasks:
-        try:
-            comm = edge_tts.Communicate(text=text, voice=voice, rate="+8%")
-            os.makedirs(os.path.dirname(path), exist_ok=True)
-            async def _write():
-                with open(path, "wb") as fh:
-                    async for chunk in comm.stream():
-                        if chunk["type"] == "audio": fh.write(chunk["data"])
-            import asyncio as _a
-            await _a.wait_for(_write(), timeout=55)   # kill dangling TTS sockets
-            say(f"tts → {os.path.basename(path)} ({os.path.getsize(path)//1024}KB)")
-        except Exception as e:
-            say(f"tts FAILED ({e}) — silent placeholder for {os.path.basename(path)}")
-            subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", "2", "-q:a", "9", "-acodec", "libmp3lame", path],
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        done = False
+        if edge_ok:
+            try:
+                import asyncio as _a
+                comm = edge_tts.Communicate(text=text, voice=voice, rate="+8%")
+                async def _write():
+                    with open(path, "wb") as fh:
+                        async for chunk in comm.stream():
+                            if chunk["type"] == "audio": fh.write(chunk["data"])
+                await _a.wait_for(_write(), timeout=55)
+                say(f"tts[edge] → {os.path.basename(path)} ({os.path.getsize(path)//1024}KB)")
+                done = os.path.getsize(path) > 2000
+            except Exception as e:
+                say(f"tts[edge] fail ({str(e)[:80]}) — trying gTTS…")
+        if not done:
+            try:  # Google TTS public endpoint — Marathi, no key, datacenter-friendly
+                from gtts import gTTS
+                import asyncio as _a
+                def _g():
+                    gTTS(text=text[:1900], lang="mr").save(path)
+                await _a.wait_for(_a.get_event_loop().run_in_executor(None, _g), timeout=55)
+                say(f"tts[gTTS] → {os.path.basename(path)} ({os.path.getsize(path)//1024}KB)")
+                done = os.path.getsize(path) > 2000
+            except Exception as e:
+                say(f"tts[gTTS] fail ({str(e)[:80]})")
+        if not done:
+            subprocess.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+                            "-t", "6", "-q:a", "9", "-acodec", "libmp3lame", path],
                            check=False, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+            say(f"tts[silent placeholder, 6s] → {os.path.basename(path)}")
 
 
 # ------------------ ffmpeg assembly ------------------
 def still_with_audio(img_path, aud_path, seg_path, zoom=True):
+    dur = dur_of(aud_path) + 0.5
+    say(f"  seg {os.path.basename(seg_path)} dur={dur:.1f}s")
     filt = f"[0:v]scale={W}:{H},zoompan=z='min(zoom+0.0007,1.12)':d={FPS*40}:fps={FPS}:s={W}x{H}[v]" if zoom else f"[0:v]scale={W}:{H}[v]"
     filt += f";[1:a]aresample=48000,volume=1.6[a]"
     run(["ffmpeg", "-y", "-loop", "1", "-i", img_path, "-i", aud_path,
-         "-filter_complex", filt, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-tune", "stillimage",
-         "-c:a", "aac", "-b:a", "128k", "-shortest", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
+         "-filter_complex", filt, "-map", "[v]", "-map", "[a]", "-t", f"{dur:.2f}",
+         "-c:v", "libx264", "-tune", "stillimage",
+         "-c:a", "aac", "-b:a", "128k", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
 
 def tick_seg(img_path, seg_path, dur=4.6):
     filt = (f"[0:v]scale={W}:{H}[v];"
@@ -181,14 +213,17 @@ def tick_seg(img_path, seg_path, dur=4.6):
          "-c:v", "libx264", "-tune", "stillimage", "-c:a", "aac", "-b:a", "128k", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
 
 def pad_seg(img_path, aud_path, seg_path):  # voice + faint ambient bed (intro/outro)
+    dur = dur_of(aud_path) + 0.6
+    say(f"  seg {os.path.basename(seg_path)} dur={dur:.1f}s (pad bed)")
     filt = (f"[0:v]scale={W}:{H}[v];"
             f"[1:a]aresample=48000,volume=1.6[vo];"
-            f"[2:a]aresample=48000,volume=0.10,lowpass=f=600[bed];"
+            f"[2:a]aresample=48000,volume=0.10,lowpass=f=600,atrim=0:{dur:.2f}[bed];"
             f"[vo][bed]amix=inputs=2:duration=first[a]")
-    run(["ffmpeg", "-y", "-loop", "1", "-i", img_path, "-i", aud_path,
-         "-f", "lavfi", "-i", "anoisesrc=color=brown:duration=90",
-         "-filter_complex", filt, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-tune", "stillimage",
-         "-c:a", "aac", "-b:a", "128k", "-shortest", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
+    run(["ffmpeg", "-y", "-loop", "1", "-t", f"{dur:.2f}", "-i", img_path, "-i", aud_path,
+         "-f", "lavfi", "-i", f"anoisesrc=color=brown:duration={int(dur)+1}",
+         "-filter_complex", filt, "-map", "[v]", "-map", "[a]", "-t", f"{dur:.2f}",
+         "-c:v", "libx264", "-tune", "stillimage",
+         "-c:a", "aac", "-b:a", "128k", "-pix_fmt", "yuv420p", "-r", str(FPS), seg_path])
 
 
 # ------------------ script (Groq, optional) ------------------
