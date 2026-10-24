@@ -294,19 +294,12 @@ def groq_script(topic, ground, nsec):
         example = {"title": topic, "hook": "नमस्कार! आज आपण सोप्या भाषेत समजून घेणार आहोत या विषयाचा सारा खजिना.",
                    "chapters": [{"heading": "परीचय आणि मूलभूत चौकट", "narration": "पन्नास ते ऐंशी शब्दांत सहज बोलले जाणारे मराठी वर्णन…", "bullets": ["मुद्दा एक","मुद्दा दोन","मुद्दा तीन"], "kind": "concept", "chips": ["कीवर्ड"]}],
                    "recap": "दोन-तीन वाक्यांचा मराठी सारांश.", "cta": "Subscribe करा आणि टेलिग्रामवर @mmindpower_1 मध्ये रोज सराव करा."}
-        prompt = (f'Topic: "{topic}".
-'
-                  f'Grounding from Wikipedia (optional reference):
-{ground}
-
-'
+        prompt = (f'Topic: "{topic}".\n'
+                  f'Grounding from Wikipedia (optional reference):\n' + ground + '\n\n'
                   f'Write a ~5-minute Marathi explainer-video script. Respond with ONLY valid JSON — one object with keys '
                   f'exactly: title, hook, chapters (array of exactly {nsec}), recap, cta. Each chapter has keys: heading, '
-                  f'narration, bullets, kind, chips.
-'
-                  'STRUCTURE EXAMPLE (imitate EXACTLY, with real content):
-' + json.dumps(example, ensure_ascii=False) + '
-'
+                  f'narration, bullets, kind, chips.\n'
+                  'STRUCTURE EXAMPLE (imitate EXACTLY, with real content):\n' + json.dumps(example, ensure_ascii=False) + '\n'
                   'Rules: (1) strings must be single-line — no raw line breaks inside them; (2) no trailing commas; '
                   '(3) no code fences, no commentary; narration = 55-85 words, spoken register; bullets <= 12 words; '
                   '(4) kind is one of concept/compare/steps/def.')
