@@ -151,9 +151,12 @@ async def tts_all(tasks, voice):
         try:
             comm = edge_tts.Communicate(text=text, voice=voice, rate="+8%")
             os.makedirs(os.path.dirname(path), exist_ok=True)
-            with open(path, "wb") as fh:
-                async for chunk in comm.stream():
-                    if chunk["type"] == "audio": fh.write(chunk["data"])
+            async def _write():
+                with open(path, "wb") as fh:
+                    async for chunk in comm.stream():
+                        if chunk["type"] == "audio": fh.write(chunk["data"])
+            import asyncio as _a
+            await _a.wait_for(_write(), timeout=55)   # kill dangling TTS sockets
             say(f"tts → {os.path.basename(path)} ({os.path.getsize(path)//1024}KB)")
         except Exception as e:
             say(f"tts FAILED ({e}) — silent placeholder for {os.path.basename(path)}")
