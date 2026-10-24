@@ -30,6 +30,9 @@ def make_chat(gk):
                                                      {"role": "user", "content": user}]},
                                   timeout=120)
                 txt = r.json()["choices"][0]["message"]["content"].strip()
+                if not txt:
+                    say("groq [{}] empty content — next model".format(mdl))
+                    continue
                 say("groq ok via {} ({} ch)".format(mdl, len(txt)))
                 return txt
             except Exception as e:
