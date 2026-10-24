@@ -70,14 +70,18 @@ NARR: <मराठीत ५५-८५ शब्द, बोलभाषा, स
 - <बुलेट ३>"""
 
 
-def groq_script_2stage(topic, ground, nsec, outdir):
+DIA_A = "\n\nभाषा-शैली (महत्त्वाचे!): HOOK व CTA लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — दामा ठेवा; उदा. 'आहे' ऐवजी 'असतं', 'करायला' ऐवजी 'करं', 'मग', 'का', 'बरं', 'गं' असे शब्द वापरा. मुद्दे मात्र अचूक ठेवा."
+DIA_B = "\n\nभाषा-शैली (महत्त्वाचे!): NARR लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — जणू गावातील मुलगी मित्राला समजावते; दामा ठेवा ('असतं', 'करं', 'मग', 'का', 'बरं', 'राव'). आशय अचूक रहावा. बुलेट्स मात्र प्रमाणभाषेत — स्वच्छ व छोटे."
+
+def groq_script_2stage(topic, ground, nsec, outdir, dialect=""):
     """Returns script dict on success, None on any failure (caller falls back)."""
     gk = os.environ.get("GROQ_KEY")
     if not gk:
         return None
     chat = make_chat(gk)
 
-    A = chat(PROMPT_A_TPL.format(topic=topic, ground=ground[:1600], nsec=nsec), mx=1200)
+    dia = DIA_A if dialect == "kolhapuri" else ""
+    A = chat(PROMPT_A_TPL.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=1200)
     if not A:
         say("stageA empty")
         return None
@@ -107,7 +111,7 @@ def groq_script_2stage(topic, ground, nsec, outdir):
     for i, ch in enumerate(outs):
         B = chat(PROMPT_B_TPL.format(topic=topic, i=i + 1, total=len(outs),
                                      heading=ch["heading"], kind=ch["kind"],
-                                     ground=ground[:1200]), mx=900)
+                                     ground=ground[:1200]) + (DIA_B if dialect == "kolhapuri" else ""), mx=900)
         if not B:
             say("stageB empty chap{}".format(i + 1))
             return None

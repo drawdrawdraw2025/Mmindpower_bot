@@ -201,6 +201,29 @@ def thumbnail(topic, chips):
     return img
 
 
+# ------------------ voice aliases (free-stack child/vernacular faking) ------------------
+VOICE_ALIAS = {
+    "manohar":        ("mr-IN-ManoharNeural", "+0Hz", "+6%"),
+    "aarohi":         ("mr-IN-AarohiNeural", "+0Hz", "+4%"),
+    "aarohi_child":   ("mr-IN-AarohiNeural", "+50Hz", "+10%"),   # pitch-up → childlike
+    "kolhapur_child": ("mr-IN-AarohiNeural", "+50Hz", "+10%"),
+    "kolhapuri_child":("mr-IN-AarohiNeural", "+50Hz", "+10%"),
+    "child":          ("mr-IN-AarohiNeural", "+50Hz", "+10%"),
+}
+
+def resolve_voice(name):
+    n = (name or "").strip().lower()
+    if n in VOICE_ALIAS:
+        ev, pitch, rate = VOICE_ALIAS[n]
+        say(f"voice alias '{name}' → {ev} pitch={pitch} rate={rate}")
+        return ev, pitch, rate
+    if n.startswith("mr-in-"):
+        say(f"voice literal {name}")
+        return name, "+0Hz", "+6%"
+    say(f"voice '{name}' unknown → default Manohar")
+    return "mr-IN-ManoharNeural", "+0Hz", "+6%"
+
+
 # ------------------ audio: chimes + dual TTS ------------------
 def synth_chime(path, dur=1.1, sr=44100):
     import wave, struct, math
@@ -213,7 +236,7 @@ def synth_chime(path, dur=1.1, sr=44100):
     wv = wave.open(path, 'wb'); wv.setparams((1, 2, sr, N, 'NONE', 'not compressed'))
     wv.writeframes(bytes(frames)); wv.close()
 
-async def tts_all(tasks, voice):
+async def tts_all(tasks, voice, pitch="+0Hz", rate="+6%"):
     try:
         import edge_tts; edge_ok = True
     except Exception:
@@ -223,7 +246,7 @@ async def tts_all(tasks, voice):
         if edge_ok:
             try:
                 import asyncio as _a
-                comm = edge_tts.Communicate(text=text[:1800], voice=voice, rate="+6%")
+                comm = edge_tts.Communicate(text=text[:1800], voice=voice, rate=rate, pitch=pitch)
                 async def _w():
                     with open(path, "wb") as fh:
                         async for ch in comm.stream():
@@ -276,8 +299,8 @@ def wiki_ground(topic):
     say("wiki: no grounding found (continuing with model knowledge only)")
     return ""
 
-def groq_script(topic, ground, nsec):
-    s2 = groq_script_2stage(topic, ground, nsec, OUT)
+def groq_script(topic, ground, nsec, dialect=""):
+    s2 = groq_script_2stage(topic, ground, nsec, OUT, dialect=dialect)
     if s2:
         return s2
     gk = os.environ.get("GROQ_KEY")
@@ -442,6 +465,8 @@ def main():
     ap.add_argument("--preview", action="store_true")      # 3 chapters, no quiz bite
     ap.add_argument("--script-cache", default="")
     ap.add_argument("--no-quiz", action="store_true")
+    ap.add_argument("--dialect", default="", choices=["", "kolhapuri"],
+                    help="'kolhapuri' → narration in Kolhapuri vernacular Marathi")
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True); work = os.path.join(OUT, "seg"); os.makedirs(work, exist_ok=True)
     cache = a.script_cache or os.path.join(OUT, "script.json")
@@ -450,7 +475,7 @@ def main():
         sc = json.load(open(cache)); say("script loaded from cache")
     else:
         ground = wiki_ground(a.topic)
-        sc = groq_script(a.topic, ground, 3 if a.preview else 6)
+        sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect)
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
     chapters = sc["chapters"]
@@ -485,7 +510,8 @@ def main():
     thumbnail(sc["title"], chips).save(os.path.join(OUT, "thumbnail.png")); say("thumbnail minted")
 
     import asyncio
-    asyncio.run(tts_all(plan_tts, a.voice))
+    e_voice, e_pitch, e_rate = resolve_voice(a.voice)
+    asyncio.run(tts_all(plan_tts, e_voice, e_pitch, e_rate))
 
     # ---- assemble ----
     segs = []
@@ -505,6 +531,7 @@ def main():
     total = sum(dur_of(s) for s in segs if s.endswith(".mp4"))
     meta = {"topic": sc["title"], "chapters": names, "quiz_bite": len(qz), "seconds": round(total),
             "minutes": round(total/60, 1), "bytes": os.path.getsize(final),
+            "voice": a.voice, "dialect": a.dialect or "std",
             "grounded_by": "wikipedia+groq", "date": datetime.datetime.now().isoformat(timespec="seconds")}
     json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), ensure_ascii=False, indent=2)
     say(f"DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min)")

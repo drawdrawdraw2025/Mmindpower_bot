@@ -8,9 +8,13 @@ on:
         required: false
         default: 'महाराष्ट्राचे भूगोल'
       voice:
-        description: 'Voice: mr-IN-ManoharNeural (male) / mr-IN-AarohiNeural (female)'
+        description: 'Voice: manohar / aarohi / child (कोल्हापुर-मुलीसारखा) / mr-IN-*'
         required: false
-        default: 'mr-IN-ManoharNeural'
+        default: 'manohar'
+      dialect:
+        description: 'kolhapuri = narration कोल्हापुरी ग्रामीण बोलभाषेत / (blank) = प्रमाणभाषा'
+        required: false
+        default: ''
       no_quiz:
         description: 'Skip the quiz-bite interlude (true/false)'
         required: false
@@ -56,11 +60,13 @@ jobs:
           IN_VOICE: ${{ github.event.inputs.voice }}
           IN_NQ: ${{ github.event.inputs.no_quiz }}
           IN_PREVIEW: ${{ github.event.inputs.preview }}
+          IN_DIALECT: ${{ github.event.inputs.dialect }}
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           ARGS=(--topic "$IN_TOPIC" --voice "$IN_VOICE" --script-cache out_explainer/script.json)
           if [ "$IN_NQ" = "true" ]; then ARGS+=(--no-quiz); fi
           if [ "$IN_PREVIEW" = "true" ]; then ARGS+=(--preview); fi
+          if [ "$IN_DIALECT" = "kolhapuri" ]; then ARGS+=(--dialect kolhapuri); fi
           python3 tools/video_explainer.py "${ARGS[@]}"
 
       - name: Upload explainer artifacts
