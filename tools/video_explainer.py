@@ -276,6 +276,9 @@ def wiki_ground(topic):
     return ""
 
 def groq_script(topic, ground, nsec):
+    s2 = groq_script_2stage(topic, ground, nsec, OUT)
+    if s2:
+        return s2
     gk = os.environ.get("GROQ_KEY")
     schema = {
         "title": topic,
