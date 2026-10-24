@@ -291,28 +291,51 @@ def groq_script(topic, ground, nsec):
         "cta": "2-line Marathi subscribe+Telegram CTA (@mmindpower_1)"}
     if gk:
         import requests
-        prompt = (f'Topic: "{topic}".\n'
-                  f'Grounding from Wikipedia (may be partial, trust only what is here or is common knowledge):\n{ground}\n\n'
-                  f'Compose a 5-minute Marathi explainer video script as STRICT JSON following this schema EXACTLY '
-                  f'(keys exactly as named, chapters array of exactly {nsec} items):\n{json.dumps(schema, ensure_ascii=False)}\n'
-                  'Rules: narration must flow when spoken aloud; bullets are on-screen support (concise, no emojis); '
-                  'Use Devanagari digits sparingly. Output JSON only, no fences.')
+        example = {"title": topic, "hook": "नमस्कार! आज आपण सोप्या भाषेत समजून घेणार आहोत या विषयाचा सारा खजिना.",
+                   "chapters": [{"heading": "परीचय आणि मूलभूत चौकट", "narration": "पन्नास ते ऐंशी शब्दांत सहज बोलले जाणारे मराठी वर्णन…", "bullets": ["मुद्दा एक","मुद्दा दोन","मुद्दा तीन"], "kind": "concept", "chips": ["कीवर्ड"]}],
+                   "recap": "दोन-तीन वाक्यांचा मराठी सारांश.", "cta": "Subscribe करा आणि टेलिग्रामवर @mmindpower_1 मध्ये रोज सराव करा."}
+        prompt = (f'Topic: "{topic}".
+'
+                  f'Grounding from Wikipedia (optional reference):
+{ground}
+
+'
+                  f'Write a ~5-minute Marathi explainer-video script. Respond with ONLY valid JSON — one object with keys '
+                  f'exactly: title, hook, chapters (array of exactly {nsec}), recap, cta. Each chapter has keys: heading, '
+                  f'narration, bullets, kind, chips.
+'
+                  'STRUCTURE EXAMPLE (imitate EXACTLY, with real content):
+' + json.dumps(example, ensure_ascii=False) + '
+'
+                  'Rules: (1) strings must be single-line — no raw line breaks inside them; (2) no trailing commas; '
+                  '(3) no code fences, no commentary; narration = 55-85 words, spoken register; bullets <= 12 words; '
+                  '(4) kind is one of concept/compare/steps/def.')
         try:
             r = requests.post("https://api.groq.com/openai/v1/chat/completions",
                               headers={"Authorization": f"Bearer {gk}"},
-                              json={"model": "openai/gpt-oss-120b", "temperature": 0.65,
-                                    "messages": [{"role": "system", "content": "You are a Marathi educational scriptwriter. Output valid JSON only."},
+                              json={"model": "llama-3.3-70b-versatile", "temperature": 0.5,
+                                    "messages": [{"role": "system", "content": "You are a Marathi educational scriptwriter. You output STRICT JSON only — valid, parseable, single-line strings."},
                                                  {"role": "user", "content": prompt}]},
                               timeout=90)
             txt = r.json()["choices"][0]["message"]["content"].strip()
-            m2 = re.search(r"\{.*\}", txt, re.S)   # forgive fences/prose: rescue the JSON island
+            m2 = re.search(r"\{.*\}", txt, re.S)
             if not m2:
                 raise ValueError("no JSON in model reply: " + txt[:90])
-            sc = json.loads(m2.group(0))
+            raw = m2.group(0)
+            try:
+                sc = json.loads(raw)
+            except Exception:
+                healed = re.sub(r",\s*([}\]])", r"\1", raw)           # strip trailing commas
+                healed = healed.replace("’", "'").replace("“", '"').replace("”", '"')
+                sc = json.loads(healed)
             assert len(sc.get("chapters", [])) >= 3
             say(f"groq script OK — {len(sc['chapters'])} chapters")
             return sc
         except Exception as e:
+            try:
+                say("groq raw head: " + str(r.json())[:160])
+            except Exception:
+                pass
             say(f"groq script fail: {str(e)[:100]} — building fallback script")
     # fallback: wiki sentences as chapters
     paras = [p.strip() for p in re.split(r"(?<=[।.!?])\s+", ground) if len(p.strip()) > 40]
