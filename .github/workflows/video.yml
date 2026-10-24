@@ -1,0 +1,89 @@
+name: video factory
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'व्हिडिओचा विषय (e.g. "महाराष्ट्राचे भूगोल" / "करंट अफेअर्स")'
+        required: false
+        default: 'MPSC टलाठी स्पेशल'
+      set_letter:
+        description: 'Question set (A…Z, AA…AD) — blank = pick by date'
+        required: false
+        default: ''
+      n_questions:
+        description: 'Number of questions (10 ≈ ~5 min video)'
+        required: false
+        default: '10'
+      voice:
+        description: 'Voice: mr-IN-ManoharNeural (male) / mr-IN-AarohiNeural (female)'
+        required: false
+        default: 'mr-IN-ManoharNeural'
+      preview:
+        description: 'Preview mode (1 question, ~40s test render)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        id: check
+        env:
+          T: ${{ secrets.TG_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then echo "skip=1" >> $GITHUB_OUTPUT; else echo "skip=0" >> $GITHUB_OUTPUT; fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.skip == '0'
+        with:
+          python-version: '3.11'
+
+      - name: Install factory deps (ffmpeg is preinstalled on runner)
+        if: steps.check.outputs.skip == '0'
+        run: pip install pillow==12.3.0 edge-tts==7.2.0 requests==2.34.2
+
+      - name: Verify ffmpeg + bundled font
+        if: steps.check.outputs.skip == '0'
+        run: |
+          ffmpeg -version | head -1
+          python3 -c "from PIL import ImageFont; ImageFont.truetype('assets/fonts/NotoSansDevanagari-Bold.ttf', 40); print('bundled font OK')"
+
+      - name: Render video
+        if: steps.check.outputs.skip == '0'
+        env:
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
+        run: |
+          ARGS="--topic ${{ github.event.inputs.topic }} --n ${{ github.event.inputs.n_questions }} --voice ${{ github.event.inputs.voice }}"
+          if [ -n "${{ github.event.inputs.set_letter }}" ]; then ARGS="$ARGS --set ${{ github.event.inputs.set_letter }}"; fi
+          if [ "${{ github.event.inputs.preview }}" = "true" ]; then ARGS="$ARGS --preview"; fi
+          python3 tools/video_gen.py $ARGS
+
+      - name: Upload video artifacts
+        if: steps.check.outputs.skip == '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mmindpower-video-${{ github.run_number }}
+          path: |
+            out_video/final.mp4
+            out_video/thumbnail.png
+            out_video/meta.json
+          retention-days: 30
+
+      - name: Notify owner via Telegram
+        if: always() && steps.check.outputs.skip == '0'
+        env:
+          TG_ONE: ${{ secrets.TG_TOKEN }}
+        run: |
+          OWNER=7102918717
+          if [ "${{ job.status }}" = "success" ]; then E="✅"; T="Video factory SUCCESS 🎬 — artifacts on the run page (mp4 + thumbnail):"; else E="❌"; T="Video factory failed — check the run log:"; fi
+          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
+            --data-urlencode "chat_id=$OWNER" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=$E <b>$T</b>\n🎞️ ${{ github.event.inputs.topic }}\n🔗 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
