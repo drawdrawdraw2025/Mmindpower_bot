@@ -329,29 +329,42 @@ def groq_script(topic, ground, nsec):
             try:
                 sc = json.loads(raw)
             except Exception as e1:
-                try:
-                    ctx = raw[max(0, e1.pos - 120): e1.pos + 120]
-                    os.makedirs(OUT, exist_ok=True)
-                    open(os.path.join(OUT, "groq_raw.txt"), "w").write("ERR " + str(e1) + "\n\n...AROUND...\n" + ctx + "\n\n...FULL...\n" + txt)
-                    say("groq json err @" + str(e1.pos) + " ctx: " + ctx[:110].replace("\n", "\\n"))
-                except Exception:
-                    pass
-                healed = re.sub(r",\s*([}\]])", r"\1", raw)           # strip trailing commas
-                healed = healed.replace("’", "'").replace("“", '"').replace("”", '"')
-                healed = healed.replace(":true", ": true").replace(":false", ": false").replace(": null", ": null")
-                try:
-                    sc = json.loads(healed)
-                except Exception as e2:
-                    # last resort: walk char errors, drop offending comma
-                    for _ in range(8):
-                        try:
-                            sc = json.loads(healed); break
-                        except Exception as e3:
-                            p = e3.pos
-                            if healed[max(0,p-1):p] == ",":
-                                healed = healed[:p-1] + " " + healed[p:]
-                            else:
-                                raise
+                sc = None
+                # rescue 1: over-escaped structural quotes (\" where plain " belongs)
+                if raw.count('\\"') >= 4:
+                    try:
+                        sc = json.loads(raw.replace('\\"', '"'))
+                        say("groq json rescued via structural de-escape")
+                    except Exception:
+                        sc = None
+                if sc is None:
+                    try:
+                        ctx = raw[max(0, e1.pos - 120): e1.pos + 120]
+                        os.makedirs(OUT, exist_ok=True)
+                        open(os.path.join(OUT, "groq_raw.txt"), "w").write(
+                            "ERR " + str(e1) + "\n\n...AROUND...\n" + ctx + "\n\n...FULL...\n" + txt)
+                        say("groq json err @" + str(e1.pos) + " ctx: " + ctx[:110].replace("\n", "\\n"))
+                    except Exception:
+                        pass
+                    # rescue 2: trailing commas + smart quotes
+                    healed = re.sub(r",\s*([}\]])", r"\1", raw)
+                    healed = healed.replace("’", "'").replace("“", '"').replace("”", '"')
+                    try:
+                        sc = json.loads(healed)
+                        say("groq json rescued via comma/quote healer")
+                    except Exception:
+                        # rescue 3: walk error positions, delete offending commas
+                        for _ in range(10):
+                            try:
+                                sc = json.loads(healed)
+                                say("groq json rescued via comma-walk")
+                                break
+                            except Exception as e3:
+                                p = e3.pos
+                                if healed[max(0, p - 1):p] == ",":
+                                    healed = healed[:p - 1] + " " + healed[p:]
+                                else:
+                                    raise
             assert len(sc.get("chapters", [])) >= 3
             say(f"groq script OK — {len(sc['chapters'])} chapters")
             return sc
