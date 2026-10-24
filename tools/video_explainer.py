@@ -7,6 +7,7 @@ Usage: python3 tools/video_explainer.py --topic "..." [--voice mr-IN-ManoharNeur
 import os, sys, json, glob, random, subprocess, argparse, time, datetime, re
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from groq2stage import groq_script_2stage
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_B = os.path.join(ROOT, "assets", "fonts", "NotoSansDevanagari-Bold.ttf")
