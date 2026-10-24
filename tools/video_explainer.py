@@ -250,20 +250,29 @@ async def tts_all(tasks, voice):
 UA = {"User-Agent": "MmindpowerExplainer/1.0 (educational open-content use)"}
 
 def wiki_ground(topic):
+    """Search -> best title -> REST summary (never silently empty: always narrates its path)."""
     import requests
     for lang in ("mr", "en"):
         try:
-            r = requests.get(f"https://{lang}.wikipedia.org/w/api.php",
-                             params={"action": "query", "prop": "extracts", "explaintext": 1,
-                                     "exsentences": 12, "titles": topic, "format": "json",
-                                     "redirects": 1}, headers=UA, timeout=30)
-            pages = r.json().get("query", {}).get("pages", {})
-            txt = next(iter(pages.values())).get("extract", "")
-            if txt and len(txt) > 200:
-                say(f"wiki[{lang}] grounded: {len(txt)} chars")
-                return txt[:3500]
+            sr = requests.get(f"https://{lang}.wikipedia.org/w/api.php",
+                              params={"action": "opensearch", "search": topic, "limit": 3,
+                                      "namespace": 0, "format": "json"}, headers=UA, timeout=30)
+            hits = sr.json()[1] if isinstance(sr.json(), list) else []
+            say(f"wiki[{lang}] search hits: {hits[:2]}")
+            for title in hits[:2] or [topic]:
+                try:
+                    sm = requests.get(f"https://{lang}.wikipedia.org/api/rest_v1/page/summary/{requests.utils.quote(title)}",
+                                      headers=UA, timeout=30)
+                    if sm.status_code == 200:
+                        txt = (sm.json().get("extract") or "").strip()
+                        if len(txt) > 150:
+                            say(f"wiki[{lang}] grounded via '{title}': {len(txt)} chars")
+                            return txt[:3500]
+                except Exception as e:
+                    say(f"wiki[{lang}] summary err: {str(e)[:60]}")
         except Exception as e:
-            say(f"wiki[{lang}] skip: {str(e)[:60]}")
+            say(f"wiki[{lang}] search skip: {str(e)[:60]}")
+    say("wiki: no grounding found (continuing with model knowledge only)")
     return ""
 
 def groq_script(topic, ground, nsec):
@@ -296,8 +305,10 @@ def groq_script(topic, ground, nsec):
                                                  {"role": "user", "content": prompt}]},
                               timeout=90)
             txt = r.json()["choices"][0]["message"]["content"].strip()
-            txt = txt[txt.index("{"):txt.rindex("}")+1]
-            sc = json.loads(txt)
+            m2 = re.search(r"\{.*\}", txt, re.S)   # forgive fences/prose: rescue the JSON island
+            if not m2:
+                raise ValueError("no JSON in model reply: " + txt[:90])
+            sc = json.loads(m2.group(0))
             assert len(sc.get("chapters", [])) >= 3
             say(f"groq script OK — {len(sc['chapters'])} chapters")
             return sc
