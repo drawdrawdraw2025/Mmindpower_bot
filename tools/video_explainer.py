@@ -304,13 +304,24 @@ def groq_script(topic, ground, nsec):
                   '(3) no code fences, no commentary; narration = 55-85 words, spoken register; bullets <= 12 words; '
                   '(4) kind is one of concept/compare/steps/def.')
         try:
-            r = requests.post("https://api.groq.com/openai/v1/chat/completions",
-                              headers={"Authorization": f"Bearer {gk}"},
-                              json={"model": "llama-3.3-70b-versatile", "temperature": 0.5,
-                                    "messages": [{"role": "system", "content": "You are a Marathi educational scriptwriter. You output STRICT JSON only — valid, parseable, single-line strings."},
-                                                 {"role": "user", "content": prompt}]},
-                              timeout=90)
-            txt = r.json()["choices"][0]["message"]["content"].strip()
+            txt = ""
+            for mdl in ("openai/gpt-oss-120b", "meta-llama/llama-4-scout-17b-16e-instruct",
+                        "qwen/qwen3-32b", "llama-3.1-8b-instant"):
+                r = requests.post("https://api.groq.com/openai/v1/chat/completions",
+                                  headers={"Authorization": f"Bearer {gk}"},
+                                  json={"model": mdl, "temperature": 0.4,
+                                        "messages": [{"role": "system", "content": "You are a Marathi educational scriptwriter. You output STRICT JSON only — valid, parseable, single-line strings."},
+                                                     {"role": "user", "content": prompt}]},
+                                  timeout=120)
+                try:
+                    txt = r.json()["choices"][0]["message"]["content"].strip()
+                    say(f"groq ok via {mdl}")
+                    break
+                except Exception as e:
+                    say(f"groq[{mdl}] fail:", str(r.json())[:110] if r.text else str(e))
+                    txt = ""
+            if not txt:
+                raise ValueError("all groq models failed")
             m2 = re.search(r"\{.*\}", txt, re.S)
             if not m2:
                 raise ValueError("no JSON in model reply: " + txt[:90])
