@@ -50,7 +50,7 @@ jobs:
         run: |
           sudo apt-get update -y >/dev/null
           sudo apt-get install -y ffmpeg >/dev/null
-          pip install pillow==12.3.0 edge-tts gtts requests==2.34.2
+          pip install pillow==12.3.0 edge-tts gtts requests==2.34.2 reportlab
 
       - name: Render explainer
         if: steps.check.outputs.skip == '0'
@@ -69,6 +69,10 @@ jobs:
           if [ "$IN_DIALECT" = "kolhapuri" ]; then ARGS+=(--dialect kolhapuri); fi
           python3 tools/video_explainer.py "${ARGS[@]}"
 
+      - name: Student notes PDF
+        if: success() && steps.check.outputs.skip == '0'
+        run: python3 tools/notes_gen.py out_explainer/script.json out_explainer/notes.pdf && ls -la out_explainer/notes.pdf
+
       - name: Upload explainer artifacts
         if: steps.check.outputs.skip == '0'
         uses: actions/upload-artifact@v4
@@ -78,6 +82,7 @@ jobs:
             out_explainer/final.mp4
             out_explainer/thumbnail.png
             out_explainer/meta.json
+            out_explainer/notes.pdf
             out_explainer/script.json
           retention-days: 30
 
