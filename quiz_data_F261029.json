@@ -1,0 +1,146 @@
+[
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राचा समुद्रकिनारा किती किलोमीटर लांब आहे?",
+  "q_english": "",
+  "options": [
+   "७७७.९७ किमी",
+   "८०० किमी",
+   "७२० किमी",
+   "६५० किमी"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "महाराष्ट्राचा अरबी समुद्र किनारा 877.97 किमी लांबीचा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची एकूण लांबी किती आहे?",
+  "q_english": "",
+  "options": [
+   "७२० किमी",
+   "८०० किमी",
+   "७५० किमी",
+   "७२०० किमी"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "राज्याची पूर्व‑पश्चिम लांबी 800 किमी आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची दक्षिण‑उत्तर लांबी किती आहे?",
+  "q_english": "",
+  "options": [
+   "७२० किमी",
+   "८०० किमी",
+   "७०० किमी",
+   "६५० किमी"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "राज्याची दक्षिण‑उत्तर लांबी 720 किमी आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची स्थापना केव्हा झाली?",
+  "q_english": "",
+  "options": [
+   "१ मे १९५६",
+   "१ मे १९६०",
+   "१५ ऑगस्ट १९६०",
+   "२ ऑक्टोबर १९५६"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "महाराष्ट्र राज्याची निर्मिती १ मे १९६० रोजी झाली.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राचा सुवर्ण महोत्सव कधी साजरा झाला?",
+  "q_english": "",
+  "options": [
+   "१ मे २०१०",
+   "१ मे २००५",
+   "१५ ऑगस्ट २०१०",
+   "२ ऑक्टोबर २०१५"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "१ मे २०१० रोजी राज्याच्या स्थापनेचा सुवर्ण महोत्सव साजरा करण्यात आला.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्रातील सर्वात मोठे जिल्हे कोणते आहे?",
+  "q_english": "",
+  "options": [
+   "मुंबई",
+   "पालघर",
+   "अहील्यानगर",
+   "पुणे"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "क्षेत्रफळानुसार अहील्यानगर सर्वात मोठा जिल्हा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्रातील सर्वात लहान जिल्हा कोणता?",
+  "q_english": "",
+  "options": [
+   "मुंबई",
+   "पालघर",
+   "नाशिक",
+   "सातारा"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "मुंबई शहर हे क्षेत्रफळाने सर्वात लहान जिल्हा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची उपराजधानी कोणती?",
+  "q_english": "",
+  "options": [
+   "पुणे",
+   "नागपूर",
+   "नाशिक",
+   "कोल्हापूर"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "नागपूर हे महाराष्ट्राची उपराजधानी मानले जाते.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्रातील सर्वात अलीकडील जिल्हा कोणता?",
+  "q_english": "",
+  "options": [
+   "पालघर",
+   "लातूर",
+   "अमरावती",
+   "कोल्हापूर"
+  ],
+  "correct_index": 0,
+  "explanation_marathi": "पालघर हा ३६ वा आणि सर्वात अलीकडील जिल्हा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ }
+]
