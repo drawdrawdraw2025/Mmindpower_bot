@@ -81,8 +81,16 @@ def grow(target=40, topics_per_run=4):
     seen = existing_canon()
     per = max(4, target // topics_per_run)
     fresh, wiki_used = [], []
+    import time as _t
     for t in todays:
         ground = wiki_ground(t)
+        if not ground and " — " in t:
+            _t.sleep(2)
+            say(f"[retry bare] {t.split(' — ')[0]}")
+            ground = wiki_ground(t.split(" — ")[0])
+        if not ground:
+            _t.sleep(3)
+            ground = wiki_ground(t)          # second chance after rate-limit breath
         if not ground:
             say(f"[skip] no wiki ground for: {t}")
             continue
