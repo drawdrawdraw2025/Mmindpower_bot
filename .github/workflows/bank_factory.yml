@@ -1,0 +1,67 @@
+name: bank factory — प्रश्नसाठा वाढ (autopilot)
+
+on:
+  schedule:
+    - cron: '15 1 * * *'        # 06:45 IST, right after the daily video
+  workflow_dispatch: {}
+
+permissions:
+  contents: write             # pushes quiz_data_F*.json back to main
+
+jobs:
+  grow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        id: check
+        env:
+          T: ${{ secrets.TG_TOKEN }}
+        run: |
+          if [ -z "$T" ]; then echo "skip=1" >> $GITHUB_OUTPUT; else echo "skip=0" >> $GITHUB_OUTPUT; fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.skip == '0'
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        if: steps.check.outputs.skip == '0'
+        run: pip install -q requests Pillow
+
+      - name: Grow the bank (Wikipedia-grounded, dedup-checked)
+        id: grow
+        if: steps.check.outputs.skip == '0'
+        env:
+          GROQ_KEY: ${{ secrets.GROQ_KEY }}
+        run: |
+          python3 tools/bank_factory.py 40 | tee /tmp/grow.log
+          N=$(grep -oP 'BANK GROWN: \+\K[0-9]+' /tmp/grow.log | tail -1)
+          F=$(grep -oP '→ \Kquiz_data_F[0-9]+\.json' /tmp/grow.log | tail -1)
+          echo "added=${N:-0}" >> $GITHUB_OUTPUT
+          echo "file=${F:-none}" >> $GITHUB_OUTPUT
+
+      - name: Commit + push new questions
+        if: steps.check.outputs.skip == '0' && steps.grow.outputs.added != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || git pull --no-rebase origin main
+          git add quiz_data_F*.json quiz_state.json 2>/dev/null || git add quiz_data_F*.json
+          git commit -m "bank+${{ steps.grow.outputs.added }} MCQs (${{ steps.grow.outputs.file }}) — auto-factory [skip ci]" || echo "nothing to commit"
+          git push origin HEAD:main
+
+      - name: Notify owner via Telegram
+        if: always() && steps.check.outputs.skip == '0'
+        env:
+          TG_ONE: ${{ secrets.TG_TOKEN }}
+        run: |
+          OWNER=7102918717
+          N="${{ steps.grow.outputs.added }}"
+          if [ "${{ job.status }}" = "success" ]; then E="✅"; T="BANK FACTORY 🧠 — आज नवीन प्रश्न: +$N (total grows daily)"; else E="❌"; T="Bank factory failed — check run log:"; fi
+          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
+            --data-urlencode "chat_id=$OWNER" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=$E <b>$T</b>\n🔗 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true

@@ -415,17 +415,31 @@ def groq_script(topic, ground, nsec, dialect=""):
 
 
 # ------------------ quiz bite from our own bank ------------------
+def _norm_q(q):
+    import ast
+    qq = dict(q)
+    o = qq.get("options")
+    if isinstance(o, str):
+        try: qq["options"] = list(ast.literal_eval(o))
+        except Exception: qq["options"] = [x.strip() for x in o.strip("[]").split(",") if x.strip()]
+    ci = qq.get("correct_index", 0)
+    if isinstance(ci, str):
+        ci = ci.strip()
+        qq["correct_index"] = ord(ci) - 65 if ci.isalpha() else (int(ci) if ci.isdigit() else 0)
+    return qq
+
+
 def quiz_bite(topic, k=2):
     keys = [w for w in re.split(r"\s+", topic) if len(w) > 2]
     pool = []
     for fp in glob.glob(os.path.join(ROOT, "quiz_data_*.json")):
         for q in json.load(open(fp, encoding="utf-8")):
             if "|" in (q.get("q_marathi") or ""): continue
-            if keys and any(kw in q.get("q_marathi", "") for kw in keys): pool.append(q)
+            if keys and any(kw in q.get("q_marathi", "") for kw in keys): pool.append(_norm_q(q))
     rnd = random.Random(topic)
     rnd.shuffle(pool)
     if len(pool) < k:
-        allq = [q for fp in glob.glob(os.path.join(ROOT, "quiz_data_*.json"))
+        allq = [_norm_q(q) for fp in glob.glob(os.path.join(ROOT, "quiz_data_*.json"))
                 for q in json.load(open(fp, encoding="utf-8")) if "|" not in (q.get("q_marathi") or "")]
         rnd.shuffle(allq); pool += [q for q in allq if q not in pool]
     return pool[:k]

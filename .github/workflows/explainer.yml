@@ -10,7 +10,7 @@ on:
       voice:
         description: 'Voice: manohar / aarohi / child (कोल्हापुर-मुलीसारखा) / mr-IN-*'
         required: false
-        default: 'manohar'
+        default: 'aarohi'
       dialect:
         description: 'kolhapuri = narration कोल्हापुरी ग्रामीण बोलभाषेत / (blank) = प्रमाणभाषा'
         required: false

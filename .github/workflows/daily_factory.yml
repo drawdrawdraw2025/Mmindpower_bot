@@ -42,13 +42,13 @@ jobs:
           echo "topic=$T" >> $GITHUB_OUTPUT
 
 
-      - name: Render FULL explainer (Kolhapuri-child, WITH quiz-bite)
+      - name: Render FULL explainer (clean Aarohi voice, WITH quiz-bite)
         if: steps.check.outputs.skip == '0'
         env:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           rm -f out_explainer/script.json
-          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --voice child --dialect kolhapuri --script-cache out_explainer/script.json
+          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --voice aarohi --script-cache out_explainer/script.json
 
       - name: Student notes PDF
         if: success() && steps.check.outputs.skip == '0'
@@ -71,7 +71,7 @@ jobs:
           TG_ONE: ${{ secrets.TG_TOKEN }}
         run: |
           OWNER=7102918717
-          if [ "${{ job.status }}" = "success" ]; then E="✅"; T="DAILY FACTORY 🌅 — आजची Koल्हापुरी-मुलीची शिकवण + नोट्स तयार:"; else E="❌"; T="Daily factory failed — check run log:"; fi
+          if [ "${{ job.status }}" = "success" ]; then E="✅"; T="DAILY FACTORY 🌅 — आजची शिकवण + नोट्स तयार:"; else E="❌"; T="Daily factory failed — check run log:"; fi
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
             --data-urlencode "chat_id=$OWNER" \
             --data-urlencode "parse_mode=HTML" \
