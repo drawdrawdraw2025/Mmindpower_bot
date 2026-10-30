@@ -1,0 +1,130 @@
+[
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राचा किनारा कोणत्या समुद्रावर पसरलेला आहे?",
+  "q_english": "",
+  "options": [
+   "बंगाल समुद्र",
+   "अरबी समुद्र",
+   "हिंद महासागर",
+   "कॅरिबियन समुद्र"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "महाराष्ट्राच्या पश्चिमेस 877.97 किमी लांबीचा अरबी समुद्र किनारा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राचे एकूण किती जिल्हे आहेत?",
+  "q_english": "",
+  "options": [
+   "28",
+   "32",
+   "36",
+   "40"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "महाराष्ट्रात सध्या 36 जिल्हे आहेत.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची सर्वात मोठी जिल्हा क्षेत्रफळानुसार कोणती आहे?",
+  "q_english": "",
+  "options": [
+   "पालघर",
+   "अहील्यानगर",
+   "पुणे",
+   "मुंबई"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "अहील्यानगर हे क्षेत्रफळाच्या दृष्टीने सर्वात मोठे जिल्हा आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची राजधानी व उपराजधानी क्रमाने काय आहेत?",
+  "q_english": "",
+  "options": [
+   "पुणे, नाशिक",
+   "मुंबई, नागपूर",
+   "नाशिक, कोल्हापूर",
+   "कोल्हापूर, मुंबई"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "महाराष्ट्राची राजधानी मुंबई आणि उपराजधानी नागपूर आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची दक्षिण-उत्तरी लांबी किती किलोमीटर आहे?",
+  "q_english": "",
+  "options": [
+   "500 किमी",
+   "720 किमी",
+   "800 किमी",
+   "950 किमी"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "महाराष्ट्राची दक्षिण-उत्तरी लांबी 720 किमी आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राची पूर्व-पश्चिम लांबी किती किलोमीटर आहे?",
+  "q_english": "",
+  "options": [
+   "600 किमी",
+   "720 किमी",
+   "800 किमी",
+   "950 किमी"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "महाराष्ट्राची पूर्व-पश्चिम लांबी 800 किमी आहे.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "महाराष्ट्राच्या किती प्रशासकीय विभागांमध्ये विभागलेला आहे?",
+  "q_english": "",
+  "options": [
+   "चार",
+   "पाच",
+   "सहा",
+   "सात"
+  ],
+  "correct_index": 2,
+  "explanation_marathi": "महाराष्ट्राचे सहा प्रशासकीय विभाग आहेत.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ },
+ {
+  "section": "F",
+  "subtopic": "महाराष्ट्राचे भूगोल",
+  "qtype": "direct",
+  "q_marathi": "01 मे 2010 रोजी महाराष्ट्राच्या स्थापनेचा काय साजरा करण्यात आला?",
+  "q_english": "",
+  "options": [
+   "स्वातंत्र्य दिन",
+   "सुवर्ण महोत्सव",
+   "पाचवी शताब्दी",
+   "राष्ट्रीय परेड"
+  ],
+  "correct_index": 1,
+  "explanation_marathi": "01 मे 2010 रोजी महाराष्ट्र राज्याच्या स्थापनेचा सुवर्ण महोत्सव साजरा करण्यात आला.",
+  "evidence": "Wikipedia-mr: महाराष्ट्राचे भूगोल · auto-factory"
+ }
+]
