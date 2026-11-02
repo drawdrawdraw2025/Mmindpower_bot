@@ -61,7 +61,8 @@ jobs:
         run: |
           TARGET="@mmindpower_1"
           TITLE=$(python3 -c "import json; print(json.load(open('out_explainer/meta.json'))['topic'])")
-          R=$(curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ @mmindpower_1" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" -F "width=1920" -F "height=1080")
+          R=$(curl -s --retry 2 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ @mmindpower_1" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" -F "width=1920" -F "height=1080" || true)
+          echo "sendVideo resp: $(echo "$R" | head -c 200)"
           if ! echo "$R" | grep -q '"ok":true'; then
             echo "channel @mmindpower_1 post failed (bot admin/member?) → DM fallback to owner"
             echo "$R" | head -c 200
