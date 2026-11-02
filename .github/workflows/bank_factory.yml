@@ -31,6 +31,27 @@ jobs:
         if: steps.check.outputs.skip == '0'
         run: pip install -q requests Pillow
 
+      - name: 💓 Heartbeat — keys alive check
+        if: steps.check.outputs.skip == '0'
+        env:
+          P1: ${{ secrets.ARENA_PAT }}
+          G1: ${{ secrets.GROQ_KEY }}
+          TG_ONE: ${{ secrets.TG_TOKEN }}
+        run: |
+          ALERT=""
+          C1=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token $P1" https://api.github.com/user)
+          [ "$C1" != "200" ] && ALERT="$ALERT 🔴 ARENA_PAT (GitHub) EXPIRED — renewed PAT करा (gist: दुकान बंद पडेल!)"
+          if [ -n "$G1" ]; then
+            C2=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $G1" https://api.groq.com/openai/v1/models)
+            [ "$C2" != "200" ] && ALERT="$ALERT 🔴 GROQ_KEY EXPIRED/BLOCKED — नवीन key घ्या (साठी: factory शांत, फॉलबॅकही नाही)"
+          fi
+          echo "heartbeat: gh=$C1 groq=${C2:-n/a}"
+          if [ -n "$ALERT" ]; then
+            curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
+              --data-urlencode "chat_id=7102918717" \
+              --data-urlencode "text=💓🔴 HEARTBEAT ALERT:$ALERT" || true
+          fi
+
       - name: Grow the bank (Wikipedia-grounded, dedup-checked)
         id: grow
         if: steps.check.outputs.skip == '0'
