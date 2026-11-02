@@ -16,16 +16,43 @@ MODELS = ("openai/gpt-oss-120b",
           "llama-3.1-8b-instant")
 KINDS = ("concept", "compare", "steps", "def")
 
+SYS_HI = ("You are a Gen-Z Hinglish educational scriptwriter (Hindi written in Devanagari + English terms kept as-is, "
+          "e.g. 'chaliye samajhte hain', 'basically', 'exam point of view'). Follow FORMAT exactly. Plain text only — no JSON, no markdown fences.")
+
+PROMPT_A_HI = """Topic: "{topic}"
+Reference (Wikipedia):
+{ground}
+
+Sirf IN lines mein jawaab do — aur kuch nahi (lines Devanagari Hindi + English mix mein hon — bol-chaal wali, Gen-Z tone):
+HOOK: <2 vaakya — curiosity create kare>
+CH1: <chapter title — मुद्दा १> | <concept/compare/steps/def गे ईक> | <chip1, chip2>
+CH2: ...
+(अशा एकूण {nsec} CH ओळी — प्रत्येकी वेगळा उपविषय)
+RECAP: <2-3 vaakya summary>
+CTA: <1 vaakya — Mmindpower Subscribe + Telegram @mmindpower_1 roz practice>"""
+
+PROMPT_B_HI = """Topic: "{topic}" — explainer video (chapter {i} / {total})
+Chapter title: "{heading}" — type: {kind}
+Reference:
+{ground}
+
+Sirf YA format mein (kuch aur nahi):
+NARR: <Hinglish — Hindi Devanagari mein + English words naturally mixed; 55-85 shabd, bolne wali bhaasha; Gen-Z style (matlab 'simple English terms ok'), facts accurate>
+- <bullet 1 — 12 shabdon se kam>
+- <bullet 2>
+- <bullet 3>"""
+
+
 
 def make_chat(gk):
     import requests
 
-    def chat(user, temp=0.45, mx=2000, retries=2):
+    def chat(user, temp=0.45, mx=2000, retries=2, sysmsg=SYS):
         for attempt in range(retries):
             for mdl in MODELS:
                 try:
                     payload = {"model": mdl, "temperature": temp, "max_tokens": mx,
-                               "messages": [{"role": "system", "content": SYS},
+                               "messages": [{"role": "system", "content": sysmsg},
                                             {"role": "user", "content": user}]}
                     if "gpt-oss" in mdl:
                         payload["reasoning_effort"] = "low"     # stop reasoning eating the token budget
@@ -81,15 +108,18 @@ NARR: <मराठीत ५५-८५ शब्द, बोलभाषा, स
 DIA_A = "\n\nभाषा-शैली (महत्त्वाचे!): HOOK व CTA लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — दामा ठेवा; उदा. 'आहे' ऐवजी 'असतं', 'करायला' ऐवजी 'करं', 'मग', 'का', 'बरं', 'गं' असे शब्द वापरा. मुद्दे मात्र अचूक ठेवा."
 DIA_B = "\n\nभाषा-शैली (महत्त्वाचे!): NARR लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — जणू गावातील मुलगी मित्राला समजावते; दामा ठेवा ('असतं', 'करं', 'मग', 'का', 'बरं', 'राव'). आशय अचूक रहावा. बुलेट्स मात्र प्रमाणभाषेत — स्वच्छ व छोटे."
 
-def groq_script_2stage(topic, ground, nsec, outdir, dialect=""):
+def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr"):
     """Returns script dict on success, None on any failure (caller falls back)."""
     gk = os.environ.get("GROQ_KEY")
     if not gk:
         return None
     chat = make_chat(gk)
 
-    dia = DIA_A if dialect == "kolhapuri" else ""
-    A = chat(PROMPT_A_TPL.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=2200)
+    hi = (lang == "hinglish")
+    tplA = PROMPT_A_HI if hi else PROMPT_A_TPL
+    dia = (DIA_A if dialect == "kolhapuri" else "") if not hi else ""   # dialect = Marathi-only feature
+    A = chat(tplA.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=2200,
+             sysmsg=(SYS_HI if hi else SYS))
     if not A:
         say("stageA empty")
         return None
@@ -117,9 +147,11 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect=""):
 
     done = []
     for i, ch in enumerate(outs):
-        B = chat(PROMPT_B_TPL.format(topic=topic, i=i + 1, total=len(outs),
-                                     heading=ch["heading"], kind=ch["kind"],
-                                     ground=ground[:1200]) + (DIA_B if dialect == "kolhapuri" else ""), mx=900)
+        tplB = PROMPT_B_HI if hi else PROMPT_B_TPL
+        B = chat(tplB.format(topic=topic, i=i + 1, total=len(outs),
+                             heading=ch["heading"], kind=ch["kind"],
+                             ground=ground[:1200]) + ((DIA_B if dialect == "kolhapuri" else "") if not hi else ""), mx=900,
+                 sysmsg=(SYS_HI if hi else SYS))
         if not B:
             say("stageB empty chap{}".format(i + 1))
             return None

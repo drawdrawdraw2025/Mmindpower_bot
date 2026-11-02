@@ -48,11 +48,28 @@ jobs:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           rm -f out_explainer/script.json
-          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --voice aarohi --script-cache out_explainer/script.json
+          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --lang hinglish --script-cache out_explainer/script.json
 
       - name: Student notes PDF
         if: success() && steps.check.outputs.skip == '0'
         run: python3 tools/notes_gen.py out_explainer/script.json out_explainer/notes.pdf
+
+      - name: 📨 Auto-post film + notes to Telegram (Rail 1)
+        if: success() && steps.check.outputs.skip == '0'
+        env:
+          TG_ONE: ${{ secrets.TG_TOKEN }}
+        run: |
+          TARGET="@mmindpower_1"
+          TITLE=$(python3 -c "import json; print(json.load(open('out_explainer/meta.json'))['topic'])")
+          R=$(curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ @mmindpower_1" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" -F "width=1920" -F "height=1080")
+          if ! echo "$R" | grep -q '"ok":true'; then
+            echo "channel @mmindpower_1 post failed (bot admin/member?) → DM fallback to owner"
+            echo "$R" | head -c 200
+            TARGET="7102918717"
+            curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — daily film (channel post failed, DM mirror)" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" || true
+          fi
+          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendDocument" -F "chat_id=$TARGET" -F "document=@out_explainer/notes.pdf" -F "caption=📝 $TITLE — आजची नोट्स" || true
+          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendPhoto" -F "chat_id=$TARGET" -F "photo=@out_explainer/thumbnail.png" -F "caption=🏷️ thumbnail — YT साठी" || true
 
       - uses: actions/upload-artifact@v4
         if: steps.check.outputs.skip == '0'

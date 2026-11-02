@@ -12,9 +12,13 @@ on:
         required: false
         default: 'aarohi'
       dialect:
-        description: 'kolhapuri = narration कोल्हापुरी ग्रामीण बोलभाषेत / (blank) = प्रमाणभाषा'
+        description: 'kolhapuri = narration कोल्हापुरी ग्रामीण बोलभाषेत (Marathi only) / (blank) = std'
         required: false
         default: ''
+      lang:
+        description: 'Film language: hinglish (Gen-Z Hindi+English) / mr (शुद्ध मराठी)'
+        required: false
+        default: 'hinglish'
       no_quiz:
         description: 'Skip the quiz-bite interlude (true/false)'
         required: false
@@ -61,12 +65,14 @@ jobs:
           IN_NQ: ${{ github.event.inputs.no_quiz }}
           IN_PREVIEW: ${{ github.event.inputs.preview }}
           IN_DIALECT: ${{ github.event.inputs.dialect }}
+          IN_LANG: ${{ github.event.inputs.lang }}
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           ARGS=(--topic "$IN_TOPIC" --voice "$IN_VOICE" --script-cache out_explainer/script.json)
           if [ "$IN_NQ" = "true" ]; then ARGS+=(--no-quiz); fi
           if [ "$IN_PREVIEW" = "true" ]; then ARGS+=(--preview); fi
           if [ "$IN_DIALECT" = "kolhapuri" ]; then ARGS+=(--dialect kolhapuri); fi
+          ARGS+=(--lang "$IN_LANG")
           python3 tools/video_explainer.py "${ARGS[@]}"
 
       - name: Student notes PDF

@@ -213,6 +213,8 @@ VOICE_ALIAS = {
 
 def resolve_voice(name):
     n = (name or "").strip().lower()
+    if not n:  # language-driven default
+        return None
     if n in VOICE_ALIAS:
         ev, pitch, rate = VOICE_ALIAS[n]
         say(f"voice alias '{name}' → {ev} pitch={pitch} rate={rate}")
@@ -299,8 +301,8 @@ def wiki_ground(topic):
     say("wiki: no grounding found (continuing with model knowledge only)")
     return ""
 
-def groq_script(topic, ground, nsec, dialect=""):
-    s2 = groq_script_2stage(topic, ground, nsec, OUT, dialect=dialect)
+def groq_script(topic, ground, nsec, dialect="", lang="mr"):
+    s2 = groq_script_2stage(topic, ground, nsec, OUT, dialect=dialect, lang=lang)
     if s2:
         return s2
     gk = os.environ.get("GROQ_KEY")
@@ -475,7 +477,8 @@ def chime_seg(img, out, work, dur=1.4):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--topic", default="महाराष्ट्राचे भूगोल")
-    ap.add_argument("--voice", default="mr-IN-ManoharNeural")
+    ap.add_argument("--voice", default="")
+    ap.add_argument("--lang", default="hinglish", choices=["mr", "hinglish"], help="film language")
     ap.add_argument("--preview", action="store_true")      # 3 chapters, no quiz bite
     ap.add_argument("--script-cache", default="")
     ap.add_argument("--no-quiz", action="store_true")
@@ -489,7 +492,7 @@ def main():
         sc = json.load(open(cache)); say("script loaded from cache")
     else:
         ground = wiki_ground(a.topic)
-        sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect)
+        sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect, lang=a.lang)
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
     chapters = sc["chapters"]
@@ -524,7 +527,15 @@ def main():
     thumbnail(sc["title"], chips).save(os.path.join(OUT, "thumbnail.png")); say("thumbnail minted")
 
     import asyncio
-    e_voice, e_pitch, e_rate = resolve_voice(a.voice)
+    if resolve_voice(a.voice) is None:
+        if a.lang == "hinglish":
+            e_voice, e_pitch, e_rate = "hi-IN-SwaraNeural", "+0Hz", "+4%"   # Gen-Z Hindi female
+            say("lang=hinglish → default voice hi-IN-SwaraNeural")
+        else:
+            e_voice, e_pitch, e_rate = "mr-IN-AarohiNeural", "+0Hz", "+4%"
+            say("lang=mr → default voice mr-IN-AarohiNeural")
+    else:
+        e_voice, e_pitch, e_rate = resolve_voice(a.voice)
     asyncio.run(tts_all(plan_tts, e_voice, e_pitch, e_rate))
 
     # ---- assemble ----
@@ -545,7 +556,7 @@ def main():
     total = sum(dur_of(s) for s in segs if s.endswith(".mp4"))
     meta = {"topic": sc["title"], "chapters": names, "quiz_bite": len(qz), "seconds": round(total),
             "minutes": round(total/60, 1), "bytes": os.path.getsize(final),
-            "voice": a.voice, "dialect": a.dialect or "std",
+            "voice": a.voice or "(lang-default)", "lang": a.lang, "dialect": a.dialect or "std",
             "grounded_by": "wikipedia+groq", "date": datetime.datetime.now().isoformat(timespec="seconds")}
     json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), ensure_ascii=False, indent=2)
     say(f"DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min)")
