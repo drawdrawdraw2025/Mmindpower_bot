@@ -51,7 +51,7 @@ jobs:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           rm -f out_explainer/script.json
-          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --seed-file out_explainer/history_seed.json --lang hinglish --script-cache out_explainer/script.json
+          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --seed-file out_explainer/history_seed.json --lang hinglish --style documentary --script-cache out_explainer/script.json
 
       - name: Student notes PDF
         if: success() && steps.check.outputs.skip == '0'
@@ -69,7 +69,7 @@ jobs:
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" -d "chat_id=$TARGET" --data-urlencode "text=🌅 Good morning स्ट्रайकर्स! आजची Hinglish फिल्म — $TITLE ⬇️" | head -c 200; echo
           TS=$(python3 -c "import json;m=json.load(open('out_explainer/meta.json'));a=m.get('intro_end_sec',0);b=m.get('quiz_start_sec',0);f=lambda s:'%d:%02d'%(s//60,s%60);print('INTRO_END='+f(a));print('QUIZ_START='+f(b))")
           eval "$TS"
-          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ channel: @mmindpower_1"$'\n'"⏭ Intro khatam: ${INTRO_END:-0:20} baad se asli content | 🎯 Sawaal: ${QUIZ_START:-0} pe — niche buttons dabao 👇" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
+          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎬 $TITLE — aaj ki DOCUMENTARY (narration-only · no quiz) | FREE notes ⬇️ channel: @mmindpower_1"$'\n'"⏭ Intro khatam: ${INTRO_END:-0:20} baad se asli content | 🎯 Sawaal: ${QUIZ_START:-0} pe — niche buttons dabao 👇" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
           echo "sendVideo resp: $(echo "$R" | tail -c 300)"
           FILM_MSG=$(echo "$R" | python3 -c "import json,sys;print(json.load(sys.stdin).get('result',{}).get('message_id',''))" 2>/dev/null)
           if ! echo "$R" | grep -q '"ok":true'; then
