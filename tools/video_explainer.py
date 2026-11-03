@@ -524,6 +524,13 @@ def main():
             say("film title (Hinglish): " + sc["title"][:70])
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
+    try:
+        from groq2stage import dedupe_repeats
+        sc = dedupe_repeats(sc)
+        if sc.get("_dedupe_dropped"):
+            say("anti-repeat guard: dropped {} repeated sentence(s)/bullet(s)".format(sc["_dedupe_dropped"]))
+    except Exception as de:
+        say("dedupe guard skipped: " + str(de)[:60])
     chapters = sc["chapters"]
     names = [c["heading"] for c in chapters]
     if a.preview or a.no_quiz:

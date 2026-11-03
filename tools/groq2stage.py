@@ -28,22 +28,25 @@ BHASHA RULE (strict): film poori tarah Hinglish — titles/chapter-names bhi Hin
 Sirf IN lines mein jawaab do — aur kuch nahi (lines Devanagari Hindi + English mix mein hon — bol-chaal wali, Gen-Z tone):
 TITLE: <catchy Hinglish film title — 4-8 shabd; sirf Hinglish (Devanagari Hindi + English); Marathi GRAMMAR words bilkul nahi (proper nouns chalenge)>
 HOOK: <2 vaakya — curiosity create kare>
-CH1: <chapter title — मुद्दा १> | <concept/compare/steps/def गे ईक> | <chip1, chip2>
+CH1: <chapter heading — chhota, catchy> | <concept/compare/steps/def> | <chip1, chip2>
 CH2: ...
-(अशा एकूण {nsec} CH ओळी — प्रत्येकी वेगळा उपविषय)
-RECAP: <2-3 vaakya summary>
+(Total {nsec} CH lines.)
+UNIQUE-ANGLE RULE (bahut zaroori): har chapter ka ANGLE bilkul alag ho — ek hi fact do chapters mein NAHI. Suggested spread: (1) timeline/kahani, (2) key numbers/dates ya comparison, (3) exam-trap ya galat option ka analysis, (4) memory trick ya legacy. Ek concept ko sirf EK chapter cover kare; baaki chapters us topic ke NAYE dimensions pe hon.
+RECAP: <sirf 1-2 vaakya — CENTRAL exam takeaway + sahi jawaab; saare facts dobara GINNA mat>
 CTA: <1 vaakya — Mmindpower Subscribe + Telegram @mmindpower_1 roz practice>"""
 
 PROMPT_B_HI = """Topic: "{topic}" — explainer video (chapter {i} / {total})
 Chapter title: "{heading}" — type: {kind}
 Reference:
 {ground}
+{prev_block}
+REPETITION BAN (sabse important rule): upar "ALREADY COVERED" mein jitne facts/nam/tarikhein diye hain, UNKO DOBARA MAT BOLO — na narration mein, na bullets mein. Ye chapter sirf NAYI baatein batega: naye facts, naya angle, ya deeper explanation. Agar reference mein naya fact kam hai, to already-covered ke bajaye exam-angle/memory-trick/analysis do (jaise 'why option D galat hai', 'year yaad rakhne ki trick', comparison) — par purana fact as-is repeat mat karo.
 
 Sirf YA format mein (kuch aur nahi):
-NARR: <Hinglish — Hindi Devanagari mein + English words naturally mixed; 55-85 shabd; Gen-Z style; koi Marathi-shabd NAHI; facts accurate>
-- <bullet 1 — 12 shabdon se kam>
-- <bullet 2>
-- <bullet 3>"""
+NARR: <Hinglish — Hindi Devanagari mein + English words naturally mixed; 55-85 shabd; Gen-Z style; koi Marathi-shabd NAHI; facts accurate; sirf NAYE facts>
+- <bullet 1 — 12 shabdon se kam — NAYA fact>
+- <bullet 2 — NAYA fact>
+- <bullet 3 — NAYA fact>"""
 
 
 
@@ -159,10 +162,21 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
     done = []
     for i, ch in enumerate(outs):
         tplB = PROMPT_B_HI if hi else PROMPT_B_TPL
-        B = chat(tplB.format(topic=topic, i=i + 1, total=len(outs),
-                             heading=ch["heading"], kind=ch["kind"],
-                             ground=ground[:1200]) + ((DIA_B if dialect == "kolhapuri" else "") if not hi else ""), mx=900,
-                 sysmsg=(SYS_HI if hi else SYS))
+        prev_block = ""
+        if hi and done:
+            prev = " ".join(d.get("narration", "") for d in done if d.get("narration"))
+            if prev:
+                prev_block = ("\nALREADY COVERED (pichle chapters — in facts ko DOBARA mat bolo):\n"
+                              + prev[:700] + "\n")
+        try:
+            bmsg = tplB.format(topic=topic, i=i + 1, total=len(outs),
+                               heading=ch["heading"], kind=ch["kind"],
+                               ground=ground[:1200], prev_block=prev_block) + ((DIA_B if dialect == "kolhapuri" else "") if not hi else "")
+        except KeyError:   # Marathi tpl has no {prev_block}
+            bmsg = tplB.format(topic=topic, i=i + 1, total=len(outs),
+                               heading=ch["heading"], kind=ch["kind"],
+                               ground=ground[:1200])
+        B = chat(bmsg, mx=900, sysmsg=(SYS_HI if hi else SYS))
         if not B:
             say("stageB empty chap{}".format(i + 1))
             return None
@@ -217,3 +231,65 @@ def quiz_hinglish(seed):
         say("quiz_hinglish parse fail (q=%s opts=%d)" % (bool(q_hi), len(o_hi)))
         return None
     return {"q_hi": q_hi, "options_hi": o_hi, "explain_hi": ex}
+
+
+def dedupe_repeats(script, thresh=0.50, cov=0.70):
+    """Anti-annoyance guard: drop sentences/bullets that repeat earlier content.
+    A sentence survives only if BOTH:
+      - per-sentence Jaccard vs every prior sentence < thresh, AND
+      - coverage |toks ∩ seen_union| / |toks| < cov  (catches paraphrases).
+    If a chapter narration loses everything, fall back to heading + surviving
+    bullets joined — never empty (TTS safety). RECAP stays as-is (takeaway)."""
+    import re as _re
+    STOP = set("""the is ke ki ka ko mein ne se par aur or a ek hai tha thi ho hain to bhi of in at on for with and
+    as by an ye yeh we wo is wo us un usi inki unkā are was were be been it its this that इन्होंने उन्होंने"ये यह वे वो इस उस हैं थे थी हुआ हुई कर दिया गया गयी नहीं भी और का की के में से को पर ने""".split())
+
+    def toks(t):
+        w = [x for x in _re.split(r"[^\w\u0900-\u097F]+", (t or "").lower()) if x and x not in STOP]
+        return set(w)
+
+    def jac(a, b):
+        u = a | b
+        return (len(a & b) / float(len(u))) if u else 0.0
+
+    seen = []
+    seen_union = set()
+    dropped = 0
+    out_ch = []
+    for chs in script.get("chapters", []):
+        narr = chs.get("narration", "") or ""
+        sents = [x.strip() for x in _re.split(r"(?<=[।.!?])\s+", narr) if x.strip()]
+        keep = []
+        for sent in sents:
+            st = toks(sent)
+            rep = any(jac(st, p) >= thresh for p in seen)
+            cover = (len(st & seen_union) / float(len(st))) if st else 0.0
+            if rep or cover >= cov:
+                dropped += 1
+                continue
+            keep.append(sent)
+            seen.append(st)
+            seen_union |= st
+        bl = []
+        for b in chs.get("bullets", []) or []:
+            bt = toks(b)
+            cover = (len(bt & seen_union) / float(len(bt))) if bt else 0.0
+            if any(jac(bt, p) >= 0.60 for p in seen) or cover >= 0.75:
+                dropped += 1
+                continue
+            bl.append(b)
+            seen.append(bt)
+            seen_union |= bt
+        n2 = dict(chs)
+        if keep:
+            n2["narration"] = " ".join(keep)
+        else:
+            n2["narration"] = "Ab iska naya angle dekhte hain: " + (chs.get("heading", "") or "")
+            if not bl:
+                n2["narration"] += " — " + (" • ".join((chs.get("bullets") or [])[:1]) or "")
+        n2["bullets"] = bl if bl else (chs.get("bullets") or [])[:1]
+        out_ch.append(n2)
+    s2 = dict(script)
+    s2["chapters"] = out_ch
+    s2["_dedupe_dropped"] = dropped
+    return s2
