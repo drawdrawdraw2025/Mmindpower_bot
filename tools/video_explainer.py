@@ -7,7 +7,7 @@ Usage: python3 tools/video_explainer.py --topic "..." [--voice mr-IN-ManoharNeur
 import os, sys, json, glob, random, subprocess, argparse, time, datetime, re
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-from groq2stage import groq_script_2stage
+from groq2stage import groq_script_2stage, quiz_hinglish
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_B = os.path.join(ROOT, "assets", "fonts", "NotoSansDevanagari-Bold.ttf")
@@ -92,7 +92,7 @@ def title_card(topic, chips):
 
 def map_card(chapters):
     img = bg(); d = ImageDraw.Draw(img)
-    d.text((W//2, 190), "आजची शिखर-यात्रा", font=font(96), fill=GOLD, anchor="mm")
+    d.text((W//2, 190), ("Aaj Ka Safar" if CFG["lang"] == "hinglish" else "आजची शिखर-यात्रा"), font=font(96), fill=GOLD, anchor="mm")
     y = 330
     for i, c in enumerate(chapters):
         d.rounded_rectangle((270, y, 390, y+70), 14, fill=(24, 48, 98), outline=GOLD, width=3)
@@ -153,31 +153,37 @@ def section_card(idx, chapters, heading, kind, bullets, chips):
     return chrome(img, f"{idx+1}/{len(chapters)}", chapters, idx)
 
 def quiz_card(i, n, q):
+    hi = CFG["lang"] == "hinglish"
     img = bg((10, 44, 40)); d = ImageDraw.Draw(img)
-    d.text((W//2, 170), "✦ जलद तपासणी ✦", font=font(80), fill=GREEN, anchor="mm")
+    d.text((W//2, 170), ("— QUICK QUIZ CHECK —" if hi else "✦ जलद तपासणी ✦"), font=font(80), fill=GREEN, anchor="mm")
     y = 290
-    for ln in wrap(d, q["q_marathi"], font(50), 1560)[:3]:
+    qtext = (q.get("q_hi") or q["q_marathi"]) if hi else q["q_marathi"]
+    for ln in wrap(d, qtext, font(50), 1560)[:3]:
         d.text((170, y), ln, font=font(50), fill=WHITE); y += 76
     y += 16
-    for jnn, opt in enumerate(q["options"][:4]):
+    opts = (q.get("options_hi") or q["options"]) if hi else q["options"]
+    for jnn, opt in enumerate(opts[:4]):
         d.text((230, y), f"{'ABCD'[jnn]})", font=font(44), fill=GOLD)
         d.text((330, y), str(opt)[:80], font=fit(d, str(opt), 1350, 44, 32), fill=WHITE); y += 82
-    d.text((W//2, H-170), "उत्तरही लगेचच — पाहत राहा!", font=font(44), fill=MUTE, anchor="mm")
+    d.text((W//2, H-170), ("Answer turant aane wala hai — bane raho!" if hi else "उत्तरही लगेचच — पाहत राहा!"), font=font(44), fill=MUTE, anchor="mm")
     return chrome(img, f"quiz {i+1}/{n}")
 
 def quiz_answer_card(i, n, q):
+    hi = CFG["lang"] == "hinglish"
     img = bg((10, 44, 40)); d = ImageDraw.Draw(img)
     ci = q.get("correct_index", 0)
-    d.text((W//2, 200), f"उत्तर: {'ABCD'[ci]}", font=font(96), fill=GREEN, anchor="mm")
-    d.text((W//2, 330), str(q["options"][ci])[:100], font=fit(d, str(q["options"][ci]), 1500, 52), fill=WHITE, anchor="mm")
+    opts = (q.get("options_hi") or q["options"]) if hi else q["options"]
+    ex = ((q.get("explain_hi") or q.get("explanation_marathi")) or "") if hi else (q.get("explanation_marathi") or "")
+    d.text((W//2, 200), f"{'SAHI JAWAAB' if hi else 'उत्तर'}: {'ABCD'[ci]}", font=font(96), fill=GREEN, anchor="mm")
+    d.text((W//2, 330), str(opts[ci])[:100], font=fit(d, str(opts[ci]), 1500, 52), fill=WHITE, anchor="mm")
     y = 470
-    for ln in wrap(d, (q.get("explanation_marathi") or "")[:400], font(46), 1500)[:5]:
+    for ln in wrap(d, ex[:400], font(46), 1500)[:5]:
         d.text((160, y), ln, font=font(46), fill=WHITE); y += 70
     return chrome(img, f"quiz {i+1}/{n}")
 
 def recap_card(recap):
     img = bg(); d = ImageDraw.Draw(img)
-    d.text((W//2, 200), "✦ एका नजरेत ✦", font=font(92), fill=GOLD, anchor="mm")
+    d.text((W//2, 200), ("— EK NAZAR MEIN —" if CFG["lang"] == "hinglish" else "✦ एका नजरेत ✦"), font=font(92), fill=GOLD, anchor="mm")
     y = 330
     for ln in wrap(d, recap, font(52), 1500)[:7]:
         d.text((W//2, y), ln, font=font(52), fill=WHITE, anchor="mm"); y += 82
@@ -493,13 +499,13 @@ def main():
     os.makedirs(OUT, exist_ok=True); work = os.path.join(OUT, "seg"); os.makedirs(work, exist_ok=True)
     cache = a.script_cache or os.path.join(OUT, "script.json")
 
+    seed = None
+    if a.seed_file and os.path.exists(a.seed_file):
+        seed = json.load(open(a.seed_file, encoding="utf-8"))
+        say("seed loaded: " + seed["question"][:70])
     if os.path.exists(cache):
         sc = json.load(open(cache)); say("script loaded from cache")
     else:
-        seed = None
-        if a.seed_file and os.path.exists(a.seed_file):
-            seed = json.load(open(a.seed_file, encoding="utf-8"))
-            say("seed loaded: " + seed["question"][:70])
         ground = wiki_ground(a.topic)
         if seed:
             for hint in (seed.get("answer", ""), seed.get("subtopic", "")[:40], seed["question"][:40]):
@@ -511,11 +517,29 @@ def main():
                       + "\nCorrect: " + seed.get("answer", "") + " (" + seed.get("answer_letter", "") + ")"
                       + "\nExplanation: " + seed.get("explanation", ""))[:2400]
         sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect, lang=a.lang, seed=seed)
+        sc["lang"] = a.lang
+        if a.lang == "hinglish" and seed:
+            ft = (sc.get("film_title") or "").strip()
+            sc["title"] = ft or ("Daily History Byte: " + (seed.get("answer") or ""))
+            say("film title (Hinglish): " + sc["title"][:70])
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
     chapters = sc["chapters"]
     names = [c["heading"] for c in chapters]
-    qz = [] if (a.preview or a.no_quiz) else quiz_bite(a.topic, 2)
+    if a.preview or a.no_quiz:
+        qz = []
+    elif seed and a.lang == "hinglish":
+        al = "ABCD".find((seed.get("answer_letter") or "A").strip().upper()[:1] or "A")
+        q = {"q_marathi": seed["question"], "options": list(seed.get("options") or [])[:4],
+             "correct_index": al if al >= 0 else 0, "explanation_marathi": seed.get("explanation", "")}
+        tr = quiz_hinglish(seed)
+        if tr:
+            q.update(tr); say("quiz-bite translated → Hinglish")
+        else:
+            say("quiz translate unavailable — seed question served as-is")
+        qz = [q]
+    else:
+        qz = quiz_bite(a.topic, 2)
 
     # ---- cards + audio tasks ----
     card_dir = os.path.join(work, "cards"); os.makedirs(card_dir, exist_ok=True)
@@ -541,13 +565,17 @@ def main():
         plan_tts.append(((ch.get("narration") or "")[:1100], os.path.join(work, f"v_s{i}.mp3")))
     for i, q in enumerate(qz):
         plan.append((card(f"c_qz{i}", quiz_card(i, len(qz), q)), os.path.join(work, f"v_qz{i}.mp3"), "zoom"))
-        opts = " ".join(f"{'ABCD'[j]} — {o}." for j, o in enumerate(q["options"][:4]))
-        qline = (f"Ab quick quiz check! Sawaal: {q['q_marathi']} Options: {opts}" if CFG["lang"] == "hinglish"
+        hi_q = CFG["lang"] == "hinglish"
+        qd = (q.get("q_hi") or q["q_marathi"]) if hi_q else q["q_marathi"]
+        od = (q.get("options_hi") or q["options"]) if hi_q else q["options"]
+        ed = ((q.get("explain_hi") or q.get("explanation_marathi")) or "") if hi_q else (q.get("explanation_marathi") or "")
+        opts = " ".join(f"{'ABCD'[j]} — {o}." for j, o in enumerate(od[:4]))
+        qline = (f"Ab quick quiz check! Sawaal: {qd} Options: {opts}" if hi_q
                  else f"थोडक्यात तपासूया. प्रश्न: {q['q_marathi']} पर्यायः {opts}")
         plan_tts.append((qline, os.path.join(work, f"v_qz{i}.mp3")))
         plan.append((card(f"c_za{i}", quiz_answer_card(i, len(qz), q)), os.path.join(work, f"v_za{i}.mp3"), "zoom"))
         ci = q.get("correct_index", 0)
-        aline = (f"Sahi jawaab {'ABCD'[ci]} — {q['options'][ci]}. {(q.get('explanation_marathi') or '')[:300]}" if CFG["lang"] == "hinglish"
+        aline = (f"Sahi jawaab {'ABCD'[ci]} — {od[ci]}. {ed[:300]}" if hi_q
                  else f"योग्य उत्तर {'ABCD'[ci]} — {q['options'][ci]}. {(q.get('explanation_marathi') or '')[:300]}")
         plan_tts.append((aline, os.path.join(work, f"v_za{i}.mp3")))
     plan.append((card("c_recap", recap_card(sc["recap"])), os.path.join(work, "v_recap.mp3"), "bed"))

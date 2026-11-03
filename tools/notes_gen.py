@@ -13,6 +13,11 @@ NAVY, GOLD, MUTE = HexColor("#0a122c"), HexColor("#b8860b"), HexColor("#44506b")
 
 def main(script_path, out_pdf):
     sc = json.load(open(script_path))
+    hi = sc.get("lang", "mr") == "hinglish"
+    HDR = "Mmindpower Notes — " if hi else "Mmindpower नोट्स — "
+    SRCLINE = "Source: Wikipedia + AI synthesis · Telegram @mmindpower_1" if hi else "उगम: Wikipedia + AI-संस्क्लेषण · टेलिग्राम @mmindpower_1"
+    RECAPLBL = "Quick recap: " if hi else "सारांश: "
+    FOOT = "Mmindpower — competitive-exam prep · auto notes PDF" if hi else "Mmindpower — मराठी परीक्षा-तयारी · नोट्स PDF (स्वयंचलित)"
     pdfmetrics.registerFont(TTFont("NDB", FONT))
     c = canvas.Canvas(out_pdf, pagesize=A4)
     W, H = A4
@@ -20,9 +25,9 @@ def main(script_path, out_pdf):
         c.setFillColor(NAVY); c.rect(0, y - 6*mm, W, 12*mm, stroke=0, fill=1)
         c.setFillColor(HexColor("#ffffff")); c.setFont("NDB", 13); c.drawString(16*mm, y - 2*mm, t)
         return y - 14*mm
-    y = head("Mmindpower नोट्स — " + sc["title"], H - 18*mm)
+    y = head(HDR + sc["title"], H - 18*mm)
     c.setFillColor(MUTE); c.setFont("NDB", 9)
-    c.drawString(16*mm, y, "उगम: Wikipedia + AI-संस्क्लेषण · टेलिग्राम @mmindpower_1"); y -= 10*mm
+    c.drawString(16*mm, y, SRCLINE); y -= 10*mm
     c.setFillColor(NAVY); c.setFont("NDB", 11)
     def para(txt, size=11, lead=6.4*mm, indent=0, color=NAVY):
         nonlocal y
@@ -33,7 +38,7 @@ def main(script_path, out_pdf):
             if c.stringWidth(t, "NDB", size) > W - (32*mm + indent):
                 c.drawString(16*mm + indent, y, line); y -= lead; line = w
                 if y < 20*mm:
-                    c.showPage(); y = head("Mmindpower नोट्स — " + sc["title"], H - 18*mm)
+                    c.showPage(); y = head(HDR + sc["title"], H - 18*mm)
                     c.setFillColor(color); c.setFont("NDB", size)
             else:
                 line = t
@@ -42,15 +47,15 @@ def main(script_path, out_pdf):
         y -= 2*mm
     if sc.get("hook"): para("✦ " + sc["hook"], size=10, color=MUTE)
     for i, ch in enumerate(sc["chapters"], 1):
-        if y < 40*mm: c.showPage(); y = head("Mmindpower नोट्स — " + sc["title"], H - 18*mm)
+        if y < 40*mm: c.showPage(); y = head(HDR + sc["title"], H - 18*mm)
         c.setFillColor(GOLD); c.setFont("NDB", 12)
         c.drawString(16*mm, y, f"{i}. {ch['heading']}"); y -= 8*mm
         para(ch.get("narration", ""))
         for b in ch.get("bullets", [])[:4]:
             para("• " + b, size=10, indent=4*mm)
-    if sc.get("recap"): para("सारांश: " + sc["recap"], size=10, color=MUTE)
+    if sc.get("recap"): para(RECAPLBL + sc["recap"], size=10, color=MUTE)
     c.setFillColor(HexColor("#ffffff")); c.setFillColor(MUTE); c.setFont("NDB", 8)
-    c.drawString(16*mm, 12*mm, "Mmindpower — मराठी परीक्षा-तयारी · नोट्स PDF (स्वयंचलित)")
+    c.drawString(16*mm, 12*mm, FOOT)
     c.save()
     print("notes →", out_pdf)
 

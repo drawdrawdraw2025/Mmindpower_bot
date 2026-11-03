@@ -24,6 +24,7 @@ Reference (Wikipedia):
 {ground}
 
 Sirf IN lines mein jawaab do — aur kuch nahi (lines Devanagari Hindi + English mix mein hon — bol-chaal wali, Gen-Z tone):
+TITLE: <catchy Hinglish film title — 4-8 shabd; sirf Hinglish (Devanagari Hindi + English); Marathi GRAMMAR words bilkul nahi (proper nouns chalenge)>
 HOOK: <2 vaakya — curiosity create kare>
 CH1: <chapter title — मुद्दा १> | <concept/compare/steps/def गे ईक> | <chip1, chip2>
 CH2: ...
@@ -122,13 +123,14 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
         seed_block = ("\n\nAaj ka CENTERPIECE — MPSC modern-history SAWAAL (Marathi mein diya gaya): '" + seed.get('question', '')
                       + "' | Sahi jawaab: " + seed.get('answer_letter', '') + " — " + seed.get('answer', '')
                       + " | Marathi explanation: " + seed.get('explanation', '')
-                      + "\nIMPORTANT: POORA film HINGLISH mein — Devanagari Hindi + English words. Koi Marathi word NAHI (titles/headings/bullets sab Hinglish). Filmon ka title sirf Hinglish mein.")
+                      + "\nIMPORTANT: POORA film HINGLISH mein — Devanagari Hindi + English words. Koi Marathi word NAHI (titles/headings/bullets sab Hinglish). Filmon ka title sirf Hinglish mein. TITLE line zaroor do.")
     dia = (DIA_A if dialect == "kolhapuri" else "") if not hi else ""   # dialect = Marathi-only feature
     A = chat(tplA.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia + seed_block, mx=2200,
              sysmsg=(SYS_HI if hi else SYS))
     if not A:
         say("stageA empty")
         return None
+    film_title = _grab(r"^TITLE:\s*(.+)$", A)
     hook = _grab(r"^HOOK:\s*(.+)$", A)
     recap = _grab(r"^RECAP:\s*(.+)$", A)
     cta = _grab(r"^CTA:\s*(.+)$", A)
@@ -171,9 +173,44 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
         done.append(dict(ch, narration=narr, bullets=bullets or [ch["heading"]]))
 
     sc = {"title": topic,
+          "film_title": film_title,
           "hook": hook or (("Namaskar doston! Aaj hum detail mein samjhenge — " + topic) if hi else ("नमस्कार! आज आपण " + topic + " हा विषय सविस्तर समजून घेणार आहोत.")),
           "chapters": done,
           "recap": recap or ((topic + " — main points revise karo, notes likho.") if hi else (topic + " — मुख्य मुद्दे पुन्हा पाहा आणि नोट्स करा.")),
           "cta": cta or (("Mmindpower Subscribe karo aur Telegram @mmindpower_1 par roz practice karo!") if hi else "Subscribe करा आणि टेलिग्रामवर @mmindpower_1 मध्ये रोज सराव करा.")}
     say("groq 2-stage script OK — {} chapters".format(len(done)))
     return sc
+
+
+def quiz_hinglish(seed):
+    """Translate the seed bank-question into film Hinglish (order of options preserved).
+    Returns {'q_hi', 'options_hi', 'explain_hi'} or None on any failure."""
+    gk = os.environ.get("GROQ_KEY")
+    if not gk or not seed:
+        return None
+    opts = seed.get("options") or []
+    if len(opts) < 4:
+        return None
+    optline = " | ".join("{} ) {}".format("ABCD"[i], o) for i, o in enumerate(opts[:4]))
+    user = ("Is MPSC question ko student-friendly HINGLISH mein dubara likho "
+            "(Devanagari Hindi + English words naturally mixed; Marathi grammar words bilkul nahi). "
+            "Options ka ORDER exactly SAME rakho.\n\n"
+            "Question (Marathi): " + seed.get("question", "") + "\n"
+            "Options: " + optline + "\n"
+            "Sahi jawaab: " + seed.get("answer", "") + "\n"
+            "Explanation (Marathi): " + seed.get("explanation", "") + "\n\n"
+            "Sirf YA 3 lines do — kuch aur nahi:\n"
+            "Q: <sawaal Hinglish mein>\n"
+            "O: A) <opt> | B) <opt> | C) <opt> | D) <opt>\n"
+            "EX: <1-2 vaakya explanation Hinglish mein — kyon ye jawaab sahi hai>")
+    txt = make_chat(gk)(user, temp=0.3, mx=900, sysmsg=SYS_HI)
+    if not txt:
+        return None
+    q_hi = _grab(r"^Q:\s*(.+)$", txt)
+    o_line = _grab(r"^O:\s*(.+)$", txt)
+    ex = _grab(r"^EX:\s*(.+)$", txt)
+    o_hi = [re.sub(r"^[A-D]\s*[).:\-]\s*", "", p.strip()).strip() for p in o_line.split("|")] if o_line else []
+    if not q_hi or len(o_hi) != 4:
+        say("quiz_hinglish parse fail (q=%s opts=%d)" % (bool(q_hi), len(o_hi)))
+        return None
+    return {"q_hi": q_hi, "options_hi": o_hi, "explain_hi": ex}
