@@ -101,14 +101,18 @@ def map_card(chapters):
         y += 96
     return chrome(img, chapters=chapters)
 
+KIND_LABELS = {"concept": "संकल्पना", "compare": "तुलना", "steps": "पायऱ्या", "def": "व्याख्या"}
+FALLBACK_SIDES = ["बाजू १", "बाजू २"]
+CFG = {"lang": "mr"}
+
 def section_card(idx, chapters, heading, kind, bullets, chips):
     img = bg(); d = ImageDraw.Draw(img)
-    kind_icon = {"concept": "संकल्पना", "compare": "तुलना", "steps": "पायऱ्या", "def": "व्याख्या"}.get(kind, "संकल्पना")
+    kind_icon = KIND_LABELS.get(kind, KIND_LABELS["concept"])
     d.text((W//2, 180), heading, font=fit(d, heading, 1500, 72, 42), fill=GOLD, anchor="mm")
     d.text((170, 165), kind_icon, font=fit(d, kind_icon, 300, 46, 30), fill=CYAN)
     if kind == "compare" and len(bullets) >= 2:
         halves = [bullets[:len(bullets)//2] or bullets[:1], bullets[len(bullets)//2:]]
-        labels = chips[:2] if len(chips) >= 2 else ["बाजू १", "बाजू २"]
+        labels = chips[:2] if len(chips) >= 2 else FALLBACK_SIDES
         for col, (hb, lab) in enumerate(zip(halves, labels)):
             x0 = 140 + col*((W-280)//2); xw = (W-280)//2 - 40
             d.rounded_rectangle((x0, 290, x0+xw, 900), 22, fill=(14, 30, 66), outline=(70,100,168), width=3)
@@ -301,8 +305,8 @@ def wiki_ground(topic):
     say("wiki: no grounding found (continuing with model knowledge only)")
     return ""
 
-def groq_script(topic, ground, nsec, dialect="", lang="mr"):
-    s2 = groq_script_2stage(topic, ground, nsec, OUT, dialect=dialect, lang=lang)
+def groq_script(topic, ground, nsec, dialect="", lang="mr", seed=None):
+    s2 = groq_script_2stage(topic, ground, nsec, OUT, dialect=dialect, lang=lang, seed=seed)
     if s2:
         return s2
     gk = os.environ.get("GROQ_KEY")
@@ -479,6 +483,7 @@ def main():
     ap.add_argument("--topic", default="महाराष्ट्राचे भूगोल")
     ap.add_argument("--voice", default="")
     ap.add_argument("--lang", default="hinglish", choices=["mr", "hinglish"], help="film language")
+    ap.add_argument("--seed-file", default="", help="day_seed.json — modern-history question seed")
     ap.add_argument("--preview", action="store_true")      # 3 chapters, no quiz bite
     ap.add_argument("--script-cache", default="")
     ap.add_argument("--no-quiz", action="store_true")
@@ -491,8 +496,21 @@ def main():
     if os.path.exists(cache):
         sc = json.load(open(cache)); say("script loaded from cache")
     else:
+        seed = None
+        if a.seed_file and os.path.exists(a.seed_file):
+            seed = json.load(open(a.seed_file, encoding="utf-8"))
+            say("seed loaded: " + seed["question"][:70])
         ground = wiki_ground(a.topic)
-        sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect, lang=a.lang)
+        if seed:
+            for hint in (seed.get("answer", ""), seed.get("subtopic", "")[:40], seed["question"][:40]):
+                if ground: break
+                g2 = wiki_ground(hint)
+                if g2:
+                    ground = g2; say("wiki grounded via seed hint '" + hint[:30] + "'")
+            ground = (ground + "\n\nSEED MPSC QUESTION (Marathi): " + seed["question"]
+                      + "\nCorrect: " + seed.get("answer", "") + " (" + seed.get("answer_letter", "") + ")"
+                      + "\nExplanation: " + seed.get("explanation", ""))[:2400]
+        sc = groq_script(a.topic, ground, 3 if a.preview else 6, dialect=a.dialect, lang=a.lang, seed=seed)
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
     chapters = sc["chapters"]
@@ -507,8 +525,16 @@ def main():
 
     plan.append((card("c_title", title_card(sc["title"], chips)), os.path.join(work, "v_hook.mp3"), "bed"))
     plan_tts = [(sc["hook"], os.path.join(work, "v_hook.mp3"))]
+    CFG["lang"] = a.lang
+    hi = (a.lang == "hinglish")
+    if hi:
+        KIND_LABELS.update({"concept": "CONCEPT", "compare": "COMPARE", "steps": "STEPS", "def": "DEFINITION"})
+        FALLBACK_SIDES.clear(); FALLBACK_SIDES.extend(["Side 1", "Side 2"])
     plan.append((card("c_map", map_card(names)), os.path.join(work, "v_map.mp3"), "bed"))
-    plan_tts.append(("आजच्या प्रवासात आपण " + ", ".join(names) + " अशी टप्प्याटप्प्याने सगळे मुद्दे समजून घेणार आहोत.", os.path.join(work, "v_map.mp3")))
+    if hi:
+        plan_tts.append(("Aaj ke is safar mein hum step by step samjhenge — " + ", ".join(names) + ". Ready ho jao!", os.path.join(work, "v_map.mp3")))
+    else:
+        plan_tts.append(("आजच्या प्रवासात आपण " + ", ".join(names) + " अशी टप्प्याटप्प्याने सगळे मुद्दे समजून घेणार आहोत.", os.path.join(work, "v_map.mp3")))
     for i, ch in enumerate(chapters):
         p1 = card(f"c_s{i}", section_card(i, names, ch["heading"], ch.get("kind", "concept"), ch.get("bullets", []), ch.get("chips", [])))
         plan.append((p1, os.path.join(work, f"v_s{i}.mp3"), "zoom"))
@@ -516,10 +542,14 @@ def main():
     for i, q in enumerate(qz):
         plan.append((card(f"c_qz{i}", quiz_card(i, len(qz), q)), os.path.join(work, f"v_qz{i}.mp3"), "zoom"))
         opts = " ".join(f"{'ABCD'[j]} — {o}." for j, o in enumerate(q["options"][:4]))
-        plan_tts.append((f"थोडक्यात तपासूया. प्रश्न: {q['q_marathi']} पर्यायः {opts}", os.path.join(work, f"v_qz{i}.mp3")))
+        qline = (f"Ab quick quiz check! Sawaal: {q['q_marathi']} Options: {opts}" if CFG["lang"] == "hinglish"
+                 else f"थोडक्यात तपासूया. प्रश्न: {q['q_marathi']} पर्यायः {opts}")
+        plan_tts.append((qline, os.path.join(work, f"v_qz{i}.mp3")))
         plan.append((card(f"c_za{i}", quiz_answer_card(i, len(qz), q)), os.path.join(work, f"v_za{i}.mp3"), "zoom"))
         ci = q.get("correct_index", 0)
-        plan_tts.append((f"योग्य उत्तर {'ABCD'[ci]} — {q['options'][ci]}. {(q.get('explanation_marathi') or '')[:300]}", os.path.join(work, f"v_za{i}.mp3")))
+        aline = (f"Sahi jawaab {'ABCD'[ci]} — {q['options'][ci]}. {(q.get('explanation_marathi') or '')[:300]}" if CFG["lang"] == "hinglish"
+                 else f"योग्य उत्तर {'ABCD'[ci]} — {q['options'][ci]}. {(q.get('explanation_marathi') or '')[:300]}")
+        plan_tts.append((aline, os.path.join(work, f"v_za{i}.mp3")))
     plan.append((card("c_recap", recap_card(sc["recap"])), os.path.join(work, "v_recap.mp3"), "bed"))
     plan_tts.append((sc["recap"], os.path.join(work, "v_recap.mp3")))
     plan.append((card("c_cta", cta_card(sc["cta"])), os.path.join(work, "v_cta.mp3"), "bed"))

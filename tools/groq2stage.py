@@ -37,7 +37,7 @@ Reference:
 {ground}
 
 Sirf YA format mein (kuch aur nahi):
-NARR: <Hinglish — Hindi Devanagari mein + English words naturally mixed; 55-85 shabd, bolne wali bhaasha; Gen-Z style (matlab 'simple English terms ok'), facts accurate>
+NARR: <Hinglish — Hindi Devanagari mein + English words naturally mixed; 55-85 shabd; Gen-Z style; koi Marathi-shabd NAHI; facts accurate>
 - <bullet 1 — 12 shabdon se kam>
 - <bullet 2>
 - <bullet 3>"""
@@ -108,7 +108,7 @@ NARR: <मराठीत ५५-८५ शब्द, बोलभाषा, स
 DIA_A = "\n\nभाषा-शैली (महत्त्वाचे!): HOOK व CTA लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — दामा ठेवा; उदा. 'आहे' ऐवजी 'असतं', 'करायला' ऐवजी 'करं', 'मग', 'का', 'बरं', 'गं' असे शब्द वापरा. मुद्दे मात्र अचूक ठेवा."
 DIA_B = "\n\nभाषा-शैली (महत्त्वाचे!): NARR लहाजा कोल्हापुरी ग्रामीण बोलभाषेत लिहा — जणू गावातील मुलगी मित्राला समजावते; दामा ठेवा ('असतं', 'करं', 'मग', 'का', 'बरं', 'राव'). आशय अचूक रहावा. बुलेट्स मात्र प्रमाणभाषेत — स्वच्छ व छोटे."
 
-def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr"):
+def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=None):
     """Returns script dict on success, None on any failure (caller falls back)."""
     gk = os.environ.get("GROQ_KEY")
     if not gk:
@@ -117,8 +117,14 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr"):
 
     hi = (lang == "hinglish")
     tplA = PROMPT_A_HI if hi else PROMPT_A_TPL
+    seed_block = ''
+    if hi and seed:
+        seed_block = ("\n\nAaj ka CENTERPIECE — MPSC modern-history SAWAAL (Marathi mein diya gaya): '" + seed.get('question', '')
+                      + "' | Sahi jawaab: " + seed.get('answer_letter', '') + " — " + seed.get('answer', '')
+                      + " | Marathi explanation: " + seed.get('explanation', '')
+                      + "\nIMPORTANT: POORA film HINGLISH mein — Devanagari Hindi + English words. Koi Marathi word NAHI (titles/headings/bullets sab Hinglish). Filmon ka title sirf Hinglish mein.")
     dia = (DIA_A if dialect == "kolhapuri" else "") if not hi else ""   # dialect = Marathi-only feature
-    A = chat(tplA.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia, mx=2200,
+    A = chat(tplA.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia + seed_block, mx=2200,
              sysmsg=(SYS_HI if hi else SYS))
     if not A:
         say("stageA empty")
@@ -165,9 +171,9 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr"):
         done.append(dict(ch, narration=narr, bullets=bullets or [ch["heading"]]))
 
     sc = {"title": topic,
-          "hook": hook or ("नमस्कार! आज आपण " + topic + " हा विषय सविस्तर समजून घेणार आहोत."),
+          "hook": hook or (("Namaskar doston! Aaj hum detail mein samjhenge — " + topic) if hi else ("नमस्कार! आज आपण " + topic + " हा विषय सविस्तर समजून घेणार आहोत.")),
           "chapters": done,
-          "recap": recap or (topic + " — मुख्य मुद्दे पुन्हा पाहा आणि नोट्स करा."),
-          "cta": cta or "Subscribe करा आणि टेलिग्रामवर @mmindpower_1 मध्ये रोज सराव करा."}
+          "recap": recap or ((topic + " — main points revise karo, notes likho.") if hi else (topic + " — मुख्य मुद्दे पुन्हा पाहा आणि नोट्स करा.")),
+          "cta": cta or (("Mmindpower Subscribe karo aur Telegram @mmindpower_1 par roz practice karo!") if hi else "Subscribe करा आणि टेलिग्रामवर @mmindpower_1 मध्ये रोज सराव करा.")}
     say("groq 2-stage script OK — {} chapters".format(len(done)))
     return sc
