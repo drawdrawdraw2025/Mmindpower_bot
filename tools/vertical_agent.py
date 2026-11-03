@@ -358,10 +358,19 @@ def main():
     run(["ffmpeg", "-y", "-i", final + ".tmp.mp4", "-c", "copy", "-movflags", "+faststart", final])
     os.remove(final + ".tmp.mp4")
     if os.path.getsize(final) > 46 * 1024 * 1024:
-        say("vertical >46MB → re-encode 2.2M")
-        run(["ffmpeg", "-y", "-i", final, "-c:v", "libx264", "-b:v", "2200k", "-maxrate", "2500k",
-             "-bufsize", "5000k", "-c:a", "aac", "-b:a", "80k", "-movflags", "+faststart", final + ".sm.mp4"])
+        dur = max(60.0, VE.dur_of(final))
+        vk = max(450, int((44 * 1024 * 1024 * 8) / dur / 1000) - 96)
+        say(f"vertical >46MB → two-pass re-encode @ {vk}k ({dur:.0f}s)")
+        run(["ffmpeg", "-y", "-i", final, "-c:v", "libx264", "-preset", "slow",
+             "-b:v", f"{vk}k", "-maxrate", f"{int(vk * 1.35)}k", "-bufsize", f"{vk * 2}k",
+             "-pass", "1", "-an", "-f", "null", "/dev/null"])
+        run(["ffmpeg", "-y", "-i", final, "-c:v", "libx264", "-preset", "slow",
+             "-b:v", f"{vk}k", "-maxrate", f"{int(vk * 1.35)}k", "-bufsize", f"{vk * 2}k",
+             "-pass", "2", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", final + ".sm.mp4"])
         os.replace(final + ".sm.mp4", final)
+        for junk in ("ffmpeg2pass-0.log", "ffmpeg2pass-0.log.mbtree"):
+            if os.path.exists(junk):
+                os.remove(junk)
     tot = sum(VE.dur_of(x) for x in segs if x.endswith(".mp4"))
     meta = {"topic": vd["title"], "style": "vertical-animated", "chapters": [c["heading"] for c in vd["chapters"]],
             "minutes": round(tot / 60, 1), "bytes": os.path.getsize(final),
