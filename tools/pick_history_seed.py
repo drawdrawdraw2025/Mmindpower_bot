@@ -51,12 +51,15 @@ def modern_hits():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(OUT, "history_seed.json"))
+    ap.add_argument("--offset", type=int, default=0,
+                    help="rotate the DoY index by N (vertical reel avoids daily-film collision)")
     a = ap.parse_args()
+    OFFSET = a.offset
     hits = modern_hits()
     print(f"[seed picker] bank modern-history questions: {len(hits)}")
     doy = datetime.date.today().timetuple().tm_yday
     if hits:
-        q = hits[(doy - 1) % len(hits)]
+        q = hits[(doy - 1 + OFFSET) % len(hits)]
         ci = q.get("correct_index", 0)
         opts = q.get("options", [])
         if isinstance(opts, str):                       # legacy repr-string safety
@@ -76,7 +79,7 @@ def main():
             "answer_letter": "ABCD"[ci] if isinstance(ci, int) and 0 <= ci < 4 else "A",
             "explanation": q.get("explanation_marathi", "")[:400],
             "source": "bank",
-            "doy_index": (doy - 1) % len(hits), "pool": len(hits),
+            "doy_index": (doy - 1 + OFFSET) % len(hits), "pool": len(hits),
         }
     else:
         t = FALLBACK[(doy - 1) % len(FALLBACK)]
