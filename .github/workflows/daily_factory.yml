@@ -64,19 +64,15 @@ jobs:
           GC=$(curl -s "https://api.telegram.org/bot$TG_ONE/getChat?chat_id=$TARGET")
           echo "getChat probe: $(echo "$GC" | head -c 250)"
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" -d "chat_id=$TARGET" --data-urlencode "text=🌅 Good morning स्ट्रайकर्स! आजची Hinglish फिल्म — $TITLE ⬇️" | head -c 200; echo
-          # probe: small multipart to channel first (thumbnail), catches transport-vs-permission precisely
-          P1=$(curl -sS --max-time 120 -X POST "https://api.telegram.org/bot$TG_ONE/sendPhoto" -F "chat_id=$TARGET" -F "photo=@out_explainer/thumbnail.png" -F "caption=🏷️ आजची थंबनेल" 2>&1 || true)
-          echo "channel photo probe: $(echo "$P1" | head -c 250)"
-          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ @mmindpower_1" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" 2>&1 || true)
-          echo "sendVideo resp: $(echo "$R" | tail -c 400)"
+          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=<🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ @mmindpower_1" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
+          echo "sendVideo resp: $(echo "$R" | tail -c 300)"
           if ! echo "$R" | grep -q '"ok":true'; then
-            echo "channel @mmindpower_1 post failed (bot admin/member?) → DM fallback to owner"
-            echo "$R" | head -c 200
+            echo "channel @mmindpower_1 post failed → DM fallback to owner"
             TARGET="7102918717"
-            curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=🎬 $TITLE — daily film (channel post failed, DM mirror)" -F "video=@out_explainer/final.mp4" -F "supports_streaming=true" || true
+            curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" -F "chat_id=$TARGET" -F "caption=<🎬 $TITLE — daily film (channel post failed, DM mirror)" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 | tail -c 200 || true
           fi
-          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendDocument" -F "chat_id=$TARGET" -F "document=@out_explainer/notes.pdf" -F "caption=📝 $TITLE — आजची नोट्स" || true
-          curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendPhoto" -F "chat_id=$TARGET" -F "photo=@out_explainer/thumbnail.png" -F "caption=🏷️ thumbnail — YT साठी" || true
+          curl -sS -X POST "https://api.telegram.org/bot$TG_ONE/sendDocument" -F "chat_id=$TARGET" -F "document=@out_explainer/notes.pdf" -F "caption=<📝 $TITLE — आजची नोट्स" || true
+          curl -sS -X POST "https://api.telegram.org/bot$TG_ONE/sendPhoto" -F "chat_id=$TARGET" -F "photo=@out_explainer/thumbnail.png" -F "caption=<🏷️ thumbnail — YT साठी" || true
 
       - uses: actions/upload-artifact@v4
         if: steps.check.outputs.skip == '0'
