@@ -474,14 +474,14 @@ def segs_from(img, aud, out, zoom=True, bed=False, gain=1.6):
                 f"[2:a]aresample=48000,volume=0.09,lowpass=f=600,atrim=0:{dur:.2f}[bd];[vo][bd]amix=inputs=2:duration=first[a]")
         run(["ffmpeg","-y","-loop","1","-t",f"{dur:.2f}","-i",img,"-i",aud,
              "-f","lavfi","-i",f"anoisesrc=color=brown:duration={int(dur)+1}",
-             "-filter_complex",filt,"-map","[v]","-map","[a]","-t",f"{dur:.2f}","-c:v","libx264","-tune","stillimage",
-             "-c:a","aac","-b:a","128k","-pix_fmt","yuv420p","-r",str(FPS),out])
+             "-filter_complex",filt,"-map","[v]","-map","[a]","-t",f"{dur:.2f}","-c:v","libx264","-tune","stillimage","-b:v","700k","-maxrate","780k","-bufsize","1560k",
+             "-c:a","aac","-b:a","96k","-pix_fmt","yuv420p","-r",str(FPS),out])
     else:
         z = f",zoompan=z='min(zoom+0.0007,1.12)':d={FPS*40}:fps={FPS}:s={W}x{H}" if zoom else ""
         filt = f"[0:v]scale={W}:{H}{z}[v];[1:a]aresample=48000,volume={gain}[a]"
         run(["ffmpeg","-y","-loop","1","-t",f"{dur:.2f}","-i",img,"-i",aud,
-             "-filter_complex",filt,"-map","[v]","-map","[a]","-t",f"{dur:.2f}","-c:v","libx264","-tune","stillimage",
-             "-c:a","aac","-b:a","128k","-pix_fmt","yuv420p","-r",str(FPS),out])
+             "-filter_complex",filt,"-map","[v]","-map","[a]","-t",f"{dur:.2f}","-c:v","libx264","-tune","stillimage","-b:v","700k","-maxrate","780k","-bufsize","1560k",
+             "-c:a","aac","-b:a","96k","-pix_fmt","yuv420p","-r",str(FPS),out])
 
 def chime_seg(img, out, work, dur=1.4):
     cw = os.path.join(work, "chime.wav"); synth_chime(cw)
@@ -843,6 +843,12 @@ def doc_render(a):
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", final + ".tmp.mp4"])
     run(["ffmpeg", "-y", "-i", final + ".tmp.mp4", "-c", "copy", "-movflags", "+faststart", final])
     os.remove(final + ".tmp.mp4")
+    # Telegram hard limit: 50MB → shrink if needed
+    if os.path.getsize(final) > 46 * 1024 * 1024:
+        say("final >46MB → safety re-encode @520k")
+        run(["ffmpeg", "-y", "-i", final, "-c:v", "libx264", "-b:v", "520k", "-maxrate", "620k",
+             "-bufsize", "1240k", "-c:a", "aac", "-b:a", "80k", "-movflags", "+faststart", final + ".sm.mp4"])
+        os.replace(final + ".sm.mp4", final)
     total = sum(dur_of(x) for x in segs if x.endswith(".mp4"))
     chips = [(c.get("chip") or c.get("heading", "")) for c in chapters][:4]
     thumbnail(sc["title"], chips).save(os.path.join(OUT, "thumbnail.png"))
