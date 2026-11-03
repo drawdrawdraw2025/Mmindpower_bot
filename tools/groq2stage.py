@@ -11,7 +11,8 @@ def say(m):
 SYS = ("You are a Marathi educational scriptwriter for MPSC-style explainer videos. "
        "Follow the requested FORMAT exactly. Plain text only — no JSON, no markdown fences.")
 MODELS = ("openai/gpt-oss-120b",
-          "meta-llama/llama-4-scout-17b-16e-instruct",
+          "llama-3.3-70b-versatile",
+          "meta-llama/llama-4-maverick-17b-128e-instruct",
           "qwen/qwen3-32b",
           "llama-3.1-8b-instant")
 KINDS = ("concept", "compare", "steps", "def")

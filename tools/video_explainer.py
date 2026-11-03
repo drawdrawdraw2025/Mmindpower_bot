@@ -547,11 +547,10 @@ def main():
         tr = quiz_retry_translate(seed)
         if tr:
             q.update(tr); say("quiz-bite translated → Hinglish")
+            qz = [q]
         else:
             say("quiz translate FAILED after retries — quiz section DELETED from film (no Marathi shown to students)")
             qz = []
-        if qz:
-            qz = [q]
     else:
         qz = quiz_bite(a.topic, 2)
 
