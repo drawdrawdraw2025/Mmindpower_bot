@@ -251,9 +251,9 @@ STYLE RULES (strict — ye film ka DNA hai):
 Format EXACTLY (plain text, kuch aur nahi):
 TITLE: <catchy Hinglish documentary title — 4-8 shabd>
 COLD: <1-2 vaakya — sabse dramatic moment/fact se seedha shuru; curiosity peak par>
-CH1: <sub-topic heading 2-4 shabd> | <English image-search keywords 3-6 words — portrait/painting/map/monument jaisa archival visual milega>
+CH1: <sub-topic heading 2-4 shabd> | <English image-search keywords 3-6 words — portrait/painting/map/monument jaisa archival visual milega> | <chip max 3 shabd> | <stamp: Year · Place — jaise 'July 1857 | Ara'>
 CH2: ...
-(Exactly {nsec} CH lines — har chapter NAYA sub-plot: background / hero ka parichay / turning points / strategy / climax / legacy jaise angles mix karo)
+(Exactly {nsec} CH lines — har chapter NAYA sub-plot: background / hero ka parichay / turning points / strategy / climax / legacy jaise angles mix karo. Kisi EK chapter mein 'exam point of view' wali ek seedhi fact-line honi chahiye — examiner ka favourite fact.)
 OUTRO: <2 vaakya — legacy aur impact ka emotional close>
 CTA: <1 vaakya — Mmindpower Subscribe + Telegram @mmindpower_1 pe roz ek documentary>"""
 
@@ -264,7 +264,7 @@ Reference:
 REPETITION BAN: "ALREADY COVERED" ke facts/nam/tarikhein DOBARA nahi — sirf NAYA content.
 QUESTION BAN: koi sawaal NAHI — statements hi statements.
 Sirf ek line:
-NARR: <Hinglish documentary narration — 120-170 shabd; vivid scene-painting with dates/names/places; storytelling flow; facts sirf reference se>"""
+NARR: <Hinglish documentary narration — 120-170 shabd; vivid scene-painting with dates/names/places; storytelling flow; facts sirf reference se; AAKHIRI vaakya = cliffhanger jo agle chapter ki taraf le jaaye (statement form, question NAHI)>"""
 
 
 def quiz_retry_translate(seed, tries=3):
@@ -402,9 +402,12 @@ def groq_doc_script(topic, ground, nsec=7, seed=None, outdir="."):
         parts = [p.strip() for p in re.split(r"[|｜]", m.group(1))]
         while len(parts) < 3:
             parts.append("")
+        while len(parts) < 4:
+            parts.append("")
         chapters.append({"heading": parts[0][:50],
                          "imgq": (parts[1] or topic)[:70],
-                         "chip": (parts[2] or parts[0])[:30]})
+                         "chip": (parts[2] or parts[0])[:30],
+                         "stamp": parts[3][:26]})
     if len(chapters) < 6:
         say("doc outline short: %d" % len(chapters))
         return None

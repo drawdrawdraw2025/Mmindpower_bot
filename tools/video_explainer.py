@@ -775,6 +775,202 @@ def doc_fallback(seed, topic):
             "lang": "hinglish", "style": "documentary", "_fallback": True}
 
 
+# ---- Phase A: grade, stamp, montage, music ----
+def grade_docgy(im):
+    """Warm sepia grade + vignette — unifies mixed archival sources."""
+    from PIL import ImageEnhance, ImageDraw as _D
+    w, h = im.size
+    r0, g0, b0 = im.split()
+    sep = Image.merge("RGB", (
+        r0.point(lambda i: min(255, i * 1.18)),
+        g0.point(lambda i: min(255, i * 0.96)),
+        b0.point(lambda i: i * 0.78)))
+    sep = ImageEnhance.Color(sep).enhance(0.82)
+    import math
+    mask = Image.new("L", (w, h), 0)
+    d = _D.Draw(mask)
+    d.ellipse((-w * 0.25, -h * 0.3, w * 1.25, h * 1.3), fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(120))
+    dark = Image.new("RGB", (w, h), (10, 8, 6))
+    return Image.composite(sep, dark, mask)
+
+
+def doc_frame(src_img, chip, idx, out, stamp=""):
+    """Full-bleed graded picture + caption band + RED circular year·place stamp (bottom-right)."""
+    from PIL import ImageFilter, ImageDraw
+    im = Image.open(src_img).convert("RGB")
+    rr = max(W / im.width, H / im.height)
+    im = im.resize((int(im.width * rr), int(im.height * rr)))
+    x, y = (im.width - W) // 2, (im.height - H) // 2
+    im = im.crop((x, y, x + W, y + H))
+    im = grade_docgy(im)
+    band = Image.new("RGBA", (W, 150), (8, 8, 8, 165))
+    layer = im.convert("RGBA"); layer.paste(band, (0, H - 150), band)
+    d = ImageDraw.Draw(layer)
+    d.text((46, H - 108), chip[:22], font=font(58), fill=(240, 233, 215))
+    d.text((46, H - 40), "#1857 documentary series", font=font(30), fill=(190, 185, 170))
+    if stamp:
+        Rr = 118; cx, cy = W - 200, H - 150 - Rr - 36
+        d.ellipse((cx - Rr, cy - Rr, cx + Rr, cy + Rr), outline=(215, 44, 38), width=10,
+                  fill=(150, 18, 14))
+        parts = stamp.split("|")
+        ln1, ln2 = (parts[0].strip()[:12], parts[1].strip()[:14] if len(parts) > 1 else "")
+        d.text((cx, cy - 30), ln1, font=font(52), fill=(255, 235, 210), anchor="mm")
+        if ln2:
+            d.text((cx, cy + 34), ln2, font=font(40), fill=(255, 220, 200), anchor="mm")
+    layer.convert("RGB").save(out, quality=92)
+    return out
+
+
+def frame_variants(paths, work, tag, target=15):
+    """From fetched images, build `target` frames via crops (center/left/right/top/bottom)."""
+    outs = []
+    crops = [lambda w, h: (0, 0, w, h)]
+    crops += [lambda w, h: (int(w*0.08), 0, w, h), lambda w, h: (0, int(h*0.08), w, h),
+              lambda w, h: (int(w*0.14), int(h*0.14), w, h), lambda w, h: (0, 0, int(w*0.86), int(h*0.86))]
+    for pi, p in enumerate(paths):
+        try:
+            im0 = Image.open(p).convert("RGB")
+        except Exception:
+            continue
+        for ci, cf in enumerate(crops):
+            try:
+                box = cf(im0.width, im0.height)
+                im0.crop(box).save(os.path.join(work, f"{tag}_f{pi:02d}_{ci}.png"), quality=90)
+            except Exception:
+                pass
+    import glob as _g
+    outs = sorted(_g.glob(os.path.join(work, f"{tag}_f*.png")))
+    while len(outs) < target and outs:        # reuse w/ zoom-rotate until target
+        srcp = outs[len(outs) % len(outs)]
+        im = Image.open(srcp).convert("RGB").rotate((len(outs) % 3 - 1) * 1.5, expand=False)
+        np_ = os.path.join(work, f"{tag}_fx{len(outs):02d}.png"); im.save(np_)
+        outs.append(np_)
+    return outs[:target]
+
+
+def montage_chapter(frames_len, aud, work, out):
+    """Chapter video = N frames switching every dur/N sec with soft fades; audio muxed."""
+    import glob as _g
+    frames = sorted(frames_len)
+    if not frames:
+        return None
+    dur = dur_of(aud) + 0.35
+    per = max(dur / len(frames), 2.5)
+    segs = []
+    for fi, fp in enumerate(frames):
+        seg = os.path.join(work, f"m{os.path.basename(out)}_{fi:02d}.mp4")
+        fade = (f"scale={W}:{H},zoompan=z='min(zoom+0.001,1.15)':d={int(per*FPS)+2}:fps={FPS}:s={W}x{H},"
+                f"fade=t=in:st=0:d=0.25,fade=t=out:st={per-0.25:.2f}:d=0.25")
+        run(["ffmpeg", "-y", "-loop", "1", "-t", f"{per:.2f}", "-i", fp,
+             "-filter:v", fade, "-an", "-t", f"{per:.2f}", "-c:v", "libx264", "-tune", "stillimage",
+             "-b:v", "700k", "-maxrate", "780k", "-bufsize", "1560k",
+             "-pix_fmt", "yuv420p", "-r", str(FPS), seg])
+        segs.append(seg)
+    lst = os.path.join(work, "mlist.txt")
+    open(lst, "w").write("\n".join(f"file '{x}'" for x in segs))
+    mv = os.path.join(work, "m_" + os.path.basename(out))
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", mv])
+    run(["ffmpeg", "-y", "-i", mv, "-i", aud, "-map", "0:v", "-map", "1:a",
+         "-c:v", "copy", "-c:a", "aac", "-b:a", "96k", "-shortest", out])
+    return out
+
+
+def mix_music(final, total):
+    """Bed music under narration + loudness normalize. Music: assets/music/doc_bed.mp3 (CC-BY Sascha Ende)."""
+    bed = os.path.join(ROOT, "assets", "music", "doc_bed.mp3")
+    if not os.path.exists(bed):
+        say("music bed missing — skipping bed mix")
+        return
+    tmp = final + ".mx.mp4"
+    filt = ("[1:a]volume=0.075,lowpass=f=900[bed];"
+            "[0:a][bed]amix=inputs=2:duration=first[m];[m]loudnorm=I=-16:TP=-1.5:LRA=11[a]")
+    import subprocess as _sp
+    p = _sp.run(["ffmpeg", "-y", "-i", final, "-stream_loop", "-1", "-i", bed, "-filter_complex", filt,
+                 "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "112k",
+                 "-movflags", "+faststart", tmp], capture_output=True)
+    if p.returncode != 0:
+        say("music mix ffmpeg warn: " + p.stderr.decode(errors="ignore")[-160:])
+    if os.path.exists(tmp) and os.path.getsize(tmp) > 5000:
+        os.replace(tmp, final)
+        say("music bed mixed + loudness normalized")
+    else:
+        say("music mix skipped (output invalid) — narration-only final kept")
+
+
+def mix_bed_on(aud_mp3, out_mp3):
+    """Music bed under one narration file + light loudnorm. Falls back to raw copy."""
+    import subprocess as _sp
+    bed = os.path.join(ROOT, "assets", "music", "doc_bed.mp3")
+    if not os.path.exists(bed):
+        try:
+            import shutil; shutil.copy(aud_mp3, out_mp3)
+        except Exception:
+            pass
+        return out_mp3
+    filt = ("[0:a]aresample=48000,volume=1.5[v];"
+            "[1:a]aresample=48000,volume=0.075,lowpass=f=900[bed];"
+            "[v][bed]amix=inputs=2:duration=first[m];[m]loudnorm=I=-17:TP=-1.5:LRA=12[a]")
+    p = _sp.run(["ffmpeg", "-y", "-i", aud_mp3, "-stream_loop", "-1", "-i", bed,
+                 "-filter_complex", filt, "-map", "[a]", "-c:a", "libmp3lame", "-b:a", "112k", out_mp3],
+                capture_output=True)
+    if p.returncode != 0 or not os.path.exists(out_mp3) or os.path.getsize(out_mp3) < 2000:
+        import shutil; shutil.copy(aud_mp3, out_mp3)
+        say("bed mix fallback for " + os.path.basename(aud_mp3))
+    return out_mp3
+
+
+def comm_imgs(query, work, tag, k=8):
+    """Return up to k downloaded archival images (Commons first, en.wiki fallback)."""
+    import requests as _rq
+    UA = {"User-Agent": "MmindpowerEdu/1.0 (educational documentary film; contact: telegram @mmindpower_1)"}
+    out = []
+    def grab(pages):
+        added = 0
+        for p in sorted(pages.values(), key=lambda x: x.get("index", 99)):
+            ii = p.get("imageinfo") or []
+            u = None
+            if ii and ii[0].get("thumburl") and ii[0]["thumburl"].lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
+                u = ii[0]["thumburl"]
+            elif p.get("thumbnail", {}).get("source", "").lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
+                u = p["thumbnail"]["source"]
+            if u:
+                fp = os.path.join(work, f"{tag}_src{len(out):02d}.img")
+                try:
+                    import urllib.request as _ul
+                    req = _ul.Request(u, headers=UA)
+                    b = _ul.urlopen(req, timeout=30).read()
+                    if len(b) > 4000:
+                        open(fp, "wb").write(b)
+                        out.append(fp); added += 1; time.sleep(0.8)
+                except Exception:
+                    pass
+        return added
+    for attempt in range(3):
+        try:
+            r = _rq.get("https://commons.wikimedia.org/w/api.php", params={
+                "action": "query", "format": "json", "generator": "search",
+                "gsrsearch": query, "gsrnamespace": "6", "gsrlimit": str(k),
+                "prop": "imageinfo", "iiprop": "url", "iiurlwidth": "1400"},
+                headers=UA, timeout=30)
+            grab((r.json().get("query") or {}).get("pages", {}))
+            if out:
+                break
+        except Exception as e:
+            time.sleep(2 + 2 * attempt)
+    if len(out) < 2:
+        try:
+            r = _rq.get("https://en.wikipedia.org/w/api.php", params={
+                "action": "query", "format": "json", "generator": "search",
+                "gsrsearch": query, "gsrlimit": str(k), "prop": "pageimages", "pithumbsize": "1400"},
+                headers=UA, timeout=25)
+            grab((r.json().get("query") or {}).get("pages", {}))
+        except Exception:
+            pass
+    say(f"chapter images [{tag}] fetched: {len(out)} ({query[:32]})")
+    return out
+
+
 def doc_render(a):
     seed = None
     if a.seed_file and os.path.exists(a.seed_file):
@@ -809,33 +1005,43 @@ def doc_render(a):
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("doc script cached → " + cache)
     chapters = sc["chapters"]
-    imgs = []
+    ch_frames = []
     for i, ch in enumerate(chapters):
-        raw = os.path.join(work, f"dimg{i:02d}.png")
-        got = comm_img(ch.get("imgq") or a.topic, raw)
-        if not got:
-            got = doc_card(ch.get("chip", ""), ch.get("heading", ""), raw)
-        imgs.append(doc_frame(got, ch.get("chip", ""), i, os.path.join(work, f"dfr{i:02d}.png")))
+        paths = comm_imgs(ch.get("imgq") or a.topic, work, f"c{i}")
+        if not paths:
+            paths = [doc_card(ch.get("chip", ""), ch.get("heading", ""), os.path.join(work, f"c{i}_fb.png"))]
+        variants = frame_variants(paths, work, f"c{i}v", target=15)
+        frames = []
+        for fi, v in enumerate(variants):
+            fp = doc_frame(v, ch.get("chip", ""), i, os.path.join(work, f"c{i}_g{fi:02d}.png"),
+                           stamp=ch.get("stamp", ""))
+            frames.append(fp)
+        ch_frames.append(frames)
+        say(f"chapter {i+1}: {len(frames)} frames graded")
     if resolve_voice(a.voice) is None:
         e_voice, e_pitch, e_rate = "hi-IN-SwaraNeural", "+0Hz", "+3%"
     else:
         e_voice, e_pitch, e_rate = resolve_voice(a.voice)
-    tasks = []
-    plan = []
+    tasks, plan = [], []
     cold_aud = os.path.join(work, "n_cold.mp3")
-    tasks.append((sc.get("cold", sc["title"]), cold_aud)); plan.append((imgs[0], cold_aud))
+    tasks.append((sc.get("cold", sc["title"]), cold_aud)); plan.append(("single", ch_frames[0][0], cold_aud))
     for i, ch in enumerate(chapters):
         au = os.path.join(work, f"n_ch{i}.mp3")
-        tasks.append((ch.get("narration", "")[:1500], au)); plan.append((imgs[i], au))
+        tasks.append((ch.get("narration", "")[:1500], au)); plan.append(("montage", ch_frames[i], au))
     out_aud = os.path.join(work, "n_out.mp3")
-    tasks.append(((sc.get("outro", "") + " " + sc.get("cta", "")).strip(), out_aud))
-    plan.append((imgs[-1], out_aud))
+    tasks.append(((sc.get("outro", "") + " Background score: Epic Drone Shots by Sascha Ende (CC-BY 4.0) via Wikimedia Commons. " + sc.get("cta", "")).strip(), out_aud))
+    plan.append(("single", ch_frames[-1][0], out_aud))
     import asyncio
     asyncio.run(tts_all(tasks, e_voice, e_pitch, e_rate))
     segs = []
-    for idx, (img, aud) in enumerate(plan):
+    for idx, (kind, img, aud) in enumerate(plan):
+        mx = os.path.join(work, f"d{idx:02d}_mx.mp3")
+        mix_bed_on(aud, mx)
         op = os.path.join(work, f"d{idx:02d}.mp4")
-        segs_from(img, aud, op, zoom=True)
+        if kind == "montage":
+            montage_chapter(img, mx, work, op)
+        else:
+            segs_from(img, mx, op, zoom=True, gain=1.0)
         segs.append(op)
     lst = os.path.join(work, "dlist.txt")
     open(lst, "w").write("\n".join(f"file '{x}'" for x in segs))
@@ -843,21 +1049,21 @@ def doc_render(a):
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", final + ".tmp.mp4"])
     run(["ffmpeg", "-y", "-i", final + ".tmp.mp4", "-c", "copy", "-movflags", "+faststart", final])
     os.remove(final + ".tmp.mp4")
-    # Telegram hard limit: 50MB → shrink if needed
+    total = sum(dur_of(x) for x in segs if x.endswith(".mp4"))
     if os.path.getsize(final) > 46 * 1024 * 1024:
         say("final >46MB → safety re-encode @520k")
         run(["ffmpeg", "-y", "-i", final, "-c:v", "libx264", "-b:v", "520k", "-maxrate", "620k",
              "-bufsize", "1240k", "-c:a", "aac", "-b:a", "80k", "-movflags", "+faststart", final + ".sm.mp4"])
         os.replace(final + ".sm.mp4", final)
-    total = sum(dur_of(x) for x in segs if x.endswith(".mp4"))
     chips = [(c.get("chip") or c.get("heading", "")) for c in chapters][:4]
     thumbnail(sc["title"], chips).save(os.path.join(OUT, "thumbnail.png"))
     meta = {"topic": sc["title"], "style": "documentary", "chapters": [c["heading"] for c in chapters],
             "quiz_bite": 0, "seconds": round(total), "minutes": round(total / 60, 1),
             "bytes": os.path.getsize(final), "lang": a.lang, "voice": e_voice,
+            "frames_per_chapter": 15, "music": "Epic Drone Shots — Sascha Ende (CC-BY 4.0)",
             "date": datetime.datetime.now().isoformat(timespec="seconds")}
     json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), ensure_ascii=False, indent=2)
-    say(f"DOC DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min · {len(chapters)} sub-topics)")
+    say(f"DOC DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min · {len(chapters)} sub-topics · 15 frames/ch)")
 
 
 if __name__ == "__main__":
