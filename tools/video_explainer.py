@@ -525,12 +525,16 @@ def main():
         json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
         say("script cached → " + cache)
     try:
-        from groq2stage import dedupe_repeats
+        from groq2stage import dedupe_repeats, marathi_lint
         sc = dedupe_repeats(sc)
         if sc.get("_dedupe_dropped"):
             say("anti-repeat guard: dropped {} repeated sentence(s)/bullet(s)".format(sc["_dedupe_dropped"]))
+        if a.lang == "hinglish":
+            sc = marathi_lint(sc)
+            if sc.get("_marathi_lint_dropped"):
+                say("marathi QC: deleted {} leaky sentence(s) before render".format(sc["_marathi_lint_dropped"]))
     except Exception as de:
-        say("dedupe guard skipped: " + str(de)[:60])
+        say("dedupe/lint guard skipped: " + str(de)[:60])
     chapters = sc["chapters"]
     names = [c["heading"] for c in chapters]
     if a.preview or a.no_quiz:
@@ -539,12 +543,15 @@ def main():
         al = "ABCD".find((seed.get("answer_letter") or "A").strip().upper()[:1] or "A")
         q = {"q_marathi": seed["question"], "options": list(seed.get("options") or [])[:4],
              "correct_index": al if al >= 0 else 0, "explanation_marathi": seed.get("explanation", "")}
-        tr = quiz_hinglish(seed)
+        from groq2stage import quiz_retry_translate
+        tr = quiz_retry_translate(seed)
         if tr:
             q.update(tr); say("quiz-bite translated → Hinglish")
         else:
-            say("quiz translate unavailable — seed question served as-is")
-        qz = [q]
+            say("quiz translate FAILED after retries — quiz section DELETED from film (no Marathi shown to students)")
+            qz = []
+        if qz:
+            qz = [q]
     else:
         qz = quiz_bite(a.topic, 2)
 
@@ -618,8 +625,27 @@ def main():
     run(["ffmpeg","-y","-f","concat","-safe","0","-i",lst,"-c","copy",final + ".tmp.mp4"])
     run(["ffmpeg","-y","-i",final + ".tmp.mp4","-c","copy","-movflags","+faststart",final])
     os.remove(final + ".tmp.mp4")
+
+    # ---- skip-clips (concat-copy: seconds, no re-encode) + timestamps for buttons/caption ----
+    intro_segs = segs[:2]                                    # title + map
+    quiz_start = 2 + 2 * len(chapters)                       # each chapter = zoom + chime
+    quiz_segs = segs[quiz_start: quiz_start + 4 * len(qz)]   # q-card + chime + a-card + chime per quiz
+    intro_end_sec = round(sum(dur_of(s) for s in intro_segs))
+    quiz_start_sec = round(sum(dur_of(s) for s in segs[:quiz_start]))
+    def cat(seglist, outp):
+        l2 = outp + ".list.txt"
+        open(l2, "w").write("\n".join(f"file '{s}'" for s in seglist))
+        run(["ffmpeg","-y","-f","concat","-safe","0","-i",l2,"-c","copy","-movflags","+faststart",outp])
+    body_clip = quiz_clip = None
+    if len(segs) > 2:
+        body_clip = os.path.join(OUT, "final_body.mp4"); cat(segs[2:], body_clip)
+        say("skip-intro clip → " + body_clip)
+    if quiz_segs:
+        quiz_clip = os.path.join(OUT, "final_quiz.mp4"); cat(quiz_segs, quiz_clip)
+        say("jump-to-question clip → " + quiz_clip)
     total = sum(dur_of(s) for s in segs if s.endswith(".mp4"))
     meta = {"topic": sc["title"], "chapters": names, "quiz_bite": len(qz), "seconds": round(total),
+            "intro_end_sec": intro_end_sec, "quiz_start_sec": quiz_start_sec,
             "minutes": round(total/60, 1), "bytes": os.path.getsize(final),
             "voice": a.voice or "(lang-default)", "lang": a.lang, "dialect": a.dialect or "std",
             "grounded_by": "wikipedia+groq", "date": datetime.datetime.now().isoformat(timespec="seconds")}

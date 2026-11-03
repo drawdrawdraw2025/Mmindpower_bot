@@ -67,13 +67,29 @@ jobs:
           GC=$(curl -s "https://api.telegram.org/bot$TG_ONE/getChat?chat_id=$TARGET")
           echo "getChat probe: $(echo "$GC" | head -c 250)"
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" -d "chat_id=$TARGET" --data-urlencode "text=🌅 Good morning स्ट्रайकर्स! आजची Hinglish फिल्म — $TITLE ⬇️" | head -c 200; echo
-          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ channel: @mmindpower_1" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
+          TS=$(python3 -c "import json;m=json.load(open('out_explainer/meta.json'));a=m.get('intro_end_sec',0);b=m.get('quiz_start_sec',0);f=lambda s:'%d:%02d'%(s//60,s%60);print('INTRO_END='+f(a));print('QUIZ_START='+f(b))")
+          eval "$TS"
+          R=$(curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎬 $TITLE — roz ki Hinglish seekh! Quiz-bite + FREE notes ⬇️ channel: @mmindpower_1"$'\n'"⏭ Intro khatam: ${INTRO_END:-0:20} baad se asli content | 🎯 Sawaal: ${QUIZ_START:-0} pe — niche buttons dabao 👇" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
           echo "sendVideo resp: $(echo "$R" | tail -c 300)"
+          FILM_MSG=$(echo "$R" | python3 -c "import json,sys;print(json.load(sys.stdin).get('result',{}).get('message_id',''))" 2>/dev/null)
           if ! echo "$R" | grep -q '"ok":true'; then
             echo "channel @mmindpower_1 post failed → DM fallback to owner"
             TARGET="7102918717"
             curl -sS --max-time 280 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎬 $TITLE — daily film (DM mirror)" -F "video=@out_explainer/final.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 | tail -c 200 || true
           fi
+          QUIZ_MSG=""
+          if [ -f out_explainer/final_quiz.mp4 ]; then
+            QR=$(curl -sS --max-time 200 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=🎯 Seedha SAWAAL — aaj ka quiz bite (film ka aakhri hissa): $TITLE" -F "video=@out_explainer/final_quiz.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
+            QUIZ_MSG=$(echo "$QR" | python3 -c "import json,sys;print(json.load(sys.stdin).get('result',{}).get('message_id',''))" 2>/dev/null)
+            echo "quiz clip msg: $QUIZ_MSG"
+          fi
+          BODY_MSG=""
+          if [ -f out_explainer/final_body.mp4 ]; then
+            BR=$(curl -sS --max-time 260 -X POST "https://api.telegram.org/bot$TG_ONE/sendVideo" --form-string "chat_id=$TARGET" --form-string "caption=⏭ Skip-Intro version — wahi film, intro ke baad se shuru: $TITLE" -F "video=@out_explainer/final_body.mp4;type=video/mp4" -F "supports_streaming=true" 2>&1 || true)
+            BODY_MSG=$(echo "$BR" | python3 -c "import json,sys;print(json.load(sys.stdin).get('result',{}).get('message_id',''))" 2>/dev/null)
+            echo "body clip msg: $BODY_MSG"
+          fi
+          python3 tools/tg_buttons.py "$TG_ONE" "$TARGET" "${FILM_MSG:--}" "${QUIZ_MSG:--}" "${BODY_MSG:--}" || true
           curl -sS -X POST "https://api.telegram.org/bot$TG_ONE/sendDocument" --form-string "chat_id=$TARGET" -F "document=@out_explainer/notes.pdf" --form-string "caption=📝 $TITLE — आजची नोट्स" || true
           curl -sS -X POST "https://api.telegram.org/bot$TG_ONE/sendPhoto" --form-string "chat_id=$TARGET" -F "photo=@out_explainer/thumbnail.png" --form-string "caption=🏷️ thumbnail — YT साठी" || true
 
@@ -83,6 +99,8 @@ jobs:
           name: daily-${{ steps.pick.outputs.slug }}-${{ github.run_number }}
           path: |
             out_explainer/final.mp4
+            out_explainer/final_body.mp4
+            out_explainer/final_quiz.mp4
             out_explainer/thumbnail.png
             out_explainer/notes.pdf
             out_explainer/script.json

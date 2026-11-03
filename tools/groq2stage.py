@@ -199,6 +199,53 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
     return sc
 
 
+MARATHI_ONLY = re.compile(
+    r"\b(आहेत|यांनी|यांना|यांचे|यांची|मध्ये|बद्दल|सुद्धा|किंवा|झाले|झाला|झाली|आपण|आपल्या|म्हणजे|तसेच|आणि|प्रत्येकी|तपासूया|थोडक्यात|पाहूया|घेऊया|इथे|तिथे|दिला|दिली|जाहीर|सोडले|गेले|गेला|आले)\b")
+
+def marathi_leak(text):
+    """High-confidence Marathi-only markers; returns True if text smells Marathi."""
+    if not text:
+        return False
+    return bool(MARATHI_ONLY.search(text))
+
+def marathi_lint(script):
+    """QC: in Hinglish films, DELETE Marathi-leak sentences/bullets rather than
+    showing them (user rule: no glitches to students). Mutates copy; returns it."""
+    import copy as _copy, re as _re
+    sc = _copy.deepcopy(script)
+    dropped = 0
+    for ch in sc.get("chapters", []):
+        sents = [x.strip() for x in _re.split(r"(?<=[।.!?])\s+", ch.get("narration", "") or "") if x.strip()]
+        keep = [x for x in sents if not marathi_leak(x)]
+        dropped += len(sents) - len(keep)
+        if keep:
+            ch["narration"] = " ".join(keep)
+        ch["bullets"] = [b for b in (ch.get("bullets") or []) if not marathi_leak(b)]
+        if marathi_leak(ch.get("heading", "")):
+            ch["heading"] = "Key Point"
+        ch["chips"] = [c for c in (ch.get("chips") or []) if not marathi_leak(c)]
+    if marathi_leak(sc.get("hook", "")):
+        sc["hook"] = " ".join(x for x in _re.split(r"(?<=[।.!?])\s+", sc["hook"]) if not marathi_leak(x)) or sc["hook"]
+    if marathi_leak(sc.get("recap", "")):
+        sc["recap"] = " ".join(x for x in _re.split(r"(?<=[।.!?])\s+", sc["recap"]) if not marathi_leak(x)) or sc["recap"]
+    if marathi_leak(sc.get("cta", "")):
+        sc["cta"] = "Mmindpower ko Subscribe karo — roz practice ke liye Telegram @mmindpower_1"
+    sc["_marathi_lint_dropped"] = dropped
+    return sc
+
+def quiz_retry_translate(seed, tries=3):
+    """quiz_hinglish with retries + Marathi-leak validation (None on final fail)."""
+    import time as _t
+    for at in range(tries):
+        tr = quiz_hinglish(seed)
+        if tr and isinstance(tr.get("q_hi"), str):
+            if not marathi_leak(tr["q_hi"]) and not any(marathi_leak(o) for o in tr.get("options_hi") or []):
+                return tr
+            say("quiz translate had Marathi leak — retrying")
+        if at < tries - 1:
+            _t.sleep(8)
+    return None
+
 def quiz_hinglish(seed):
     """Translate the seed bank-question into film Hinglish (order of options preserved).
     Returns {'q_hi', 'options_hi', 'explain_hi'} or None on any failure."""
