@@ -123,7 +123,8 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
         seed_block = ("\n\nAaj ka CENTERPIECE — MPSC modern-history SAWAAL (Marathi mein diya gaya): '" + seed.get('question', '')
                       + "' | Sahi jawaab: " + seed.get('answer_letter', '') + " — " + seed.get('answer', '')
                       + " | Marathi explanation: " + seed.get('explanation', '')
-                      + "\nIMPORTANT: POORA film HINGLISH mein — Devanagari Hindi + English words. Koi Marathi word NAHI (titles/headings/bullets sab Hinglish). Filmon ka title sirf Hinglish mein. TITLE line zaroor do.")
+                      + "\nIMPORTANT: POORA film HINGLISH mein — Devanagari Hindi + English words. Koi Marathi word NAHI (titles/headings/bullets sab Hinglish). Filmon ka title sirf Hinglish mein. TITLE line zaroor do."
+                      + "\nTITLE rule: TITLE mein SAHI JAWAAB wala asli naam/fact ZAROOR ho ('" + seed.get('answer', '') + "' — jaisa likha hai waisa hi; gender/role/title apni taraf se MAT badlo). Title catchy ho sakta hai par FACT accurate raho — sirf seed ke facts use karo, koi imagined fact nahi.")
     dia = (DIA_A if dialect == "kolhapuri" else "") if not hi else ""   # dialect = Marathi-only feature
     A = chat(tplA.format(topic=topic, ground=ground[:1600], nsec=nsec) + dia + seed_block, mx=2200,
              sysmsg=(SYS_HI if hi else SYS))
