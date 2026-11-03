@@ -76,5 +76,4 @@ jobs:
           if [ "${{ job.status }}" = "success" ]; then E="✅"; T="VERTICAL REEL ready:"; else E="❌"; T="Vertical reel failed:"; fi
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
             --data-urlencode "chat_id=$OWNER" \
-            --data-urlencode "text=$E $T
-🔗 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+            --data-urlencode "text=$E $T 🔗 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
