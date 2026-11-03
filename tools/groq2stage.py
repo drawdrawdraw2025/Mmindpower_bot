@@ -236,6 +236,37 @@ def marathi_lint(script):
     sc["_marathi_lint_dropped"] = dropped
     return sc
 
+PROMPT_DOC_HI = """Topic: "{topic}"
+Reference (Wikipedia + core context):
+{ground}
+
+STYLE RULES (strict — ye film ka DNA hai):
+1. DOCUMENTARY tone — jaise koi best storyteller itihaas suna raha ho: cinematic, emotional, vivid, facts-backed.
+2. ZERO questions — kisi line mein '?' NAHI, rhetorical sawaal NAHI. Sirf powerful statements.
+3. ZERO quiz/test — sirf narration-based documentary.
+4. NO intro screen — COLD OPEN se seedha kahani.
+5. Repetition NAHI — har sub-topic ka angle + facts bilkul alag.
+6. Bhasha: Hinglish — Devanagari Hindi + English words natural; Marathi bilkul NAHI.
+
+Format EXACTLY (plain text, kuch aur nahi):
+TITLE: <catchy Hinglish documentary title — 4-8 shabd>
+COLD: <1-2 vaakya — sabse dramatic moment/fact se seedha shuru; curiosity peak par>
+CH1: <sub-topic heading 2-4 shabd> | <English image-search keywords 3-6 words — portrait/painting/map/monument jaisa archival visual milega>
+CH2: ...
+(Exactly {nsec} CH lines — har chapter NAYA sub-plot: background / hero ka parichay / turning points / strategy / climax / legacy jaise angles mix karo)
+OUTRO: <2 vaakya — legacy aur impact ka emotional close>
+CTA: <1 vaakya — Mmindpower Subscribe + Telegram @mmindpower_1 pe roz ek documentary>"""
+
+PROMPT_DOCN_HI = """Documentary chapter {i} / {total}: "{heading}" — topic "{topic}"
+Reference:
+{ground}
+{prev_block}
+REPETITION BAN: "ALREADY COVERED" ke facts/nam/tarikhein DOBARA nahi — sirf NAYA content.
+QUESTION BAN: koi sawaal NAHI — statements hi statements.
+Sirf ek line:
+NARR: <Hinglish documentary narration — 120-170 shabd; vivid scene-painting with dates/names/places; storytelling flow; facts sirf reference se>"""
+
+
 def quiz_retry_translate(seed, tries=3):
     """quiz_hinglish with retries + Marathi-leak validation (None on final fail)."""
     import time as _t
@@ -342,4 +373,76 @@ def dedupe_repeats(script, thresh=0.50, cov=0.70):
     s2 = dict(script)
     s2["chapters"] = out_ch
     s2["_dedupe_dropped"] = dropped
+    return s2
+
+
+def groq_doc_script(topic, ground, nsec=7, seed=None, outdir="."):
+    """Documentary-style film script: cold open + N narration chapters + outro, zero questions.
+    Returns dict or None on failure."""
+    gk = os.environ.get("GROQ_KEY")
+    if not gk:
+        return None
+    chat = make_chat(gk)
+    seed_block = ""
+    if seed:
+        seed_block = ("\n\nCENTERPIECE (exam point of view): aaj ki documentary is historical figure/event ke around hai — core facts: "
+                      + seed.get("question", "") + " | Fact-check: " + seed.get("answer", "")
+                      + " | " + seed.get("explanation", ""))[:900]
+    body = PROMPT_DOC_HI.format(topic=topic, ground=(ground + seed_block)[:1600], nsec=nsec)
+    A = chat(body, mx=2200, sysmsg=SYS_HI)
+    if not A:
+        say("doc stageA empty")
+        return None
+    title = _grab(r"^TITLE:\s*(.+)$", A) or topic
+    cold = _grab(r"^COLD:\s*(.+)$", A) or ""
+    outro = _grab(r"^OUTRO:\s*(.+)$", A) or ""
+    cta = _grab(r"^CTA:\s*(.+)$", A) or "Mmindpower ko Subscribe karo — Telegram @mmindpower_1 pe roz ek documentary."
+    chapters = []
+    for m in re.finditer(r"^CH\d+\s*[:\-]\s*(.+)$", A, re.M):
+        parts = [p.strip() for p in re.split(r"[|｜]", m.group(1))]
+        while len(parts) < 3:
+            parts.append("")
+        chapters.append({"heading": parts[0][:50],
+                         "imgq": (parts[1] or topic)[:70],
+                         "chip": (parts[2] or parts[0])[:30]})
+    if len(chapters) < 6:
+        say("doc outline short: %d" % len(chapters))
+        return None
+    chapters = chapters[:nsec + 1]
+    prev = []
+    for i, ch in enumerate(chapters):
+        prev_block = ""
+        if prev:
+            prev_block = ("\nALREADY COVERED (pichle chapters — repeat mat karo):\n" + " ".join(prev)[:800] + "\n")
+        b = PROMPT_DOCN_HI.format(topic=topic, i=i + 1, total=len(chapters),
+                                  heading=ch["heading"], ground=ground[:1200], prev_block=prev_block)
+        B = chat(b, mx=900, sysmsg=SYS_HI)
+        narr = _grab(r"^NARR\s*:\s*(.+)$", B or "", re.M) or ""
+        narr = re.sub(r"\s+", " ", narr).strip()
+        if not narr:
+            say("doc narr empty ch%d" % (i + 1))
+            return None
+        prev.append(narr)
+        ch["narration"] = narr[:1200]
+    return {"title": title, "film_title": title, "cold": cold, "chapters": chapters,
+            "outro": outro, "cta": cta, "lang": "hinglish", "style": "documentary"}
+
+
+def question_lint(sc):
+    """Documentary rule: ZERO questions. Drop any sentence containing '?'.
+    Also strips stray narration questions like 'Kya aap jaante hain...' by sentence."""
+    import copy as _copy, re as _re
+    s2 = _copy.deepcopy(sc)
+    dropped = 0
+    def clean(t):
+        nonlocal dropped
+        parts = [x.strip() for x in _re.split(r"(?<=[।.!?])\s+", t or "") if x.strip()]
+        no_q = [x for x in parts if "?" not in x]
+        dropped += len(parts) - len(no_q)
+        return " ".join(no_q) if no_q else (t or "")
+    s2["cold"] = clean(s2.get("cold", ""))
+    s2["outro"] = clean(s2.get("outro", ""))
+    for ch in s2.get("chapters", []):
+        ch["narration"] = clean(ch.get("narration", ""))
+    s2["_questions_dropped"] = dropped
     return s2

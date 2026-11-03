@@ -26,14 +26,22 @@ def run(cmd):
 
 def dur_of(path, default=2.0):
     try:
-        o = subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",path],
-                           capture_output=True, text=True, timeout=30)
-        return float(o.stdout.strip())
+        import subprocess
+        p = subprocess.run(["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
+                            "-of", "csv=p=0", path], capture_output=True, text=True, timeout=15)
+        d = float(p.stdout.strip());  return max(d, 0.5)
     except Exception:
+        try:
+            if path.endswith(".mp3"):
+                from mutagen.mp3 import MP3
+                return max(MP3(path).info.length, 0.5)
+            if path.endswith(".mp4"):
+                from mutagen.mp4 import MP4
+                return max(MP4(path).info.length, 0.5)
+        except Exception:
+            pass
         return default
 
-
-# ------------------ PIL cinema engine ------------------
 def bg(accent=NAVY2):
     img = Image.new("RGB", (W, H), NAVY1)
     for y in range(H):
@@ -493,9 +501,12 @@ def main():
     ap.add_argument("--preview", action="store_true")      # 3 chapters, no quiz bite
     ap.add_argument("--script-cache", default="")
     ap.add_argument("--no-quiz", action="store_true")
+    ap.add_argument("--style", default="", choices=["", "documentary"])
     ap.add_argument("--dialect", default="", choices=["", "kolhapuri"],
                     help="'kolhapuri' → narration in Kolhapuri vernacular Marathi")
     a = ap.parse_args()
+    if a.style == "documentary":
+        doc_render(a); return
     os.makedirs(OUT, exist_ok=True); work = os.path.join(OUT, "seg"); os.makedirs(work, exist_ok=True)
     cache = a.script_cache or os.path.join(OUT, "script.json")
 
@@ -650,6 +661,167 @@ def main():
             "grounded_by": "wikipedia+groq", "date": datetime.datetime.now().isoformat(timespec="seconds")}
     json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), ensure_ascii=False, indent=2)
     say(f"DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min)")
+
+
+# ================= DOCUMENTARY LANE (narration-only · picture-led · 7 min) =================
+def comm_img(query, path, width=1600):
+    """Archival visual from Wikimedia Commons (free-license). None on failure."""
+    import requests as _rq
+    try:
+        r = _rq.get("https://commons.wikimedia.org/w/api.php", params={
+            "action": "query", "format": "json", "generator": "search",
+            "gsrsearch": query, "gsrnamespace": "6", "gsrlimit": "6",
+            "prop": "imageinfo", "iiprop": "url", "iiurlwidth": str(width)},
+            headers={"User-Agent": "MmindpowerEdu/1.0 (educational documentary film)"}, timeout=25)
+        pages = r.json().get("query", {}).get("pages", {})
+        for p in sorted(pages.values(), key=lambda x: x.get("index", 99)):
+            ii = p.get("imageinfo") or []
+            if ii and ii[0].get("thumburl"):
+                u = ii[0]["thumburl"]
+                if u.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
+                    b = _rq.get(u, timeout=30, headers={"User-Agent": "MmindpowerEdu/1.0"}).content
+                    if len(b) > 3000:
+                        open(path, "wb").write(b)
+                        time.sleep(1.5)
+                        say("archival image ok: " + query[:40])
+                        return path
+    except Exception as e:
+        say("commons fetch fail (%s): %s" % (query[:30], str(e)[:60]))
+    return None
+
+
+def doc_card(chip, heading, path):
+    """Fallback visual: cinematic gradient + big wordmark (text only as last resort)."""
+    img = bg((38, 26, 10)); d = ImageDraw.Draw(img)
+    d.text((W // 2, H // 2 - 40), heading[:28], font=font(120), fill=(232, 197, 90), anchor="mm")
+    d.text((W // 2, H // 2 + 90), chip[:26], font=font(52), fill=(230, 230, 230), anchor="mm")
+    img.save(path)
+    return path
+
+
+def doc_frame(src_img, chip, idx, out):
+    """Full-bleed picture + minimal caption band (pictures instead of text)."""
+    from PIL import ImageFilter
+    try:
+        im = Image.open(src_img).convert("RGB")
+    except Exception:
+        return doc_card(chip, "Chapter " + str(idx + 1), out)
+    r = max(W / im.width, H / im.height)
+    im = im.resize((int(im.width * r), int(im.height * r)))
+    x, y = (im.width - W) // 2, (im.height - H) // 2
+    im = im.crop((x, y, x + W, y + H))
+    band = Image.new("RGBA", (W, 150), (8, 8, 8, 165))
+    layer = im.convert("RGBA"); layer.paste(band, (0, H - 150), band)
+    d = ImageDraw.Draw(layer)
+    d.text((46, H - 108), chip[:22], font=font(58), fill=(240, 233, 215))
+    d.text((W - 46, H - 96), str(idx + 1), font=font(58), fill=(232, 197, 90), anchor="ra")
+    layer.convert("RGB").save(out, quality=92)
+    return out
+
+
+def doc_fallback(seed, topic):
+    """Zero-LLM documentary script from seed facts (statements only)."""
+    q = seed or {}
+    sub = (q.get("subtopic") or topic).strip()
+    expl = (q.get("explanation") or "").strip()
+    ans = (q.get("answer") or "").strip()
+    sents = [x.strip() for x in expl.replace("?", "।").split("।") if len(x.strip()) > 8]
+    arcs = [("Kahani ki Shuruaat", sub + " history", "background"),
+            ("Nayak ka Parichay", sub + " portrait", "hero"),
+            ("Pehla Mod", sub + " monument", "turning point"),
+            ("Ran-neeti", sub + " map old", "strategy"),
+            ("Climax ka Scene", sub + " painting battle", "climax"),
+            ("Nateeja", sub + " memorial", "result"),
+            ("Legacy — Aaj ka Sandesh", sub + " statue", "legacy")]
+    chs = []
+    for i, (h, iq, chip) in enumerate(arcs):
+        core = (sents[i % len(sents)] + "। " + sents[(i + 1) % len(sents)] + "।") if sents else ""
+        narr = (core + " Exam point of view: sahi tathya hai — " + ans + "।").strip()
+        chs.append({"heading": h, "imgq": iq, "chip": chip, "narration": narr})
+    return {"title": "Documentary: " + sub, "film_title": "Documentary: " + sub,
+            "cold": "Ye kahani hai " + sub + " ki — jo itihaas ke panne mein likhi gayi, par aaj bhi exam ke sawaal mein zinda hai.",
+            "chapters": chs, "outro": (sents[-1] + "। " if sents else "") + "Ye thi is episode ki asli kahani।",
+            "cta": "Mmindpower ko Subscribe karo — Telegram @mmindpower_1 pe roz aisi hi ek documentary.",
+            "lang": "hinglish", "style": "documentary", "_fallback": True}
+
+
+def doc_render(a):
+    seed = None
+    if a.seed_file and os.path.exists(a.seed_file):
+        seed = json.load(open(a.seed_file, encoding="utf-8"))
+        say("doc seed loaded: " + seed["question"][:70])
+    work = os.path.join(OUT, "seg"); os.makedirs(work, exist_ok=True)
+    cache = a.script_cache or os.path.join(OUT, "script.json")
+    if os.path.exists(cache):
+        sc = json.load(open(cache)); say("doc script from cache")
+    else:
+        ground = wiki_ground(a.topic)
+        if seed and not ground:
+            for hint in (seed.get("answer", ""), seed.get("subtopic", "")[:40]):
+                g2 = wiki_ground(hint)
+                if g2:
+                    ground = g2; break
+        from groq2stage import groq_doc_script
+        sc = groq_doc_script(a.topic, ground, 7, seed=seed, outdir=work)
+        if not sc:
+            say("groq doc script unavailable → seed fallback script")
+            sc = doc_fallback(seed, a.topic)
+        from groq2stage import question_lint, marathi_lint, dedupe_repeats
+        sc = question_lint(sc)
+        sc = marathi_lint(sc)
+        sc = dedupe_repeats(sc)
+        if sc.get("_questions_dropped"):
+            say("zero-question QC: dropped %d question line(s)" % sc["_questions_dropped"])
+        if sc.get("_marathi_lint_dropped"):
+            say("marathi QC: deleted %d leaky line(s)" % sc["_marathi_lint_dropped"])
+        if sc.get("_dedupe_dropped"):
+            say("anti-repeat: dropped %d" % sc["_dedupe_dropped"])
+        json.dump(sc, open(cache, "w"), ensure_ascii=False, indent=2)
+        say("doc script cached → " + cache)
+    chapters = sc["chapters"]
+    imgs = []
+    for i, ch in enumerate(chapters):
+        raw = os.path.join(work, f"dimg{i:02d}.png")
+        got = comm_img(ch.get("imgq") or a.topic, raw)
+        if not got:
+            got = doc_card(ch.get("chip", ""), ch.get("heading", ""), raw)
+        imgs.append(doc_frame(got, ch.get("chip", ""), i, os.path.join(work, f"dfr{i:02d}.png")))
+    if resolve_voice(a.voice) is None:
+        e_voice, e_pitch, e_rate = "hi-IN-SwaraNeural", "+0Hz", "+3%"
+    else:
+        e_voice, e_pitch, e_rate = resolve_voice(a.voice)
+    tasks = []
+    plan = []
+    cold_aud = os.path.join(work, "n_cold.mp3")
+    tasks.append((sc.get("cold", sc["title"]), cold_aud)); plan.append((imgs[0], cold_aud))
+    for i, ch in enumerate(chapters):
+        au = os.path.join(work, f"n_ch{i}.mp3")
+        tasks.append((ch.get("narration", "")[:1500], au)); plan.append((imgs[i], au))
+    out_aud = os.path.join(work, "n_out.mp3")
+    tasks.append(((sc.get("outro", "") + " " + sc.get("cta", "")).strip(), out_aud))
+    plan.append((imgs[-1], out_aud))
+    import asyncio
+    asyncio.run(tts_all(tasks, e_voice, e_pitch, e_rate))
+    segs = []
+    for idx, (img, aud) in enumerate(plan):
+        op = os.path.join(work, f"d{idx:02d}.mp4")
+        segs_from(img, aud, op, zoom=True)
+        segs.append(op)
+    lst = os.path.join(work, "dlist.txt")
+    open(lst, "w").write("\n".join(f"file '{x}'" for x in segs))
+    final = os.path.join(OUT, "final.mp4")
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", final + ".tmp.mp4"])
+    run(["ffmpeg", "-y", "-i", final + ".tmp.mp4", "-c", "copy", "-movflags", "+faststart", final])
+    os.remove(final + ".tmp.mp4")
+    total = sum(dur_of(x) for x in segs if x.endswith(".mp4"))
+    chips = [(c.get("chip") or c.get("heading", "")) for c in chapters][:4]
+    thumbnail(sc["title"], chips).save(os.path.join(OUT, "thumbnail.png"))
+    meta = {"topic": sc["title"], "style": "documentary", "chapters": [c["heading"] for c in chapters],
+            "quiz_bite": 0, "seconds": round(total), "minutes": round(total / 60, 1),
+            "bytes": os.path.getsize(final), "lang": a.lang, "voice": e_voice,
+            "date": datetime.datetime.now().isoformat(timespec="seconds")}
+    json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), ensure_ascii=False, indent=2)
+    say(f"DOC DONE → {final} ({meta['bytes']//1024//1024}MB · {meta['minutes']} min · {len(chapters)} sub-topics)")
 
 
 if __name__ == "__main__":
