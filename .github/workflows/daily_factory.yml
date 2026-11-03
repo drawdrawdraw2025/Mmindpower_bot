@@ -41,6 +41,8 @@ jobs:
           T=$(python3 -c "import json;s=json.load(open('out_explainer/day_seed.json',encoding='utf-8'));print('History: '+s['question'][:70])")
           echo "picked seed → $T"
           echo "topic=$T" >> $GITHUB_OUTPUT
+          SLUG="history-q$(date -u +%j)"
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
 
 
       - name: Render FULL explainer (clean Aarohi voice, WITH quiz-bite)
@@ -78,7 +80,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: steps.check.outputs.skip == '0'
         with:
-          name: daily-${{ steps.pick.outputs.topic }}-${{ github.run_number }}
+          name: daily-${{ steps.pick.outputs.slug }}-${{ github.run_number }}
           path: |
             out_explainer/final.mp4
             out_explainer/thumbnail.png
