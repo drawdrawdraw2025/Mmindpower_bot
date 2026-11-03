@@ -222,8 +222,9 @@ def summon_successor():
         print("summon err (cron belt remains):", e, flush=True)
 
 DONATE_UPI = "mmindpower.contact@oksbi"
-DONATE_URL = "https://drawdrawdraw2025.github.io/pay/"
-APP_URL = "https://drawdrawdraw2025.github.io/app/"
+DONATE_URL = "https://is.gd/bVxsvj"
+APP_URL = "https://is.gd/MtatPL"
+APP_REAL = "https://drawdrawdraw2025.github.io/app/"   # internal composite loads only — never student-facing
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
 APP_URL_V = APP_URL + "?v=web36"
 DONATE_URL_V = DONATE_URL + "?v=web36"
@@ -304,7 +305,7 @@ def qr_relay_autopost():
     try:
         if FLAGS.get("qr_relay_ids"):
             return
-        base = APP_URL + "assets/"
+        base = APP_REAL + "assets/"
         c1 = ("💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\n"
               "PhonePe ॲपने QR स्कॅन करा ☺️ — किंवा कोणतेही UPI ॲप!\n"
               "ट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n"
@@ -1574,7 +1575,7 @@ def handle(update):
         return
     if token0 == "/upirepost":
         if chat_id == OWNER_CHAT:
-            base = "https://drawdrawdraw2025.github.io/app/assets/"
+            base = "https://is.gd/FSpSGX/../"  # folded
             cap = ("💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\n"
                    "PhonePe ॲपने QR स्कॅन करा ☺️ — किंवा कोणतेही UPI ॲप!\n"
                    "ट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n"
@@ -1598,9 +1599,9 @@ def handle(update):
                 m1, m2 = FLAGS["qr_relay_ids"]
                 send_text(chat_id, "ℹ️ QR posts आधीच चॅनेलवर आहेत — 💛UPI #%d · 📺YT #%d ✅" % (m1, m2))
                 return
-            base = "https://drawdrawdraw2025.github.io/app/assets/"
+            base = "https://is.gd/FSpSGX/../"  # folded
             posts = [
-                {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nPhonePe ॲपने QR स्कॅन करा ☺️ — किंवा कोणतेही UPI ॲप!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n₹5 ही फक्त सुरुवात 💛 रक्कम ॲपमध्ये एडिट करता येते — आवडलं तर आणखी एक <b>0</b> जोडा 🤗\n🌐 <a href=\"https://drawdrawdraw2025.github.io/pay/\">वेब पेज — येथे टॅप करा 💛</a>"},
+                {"photo": base+"qr_upi.png", "caption": "💛 <b>Support Mmindpower ₹5 — QR स्कॅन करा 📸</b>\nPhonePe ॲपने QR स्कॅन करा ☺️ — किंवा कोणतेही UPI ॲप!\nट्यायपिंगचा जंजाळ नाही — फक्त कॅमेरा!\n₹5 ही फक्त सुरुवात 💛 रक्कम ॲपमध्ये एडिट करता येते — आवडलं तर आणखी एक <b>0</b> जोडा 🤗\n🌐 <a href=\"https://is.gd/bVxsvj\">वेब पेज — येथे टॅप करा 💛</a>"},
                 {"photo": base+"qr_youtube.png", "caption": "📺 <b>YouTube @mmindpower — Subscribe QR 📸</b>\nQR स्कॅन करा → YouTube ॲप थेट 'Subscribe?' विचारेल!\nकिंवा थेट: https://www.youtube.com/@mmindpower"}]
             ids = []
             for p in posts:
