@@ -664,29 +664,59 @@ def main():
 
 
 # ================= DOCUMENTARY LANE (narration-only · picture-led · 7 min) =================
-def comm_img(query, path, width=1600):
-    """Archival visual from Wikimedia Commons (free-license). None on failure."""
+def _dl(u, path, minb=3000):
     import requests as _rq
+    b = _rq.get(u, timeout=30, headers={"User-Agent": "MmindpowerEdu/1.0 (educational documentary)"}).content
+    if len(b) > minb:
+        open(path, "wb").write(b)
+        return path
+    return None
+
+
+def comm_img(query, path, width=1600):
+    """Archival visual from Wikimedia Commons / Wikipedia (free-license). None on failure.
+    Runner-safe: retries + endpoint fallbacks."""
+    import requests as _rq
+    UA = {"User-Agent": "MmindpowerEdu/1.0 (educational documentary film; contact: telegram @mmindpower_1)"}
+    for attempt in range(3):                       # Commons search API, backoff
+        try:
+            r = _rq.get("https://commons.wikimedia.org/w/api.php", params={
+                "action": "query", "format": "json", "generator": "search",
+                "gsrsearch": query, "gsrnamespace": "6", "gsrlimit": "6",
+                "prop": "imageinfo", "iiprop": "url", "iiurlwidth": str(width)},
+                headers=UA, timeout=30)
+            pages = r.json().get("query", {}).get("pages", {})
+            for p in sorted(pages.values(), key=lambda x: x.get("index", 99)):
+                ii = p.get("imageinfo") or []
+                if ii and ii[0].get("thumburl"):
+                    u = ii[0]["thumburl"]
+                    if u.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
+                        if _dl(u, path):
+                            time.sleep(1.2)
+                            say("archival image ok (commons): " + query[:40])
+                            return path
+            break
+        except Exception as e:
+            if attempt == 2:
+                say("commons fetch fail (%s): %s" % (query[:30], str(e)[:60]))
+            time.sleep(3 + 3 * attempt)
+    # fallback: English Wikipedia page images
     try:
-        r = _rq.get("https://commons.wikimedia.org/w/api.php", params={
+        t = query.strip()
+        r = _rq.get("https://en.wikipedia.org/w/api.php", params={
             "action": "query", "format": "json", "generator": "search",
-            "gsrsearch": query, "gsrnamespace": "6", "gsrlimit": "6",
-            "prop": "imageinfo", "iiprop": "url", "iiurlwidth": str(width)},
-            headers={"User-Agent": "MmindpowerEdu/1.0 (educational documentary film)"}, timeout=25)
+            "gsrsearch": t, "gsrlimit": "3", "prop": "pageimages", "pithumbsize": str(width)},
+            headers=UA, timeout=25)
         pages = r.json().get("query", {}).get("pages", {})
         for p in sorted(pages.values(), key=lambda x: x.get("index", 99)):
-            ii = p.get("imageinfo") or []
-            if ii and ii[0].get("thumburl"):
-                u = ii[0]["thumburl"]
-                if u.lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
-                    b = _rq.get(u, timeout=30, headers={"User-Agent": "MmindpowerEdu/1.0"}).content
-                    if len(b) > 3000:
-                        open(path, "wb").write(b)
-                        time.sleep(1.5)
-                        say("archival image ok: " + query[:40])
-                        return path
+            th = p.get("thumbnail", {})
+            if th.get("source") and th["source"].lower().split("?")[0].endswith((".jpg", ".jpeg", ".png")):
+                if _dl(th["source"], path):
+                    time.sleep(1.2)
+                    say("archival image ok (en.wiki): " + query[:40])
+                    return path
     except Exception as e:
-        say("commons fetch fail (%s): %s" % (query[:30], str(e)[:60]))
+        say("wiki pageimage fail (%s): %s" % (query[:30], str(e)[:60]))
     return None
 
 
