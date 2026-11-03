@@ -34,12 +34,12 @@ jobs:
           python -m pip install --upgrade pip -q
           pip install -q requests Pillow edge-tts gTTS reportlab
 
-      - name: 🏛️ Pick today's MODERN-HISTORY seed question (from own 433+ bank)
+      - name: Pick TODAY'S modern-history seed (bank questions — film lane only)
         id: pick
         run: |
-          python3 tools/pick_history_topic.py out_explainer
-          T=$(python3 -c "import json;s=json.load(open('out_explainer/day_seed.json',encoding='utf-8'));print('History: '+s['question'][:70])")
-          echo "picked seed → $T"
+          python3 tools/pick_history_seed.py --out out_explainer/history_seed.json
+          T=$(python3 -c "import json; print(json.load(open('out_explainer/history_seed.json'))['topic'])")
+          echo "history seed → $T"
           echo "topic=$T" >> $GITHUB_OUTPUT
           SLUG="history-q$(date -u +%j)"
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
@@ -51,7 +51,7 @@ jobs:
           GROQ_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           rm -f out_explainer/script.json
-          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --lang hinglish --seed-file out_explainer/day_seed.json --script-cache out_explainer/script.json
+          python3 tools/video_explainer.py --topic "${{ steps.pick.outputs.topic }}" --seed-file out_explainer/history_seed.json --lang hinglish --script-cache out_explainer/script.json
 
       - name: Student notes PDF
         if: success() && steps.check.outputs.skip == '0'

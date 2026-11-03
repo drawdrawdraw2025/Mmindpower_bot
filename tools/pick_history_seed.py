@@ -59,11 +59,21 @@ def main():
         q = hits[(doy - 1) % len(hits)]
         ci = q.get("correct_index", 0)
         opts = q.get("options", [])
+        if isinstance(opts, str):                       # legacy repr-string safety
+            import ast
+            try: opts = list(ast.literal_eval(opts))
+            except Exception: opts = []
+        opts = list(opts)[:4]
+        if isinstance(ci, str):
+            ci = int(ci) if str(ci).isdigit() else 0
         ans = opts[ci] if isinstance(ci, int) and ci < len(opts) else (opts[0] if opts else "")
         seed = {
             "topic": f"Modern History: {(q.get('subtopic') or 'Bharatiya swatantrya sangharsh')[:60]}",
+            "subtopic": (q.get("subtopic") or "Modern History")[:60],
             "question": q.get("q_marathi", ""),
+            "options": opts,
             "answer": ans,
+            "answer_letter": "ABCD"[ci] if isinstance(ci, int) and 0 <= ci < 4 else "A",
             "explanation": q.get("explanation_marathi", "")[:400],
             "source": "bank",
             "doy_index": (doy - 1) % len(hits), "pool": len(hits),
