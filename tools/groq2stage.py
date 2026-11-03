@@ -199,8 +199,10 @@ def groq_script_2stage(topic, ground, nsec, outdir, dialect="", lang="mr", seed=
     return sc
 
 
-MARATHI_ONLY = re.compile(
-    r"\b(आहेत|यांनी|यांना|यांचे|यांची|मध्ये|बद्दल|सुद्धा|किंवा|झाले|झाला|झाली|आपण|आपल्या|म्हणजे|तसेच|आणि|प्रत्येकी|तपासूया|थोडक्यात|पाहूया|घेऊया|इथे|तिथे|दिला|दिली|जाहीर|सोडले|गेले|गेला|आले)\b")
+MR_LEX = ("आहेत", "यांनी", "यांना", "यांचे", "यांची", "मध्ये", "बद्दल", "सुद्धा", "किंवा",
+          "झाले", "झाला", "झाली", "आपण", "आपल्या", "म्हणजे", "तसेच", "आणि", "प्रत्येकी",
+          "तपासूया", "थोडक्यात", "पाहूया", "घेऊया", "इथे", "तिथे", "सोडले", "गेले", "गेला")
+MARATHI_ONLY = re.compile("(?:" + "|".join(re.escape(w) for w in MR_LEX) + ")")
 
 def marathi_leak(text):
     """High-confidence Marathi-only markers; returns True if text smells Marathi."""
