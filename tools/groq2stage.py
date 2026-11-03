@@ -20,8 +20,10 @@ SYS_HI = ("You are a Gen-Z Hinglish educational scriptwriter (Hindi written in D
           "e.g. 'chaliye samajhte hain', 'basically', 'exam point of view'). Follow FORMAT exactly. Plain text only — no JSON, no markdown fences.")
 
 PROMPT_A_HI = """Topic: "{topic}"
-Reference (Wikipedia):
+Reference (Wikipedia + core-sawaal context):
 {ground}
+
+BHASHA RULE (strict): film poori tarah Hinglish — titles/chapter-names bhi Hindi (Devanagari) ya simple English words mein; Marathi words bilkul NAHI.
 
 Sirf IN lines mein jawaab do — aur kuch nahi (lines Devanagari Hindi + English mix mein hon — bol-chaal wali, Gen-Z tone):
 TITLE: <catchy Hinglish film title — 4-8 shabd; sirf Hinglish (Devanagari Hindi + English); Marathi GRAMMAR words bilkul nahi (proper nouns chalenge)>
