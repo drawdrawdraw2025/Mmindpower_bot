@@ -109,6 +109,50 @@ def pollinations(prompt, path, seed):
         time.sleep(50)
     return False
 
+HORDE = "https://stablehorde.net/api/v2"
+
+def horde_image(prompt, path, timeout_s=900):
+    """Engine 2: AI Horde volunteer-GPU network. Anonymous key works (slower queue);
+    set HORDE_KEY secret for a registered (faster) key."""
+    hdr = {"apikey": os.environ.get("HORDE_KEY", "0000000000") or "0000000000",
+           "Client-Agent": "MmindpowerEdu:1.0:github"}
+    body = {"prompt": prompt,
+            "params": {"width": 640, "height": 1152, "steps": 25, "n": 1,
+                       "sampler_name": "k_euler", "cfg_scale": 7.5},
+            "nsfw": False, "r2": True,
+            "models": ["AlbedoBase XL (SDXL)", "Dreamshaper", "stable_diffusion"]}
+    try:
+        r = requests.post(f"{HORDE}/generate/async", json=body, headers=hdr, timeout=90)
+        if r.status_code != 202:
+            say("horde submit failed", r.status_code); return False
+        gid = r.json()["id"]; t0 = time.time()
+        while time.time() - t0 < timeout_s:
+            time.sleep(20)
+            c = requests.get(f"{HORDE}/generate/check/{gid}", headers=hdr, timeout=60).json()
+            say(f"horde wait={c.get('wait_time')} queue={c.get('queue_position')}")
+            if c.get("done"):
+                s = requests.get(f"{HORDE}/generate/status/{gid}", headers=hdr, timeout=60).json()
+                gens = s.get("generations") or []
+                if not gens: return False
+                img = requests.get(gens[0]["img"], timeout=180)
+                if img.status_code == 200 and len(img.content) > 20000:
+                    open(path, "wb").write(img.content)
+                    say("horde delivered via model:", gens[0].get("model"))
+                    return True
+                return False
+        say("horde timeout"); return False
+    except Exception as e:
+        say("horde err", e); return False
+
+def gen_image(prompt, path, seed):
+    """Primary engine Pollinations(flux) → failover AI Horde (community GPUs)."""
+    if pollinations(prompt, path, seed):
+        say("engine=POL pollinations"); return True
+    say("pollinations failed → AI Horde failover")
+    if horde_image(prompt, path):
+        say("engine=HOR community"); return True
+    return False
+
 def render_host(base_p, lips_p, wav_p, outdir):
     os.makedirs(outdir, exist_ok=True)
     cues = json.load(open(lips_p))["mouthCues"]; openset = {"B", "C", "D", "E", "F", "H"}
@@ -175,7 +219,7 @@ def main():
     for i, pr in enumerate(scenes):
         p = os.path.join(work, f"story{i}.png")
         style = (pr if "Disney" in pr else pr + ", Disney Pixar 3D animation style, cinematic vertical")
-        if pollinations(style, p, 950 + i): pics.append(p)
+        if gen_image(style, p, 950 + i): pics.append(p)
         else:
             say("scene fallback: reuse previous")
             pics.append(pics[-1] if pics else os.path.join(HOST, "face_closed.png"))

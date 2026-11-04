@@ -35,6 +35,7 @@ jobs:
       - name: build host film
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_KEY }}
+          HORDE_KEY: ${{ secrets.HORDE_KEY }}
         run: |
           python3 tools/host_film.py --script host_input/script.txt --out out_host --scenes 10
           ls -la out_host/
