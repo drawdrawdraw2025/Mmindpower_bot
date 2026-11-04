@@ -26,7 +26,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import os, requests
-          bt, chat = os.environ["TG_BOT_TOKEN"], os.environ.get("TG_CHAT_ID") or "@mmindpower_1"
+          bt, chat = os.environ["TG_TOKEN"], "-1004468993258"
           with open("film.mp4", "rb") as f:
               r = requests.post(f"https://api.telegram.org/bot{bt}/sendVideo",
                                 data={"chat_id": chat, "width": 720, "height": 1280,
@@ -36,10 +36,9 @@ jobs:
           print(r.json())
           PY
         env:
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
           CAP: ${{ inputs.caption }}
       - name: notify owner
         if: always()
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage" --data-urlencode "chat_id=7102918717" --data-urlencode "text=post_film run: ${{ job.status }}" || true
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" --data-urlencode "chat_id=7102918717" --data-urlencode "text=post_film run: ${{ job.status }}" || true

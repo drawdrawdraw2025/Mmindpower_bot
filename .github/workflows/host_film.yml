@@ -34,7 +34,7 @@ jobs:
           wc -c host_input/script.txt
       - name: build host film
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_KEY }}
         run: |
           python3 tools/host_film.py --script host_input/script.txt --out out_host --scenes 10
           ls -la out_host/
@@ -42,7 +42,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import os, requests
-          bt, chat = os.environ["TG_BOT_TOKEN"], os.environ.get("TG_CHAT_ID") or "@mmindpower_1"
+          bt, chat = os.environ["TG_TOKEN"], "-1004468993258"
           with open("out_host/host_film.mp4", "rb") as f:
               r = requests.post(f"https://api.telegram.org/bot{bt}/sendVideo",
                                 data={"chat_id": chat, "width": 720, "height": 1280,
@@ -52,12 +52,11 @@ jobs:
           print(r.json())
           PY
         env:
-          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
       - name: notify owner
         if: always()
         run: |
-          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage" --data-urlencode "chat_id=7102918717" --data-urlencode "text=AI-host film run finished: ${{ job.status }} → https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TG_TOKEN }}/sendMessage" --data-urlencode "chat_id=7102918717" --data-urlencode "text=AI-host film run finished: ${{ job.status }} → https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
       - name: artifact
         if: always()
         uses: actions/upload-artifact@v4
