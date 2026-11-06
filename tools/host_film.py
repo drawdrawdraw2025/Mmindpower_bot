@@ -210,9 +210,20 @@ def main():
     work = os.path.join(a.out, "work"); os.makedirs(work, exist_ok=True)
     say("TTS…"); mp3, vtt, wav = tts(a.script, work)
     say("rhubarb visemes…"); lips = rhubarb(wav, work)
-    bounds = vtt_times(vtt, a.scenes)
     with wave.open(wav, "rb") as wf: dur = wf.getnframes() / wf.getframerate()
-    bounds.append(round(dur, 2)); say("scene bounds:", bounds)
+    # normalize bounds: strictly increasing, min 5s gaps, pinned to audio end
+    raw = vtt_times(vtt, a.scenes)
+    bounds = [0.0]
+    for x in sorted(set(round(v, 2) for v in raw[1:])):
+        if x - bounds[-1] >= 5.0 and dur - x >= 5.0:
+            bounds.append(x)
+    bounds.append(round(dur, 2))
+    while len(bounds) < a.scenes + 1 and len(bounds) > 1:
+        spans = [(bounds[i + 1] - bounds[i], i) for i in range(len(bounds) - 1)]
+        w, i = max(spans)
+        if w < 5.0: break  # too short to split further; fewer scenes than requested
+        bounds.insert(i + 1, round(bounds[i] + w / 2, 2))
+    bounds = sorted(set(bounds)); say("scene bounds:", bounds)
     scenes = groq_scenes(text, a.scenes) or FALLBACK_SCENES * (a.scenes // 10 + 1)
     scenes = scenes[:a.scenes]
     pics = []
@@ -224,6 +235,8 @@ def main():
             say("scene fallback: reuse previous")
             pics.append(pics[-1] if pics else os.path.join(HOST, "face_closed.png"))
         time.sleep(46)
+    while len(pics) > len(bounds) - 1: pics.pop()
+    while len(pics) < len(bounds) - 1: pics.append(pics[-1])  # repeat last scene if bounds grew
     say("host frames…"); render_host(os.path.join(HOST, "face_closed.png"), lips, wav, os.path.join(work, "pf"))
     bg = bg_segments(pics, bounds, work)
     final = os.path.join(a.out, "host_film.mp4")
