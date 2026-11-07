@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write             # pushes quiz_data_F*.json back to main
+  contents: write             # pushes grown quiz_data_<set>.json back to main
 
 jobs:
   grow:
@@ -60,7 +60,7 @@ jobs:
         run: |
           python3 tools/bank_factory.py 40 | tee /tmp/grow.log
           N=$(grep -oP 'BANK GROWN: \+\K[0-9]+' /tmp/grow.log | tail -1)
-          F=$(grep -oP '→ \Kquiz_data_F[0-9]+\.json' /tmp/grow.log | tail -1)
+          F=$(grep -oP '→ \Kquiz_data_[A-Z]+\.json' /tmp/grow.log | tail -1)
           echo "added=${N:-0}" >> $GITHUB_OUTPUT
           echo "file=${F:-none}" >> $GITHUB_OUTPUT
 
@@ -70,7 +70,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || git pull --no-rebase origin main
-          git add quiz_data_F*.json quiz_state.json 2>/dev/null || git add quiz_data_F*.json
+          git add quiz_data_*.json
           git commit -m "bank+${{ steps.grow.outputs.added }} MCQs (${{ steps.grow.outputs.file }}) — auto-factory [skip ci]" || echo "nothing to commit"
           git push origin HEAD:main
 

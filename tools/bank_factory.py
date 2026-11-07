@@ -1,6 +1,9 @@
-# tools/bank_factory.py — grows the MCQ bank daily, line-protocol Groq + Wikipedia grounding
-# Provenance: new questions land in quiz_data_F<yymmdd>.json with EXACT legacy shape
-# (options as repr-string, correct_index as string) so every existing consumer stays safe.
+# tools/bank_factory.py — grows the A-Z MCQ bank (90 Q per set), line-protocol Groq + Wikipedia grounding
+# Naming: fills the first short A-Z set that still has < 90 rows, so new questions extend the
+# curated series the bot can actually serve. Set names MUST stay digit-free: the bot builds a
+# question id as f"{set}{index+1}" and parses it back with ^([A-Z]+)(\d+)$, so a name like
+# F261104 yields "F2611046" -> ('F', 2611045) -> get_q() fails and every tap reads as "A".
+# The old quiz_data_F<yymmdd> series (151 questions, 9 files) was retired for exactly this bug.
 import os, re, json, glob, datetime, unicodedata
 from video_explainer import wiki_ground, say
 from groq2stage import make_chat
@@ -69,6 +72,43 @@ def parse_items(txt, topic, wtitle):
     return out
 
 
+SET_SIZE = 90
+
+def _inc(name):
+    """Next set name in bot.set_order()'s length-then-alpha sequence: AD -> AE, Z -> AA, AZ -> BA."""
+    chars = list(name)
+    for i in range(len(chars) - 1, -1, -1):
+        if chars[i] != "Z":
+            chars[i] = chr(ord(chars[i]) + 1)
+            return "".join(chars)
+        chars[i] = "A"
+    return "A" + "".join(chars)
+
+def next_target_file():
+    """First A-Z set under SET_SIZE rows; otherwise open the next free set (AA, AB, ...)."""
+    for L in _set_letters():
+        if len(_load(L)) < SET_SIZE:
+            return os.path.join(ROOT, f"quiz_data_{L}.json")
+    return os.path.join(ROOT, f"quiz_data_{_inc(_set_letters()[-1])}.json")
+
+def _existing_letters():
+    out = []
+    for p in glob.glob(os.path.join(ROOT, "quiz_data_*.json")):
+        sid = os.path.basename(p)[len("quiz_data_"):-len(".json")]
+        if re.fullmatch(r"[A-Z]+", sid):
+            out.append(sid)
+    return out
+
+def _load(L):
+    try:
+        return json.load(open(os.path.join(ROOT, f"quiz_data_{L}.json"), encoding="utf-8"))
+    except Exception:
+        return []
+
+def _set_letters():
+    return sorted(_existing_letters(), key=lambda k: (len(k), k))
+
+
 def grow(target=40, topics_per_run=4):
     gk = os.environ.get("GROQ_KEY")
     if not gk:
@@ -115,8 +155,7 @@ def grow(target=40, topics_per_run=4):
     if not fresh:
         say("nothing new today — bank clean")
         return 0, ""
-    d = datetime.date.today().strftime("%y%m%d")
-    fp = os.path.join(ROOT, f"quiz_data_F{d}.json")
+    fp = next_target_file()
     # merge with any same-day existing file to avoid overwrite on rerun
     if os.path.exists(fp):
         old = json.load(open(fp, encoding="utf-8"))
