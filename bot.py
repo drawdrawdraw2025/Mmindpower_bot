@@ -135,13 +135,28 @@ def set_order():
     """Smart set sequence: A..Z then AA..ZZ then AAA... (length-then-alpha)."""
     return sorted(DATA.keys(), key=lambda k: (len(k), k))
 
+def qid_ok(set_letter, index):
+    """A qid can only round-trip if the set name has no digits in it.
+
+    'A' + 0 -> 'A1' -> ('A', 0)  ✅
+    'F261104' + 5 -> 'F2611046' -> ('F', 2611045) ❌  (get_q() then returns None,
+    so taps render as option A and the toast always says 'A')
+    """
+    L, idx = parse_qid(qid_of(set_letter, index))
+    return L == set_letter and idx == index
+
 def load_data():
     """Drop-in forever: any quiz_data_*.json present in the repo self-loads (no code edits to add sets)."""
     import glob
     for p in sorted(glob.glob("quiz_data_*.json"), key=lambda p: (len(p), p)):
         sid = p[len("quiz_data_"):-len(".json")]
-        if sid:
-            DATA[sid] = json.load(open(p, encoding="utf-8"))
+        if not sid:
+            continue
+        rows = json.load(open(p, encoding="utf-8"))
+        if rows and not qid_ok(sid, 0):
+            print(f"SKIP {p}: set name '{sid}' breaks qid parsing — question buttons would not work")
+            continue
+        DATA[sid] = rows
     print("Quiz data loaded:", {k: len(v) for k, v in DATA.items()})
 
 def default_state():
@@ -336,12 +351,24 @@ def current_q(us):
     if not DATA:
         return None
     L = us["set"]
-    while L and L not in DATA:
-        L = next_set(L)
-    if not L or L not in DATA:
-        return None
+    if L not in DATA:
+        # Pointer names a retired/unknown set (e.g. the old auto-generated
+        # quiz_data_F<yymmdd> files): re-home it instead of ending the quiz.
+        m = re.match(r'^([A-Z]+)', L or '')
+        L = m.group(1) if (m and m.group(1) in DATA) else set_order()[0]
+        us["set"] = L
+        us["index"] = min(us["index"], len(DATA[L]) - 1)
     if us["index"] >= len(DATA[L]):
-        return None
+        # Pointer left behind by a removed/retired set (e.g. the old auto-generated
+        # quiz_data_F<yymmdd> files): roll forward instead of ending the user's quiz.
+        nxt = next_set(L)
+        while nxt and nxt not in DATA:
+            nxt = next_set(nxt)
+        if not nxt or nxt not in DATA:
+            return None
+        us["set"] = nxt
+        us["index"] = min(us["index"], len(DATA[nxt]) - 1)
+        L = nxt
     return L, us["index"], DATA[L][us["index"]]
 
 def next_set(L):
