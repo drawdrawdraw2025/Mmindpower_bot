@@ -1,8 +1,13 @@
-name: bank factory — प्रश्नसाठा वाढ (autopilot)
+name: bank factory — प्रश्नसाठा वाढ (manual · autopilot frozen)
 
+# ⏸️ FROZEN 2026-11-08 — automatic growth is switched off on purpose.
+# The bank holds 2,663 curated questions (~29.6 days at 90/day); the owner wants
+# those reused rather than extended by generated ones. The cron is commented out
+# rather than deleted so the pipeline stays intact: run it by hand from the
+# Actions tab (workflow_dispatch) whenever new questions are genuinely wanted.
 on:
-  schedule:
-    - cron: '15 1 * * *'        # 06:45 IST, right after the daily video
+  # schedule:
+  #   - cron: '15 1 * * *'      # 06:45 IST — FROZEN, see note above
   workflow_dispatch: {}
 
 permissions:
