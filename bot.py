@@ -3,7 +3,7 @@
 Zero-dependency (requests only), long-polling. Run: python3 bot.py
 Env: TG_TOKEN, GROQ_KEY, GH_TOKEN + REPO (for quiz state persistence on GitHub).
 """
-import os, json, time, base64, datetime, requests
+import os, json, time, base64, datetime, random, requests
 import re, io, html
 
 TOKEN = os.environ["TG_TOKEN"]
@@ -1008,7 +1008,9 @@ def qotd_post(ist_now):
             if len(q.get("q_marathi") or "") < 350 and "|" not in (q.get("q_marathi") or "")]
     if not pool:
         return None
-    L, i, q = pool[daynum % len(pool)]
+    # Random A-Z pick for the public post — seeded by the date so the same day
+    # never posts two different questions (retries/restarts stay consistent).
+    L, i, q = random.Random(daynum).choice(pool)
     esc = lambda t: html.escape(t or "", quote=False)
     Lset = ["A", "B", "C", "D"]
     opts = "\n".join(f"{Lset[k]}) {esc(o)}" for k, o in enumerate(q["options"][:4]))
@@ -1039,7 +1041,9 @@ def digest_post(ist_now, today):
             f"📝 सोडलेले प्रश्न: <b>{tried}</b>  (🎯 बरोबर: {acc})\n"
             f"🏆 90/90 पूर्ण करणारे: <b>{full}</b>\n\n"
             "उद्या सकाळी 6 वाजता fresh quiz! 🌅\n"
-            "📱 t.me/Mmindpower_bot/Mmindpower_KBC  •  🤖 @Mmindpower_bot")
+            "🤖 Quiz → t.me/Mmindpower_bot\n"
+            "📱 Mini App (KBC, lifelines सह!) → t.me/Mmindpower_bot/Mmindpower_KBC\n"
+            "📺 YouTube → youtube.com/@mmindpower")
 
 def channel_scheduler(ist_now):
     today = ist_now.strftime("%Y-%m-%d")
@@ -1050,7 +1054,8 @@ def channel_scheduler(ist_now):
         channel_post("🌅 <b>सुप्रभात! आजचा सराव तयार आहे 📚</b>\n\n"
                      "आजचे <b>90 प्रश्न</b> fresh — Talathi/MPSC 2026 ✨\n"
                      "🤖 Daily quiz → t.me/Mmindpower_bot?start=ch_kick\n"
-                     "📱 KBC practice (lifelines सह!) → t.me/Mmindpower_bot/Mmindpower_KBC\n\n"
+                     "📱 Mini App (KBC practice, lifelines सह!) → t.me/Mmindpower_bot/Mmindpower_KBC\n"
+                     "📺 YouTube → youtube.com/@mmindpower\n\n"
                      "शिका, जिंका! 🚩")
         save_state(force=True)
     if hh == 12 and m.get("ch_qotd") != today:

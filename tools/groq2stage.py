@@ -1,4 +1,4 @@
-# tools/groq2stage.py — shared by video_explainer; 2-stage line-protocol scripting (no strict-JSON gamble)
+# tools/groq2stage.py — shared model chat helpers for the bank factory; line-protocol (no strict-JSON gamble)
 import os
 import re
 import time

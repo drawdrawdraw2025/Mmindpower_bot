@@ -5,7 +5,7 @@
 # F261104 yields "F2611046" -> ('F', 2611045) -> get_q() fails and every tap reads as "A".
 # The old quiz_data_F<yymmdd> series (151 questions, 9 files) was retired for exactly this bug.
 import os, re, json, glob, datetime, unicodedata
-from video_explainer import wiki_ground, say
+from wiki_ground import wiki_ground, say
 from groq2stage import make_chat
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
