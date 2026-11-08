@@ -64,6 +64,13 @@ jobs:
           echo "added=${N:-0}" >> $GITHUB_OUTPUT
           echo "file=${F:-none}" >> $GITHUB_OUTPUT
 
+      # Gate: validate BEFORE committing. A broken batch must never reach main
+      # (the F26 series shipped 151 unanswerable questions precisely by skipping this).
+      - name: Audit the bank before committing
+        id: audit
+        if: steps.check.outputs.skip == '0' && steps.grow.outputs.added != '0'
+        run: python3 tools/check_bank.py
+
       - name: Commit + push new questions
         if: steps.check.outputs.skip == '0' && steps.grow.outputs.added != '0'
         run: |
@@ -82,6 +89,7 @@ jobs:
           OWNER=7102918717
           N="${{ steps.grow.outputs.added }}"
           if [ "${{ job.status }}" = "success" ]; then E="✅"; T="BANK FACTORY 🧠 — आज नवीन प्रश्न: +$N (total grows daily)"; else E="❌"; T="Bank factory failed — check run log:"; fi
+          if [ "${{ steps.audit.outcome }}" = "failure" ]; then E="🛑"; T="BANK AUDIT ने नवीन प्रश्न अडवले — काहीही commit झालं नाही. Log तपासा:"; fi
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
             --data-urlencode "chat_id=$OWNER" \
             --data-urlencode "parse_mode=HTML" \
