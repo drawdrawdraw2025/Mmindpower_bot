@@ -1,0 +1,27 @@
+name: bank audit — question bank integrity
+
+on:
+  push:
+    branches: [main]
+    paths: ['quiz_data_*.json', 'tools/check_bank.py', '.github/workflows/bank-audit.yml']
+  pull_request:
+    paths: ['quiz_data_*.json', 'tools/check_bank.py', '.github/workflows/bank-audit.yml']
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # stdlib only — no pip install, so this stays fast and cannot break
+      - name: Audit every quiz_data_*.json
+        run: python3 tools/check_bank.py

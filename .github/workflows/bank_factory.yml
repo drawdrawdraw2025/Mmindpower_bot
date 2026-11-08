@@ -1,8 +1,13 @@
-name: bank factory — प्रश्नसाठा वाढ (autopilot)
+name: bank factory — प्रश्नसाठा वाढ (manual · autopilot frozen)
 
+# ⏸️ FROZEN 2026-11-08 — automatic growth is switched off on purpose.
+# The bank holds 2,663 curated questions (~29.6 days at 90/day); the owner wants
+# those reused rather than extended by generated ones. The cron is commented out
+# rather than deleted so the pipeline stays intact: run it by hand from the
+# Actions tab (workflow_dispatch) whenever new questions are genuinely wanted.
 on:
-  schedule:
-    - cron: '15 1 * * *'        # 06:45 IST, right after the daily video
+  # schedule:
+  #   - cron: '15 1 * * *'      # 06:45 IST — FROZEN, see note above
   workflow_dispatch: {}
 
 permissions:
@@ -64,6 +69,13 @@ jobs:
           echo "added=${N:-0}" >> $GITHUB_OUTPUT
           echo "file=${F:-none}" >> $GITHUB_OUTPUT
 
+      # Gate: validate BEFORE committing. A broken batch must never reach main
+      # (the F26 series shipped 151 unanswerable questions precisely by skipping this).
+      - name: Audit the bank before committing
+        id: audit
+        if: steps.check.outputs.skip == '0' && steps.grow.outputs.added != '0'
+        run: python3 tools/check_bank.py
+
       - name: Commit + push new questions
         if: steps.check.outputs.skip == '0' && steps.grow.outputs.added != '0'
         run: |
@@ -82,6 +94,7 @@ jobs:
           OWNER=7102918717
           N="${{ steps.grow.outputs.added }}"
           if [ "${{ job.status }}" = "success" ]; then E="✅"; T="BANK FACTORY 🧠 — आज नवीन प्रश्न: +$N (total grows daily)"; else E="❌"; T="Bank factory failed — check run log:"; fi
+          if [ "${{ steps.audit.outcome }}" = "failure" ]; then E="🛑"; T="BANK AUDIT ने नवीन प्रश्न अडवले — काहीही commit झालं नाही. Log तपासा:"; fi
           curl -s -X POST "https://api.telegram.org/bot$TG_ONE/sendMessage" \
             --data-urlencode "chat_id=$OWNER" \
             --data-urlencode "parse_mode=HTML" \
