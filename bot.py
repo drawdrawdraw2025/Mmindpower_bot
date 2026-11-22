@@ -248,16 +248,17 @@ DONATE_URL_V = DONATE_URL + "?v=web36"
 # (Direct github.io inside the webview returned net::ERR_CONNECTION_RESET on 5G.)
 MINIAPP_LINK = "https://t.me/Mmindpower_bot/Mmindpower_KBC"
 BOT_LINK = "https://t.me/Mmindpower_bot"
-# The app fetches its questions with RELATIVE paths (data/sets.json), so any mirror
-# must serve app/data/ too — not just index.html. Verified: this one serves the real
-# HTML *and* the sets manifest correctly, from Cloudflare's IPs instead of GitHub's.
+# Third-party mirror on Cloudflare's IPs — the only idea that could beat the carrier's
+# reset of GitHub Pages. BUT it is a free community CDN: in my own probing it returned
+# the page 2 times out of 6 and failed the rest. Too flaky for students, so it is NOT
+# used in any student-facing button. Owner-only test button (/app) so you can judge it
+# on your own device before we ever trust it.
 MIRROR_APP = ("https://cdn.statically.io/gh/drawdrawdraw2025/"
               "drawdrawdraw2025.github.io/main/app/index.html")
-# Menu-button candidates, tried in order. MIRROR first: the device resets GitHub
-# Pages' IPs (net::ERR_CONNECTION_RESET), so a different network path is the one
-# real chance of a working button. Then the Pages URLs. Telegram validates this
-# URL, so a refusal falls through to the next candidate.
-MENU_URLS = [MIRROR_APP, APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
+# Menu-button candidates, tried in order: the real Pages address (Telegram validates
+# this URL, and it is the stable, correct host) then the bare path. A refusal falls
+# through to the next candidate and only marks the chat done once one is accepted.
+MENU_URLS = [APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
 APP_MENU_DONE = set()          # chats whose menu button Telegram CONFIRMED it accepted
 APP_MENU_FAILED = {}           # chat_id -> last Telegram error, for the one-time owner alert
 CHANNEL_ID = "@mmindpower_1"
@@ -1756,12 +1757,14 @@ def handle(update):
         return
     if token0 == "/app":
         # Plain url buttons, not web_app: Telegram opens these itself, so the webview
-        # never hard-navigates to a host that gets reset. Second button is a mirror on
-        # a different CDN — if one route is blocked, the other still loads.
+        # never hard-navigates to a host that gets reset. First button is the route
+        # already proven to open on the device; second is the direct host, no shortener.
+        rows = [[{"text": "📚 Open Practice App", "url": MINIAPP_LINK}],
+                [{"text": "🌐 Direct link / थेट लिंक", "url": APP_REAL}]]
+        if chat_id == OWNER_CHAT:   # owner-only: judge the mirror on a real device
+            rows.append([{"text": "🛠 Mirror test (owner)", "url": MIRROR_APP}])
         send_text(chat_id, "📚 <b>Mmindpower Practice App</b> — all sets, any time 👇",
-                  reply_markup={"inline_keyboard": [
-                      [{"text": "📚 Open Practice App", "url": MINIAPP_LINK}],
-                      [{"text": "🌐 दुसरा रस्ता / Backup route", "url": MIRROR_APP}]]})
+                  reply_markup={"inline_keyboard": rows})
         return
     if token0 == "/announce":
         if chat_id == OWNER_CHAT:
@@ -1810,7 +1813,7 @@ def handle(update):
                       [{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}],
                       [{"text": "🎯 Open Mini App", "url": MINIAPP_LINK},
                        {"text": "📺 YouTube", "url": "https://youtube.com/@mmindpower"}],
-                      [{"text": "🌐 दुसरा रस्ता / Backup route", "url": MIRROR_APP}]]})
+                      [{"text": "🌐 Direct link / थेट लिंक", "url": APP_REAL}]]})
         us = USERS.setdefault(str(chat_id), default_state())
         if not us.get("wall_sent"):
             png = support_wall_png()

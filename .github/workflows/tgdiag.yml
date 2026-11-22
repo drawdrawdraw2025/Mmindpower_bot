@@ -40,6 +40,26 @@ jobs:
           echo "=================== 2. CURRENT MENU BUTTON ==================="
           echo "--- default scope (all private chats) ---"
           curl -s -m 20 "https://api.telegram.org/bot$T/getChatMenuButton" | tee menu_default.json
+          echo
+          echo "--- owner's own chat scope (what YOU see on the button) ---"
+          OWNER_ID=$(sed -n 's/^OWNER_CHAT *= *\([0-9][0-9]*\).*/\1/p' bot.py | head -1)
+          echo "owner chat_id from bot.py: ${OWNER_ID:-<not found>}"
+          if [ -n "${OWNER_ID:-}" ]; then
+            curl -s -m 20 "https://api.telegram.org/bot$T/getChatMenuButton?chat_id=$OWNER_ID" \
+              | tee menu_owner.json
+            python3 - <<'PY'
+          import json
+          try:
+              d = json.load(open("menu_owner.json"))
+          except Exception:
+              d = {}
+          r = d.get("result") or {}
+          print()
+          print("owner button type :", r.get("type"))
+          print("owner button text :", r.get("text"))
+          print("owner button URL  :", (r.get("web_app") or {}).get("url"))
+          PY
+          fi
           python3 - <<'PY'
           import json
           d = json.load(open("menu_default.json"))
