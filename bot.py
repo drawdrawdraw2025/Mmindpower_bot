@@ -243,7 +243,11 @@ APP_REAL = "https://drawdrawdraw2025.github.io/app/"   # internal composite load
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
 APP_URL_V = APP_URL + "?v=web36"
 DONATE_URL_V = DONATE_URL + "?v=web36"
-APP_MENU_DONE = set()
+# Menu-button URLs: Telegram validates these, so use the real Pages address rather than
+# the is.gd redirect hop. Tried in order — the second has no query string at all.
+MENU_URLS = [APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
+APP_MENU_DONE = set()          # chats whose menu button Telegram CONFIRMED it accepted
+APP_MENU_FAILED = {}           # chat_id -> last Telegram error, for the one-time owner alert
 CHANNEL_ID = "@mmindpower_1"
 
 def donate_qr_png():
@@ -1564,6 +1568,39 @@ def ai_gate(chat_id):
     save_state()
     return True
 
+def ensure_menu_button(chat_id, force=False):
+    """Point the bottom-left menu button at the Mini App — and prove Telegram accepted it.
+
+    Fix #1: use the real Pages URL, not the is.gd redirect hop (Telegram validates this).
+    Fix #2: only remember a chat as "done" once Telegram says ok. A refusal is logged,
+    retried on the next message, and reported to the owner once — so a silent rejection
+    can never hide for days again.
+    """
+    if chat_id in APP_MENU_DONE and not force:
+        return True
+    last = "no response"
+    for url in MENU_URLS:
+        r = tg("setChatMenuButton", chat_id=chat_id, menu_button={
+            "type": "web_app", "text": "📚 Practice App",
+            "web_app": {"url": url}})
+        if r.get("ok"):
+            APP_MENU_DONE.add(chat_id)
+            APP_MENU_FAILED.pop(chat_id, None)
+            print("menu button OK ->", url, flush=True)
+            return True
+        last = str(r.get("description") or r.get("error_code") or "no response")
+        print("setChatMenuButton refused:", url, "->", last, flush=True)
+    first_fail = chat_id not in APP_MENU_FAILED
+    APP_MENU_FAILED[chat_id] = last
+    if first_fail and len(APP_MENU_FAILED) <= 5:
+        try:
+            send_text(chat_id if chat_id == OWNER_CHAT else OWNER_CHAT,
+                      "⚠️ <b>Menu button refused by Telegram</b>\n<code>%s</code>\n"
+                      "Inline buttons (/app) keep working." % html.escape(last[:180]))
+        except Exception:
+            pass
+    return False
+
 def handle(update):
     msg = update.get("message") or {}
     text = (msg.get("text") or "").strip()
@@ -1572,11 +1609,7 @@ def handle(update):
     if chat_id is None:
         return
     mark_seen(chat_id)
-    if chat_id not in APP_MENU_DONE:
-        APP_MENU_DONE.add(chat_id)
-        tg("setChatMenuButton", chat_id=chat_id, menu_button={
-            "type": "web_app", "text": "📚 Practice App",
-            "web_app": {"url": APP_URL_V}})
+    ensure_menu_button(chat_id)
     token0 = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
     if token0 == "/audience":
         if chat_id == OWNER_CHAT:
