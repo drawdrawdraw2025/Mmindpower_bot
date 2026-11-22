@@ -255,12 +255,14 @@ BOT_LINK = "https://t.me/Mmindpower_bot"
 # on your own device before we ever trust it.
 MIRROR_APP = ("https://cdn.statically.io/gh/drawdrawdraw2025/"
               "drawdrawdraw2025.github.io/main/app/index.html")
-# Menu-button candidates, tried in order: the real Pages address (Telegram validates
-# this URL, and it is the stable, correct host) then the bare path. A refusal falls
-# through to the next candidate and only marks the chat done once one is accepted.
-MENU_URLS = [APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
+# Menu-button candidates, tried in order. The short name goes first because tapping it
+# lets Telegram resolve the Mini App itself instead of navigating the webview to a host
+# the carrier resets; if Telegram refuses it the loop falls through harmlessly to the
+# real Pages address. Only a confirmed acceptance marks the chat done.
+MENU_URLS = [MINIAPP_LINK, APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
 APP_MENU_DONE = set()          # chats whose menu button Telegram CONFIRMED it accepted
 APP_MENU_FAILED = {}           # chat_id -> last Telegram error, for the one-time owner alert
+APP_MENU_ANNOUNCED = set()     # menu URLs already reported to the owner (one DM each)
 CHANNEL_ID = "@mmindpower_1"
 
 def donate_qr_png():
@@ -1600,6 +1602,16 @@ def ensure_menu_button(chat_id, force=False):
             APP_MENU_DONE.add(chat_id)
             APP_MENU_FAILED.pop(chat_id, None)
             print("menu button OK ->", url, flush=True)
+            if chat_id == OWNER_CHAT and url not in APP_MENU_ANNOUNCED:
+                # One DM, once per distinct route: the owner learns immediately which
+                # address Telegram actually accepted, instead of reading CI logs.
+                APP_MENU_ANNOUNCED.add(url)
+                try:
+                    send_text(OWNER_CHAT,
+                              "✅ <b>Menu button set</b>\nTelegram accepted:\n<code>%s</code>\n"
+                              "Tap the button now and tell me if the app opens 🙏" % html.escape(url))
+                except Exception:
+                    pass
             return True
         last = str(r.get("description") or r.get("error_code") or "no response")
         print("setChatMenuButton refused:", url, "->", last, flush=True)
