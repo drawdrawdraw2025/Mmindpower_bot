@@ -1,0 +1,111 @@
+name: tg-diagnose (read-only, temporary)
+
+# READ-ONLY diagnostic: asks Telegram what it currently thinks the bot + its menu
+# button are, and probes whether each candidate URL is actually reachable and served
+# as HTML. It NEVER writes: only getMe / getChatMenuButton / GET requests.
+# Delete this file once the mini-app button is confirmed working.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask Telegram (read-only) + probe candidate URLs
+        env:
+          T: ${{ secrets.TG_TOKEN }}
+        run: |
+          set -u
+          if [ -z "${T:-}" ]; then echo "::error::No TG_TOKEN secret configured"; exit 1; fi
+
+          echo "=================== 1. WHO AM I ==================="
+          curl -s -m 20 "https://api.telegram.org/bot$T/getMe" -o me.json
+          python3 - <<'PY'
+          import json
+          d = json.load(open("me.json"))
+          r = d.get("result") or {}
+          print("ok            :", d.get("ok"))
+          print("error         :", d.get("description", "-"))
+          print("username      :", r.get("username"))
+          print("id            :", r.get("id"))
+          print("can_join_groups:", r.get("can_join_groups"))
+          print("has_main_mini_app_fields:", {k: v for k, v in r.items() if "mini" in k.lower()})
+          open("botusername.txt","w").write(r.get("username") or "")
+          PY
+
+          echo
+          echo "=================== 2. CURRENT MENU BUTTON ==================="
+          echo "--- default scope (all private chats) ---"
+          curl -s -m 20 "https://api.telegram.org/bot$T/getChatMenuButton" | tee menu_default.json
+          echo
+          echo "--- owner's own chat scope (what YOU see on the button) ---"
+          OWNER_ID=$(sed -n 's/^OWNER_CHAT *= *\([0-9][0-9]*\).*/\1/p' bot.py | head -1)
+          echo "owner chat_id from bot.py: ${OWNER_ID:-<not found>}"
+          if [ -n "${OWNER_ID:-}" ]; then
+            curl -s -m 20 "https://api.telegram.org/bot$T/getChatMenuButton?chat_id=$OWNER_ID" \
+              | tee menu_owner.json
+            python3 - <<'PY'
+          import json
+          try:
+              d = json.load(open("menu_owner.json"))
+          except Exception:
+              d = {}
+          r = d.get("result") or {}
+          print()
+          print("owner button type :", r.get("type"))
+          print("owner button text :", r.get("text"))
+          print("owner button URL  :", (r.get("web_app") or {}).get("url"))
+          PY
+          fi
+          python3 - <<'PY'
+          import json
+          d = json.load(open("menu_default.json"))
+          r = d.get("result") or {}
+          print()
+          print("type     :", r.get("type"))
+          print("text     :", r.get("text"))
+          u = (r.get("web_app") or {}).get("url")
+          print("web_app  :", u)
+          open("menuurl.txt","w").write(u or "")
+          PY
+
+          echo
+          echo "=================== 3. CAN THE RUNNER REACH EACH URL? ==================="
+          # GitHub runners are on the open internet: this is a true end-to-end probe
+          # of what a student's device would receive (content-type matters — the app
+          # must be served as text/html, or the browser shows source, not the app).
+          __probe() {
+            printf '%-95s ' "$1"
+            curl -s -m 25 -o /tmp/body -w 'HTTP %{http_code} | %{content_type} | %{size_download}B | %{time_total}s\n' \
+              -L --max-redirs 5 -A 'Mozilla/5.0 (Linux; Android 13) Telegram-Android' "$1" || echo "  -> CONNECTION FAILED"
+            if grep -qi '<title>Mmindpower' /tmp/body 2>/dev/null; then echo "        app HTML: YES"; \
+            elif grep -q '"A"' /tmp/body 2>/dev/null; then echo "        app HTML: no (JSON/data)"; \
+            else echo "        app HTML: NO"; fi
+          }
+
+          __probe "https://drawdrawdraw2025.github.io/app/"
+          __probe "https://cdn.statically.io/gh/drawdrawdraw2025/drawdrawdraw2025.github.io/main/app/index.html"
+          __probe "https://cdn.statically.io/gh/drawdrawdraw2025/drawdrawdraw2025.github.io/main/app/data/sets.json"
+
+          echo
+          echo "=================== 4. VERDICT ==================="
+          python3 - <<'PY'
+          import json, os
+          d = json.load(open("menu_default.json"))
+          r = d.get("result") or {}
+          t = r.get("type")
+          u = (r.get("web_app") or {}).get("url")
+          print("Telegram currently stores menu button type:", t)
+          if t == "web_app":
+              print("Telegram currently stores URL        :", u)
+              print("-> BotFather / default-scope override IS in play. Code-side per-chat")
+              print("   setting may be fighting this; a stale value here explains a repeat failure.")
+          elif t == "default":
+              print("-> No default-scope web_app override: the button each student sees comes")
+              print("   purely from setChatMenuButton(chat_id=...) in bot.py.")
+          else:
+              print("-> Button opens the command list; no web_app URL stored.")
+          PY
