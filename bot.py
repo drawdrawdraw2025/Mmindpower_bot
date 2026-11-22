@@ -243,9 +243,21 @@ APP_REAL = "https://drawdrawdraw2025.github.io/app/"   # internal composite load
 # Cache-busted variants — Telegram's webview hard-caches per-URL; bump ?v= to force fresh load
 APP_URL_V = APP_URL + "?v=web36"
 DONATE_URL_V = DONATE_URL + "?v=web36"
-# Menu-button URLs: Telegram validates these, so use the real Pages address rather than
-# the is.gd redirect hop. Tried in order — the second has no query string at all.
-MENU_URLS = [APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
+# Mini App short name — the ONE route proven to open on real devices, because Telegram
+# serves it itself instead of hard-navigating the webview to an external host.
+# (Direct github.io inside the webview returned net::ERR_CONNECTION_RESET on 5G.)
+MINIAPP_LINK = "https://t.me/Mmindpower_bot/Mmindpower_KBC"
+BOT_LINK = "https://t.me/Mmindpower_bot"
+# The app fetches its questions with RELATIVE paths (data/sets.json), so any mirror
+# must serve app/data/ too — not just index.html. Verified: this one serves the real
+# HTML *and* the sets manifest correctly, from Cloudflare's IPs instead of GitHub's.
+MIRROR_APP = ("https://cdn.statically.io/gh/drawdrawdraw2025/"
+              "drawdrawdraw2025.github.io/main/app/index.html")
+# Menu-button candidates, tried in order. MIRROR first: the device resets GitHub
+# Pages' IPs (net::ERR_CONNECTION_RESET), so a different network path is the one
+# real chance of a working button. Then the Pages URLs. Telegram validates this
+# URL, so a refusal falls through to the next candidate.
+MENU_URLS = [MIRROR_APP, APP_REAL + "?v=web36", APP_REAL.rstrip("/")]
 APP_MENU_DONE = set()          # chats whose menu button Telegram CONFIRMED it accepted
 APP_MENU_FAILED = {}           # chat_id -> last Telegram error, for the one-time owner alert
 CHANNEL_ID = "@mmindpower_1"
@@ -1590,6 +1602,14 @@ def ensure_menu_button(chat_id, force=False):
             return True
         last = str(r.get("description") or r.get("error_code") or "no response")
         print("setChatMenuButton refused:", url, "->", last, flush=True)
+    # Last resort: keep the button useful instead of dead — point it at the bot chat,
+    # where /app hands out the short-name button that is known to work.
+    for fb in ({"type": "default"}, {"type": "commands"}):
+        r = tg("setChatMenuButton", chat_id=chat_id, menu_button=fb)
+        if r.get("ok"):
+            APP_MENU_DONE.add(chat_id)
+            print("menu button fell back to", fb["type"], flush=True)
+            break
     first_fail = chat_id not in APP_MENU_FAILED
     APP_MENU_FAILED[chat_id] = last
     if first_fail and len(APP_MENU_FAILED) <= 5:
@@ -1735,8 +1755,13 @@ def handle(update):
         send_donate(chat_id)
         return
     if token0 == "/app":
+        # Plain url buttons, not web_app: Telegram opens these itself, so the webview
+        # never hard-navigates to a host that gets reset. Second button is a mirror on
+        # a different CDN — if one route is blocked, the other still loads.
         send_text(chat_id, "📚 <b>Mmindpower Practice App</b> — all sets, any time 👇",
-                  reply_markup={"inline_keyboard": [[{"text": "📚 Open Practice App", "web_app": {"url": APP_URL_V}}]]})
+                  reply_markup={"inline_keyboard": [
+                      [{"text": "📚 Open Practice App", "url": MINIAPP_LINK}],
+                      [{"text": "🌐 दुसरा रस्ता / Backup route", "url": MIRROR_APP}]]})
         return
     if token0 == "/announce":
         if chat_id == OWNER_CHAT:
@@ -1783,8 +1808,9 @@ def handle(update):
         send_text(chat_id, WELCOME,
                   reply_markup={"inline_keyboard": [
                       [{"text": "📣 Join @mmindpower_1", "url": "https://t.me/mmindpower_1"}],
-                      [{"text": "🎯 Open Mini App", "web_app": {"url": APP_URL_V}},
-                       {"text": "📺 YouTube", "url": "https://youtube.com/@mmindpower"}]]})
+                      [{"text": "🎯 Open Mini App", "url": MINIAPP_LINK},
+                       {"text": "📺 YouTube", "url": "https://youtube.com/@mmindpower"}],
+                      [{"text": "🌐 दुसरा रस्ता / Backup route", "url": MIRROR_APP}]]})
         us = USERS.setdefault(str(chat_id), default_state())
         if not us.get("wall_sent"):
             png = support_wall_png()
