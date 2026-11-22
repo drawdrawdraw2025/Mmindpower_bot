@@ -1767,6 +1767,24 @@ def handle(update):
     if token0 == "/donate":
         send_donate(chat_id)
         return
+    if token0 == "/appstatus":
+        if chat_id != OWNER_CHAT:
+            return
+        cur = tg("getChatMenuButton", chat_id=chat_id).get("result") or {}
+        dflt = tg("getChatMenuButton").get("result") or {}
+        def show(tag, r):
+            u = (r.get("web_app") or {}).get("url")
+            return ("<b>%s</b>\ntype: <code>%s</code>\nurl: <code>%s</code>"
+                    % (tag, html.escape(str(r.get("type"))), html.escape(str(u or "—"))))
+        if len(text.split()) > 1 and text.split()[1].lower() == "fix":
+            ok = ensure_menu_button(chat_id, force=True)
+            send_text(chat_id, "🛠 Re-applied: " + ("accepted ✅" if ok else "all routes refused ⚠️"))
+            return
+        send_text(chat_id, "🔎 <b>Menu button — Telegram side</b>\n\n"
+                  + show("This chat (what you tap)", cur) + "\n\n"
+                  + show("Default (all chats)", dflt) + "\n\n"
+                  + "Send <code>/appstatus fix</code> to re-apply now.")
+        return
     if token0 == "/app":
         # Plain url buttons, not web_app: Telegram opens these itself, so the webview
         # never hard-navigates to a host that gets reset. First button is the route
@@ -1862,6 +1880,14 @@ def main():
     global USERS
     me = tg("getMe")
     print("Bot running as", me.get("result", {}).get("username"))
+    # The bottom-left menu button lives on Telegram's servers, not in this process.
+    # A fresh boot must therefore re-assert it for the owner, or an old broken URL can
+    # survive every deploy forever (tapping a button sends no update, so nothing
+    # re-triggers the per-message path).
+    try:
+        ensure_menu_button(OWNER_CHAT, force=True)
+    except Exception as e:
+        print("menu button bootstrap skipped:", e, flush=True)
     tg("setMyCommands", commands=[
         {"command": "start", "description": "👋 Welcome & intro"},
         {"command": "quiz", "description": "📚 Start / resume daily quiz"},
